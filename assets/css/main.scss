@@ -1,0 +1,18 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+
+@font-face {
+    font-family: "NanumSquare", sans-serif;
+    font-optical-sizing: auto;
+    src: url('https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+
+}
