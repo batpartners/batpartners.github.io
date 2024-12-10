@@ -4,6 +4,10 @@ main:
     url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "BATpartners"
     url: https://b-at.kr/
-  - title: "GERTY"
-    url: http://jelinnstar.github.io/GERTY
 
+
+# sidebar-category:
+#   - title: "GERTY"
+#     children:
+#       - title: "Installation"
+#         url: "GERTY"
