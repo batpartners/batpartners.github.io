@@ -16,3 +16,7 @@ search: false
     font-style: normal;
 
 }
+
+div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+    display: none;
+}
