@@ -1,14 +1,16 @@
 ---
-title: "About GERTY"
 categories:
-  - Edge Case
+  - About GERTY
 tags:
-  - content
-  - css
-  - edge case
-  - html
+  - GERTY
   - layout
-  - title
+header:
+  teaser: "https://i.postimg.cc/DfCWXT3n/30.jpg"  
+author_profile: true
+sidebar:
+  nav: "sidebar"
+
+title: "What is GERTY?"
 ---
 
 ## About GERTY

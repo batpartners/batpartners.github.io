@@ -11,3 +11,18 @@ main:
 #     children:
 #       - title: "Installation"
 #         url: "GERTY"
+
+
+sidebar:
+  - title: "About GERTY"
+    children:
+      - title: "What is GERTY?"
+        url: /about%20gerty/About-GERTY
+      - title: "Tutorial"
+        url: /about%20gerty/Tutorial
+  - title: "DataType"
+    children:
+      - title: "RobTarget"
+        url: /datatype/DataType-RobTarget/
+  
+ 

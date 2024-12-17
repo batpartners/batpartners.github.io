@@ -1,12 +1,23 @@
 ---
-title: "Markup: Another Post with Images"
-excerpt: "Examples and code for displaying images in posts."
+title: "RobTarget"
+layout: single
 header:
-  teaser: "http://farm9.staticflickr.com/8426/7758832526_cc8f681e48_c.jpg"
+  teaser: "https://b-at.kr/wp-content/uploads/2024/07/Robtarget.png"
+
+collection: Datatype
+entries_layout: grid
+author_profile: true
+
+categories:
+  - DataType
+sidebar:
+  nav: "sidebar"
+toc: true
+toc_label: "Contents"
+toc_icon: "cog"
+
 tags: 
-  - sample post
-  - images
-  - test
+  - GERTY
 ---
 
 Here are some examples of what a post with images might look like. If you want to display two or three images next to each other responsively use `figure` with the appropriate `class`. Each instance of `figure` is auto-numbered and displayed in the caption.
@@ -16,8 +27,7 @@ Here are some examples of what a post with images might look like. If you want t
 #### One Up
 
 <figure>
-	<a href="https://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg"><img src="https://farm9.staticflickr.com/8426/7758832526_cc8f681e48_b.jpg"></a>
-	<figcaption><a href="http://www.flickr.com/photos/80901381@N04/7758832526/" title="Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr">Morning Fog Emerging From Trees by A Guy Taking Pictures, on Flickr</a>.</figcaption>
+	<a href="https://b-at.kr/wp-content/uploads/2024/07/Robtarget.png"><img src="https://b-at.kr/wp-content/uploads/2024/07/Robtarget.png"></a>
 </figure>
 
 Vero laborum commodo occupy. Semiotics voluptate mumblecore pug. Cosby sweater ullamco quinoa ennui assumenda, sapiente occupy delectus lo-fi. Ea fashion axe Marfa cillum aliquip. Retro Bushwick keytar cliche. Before they sold out sustainable gastropub Marfa readymade, ethical Williamsburg skateboard brunch qui consectetur gentrify semiotics. Mustache cillum irony, fingerstache magna pour-over keffiyeh tousled selfies.

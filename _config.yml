@@ -113,8 +113,8 @@ analytics:
 # Site Author
 author:
   name             : "BATpartners"
-  avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "GERTY Solution Documentation"
+  # avatar           : "/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "GERTY Solution"
   # location         : "Somewhere"
   email            :
   links:
@@ -294,8 +294,8 @@ jekyll-archives:
     - categories
     - tags
   layouts:
-    # category: archive-taxonomy
-    # tag: archive-taxonomy
+    category: archive-taxonomy
+    tag: archive-taxonomy
     category: archive
     tag: archive
   permalinks:
@@ -320,7 +320,19 @@ defaults:
     values:
       layout: single
       author_profile: true
+      sidebar:
+        nav: "parent Page AAA"
       read_time: true
       comments: # true
       share: true
       related: true
+
+#Sidebar
+sidebar:
+  - title: "Parent Page A"
+    image: "/assets/images/bio-photo-2.jpg"
+    image_alt: "image"
+    text: "Some text here."
+  - title: "Parent Page B"
+    text: "More text here."
+    nav: sidebar-sample

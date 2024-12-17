@@ -1,6 +1,27 @@
 ---
-layout: home
+layout: archive
 author_profile: true
+
+sidebar:
+  nav: "sidebar"
+entries_layout: grid
+header:
+    overlay_image: https://i.postimg.cc/BQyXdcYS/waam-source-Banner.png
+    overlay_filter: 0.1 # same as adding an opacity of 0.5 to a black background
 ---
 
-<p>This text should appear above the recent posts.</p>
+<!-- <p>This text should appear above the recent posts.</p> -->
+ <!-- <div class="grid__wrapper">
+    {% for post in paginator.posts %}
+    {% include archive-single3.html type="list" %}
+    {% endfor %}
+    </div>
+    {% include paginator.html %}  -->
+    
+
+     <div class="grid__wrapper">
+      {% for post in paginator.posts %}
+      {% include archive-single.html type="grid" %}
+      {% endfor %}
+      </div>
+      {% include paginator.html %} 
