@@ -1,18 +1,21 @@
 ---
+title: "What is GERTY?"
 categories:
   - About GERTY
-tags:
-  - GERTY
-  - layout
 header:
   teaser: "https://i.postimg.cc/DfCWXT3n/30.jpg"  
 author_profile: true
 sidebar:
   nav: "sidebar"
 
-title: "What is GERTY?"
----
+toc: true
+toc_label: "Contents"
+toc_icon: "cog"
+toc_sticky: true
 
+tags:
+  - GERTY
+---
 ## About GERTY
 <figure>
 	<a href="https://i.postimg.cc/DfCWXT3n/30.jpg"><img src="https://i.postimg.cc/DfCWXT3n/30.jpg"></a>

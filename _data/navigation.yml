@@ -1,28 +1,28 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "BATpartners"
     url: https://b-at.kr/
-
-
-# sidebar-category:
-#   - title: "GERTY"
-#     children:
-#       - title: "Installation"
-#         url: "GERTY"
-
 
 sidebar:
   - title: "About GERTY"
     children:
       - title: "What is GERTY?"
         url: /about%20gerty/About-GERTY
+      - title: "Installation"
+        url: /about%20gerty/Installation
       - title: "Tutorial"
         url: /about%20gerty/Tutorial
   - title: "DataType"
     children:
       - title: "RobTarget"
         url: /datatype/DataType-RobTarget/
+      - title: "RobTarget On Posirion"
+        url: /datatype/DataType-RobTarget-On-Position/
+      - title: "WobjData"
+        url: /datatype/DataType-WobjData/
+      - title: "ArcData"
+        url: /datatype/DataType-ArcData/
+      - title: "IOData"
+        url: /datatype/DataType-IOData/
   
  

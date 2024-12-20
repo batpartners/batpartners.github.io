@@ -1,20 +1,25 @@
 ---
-classes: wide
-layout: single
-collection: installation
-entries_layout: grid
+title: "Installation"
+categories:
+  - About GERTY
 author_profile: true
-excerpt: "" #"Examples and code for displaying images in posts."
+header:
+  teaser: "https://i.postimg.cc/DfCWXT3n/30.jpg"  
+
 header:
   teaser: "assets/images/0_packagemanager_00.png"
 
+categories:
+  - About GERTY
+sidebar:
+  nav: "sidebar"
 toc: true
 toc_label: "Contents"
 toc_icon: "cog"
+toc_sticky: true
 
 tags: 
   - GERTY
-  - readability
 ---
 
 # Installation
