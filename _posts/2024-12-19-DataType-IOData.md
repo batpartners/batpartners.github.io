@@ -24,9 +24,7 @@ tags:
 
 IO Data(Input/Output Data) 즉, 신호데이터를 정의할 수 있는 컴포넌트이다.
 
-<figure>
-	<a href="https://b-at.kr/wp-content/uploads/2024/07/05_IO_Data.png"><img src="https://b-at.kr/wp-content/uploads/2024/07/05_IO_Data.png"></a>
-</figure>
+<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/05_IO_Data.png" align="center" width="32%"></p>
 
 
 # Input

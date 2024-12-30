@@ -24,16 +24,12 @@ tags:
 
 로봇의 6번축에 장착되는 Tool(엔드이펙터)로, Tool에 대한 정보를 기입하여 로봇에게 전달 및 프리뷰하는 역할을 하는 컴포넌트이다.
 
-<figure>
-	<a href="https://b-at.kr/wp-content/uploads/2024/07/1_ToolData_01.png"><img src="https://b-at.kr/wp-content/uploads/2024/07/1_ToolData_01.png"></a>
-</figure>
-
 <p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/1_ToolData_01.png" align="center" width="32%"></p>
 
 
 # Input
 
-* **Name [Text / Item]** : Tool의 고유 변수명을 String 을 입력한다.
+* **Name [Text \ Item]** : Tool의 고유 변수명을 String 을 입력한다.
 * **Base Plane[Plane]** : 로봇에 장착되는 Tool의 바닥면에, BasePlane을 설정한다.
 * **TCP [Plane]** : 장착된 Tool의 TCP를 대표하는 기준평면을 설정한다.
 
@@ -48,6 +44,8 @@ tags:
 ## Built-in Param : Basic Params​
 
 * **Display Colour** : Tool model의 색을 변경한다.
+
+<br>
 
 # Output
 

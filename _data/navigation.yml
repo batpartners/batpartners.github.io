@@ -24,5 +24,27 @@ sidebar:
         url: /datatype/DataType-ArcData/
       - title: "IOData"
         url: /datatype/DataType-IOData/
-  
+  - title: "Robot/Tool"
+    children:
+      - title: "ABBRobot"
+        url: /robottool/RobotTool-ABBRobot/
+      - title: "Positioner"
+        url: /datatype/RobotTool-Positioner/
+      - title: "CreateWorkBench"
+        url: /robottool/RobotTool-CreateWorbench/
+      - title: "Spindle Editor"
+        url: /robottool/RobotTool-SpindleEditor/
+      - title: "Workbench Importer"
+        url: /robottool/RobotTool-WorkbenchImporter/
+  - title: "Instruction"
+    children:
+      - title: "ArcMove"
+        url: /instruction/Instruction-ArcMove/
+      - title: "Move"
+        url: /instruction/Instruction-Move/
+      - title: "TriggIOMove"
+        url: /instruction/Instruction-TriggIOMove/
+      - title: "(De)ActUnit"
+        url: /instruction/Instruction-(De)ActUnit/
+
  

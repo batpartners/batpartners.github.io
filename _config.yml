@@ -104,9 +104,9 @@ social:
 
 # Analytics
 analytics:
-  provider               : "google-gtag" # false (default), "google", "google-universal", "google-gtag", "custom"
+  provider               : false # false (default), "google", "google-universal", "google-gtag", "custom"
   google:
-    tracking_id          : G-16ZXDG1YRW
+    tracking_id          : 
     anonymize_ip         : false # true, false (default)
 
 
@@ -322,17 +322,8 @@ defaults:
       author_profile: true
       sidebar:
         nav: "parent Page AAA"
-      read_time: true
+      read_time: false
+      show_date: true
       comments: # true
       share: true
       related: true
-
-#Sidebar
-sidebar:
-  - title: "Parent Page A"
-    image: "/assets/images/bio-photo-2.jpg"
-    image_alt: "image"
-    text: "Some text here."
-  - title: "Parent Page B"
-    text: "More text here."
-    nav: sidebar-sample
