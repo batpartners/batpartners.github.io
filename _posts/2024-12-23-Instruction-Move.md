@@ -29,7 +29,11 @@ TCP 움직임을 위해, RobTarget의 데이터를 받아 Move Instruction을 �
 
 * **RobTargets** : RobTargets의 데이터를 받는다.
 
+<<<<<<< HEAD
 ## Built-in Param | Move
+=======
+## Built-in Param : Move
+>>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 
 * **MoveJ** : Move Joint로, 로봇이 해석한 최적의 자세인 정기구학으로 읽어 들어 Target Plane에 도달한다.
 * **MoveL** : Move Leaner로, 사용자가 정의한 로봇의 자세에서 Target Plane을 역기구학으로 읽어 들어 최단거리를 찾아 도달한다.
@@ -38,8 +42,11 @@ TCP 움직임을 위해, RobTarget의 데이터를 받아 Move Instruction을 �
 
 <p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/07/Move_gif_confirm-min.gif" align="center" width="72%"></p>
 
+<<<<<<< HEAD
 <br>
 
+=======
+>>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 # Output
 
 * **Instructions** : 입력된 Input에 따라 정의된 Move Instructions을 출력합니다

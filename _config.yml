@@ -21,7 +21,11 @@ title_separator          : "-"
 subtitle                 : "BATpartners" # site tagline that appears below site title in masthead
 name                     : "Lynn"
 description              : "GERTY Documentation"
+<<<<<<< HEAD
 url                      : "https://batpartners.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+=======
+url                      : "https://jelinnstar.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+>>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"

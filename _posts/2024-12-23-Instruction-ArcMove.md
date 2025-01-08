@@ -1,4 +1,8 @@
 ---
+<<<<<<< HEAD
+=======
+title: "ArcMove"
+>>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 layout: single
 header:
   teaser: "https://b-at.kr/wp-content/uploads/2024/07/ArcMove.png"
@@ -37,8 +41,11 @@ ArcData를 사용해 로봇의 모션을 제어하는 컴포넌트이다. 따라
 * **Speed** : 로봇의 이동속도를 제어한다.
 * **Zone** : 타켓 지점에 도달하는 정확도를 제어한다. fine값의 경우 stop position의 역할로 로봇의 등속도에 위반한 모션제어를 한다.
 
+<<<<<<< HEAD
 <br>
 
+=======
+>>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 # Output
 
 * **Instructions** : 입력된 Input에 따라 정의된 ArcMove Instructions을 출력한다.

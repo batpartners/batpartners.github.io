@@ -1,4 +1,8 @@
 ---
+<<<<<<< HEAD
+=======
+title: "ToolImporter"
+>>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 layout: single
 header:
   teaser: "https://b-at.kr/wp-content/uploads/2024/07/ToolImport_1.png"
@@ -28,6 +32,7 @@ Tool Importer 컴포넌트는 "Get Tool Data" 모드와 "Get Tool Data Input" �
     <a href="https://b-at.kr/wp-content/uploads/2024/07/ToolImport_0.png"><img src="https://b-at.kr/wp-content/uploads/2024/07/ToolImport_0.png"></a>
 </figure>
 
+<<<<<<< HEAD
 <br>
 
 # Built-in Param | Basic Params​
@@ -36,6 +41,12 @@ Tool Importer 컴포넌트는 "Get Tool Data" 모드와 "Get Tool Data Input" �
 
 <br>
 
+=======
+# Built-in Param : Basic Params​
+
+* **Model** : GERTY 저장소에 있는 툴 정보 리스트를 확인하여 선택한 툴 정보를 불러온다.
+
+>>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 # Output
 
 * ToolImporter 컴포넌트는 GET TOOL DATA와 GET TOOL DATA INPUT, 두가지 옵션 모드가 있다. 

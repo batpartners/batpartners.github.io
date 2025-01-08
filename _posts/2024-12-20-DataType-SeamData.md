@@ -41,7 +41,11 @@ SeamData는 용접의 시작과 끝을 제어하는데 사용되는 데이터이
     <a href="https://b-at.kr/wp-content/uploads/2023/05/Untitled-1.png"><img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-1.png"></a>
 </figure>
 
+<<<<<<< HEAD
 ## Built-in Param | Ignition Phase Param
+=======
+## Built-in Param : Ignition Phase Param
+>>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 
 * **Purge Time [Num \ item]** : PurgeTime은 가스 라인과 토치 내부를 보호가스로 채우기 위한 시간을 초(s.)단위로 설정하는 파라미터. ArcLStart 또는 ArcCStart 인스트럭션에 의해 프로그램된, 특정자세에서 용접 시작 타겟에 도달하는 시점보다 PurgeTime 시간만큼 앞선 시점부터, 미리 가스 흐름을 인가시키게 된다.
 

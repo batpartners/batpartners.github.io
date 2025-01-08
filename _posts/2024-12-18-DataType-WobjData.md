@@ -32,7 +32,11 @@ WobjData는 로봇의 내부 작업객체를 정의하는 컴포넌트이다.
 * **Name [Text]** : UserFrame의 변수명을 입력한다.
 * **UserFrame [Plane]** : Base Plane을 설정한다.
 
+<<<<<<< HEAD
 ## Built-in Param | Preview Params​
+=======
+## Built-in Param : Preview Params​
+>>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 
 * **Used [Boolean]**: 해당 신호의 사용여부를 확인한다. (기본값 : True)
 * **Start [Boolean]**: 해당 신호의 시작 포인트를 설정한다. (기본값 : false = End point)
