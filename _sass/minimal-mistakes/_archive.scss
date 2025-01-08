@@ -65,12 +65,12 @@
 }
 
 /* remove border*/
-.page__content {
-  .archive__item-title {
-    margin-top: 1em;
-    border-bottom: none;
-  }
-}
+// .page__content {
+//   .archive__item-title {
+//     margin-top: 1em;
+//     border-bottom: none;
+//   }
+// }
 
 .archive__item-excerpt {
   margin-top: 0;
@@ -149,90 +149,124 @@
   }
 }
 
-.grid__item {
+.grid__item {   
   margin-bottom: 2em;
-
+  transition: all 0.2s linear;  //hover 시간 조정
+  backdrop-filter: blur(10px);
+  height: 100%;
+  padding: 3px;
+  
+  &:hover {
+      box-shadow: 1px 1px 3px 1px mix(rgb(122, 122, 122), $background-color, 10%);
+      transform: translate(0, -15px);
+      }
+  
+  &:hover img {
+      transform: translate(0, -15px); //scale(1.1);
+  }
+  
   @include breakpoint($small) {
-    float: left;
-    width: span(5 of 10);
-
-    &:nth-child(2n + 1) {
+      float: left;
+      width: span(5 of 10);
+  
+      &:nth-child(2n + 1) {
       clear: both;
       margin-left: 0;
-    }
-
-    &:nth-child(2n + 2) {
+      }
+  
+      &:nth-child(2n + 2) {
       clear: none;
       margin-left: gutter(of 10);
-    }
+      }
   }
-
+  
+  //grid 4배열에서 3배열
   @include breakpoint($medium) {
-    margin-left: 0; /* override margin*/
-    margin-right: 0; /* override margin*/
-    width: span(3 of 12);
-
-    &:nth-child(2n + 1) {
+      margin-left: 0; /* override margin*/
+      margin-right: 0; /* override margin*/
+      width: span(4 of 12); //width: span(3 of 12);
+  
+      min-height: 12em; //추가
+  
+      &:nth-child(3n + 1) {  //&:nth-child(2n + 1) {
       clear: none;
-    }
-
-    &:nth-child(4n + 1) {
+      }
+  
+      &:nth-child(3n + 1) { //&:nth-child(4n + 1) {
       clear: both;
-    }
-
-    &:nth-child(4n + 2) {
+      margin-left: 0;
+      }
+  
+      &:nth-child(3n + 2) { //&:nth-child(4n + 2) {
       clear: none;
       margin-left: gutter(1 of 12);
-    }
-
-    &:nth-child(4n + 3) {
+      }
+  
+      &:nth-child(4n + 3) { //&:nth-child(4n + 3) {
       clear: none;
       margin-left: gutter(1 of 12);
-    }
-
-    &:nth-child(4n + 4) {
+      }
+  
+      /*
+      &:nth-child(4n + 4) {
       clear: none;
       margin-left: gutter(1 of 12);
-    }
+      }
+      */
   }
-
+  
   .page__meta {
-    margin: 0 0 4px;
-    font-size: 0.6em;
+      margin: 0 0 4px;
+      font-size: 0.9em;
+      font-style: $customFont;
+      font-weight: bold;
+      margin-top: 5px;
   }
-
+  
   .page__meta-sep {
-    display: block;
-
-    &::before {
-      display: none;
-    }
-  }
-
-  .archive__item-title {
-    margin-top: 0.5em;
-    font-size: $type-size-5;
-  }
-
-  .archive__item-excerpt {
-    display: none;
-
-    @include breakpoint($medium) {
       display: block;
-      font-size: $type-size-6;
-    }
+  
+      &::before { 
+      display: none;
+      }
   }
-
+  
+  .archive__item-title {
+      margin-top: 0.5em;
+      font-size: $type-size-5; //$type-size-5;
+  }
+  
+  .archive__item-excerpt {
+      display: inline-block; //none;
+  
+      @include breakpoint($medium) {
+      display: block;
+      font-size: 0.8em;  //$type-size-6;
+      }
+  }
+  
   .archive__item-teaser {
-    @include breakpoint($small) {
-      max-height: 200px;
+    position: relative;
+    border-radius: $border-radius;
+    overflow: hidden;
+    
+    display: flex;
+    justify-content: center;
+    
+    background-color: mix(rgb(122, 122, 122), $background-color, 10%);
+    backdrop-filter: blur(10px);
+    width: 100%; 
+    max-height: 10em;
+    margin-bottom: 5px;
+    
+    img {
+        margin: auto;
+        position: relative;  //absolute;
+        object-fit: fill;
     }
-
-    @include breakpoint($medium) {
-      max-height: 120px;
     }
   }
-}
+
 
 /*
    Features

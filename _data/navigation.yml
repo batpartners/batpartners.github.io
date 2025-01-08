@@ -1,9 +1,108 @@
 # main links
 main:
-  - title: "Quick-Start Guide"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
   - title: "BATpartners"
     url: https://b-at.kr/
-  - title: "GERTY"
-    url: http://jelinnstar.github.io/GERTY
 
+sidebar:
+  - title: "About GERTY"
+    children:
+      - title: "What is GERTY?"
+        url: /about%20gerty/About-GERTY
+      - title: "Installation"
+        url: /about%20gerty/Installation
+      - title: "Tutorial"
+        url: /about%20gerty/Tutorial
+  - title: "DataType"
+    children:
+      - title: "RobTarget"
+        url: /datatype/DataType-RobTarget/
+      - title: "RobTarget On Posirion"
+        url: /datatype/DataType-RobTarget-On-Position/
+      - title: "WobjData"
+        url: /datatype/DataType-WobjData/
+      - title: "ToolData"
+        url: /datatype/DataType-ToolData/
+      - title: "ArcData"
+        url: /datatype/DataType-ArcData/
+      - title: "IOData"
+        url: /datatype/DataType-IOData/
+  - title: "Robot/Tool"
+    children:
+      - title: "ABBRobot"
+        url: /robottool/RobotTool-ABBRobot/
+      - title: "Positioner"
+        url: /robottool/RobotTool-Positioner/
+      - title: "CreateWorkBench"
+        url: /robottool/RobotTool-CreateWorbench/
+      - title: "Spindle Editor"
+        url: /robottool/RobotTool-SpindleEditor/
+      - title: "Workbench Importer"
+        url: /robottool/RobotTool-WorkbenchImporter/
+  - title: "Instruction"
+    children:
+      - title: "ArcMove"
+        url: /instruction/Instruction-ArcMove/
+      - title: "Move"
+        url: /instruction/Instruction-Move/
+      - title: "TriggIOMove"
+        url: /instruction/Instruction-TriggIOMove/
+      - title: "(De)ActUnit"
+        url: /instruction/Instruction-(De)ActUnit/
+      - title: "AccSet"
+        url: /instruction/Instruction-AccSet/
+      - title: "PathAccLim"
+        url: /instruction/Instruction-PathAccLim/
+      - title: "SetDO"
+        url: /instruction/Instruction-SetDO/
+      - title: "Sub Procedures"
+        url: /instruction/Instruction-Sub-Procedures/
+      - title: "Wait Time"
+        url: /instruction/Instruction-Wait-Time/
+  - title: "Core"
+    children:
+      - title: "Code Solver"
+        url: /core/Core-Code-Solver/
+      - title: "Display Solver"
+        url: /core/Core-Display-Solver/
+      - title: "GERTY Core"
+        url: /core/Core-GERTY-Core/
+  - title: "ToolPath"
+    children:
+      - title: "Drawing"
+        url: /toolpath/ToolPath-Drawing/
+      - title: "FlyByBranch"
+        url: /toolpath/ToolPath-FlyByBranch/
+      - title: "FlyByCustom"
+        url: /toolpath/ToolPath-FlyByCustom/
+      - title: "FlyByTree"
+        url: /toolpath/ToolPath-FlyByTree/
+      - title: "HotWireToolPathFromCrvs"
+        url: /toolpath/ToolPath-HotWireToolPathFromCrvs/
+      - title: "HotWireToolPathFromSrf"
+        url: /toolpath/ToolPath-HotWireToolPathFromSrf/
+      - title: "ObjRoughing"
+        url: /toolpath/ToolPath-ObjRoughing/
+      - title: "ParallelFinishing"
+        url: /toolpath/ToolPath-ParallelFinishing/
+      - title: "UV Finishing"
+        url: /toolpath/ToolPath-UV-Finishing/
+      - title: "BuildUp Deposition"
+        url: /toolpath/ToolPath-BuildUp-Deposition/
+      - title: "BuildUp WAAM"
+        url: /toolpath/ToolPath-BuildUp-WAAM/
+      - title: "SlicerFill"
+        url: /toolpath/ToolPath-SlicerFill/
+      - title: "SlicerOffsetFill"
+        url: /toolpath/ToolPath-SlicerOffsetFill/
+      - title: "SclicerShell for Solid"
+        url: /toolpath/ToolPath-SlicerShell-for-Solid/
+      - title: "SlicerShell for Surface"
+        url: /toolpath/ToolPath-SlicerShell-for-Surface/
+      - title: "Block Designer"
+        url: /toolpath/ToolPath-Block-Designer/
+      - title: "Block Supply"
+        url: /toolpath/ToolPath-Block-Supply/
+  - title: "Utils"
+    children:
+      - title: "Dispatch Branch"
+        url: /utils/Utils-Dispatch-Branch/

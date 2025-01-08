@@ -3,6 +3,9 @@
    ========================================================================== */
 
 $(document).ready(function () {
+
+ 
+
   // FitVids init
   $("#main").fitVids();
 
@@ -227,4 +230,6 @@ $(document).ready(function () {
         container.prepend(copyButton);
       });
   }
+
+
 });
