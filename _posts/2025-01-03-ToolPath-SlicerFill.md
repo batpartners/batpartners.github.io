@@ -1,7 +1,9 @@
 ---
+title: "SlicerFill"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/SlicerFill.png"
 
 collection: ToolPath
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 * 적층 모델링의 내부 Shell을 채우는 툴패스를 생성하는 컴포넌트이다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/SlicerFill.png" align="center" width="32%"></p>
 
 <br>
 

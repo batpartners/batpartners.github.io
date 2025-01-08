@@ -1,7 +1,8 @@
 ---
+title: "Slicer Shell for Surface"
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/SlicerShellforSurface.png"
 
 collection: ToolPath
 entries_layout: grid
@@ -25,7 +26,7 @@ tags:
 * 툴 패스 평면(Plane)의 간격, 높이, 각도를 설정할 수 있으며 사용자는 각자의 환경에 맞게 작성할 수 있다.
 
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/SlicerShellforSurface.png" align="center" width="32%"></p>
 
 <br>
 

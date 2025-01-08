@@ -1,7 +1,8 @@
 ---
+title: "ToolData"
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/1_ToolData_01.png"
+  teaser: "/assets/images/ToolData.png"
 
 collection: Datatype
 entries_layout: grid
@@ -22,9 +23,10 @@ tags:
 # Description
 
 로봇의 6번축에 장착되는 Tool(엔드이펙터)로, Tool에 대한 정보를 기입하여 로봇에게 전달 및 프리뷰하는 역할을 하는 컴포넌트이다.
+<br>
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/1_ToolData_01.png" align="center" width="32%"></p>
-
+<p align="center">  <img src="/assets/images/ToolData.png" align="center" width="32%"></p>
+<br>
 
 # Input
 

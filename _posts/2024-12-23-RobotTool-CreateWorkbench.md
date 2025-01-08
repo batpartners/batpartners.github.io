@@ -1,7 +1,9 @@
 ---
+title: "CreateWorkbench"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/Workbench.png"
+  teaser: "/assets/images/Workbench.png"
 
 collection: RobotTool
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 Work Bench 모델링을 사용자 정의할 수 있는 컴포넌트입니다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/Workbench.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/Workbench.png" align="center" width="32%"></p>
 
 # Input
 

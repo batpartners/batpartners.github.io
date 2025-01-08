@@ -1,14 +1,15 @@
 ---
+title: "Dispatch Branch"
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/dispatchbranch.png"
 
-collection: ToolPath
+collection: Utils
 entries_layout: grid
 author_profile: true
 
 categories:
-  - ToolPath
+  - Utils
 sidebar:
   nav: "sidebar"
 toc: true
@@ -23,8 +24,9 @@ tags:
 
 * 2차 밀링 단계의 컷팅 툴패스 컴포넌트이다.
 아래의 그림처럼 길이가 다른 평행한 커브 사이의 Cutting Direction방향으로 같은 길이값으로 등분하여 출력한다.
+<br>
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/dispatchbranch.png" align="center" width="32%"></p>
 
 <br>
 
@@ -32,12 +34,6 @@ tags:
 
 * **Geometry**: Mesh 또는 Surface의 Geometry parameter를 입력한다.
 * **Base Plane** : Tilting weight=0일 때, Target Orientation 기준 평면을 입력한다.
-
-<br>
-
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/06/Parallel-768x238.png" align="center" width="32%"></p>
-
-<br>
 
 ## Built-in Param | Basic Params
 

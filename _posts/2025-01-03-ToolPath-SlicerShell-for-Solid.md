@@ -1,7 +1,8 @@
 ---
+title: "Slicer Shell for Solid"
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/SlicerShellforSolid.png"
 
 collection: ToolPath
 entries_layout: grid
@@ -24,7 +25,7 @@ tags:
 * 폐곡선형의 오브젝트 툴패스를 맞춤형으로 작성할 수 있도록 돕는 컴포넌트이다.
 툴 패스 평면(Plane)의 간격, 높이, 각도를 설정할 수 있으며 사용자는 각자의 환경에 맞게 작성할 수 있다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/SlicerShellforSolid.png" align="center" width="32%"></p>
 
 <br>
 

@@ -3,7 +3,7 @@ title: "What is GERTY?"
 categories:
   - About GERTY
 header:
-  teaser: "https://i.postimg.cc/DfCWXT3n/30.jpg"  
+  teaser: "/assets/images/30.jpg"  
 author_profile: true
 sidebar:
   nav: "sidebar"
@@ -17,9 +17,12 @@ tags:
   - GERTY
 ---
 ## About GERTY
+
+<br>
 <figure>
-	<a href="https://i.postimg.cc/DfCWXT3n/30.jpg"><img src="https://i.postimg.cc/DfCWXT3n/30.jpg"></a>
+	<a href="/assets/images/30.jpg"><img src="/assets/images/30.jpg"></a>
 </figure>
+<br>
 
 GERTY는 로봇암 기반의 맞춤형 가공 기법의 프로그래밍을 돕는 CAM 소프트웨어 솔루션이다.
 

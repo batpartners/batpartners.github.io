@@ -1,7 +1,9 @@
 ---
+title: "BuildUp Deposition"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/BuildupDeposiiton.png"
 
 collection: ToolPath
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 * 적층 데이터를 분석하여 일반 적층 툴패스의 작성을 돕는 컴포넌트이다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/BuildupDeposiiton.png" align="center" width="32%"></p>
 
 <br>
 

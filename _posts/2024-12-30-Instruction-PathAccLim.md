@@ -1,7 +1,9 @@
 ---
+title: "PathAccLim"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/PathAccLim_1.png"
+  teaser: "/assets/images/PathAccLim_1.png"
 
 collection: Instruction
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 * TCP의 이동속도를 줄여주는 PathAccLim Instruction을 정의하는 컴포넌트이다. Target Point로의 위치까지 도달하기 위한, 로봇의 가속도(AccLim) 혹은 감속도(DecelLim)를 제한한다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/PathAccLim_1.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/PathAccLim_1.png" align="center" width="32%"></p>
 
 <br>
 

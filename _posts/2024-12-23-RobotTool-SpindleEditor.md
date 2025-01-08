@@ -1,7 +1,9 @@
 ---
+title: "Spindle Editor"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/ToolPointEdit.png"
+  teaser: "/assets/images/ToolPointEdit.png"
 
 collection: RobotTool
 entries_layout: grid
@@ -24,7 +26,7 @@ tags:
 스핀들 도구의 구성을 돕는 컴포넌트이다. 스핀들의 본체에 해당하는 모델링(Mesh)와 엔드밀의 시작점에 해당하는 지점(Plane)을 입력받는다. 이후 엔드밀의 길이와 직경 값에 따라 TCP값을 내보낸다.
 엔드밀이 포함된 모델일 경우와, 포함하지 않은 경우의 모델의 상황을 고려하여 엔드밀 길이와 크기, TCP의 방향을 정할 수 있다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/ToolPointEdit.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/ToolPointEdit.png" align="center" width="32%"></p>
 
 # Input
 

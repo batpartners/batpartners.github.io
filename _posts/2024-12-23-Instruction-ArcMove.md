@@ -1,7 +1,9 @@
 ---
+title: "ArcMove"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/ArcMove.png"
+  teaser: "/assets/images/ArcMove.png"
 
 collection: Datatype
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 ArcData를 사용해 로봇의 모션을 제어하는 컴포넌트이다. 따라서, 반드시 ArcData의 입력값을 갖는다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/ArcMove.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/ArcMove.png" align="center" width="32%"></p>
 
 # Input
 

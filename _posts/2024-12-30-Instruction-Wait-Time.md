@@ -1,7 +1,9 @@
 ---
+title: "Wait Time"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/WaitTime.png"
 
 collection: Instruction
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 * 프로그램 실행 중 로봇의 동작을 잠시동안 멈추는 시간을 초 단위로 설정할 수 있는 WaitTime Instruction을 정의하는 컴포넌트이다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/WaitTime.png" align="center" width="32%"></p>
 
 <br>
 

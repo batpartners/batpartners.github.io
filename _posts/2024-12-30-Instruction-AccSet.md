@@ -1,7 +1,9 @@
 ---
+title: "AccSet"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/ACCSet_1.png"
+  teaser: "/assets/images/AccSet.png"
 
 collection: Instruction
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 * Robot의 가속도를 제한하는 AccSet Instruction을 정의하는 컴포넌트이다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/ACCSet_1.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/AccSet.png" align="center" width="32%"></p>
 
 <br>
 

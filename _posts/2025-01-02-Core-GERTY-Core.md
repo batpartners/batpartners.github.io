@@ -1,7 +1,9 @@
 ---
+title: "GERTY Core"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/GERTYCore.png"
 
 collection: Core
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 * 로봇 컴포넌트로부터 제어할 ABB로봇, 포지셔너 등 제원 정보를 포함하는 GERTY Core 컴포넌트이다. RobTarget과 Robot Instruction의 데이터를 읽고 ProgramData로 출력한다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/GERTYCore.png" align="center" width="32%"></p>
 
 <br>
 

@@ -1,7 +1,9 @@
 ---
+title: "WorkbenchImporter"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/WorkbenchImporter-1.png"
+  teaser: "/assets/images/WorkbenchImporter.png"
 
 collection: RobotTool
 entries_layout: grid
@@ -25,7 +27,7 @@ tags:
 * Workbench Importer 컴포넌트는 “Get Workbench Data” 모드와 “Get Workbench Input Data ” 모드가 있다.
 * 전자의 경우 완전한 워크벤치 정보값으로, Workbench컴포넌트를 대신해 사용할 수 있다. 후자의 경우 수정할 수 있는 정보값으로 Workbench 컴포넌트와 결합하여 사용자화 된 데이터로 사용할 수 있다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/WorkbenchImporter-1.png" align="center" width="64%"></p>
+<p align="center">  <img src="/assets/images/WorkbenchImporter.png" align="center" width="64%"></p>
 
 
 # Built-in Param | Basic Params

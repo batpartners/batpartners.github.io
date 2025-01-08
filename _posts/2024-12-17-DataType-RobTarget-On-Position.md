@@ -2,7 +2,7 @@
 title: "RobTarget On Position"
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/02_RobtargetOnPositioner.png"
+  teaser: "/assets/images/02_RobtargetOnPositioner.png"
 
 collection: Datatype
 entries_layout: grid
@@ -26,11 +26,11 @@ Positioner의 RobTarget(Robot Target)은 로봇의 위치와 추가 축을 정�
 
 RobTarget On Positioner은 ABB RAPID Program에서 로봇과 부가축 장비의 동작을 정의하는 데이터 형식이다.
 
-RobTarget On Positioner은 계획한 이동 경로 위에서, 로봇 TCP\Tool Center Point 의 위치|Position 와 방향\Orientation, 그리고 부가축의 각도 정보 등을 포함한다.
+RobTarget On Positioner은 계획한 이동 경로 위에서, 로봇 TCP\Tool Center Point 의 위치\Position 와 방향\Orientation, 그리고 부가축의 각도 정보 등을 포함한다.
 
 참고자료 : ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001)
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/02_RobtargetOnPositioner.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/02_RobtargetOnPositioner.png" align="center" width="32%"></p>
 
 
 # Input

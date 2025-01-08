@@ -1,7 +1,9 @@
 ---
+title: "IOData"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/05_IO_Data.png"
+  teaser: "/assets/images/05_IO_Data.png"
 
 collection: Datatype
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 IO Data(Input/Output Data) 즉, 신호데이터를 정의할 수 있는 컴포넌트이다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/05_IO_Data.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/05_IO_Data.png" align="center" width="32%"></p>
 
 
 # Input

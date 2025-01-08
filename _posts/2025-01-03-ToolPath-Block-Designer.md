@@ -1,7 +1,9 @@
 ---
+title: "Block Designer"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: ""
 
 collection: ToolPath
 entries_layout: grid
@@ -24,7 +26,7 @@ tags:
 * Unit Block, Wall 형상의 서피스 모델링 등 Block Laying에 필요한 관련 데이터로부터, 계획된 Block Wall의 모델링 및 개별 Block을 배치하는 툴패스로 사용되는 Target Plane을 생성하는 컴포넌트.
 
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="" align="center" width="32%"></p>
 
 <br>
 

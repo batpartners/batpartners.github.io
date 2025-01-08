@@ -1,7 +1,9 @@
 ---
+title: "ObjRoughing"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/ObjRoughing.png"
 
 collection: ToolPath
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 * 1차 밀링 단계에서의 컷팅 툴 패스를 제공하는 컴포넌트이다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/ObjRoughing.png" align="center" width="32%"></p>
 
 <br>
 

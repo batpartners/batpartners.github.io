@@ -1,7 +1,9 @@
 ---
+title: "Block Supply"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: ""
 
 collection: ToolPath
 entries_layout: grid
@@ -24,7 +26,7 @@ tags:
 * 계획된 Block Wall에 사용된 Unit Block 모델링, 필요한 Block의 총 개수 등의 데이터로부터, 공급부 Block 더미 모델링 및  Block을 집어 올리는 Target Plane을 생성하는 컴포넌트.
 
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="" align="center" width="32%"></p>
 
 <br>
 

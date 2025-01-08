@@ -2,7 +2,7 @@
 title: "RobTarget"
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/Robtarget.png"
+  teaser: "/assets/images/Robtarget.png"
 
 collection: Datatype
 entries_layout: grid
@@ -21,7 +21,7 @@ tags:
   - GERTY
 ---
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/Robtarget.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/Robtarget.png" align="center" width="32%"></p>
 
 
 # Description

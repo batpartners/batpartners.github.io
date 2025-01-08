@@ -1,7 +1,9 @@
 ---
+title: "HotWireToolPathCrvs"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/HotwireToolpathfromCrvs.png"
 
 collection: ToolPath
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 * 사용자 모델링의 커브들을 읽어, 열선 툴 패스로 변환하는 컴포넌트이다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/HotwireToolpathfromCrvs.png" align="center" width="32%"></p>
 
 <br>
 

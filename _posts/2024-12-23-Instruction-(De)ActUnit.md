@@ -1,7 +1,9 @@
 ---
+title: "(De)ActUnit"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/DeActUnit_1.png"
+  teaser: "/assets/images/(De)ActUnit.png"
 
 collection: Instruction
 entries_layout: grid
@@ -23,8 +25,11 @@ tags:
 
 * (De)ActUnit은 로봇 개체(Unit)의 활성화(Activate) 여부를 정의하는 instruction 컴포넌트이다.
 * 로봇 개체(Unit)는 2가지 이상의 로봇이나 부가축 장비를 하나의 컨트롤러에서 제어하는 경우, 각 장치의 단위를 의미한다.
+<br>
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/DeActUnit_1.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/(De)ActUnit.png" align="center" width="32%"></p>
+
+<br>
 
 # Input
 

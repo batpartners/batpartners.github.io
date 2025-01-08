@@ -1,7 +1,9 @@
 ---
+title: "Sub Procedure"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/SubPorcedure.png"
 
 collection: Instruction
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 * Sub Porcedures는 Main Procedures에 작성되는 신호 및 기타 모션이 반복적으로 수행될 경우, 해당 코드를 축약하여 호출 할 수 있도록 돕는다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/SubPorcedure.png" align="center" width="32%"></p>
 
 <br>
 

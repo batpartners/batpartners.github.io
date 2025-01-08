@@ -1,7 +1,9 @@
 ---
+title: "Display Solver"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/displaysolver.png"
 
 collection: Core
 entries_layout: grid
@@ -23,14 +25,14 @@ tags:
 
 * DisplaySolver는  Robot 컴포넌트 및 GERTY Core 컴포넌트로부터 입력된 Input 데이터에 따라 라이노 뷰포트 상에, 로봇의 연속 동작을 프리뷰하는 컴포넌트.  
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/displaysolver.png" align="center" width="32%"></p>
 
 <br>
 
 # Input
 
-* **GERTY Robot [GERTY Robot \ Item]** : 제어할 로봇기종에 따라 설정된, Robot 컴포넌트의 결과값을 입력한다.
-* **GERTY Solver [GERTY Solver \ Item]** : GERTY Core 컴포넌트가 출력하는 GERTY Solver 데이터를 입력한다. 
+* **GERTY Robot [GERTY Robot / Item]** : 제어할 로봇기종에 따라 설정된, Robot 컴포넌트의 결과값을 입력한다.
+* **GERTY Solver [GERTY Solver / Item]** : GERTY Core 컴포넌트가 출력하는 GERTY Solver 데이터를 입력한다. 
 
 <br>
 

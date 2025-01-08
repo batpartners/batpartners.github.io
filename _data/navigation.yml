@@ -22,6 +22,8 @@ sidebar:
         url: /datatype/DataType-WobjData/
       - title: "ToolData"
         url: /datatype/DataType-ToolData/
+      - title: "ToolImporter"
+        url: /datatype/DataType-ToolImporter/
       - title: "ArcData"
         url: /datatype/DataType-ArcData/
       - title: "IOData"
@@ -33,7 +35,7 @@ sidebar:
       - title: "Positioner"
         url: /robottool/RobotTool-Positioner/
       - title: "CreateWorkBench"
-        url: /robottool/RobotTool-CreateWorbench/
+        url: /robottool/RobotTool-CreateWorkbench/
       - title: "Spindle Editor"
         url: /robottool/RobotTool-SpindleEditor/
       - title: "Workbench Importer"

@@ -1,7 +1,9 @@
 ---
+title: "Code Solver"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
+  teaser: "/assets/images/codesolver.png"
 
 collection: Core
 entries_layout: grid
@@ -23,7 +25,7 @@ tags:
 
 * Code Solver는 GERTY Core에서 출력한 Robot ProgramData를 분석하여 출력하는 컴포넌트이다. 사용자 지정 경로에 파일명과 함께 내보낸다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/codesolver.png" align="center" width="32%"></p>
 
 <br>
 

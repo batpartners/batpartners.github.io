@@ -1,7 +1,9 @@
 ---
+title: "ArcData"
+
 layout: single
 header:
-  teaser: "https://b-at.kr/wp-content/uploads/2024/07/ArcData.png"
+  teaser: "/assets/images/ArcData.png"
 
 collection: Datatype
 entries_layout: grid
@@ -24,7 +26,7 @@ tags:
 용가재 조건(Weld schedule) 및 용접 모드에 따라, ArcData를 정의하는 컴포넌트이다.
 ArcData는 아크 용접을 위한 ABB Arc Instruction에 활용되는, 기본적인 데이터 형식으로, SeamData 및 WeldData에 공통적으로 사용되는 조건 값을 담고 있는 서브 데이터로, 용가재별 프로그램 식별ID, 와이어 송급 속도, 전압, 전류 등의 정보를 저장한다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/ArcData.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/ArcData.png" align="center" width="32%"></p>
 
 # Input
 
