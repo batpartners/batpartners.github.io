@@ -1,8 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-title: "ToolData"
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 layout: single
 header:
   teaser: "https://b-at.kr/wp-content/uploads/2024/07/1_ToolData_01.png"
@@ -44,11 +40,7 @@ tags:
 * **Export [Boolean]** : 사용자는 입력한 툴 정보를 저장하여 사용할 수 있다.
 
 
-<<<<<<< HEAD
 ## Built-in Param | Basic Params​
-=======
-## Built-in Param : Basic Params​
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 
 * **Display Colour** : Tool model의 색을 변경한다.
 

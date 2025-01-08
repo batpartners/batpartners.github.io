@@ -1,8 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-title: "IOData"
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 layout: single
 header:
   teaser: "https://b-at.kr/wp-content/uploads/2024/07/05_IO_Data.png"
@@ -36,11 +32,7 @@ IO Data(Input/Output Data) 즉, 신호데이터를 정의할 수 있는 컴포�
 Value [double] : 신호데이터의 데이터 값을 지정한다.
 
 
-<<<<<<< HEAD
 ## Built-in Param | Single Arc​
-=======
-## Built-in Param : Single Arc​
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 
 * **Used [Boolean]**: 해당 신호의 사용여부를 확인한다. (기본값 : True)
 * **Start [Boolean]**: 해당 신호의 시작 포인트를 설정한다. (기본값 : false = End point)
@@ -51,11 +43,8 @@ Value [double] : 신호데이터의 데이터 값을 지정한다.
 	<a href="https://b-at.kr/wp-content/uploads/2023/05/IOData-768x250.png"><img src="https://b-at.kr/wp-content/uploads/2023/05/IOData-768x250.png"></a>
 </figure>
 
-<<<<<<< HEAD
 <br>
 
-=======
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 # Output
 
 * **IO Data** : 정의한 IO Data를 출력한다.
