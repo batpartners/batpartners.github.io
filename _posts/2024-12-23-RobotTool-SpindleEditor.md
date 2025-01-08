@@ -36,11 +36,8 @@ tags:
 * **Length(mm)** : 엔드밀의 길이(mm)를 결정합니다.
 * **Radius(mm)** : 엔드밀의 구경 반지름의 길이(mm)를 결정합니다.
 
-<<<<<<< HEAD
 <br>
 
-=======
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 # Output
 
 * **Tool Geometry** : 스핀들 본체 메쉬를 ToolData의 메쉬로 내보낸다.

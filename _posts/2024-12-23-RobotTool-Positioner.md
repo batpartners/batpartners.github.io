@@ -1,8 +1,4 @@
 ---
-<<<<<<< HEAD
-=======
-title: "Positioner"
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 layout: single
 header:
   teaser: "https://b-at.kr/wp-content/uploads/2024/07/Positioner-1.png"
@@ -45,10 +41,7 @@ ABB Positioner 기종 모델링을 사용자 정의할 수 있는 컴포넌트�
 * **Enable Arm** : 포지셔너의 자세를 고정시킬 수 있습니다. 기본설정은 포지셔너 암 고정이 해제 되어있습니다.
 * **Approaching Dir.** : 포지셔너에 접근하는 경로의 방향을 재정의합니다.
 * **TCP Dir.** : 포지셔너에 접근하는 TCP의 방향을 재정의 재정의 합니다.
-<<<<<<< HEAD
 <br>
-=======
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 
 # Output
 

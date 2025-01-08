@@ -43,11 +43,7 @@ ArcData는 아크 용접을 위한 ABB Arc Instruction에 활용되는, 기본�
   - 1 : Arc Length Stabilizer 옵션 사용
 
 
-<<<<<<< HEAD
 ## Built-in Param | Single Arc​
-=======
-## Built-in Param : Single Arc​
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 
 용접 장비가 Single wire system인 경우, Single Arc Params만 셋팅한다.
 

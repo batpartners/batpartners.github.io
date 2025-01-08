@@ -30,11 +30,7 @@ Robtarget와 TriggIOs 데이터를 기반으로, Trigg”X” IOs Instruction을
 * **RobTarget** : RobTarget Data를 받는다.
 * **TriggIOs** : TriggIOs Data를 받는다.
 
-<<<<<<< HEAD
 ## Built-in Param | Basic Params
-=======
-## Built-in Param : Basic Params
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 
 <div align="center">
 <table style="border-collapse: collapse: width: 51 %; height: 200px;" border="0.5" data-ke-style="sytle4">
@@ -79,10 +75,6 @@ Robtarget와 TriggIOs 데이터를 기반으로, Trigg”X” IOs Instruction을
 * **Zone** : Target Point를 중심으로 한 반경 범위로, 다음 Target Point로 이동시, zone값에 비례한 Radius크기 만큼 Filet하여 움직임을 제어한다. Fine을 정확하게 해당 포인트를 지나쳐야 하되, 로봇의 등속 움직임에 영향을 미칠 수 있다.
 
 <br>
-<<<<<<< HEAD
-
-=======
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 # Output
 
 * **Instructions** : 입력된 조건에 따라 정의된 TriggXIOs Instruction을 출력합니다

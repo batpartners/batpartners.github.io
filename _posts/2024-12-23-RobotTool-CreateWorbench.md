@@ -37,11 +37,8 @@ Work Bench 모델링을 사용자 정의할 수 있는 컴포넌트입니다.
 * **Display Colour** : 로봇의 모델의 색을 설정합니다.
 * **Objs Colour** : Object의 색을 설정합니다
 
-<<<<<<< HEAD
 <br>
 
-=======
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 # Output
 
 * **GERTY Workbench**: 사용자 정의 된 Workbench 정보를 내보냅니다.

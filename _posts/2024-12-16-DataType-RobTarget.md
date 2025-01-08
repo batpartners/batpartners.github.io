@@ -52,11 +52,8 @@ RobTarget On Positioner은 계획한 이동 경로 위에서, 로봇 TCP(Tool Ce
 * **Split Start** : (생성된 RobTarget이 2개 이상으로 구성된 List / DataTree인 경우) 별도 Output node를 통해, 첫 번째 RobTarget을 분리하여 내보냄. 
 * **Split Start** : (생성된 RobTarget이 2개 이상으로 구성된 List / DataTree인 경우) 별도 Output node를 통해, 마지막 RobTarget을 분리하여 내보냄. 
 
-<<<<<<< HEAD
 <br>
 
-=======
->>>>>>> 4807a259a11b6073cf6b56e331059845b90d5de8
 # Output
 
 * **RobTargets** : 각 영역의 Robtargets의 ProgramData를 출력한다. 이후, 해당 데이터를  Instructions에 연결한다.
