@@ -4,7 +4,7 @@ main:
     url: https://b-at.kr/
 
 sidebar:
-  - title: "About GERTY"
+  - title: "0. About GERTY"
     children:
       - title: "What is GERTY?"
         url: /about%20gerty/About-GERTY
@@ -12,7 +12,7 @@ sidebar:
         url: /about%20gerty/Installation
       - title: "Tutorial"
         url: /about%20gerty/Tutorial
-  - title: "DataType"
+  - title: "1. DataType"
     children:
       - title: "RobTarget"
         url: /datatype/DataType-RobTarget/
@@ -28,7 +28,7 @@ sidebar:
         url: /datatype/DataType-ArcData/
       - title: "IOData"
         url: /datatype/DataType-IOData/
-  - title: "Robot/Tool"
+  - title: "2. Robot/Tool"
     children:
       - title: "ABBRobot"
         url: /robottool/RobotTool-ABBRobot/
@@ -40,7 +40,7 @@ sidebar:
         url: /robottool/RobotTool-SpindleEditor/
       - title: "Workbench Importer"
         url: /robottool/RobotTool-WorkbenchImporter/
-  - title: "Instruction"
+  - title: "3. Instruction"
     children:
       - title: "ArcMove"
         url: /instruction/Instruction-ArcMove/
@@ -60,7 +60,7 @@ sidebar:
         url: /instruction/Instruction-Sub-Procedures/
       - title: "Wait Time"
         url: /instruction/Instruction-Wait-Time/
-  - title: "Core"
+  - title: "4. Core"
     children:
       - title: "Code Solver"
         url: /core/Core-Code-Solver/
@@ -68,7 +68,7 @@ sidebar:
         url: /core/Core-Display-Solver/
       - title: "GERTY Core"
         url: /core/Core-GERTY-Core/
-  - title: "ToolPath"
+  - title: "5. ToolPath"
     children:
       - title: "Drawing"
         url: /toolpath/ToolPath-Drawing/
@@ -104,7 +104,41 @@ sidebar:
         url: /toolpath/ToolPath-Block-Designer/
       - title: "Block Supply"
         url: /toolpath/ToolPath-Block-Supply/
-  - title: "Utils"
+  - title: "6. Utils"
     children:
       - title: "Dispatch Branch"
         url: /utils/Utils-Dispatch-Branch/
+      - title: "Insert Items"
+        url: utils/Utils-InsertItems/
+      - title: "Simple Path Remapper"
+        url: utils/Utils-SimplePathRemapper/
+      - title: "Split Tree Branch"
+        url: utils/Utils-SplitTreeBranch/
+      - title: "Surface Frame"
+        url: utils/Utils-Surface-Frame/
+      - title: "Tree Branch"
+        url: utils/Utils-TreeBranch/
+      - title: "OverhangRangeColor"
+        url: utils/Utils-OverhangRangeColor/
+      - title: "ToolPathPartition"
+        url: utils/Utils-ToolPathPartition/
+  - title: "7. Constroller Utils"
+    children:
+      - title: "RealTime Display"
+        url: controllerutils/ControllerUtils-RealTimeDisplay
+      - title: "ScanABBController"
+        url: controllerutils/ControllerUtils-ScanABBController
+      - title: "ReadAndWriteMOCData"
+        url: controllerutils/ControllerUtils-ReadAndWriteMOCData
+      - title: "ScanToolData"
+        url: controllerutils/ControllerUtils-ScanToolData
+  - title: "8. Setup"
+    children:
+      - title: "FileImportAndExport"
+        url: setup/Setup-FileImportAndExport
+      - title: "GERTYLicense"
+        url: setup/Setup-GERTYLicense
+      - title: "GetMachineIDs"
+        url: setup/Setup-GetMachineIDs
+      - title: "GetUSBIDs"
+        url: setup/Setup-GetUSBIDs

@@ -22,8 +22,7 @@ tags:
 ---
 # Description
 
-* 2차 밀링 단계의 컷팅 툴패스 컴포넌트이다.
-아래의 그림처럼 길이가 다른 평행한 커브 사이의 Cutting Direction방향으로 같은 길이값으로 등분하여 출력한다.
+* 입력된 DataTree의 Branch를 Pattern에 따라 2개의 DataTree로 분리하는 컴포넌트. 입력되는 DataTree 개별 Path의 형식과는 관련이 없이, Path의 순번과 Pattern을 매칭하여 분리한다. 
 <br>
 
 <p align="center">  <img src="/assets/images/dispatchbranch.png" align="center" width="32%"></p>
@@ -32,20 +31,23 @@ tags:
 
 # Input
 
-* **Geometry**: Mesh 또는 Surface의 Geometry parameter를 입력한다.
-* **Base Plane** : Tilting weight=0일 때, Target Orientation 기준 평면을 입력한다.
-
-## Built-in Param | Basic Params
-
-* **Cutting Direction [Boolean]** : U(False) / V(True) 방향  선택한다.
-* **Stepover** : 수평방향으로 한번에 깎이는 정도로 기본값으로 엔드밀 직경의 절반 이하의 값을 입력한다.
-작을수록 세밀한 Finishing을 할 수 있다. (Stepover <= 엔드밀 직경 * 1/2)
-* **Tilting Weight** : Target Tilting 가중치로 0.0~1.0 사이의 값만 입력한다.  0에 가까울수록 BasePlane의 normal, 1에 가까울수록 Surface의 normal에 따라 Target Plane을 기울기이다.
-* **Tolerance** : Toolpath 해상도이다.
+* **Tree [Generic / DataTree]** : 패턴에 따라 분리할 DataTree를 입력한다.
+* **Pattern [Bool / List]** : 분리 패턴으로 사용할 bool값을 List형식으로 입력한다. Pattern의 “True”에 매칭되는 Branch는 Tree_A, “False” 에 매칭되는 Branch는 Tree_B로 분리된다. 
+  - ex) Pattern = { True, false } 입력한 경우, Input으로 입력된, DataTree의 홀수번째 Path의 Branch가 Tree A로, 짝수번째 Path의 Branch가 Tree B로 분리됨.
 
 <br>
 
 # Output
 
-* **Curve** : Finishing Layer의 커브를 출력한다.
-* **Target Plane**: Plane 인덱스 값들을 DataTree로 출력한다.
+* **Tree A [Generic / DataTree]** : Pattern의 “True”에 매칭되는 Branch데이터로 구성된 데이터트리를 출력한다.
+* **Tree B [bool / List]** : Pattern의 “False”에 매칭되는 Branch데이터로 구성된 데이터트리를 출력한다.
+
+<br>
+
+# How To Use
+
+<br>
+
+<p align="center">  <img src="/assets/images/DispatchBranch_exam-768x376.png" align="center" width="72%"></p>
+
+<br>
