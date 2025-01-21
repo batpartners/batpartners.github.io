@@ -1,4 +1,5 @@
 ---
+title: "ArcData"
 layout: single
 header:
   teaser: "https://b-at.kr/wp-content/uploads/2024/07/ArcData.png"

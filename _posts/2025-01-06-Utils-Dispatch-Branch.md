@@ -3,12 +3,12 @@ layout: single
 header:
   teaser: "https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png"
 
-collection: ToolPath
+collection: Utils
 entries_layout: grid
 author_profile: true
 
 categories:
-  - ToolPath
+  - Utils
 sidebar:
   nav: "sidebar"
 toc: true
@@ -24,7 +24,7 @@ tags:
 * 2차 밀링 단계의 컷팅 툴패스 컴포넌트이다.
 아래의 그림처럼 길이가 다른 평행한 커브 사이의 Cutting Direction방향으로 같은 길이값으로 등분하여 출력한다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2024/07/subprocedures_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="\assets\images\air-skin-post-large.png" align="center" width="32%"></p>
 
 <br>
 
@@ -35,7 +35,7 @@ tags:
 
 <br>
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/06/Parallel-768x238.png" align="center" width="32%"></p>
+<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/06/Parallel-768x238.png" align="center" width="72%"></p>
 
 <br>
 

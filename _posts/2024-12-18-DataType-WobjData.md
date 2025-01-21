@@ -1,4 +1,5 @@
 ---
+title: "WobjData"
 layout: single
 header:
   teaser: "https://b-at.kr/wp-content/uploads/2024/07/04_WobjData.png"
