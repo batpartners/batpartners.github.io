@@ -1,6 +1,5 @@
 ---
 title: "WobjData"
-
 layout: single
 header:
   teaser: "/assets/images/04_WobjData.png"

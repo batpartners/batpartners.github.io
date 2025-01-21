@@ -1,6 +1,5 @@
 ---
 title: "ArcData"
-
 layout: single
 header:
   teaser: "/assets/images/ArcData.png"

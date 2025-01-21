@@ -14,7 +14,34 @@ search: false
     src: url('https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css') format('woff2');
     font-weight: 400;
     font-style: normal;
-
 }
 
+
+// .page__content {
+//     p,
+//     li,
+//     dl {
+//       font-size: 0.875em;
+//     }
+//   }
+
+// html {
+//     font-size: 14px; // change to whatever
+  
+//     @include breakpoint($small) {
+//       font-size: 14px; // change to whatever
+//     }
+  
+//     @include breakpoint($medium) {
+//       font-size: 16px; // change to whatever
+//     }
+  
+//     @include breakpoint($large) {
+//       font-size: 18px; // change to whatever
+//     }
+  
+//     @include breakpoint($x-large) {
+//       font-size: 20px; // change to whatever
+//     }
+//   }
 
