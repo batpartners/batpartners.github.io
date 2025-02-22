@@ -4,7 +4,7 @@ categories:
   - About GERTY
 author_profile: true
 header:
-  teaser: "https://i.postimg.cc/DfCWXT3n/30.jpg"  
+  teaser: "/assets/images/30.jpg"  
 
 header:
   teaser: "assets/images/0_packagemanager_00.png"

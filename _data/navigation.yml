@@ -16,7 +16,7 @@ sidebar:
     children:
       - title: "RobTarget"
         url: /datatype/DataType-RobTarget/
-      - title: "RobTarget On Posirion"
+      - title: "RobTarget On Position"
         url: /datatype/DataType-RobTarget-On-Position/
       - title: "WobjData"
         url: /datatype/DataType-WobjData/

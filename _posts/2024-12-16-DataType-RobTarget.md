@@ -21,7 +21,7 @@ tags:
   - GERTY
 ---
 
-<p align="center">  <img src="/assets/images/Robtarget.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/DataTypes/RobTarget/Robtarget_comp.png" align="center" width="32%"></p>
 
 
 # Description
@@ -42,13 +42,13 @@ RobTarget On Positioner은 계획한 이동 경로 위에서, 로봇 TCP(Tool Ce
 * **Robot_Base [Plane/Item]** : ABB RobTarget 형식으로 변환할 Plane을 입력. 
 * **Tilting Weight [Number/Item]** : ABB RobTarget 형식으로 변환할 Plane을 입력
 <figure>
-  <img src="\assets\images\DataTypes\RobTarget\TiltingWeight_RobT.gif" alt="Tilting_RobT">
-  <figcaption> Robtarget 데이터 셋의 가장 첫번째, 마지막 Robtarget을 분리</figcaption>
+  <img src="/assets/images/DataTypes/RobTarget/TiltingWeight_RobT.gif" alt="Tilting_RobT">
+  <figcaption> Tilting</figcaption>
 </figure>
 
 * **Angle [Number/Item]** : 입력된 Plane을 일괄적으로 Angle(Degree) 값만큼 회전시켜, RobTarget에 적용.
 <figure>
-  <img src="\assets\images\DataTypes\RobTarget\Set_Angle_RobT.gif" alt="Set_Angle_RobT">
+  <img src="/assets/images/DataTypes/RobTarget/Set_Angle_RobT.gif" alt="Set_Angle_RobT">
   <figcaption> Robtarget 데이터 셋의 가장 첫번째, 마지막 Robtarget을 분리</figcaption>
 </figure>
 
@@ -60,7 +60,7 @@ RobTarget On Positioner은 계획한 이동 경로 위에서, 로봇 TCP(Tool Ce
 * **Split Start** : (생성된 RobTarget이 2개 이상으로 구성된 List / DataTree인 경우) 별도 Output node를 통해, 마지막 RobTarget을 분리하여 내보냄. 
 
 <figure>
-  <img src="\assets\images\DataTypes\RobTarget\split Robtargets_exam.png" alt="split_RobT">
+  <img src="/assets/images/DataTypes/RobTarget/split Robtargets_exam.png" alt="split_RobT">
   <figcaption> Robtarget 데이터 셋의 가장 첫번째, 마지막 Robtarget을 분리</figcaption>
 </figure>
 <br>
