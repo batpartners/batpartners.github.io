@@ -2,7 +2,7 @@
 title: "FileImportAndExport"
 layout: single
 header:
-  teaser: "/assets/images/ScanToolData.png"
+  teaser: "/assets/images/FileImportAndExport.png"
 
 collection: Setup
 entries_layout: grid
@@ -22,35 +22,22 @@ tags:
 ---
 # Description
 
-* ScanToolData는 가상 혹은 실제 로봇의 현재 툴 데이터 정보 추출을 돕는 컴포넌트이다.
+* FileImport&Export 는 GERTY 라이센스, 툴, 워크벤치와 같은 파일을 불러오거나 내보내어 추가, 백업해 사용할 수 있는 컴포넌트이다.
+* 크게 불러오기(Import)와 내보내기(Export) 기능을 선택적 사용함에 따라 파일 주소나, 파일 컨텐츠들을 다수 선택할 수 있다.
 
 <br>
 
-<p align="center">  <img src="/assets/images/ScanToolData.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/FileImportAndExport.png" align="center" width="32%"></p>
 
 <br>
 
 # Input
 
-* **SystemID** : 현재 컨트롤러에 연결된 로봇의 ID를 입력한다.
+* **FileDir** : 불러오기 또는 내보내기 할  파일 디렉토리 주소 또는 파일(들)을 입력/선택 한다.
+* **Generate** : 버튼을 연결하여, 상태를 업데이트 한다.
 
-<br>
+## Built-in Param : Actions |  type
 
-# Output
+* **Transfer** : 불러오기 또는 내보내기의 상태를 입력/선택한다.
+* **File** : 불러오기 또는 내보내기할 데이터를 타입을 선택한다.
 
-* **ToolName** : 현재 컨트롤러에 연결된 로봇의 툴 이름을 출력한다. 
-* **TCP** : 현재 컨트롤러에 연결된 로봇의 TCP 데이터를 출력한다. 
-* **Mass** : 현재 컨트롤러에 연결된 로봇의 툴 무게 데이터를 출력한다. 
-* **Centroid** : 현재 컨트롤러에 연결된 로봇의 툴 Centroid 값을 출력한다. 
-* **Inertia** : 현재 컨트롤러에 연결된 로봇의 툴 Inertia 값을 출력한다.
-
-<br>
-
-# How To Use
-* ScanABBController로 현재 로봇 ID를 읽어와 ScanToolData에 연결하여 사용한다. 
-해당 로봇의 툴 데이터들을 추출하여 정교한 시뮬레이션을 돕는다.
-<br>
-
-<p align="center">  <img src="/assets/images/RealTimeDisplay_01-768x341 (1).png" align="center" width="90%"></p>
-
-<br>
