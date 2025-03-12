@@ -1,5 +1,6 @@
 ---
 title: "Installation"
+layout: single
 categories:
   - About GERTY
 author_profile: true
