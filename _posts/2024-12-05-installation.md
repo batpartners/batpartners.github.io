@@ -1,9 +1,9 @@
 ---
 title: "Installation"
 layout: single
+author_profile: true
 categories:
   - About GERTY
-author_profile: true
 header:
   teaser: "/assets/images/30.jpg"
 # header:
