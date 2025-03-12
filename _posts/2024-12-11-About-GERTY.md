@@ -16,7 +16,7 @@ toc_sticky: true
 tags:
   - GERTY
 ---
-## About GERTY
+# About GERTY
 
 <br>
 <figure>
