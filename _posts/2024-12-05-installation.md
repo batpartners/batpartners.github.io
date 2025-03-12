@@ -5,12 +5,8 @@ categories:
 author_profile: true
 header:
   teaser: "/assets/images/30.jpg"  
-
-header:
-  teaser: "assets/images/0_packagemanager_00.png"
-
-categories:
-  - About GERTY
+# header:
+#   teaser: "assets/images/0_packagemanager_00.png"
 sidebar:
   nav: "sidebar"
 toc: true
