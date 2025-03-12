@@ -9,7 +9,7 @@ sidebar:
       - title: "What is GERTY?"
         url: /about%20gerty/About-GERTY
       - title: "Installation"
-        url: /about%20gerty/installation
+        url: /about%20gerty/installation/
       - title: "Tutorial"
         url: /about%20gerty/Tutorial
   - title: "1. DataType"
