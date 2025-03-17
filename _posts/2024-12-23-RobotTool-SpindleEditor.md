@@ -11,6 +11,11 @@ author_profile: true
 
 categories:
   - RobotTool
+translated: true
+lang: ko
+permalink: /robottool/RobotTool-SpindleEditor/
+
+translation_link: /en/robottool/RobotTool-SpindleEditor/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +26,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 스핀들 도구의 구성을 돕는 컴포넌트이다. 스핀들의 본체에 해당하는 모델링(Mesh)와 엔드밀의 시작점에 해당하는 지점(Plane)을 입력받는다. 이후 엔드밀의 길이와 직경 값에 따라 TCP값을 내보낸다.

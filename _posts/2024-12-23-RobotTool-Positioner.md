@@ -10,6 +10,11 @@ author_profile: true
 
 categories:
   - RobotTool
+translated: true
+lang: ko
+permalink: /robottool/RobotTool-Positioner/
+
+translation_link: /en/robottool/RobotTool-Positioner/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,6 +25,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 ABB Positioner 기종 모델링을 사용자 정의할 수 있는 컴포넌트입니다.

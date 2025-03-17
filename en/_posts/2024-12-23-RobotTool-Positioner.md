@@ -10,6 +10,11 @@ author_profile: true
 
 categories:
   - RobotTool
+translated: true
+lang: en
+permalink: /en/robottool/RobotTool-Positioner/
+translation_link: /robottool/RobotTool-Positioner/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,32 +25,34 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-ABB Positioner 기종 모델링을 사용자 정의할 수 있는 컴포넌트입니다.
+This is a component that allows for user-defined modeling of ABB Positioner models.
 
 <p align="center">  <img src="/assets/images/Positioner.png" align="center" width="32%"></p>
 
 # Input
 
-* **Name [Text]** : Positioner 고유이름을 설정할 수 있습니다. 설정하지 않을 경우, 기본값으로 STN1으로 출력됩니다.
-* **PositionerFCPL [Plane]**: Positioner Flange Center Plane의 약자로, 포지셔너 플랜지의 센터 플래인을 넣을 수 있습니다.
-* **WorkBench [WorkBench Data]** : Positioner의 workbench 모델링을 넣을 수 있습니다.
+* **Name [Text]** : Allows setting a unique name for the Positioner. If not set, the default value will be STN1.
+* **PositionerFCPL [Plane]**: Stands for Positioner Flange Center Plane, allowing you to input the center plane of the positioner flange.
+* **WorkBench [WorkBench Data]** : Allows you to input the workbench modeling for the Positioner.
 
 ## Built-in Param : Preview Params​
 
-* **Model** : 포지셔너 모델을 지정합니다.
-* **Display Colour** : 포지셔너 모델의 색을 재정의 합니다.
+* **Model** : Specifies the positioner model.
+* **Display Colour** : Redefines the color of the positioner model.
 
 ## Built-in Param : Vector Params​
 
-* **Enable Arm** : 포지셔너의 자세를 고정시킬 수 있습니다. 기본설정은 포지셔너 암 고정이 해제 되어있습니다.
-* **Approaching Dir.** : 포지셔너에 접근하는 경로의 방향을 재정의합니다.
-* **TCP Dir.** : 포지셔너에 접근하는 TCP의 방향을 재정의 재정의 합니다.
-<br>
+* **Enable Arm** : Allows you to lock the position of the positioner. By default, the positioner arm is unlocked.
+* **Approaching Dir.** : Redefines the direction of the approach path to the positioner.
+* **TCP Dir.** : Redefines the direction of the TCP (Tool Center Point) approach to the positioner.
 
 # Output
 
-* **GERTY Positioner** : 사용자 정의 된 포지셔너의 정보를 내보냅니다.
-* **Arm** : 로봇 암 현재 자세의 좌표값을 내보냅니다.
-* **Plate** :  로봇 작업대의 현재 Plane의 좌표값을 내보냅니다.
+* **GERTY Positioner** : Exports the information of the user-defined positioner.
+* **Arm** : Exports the coordinate values of the current position of the robot arm.
+* **Plate** : Exports the coordinate values of the current plane of the robot workbench.

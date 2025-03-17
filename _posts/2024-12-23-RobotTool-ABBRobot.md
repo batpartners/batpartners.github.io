@@ -11,6 +11,11 @@ author_profile: true
 
 categories:
   - RobotTool
+translated: true
+lang: ko
+permalink: /robottool/RobotTool-ABBRobot/
+
+translation_link: /en/robottool/RobotTool-ABBRobot/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +26,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 ABB 산업용 로봇을 관리하는 컴포넌트이다. 사용자는 해당되는 산업용 로봇을 선택하여 시뮬레이션에 적용할 수 있다.

@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - RobotTool
+
+translated: true
+lang: en
+permalink: /en/robottool/RobotTool-ABBRobot/
+translation_link: /robottool/RobotTool-ABBRobot/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,28 +27,29 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-ABB 산업용 로봇을 관리하는 컴포넌트이다. 사용자는 해당되는 산업용 로봇을 선택하여 시뮬레이션에 적용할 수 있다.
+This is a component for managing ABB industrial robots. Users can select the applicable industrial robot and apply it to the simulation.
 
 <p align="center">  <img src="/assets/images/ABBRobot.png" align="center" width="32%"></p>
 
 # Input
 
-* **Robot Base [Optional]** : 로봇의 OrientPlane으로, 기본값으로 World Base Plane을 갖는다.
-* **Tool Data** : ToolData의 입력값을 갖는다.
-* **Positioner [Optional]** : 부가축 로봇 데이터를 연결한다.
+* **Robot Base [Optional]** : This is the OrientPlane of the robot, with the default being the World Base Plane. 
+* **Tool Data** : This takes the input value of ToolData. 
+* **Positioner [Optional]** : This connects the additional axis robot data.
 
 ## ABB Robots | Built-in Params
 
-* **Model** : ABB 산업용 로봇 모델을 선택한다.
-* **Display Colour** : 로봇 색상을 변경한다.
-
-<br>
+* **Model** : Select the ABB industrial robot model. 
+* **Display Colour** : Change the robot color.
 
 # Output
 
-* **GERTY Robot** : 설정한 로봇 정보를 출력한다.
-* **Joint Planes** : 로봇 축 정보를 출력한다.
-* **Mounting Plane** : ABB로봇의 6번축 또는 툴 데이터의 Base Plane에 대한 위치값을 출력한다.
-* **Tool Center Plane** : ABB로봇에 장착 된 툴의 TCP정보를 출력한다.
+* **GERTY Robot** : Outputs the configured robot information.
+* **Joint Planes** : Outputs the robot axis information.
+* **Mounting Plane** : Outputs the position value relative to the 6th axis or the Base Plane of the tool data for the ABB robot.
+* **Tool Center Plane** : Outputs the TCP information of the tool mounted on the ABB robot.

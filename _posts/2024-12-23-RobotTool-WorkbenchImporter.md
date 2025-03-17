@@ -11,6 +11,11 @@ author_profile: true
 
 categories:
   - RobotTool
+  
+translated: true
+lang: ko
+permalink: /robottool/RobotTool-WorkbenchImporter/
+translation_link: /en/robottool/RobotTool-WorkbenchImporter/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +26,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * Workbench Exporter를 통해 추출한 툴 정보를 불러오는 컴포넌트이다. BAT 공식 툴을 포함하고 있으며, 사용자가 정의한 툴 정보 또한 불러올 수 있다.
@@ -33,8 +41,6 @@ tags:
 # Built-in Param | Basic Params
 
 * **Model** : GERTY 저장소에 있는 툴 정보 리스트를 확인하여 선택한 툴 정보를 불러온다.
-
-<br>
 
 # Output
 
