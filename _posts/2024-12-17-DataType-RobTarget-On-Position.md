@@ -10,6 +10,13 @@ author_profile: true
 
 categories:
   - DataType
+
+translated: true
+lang: ko
+permalink: /datatype/DataType-RobTarget-On-Position/
+
+translation_link: /en/datatype/DataType-RobTarget-On-Position/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 Positioner의 RobTarget(Robot Target)은 로봇의 위치와 추가 축을 정의할 수 있는 컴포넌트로 사용자가 정의한 ToolPath Plane 데이터를 이용해, RobTarget 데이터를 정의한다.

@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - DataType
+
+translated: true
+lang: ko
+permalink: /datatype/DataType-ArcData/
+
+translation_link: /en/datatype/DataType-ArcData/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,6 +26,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 용가재 조건(Weld schedule) 및 용접 모드에 따라, ArcData를 정의하는 컴포넌트이다.

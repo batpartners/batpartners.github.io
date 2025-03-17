@@ -10,6 +10,13 @@ author_profile: true
 
 categories:
   - DataType
+
+translated: true
+lang: ko
+permalink: /datatype/DataType-RobTarget/
+
+translation_link: /en/datatype/DataType-RobTarget/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,6 +27,8 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 <p align="center">  <img src="/assets/images/DataTypes/RobTarget/Robtarget_comp.png" align="center" width="32%"></p>
 

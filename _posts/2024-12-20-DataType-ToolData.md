@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - DataType
+
+translated: true
+lang: ko
+permalink: /datatype/DataType-ToolData/
+
+translation_link: /en/datatype/DataType-ToolData/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,6 +26,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 로봇의 6번축에 장착되는 Tool(엔드이펙터)로, Tool에 대한 정보를 기입하여 로봇에게 전달 및 프리뷰하는 역할을 하는 컴포넌트이다.

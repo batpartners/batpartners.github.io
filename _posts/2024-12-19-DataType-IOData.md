@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - DataType
+
+translated: true
+lang: ko
+permalink: /datatype/DataType-IOData/
+
+translation_link: /en/datatype/DataType-IOData/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 IO Data(Input/Output Data) 즉, 신호데이터를 정의할 수 있는 컴포넌트이다.
@@ -31,7 +40,7 @@ IO Data(Input/Output Data) 즉, 신호데이터를 정의할 수 있는 컴포�
 # Input
 
 * **Signal [Text]** : 신호데이터의 변수명을 입력한다.
-Value [double] : 신호데이터의 데이터 값을 지정한다.
+* **Value [double]** : 신호데이터의 데이터 값을 지정한다.
 
 
 ## Built-in Param | Single Arc​

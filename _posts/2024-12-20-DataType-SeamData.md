@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - DataType
+
+translated: true
+lang: ko
+permalink: /datatype/DataType-SeamData/
+
+translation_link: /en/datatype/DataType-SeamData/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 ArcData 및 관련 파라미터를 이용하여, SeamData를 정의하는 컴포넌트이다. 

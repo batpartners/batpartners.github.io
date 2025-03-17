@@ -10,6 +10,13 @@ author_profile: true
 
 categories:
   - DataType
+
+translated: true
+lang: ko
+permalink: /datatype/DataType-WobjData/
+
+translation_link: /en/datatype/DataType-WobjData/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 WobjData는 로봇의 내부 작업객체를 정의하는 컴포넌트이다.

@@ -6,8 +6,13 @@ categories:
   - About GERTY
 header:
   teaser: "/assets/images/30.jpg"
-# header:
-#   teaser: "assets/images/0_packagemanager_00.png"
+
+translated: true
+lang: ko
+permalink: /about%20gerty/installation/
+
+translation_link: /en/about%20gerty/installation/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -18,6 +23,8 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # 1. PackageManager
 
