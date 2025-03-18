@@ -61,7 +61,6 @@ tags:
 
 <br>
 <p align="center"> 
-<video src="/assets/images/IMG_0556-2.mp4" width="576px" height="324px" autoplay muted loop align="center">
+<video src="/assets/images/IMG_0556-2.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
 </video>
 </p>
-

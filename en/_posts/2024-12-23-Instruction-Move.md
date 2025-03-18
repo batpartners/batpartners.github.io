@@ -11,6 +11,11 @@ author_profile: true
 
 categories:
   - Instruction
+translated: true
+lang: en
+permalink: /en//instruction/Instruction-Move/
+translation_link: /instruction/Instruction-Move/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +26,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 TCP 움직임을 위해, RobTarget의 데이터를 받아 Move Instruction을 정의하는 컴포넌트이다. 각 타겟들의 움직임은 Type, Speed, Zone 옵션들로 설정할 수 있다.
@@ -38,9 +46,11 @@ TCP 움직임을 위해, RobTarget의 데이터를 받아 Move Instruction을 �
 * **Speed** : RobTarget에 도달하는 속도(Velocity)를 mm/s단위로 설정한다.
 * **Zone** : Target Point를 중심으로 한 반경 범위로, 다음 Target Point로 이동시, zone값에 비례한 Radius크기 만큼 Filet하여 움직임을 제어한다. Fine을 정확하게 해당 포인트를 지나쳐야 하되, 로봇의 등속 움직임에 영향을 미칠 수 있다.
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/07/Move_gif_confirm-min.gif" align="center" width="72%"></p>
 
-<br>
+<p align="center"> 
+<video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
+</video>
+</p>
 
 # Output
 

@@ -28,6 +28,9 @@ sidebar:
         url: /datatype/DataType-ArcData/
       - title: "IOData"
         url: /datatype/DataType-IOData/
+      - title: "SeamData"
+        url: /datatype/DataType-SeamData/
+
   - title: "2. Robot/Tool"
     children:
       - title: "ABBRobot"
