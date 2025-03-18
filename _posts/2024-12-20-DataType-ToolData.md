@@ -60,6 +60,5 @@ tags:
 # Output
 
 * ToolData : 입력한 ToolData를 출력합니다.
-<figure>
-<a href="https://drive.google.com/uc?export=download&id=1yaBldcNqolbvOBj07x7bKxMh0BYrDH5n"><img src="https://drive.google.com/uc?export=download&id=1yaBldcNqolbvOBj07x7bKxMh0BYrDH5n"></a>
-</figure>
+
+<p align="center">  <img src="/assets/images/ToolData_GIF_00-1.gif" align="center" width="100%"></p>

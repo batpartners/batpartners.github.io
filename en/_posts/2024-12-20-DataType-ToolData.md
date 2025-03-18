@@ -58,6 +58,5 @@ This component is mounted on the 6th axis of the robot and is responsible for pr
 # Output
 
 * **ToolData** : Outputs the entered ToolData.
-<figure>
-<a href="https://lh3.google.com/u/0/d/1Wo_d5VYs9iMtBXPgUYlHkjPqOg13DywU=w1912-h920-iv1"><img src="https://lh3.google.com/u/0/d/1Wo_d5VYs9iMtBXPgUYlHkjPqOg13DywU=w1912-h920-iv1"></a>
-</figure>>
+
+<p align="center">  <img src="/assets/images/ToolData_GIF_00-1.gif" align="center" width="100%"></p>
