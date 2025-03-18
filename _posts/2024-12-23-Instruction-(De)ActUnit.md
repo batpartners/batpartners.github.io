@@ -11,6 +11,13 @@ author_profile: true
 
 categories:
   - Instruction
+
+
+translated: true
+lang: ko
+permalink: /instruction/Instruction-(De)ActUnit/
+
+translation_link: /en/instruction/Instruction-(De)ActUnit/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +28,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * (De)ActUnit은 로봇 개체(Unit)의 활성화(Activate) 여부를 정의하는 instruction 컴포넌트이다.
@@ -39,7 +49,7 @@ tags:
 
 * **Activate [Boolean]** : True가 입력된 경우, ActUnit 인스트럭션이 정의된다. False 가 입력된 경우, DeActUnit 인스트럭션이 정의된다. (기본값 True.)
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/06/deactUnit_6.gif" align="center" width="72%"></p>
+<p align="center">  <img src="/assets/images/deactUnit_6.gif" align="center" width="72%"></p>
 
 <br>
 

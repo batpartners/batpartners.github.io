@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - Instruction
+
+translated: true
+lang: ko
+permalink: /instruction/Instruction-ArcMove/
+
+translation_link: /en/instruction/Instruction-ArcMove/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 ArcData를 사용해 로봇의 모션을 제어하는 컴포넌트이다. 따라서, 반드시 ArcData의 입력값을 갖는다.
