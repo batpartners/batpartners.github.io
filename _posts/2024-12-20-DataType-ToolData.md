@@ -61,5 +61,5 @@ tags:
 
 * ToolData : 입력한 ToolData를 출력합니다.
 <figure>
-<a href="https://lh3.google.com/u/0/d/1Wo_d5VYs9iMtBXPgUYlHkjPqOg13DywU=w1912-h920-iv1"><img src="https://lh3.google.com/u/0/d/1Wo_d5VYs9iMtBXPgUYlHkjPqOg13DywU=w1912-h920-iv1"></a>
+<a href="https://drive.google.com/uc?export=download&id=1yaBldcNqolbvOBj07x7bKxMh0BYrDH5n"><img src="https://drive.google.com/uc?export=download&id=1yaBldcNqolbvOBj07x7bKxMh0BYrDH5n"></a>
 </figure>
