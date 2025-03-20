@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: ko
+permalink: /toolpath/ToolPath-FlyByCustom/
+
+translation_link: /en/toolpath/ToolPath-FlyByCustom/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 입력되는 로봇 TCP 주요 경로(Target Plane Input) DataTree의 각 Branch의 사이사이를 지나는, 새로운 이동경로를 생성하는 컴포넌트이다. FlyBy 컴포넌트는 기본적으로 입력된 주요경로 Branch[i]의 마지막 Plane과 인접한 주요경로 Branch[i+1]의 첫번째 Plane을 이용하여, 사용자가 입력한 거리만큼 떨어진 위치에, 새로운 FlyBy Target Plane들을 정의한다.
@@ -31,7 +40,7 @@ tags:
 
 # Input
 
-* **TargetPlanes [Plane\DataTree]**: FlyBy Targets을 적용하기 위해, TCP 주요 경로에 해당하는 Target Plane들을 입력한다.
+* **TargetPlanes [Plane/DataTree]**: FlyBy Targets을 적용하기 위해, TCP 주요 경로에 해당하는 Target Plane들을 입력한다.
 * **Approaching Dir.** : 진입하는 이동경로의 방향을 사용자가 정의한다.
 * **Leaving Dir.** : 진출하는 이동경로의 방향을 사용자가 정의한다.
 
@@ -40,9 +49,8 @@ tags:
 Advanced Param은 이동 경로의 프로파일을 결정하는 옵션입니다. 이동경로의 프로파일은, Builtin Parma : Basic 에서 사용자가 선택한 조건에 따라, 이동경로 처음과 마지막 Flyby Plane이 주요경로로부터 이격되는 방향 벡터를 Blend 하는 방식으로 결정된다.
   
   * **Continuity** : 선택하는 연속성 조건에 따라, 생성되는 FlyBy Plane들의 원점이 선형 또는 비선형 커브 위에 있도록 한다. 기본값 : Position(G0)
-    - 연속성 설명 참고 : Rhinoceros 도움말 – 연속성 설명 | Rhino 3D 모델링 (mcneel.com)
-
-<br>
+  
+  `연속성 설명 참고 : Rhinoceros 도움말 – 연속성 설명 /| Rhino 3D 모델링 (mcneel.com)`
 
 <div className="multi-headings" align="center">
   <table style="border-collapse: collapse: width: 51 %; height: 280px;">
@@ -69,14 +77,9 @@ Advanced Param은 이동 경로의 프로파일을 결정하는 옵션입니다.
   </table>
 </div>
 
-
-<br>
-
 <p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-1-2-768x223.png" align="center" width="72%"></p>
 <p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-2-1-768x457.png" align="center" width="72%"></p>
 <p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-3-1-768x418.png" align="center" width="72%"></p>
-
-<br>
 
   * **Bulge Start** : (Tangency/Curvature 조건인 경우,) 0-1사이의 값을 입력하여, 연속성을 유지한 상태에서 이동경로 프로파일의 시작부분 형상을 편집한다.
   * **Bulge End** : (Tangency/Curvature 조건인 경우,)0-1사이의 값을 입력하여, 연속성을 유지한 상태에서 이동경로 프로파일의 끝부분 형상을 편집한다.
