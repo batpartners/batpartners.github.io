@@ -29,7 +29,8 @@ tags:
 ---
 
 :us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
-cription
+
+# Description
 
 * Code Solver는 GERTY Core에서 출력한 Robot ProgramData를 분석하여 출력하는 컴포넌트이다. 사용자 지정 경로에 파일명과 함께 내보낸다.
 
