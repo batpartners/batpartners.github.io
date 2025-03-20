@@ -34,7 +34,6 @@ tags:
 
 * A component that models the unit block used in the planned block wall, models the supply block stack, and creates the target plane for picking up the block based on data such as the total number of blocks needed.
 
-
 <p align="center"><img src="/assets/images/BlockSupply.png" align="center" width="32%"></p>
 
 # Input
