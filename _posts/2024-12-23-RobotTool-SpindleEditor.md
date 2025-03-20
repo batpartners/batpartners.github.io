@@ -53,8 +53,4 @@ tags:
 * **Tool Geometry** : 스핀들 본체 메쉬를 ToolData의 메쉬로 내보낸다.
 * **TCP** : 사용자가 설정한 엔드밀의 최종 길이와 구경 끝의 Plane을 TCP로 내보낸다.
 
-
-
-<video  width="480" height="320" muted loop autoplay oncanplay="this.muted=true">
-    <p align="center"><source src="https://b-at.kr/wp-content/uploads/2023/07/spindleEditor_source1.mp4" type="video/mp4" align="center" width="32%"></p>
-</video>
+<p align="center">  <img src="/assets/images/spindleEditor_3-17-1-2048x1152.png" align="center" width="80%"></p>

@@ -51,7 +51,4 @@ Considering models with and without the end mill included, it allows for setting
 * **Tool Geometry** : Exports the spindle body mesh as the ToolData mesh.
 * **TCP** : Exports the plane at the end of the end mill's final length and radius, as configured by the user, as the TCP.
 
-
-<video  width="480" height="320" muted loop autoplay oncanplay="this.muted=true">
-    <p align="center"><source src="https://b-at.kr/wp-content/uploads/2023/07/spindleEditor_source1.mp4" type="video/mp4" align="center" width="32%"></p>
-</video>
+<p align="center">  <img src="/assets/images/spindleEditor_3-17-1-2048x1152.png" align="center" width="80%"></p>
