@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: ko
+permalink: /toolpath/ToolPath-Block-Designer/
+
+translation_link: en/toolpath/ToolPath-Block-Designer/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,14 +27,14 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * Unit Block, Wall 형상의 서피스 모델링 등 Block Laying에 필요한 관련 데이터로부터, 계획된 Block Wall의 모델링 및 개별 Block을 배치하는 툴패스로 사용되는 Target Plane을 생성하는 컴포넌트.
 
-
-<p align="center">  <img src="" align="center" width="32%"></p>
-
-<br>
+<p align="center"><img src="/assets/images/BlockDesigner.png" align="center" width="32%"></p>
 
 # Input
 
@@ -36,7 +42,7 @@ tags:
 * **Unit Block [Box]** : 사용할 Unit Block 모델링을 Box 형식으로 입력한다.
 * **Wall [Brep]** : 벽돌을 적층할 형상의 모델링을 입력한다. 
 
-<br>
+<p align="center"><img src="/assets/images/blockdesigner-1.png" align="center" width="80%"></p>
 
 ## Built-in Param | Basic Params
 
