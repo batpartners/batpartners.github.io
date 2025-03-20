@@ -77,9 +77,9 @@ Advanced Param은 이동 경로의 프로파일을 결정하는 옵션입니다.
   </table>
 </div>
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-1-2-768x223.png" align="center" width="72%"></p>
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-2-1-768x457.png" align="center" width="72%"></p>
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-3-1-768x418.png" align="center" width="72%"></p>
+<p align="center"><img src="/assets/images/Untitled-1-2-768x223.png" align="center" width="80%"></p>
+<p align="center"><img src="/assets/images/Untitled-2-1-768x457.png" align="center" width="80%"></p>
+<p align="center"><img src="/assets/images/Untitled-3-1-768x418.png" align="center" width="80%"></p>
 
   * **Bulge Start** : (Tangency/Curvature 조건인 경우,) 0-1사이의 값을 입력하여, 연속성을 유지한 상태에서 이동경로 프로파일의 시작부분 형상을 편집한다.
   * **Bulge End** : (Tangency/Curvature 조건인 경우,)0-1사이의 값을 입력하여, 연속성을 유지한 상태에서 이동경로 프로파일의 끝부분 형상을 편집한다.

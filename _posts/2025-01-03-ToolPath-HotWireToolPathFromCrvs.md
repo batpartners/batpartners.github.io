@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: ko
+permalink: /toolpath/ToolPath-HotWireToolPathFromCrvs/
+
+translation_link: /en/toolpath/ToolPath-HotWireToolPathFromCrvs/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 사용자 모델링의 커브들을 읽어, 열선 툴 패스로 변환하는 컴포넌트이다.
@@ -33,11 +42,9 @@ tags:
 
 * **CurveA [Curve]** : 첫번째 Curve를 연결합니다.
 * **CurveB [Curve]** : 두번째 Curve를 연결합니다.
-* **Target Count [Number \ Optional]**: 열선 경로 수를 결정합니다.
-* **Parameter [List \ Optional]** : Ribcurve 위 타겟의 원점 위치를 결정합니다.
-* **Wrist Object [Geometry \ Optional]** : point, curve, line의 입력값을 통해 열선의 경로의 법선의 방향을 재정의 할 수 있습니다.
-
-<br>
+* **Target Count [Number / Optional]**: 열선 경로 수를 결정합니다.
+* **Parameter [List / Optional]** : Ribcurve 위 타겟의 원점 위치를 결정합니다.
+* **Wrist Object [Geometry / Optional]** : point, curve, line의 입력값을 통해 열선의 경로의 법선의 방향을 재정의 할 수 있습니다.
 
 ## Built-in Param | Hotwire Crvs
 

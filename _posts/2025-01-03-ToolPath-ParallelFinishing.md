@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: ko
+permalink: /toolpath/ToolPath-ParallelFinishing/
+
+translation_link: /en/toolpath/ToolPath-ParallelFinishing/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 2차 밀링 단계의 컷팅 툴패스 컴포넌트이다.
@@ -34,6 +43,8 @@ tags:
 
 * **Geometry**: Mesh 또는 Surface의 Geometry parameter를 입력한다.
 * **Base Plane** : Tilting weight=0일 때, Target Orientation 기준 평면을 입력한다.
+
+<p align="center"><img src="/assets/images/Parallel-768x238.png" align="center" width="80%"></p>
 
 ## Built-in Param | Basic Params
 

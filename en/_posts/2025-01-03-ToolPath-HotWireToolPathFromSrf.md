@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: en
+permalink: /en/toolpath/ToolPath-HotWireToolPathFromSrf/
+translation_link: /toolpath/ToolPath-HotWireToolPathFromSrf/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,9 +27,12 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 사용자 모델링의 커브들을 읽어, 열선 툴 패스로 변환하는 컴포넌트이다.
+* This component generates ToolPaths for hot wire cutting based on the input surface modeling data and related parameters.
 
 <p align="center">  <img src="/assets/images/HotwireToolpathfromSrf.png" align="center" width="32%"></p>
 
@@ -31,25 +40,29 @@ tags:
 
 # Input
 
-* **CurveA [Curve]** : 첫번째 Curve를 연결합니다.
-* **CurveB [Curve]** : 두번째 Curve를 연결합니다.
-* **Target Count [Number \ Optional]**: 열선 경로 수를 결정합니다.
-* **Parameter [List \ Optional]** : Ribcurve 위 타겟의 원점 위치를 결정합니다.
-* **Wrist Object [Geometry \ Optional]** : point, curve, line의 입력값을 통해 열선의 경로의 법선의 방향을 재정의 할 수 있습니다.
+* **Surface** : Specify the parameter for the surface to be cut using rib cutting. Only modeling data in the form of a Ruled Surface allows for the generation of rib cutting toolpaths.
+* **Target Count** : Determines the number of planes that will compose the rib cutting toolpath.
+* **Parameter** : Represents the normalized parameter value of RibCurve[MK1], determining the origin of the target. Only values between 0 and 1 can be input, and they can be applied sequentially within the specified Target Count. (Default: 0.5)
 
-<br>
+※ RibCurve refers to straight lines orthogonal to the base curve of the input Ruled Surface, which defines the rib cutting path. Each plane composing the rib cutting toolpath is generated based on points located on each RibCurve at the specified Parameter.
 
-## Built-in Param | Hotwire Crvs
+* **Wrist Object** : Utilizes modeling data such as points, curves, lines, etc., as attractors to redefine the normal direction of each Target Plane composing the rib cutting toolpath. This enables finding suitable robotic rib cutting operations.
 
-* **Cutting Direction Flip** : 열선 컷팅 경로 방향을 역방향으로 변환합니다.
-* **Tool Flip** : 열선 툴(엔드이펙터)이 장착 된 6번 축이 진행방향의 180 회전합니다.
-* **Extension(mm)** : 열선의 진 입출의 직전의 직선 경로의 거리를 결정합니다.
-* **Shift Seam** : 읽어들인 평면의 열선 컷팅 순서를 재정의합니다.
-* **NormalSize** : 법선(Zaxis, Normal vector)의 디스플레이 사이즈를 결정합니다.
+## Built-in Param | Hotwire Srf
+
+* **Cutting Direction Flip** : Reverses the direction of the rib cutting path.
+* **Tool Flip** : Rotates the rib tool (end effector) by 180 degrees.
+* **UV Flip** : If the input surface is a Ruled Surface in both U and V directions, this option allows switching the rib cutting direction to either the U or V direction.
+* **Extension(mm)** : Adds additional target planes at a distance of Extension value from the surface modeling in the entry and exit directions of the rib cutting path.
+* **Shift Seam** : Adjusts the starting position of the rib ToolPath to a specific location along the closed path (i.e., when the ToolPath forms a closed loop), based on a value between 0.0 and 1.0 derived from the input parameters.
+
+## Built-in Param | Extra
+
+* **NormalSize** : Adjusts the preview size of the ToolPaths.
 
 <br>
 
 # Output
 
-* **Target Planes** : 입력된 조건에 따라 정의된 열선 컷팅 툴패스를 출력합니다.
-* **RibCurves** : 열선 경로를 결정 짓는 Ruled Surface의 단위 선분입니다.
+* **Target Planes** : Outputs a list of planes that compose the rib ToolPaths.
+* **RibCurves** : Outputs a list of RibCurves as Curve List.

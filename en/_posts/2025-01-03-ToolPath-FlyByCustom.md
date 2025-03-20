@@ -34,7 +34,7 @@ tags:
 
 * This component generates new movement paths that pass between each branch of the input Robot TCP main path (Target Plane Input) DataTree. The FlyBy component essentially uses the last Plane of the current main path Branch[i] and the first Plane of the adjacent main path Branch[i+1] in the input to define new FlyBy Target Planes at a distance specified by the user.
 
-<p align="center">  <img src="/assets/images/FlyByCustom.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/FlyByCustom.png" align="center" width="32%"></p>
 
 <br>
 
@@ -83,12 +83,9 @@ Advanced Param is an option that determines the profile of the movement path. Th
   </table>
 </div>
 
-
-<br>
-
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-1-2-768x223.png" align="center" width="72%"></p>
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-2-1-768x457.png" align="center" width="72%"></p>
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-3-1-768x418.png" align="center" width="72%"></p>
+<p align="center"><img src="/assets/images/Untitled-1-2-768x223.png" align="center" width="80%"></p>
+<p align="center"><img src="/assets/images/Untitled-2-1-768x457.png" align="center" width="80%"></p>
+<p align="center"><img src="/assets/images/Untitled-3-1-768x418.png" align="center" width="80%"></p>
 
   * **Bulge Start** : (For Tangency/Curvature conditions) Enter a value between 0 and 1 to edit the shape of the starting part of the movement path profile while maintaining continuity.
   * **Bulge End** : (For Tangency/Curvature conditions) Enter a value between 0 and 1 to edit the shape of the ending part of the movement path profile while maintaining continuity.

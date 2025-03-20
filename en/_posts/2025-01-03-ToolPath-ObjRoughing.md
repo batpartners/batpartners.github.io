@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: en
+permalink: /en/toolpath/ToolPath-ObjRoughing/
+translation_link: /toolpath/ToolPath-ObjRoughing/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,9 +27,12 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 1차 밀링 단계에서의 컷팅 툴 패스를 제공하는 컴포넌트이다.
+* Component providing cutting toolpaths for the first milling stage.
 
 <p align="center">  <img src="/assets/images/ObjRoughing.png" align="center" width="32%"></p>
 
@@ -31,23 +40,21 @@ tags:
 
 # Input
 
-* **Geometry**: Roughing을 통해 깎을 볼륨을 솔리드(Brep) 또는 메시(Mesh) 타입으로 입력한다.
-* **Base Plane** : 엔드밀 진입 방향(= Contour 방향), Target Orientation, Toolpath 시작 위치, 가공면 충돌 회피 높이 등등을 결정하는 기준 평면을 입력한다.
+* **Geometry**: Input the volume to be roughed out as a solid (Brep) or mesh (Mesh) type.
+* **Base Plane** : Input the reference plane that determines the end mill entry direction (Contour direction), target orientation, starting position of the toolpath, collision avoidance height for machining surfaces, etc.
 
-<br>
+## Built-in Param | Roughing
 
-## Built-in Param | Basic Params
-
-* **Cutting Direction [Boolean]**: 상향(True)/하향(False) 절삭을 선택한다.
-* **Setback** : Roughing Toolpath 최외곽을 최종 가공 형상면으로 부터 이격하는 정도로, 반드시 엔드밀 직경의 반보다 크게 입력한다. (Setback > 엔드밀 직경 *1/2) 
-* **Stepover**: 수평방향으로 한번에 깎이는 정도로 엔드밀 직경의 절반 값보다 작은 값으로 산정하여 입력한다. (Stepover <= 엔드밀 직경 * 1/2)
-* **Stepdown**: 수직방향으로 한번에 드릴링하는 정도로 엔드밀 날장의 절반 값보다 작은 값으로 산정하여 입력한다. ( Stepdown <= 엔드밀 날장 * 1/2 )
-* **Shift**: Stepdown 레이어 전체의 수직방향 이격한다.
-* **Tolerance**: Toolpath 해상도다.
+* **Cutting Direction [Boolean]**: Selects the upward (True) or downward (False) cutting direction.
+* **Setback** : Determines the extent to which the roughing toolpath is offset from the final machined surface. It must be greater than half the diameter of the end mill. (Setback > End mill diameter * 1/2)
+* **Stepover**: Specifies the amount of horizontal material removed in one pass, calculated as less than half the diameter of the end mill. (Stepover <= End mill diameter * 1/2)
+* **Stepdown**: Sets the vertical depth of each drilling pass, calculated as less than half the flute length of the end mill. (Stepdown <= End mill flute length * 1/2)
+* **Shift**: Shifts the entire vertical direction of the Stepdown layer.
+* **Tolerance**: Determines the resolution of the toolpath.
 
 <br>
 
 # Output
 
-* **Targets Plane** : 이동 및 회피 경로의 결과를 짝수 브랜치 DataTree로 변환한다.
-* **ToolPath** : 이동 및 회피 경로의 결과를 짝수 브랜치 DataTree로 변환한다.
+* **Targets Plane** : Converts the results of movement and avoidance paths into a DataTree with even branches.
+* **ToolPath** : Converts the results of movement and avoidance paths into a DataTree with even branches.

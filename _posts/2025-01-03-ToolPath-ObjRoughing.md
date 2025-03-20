@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: ko
+permalink: /toolpath/ToolPath-ObjRoughing/
+
+translation_link: /en/toolpath/ToolPath-ObjRoughing/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 1차 밀링 단계에서의 컷팅 툴 패스를 제공하는 컴포넌트이다.
@@ -34,7 +43,6 @@ tags:
 * **Geometry**: Roughing을 통해 깎을 볼륨을 솔리드(Brep) 또는 메시(Mesh) 타입으로 입력한다.
 * **Base Plane** : 엔드밀 진입 방향(= Contour 방향), Target Orientation, Toolpath 시작 위치, 가공면 충돌 회피 높이 등등을 결정하는 기준 평면을 입력한다.
 
-<br>
 
 ## Built-in Param | Basic Params
 

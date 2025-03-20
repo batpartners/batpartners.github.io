@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: ko
+permalink: /toolpath/ToolPath-FlyByTree/
+
+translation_link: /en/toolpath/ToolPath-FlyByTree/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 입력되는 로봇 TCP 주요 경로 (Target Plane Input) DataTree의 새로운 이동경로를 생성하는 컴포넌트이다. FlyBy 컴포넌트는 기본적으로 입력된 주요경로 Branch[i]의 마지막 Plane과 인접한 주요경로 Branch[i+1]의 첫번째 Plane을 이용하여, 사용자가 입력한 거리만큼 떨어진 위치에, 새로운 FlyBy Target Plane들을 정의한다.
@@ -34,17 +43,13 @@ tags:
 * **TargetPlanes0** : 첫번째 주요경로 TargetPalnes를 연결한다.
 * **TargetPlanes1** : 두번째 주요경로 TargetPalnes를 연결한다.
 
-<br>
-
 ## Built-in Param | Basic Params
 
 * **Approaching Dir.** : 생성되는 이동경로의 마지막 Flyby Plane이 주요경로로 진입하는 방향을 의미한다. 즉, 주요경로(Target Planes input)의 각 Branch 첫번째 Plane으로부터, 진입 직전 FlyBy Plane의 위치를 이격하고자 하는 방향을 말한다.
 * **Leaving Dir.** : 주요경로를 마친 후 진출 방향을 정의한다.생성되는 이동경로의 첫번째 Flyby Plane이 주요경로로부터 진출하는 방향을 의미합니다. 즉, 주요경로(Target Planes input)의 각 Branch 마지막 Plane으로부터, 진출하는 FlyBy Plane의 위치를 이격하고자 하는 방향을 말합니다.
 
-<br>
-
 <div className="multi-headings" align="center">
-  <table style="border-collapse: collapse: width: 51 %; height: 500px;">
+  <table style="border-collapse: collapse: width: 51 %; height: 480px;">
     <thead>
       <tr>
         <th style="text-align: center;">Type</th>
@@ -84,22 +89,17 @@ tags:
   </table>
 </div>
 
-<br>
-
 * **Approaching Dist.(mm)** : 주요경로 진입 전 이동거리(mm)를 결정한다. 즉, 주요 경로 진입 직전 마지막 FlyByPlane을 이격할 거리를 의미한다.
 * **Leaving Dist.(mm)** : 주요경로 진출 후 이동거리(mm)를 결정한다. 즉, 주요 경로 진출 후첫번째 FlyByPlane을 이격할 거리를 의미한다.
 * **Target Count [int]**: 주요경로 사이의 이동경로(FlyBy ToolPath)를 구성할 Flyby Plane의 총 개수를 입력한다.
-
-<br>
 
 ## Built-in Param | Advanced Params
 
   Advanced Param은 이동 경로의 프로파일을 결정하는 옵션입니다. 이동경로의 프로파일은, Builtin Parma : Basic 에서 사용자가 선택한 조건에 따라, 이동경로 처음과 마지막 Flyby Plane이 주요경로로부터 이격되는 방향 벡터를 Blend 하는 방식으로 결정된다.
 
   * **Continuity** : 선택하는 연속성 조건에 따라, 생성되는 FlyBy Plane들의 원점이 선형 또는 비선형 커브 위에 있도록 한다. 기본값 : Position(G0)
-    - 연속성 설명 참고 : Rhinoceros 도움말 – 연속성 설명 | Rhino 3D 모델링 (mcneel.com)
 
-<br>
+`연속성 설명 참고 : Rhinoceros 도움말 – 연속성 설명 | Rhino 3D 모델링 (mcneel.com)`
 
 <div className="multi-headings" align="center">
   <table style="border-collapse: collapse: width: 51 %; height: 280px;">
@@ -126,13 +126,9 @@ tags:
   </table>
 </div>
 
-<br>
-
 <p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-1-2-768x223.png" align="center" width="72%"></p>
 <p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-2-1-768x457.png" align="center" width="72%"></p>
 <p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-3-1-768x418.png" align="center" width="72%"></p>
-
-<br>
 
   * **Bulge Start** : (Tangency/Curvature 조건인 경우,) 0-1사이의 값을 입력하여, 연속성을 유지한 상태에서 이동경로 프로파일의 시작부분 형상을 편집한다.
   * **Bulge End** : (Tangency/Curvature 조건인 경우,)0-1사이의 값을 입력하여, 연속성을 유지한 상태에서 이동경로 프로파일의 끝부분 형상을 편집한다.
