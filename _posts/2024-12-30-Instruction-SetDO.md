@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - Instruction
+
+translated: true
+lang: ko
+permalink: /instruction/Instruction-SetDO/
+
+translation_link: /en/instruction/Instruction-SetDO/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * ABB Controller의 Digital output 신호를 제어할 수 있는 SetDO Instruction을 정의하는 컴포넌트이다. Flex pendant내 신호데이터의 이름(변수명)과 해당 DigitalOutput 값을 할당한다.

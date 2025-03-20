@@ -13,7 +13,7 @@ categories:
   - Instruction
 translated: true
 lang: en
-permalink: /en//instruction/Instruction-Move/
+permalink: /en/instruction/Instruction-Move/
 translation_link: /instruction/Instruction-Move/
 
 sidebar:
@@ -31,20 +31,20 @@ tags:
 
 # Description
 
-TCP 움직임을 위해, RobTarget의 데이터를 받아 Move Instruction을 정의하는 컴포넌트이다. 각 타겟들의 움직임은 Type, Speed, Zone 옵션들로 설정할 수 있다.
+To facilitate TCP movement, this component defines the Move Instruction by receiving RobTarget data. The movements for each target can be configured with Type, Speed, and Zone options.
 
 <p align="center">  <img src="/assets/images/Move_2.png" align="center" width="32%"></p>
 
 # Input
 
-* **RobTargets** : RobTargets의 데이터를 받는다.
+* **RobTargets** : Receives the data of RobTargets.
 
 ## Built-in Param | Move
 
-* **MoveJ** : Move Joint로, 로봇이 해석한 최적의 자세인 정기구학으로 읽어 들어 Target Plane에 도달한다.
-* **MoveL** : Move Leaner로, 사용자가 정의한 로봇의 자세에서 Target Plane을 역기구학으로 읽어 들어 최단거리를 찾아 도달한다.
-* **Speed** : RobTarget에 도달하는 속도(Velocity)를 mm/s단위로 설정한다.
-* **Zone** : Target Point를 중심으로 한 반경 범위로, 다음 Target Point로 이동시, zone값에 비례한 Radius크기 만큼 Filet하여 움직임을 제어한다. Fine을 정확하게 해당 포인트를 지나쳐야 하되, 로봇의 등속 움직임에 영향을 미칠 수 있다.
+* **MoveJ** : Move Joint, where the robot reaches the Target Plane in regular kinematics, interpreted as the optimal posture.
+* **MoveL** : Move Linear, where the robot reaches the Target Plane in inverse kinematics from a user-defined posture, finding the shortest path.
+* **Speed** : Sets the speed (velocity) in mm/s at which the RobTarget is reached.
+* **Zone** : Specifies a radius around the Target Point. When moving to the next Target Point, the movement is controlled by filleting with a size proportional to the zone value. This ensures precise passage through the point, while potentially affecting the robot's constant speed motion.
 
 
 <p align="center"> 
@@ -54,4 +54,4 @@ TCP 움직임을 위해, RobTarget의 데이터를 받아 Move Instruction을 �
 
 # Output
 
-* **Instructions** : 입력된 Input에 따라 정의된 Move Instructions을 출력합니다
+* **Instructions** : Outputs the defined Move Instructions based on the entered Input.

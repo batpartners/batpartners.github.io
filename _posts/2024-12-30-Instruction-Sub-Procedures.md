@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - Instruction
+
+translated: true
+lang: ko
+permalink: /instruction/Instruction-Sub-Procedures/
+
+translation_link: /en/instruction/Instruction-Sub-Procedures/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * Sub Porcedures는 Main Procedures에 작성되는 신호 및 기타 모션이 반복적으로 수행될 경우, 해당 코드를 축약하여 호출 할 수 있도록 돕는다.

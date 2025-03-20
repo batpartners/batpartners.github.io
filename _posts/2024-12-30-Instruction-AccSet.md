@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - Instruction
+
+translated: true
+lang: ko
+permalink: /instruction/Instruction-AccSet/
+
+translation_link: /en/instruction/Instruction-AccSet/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * Robot의 가속도를 제한하는 AccSet Instruction을 정의하는 컴포넌트이다.

@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - Instruction
+
+translated: true
+lang: ko
+permalink: /instruction/Instruction-PathAccLim/
+
+translation_link: /en/instruction/Instruction-PathAccLim/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * TCP의 이동속도를 줄여주는 PathAccLim Instruction을 정의하는 컴포넌트이다. Target Point로의 위치까지 도달하기 위한, 로봇의 가속도(AccLim) 혹은 감속도(DecelLim)를 제한한다.

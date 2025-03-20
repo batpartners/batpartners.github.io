@@ -33,7 +33,7 @@ tags:
 
 GERTY is a CAM software solution designed to assist in the programming of custom machining techniques based on robotic arms.
 
-Operating within the Rhino-Grasshopper environment, GERTY serves as a software framework that facilitates the planning and generation of additive/subtractive machining paths, dimensional motion simulation, and the creation of robotic control programs. It is an offline programming solution tailored for the robotic-based custom manufacturing hardware systems provided by BEAT Partners.
+Operating within the Rhino-Grasshopper environment, GERTY serves as a software framework that facilitates the planning and generation of additive/subtractive machining paths, dimensional motion simulation, and the creation of robotic control programs. It is an offline programming solution tailored for the robotic-based custom manufacturing hardware systems provided by BATpartners.
 
 GERTY allows for intuitive optimization of robotic machining operations based on CAD data. Users can easily implement custom machining paths without coding through Grasshopper's visual programming interface.
 

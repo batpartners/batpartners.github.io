@@ -15,7 +15,7 @@ translated: true
 lang: ko
 permalink: /instruction/Instruction-Move/
 
-translation_link: /en//instruction/Instruction-Move/
+translation_link: /en/instruction/Instruction-Move/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -23,7 +23,7 @@ toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
 
-tags: 
+tags:
   - GERTY
 ---
 
