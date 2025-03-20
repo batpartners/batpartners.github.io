@@ -48,7 +48,7 @@ tags:
 ## Built-in Param | Slicing Params
 
 * **Top Layer Count** : 윗 채움 레이어 개수를 정한다.
-* **Bottom Layer Count** : 아래래 채움 레이어 개수를 정한다.
+* **Bottom Layer Count** : 아래 채움 레이어 개수를 정한다.
 * **Gap** : 외곽선와 채움 사이의 간격을 설정한다.(mm)
 * **Int Infill Amount** : 속채움 양을 설정한다.
 
