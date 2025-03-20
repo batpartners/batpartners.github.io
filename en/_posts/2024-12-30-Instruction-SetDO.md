@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-This component defines the SetDO Instruction, which controls the digital output signals of an ABB Controller. It assigns the variable name (signal data) and the corresponding DigitalOutput value from the Flex pendant.
+* This component defines the SetDO Instruction, which controls the digital output signals of an ABB Controller. It assigns the variable name (signal data) and the corresponding DigitalOutput value from the Flex pendant.
 
 <p align="center">  <img src="/assets/images/SetDO.png" align="center" width="32%"></p>
 

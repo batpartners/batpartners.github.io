@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-The Tool Importer component has "Get Tool Data" mode and "Get Tool Data Input" mode. In the former, the complete tool information can be used as the Tool Data input value for the Robot component. In the latter, the incomplete tool information can be used as the input value for the Tool Data component.
+* The Tool Importer component has "Get Tool Data" mode and "Get Tool Data Input" mode. In the former, the complete tool information can be used as the Tool Data input value for the Robot component. In the latter, the incomplete tool information can be used as the input value for the Tool Data component.
 
 <p align="center">  <img src="/assets/images/toolimporter.png" align="center" width="72%"></p>
 

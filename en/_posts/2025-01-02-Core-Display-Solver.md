@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-DisplaySolver is a component that previews the continuous operation of the robot on the Rhino viewport based on input data from the Robot component and GERTY Core component.
+* DisplaySolver is a component that previews the continuous operation of the robot on the Rhino viewport based on input data from the Robot component and GERTY Core component.
 
 <p align="center">  <img src="/assets/images/displaysolver.png" align="center" width="32%"></p>
 

@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-This is a component for managing ABB industrial robots. Users can select the applicable industrial robot and apply it to the simulation.
+* This is a component for managing ABB industrial robots. Users can select the applicable industrial robot and apply it to the simulation.
 
 <p align="center">  <img src="/assets/images/ABBRobot.png" align="center" width="32%"></p>
 

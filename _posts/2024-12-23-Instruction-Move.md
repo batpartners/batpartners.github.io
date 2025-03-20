@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-TCP 움직임을 위해, RobTarget의 데이터를 받아 Move Instruction을 정의하는 컴포넌트이다. 각 타겟들의 움직임은 Type, Speed, Zone 옵션들로 설정할 수 있다.
+* TCP 움직임을 위해, RobTarget의 데이터를 받아 Move Instruction을 정의하는 컴포넌트이다. 각 타겟들의 움직임은 Type, Speed, Zone 옵션들로 설정할 수 있다.
 
 <p align="center">  <img src="/assets/images/Move_2.png" align="center" width="32%"></p>
 

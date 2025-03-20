@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Sub Procedures help to condense and call code for signals and other motions that are repeatedly executed in the Main Procedures.
+* Sub Procedures help to condense and call code for signals and other motions that are repeatedly executed in the Main Procedures.
 
 <p align="center">  <img src="/assets/images/SubPorcedure.png" align="center" width="32%"></p>
 

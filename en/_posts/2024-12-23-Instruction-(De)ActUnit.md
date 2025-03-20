@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-(De)ActUnit is an instruction component that defines the activation (Activate) status of a robot unit. 
+* (De)ActUnit is an instruction component that defines the activation (Activate) status of a robot unit. 
 A robot unit refers to the individual control of two or more robots or additional axis equipment within a single controller.
 
 <p align="center">  <img src="/assets/images/(De)ActUnit.png" align="center" width="32%"></p>

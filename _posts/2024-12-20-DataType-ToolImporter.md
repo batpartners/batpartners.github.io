@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Tool Importer 컴포넌트는 "Get Tool Data" 모드와 "Get Tool Data Input" 모드가 있으며, 전자의 경우 완전한 툴 정보값으로 Robot 컴포넌트의 Tool Data 입력값으로 사용할 수 있다. 후자의 경우 불완전한 툴 정보값으로 Tool Data 컴포넌트의 입력값으로 활용할 수 있다.
+* Tool Importer 컴포넌트는 "Get Tool Data" 모드와 "Get Tool Data Input" 모드가 있으며, 전자의 경우 완전한 툴 정보값으로 Robot 컴포넌트의 Tool Data 입력값으로 사용할 수 있다. 후자의 경우 불완전한 툴 정보값으로 Tool Data 컴포넌트의 입력값으로 활용할 수 있다.
 
 <br>
 

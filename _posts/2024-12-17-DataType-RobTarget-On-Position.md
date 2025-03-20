@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Positioner의 RobTarget(Robot Target)은 로봇의 위치와 추가 축을 정의할 수 있는 컴포넌트로 사용자가 정의한 ToolPath Plane 데이터를 이용해, RobTarget 데이터를 정의한다.
+* Positioner의 RobTarget(Robot Target)은 로봇의 위치와 추가 축을 정의할 수 있는 컴포넌트로 사용자가 정의한 ToolPath Plane 데이터를 이용해, RobTarget 데이터를 정의한다.
 
 RobTarget On Positioner은 ABB RAPID Program에서 로봇과 부가축 장비의 동작을 정의하는 데이터 형식이다.
 

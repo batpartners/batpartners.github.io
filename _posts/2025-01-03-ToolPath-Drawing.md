@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: ko
+permalink: /toolpath/ToolPath-Drawing/
+
+translation_link: /en/toolpath/ToolPath-Drawing/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,9 +27,12 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 입력되는 커브 데이터 및 관련 파라미터들을 통해, 드로잉 ToolPath를 생성하는 컴포넌트이다. Geometry Input 입력 여부에 따라, 평면 위에서의 드로잉 Toolpath를 생성하거나 Geometry의 형상을 따라 드로잉하는 ToolPath를 생성을 한다
+* 입력되는 커브 데이터 및 관련 파라미터들을 통해, 드로잉 ToolPath를 생성하는 컴포넌트이다. Geometry Input 입력 여부에 따라, 평면 위에서의 드로잉 Toolpath를 생성하거나 Geometry의 형상을 따라 드로잉하는 ToolPath를 생성을 한다.
 
 <p align="center">  <img src="/assets/images/Drawing.png" align="center" width="32%"></p>
 
@@ -47,4 +56,4 @@ tags:
 
 # Output
 
-* **Target Planes**: 입력된 조건에 따라 정의된 Drawing ToolPath를 출력한다
+* **Target Planes**: 입력된 조건에 따라 정의된 Drawing ToolPath를 출력한다.

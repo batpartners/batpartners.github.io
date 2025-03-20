@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-This component assists in configuring the spindle tool. It takes the modeling (Mesh) of the spindle body and the point corresponding to the starting point of the end mill (Plane) as inputs. It then exports the TCP value based on the length and diameter of the end mill.
+* This component assists in configuring the spindle tool. It takes the modeling (Mesh) of the spindle body and the point corresponding to the starting point of the end mill (Plane) as inputs. It then exports the TCP value based on the length and diameter of the end mill.
 Considering models with and without the end mill included, it allows for setting the length, size, and direction of the TCP accordingly.
 
 <p align="center">  <img src="/assets/images/ToolPointEdit.png" align="center" width="32%"></p>

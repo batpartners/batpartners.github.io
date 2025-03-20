@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-ArcData를 사용해 로봇의 모션을 제어하는 컴포넌트이다. 따라서, 반드시 ArcData의 입력값을 갖는다.
+* ArcData를 사용해 로봇의 모션을 제어하는 컴포넌트이다. 따라서, 반드시 ArcData의 입력값을 갖는다.
 
 <p align="center">  <img src="/assets/images/ArcMove.png" align="center" width="32%"></p>
 

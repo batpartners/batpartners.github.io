@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Work Bench 모델링을 사용자 정의할 수 있는 컴포넌트입니다.
+* Work Bench 모델링을 사용자 정의할 수 있는 컴포넌트입니다.
 
 <p align="center">  <img src="/assets/images/Workbench.png" align="center" width="32%"></p>
 

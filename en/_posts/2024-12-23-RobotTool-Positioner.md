@@ -30,7 +30,7 @@ tags:
 
 # Description
 
-This is a component that allows for user-defined modeling of ABB Positioner models.
+* This is a component that allows for user-defined modeling of ABB Positioner models.
 
 <p align="center">  <img src="/assets/images/Positioner.png" align="center" width="32%"></p>
 

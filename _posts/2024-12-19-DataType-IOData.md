@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-IO Data(Input/Output Data) 즉, 신호데이터를 정의할 수 있는 컴포넌트이다.
+* IO Data(Input/Output Data) 즉, 신호데이터를 정의할 수 있는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/05_IO_Data.png" align="center" width="32%"></p>
 

@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - Core
+
+translated: true
+lang: ko
+permalink: /core/Core-GERTY-Core/
+
+translation_link: /en/core/Core-GERTY-Core/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 로봇 컴포넌트로부터 제어할 ABB로봇, 포지셔너 등 제원 정보를 포함하는 GERTY Core 컴포넌트이다. RobTarget과 Robot Instruction의 데이터를 읽고 ProgramData로 출력한다.

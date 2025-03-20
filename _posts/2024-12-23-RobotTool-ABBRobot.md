@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-ABB 산업용 로봇을 관리하는 컴포넌트이다. 사용자는 해당되는 산업용 로봇을 선택하여 시뮬레이션에 적용할 수 있다.
+* ABB 산업용 로봇을 관리하는 컴포넌트이다. 사용자는 해당되는 산업용 로봇을 선택하여 시뮬레이션에 적용할 수 있다.
 
 <p align="center">  <img src="/assets/images/ABBRobot.png" align="center" width="32%"></p>
 

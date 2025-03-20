@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-This is a component that defines the AccSet Instruction to limit the acceleration of the robot.
+* This is a component that defines the AccSet Instruction to limit the acceleration of the robot.
 
 <p align="center">  <img src="/assets/images/AccSet.png" align="center" width="32%"></p>
 

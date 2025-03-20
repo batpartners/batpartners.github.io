@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-ArcData 및 관련 파라미터를 이용하여, SeamData를 정의하는 컴포넌트이다. 
+* ArcData 및 관련 파라미터를 이용하여, SeamData를 정의하는 컴포넌트이다. 
 SeamData는 용접의 시작과 끝을 제어하는데 사용되는 데이터이다. 용접 단계는 크게, Ignition phase - Heating phase- Welding phase- End phase의 4단계로 구성된다. SeamData는 시작 및 종료 단계에 해당하는 Ignition과 Heating , 그리고 End(Fill) 단계의 ArcData와 함께, 각 단계에 관련된 파라미터 값들을 포함하고 있다.
 
 <p align="center">  <img src="/assets/images/SeamData.png" align="center" width="32%"></p>

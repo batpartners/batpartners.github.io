@@ -30,7 +30,7 @@ tags:
 
 # Description
 
-ABB Positioner 기종 모델링을 사용자 정의할 수 있는 컴포넌트입니다.
+* ABB Positioner 기종 모델링을 사용자 정의할 수 있는 컴포넌트입니다.
 
 <p align="center">  <img src="/assets/images/Positioner.png" align="center" width="32%"></p>
 

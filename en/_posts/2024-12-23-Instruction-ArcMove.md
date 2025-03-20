@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-The component used to control the robot's motion utilizes ArcData. Therefore, it must take ArcData as input.
+* The component used to control the robot's motion utilizes ArcData. Therefore, it must take ArcData as input.
 
 <p align="center">  <img src="/assets/images/ArcMove.png" align="center" width="32%"></p>
 

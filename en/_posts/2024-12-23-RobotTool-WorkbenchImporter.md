@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-This component is for loading tool information extracted through the Workbench Exporter. It includes official BAT tools and can also load user-defined tool information. 
+* This component is for loading tool information extracted through the Workbench Exporter. It includes official BAT tools and can also load user-defined tool information. 
 The Workbench Importer component has two modes: "Get Workbench Data" and "Get Workbench Input Data." 
 In the "Get Workbench Data" mode, it provides complete Workbench information, which can be used as a substitute for the Workbench component. In the "Get Workbench Input Data" mode, it provides editable information that can be combined with the Workbench component to utilize customized data.
 

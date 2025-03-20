@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-This component defines the PathAccLim Instruction, which reduces the TCP's movement speed. It limits the robot's acceleration (AccLim) or deceleration (DecelLim) to reach the Target Point position.
+* This component defines the PathAccLim Instruction, which reduces the TCP's movement speed. It limits the robot's acceleration (AccLim) or deceleration (DecelLim) to reach the Target Point position.
 
 <p align="center">  <img src="/assets/images/PathAccLim_1.png" align="center" width="32%"></p>
 

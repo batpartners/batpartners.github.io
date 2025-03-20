@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-WobjData is a component that defines the internal work object of a robot.
+* WobjData is a component that defines the internal work object of a robot.
 It allows transforming the position of the internal work object from WobjData to a user-defined UserFrame, and can be adapted to the robot's model and additional axes by changing to Fixed WobjData and MovableData.
 
 <p align="center">  <img src="/assets/images/04_WobjData.png" align="center" width="32%"></p>

@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-This component defines the WaitTime Instruction, which allows setting a pause time in seconds during the execution of a program to momentarily stop the robot's movement.
+* This component defines the WaitTime Instruction, which allows setting a pause time in seconds during the execution of a program to momentarily stop the robot's movement.
 
 <p align="center">  <img src="/assets/images/WaitTime.png" align="center" width="32%"></p>
 

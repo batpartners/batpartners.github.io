@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Robtarget와 TriggIOs 데이터를 기반으로, Trigg”X” IOs Instruction을 정의하는 컴포넌트이다. TriggXIOs 는 로봇의 움직임과 동시에 2개 이상의 Output 신호를 설정하는 Instruction이다.
+* Robtarget와 TriggIOs 데이터를 기반으로, Trigg”X” IOs Instruction을 정의하는 컴포넌트이다. TriggXIOs 는 로봇의 움직임과 동시에 2개 이상의 Output 신호를 설정하는 Instruction이다.
 
 <p align="center">  <img src="/assets/images/TriggIOsMove.png" align="center" width="32%"></p>
 

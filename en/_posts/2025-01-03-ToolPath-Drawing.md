@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: en
+permalink: /en/toolpath/ToolPath-Drawing/
+translation_link: /toolpath/ToolPath-Drawing/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,9 +27,12 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 입력되는 커브 데이터 및 관련 파라미터들을 통해, 드로잉 ToolPath를 생성하는 컴포넌트이다. Geometry Input 입력 여부에 따라, 평면 위에서의 드로잉 Toolpath를 생성하거나 Geometry의 형상을 따라 드로잉하는 ToolPath를 생성을 한다
+* This component generates a drawing ToolPath based on the input curve data and related parameters. Depending on whether Geometry Input is provided, it either creates a drawing ToolPath on a plane or generates a ToolPath that follows the shape of the Geometry.
 
 <p align="center">  <img src="/assets/images/Drawing.png" align="center" width="32%"></p>
 
@@ -31,20 +40,20 @@ tags:
 
 # Input
 
-* **Curves[Curve / List]** : 작성하고자 하는 curve를 선택한다.
-* **Base Plane [Plane]** : 드로잉하는 평면의 기준 Plane을 입력한다. Target Plane 은 Base Plane과 같은 xy방향의 평면으로 생성된다.
-* **Geometry [Brep/Mesh / Optional]**: 드로잉할 커브의 Geometry를 입력한다. Mesh 또는 Brep을 입력해야만 한다. 이때, Curve는 반드시 Geometry 위에 있어야 한다.
+* **Curves[Curve / List]** : Select the curves to be drawn.
+* **Base Plane [Plane]** : Input the reference plane for drawing. The Target Plane is generated as a plane in the same xy direction as the Base Plane.
+* **Geometry [Brep/Mesh / Optional]**: Input the geometry for the curves to be drawn on. Either a Mesh or Brep must be provided. The curves must be on the Geometry.
 
 ## Built in param | Drawing
   
-  * **Tolerance** : 허용오차를 설정한다.
-  * **Min Edge(mm)** : Target plane 간 최소 간격을 설정한다. 파라미터 사이 간격의 최소 값을 설정합니다. 이 이하의 파라미터 사이 값을 내뱉지 않는다.
-  * **Max Edge(mm)** : Target plane 간 최대 간격을 설정한다. 파라미터 사이 간격의 최대 값을 설정합니다. 이 이상의 파라미터 사이 값을 내뱉지 않는다.
-  * **Tilting Weight** : Geometry 위에서 Target Plane을 기울이는 정도를 설정한다. BasePlane의 법선과 Geometry위의 TargetPlane 법선 사이의 기울기를 정규화 한 값(0~1)으로 설정한다.
-  * **NormalSize** : ToolPaths의 프리뷰 사이즈를 조정한다.
+  * **Tolerance** : Set the allowable tolerance.
+  * **Min Edge(mm)** : Set the minimum distance between target planes. This parameter defines the minimum gap between parameters. Values smaller than this will not be generated.
+  * **Max Edge(mm)** : Set the maximum distance between target planes. This parameter defines the maximum gap between parameters. Values larger than this will not be generated.
+  * **Tilting Weight** : Set the degree to which the target plane tilts on the geometry. This is a normalized value (0-1) representing the tilt between the normal of the Base Plane and the normal of the target plane on the geometry.
+  * **NormalSize** : Adjust the preview size of the ToolPaths.
 
 <br>
 
 # Output
 
-* **Target Planes**: 입력된 조건에 따라 정의된 Drawing ToolPath를 출력한다
+* **Target Planes**: Output the defined Drawing ToolPath according to the given conditions.

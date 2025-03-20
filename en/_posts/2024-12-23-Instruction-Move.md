@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-To facilitate TCP movement, this component defines the Move Instruction by receiving RobTarget data. The movements for each target can be configured with Type, Speed, and Zone options.
+* To facilitate TCP movement, this component defines the Move Instruction by receiving RobTarget data. The movements for each target can be configured with Type, Speed, and Zone options.
 
 <p align="center">  <img src="/assets/images/Move_2.png" align="center" width="32%"></p>
 

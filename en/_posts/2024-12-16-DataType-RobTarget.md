@@ -35,7 +35,7 @@ tags:
 # Description
 
 
-The **RobTarget (Robot Target) of the Positioner** is a component that defines the robot's position and additional axes. It utilizes user-defined **ToolPath Plane** data to generate **RobTarget** data.<br>  
+* The **RobTarget (Robot Target) of the Positioner** is a component that defines the robot's position and additional axes. It utilizes user-defined **ToolPath Plane** data to generate **RobTarget** data.<br>  
 **RobTarget On Positioner** is a data format used in **ABB RAPID Program** to define the movements of the robot and auxiliary axis equipment.<br>
 It includes information such as the **position (Position) and orientation (Orientation) of the robot TCP (Tool Center Point)** along the planned trajectory, as well as the **angle data of the auxiliary axis**.<br> 
 

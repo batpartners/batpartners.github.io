@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Based on Robtarget and TriggIOs data, this component defines the Trigg"X" IOs Instruction. TriggXIOs is an instruction that sets two or more output signals simultaneously while the robot is in motion.
+* Based on Robtarget and TriggIOs data, this component defines the Trigg"X" IOs Instruction. TriggXIOs is an instruction that sets two or more output signals simultaneously while the robot is in motion.
 
 <p align="center">  <img src="/assets/images/TriggIOsMove.png" align="center" width="32%"></p>
 

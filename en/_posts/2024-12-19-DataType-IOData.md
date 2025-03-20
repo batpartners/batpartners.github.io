@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-It is a component that can define IO Data (Input/Output Data), i.e., signal data.
+* It is a component that can define IO Data (Input/Output Data), i.e., signal data.
 
 <p align="center">  <img src="/assets/images/05_IO_Data.png" align="center" width="32%"></p>
 

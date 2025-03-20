@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-This is a component that allows for user-defined modeling of the workbench.
+* This is a component that allows for user-defined modeling of the workbench.
 
 <p align="center">  <img src="/assets/images/Workbench.png" align="center" width="32%"></p>
 
