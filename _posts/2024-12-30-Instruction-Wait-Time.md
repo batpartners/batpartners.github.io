@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - Instruction
+
+translated: true
+lang: ko
+permalink: /instruction/Instruction-Wait-Time/
+
+translation_link: /en/instruction/Instruction-Wait-Time/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 프로그램 실행 중 로봇의 동작을 잠시동안 멈추는 시간을 초 단위로 설정할 수 있는 WaitTime Instruction을 정의하는 컴포넌트이다.

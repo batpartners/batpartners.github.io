@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - Instruction
+
+translated: true
+lang: en
+permalink: /en/instruction/Instruction-Wait-Time/
+translation_link: /instruction/Instruction-Wait-Time/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,9 +27,12 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 프로그램 실행 중 로봇의 동작을 잠시동안 멈추는 시간을 초 단위로 설정할 수 있는 WaitTime Instruction을 정의하는 컴포넌트이다.
+This component defines the WaitTime Instruction, which allows setting a pause time in seconds during the execution of a program to momentarily stop the robot's movement.
 
 <p align="center">  <img src="/assets/images/WaitTime.png" align="center" width="32%"></p>
 
@@ -31,17 +40,17 @@ tags:
 
 # Input
 
-* **Time [Double]**: 숫자형식(Double)의 값을 입력한다.
+* **Time [Double]**: Enter a numeric value (Double) in seconds.
 
 <br>
 
 ## Built-in Param | WaitTime
 
-* **In Position [Boolean]** : 해당 Target Point 위치에 도달 후 지연한다.
-* **Time(sec.)** : 지연할 초단위를 설정한다.
+* **In Position [Boolean]** : Delays after reaching the specified Target Point position.
+* **Time(sec.)** : Set the delay time in seconds.
 
 <br>
 
 # Output
 
-* **Instructions** : Instructions에 넣을 WaitTime Data로 출력합니다
+* **Instructions** : Outputs WaitTime Data to be placed in the Instructions.
