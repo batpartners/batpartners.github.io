@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: ko
+permalink: /toolpath/ToolPath-BuildUp-Deposition/
+
+translation_link: /en/toolpath/ToolPath-BuildUp-Deposition/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,6 +27,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 적층 데이터를 분석하여 일반 적층 툴패스의 작성을 돕는 컴포넌트이다.
@@ -32,7 +41,7 @@ tags:
 # Input
 
 * **Home Pos [Plane/Optional]** : 적층 시작 전 Home position에 해당하는 Plane을 입력한다. 기본 값으로 World XY을 받는다.
-* **Deposition ToolPaths [DepositionToolPath \ List]** : DepositionToolPath Data를 받는다.
+* **Deposition ToolPaths [DepositionToolPath / List]** : DepositionToolPath Data를 받는다.
 * **Pre-Extrusion Curve [Curve/Optional]** : 노즐 클리닝을 위해, 미리 압출할 형상의  Curve 데이터를 받는다.
 * **Is Bottommost [Boolean]** : 바닥면부터 시작되는 적층 툴패스 여부를 확인한다.
 

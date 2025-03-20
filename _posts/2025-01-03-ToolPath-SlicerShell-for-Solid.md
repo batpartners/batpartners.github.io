@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: ko
+permalink: /toolpath/ToolPath-SlicerShell-for-Solid/
+
+translation_link: /en/toolpath/ToolPath-SlicerShell-for-Solid/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,6 +26,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 폐곡선형의 오브젝트 툴패스를 맞춤형으로 작성할 수 있도록 돕는 컴포넌트이다.
@@ -27,16 +36,12 @@ tags:
 
 <p align="center">  <img src="/assets/images/SlicerShellforSolid.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
 * **Geometry [Geometry]** : Geometry 모델링을 입력한다.
 * **Base Plane [Plane]** : 모델링의 기준 평면을 재정의해 입력한다. 기본 값으로 World XY을 받는다.
 
-<br>
-
-## Built-in Param | Basic Slicing Params
+## Built-in Param | Slicing Params
 
 * **Stepback(mm)** : 주요경로 모델링 윤곽에서 Offset한 위치를 주요경로로 재정의한다.
 * **Outline Shells(N)** : 주요경로 안쪽으로 Offset한 주요경로 Shell Layer을 추가한다. (N : 정수 값)
@@ -46,21 +51,16 @@ tags:
 * **Tolerance** : 주요경로 내 TargetPlane 간격을 재정의한다.
 * **Tilting Weight** : NormalVector의 기울기를 해당 layer 모델링의 normal vector와 worldXY 사이 값 사이로 재정의 한다.
 
-<br>
-
-## Built-in Param | Basic Seam Params
+## Built-in Param | Seam Params
 
 * **Wipe Distance(mm)** : 3DP 재료의 컨디션에 맞춰 출력 길이를 기존 주요경로에 맞춰 늘린다.
 * **Seam Spread(N)** : 출력의 시작과 끝지점을 Layer단위 별로 다르게 정의할 수 있다.
 * **Seam Shifting(t)** : 출력의 시작과 끝지점을 주요경로 내 위치 안에서 옮길 수 있다.
 
-<br>
-
-## Built-in Param | Basic Division Params
+## Built-in Param | Division Params
 
 * **Partition**: 출력할 모델링의 주요경로를 정수 값으로 등분하여 보여준다.
 * **Order** : 나눈 Partition의 Index값을 호출하여 보여준다.
-
 <br>
 
 # Output

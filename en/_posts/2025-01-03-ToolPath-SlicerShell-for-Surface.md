@@ -10,6 +10,11 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: en
+permalink: /en/toolpath/ToolPath-SlicerShell-for-Surface/
+translation_link: /toolpath/ToolPath-SlicerShell-for-Surface/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,56 +25,42 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 열린형 평면의 오브젝트 툴패스를 맞춤형으로 작성할 수 있도록 돕는 컴포넌트이다.
-* 툴 패스 평면(Plane)의 간격, 높이, 각도를 설정할 수 있으며 사용자는 각자의 환경에 맞게 작성할 수 있다.
+* Custom Component for Generating Toolpaths for Open-Ended Planar Objects.
+* This component assists in creating customized toolpaths for open-ended planar objects. Users can configure the spacing, height, and angles of the toolpath planes (Plane) according to their specific requirements.
 
 
 <p align="center">  <img src="/assets/images/SlicerShellforSurface.png" align="center" width="32%"></p>
 
-<br>
 
 # Input
 
-* **Geometry [Geometry]** : Geometry 모델링을 입력한다.
-* **Base Plane [Plane]** : 모델링의 기준 평면을 재정의해 입력한다. 기본 값으로 World XY을 받는다.
+* **Geometry [Geometry]** : Input the geometry modeling.
+* **Base Plane [Plane]** : Redefine and input the base plane of the modeling. Defaults to World XY.
 
-<br>
+## Built-in Param | Slicing Params
 
-## Built-in Param | Basic Slicing Params
-
-* **End Fillet Type**: Flat/Round 옵션이 있다. outlineShell의 옵션을 늘릴경우, 적층될 평면의 끝 마무리형태를 Flat/Roud로 선택한다. 기본값은 Flat.
-* **Outline Shells(N)** : 주요경로 바깥쪽으로 Offset한 주요경로 Shell Layer을 추가한다. (N : 정수 값)
-* **Layer Wideth(mm)** : 추가한 Outline Shell Layer 사이의 distance를 정의한다.
-* **1st layer Shift(mm)** : 첫번째 주요경로 위치를 Layer를 위로 옮겨(Shift) 재정의한다.
-* **Layer Height(mm)** : 주요경로 Layer사이의 높이(Height)를 재정의한다.
-* **Tolerance** : 주요경로 내 TargetPlane 간격을 재정의한다.
-* **Tilting Weight** : NormalVector의 기울기를 해당 layer 모델링의 normal vector와 worldXY 사이 값 사이로 재정의 한다.
-
-<br>
+* **End Fillet Type**: There are options for Flat/Round. When expanding the options for outlineShell, choose between Flat or Round for the finishing type of the stacked plane. The default value is Flat.
+* **Outline Shells(N)** : Adds outline shell layers offsetting outside the main path. (N: integer value)
+* **Layer Wideth(mm)** : Defines the distance between added outline shell layers.
+* **1st layer Shift(mm)** :  Redefines the position of the first main path layer by shifting it upwards.
+* **Layer Height(mm)** : Redefines the height between main path layers.
+* **Tolerance** : Redefines the spacing between TargetPlanes within the main path.
+* **Tilting Weight** :  Redefines the inclination of the NormalVector to be between the normal vector of the layer modeling and the value between worldXY.
 
 ## Built-in Param | Seam Params
 
-* **Wipe Distance(mm)** : 3DP 재료의 컨디션에 맞춰 출력 길이를 기존 주요경로에 맞춰 늘린다.
-* **Seam Shifting(t)** : 출력의 시작과 끝지점을 주요경로 내 위치 안에서 옮길 수 있다.
-
-<br>
-
-## Built-in Param | Basic Seam Params
-
-* **Wipe Distance(mm)** : 3DP 재료의 컨디션에 맞춰 출력 길이를 기존 주요경로에 맞춰 늘린다.
-* **Seam Spread(N)** : 출력의 시작과 끝지점을 Layer단위 별로 다르게 정의할 수 있다.
-* **Seam Shifting(t)** : 출력의 시작과 끝지점을 주요경로 내 위치 안에서 옮길 수 있다.
-
-<br>
+* **Wipe Distance(mm)** : Extends the output length to match the existing main path according to the condition of 3DP materials.
+* **Seam Shifting(t)** : Allows shifting the starting and ending points of the output within the position range of the main path.
 
 ## Built-in Param | Division Params
 
-* **Partition** : 출력할 모델링의 주요경로를 정수 값으로 등분하여 보여준다.
-* **Order** : 나눈 Partition의 Index값을 호출하여 보여준다.
-* **Sub Partition** : 
-
+* **Partition** : Divides the main path of the modeling into integer values for display.
+* **Order** : Retrieves the index value of the divided partition for display.
 
 <br>
 

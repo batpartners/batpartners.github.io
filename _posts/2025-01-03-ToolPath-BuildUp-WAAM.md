@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: ko
+permalink: /toolpath/ToolPath-BuildUp-WAAM/
+
+translation_link: /en/toolpath/ToolPath-BuildUp-WAAM/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,17 +27,18 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 적층 데이터를 분석하여 WAAM 툴패스의 작성을 돕는 컴포넌트이다.
 
-<p align="center">  <img src="/assets/images/BuildupWAAM.png" align="center" width="32%"></p>
-
-<br>
+<p align="center"><img src="/assets/images/BuildupWAAM.png" align="center" width="32%"></p>
 
 # Input
 
-* **Deposition ToolPaths [DepositionToolPath \ List]** : DepositionToolPath Data를 받는다.
+* **Deposition ToolPaths [DepositionToolPath / List]** : DepositionToolPath Data를 받는다.
 * **Is Bottommost [Boolean]** : 바닥면부터 시작되는 WAAM 적층 툴패스 여부를 확인한다.
 
 <br>

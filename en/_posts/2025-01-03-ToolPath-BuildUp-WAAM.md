@@ -11,6 +11,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: en
+permalink: /en/toolpath/ToolPath-BuildUp-WAAM/
+translation_link: /toolpath/ToolPath-BuildUp-WAAM/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -21,24 +27,25 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 적층 데이터를 분석하여 WAAM 툴패스의 작성을 돕는 컴포넌트이다.
+* Analyzes layered data to assist in creating WAAM ToolPaths.
 
 <p align="center">  <img src="/assets/images/BuildupWAAM.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
-* **Deposition ToolPaths [DepositionToolPath \ List]** : DepositionToolPath Data를 받는다.
-* **Is Bottommost [Boolean]** : 바닥면부터 시작되는 WAAM 적층 툴패스 여부를 확인한다.
+* **Deposition ToolPaths [DepositionToolPath / List]**: Receives DepositionToolPath data.
+* **Is Bottommost [Boolean]**: Checks whether the WAAM deposition toolpaths start from the bottommost layer.
 
 <br>
 
 # Output
 
-* **1st Shell Layers** : 첫 번째 적층 Layer를 추출한다.
-* **1st Infill Layers** : 첫 번째 채움 Layer를 추출한다.
-* **Other Shell Layers** : 다른 적층 Layer를 추출한다.
-* **Other Infill Layers** : 다른 채움 Layer를 추출한다.
+* **1st Shell Layers**: Extracts the first deposition layer.
+* **1st Infill Layers**: Extracts the first infill layer.
+* **Other Shell Layers**: Extracts the remaining deposition layers.
+* **Other Infill Layers**: Extracts the remaining infill layers.

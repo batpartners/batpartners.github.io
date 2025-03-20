@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - ToolPath
+
+translated: true
+lang: en
+permalink: /en/toolpath/ToolPath-UV-Finishing/
+translation_link: /toolpath/ToolPath-UV-Finishing/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,31 +26,32 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 2차 밀링 단계의 컷팅 툴패스 컴포넌트이다.
-아래의 그림처럼 길이가 다른 평행한 커브 사이의 Cutting Direction방향으로 같은 길이값으로 등분하여 출력한다.
+* 2nd Milling Stage Cutting Toolpath Component: Outputs values that divide curves parallel between curves of different lengths in the direction of the Cutting Direction, as shown in the figure below.
 
 <p align="center">  <img src="/assets/images/UV_Finishing.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
-* **Geometry**: Mesh 또는 Surface의 Geometry parameter를 입력한다.
-* **Base Plane** : Tilting weight=0일 때, Target Orientation 기준 평면을 입력한다.
+* **Brep**: Input a Brep or Surface UV object.
+* **Base Plane**: Input the reference plane for Target Orientation when Tilting weight = 0.
 
-## Built-in Param | Basic Params
+<p align="center"><img src="/assets/images/UVfinishing-768x238.png" align="center" width="80%"></p>
 
-* **Cutting Direction [Boolean]** : U(False) / V(True) 방향  선택한다.
-* **Stepover** : 수평방향으로 한번에 깎이는 정도로 기본값으로 엔드밀 직경의 절반 이하의 값을 입력한다.
-작을수록 세밀한 Finishing을 할 수 있다. (Stepover <= 엔드밀 직경 * 1/2)
-* **Tilting Weight** : Target Tilting 가중치로 0.0~1.0 사이의 값만 입력한다.  0에 가까울수록 BasePlane의 normal, 1에 가까울수록 Surface의 normal에 따라 Target Plane을 기울기이다.
-* **Tolerance** : Toolpath 해상도이다.
+## Built-in Param | UVFinishing
+
+* **Cutting Direction [Boolean]**: Select the direction – U (False) / V (True).
+* **Stepover**: Determines the amount of material removed in the horizontal direction. The default value is less than or equal to half the end mill diameter, allowing for finer finishing. (Stepover <= End Mill Diameter * 1/2)
+* **Tilting Weight**: Weight for Target Tilting, accepts values between 0.0 and 1.0. Closer to 0 means the Target Plane aligns with the normal of the Base Plane; closer to 1 means it aligns with the normal of the Surface.
+* **Tolerance**: Toolpath resolution.
 
 <br>
 
 # Output
 
-* **Curve** : Finishing Layer의 커브를 출력한다.
-* **Target Plane**: Plane 인덱스 값들을 DataTree로 출력한다.
+* **Curve**: Outputs the curves of the finishing layer.
+* **Target Plane**: Outputs the indices of planes as a DataTree.
