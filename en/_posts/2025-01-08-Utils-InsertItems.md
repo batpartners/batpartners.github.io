@@ -32,7 +32,7 @@ tags:
 # Description
 
 * Inserts an item or item collection into each branch of the input DataTree.
-<p align="center">  <img src="/assets/images/insertTree.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/insertTree.png" align="center" width="25%"></p>
 
 # Input
 

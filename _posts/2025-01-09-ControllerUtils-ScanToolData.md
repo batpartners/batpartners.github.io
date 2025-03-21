@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - ControllerUtils
+
+translated: true
+lang: ko
+permalink: /controllerutils/ControllerUtils-ScanToolData
+
+translation_link: /en/controllerutils/ControllerUtils-ScanToolData
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,6 +26,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * ScanToolData는 가상 혹은 실제 로봇의 현재 툴 데이터 정보 추출을 돕는 컴포넌트이다.

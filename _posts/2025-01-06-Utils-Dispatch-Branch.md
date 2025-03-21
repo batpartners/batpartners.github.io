@@ -33,7 +33,7 @@ tags:
 
 * 입력된 DataTree의 Branch를 Pattern에 따라 2개의 DataTree로 분리하는 컴포넌트. 입력되는 DataTree 개별 Path의 형식과는 관련이 없이, Path의 순번과 Pattern을 매칭하여 분리한다. 
 
-<p align="center">  <img src="/assets/images/dispatchbranch.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/dispatchbranch.png" align="center" width="25%"></p>
 
 # Input
 

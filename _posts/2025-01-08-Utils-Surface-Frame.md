@@ -35,7 +35,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/surfaceframe.png" align="center" width="32%"></p>
 
-
 # Input
 
 * **Surface [Surface/Item]** : 접평면을 구할 Surface를 입력한다.

@@ -33,7 +33,7 @@ tags:
 
 * Extracts specific branches from the input DataTree based on the sequence (index) of paths.
 
-<p align="center">  <img src="/assets/images/treebranch.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/treebranch.png" align="center" width="25%"></p>
 
 # Input
 
@@ -52,4 +52,4 @@ tags:
 
 As in the example below, branches are extracted based on the path index, and if the index value exceeds the total range of path indices, it wraps around.
 
-<p align="center">  <img src="/assets/images/TreeBranch_exam-768x647.png" align="center" width="72%"></p>
+<p align="center">  <img src="/assets/images/TreeBranch_exam-768x647.png" align="center" width="80%"></p>

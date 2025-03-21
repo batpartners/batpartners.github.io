@@ -39,8 +39,6 @@ tags:
 
 * **Surface [Surface/Item]** :  Input the surface for which to compute the tangent plane.
 
-<br>
-
 ## Built-in Param
 
 * **U-Param [double/Item]** : Sets the U-direction parameter of the surface.

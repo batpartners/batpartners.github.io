@@ -33,7 +33,7 @@ tags:
 
 * Redefine the DataTree path according to Sequential / Odd numbered / Even numbered options.
 
-<p align="center">  <img src="/assets/images/simplepathremapper.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/simplepathremapper.png" align="center" width="21%"></p>
 
 # Input
 

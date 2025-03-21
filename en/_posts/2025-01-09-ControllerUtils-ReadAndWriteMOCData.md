@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - ControllerUtils
+
+translated: true
+lang: en
+permalink: /en/controllerutils/ControllerUtils-ReadAndWriteMOCData
+translation_link: /controllerutils/ControllerUtils-ReadAndWriteMOCData
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,28 +26,25 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* ReadAndWriteMOCData는 현재 컨트롤러에 연결된 가상 혹은 실제 포지셔너 축의 정보를 출력하는 컴포넌트이다.
-
-<br>
+* ReadAndWriteMOCData is a component that outputs the information of the virtual or real positioner axis connected to the current controller.
 
 <p align="center">  <img src="/assets/images/ReadAndWriteMOCData.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
-* **SystemID** : 로봇 컨트롤러 데이터를 입력받는다.
+* **SystemID** : Receives robot controller data.
 <br>
 
 # Output
 
-* **ARM1&PLATE1_Info** : 포지셔너의 ARM1과 PLATE1의 축 값을 출력한다.
-* **PLATE_Pl** : 포지셔너의 작업대 평면 위치값을 출력한다.
-* **ARM1_Pl** : 포지셔너의 ARM1 축 평면의 위치값을 출력한다.
-
-<br>
+* **ARM1&PLATE1_Info** : Outputs the axis values of ARM1 and PLATE1 of the positioner. 
+* **PLATE_Pl** :  Outputs the table plane position value of the positioner. 
+* **ARM1_Pl** : Outputs the position value of the ARM1 axis plane of the positioner.
 
 <p align="center">  <img src="/assets/images/ReadAndWriteMOCData_01-1-768x272.png" align="center" width="90%"></p>
 
@@ -49,10 +52,6 @@ tags:
 
 # How To Use
 
-* 다음은 ReadAndWriteMOCData 컴포넌트 사용시 마주할 수 있는 예입니다.
-
-<br>
+* The following is an example you may encounter when using the ReadAndWriteMOCData component.
 
 <p align="center">  <img src="/assets/images/ReadAndWriteMOCData_02-1-768x184.png" align="center" width="90%"></p>
-
-<br>

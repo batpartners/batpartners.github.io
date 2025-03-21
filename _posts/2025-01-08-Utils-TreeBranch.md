@@ -32,7 +32,7 @@ tags:
 # Description
 
 * 입력된 DataTree의 Path의 순번(Index)을 기준으로 특정 Branch를 추출한다.
-<p align="center">  <img src="/assets/images/treebranch.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/treebranch.png" align="center" width="25%"></p>
 
 # Input
 
@@ -49,5 +49,5 @@ tags:
 
 # How To Use
 
-아래 예시와 같이, Path Index 기준으로 Branch가 추출되며, Index값이 총 Path의 Index범위를 벗어나면, Wrapping 됩니다.
-<p align="center">  <img src="/assets/images/TreeBranch_exam-768x647.png" align="center" width="72%"></p>
+아래 예시와 같이, Path Index 기준으로 Branch가 추출되며, Index값이 총 Path의 Index범위를 벗어나면, 랩핑이 된다.
+<p align="center">  <img src="/assets/images/TreeBranch_exam-768x647.png" align="center" width="80%"></p>

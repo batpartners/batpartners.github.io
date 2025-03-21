@@ -48,8 +48,7 @@ tags:
 
 
 <p align="center"> 
-<video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
-</video>
+<video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>
 </p>
 
 # Output

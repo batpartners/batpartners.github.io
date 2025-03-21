@@ -33,9 +33,7 @@ tags:
 
 * 입력된 DataTree를 특정 Path의 순번(Index)을 기준으로 하여, 2개의 DataTree로 분리한다.
 
-<p align="center">  <img src="/assets/images/splittreebranch.png" align="center" width="32%"></p>
-
-<br>
+<p align="center">  <img src="/assets/images/splittreebranch.png" align="center" width="25%"></p>
 
 # Input
 

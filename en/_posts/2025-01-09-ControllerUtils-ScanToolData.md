@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - ControllerUtils
+
+translated: true
+lang: en
+permalink: /en/controllerutils/ControllerUtils-ScanToolData
+translation_link: /controllerutils/ControllerUtils-ScanToolData
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,37 +26,32 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* ScanToolData는 가상 혹은 실제 로봇의 현재 툴 데이터 정보 추출을 돕는 컴포넌트이다.
-
-<br>
+* ScanToolData is a component that assists in extracting current tool data information from virtual or real robots.
 
 <p align="center">  <img src="/assets/images/ScanToolData.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
-* **SystemID** : 현재 컨트롤러에 연결된 로봇의 ID를 입력한다.
+* **SystemID** : Enter the ID of the robot currently connected to the controller.
 
 <br>
 
 # Output
 
-* **ToolName** : 현재 컨트롤러에 연결된 로봇의 툴 이름을 출력한다. 
-* **TCP** : 현재 컨트롤러에 연결된 로봇의 TCP 데이터를 출력한다. 
-* **Mass** : 현재 컨트롤러에 연결된 로봇의 툴 무게 데이터를 출력한다. 
-* **Centroid** : 현재 컨트롤러에 연결된 로봇의 툴 Centroid 값을 출력한다. 
-* **Inertia** : 현재 컨트롤러에 연결된 로봇의 툴 Inertia 값을 출력한다.
+* **ToolName** : Outputs the name of the tool connected to the current controller.
+* **TCP** : Outputs the TCP data of the robot connected to the current controller.
+* **Mass** : Outputs the tool weight data of the robot connected to the current controller. 
+* **Centroid** : Outputs the Centroid value of the tool connected to the current controller. 
+* **Inertia** : Outputs the Inertia value of the tool connected to the current controller.
 
 <br>
 
 # How To Use
-* ScanABBController로 현재 로봇 ID를 읽어와 ScanToolData에 연결하여 사용한다. 
-해당 로봇의 툴 데이터들을 추출하여 정교한 시뮬레이션을 돕는다.
-<br>
 
+* Read the current robot ID using ScanABBController and connect it to ScanToolData for use. Extract the tool data of the robot to assist with precise simulation.
 <p align="center">  <img src="/assets/images/RealTimeDisplay_01-768x341 (1).png" align="center" width="90%"></p>
-
-<br>

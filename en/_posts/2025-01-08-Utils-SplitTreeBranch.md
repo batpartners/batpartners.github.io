@@ -33,7 +33,7 @@ tags:
 
 * Splits the input DataTree into two DataTrees based on the sequence (index) of a specified path.
 
-<p align="center">  <img src="/assets/images/splittreebranch.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/splittreebranch.png" align="center" width="25%"></p>
 
 # Input
 

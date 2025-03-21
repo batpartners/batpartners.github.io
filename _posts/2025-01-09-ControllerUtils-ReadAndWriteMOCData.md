@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - ControllerUtils
+
+translated: true
+lang: ko
+permalink: /controllerutils/ControllerUtils-ReadAndWriteMOCData
+
+translation_link: /en/controllerutils/ControllerUtils-ReadAndWriteMOCData
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,12 +26,13 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * ReadAndWriteMOCData는 현재 컨트롤러에 연결된 가상 혹은 실제 포지셔너 축의 정보를 출력하는 컴포넌트이다.
 <p align="center">  <img src="/assets/images/ReadAndWriteMOCData.png" align="center" width="32%"></p>
-
-<br>
 
 # Input
 
@@ -44,6 +51,6 @@ tags:
 
 # How To Use
 
-* 다음은 ReadAndWriteMOCData 컴포넌트 사용시 마주할 수 있는 예입니다.
+* 다음은 ReadAndWriteMOCData 컴포넌트 사용시 마주할 수 있는 예시이다.
 
 <p align="center">  <img src="/assets/images/ReadAndWriteMOCData_02-1-768x184.png" align="center" width="90%"></p>

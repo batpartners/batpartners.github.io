@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - ControllerUtils
+
+translated: true
+lang: ko
+permalink: /controllerutils/ControllerUtils-ScanABBController
+
+translation_link: /en/controllerutils/ControllerUtils-ScanABBController
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,6 +26,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * GERTY 구동 PC에서 유선 또는 무선의 형식으로 연결 가능한 로봇 컨트롤러를 검색하는 컴포넌트 입니다.
@@ -30,12 +39,12 @@ tags:
 
 * **Update[Boolean/Item]**: 연결 가능한 컨트롤러 정보들을 업데이트 합니다.
 
-## Built-in Param | Basic Params
+## Built-in Param | Controller
 * Controller Type : 가상(Virtual), 실제(Real) 로봇 환경을 선택할 수 있다.
 
 <div align="center">
 <table style="border-collapse: collapse: width: 51 %; height: 100px;" border="0.5" data-ke-style="sytle4">
-<body>
+<tbody>
 <tr style="height: 20px;" bgcolor="#F2F2F2">
 <td style="width: 45%; height: 20px; text-align: center; font-weight: bolder;">Virtual</td>
 <td style="width: 50%; height: 20px; text-align: center; font-weight: bolder;">Real</td>
@@ -45,7 +54,7 @@ tags:
 <td style="width: 55%; height: 1-px; text-align: left;" rowspan="1">	
 실제 로봇 컨트롤러와 연결하여 해당 로봇의 데이터를 가져와 GERTY를 제어할 수 있다</td>
 </tr>
-</body>
+</tbody>
 </table>
 </div>
 

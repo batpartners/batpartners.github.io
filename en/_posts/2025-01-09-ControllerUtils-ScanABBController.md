@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - ControllerUtils
+
+translated: true
+lang: en
+permalink: /en/controllerutils/ControllerUtils-ScanABBController
+translation_link: /controllerutils/ControllerUtils-ScanABBController
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,36 +26,35 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* GERTY 구동 PC에서 유선 또는 무선의 형식으로 연결 가능한 로봇 컨트롤러를 검색하는 컴포넌트 입니다.
-
-<br>
+* This is a component that searches for a robot controller compatible with wired or wireless connection on the GERTY-operated PC.
 
 <p align="center">  <img src="/assets/images/ScanABBController.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
-* **Update[Boolean/Item]**: 연결 가능한 컨트롤러 정보들을 업데이트 합니다.
+* **Update[Boolean/Item]**: Updates information on available controllers that can be connected.
 
-## Built-in Param | Basic Params
-* Controller Type : 가상(Virtual), 실제(Real) 로봇 환경을 선택할 수 있다.
+## Built-in Param | Controller
+* **Controller Type**: Allows selection between virtual (Virtual) and physical (Real) robot environments.
 
 <div align="center">
 <table style="border-collapse: collapse: width: 51 %; height: 100px;" border="0.5" data-ke-style="sytle4">
-<body>
+<tbody>
 <tr style="height: 20px;" bgcolor="#F2F2F2">
 <td style="width: 45%; height: 20px; text-align: center; font-weight: bolder;">Virtual</td>
 <td style="width: 50%; height: 20px; text-align: center; font-weight: bolder;">Real</td>
 </tr>
 <tr style="height: 0px;">
-<td style="width: 50%; height: 1-px; text-align: left;" rowspan="1">ABB 로봇스튜디오 프로그램의 가상 로봇 컨트롤러 연결와 연결하여 해당 데이터를 가져와 GERTY를 제어할 수 있다.</td>
+<td style="width: 50%; height: 1-px; text-align: left;" rowspan="1">By connecting to the virtual robot controller in ABB RobotStudio, you can retrieve the necessary data and control GERTY.</td>
 <td style="width: 55%; height: 1-px; text-align: left;" rowspan="1">	
-실제 로봇 컨트롤러와 연결하여 해당 로봇의 데이터를 가져와 GERTY를 제어할 수 있다</td>
+By connecting to the physical robot controller, you can retrieve the robot’s data and control GERTY.</td>
 </tr>
-</body>
+</tbody>
 </table>
 </div>
 
@@ -57,5 +62,5 @@ tags:
 
 # Output
 
-* **ControllerInfo** : 연결된 로봇 데이터를 확인할 수 있다.
-* **SystemID** : 가상 혹은 실제 로봇의 축 값, 툴 데이터 값 등 시뮬레이션을 돕는 데이터를 출력한다. 
+* **ControllerInfo** : Allows you to check the connected robot data. 
+* **SystemID** :  Outputs data such as the axis values and tool data of the virtual or real robot to assist with the simulation.

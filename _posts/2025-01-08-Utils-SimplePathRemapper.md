@@ -32,7 +32,7 @@ tags:
 # Description
 
 * 입력된 DataTree의 각 Branch에 Item또는 Item Collection을 삽입합니다.
-<p align="center">  <img src="/assets/images/simplepathremapper.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/simplepathremapper.png" align="center" width="21%"></p>
 
 # Input
 

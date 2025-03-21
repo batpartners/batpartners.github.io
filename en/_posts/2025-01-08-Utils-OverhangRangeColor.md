@@ -35,8 +35,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/overhangrangecolor.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
 * **Mesh** : Receives the value for the mesh.
@@ -55,5 +53,5 @@ tags:
 
 Input the mesh and analyze the degree of overhang using a color spectrum.
 
-<p align="center">  <img src="/assets/images/overhagerangecolor_01-768x310.png" align="center" width="72%"></p>
-<p align="center">  <img src="/assets/images/overhagerangecolor_02-768x284.png" align="center" width="72%"></p>
+<p align="center">  <img src="/assets/images/overhagerangecolor_01-768x310.png" align="center" width="80%"></p>
+<p align="center">  <img src="/assets/images/overhagerangecolor_02-768x284.png" align="center" width="80%"></p>
