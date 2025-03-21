@@ -59,7 +59,7 @@ tags:
 
 # How To Use
 
-다음은 RealTimeDisplay 컴포넌트 사용시 마주할 수 있는 예시이다.
+* 다음은 RealTimeDisplay 컴포넌트 사용시 마주할 수 있는 예시이다.
 
 <p align="center">  <img src="/assets/images/RealTimeDisplay_00-768x249.png" align="center" width="90%"></p>
 

@@ -27,7 +27,7 @@ tags:
   - GERTY
 ---
 
-:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+:globe_with_meridians: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 

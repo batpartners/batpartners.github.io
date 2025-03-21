@@ -51,6 +51,6 @@ tags:
 
 # How To Use
 
-아래와 같은 경우 입력된 DataTree의 Paths[1]까지를 Tree A에 Paths[2]~ 마지막 Path 까지의 데이터를 Tree B에 분리하는 예시이다.
+* 아래와 같은 경우 입력된 DataTree의 Paths[1]까지를 Tree A에 Paths[2]~ 마지막 Path 까지의 데이터를 Tree B에 분리하는 예시이다.
 
 <p align="center">  <img src="/assets/images/SplitTree_exam-768x374.png" align="center" width="72%"></p>
