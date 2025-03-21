@@ -69,14 +69,14 @@ For example, with the Fronius TPSi Arc Welder:
 
 If the welding equipment is a single wire system, only set the Single Arc Parameters.
 
-* **Voltage [num / Item]** : Enter the voltage condition. For example, in the Fronius Arc Welder (TPS / TPSi common), Voltage corresponds to the Arc Length Correction value (-10 to 10).
-* **WireFeed [num / Item]** : Enter the WireFeed value in meters per minute (m/min). For example, in the Fronius TPSi Welder, the value must fall within the WireFeed range selected in the WeldProgram(TPSi) Spec. This ensures that no parameter errors occur during the execution of the actual RAPID Program created.
+* **Voltage [num/Item]** : Enter the voltage condition. For example, in the Fronius Arc Welder (TPS / TPSi common), Voltage corresponds to the Arc Length Correction value (-10 to 10).
+* **WireFeed [num/Item]** : Enter the WireFeed value in meters per minute (m/min). For example, in the Fronius TPSi Welder, the value must fall within the WireFeed range selected in the WeldProgram(TPSi) Spec. This ensures that no parameter errors occur during the execution of the actual RAPID Program created.
 
 <figure>
 	<a href="https://b-at.kr/wp-content/uploads/2023/05/weldsched-arcdata-1-768x456.png"><img src="https://b-at.kr/wp-content/uploads/2023/05/weldsched-arcdata-1-768x456.png"></a>
 </figure>
 
-* **Control [num / Item]** : Adjustment value applied to specific welders. Parameters vary depending on the welding equipment. For example, in the Fronius Arc Welder (TPS / TPSi common), this could be the Dynamic/Pulse Correction value (-10 to 10).
+* **Control [num/Item]** : Adjustment value applied to specific welders. Parameters vary depending on the welding equipment. For example, in the Fronius Arc Welder (TPS / TPSi common), this could be the Dynamic/Pulse Correction value (-10 to 10).
 * **Current** : Welding current during welding. For example, in Fronius's case, no specific allocation is needed.
 <br>
 Analog tuning value sent to certain welders.
@@ -85,11 +85,11 @@ Analog tuning value sent to certain welders.
 
 If the welding equipment is a twin wire system, set the conditions for the second wire using the Twin Arc Parameters.
 
-* **Voltage [num / Item]**: Enter the voltage condition.
-* **WireFeed [num / Item]**: Enter the WireFeed value in meters per minute (m/min).
-* **Control [num / Item]**: Adjustment value applied to specific welders.
+* **Voltage [num/Item]**: Enter the voltage condition.
+* **WireFeed [num/Item]**: Enter the WireFeed value in meters per minute (m/min).
+* **Control [num/Item]**: Adjustment value applied to specific welders.
 
 # Output
 
-* **ArcData [ArcData / Item]**: Outputs the defined ArcData based on the input and related settings.
-* **Code [Text / Item]**: Outputs the defined ArcData code as a string.
+* **ArcData [ArcData/Item]**: Outputs the defined ArcData based on the input and related settings.
+* **Code [Text/Item]**: Outputs the defined ArcData code as a string.

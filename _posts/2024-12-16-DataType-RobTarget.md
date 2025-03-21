@@ -44,7 +44,7 @@ RobTarget On Positioner은 계획한 이동 경로 위에서, 로봇 TCP(Tool Ce
 
 # Input
 
-* **Name [Text / Item]** : 생성할 RobTarget의 기본 변수명을 입력함. (기본값: “P”) <br> 컴포넌트는 입력된 Plane 데이터 개수에 따라, 생성되는 RobTarget 이름을 “변수명 0, 변수명 1, 변수명 2, …“ 과 같은 방식으로 할당.
+* **Name [Text/Item]** : 생성할 RobTarget의 기본 변수명을 입력함. (기본값: “P”) <br> 컴포넌트는 입력된 Plane 데이터 개수에 따라, 생성되는 RobTarget 이름을 “변수명 0, 변수명 1, 변수명 2, …“ 과 같은 방식으로 할당.
 * **Plane [Plane/DataTree]** : ABB RobTarget 형식으로 변환할 Plane을 입력.(기본값: WorldXY) 
 * **Robot_Base [Plane/Item]** : ABB RobTarget 형식으로 변환할 Plane을 입력. 
 * **Tilting Weight [Number/Item]** : ABB RobTarget 형식으로 변환할 Plane을 입력

@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - Utils
+
+translated: true
+lang: en
+permalink: /en/utils/Utils-SimplePathRemapper/
+translation_link: /utils/Utils-SimplePathRemapper/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,35 +26,33 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 입력된 DataTree의 각 Branch에 Item또는 Item Collection을 삽입합니다.
-<br>
+* Redefine the DataTree path according to Sequential / Odd numbered / Even numbered options.
 
 <p align="center">  <img src="/assets/images/simplepathremapper.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
-* **Tree [Generic | DataTree]** : Item또는 Item Collection을 삽입할 DataTree를 입력합니다.
+* **Tree [Generic/DataTree]** : Enter the DataTree for which the Path will be redefined.
 
-* **Items [Generic | List]** : 삽입할 Item 또는 Item Collection을 입력합니다.
+## Context Menu Options
 
-* **indices [int | List]** : 각 Branch 내에 Item 또는 Item Collection을 삽입할 인덱스를 입력합니다.
+* `Sequential Path` : Redefines the DataTree path as sequential paths such as “[0], [1], [2], …
+* `Odd Numbered Path` : Redefines the DataTree path as paths with odd numbers, such as “[1], [3], [5], …
+* `Even Numbered Path` : Redefines the DataTree path as paths with even numbers, such as “[0], [2], [4], …
 
 <br>
 
 # Output
 
-* **Tree [Generic / DataTree]** : 입력된 조건에 따라, 생성된 DataTree를 출력합니다. 
+* **Tree [Generic/DataTree]** : Outputs a DataTree with new paths mapped according to the specified conditions.
 
 <br>
 
 # How To Use
 
-<br>
-
 <p align="center">  <img src="/assets/images/SimplePathRemapper_exam-768x631.png" align="center" width="72%"></p>
-
-<br>

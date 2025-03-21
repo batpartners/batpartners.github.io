@@ -24,11 +24,7 @@ tags:
 
 * GERTY 구동 PC에서 유선 또는 무선의 형식으로 연결 가능한 로봇 컨트롤러를 검색하는 컴포넌트 입니다.
 
-<br>
-
 <p align="center">  <img src="/assets/images/ScanABBController.png" align="center" width="32%"></p>
-
-<br>
 
 # Input
 

@@ -43,7 +43,7 @@ Reference : ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001)
 
 # Input
 
-* **Name [Text / Item]**: Enter the base variable name for the RobTarget to be created. *(Default: “P”)*  
+* **Name [Text/Item]**: Enter the base variable name for the RobTarget to be created. *(Default: “P”)*  
   - The component assigns names to the generated RobTargets based on the number of input Plane data, following the format: `"VariableName 0, VariableName 1, VariableName 2, …"`.
 
 * **Plane [Plane/DataTree]**: Input the *Plane* to be converted into the *ABB RobTarget* format. *(Default: WorldXY)*  

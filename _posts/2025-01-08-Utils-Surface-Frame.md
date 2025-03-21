@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - Utils
+
+translated: true
+lang: ko
+permalink: /utils/Utils-Surface-Frame/
+
+translation_link: /en/utils/Utils-Surface-Frame/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,26 +26,24 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 입력된 Surface와 UV파라미터 값을 통해, Surface위의 특정 위치를 원점으로 하고, 해당 지점에서 접평면(Tangent Plane)을 출력하는 컴포넌트. 
 
-<br>
-
 <p align="center">  <img src="/assets/images/surfaceframe.png" align="center" width="32%"></p>
 
-<br>
 
 # Input
 
-* **Surface [Surface / Item]** : 접평면을 구할 Surface를 입력한다.
-
-<br>
+* **Surface [Surface/Item]** : 접평면을 구할 Surface를 입력한다.
 
 ## Built-in Param
 
-* **U-Param [double / Item]** : Surface의 U방향 파라미터를 설정한다.
-* **V-Param [double / Item]** : Surface의 V방향 파라미터를 설정한다.
+* **U-Param [double/Item]** : Surface의 U방향 파라미터를 설정한다.
+* **V-Param [double/Item]** : Surface의 V방향 파라미터를 설정한다.
 
 <br>
 

@@ -24,8 +24,6 @@ tags:
 
 * RealTimeDisplay는 실제 혹은 가상의 로봇 ID와 연결하여, 연결된 로봇의 움직임을 GERTY 시뮬레이션 움직임과 동기화 하여 관찰 할 수 있는 컴포넌트이다.
 
-<br>
-
 <p align="center">  <img src="/assets/images/realtimedisplay.png" align="center" width="42%"></p>
 
 <br>
@@ -55,12 +53,8 @@ tags:
 
 다음은 RealTimeDisplay 컴포넌트 사용시 마주할 수 있는 예입니다.
 
-<br>
-
 <p align="center">  <img src="/assets/images/RealTimeDisplay_00-768x249.png" align="center" width="90%"></p>
 
-<br>
 <p align="center"> 
 <video src="/assets/images/IMG_0556-2.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
 </video>
-</p>

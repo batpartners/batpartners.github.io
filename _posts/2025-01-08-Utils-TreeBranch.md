@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - Utils
+
+translated: true
+lang: ko
+permalink: /utils/Utils-TreeBranch/
+
+translation_link: /en/utils/Utils-TreeBranch/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,15 +26,13 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * 입력된 DataTree의 Path의 순번(Index)을 기준으로 특정 Branch를 추출한다.
-
-<br>
-
 <p align="center">  <img src="/assets/images/treebranch.png" align="center" width="32%"></p>
-
-<br>
 
 # Input
 
@@ -46,9 +50,4 @@ tags:
 # How To Use
 
 아래 예시와 같이, Path Index 기준으로 Branch가 추출되며, Index값이 총 Path의 Index범위를 벗어나면, Wrapping 됩니다.
-
-<br>
-
 <p align="center">  <img src="/assets/images/TreeBranch_exam-768x647.png" align="center" width="72%"></p>
-
-<br>

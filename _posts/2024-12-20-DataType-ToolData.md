@@ -39,7 +39,7 @@ tags:
 
 # Input
 
-* **Name [Text \ Item]** : Tool의 고유 변수명을 String 을 입력한다.
+* **Name [Text/Item]** : Tool의 고유 변수명을 String 을 입력한다.
 * **Base Plane[Plane]** : 로봇에 장착되는 Tool의 바닥면에, BasePlane을 설정한다.
 * **TCP [Plane]** : 장착된 Tool의 TCP를 대표하는 기준평면을 설정한다.
 

@@ -24,11 +24,7 @@ tags:
 
 * GERTYLicense는 라이센스의 활성화 상태, 버전, 사용기한, 분류, 패키지 정보 등 현재 정보를 확인할 수 있는 컴포넌트이다.
 
-<br>
-
 <p align="center">  <img src="/assets/images/GERTYLicense_01.png" align="center" width="32%"></p>
-
-<br>
 
 # Built-in Param | User information
 

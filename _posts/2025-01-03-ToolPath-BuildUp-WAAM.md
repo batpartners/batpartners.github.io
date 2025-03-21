@@ -38,7 +38,7 @@ tags:
 
 # Input
 
-* **Deposition ToolPaths [DepositionToolPath / List]** : DepositionToolPath Data를 받는다.
+* **Deposition ToolPaths [DepositionToolPath/List]** : DepositionToolPath Data를 받는다.
 * **Is Bottommost [Boolean]** : 바닥면부터 시작되는 WAAM 적층 툴패스 여부를 확인한다.
 
 <br>

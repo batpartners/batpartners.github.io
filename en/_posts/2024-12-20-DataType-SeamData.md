@@ -53,30 +53,30 @@ tags:
 
 ## Built-in Param | Ignition Phase Param
 
-* **Purge Time [Num / item]** : Purge Time is a parameter set in seconds (s) to fill the gas line and torch interior with shielding gas. The gas flow is initiated in advance by the Purge Time before reaching the welding start target, as programmed by the ArcLStart or ArcCStart instructions.
-* **Preflow Time [Num / item]** : Preflow Time is a parameter set in seconds (s) to pre-flow shielding gas over the weld material. The robot remains stationary at the welding start target for the duration of the set Preflow Time before the arc ignites.
-* **Ignition move delay [Num / item]** : Set the delay time in seconds (s) from when the arc stabilizes in the Ignition Phase to when the Heating Phase begins. During the Ignition move delay, the ignition-related reference values are valid.
+* **Purge Time [Num/item]** : Purge Time is a parameter set in seconds (s) to fill the gas line and torch interior with shielding gas. The gas flow is initiated in advance by the Purge Time before reaching the welding start target, as programmed by the ArcLStart or ArcCStart instructions.
+* **Preflow Time [Num/item]** : Preflow Time is a parameter set in seconds (s) to pre-flow shielding gas over the weld material. The robot remains stationary at the welding start target for the duration of the set Preflow Time before the arc ignites.
+* **Ignition move delay [Num/item]** : Set the delay time in seconds (s) from when the arc stabilizes in the Ignition Phase to when the Heating Phase begins. During the Ignition move delay, the ignition-related reference values are valid.
 
 ## Built-in Param : Heat Phase Param​
 
-* **Heat Speed [Num / item]** : The welding speed during heating at the start of the Weld phase.
+* **Heat Speed [Num/item]** : The welding speed during heating at the start of the Weld phase.
 
-* **Heat Time [Num / item]** : The duration of heating at the start of the Weld phase in seconds (sec). Heat Time is applied when Heat Distance and Heat Speed are set to 0; in other words, time-based settings can only be used if distance-based settings are not used.
+* **Heat Time [Num/item]** : The duration of heating at the start of the Weld phase in seconds (sec). Heat Time is applied when Heat Distance and Heat Speed are set to 0; in other words, time-based settings can only be used if distance-based settings are not used.
 
-* **Heat Distance [Num / item]** : The distance from the start of the Weld phase over which the Heat data remains active.
+* **Heat Distance [Num/item]** : The distance from the start of the Weld phase over which the Heat data remains active.
 
 
 ## Built-in Param : Heat Phase Param​
 
-* **Cool Time [Num / item]** : The time in seconds (s) to close the Weld Phase process before other ending operations like crater-filling occur.
-* **Fill Time [Num / item]** : The crater-filling time in the Weld End Phase.
-* **BBack Time [Num / item]** : The time in seconds (s) for the wire to burn back when the wire feed stops. The BBack Time parameter is used to prevent the wire from sticking to the tip or bead when the MIG/MAG welding process shuts down.
-* **RBack Time [Num / item]** : The time in seconds (s) for the wire to roll back when the welding equipment shuts down. The RBack Time parameter is used to prevent the wire from sticking to the tip or bead when the TIG welding process shuts down.
-* **Postflow Time [Num / item]** : The time in seconds (s) for shielding gas to continue flowing after the End Phase. The Postflow Time is used to prevent oxidation of the wire and weld area during the cooling process through the use of shielding gas.
+* **Cool Time [Num/item]** : The time in seconds (s) to close the Weld Phase process before other ending operations like crater-filling occur.
+* **Fill Time [Num/item]** : The crater-filling time in the Weld End Phase.
+* **BBack Time [Num/item]** : The time in seconds (s) for the wire to burn back when the wire feed stops. The BBack Time parameter is used to prevent the wire from sticking to the tip or bead when the MIG/MAG welding process shuts down.
+* **RBack Time [Num/item]** : The time in seconds (s) for the wire to roll back when the welding equipment shuts down. The RBack Time parameter is used to prevent the wire from sticking to the tip or bead when the TIG welding process shuts down.
+* **Postflow Time [Num/item]** : The time in seconds (s) for shielding gas to continue flowing after the End Phase. The Postflow Time is used to prevent oxidation of the wire and weld area during the cooling process through the use of shielding gas.
 
 <br>
 
 # Output
 
-* **SeamData [SeamData / item]** : Outputs the defined SeamData based on the input and related settings.
-* **Code [Text / Item]** : Outputs the defined SeamData code as a string.
+* **SeamData [SeamData/item]** : Outputs the defined SeamData based on the input and related settings.
+* **Code [Text/Item]** : Outputs the defined SeamData code as a string.

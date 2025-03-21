@@ -99,4 +99,4 @@ tags:
 
 # Output
 
-* **Fly-by Targets[Plane / DataTree]** : 이동 및 회피 경로의 결과를 짝수 브랜치 DataTree로 변환한다. 입력된 조건에 따라, 생성된 이동경로를 DataTree 형태로 출력한다. 이때 FlyBy Targets Output은 주요경로에의 최초 진입/최후 진출에 해당하는 FlyBy Plane까지를 포함하기 때문에, Target Planes Input의 Branch 개수보다 1개 많은 Branch를 갖는다. 또, 이동경로 Instruction 할당 이후, 주요 경로에 대한 Instruction과 데이터 병합을 용이하게 하기 위해, [0]-[2]-[4]-… 로 시작하는 짝수의 Path를 갖는 DataTree가 된다.
+* **Fly-by Targets[Plane/DataTree]** : 이동 및 회피 경로의 결과를 짝수 브랜치 DataTree로 변환한다. 입력된 조건에 따라, 생성된 이동경로를 DataTree 형태로 출력한다. 이때 FlyBy Targets Output은 주요경로에의 최초 진입/최후 진출에 해당하는 FlyBy Plane까지를 포함하기 때문에, Target Planes Input의 Branch 개수보다 1개 많은 Branch를 갖는다. 또, 이동경로 Instruction 할당 이후, 주요 경로에 대한 Instruction과 데이터 병합을 용이하게 하기 위해, [0]-[2]-[4]-… 로 시작하는 짝수의 Path를 갖는 DataTree가 된다.

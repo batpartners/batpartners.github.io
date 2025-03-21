@@ -38,8 +38,8 @@ tags:
 
 # Input
 
-* **GERTY Robot [GERTY Robot / Item]** : 제어할 로봇기종에 따라 설정된, Robot 컴포넌트의 결과값을 입력한다.
-* **GERTY Solver [GERTY Solver / Item]** : GERTY Core 컴포넌트가 출력하는 GERTY Solver 데이터를 입력한다. 
+* **GERTY Robot [GERTY Robot/Item]** : 제어할 로봇기종에 따라 설정된, Robot 컴포넌트의 결과값을 입력한다.
+* **GERTY Solver [GERTY Solver/Item]** : GERTY Core 컴포넌트가 출력하는 GERTY Solver 데이터를 입력한다. 
 
 ## Built-in Param | Basic Params
 
@@ -60,7 +60,7 @@ tags:
 
 2) **Simulation**: 로봇의 연속동작을 시뮬레이션하기 위한 슬라이더 인터페이스 패널.<br>
 * **Simulation [Slider]** : 마우스 드래그 또는 플레이어 버튼 인터페이스로 메인 슬라이더 값을 조절하여, 계획한 로봇의 동작을 시뮬레이션 할 수 있다.
-* **Step Backward / Step Forward [Button]** : 버튼을 클릭하여, 현재 RobTarget 동작으로부터 직전/직후 RobTarget의 동작을 프리뷰한다.
+* **Step Backward/Step Forward [Button]** : 버튼을 클릭하여, 현재 RobTarget 동작으로부터 직전/직후 RobTarget의 동작을 프리뷰한다.
 * **Play [Button]** : 버튼을 클릭하여, 현재 RobTarget  동작으로부터 이후의 연속 동작을 시뮬레이션 한다. 
 * **Stop [Button]** : 시뮬레이션 Play가 활성화된 상태에서, 한번 클릭하면 시뮬레이션을 일시 정지한다. 더블 클릭하면 메인 슬라이더를 시작 지점으로 초기화한다. 
 * **Speed [Slider]** : Play 버튼 작동시, 시뮬레이션 진행 속도를 설정한다.
@@ -77,4 +77,4 @@ tags:
 
 # Output
 
-* **Tool Center Plane [Plane / Item]** : 현재 프리뷰되는 로봇의 동작에서 TCP(Tool Center Point)를 평면 객체로 출력한다.
+* **Tool Center Plane [Plane/Item]** : 현재 프리뷰되는 로봇의 동작에서 TCP(Tool Center Point)를 평면 객체로 출력한다.

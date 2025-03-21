@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - Utils
+
+translated: true
+lang: en
+permalink: /en/utils/Utils-InsertItems/
+translation_link: /utils/Utils-InsertItems/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,35 +26,30 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 입력된 DataTree의 각 Branch에 Item또는 Item Collection을 삽입합니다.
-<br>
-
+* Inserts an item or item collection into each branch of the input DataTree.
 <p align="center">  <img src="/assets/images/insertTree.png" align="center" width="32%"></p>
-
-<br>
 
 # Input
 
-* **Tree [Generic | DataTree]** : Item또는 Item Collection을 삽입할 DataTree를 입력합니다.
-
-* **Items [Generic | List]** : 삽입할 Item 또는 Item Collection을 입력합니다.
-
-* **indices [int | List]** : 각 Branch 내에 Item 또는 Item Collection을 삽입할 인덱스를 입력합니다.
+* **Tree [Generic/DataTree]** :  Input the DataTree where items or item collections will be inserted.
+* **Items [Generic/List]** : Input the items or item collections to be inserted.
+* **indices [int/List]** : Input the indices within each branch where items or item collections will be inserted.
 
 <br>
 
 # Output
 
-* **Tree [Generic / DataTree]** : 입력된 조건에 따라, 생성된 DataTree를 출력합니다. 
+* **Tree [Generic/DataTree]** : Outputs the generated DataTree based on the input conditions.
 
 <br>
 
 # How To Use
 
-<br>
+* If the indices values corresponding to the positions where items or item indices will be inserted exceed the insertable index range within the branch, they will wrap around and be applied accordingly.
 
 <p align="center">  <img src="/assets/images/Insert_Items_Exam-768x587.png" align="center" width="72%"></p>
-
-<br>

@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - Utils
+
+translated: true
+lang: en
+permalink: /en/utils/Utils-TreeBranch/
+translation_link: /utils/Utils-TreeBranch/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,35 +26,30 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 입력된 DataTree의 Path의 순번(Index)을 기준으로 특정 Branch를 추출한다.
-
-<br>
+* Extracts specific branches from the input DataTree based on the sequence (index) of paths.
 
 <p align="center">  <img src="/assets/images/treebranch.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
-* **Tree [Generic / DataTree]** : 특정 Branch를 추출할 DataTree를 입력한다.
-* **Index [ Int / Item]** : 추출할 Path의 Index를 입력한다. 
+* **Tree [Generic/DataTree]** : Input the DataTree from which specific branches will be extracted.
+* **Index [Int/Item]** : Input the index of the path to be extracted.
 
 <br>
 
 # Output
 
-* **Branch [Generic / DataTree]** : 입력한 Path Index의 Branch를 출력다. 
+* **Branch [Generic/DataTree]** : Outputs the branch at the specified path index.
 
 <br>
 
 # How To Use
 
-아래 예시와 같이, Path Index 기준으로 Branch가 추출되며, Index값이 총 Path의 Index범위를 벗어나면, Wrapping 됩니다.
-
-<br>
+As in the example below, branches are extracted based on the path index, and if the index value exceeds the total range of path indices, it wraps around.
 
 <p align="center">  <img src="/assets/images/TreeBranch_exam-768x647.png" align="center" width="72%"></p>
-
-<br>

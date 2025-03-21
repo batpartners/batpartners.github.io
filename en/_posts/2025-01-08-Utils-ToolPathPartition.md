@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - Utils
+
+translated: true
+lang: en
+permalink: /en/utils/Utils-ToolPathPartition/
+translation_link: /utils/Utils-ToolPathPartition/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,29 +26,29 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 입력된 Surface와 UV파라미터 값을 통해, Surface위의 특정 위치를 원점으로 하고, 해당 지점에서 접평면(Tangent Plane)을 출력하는 컴포넌트. 
-
-<br>
+* The ToolPathsPartition is a component that allows different conditions to be set for the start and end points. The length of the settings for the start and end points cannot exceed the total length of the layer. If the settings exceed this length, the values for each respective point will be reset and output as percentages.
 
 <p align="center">  <img src="/assets/images/toolpathpartition.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
-* **Surface [Surface / Item]** : 접평면을 구할 Surface를 입력한다.
+* **TargetPlanes[Plane]** : Connects the major paths of the previous results’ TargetPlanes.
 
-<br>
+## Built-in Param | Partition
 
-## Built-in Param
-
-* **U-Param [double / Item]** : Surface의 U방향 파라미터를 설정한다.
-* **V-Param [double / Item]** : Surface의 V방향 파라미터를 설정한다.
+* **Start(mm)** : Determines the partition distance (mm) from the start point.  
+* **End(mm)** : Determines the partition distance (mm) from the end point.  
+* **Substitution(%)** : If the distance value settings exceed the actual length of the distance, the partition for the respective point can be set as a percentage.
 
 <br>
 
 # Output
 
-* **BasePlane [Plane / item]** : 입력한 조건에 따라, 정의된 접평면(Tangent Plane)을 출력한다. 
+* **Targets** : Outputs the target planes divided by partitions.  
+* **Index** : Outputs the indexes of the start and end points for the partitioned sections. 
+* **Domain** : Outputs the domains of each layer.

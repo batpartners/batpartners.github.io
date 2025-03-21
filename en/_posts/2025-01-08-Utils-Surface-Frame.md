@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - Utils
+
+translated: true
+lang: en
+permalink: /en/utils/Utils-Surface-Frame/
+translation_link: /utils/Utils-Surface-Frame/
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,29 +26,28 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 입력된 Surface와 UV파라미터 값을 통해, Surface위의 특정 위치를 원점으로 하고, 해당 지점에서 접평면(Tangent Plane)을 출력하는 컴포넌트. 
-
-<br>
+* A component that takes an input surface and UV parameters to output the tangent plane at a specific location on the surface, with that location as the origin.
 
 <p align="center">  <img src="/assets/images/surfaceframe.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
-* **Surface [Surface / Item]** : 접평면을 구할 Surface를 입력한다.
+* **Surface [Surface/Item]** :  Input the surface for which to compute the tangent plane.
 
 <br>
 
 ## Built-in Param
 
-* **U-Param [double / Item]** : Surface의 U방향 파라미터를 설정한다.
-* **V-Param [double / Item]** : Surface의 V방향 파라미터를 설정한다.
+* **U-Param [double/Item]** : Sets the U-direction parameter of the surface.
+* **V-Param [double/Item]** : Sets the V-direction parameter of the surface.
 
 <br>
 
 # Output
 
-* **BasePlane [Plane / item]** : 입력한 조건에 따라, 정의된 접평면(Tangent Plane)을 출력한다. 
+* **BasePlane [Plane/item]** : Outputs the defined tangent plane based on the input conditions.

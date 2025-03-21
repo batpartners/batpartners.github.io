@@ -46,7 +46,7 @@ RobTarget On Positioner은 계획한 이동 경로 위에서, 로봇 TCP\Tool Ce
 # Input
 
 * **GERTY Positioner** : Positioner Data를 입력한다.
-* **Name [Text \ Item]** : ABB RobTarget의 변수명을 String으로 기재한다.
+* **Name [Text/Item]** : ABB RobTarget의 변수명을 String으로 기재한다.
 * **Plane [Plane/DataTree]** : 사용자가 계획한 ToolPath Plane의 데이터를 받는다.
 * **Angle [Number/Item]** : TargetPlane의 Normal의 각도를 변경하여 로봇의 자세를 수정할 수 있다.
 * **WobjData [Plane]** : Work Object Data로 작업영역에 따라 기준 Plane을 재정할 수 있다.

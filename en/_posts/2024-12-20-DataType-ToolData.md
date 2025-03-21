@@ -37,7 +37,7 @@ tags:
 
 # Input
 
-* **Name [Text / Item]** : Enter the unique variable name of the tool as a string.
+* **Name [Text/Item]** : Enter the unique variable name of the tool as a string.
 * **Base Plane[Plane]** : Set the base plane of the tool mounted on the robot.
 * **TCP [Plane]** : Set the reference plane representing the TCP of the mounted tool.
 

@@ -42,9 +42,9 @@ tags:
 
 * **CurveA [Curve]** : 첫번째 Curve를 연결합니다.
 * **CurveB [Curve]** : 두번째 Curve를 연결합니다.
-* **Target Count [Number / Optional]**: 열선 경로 수를 결정합니다.
-* **Parameter [List / Optional]** : Ribcurve 위 타겟의 원점 위치를 결정합니다.
-* **Wrist Object [Geometry / Optional]** : point, curve, line의 입력값을 통해 열선의 경로의 법선의 방향을 재정의 할 수 있습니다.
+* **Target Count [Number/Optional]**: 열선 경로 수를 결정합니다.
+* **Parameter [List/Optional]** : Ribcurve 위 타겟의 원점 위치를 결정합니다.
+* **Wrist Object [Geometry/Optional]** : point, curve, line의 입력값을 통해 열선의 경로의 법선의 방향을 재정의 할 수 있습니다.
 
 ## Built-in Param | Hotwire Crvs
 

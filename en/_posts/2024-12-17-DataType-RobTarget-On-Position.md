@@ -41,7 +41,7 @@ Reference: ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001).
 # Input
 
 * **GERTY Positioner** : Inputs Positioner Data.
-* **Name [Text / Item]** : Specify the variable name of the ABB RobTarget as a string.
+* **Name [Text/Item]** : Specify the variable name of the ABB RobTarget as a string.
 * **Plane [Plane/DataTree]** : Receives data for the ToolPath Plane planned by the user.
 * **Angle [Number/Item]** : Modifies the robot's posture by changing the angle of the TargetPlane's normal.
 * **WobjData [Plane]** : Defines the reference plane according to the workspace as Work Object Data.

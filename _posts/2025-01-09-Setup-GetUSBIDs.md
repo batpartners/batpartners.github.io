@@ -25,11 +25,7 @@ tags:
 * GetUSBIDs는 사용자의 로컬 PC에 귀속된 MAC주소가 아닌 USB에 귀속된 MAC주소를 사용하여 라이센스를 발급한다.
 * PC에 귀속된 라이센스와 달리 PC가 달라져도 USB를 연결하여 GERTY를 사용할 수 있다.
 
-<br>
-
 <p align="center">  <img src="/assets/images/GetUSBIDs.png" align="center" width="32%"></p>
-
-<br>
 
 # Built-in Param | user information
 

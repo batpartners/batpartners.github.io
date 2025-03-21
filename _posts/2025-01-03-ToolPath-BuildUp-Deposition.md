@@ -41,7 +41,7 @@ tags:
 # Input
 
 * **Home Pos [Plane/Optional]** : 적층 시작 전 Home position에 해당하는 Plane을 입력한다. 기본 값으로 World XY을 받는다.
-* **Deposition ToolPaths [DepositionToolPath / List]** : DepositionToolPath Data를 받는다.
+* **Deposition ToolPaths [DepositionToolPath/List]** : DepositionToolPath Data를 받는다.
 * **Pre-Extrusion Curve [Curve/Optional]** : 노즐 클리닝을 위해, 미리 압출할 형상의  Curve 데이터를 받는다.
 * **Is Bottommost [Boolean]** : 바닥면부터 시작되는 적층 툴패스 여부를 확인한다.
 
