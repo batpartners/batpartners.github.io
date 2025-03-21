@@ -36,8 +36,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/Drawing.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
 * **Curves[Curve/List]** : 작성하고자 하는 curve를 선택한다.

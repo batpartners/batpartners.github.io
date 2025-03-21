@@ -37,8 +37,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/ParalellFinishing.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
 * **Geometry**: Mesh 또는 Surface의 Geometry parameter를 입력한다.

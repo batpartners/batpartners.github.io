@@ -35,7 +35,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/insertTree.png" align="center" width="25%"></p>
 
-
 # Input
 
 * **Tree [Generic/DataTree]** : Item또는 Item Collection을 삽입할 DataTree를 입력합니다.

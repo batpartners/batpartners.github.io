@@ -36,8 +36,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/HotwireToolpathfromCrvs.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
 * **CurveA [Curve]** : 첫번째 Curve를 연결합니다.

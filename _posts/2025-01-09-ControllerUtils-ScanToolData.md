@@ -52,6 +52,5 @@ tags:
 <br>
 
 # How To Use
-* ScanABBController로 현재 로봇 ID를 읽어와 ScanToolData에 연결하여 사용한다. 
-해당 로봇의 툴 데이터들을 추출하여 정교한 시뮬레이션을 돕는다.
+* ScanABBController로 현재 로봇 ID를 읽어와 ScanToolData에 연결하여 사용한다. 해당 로봇의 툴 데이터들을 추출하여 정교한 시뮬레이션을 돕는다.
 <p align="center">  <img src="/assets/images/RealTimeDisplay_01-768x341 (1).png" align="center" width="90%"></p>

@@ -51,7 +51,7 @@ tags:
 
 # How To Use
 
-작업 메쉬(Mesh)를 입력한 후 색상 스펙트럼으로 오버행(Overhang) 정도를 파악한다.
+* 작업 메쉬(Mesh)를 입력한 후 색상 스펙트럼으로 오버행(Overhang) 정도를 파악한다.
 
 <p align="center">  <img src="/assets/images/overhagerangecolor_01-768x310.png" align="center" width="80%"></p>
 <p align="center">  <img src="/assets/images/overhagerangecolor_02-768x284.png" align="center" width="80%"></p>

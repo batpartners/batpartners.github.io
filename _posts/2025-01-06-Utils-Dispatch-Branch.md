@@ -39,7 +39,7 @@ tags:
 
 * **Tree [Generic/DataTree]** : 패턴에 따라 분리할 DataTree를 입력한다.
 * **Pattern [Boolean/List]** : 분리 패턴으로 사용할 bool값을 List형식으로 입력한다. Pattern의 “True”에 매칭되는 Branch는 Tree_A, “False” 에 매칭되는 Branch는 Tree_B로 분리된다. 
-  - ex) Pattern = { True, false } 입력한 경우, Input으로 입력된, DataTree의 홀수번째 Path의 Branch가 Tree A로, 짝수번째 Path의 Branch가 Tree B로 분리됨.
+  - e.g., Pattern = { True, false } 입력한 경우, Input으로 입력된, DataTree의 홀수번째 Path의 Branch가 Tree A로, 짝수번째 Path의 Branch가 Tree B로 분리됨.
 
 <br>
 

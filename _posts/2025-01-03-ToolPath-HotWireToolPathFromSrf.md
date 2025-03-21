@@ -36,8 +36,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/HotwireToolpathfromSrf.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
 * **Surface** : 열선 컷팅할 Surface 파라미터를 입력합니다. Ruled Surface 형식의 모델링만 열선 가공 Toolpath 생성이 가능합니다.

@@ -55,5 +55,5 @@ tags:
 * **Base Plane [Plane]** : 로봇 6번 플랜지에 장착 되는 툴 바닥면 Plane을 내보낸다.
 * **TCP [Plane]** : 툴의 Tool Center Plane 값을 내보낸다.
 * **Mass [Double]** : 툴의 Mass 정보를 내보낸다.
-* **Centeroid [Generic Number]** : 툴의 무게중심 값을 내보낸다. (ex: 0,0,0 값의 형태)
-* **Inertia [Generic Number]** : 툴의 관성모멘트 값을 내보낸다. (ex: 0,0,0 값의 형태)
+* **Centeroid [Generic Number]** : 툴의 무게중심 값을 내보낸다. (e.g., 0,0,0 값의 형태)
+* **Inertia [Generic Number]** : 툴의 관성모멘트 값을 내보낸다. (e.g., 0,0,0 값의 형태)

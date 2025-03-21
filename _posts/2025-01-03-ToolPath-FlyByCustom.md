@@ -36,8 +36,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/FlyByCustom.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
 * **TargetPlanes [Plane/DataTree]**: FlyBy Targets을 적용하기 위해, TCP 주요 경로에 해당하는 Target Plane들을 입력한다.

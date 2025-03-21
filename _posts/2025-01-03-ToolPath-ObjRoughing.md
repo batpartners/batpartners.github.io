@@ -36,8 +36,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/ObjRoughing.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
 * **Geometry**: Roughing을 통해 깎을 볼륨을 솔리드(Brep) 또는 메시(Mesh) 타입으로 입력한다.

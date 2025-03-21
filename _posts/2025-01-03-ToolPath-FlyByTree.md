@@ -36,8 +36,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/FlyByTree.png" align="center" width="32%"></p>
 
-<br>
-
 # Input
 
 * **TargetPlanes0** : 첫번째 주요경로 TargetPalnes를 연결한다.
