@@ -39,8 +39,8 @@ sidebar:
         url: /robottool/RobotTool-Positioner/
       - title: "CreateWorkBench"
         url: /robottool/RobotTool-CreateWorkbench/
-      - title: "Spindle Editor"
-        url: /robottool/RobotTool-SpindleEditor/
+      - title: "ToolPointerEdit"
+        url: /robottool/RobotTool-ToolPointerEdit/
       - title: "Workbench Importer"
         url: /robottool/RobotTool-WorkbenchImporter/
   - title: "3. Instruction"
