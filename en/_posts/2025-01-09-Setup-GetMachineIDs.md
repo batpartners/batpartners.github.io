@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - Setup
+
+translated: true
+lang: en
+permalink: /en/setup/Setup-GetMachineIDs
+translation_link: /setup/Setup-GetMachineIDs
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,22 +26,25 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* 거티를 설치하여 사용 예정인 PC의 고유 ID를 추출하는 컴포넌트로, 현재 거티 라이센스는 맥주소, 유에스비아이디(USBID) 2가지 종속 방식을 보유하고 있다.
-* 사용자는 컴포넌트 내 링크를 통해, 사용자의 GetMachineIDs와 함께 제공하는 양식의 을 채워 contact@b-at.kr로 보낼 수 있다.
-<br>
+* This is a component for extracting the MAC address of the PC where GERTY will be installed and used. Currently, the GERTY license has two dependency methods: MAC address and USB ID. 
+* Users can fill out the provided form with their MAC address and send it to contact@b-at.kr via the link within the component.
 
 <p align="center">  <img src="/assets/images/GetMachineIDs.png" align="center" width="32%"></p>
+
+# Input
+## Built-in Param | GERTY License:Send MACAddress
+
+* **Trial Request Page** : A link to the website for filling out the license form.
 
 <br>
 
 # Output
 
-* **MACAddress** : 사용자의 고유 MACAddress 주소 값을 출력한다.
+* **MACAddress** : Outputs the user’s unique MAC address value.
 
-<br>
-
-<p align="center">  <img src="/assets/images/GetMachineIDs-768x157.png" align="center" width="72%"></p>
-
-<br>
+<p align="center"><img src="/assets/images/GetmachineIDs_00.png" align="center" width="65%"></p>

@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - Setup
+
+translated: true
+lang: en
+permalink: /en/setup/Setup-GERTYLicense
+translation_link: /setup/Setup-GERTYLicense
+
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,22 +26,22 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
-* GERTYLicense는 라이센스의 활성화 상태, 버전, 사용기한, 분류, 패키지 정보 등 현재 정보를 확인할 수 있는 컴포넌트이다.
-
-<br>
+* GERTYLicense is a component that allows you to check the current information such as the activation status, version, expiration date, classification, and package details of the license.
 
 <p align="center">  <img src="/assets/images/GERTYLicense_01.png" align="center" width="32%"></p>
 
-<br>
+# Input
+## Built-in Param | GERTY License:User information
 
-# Built-in Param | User information
-
-* **Refresh** : 해당 컴포넌트 상태를 업데이트 한다.
+* **Refresh** : Updates the status of the component.
 
 <br>
 
 # Output
 
-* **LicenseInfo** : 사용자의 라이센스 정보를 출력한다.
+* **LicenseInfo.** :  Outputs the user’s license information.

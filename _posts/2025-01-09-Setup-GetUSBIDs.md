@@ -10,6 +10,12 @@ author_profile: true
 
 categories:
   - Setup
+
+translated: true
+lang: ko
+permalink: /setup/Setup-GetUSBIDs
+
+translation_link: /en/setup/Setup-GetUSBIDs
 sidebar:
   nav: "sidebar"
 toc: true
@@ -20,6 +26,9 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+
 # Description
 
 * GetUSBIDs는 사용자의 로컬 PC에 귀속된 MAC주소가 아닌 USB에 귀속된 MAC주소를 사용하여 라이센스를 발급한다.
@@ -27,7 +36,8 @@ tags:
 
 <p align="center">  <img src="/assets/images/GetUSBIDs.png" align="center" width="32%"></p>
 
-# Built-in Param | user information
+# Input
+## Built-in Param | GERTY License:user information
 
 * **Refresh** : 해당 라이센스 상태를 업데이트 한다.
 

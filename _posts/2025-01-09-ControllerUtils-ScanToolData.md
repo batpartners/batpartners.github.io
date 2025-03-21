@@ -33,7 +33,7 @@ tags:
 
 * ScanToolData는 가상 혹은 실제 로봇의 현재 툴 데이터 정보 추출을 돕는 컴포넌트이다.
 
-<p align="center">  <img src="/assets/images/ScanToolData.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/ScanToolData.png" align="center" width="25%"></p>
 
 # Input
 
