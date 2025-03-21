@@ -32,11 +32,11 @@ tags:
 # Description
 
 * The Positioner's RobTarget (Robot Target) is a component that defines the position of the robot and additional axes using user-defined ToolPath Plane data to define the RobTarget data. 
-RobTarget On Positioner is a data format in the ABB RAPID Program that defines the movements of the robot and auxiliary equipment. 
-RobTarget On Positioner includes information such as the position and orientation of the robot's TCP (Tool Center Point) and the angle information of the additional axes along the planned movement path.
-Reference: ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001).
-<p align="center">  <img src="/assets/images/02_RobtargetOnPositioner.png" align="center" width="32%"></p>
+* RobTarget On Positioner is a data format in the ABB RAPID Program that defines the movements of the robot and auxiliary equipment. 
+* RobTarget On Positioner includes information such as the position and orientation of the robot's TCP (Tool Center Point) and the angle information of the additional axes along the planned movement path.
+  * Reference: ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001).
 
+<p align="center">  <img src="/assets/images/02_RobtargetOnPositioner.png" align="center" width="32%"></p>
 
 # Input
 

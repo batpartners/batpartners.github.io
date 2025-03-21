@@ -36,7 +36,6 @@ It allows transforming the position of the internal work object from WobjData to
 
 <p align="center">  <img src="/assets/images/04_WobjData.png" align="center" width="32%"></p>
 
-
 # Input
 
 * **Name [Text]** : Enter the variable name for the UserFrame.

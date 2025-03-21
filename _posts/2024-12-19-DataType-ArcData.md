@@ -31,15 +31,14 @@ tags:
 
 # Description
 
-* 용가재 조건(Weld schedule) 및 용접 모드에 따라, ArcData를 정의하는 컴포넌트이다.
-ArcData는 아크 용접을 위한 ABB Arc Instruction에 활용되는, 기본적인 데이터 형식으로, SeamData 및 WeldData에 공통적으로 사용되는 조건 값을 담고 있는 서브 데이터로, 용가재별 프로그램 식별ID, 와이어 송급 속도, 전압, 전류 등의 정보를 저장한다.
+* 용가재 조건(Weld schedule) 및 용접 모드에 따라, ArcData를 정의하는 컴포넌트이다. ArcData는 아크 용접을 위한 ABB Arc Instruction에 활용되는, 기본적인 데이터 형식으로, SeamData 및 WeldData에 공통적으로 사용되는 조건 값을 담고 있는 서브 데이터로, 용가재별 프로그램 식별ID, 와이어 송급 속도, 전압, 전류 등의 정보를 저장한다.
 
 <p align="center">  <img src="/assets/images/ArcData.png" align="center" width="32%"></p>
 
 # Input
 
 * **Weld schedule [Int/Item]** : 용접시스템의 용접 프로그램 식별 Number(ID)를 입력한다. Weld schedule에 따라 용접장비 내부에 프리셋되어있는 용접 모드가 결정된다. 사용자는 GERTY의 WeldProgram 컴포넌트를 이용하여, Weld Schedule을 선택/입력할 수 있다.
-* ex) Fronius Arc Welder(TPS / TPSi 공통) 의 경우, - ABB Pendant에서 Program Mode 설정시, Synergic Number로 적용 - ABB Pendant에서 Job Mode 설정시, 용접기 내부 Job Number로 적용 GERTY에서는 기본적으로 Program모드를 사용하는 것으로 가정, WeldProgram(TPS/TPSi) 컴포넌트를 사용한다.
+> ex) Fronius Arc Welder(TPS / TPSi 공통) 의 경우, - ABB Pendant에서 Program Mode 설정시, Synergic Number로 적용 - ABB Pendant에서 Job Mode 설정시, 용접기 내부 Job Number로 적용 GERTY에서는 기본적으로 Program모드를 사용하는 것으로 가정, WeldProgram(TPS/TPSi) 컴포넌트를 사용한다.
 
 * **Weld mode [int/item]** :
 용접 시스템의 Weld Mode를 선택합니다. Weld Mode는 용접 장비 제조사마다 다른 파라미터로 적용될 수 있으므로, 각 용접 장비 메뉴얼을 따른다.
@@ -61,9 +60,7 @@ ArcData는 아크 용접을 위한 ABB Arc Instruction에 활용되는, 기본�
 * **WireFeed [num/Item]** : WireFeed 값을 m/min 단위 입력한다. 
 * ex) Fronius Welder TPSi의 경우 WeldProgram(TPSi) 에서 선택한 Spec. 의 WireFeed 범위 내의 값이 들어가야, 실제 작성된 RAPID Program 실행중 파라미터 에러가 발생하지 않는다.
 
-<figure>
-	<a href="https://b-at.kr/wp-content/uploads/2023/05/weldsched-arcdata-1-768x456.png"><img src="https://b-at.kr/wp-content/uploads/2023/05/weldsched-arcdata-1-768x456.png"></a>
-</figure>
+<p align="center">  <img src="/assets/images/weldsched-arcdata-1-768x456.png" align="center" width="72%"></p>
 
 * **Control [num/Item]** : 특정 용접기에 적용되는 조정값. 용접 장비에 따라 적용되는 파라미터가 다름. 
 * ex) Fronius Arc Welder(TPS / TPSi 공통)의 경우, 다이나믹/펄스 수정(Dynamic/Pulse Correction) 값(-10~10)으로 적용.

@@ -36,7 +36,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/05_IO_Data.png" align="center" width="32%"></p>
 
-
 # Input
 
 * **Signal [Text]** : Enter the variable name of the signal data.
