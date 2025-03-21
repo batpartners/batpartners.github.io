@@ -28,7 +28,7 @@ tags:
   - GERTY
 ---
 
-:kr: [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
