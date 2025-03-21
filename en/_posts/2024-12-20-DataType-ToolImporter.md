@@ -34,25 +34,24 @@ tags:
 
 * The Tool Importer component has "Get Tool Data" mode and "Get Tool Data Input" mode. In the former, the complete tool information can be used as the Tool Data input value for the Robot component. In the latter, the incomplete tool information can be used as the input value for the Tool Data component.
 
-<p align="center">  <img src="/assets/images/toolimporter.png" align="center" width="72%"></p>
+<p align="center">  <img src="/assets/images/toolimporter.png" align="center" width="50%"></p>
 
-# Built-in Param | Basic Params​
+# Input
+## Built-in Param | Basic Params​
 
 * **Model** : Checks the tool information list in the GERTY repository and loads the selected tool information.
 
 # Output
 
-> The ToolImporter component has two mode options: GET TOOL DATA and GET TOOL DATA INPUT.
-> In GET TOOL DATA mode, it can be directly connected to the robot component for use.
-> In GET TOOL DATA INPUT mode, it can be used by modifying the tool status.
+* The ToolImporter component has two mode options: GET TOOL DATA and GET TOOL DATA INPUT.
+* In GET TOOL DATA mode, it can be directly connected to the robot component for use.
+* In GET TOOL DATA INPUT mode, it can be used by modifying the tool status.
 
 ## 1. Get Tool Data​
 
 * **Tool Data** : Exports the entered tool name (Name), tool modeling (Mesh), flange (Base Plane), TCP, Mass, Centroid, and Inertia values as Tool Data.
 
-<figure>
-<a href="https://b-at.kr/wp-content/uploads/2024/07/2_ToolImporter_01.png"><img src="https://b-at.kr/wp-content/uploads/2024/07/2_ToolImporter_01.png"></a>
-</figure>
+<p align="center">  <img src="/assets/images/2_ToolImporter_01.png" align="center" width="50%"></p>
 
 ## 2. Get Tool Data Input​
 
@@ -64,6 +63,4 @@ tags:
 * **Centeroid [Generic Number]** : Exports the center of mass value of the tool (e.g., in the form of 0,0,0).
 * **Inertia [Generic Number]** : Exports the moment of inertia value of the tool (e.g., in the form of 0,0,0).
 
-<figure>
-<a href="https://b-at.kr/wp-content/uploads/2024/07/2_ToolImporter_02.png"><img src="https://b-at.kr/wp-content/uploads/2024/07/2_ToolImporter_02.png"></a>
-</figure>
+<p align="center">  <img src="/assets/images/2_ToolImporter_02.png" align="center" width="90%"></p>
