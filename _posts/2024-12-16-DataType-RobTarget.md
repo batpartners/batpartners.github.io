@@ -28,7 +28,7 @@ tags:
   - GERTY
 ---
 
-:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 <p align="center">  <img src="/assets/images/DataTypes/RobTarget/Robtarget_comp.png" align="center" width="32%"></p>
 

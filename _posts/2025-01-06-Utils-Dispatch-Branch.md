@@ -27,7 +27,7 @@ tags:
   - GERTY
 ---
 
-:globe_with_meridians: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 

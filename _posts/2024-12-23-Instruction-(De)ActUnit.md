@@ -29,7 +29,7 @@ tags:
   - GERTY
 ---
 
-:us_outlying_islands: [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
