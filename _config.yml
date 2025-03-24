@@ -322,9 +322,9 @@ defaults:
       layout: single
       author_profile: true
       sidebar:
-        nav: "parent Page AAA"
+        nav: "0. About GERTY"
       read_time: false
       show_date: false
       comments: # true
       share: true
-      related: true
+      related: false
