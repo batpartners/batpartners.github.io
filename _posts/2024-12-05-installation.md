@@ -28,7 +28,7 @@ tags:
 
 # 1. PackageManager
 
-Rhino `PackageManager`에서 `GERTY`를 찾아 가장 최신 버전을 설치 후, 라이노를 재실행한다.<br>
+Rhino `PackageManager`에서 `GERTY`를 찾아 가장 최신 버전을 설치 후, 라이노를 재실행한다. SHL<br>
 Trial License로 자동 실행되며 **15일**간 사용할 수 있다.<br>
 `Automatically update packages when Rhino starts` 가 선택 되었다면 최신의 거티를 사용할 수 있다.
 
