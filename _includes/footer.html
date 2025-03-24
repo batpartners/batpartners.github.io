@@ -3,12 +3,14 @@
     {% if site.data.ui-text[site.locale].follow_label %}
       <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
     {% endif %}
-    <div style="text-align: left;">
+    <!-- 방문자 카운트 코드 -->
+    <!-- <div style="text-align: left;">
       <a href="https://hits.seeyoufarm.com/{{ site.url | remove_first: 'https://' | remove_first: 'http://' }}{{ page.url }}"target="_blank">
       <img 
           src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbatpartners.github.io&count_bg=%233B3B3B&title_bg=%233B3B3B&icon=&icon_color=%23000000&title=VISITORS&edge_flat=true"/>
       </a>
-    </div>
+    </div> -->
+    <!-- 방문자 카운트 코드 -->
     {% if site.footer.links %}
       {% for link in site.footer.links %}
         {% if link.label and link.url %}
