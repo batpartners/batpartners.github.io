@@ -41,7 +41,7 @@ tags:
 * **MechUnit** : 실제 포지셔너 로봇의 이름을 입력한다.(기본값은 STN1) 
 * **AxisNum** : 리셋할 축의 번호를 입력한다.
 
-## Built-in Param | Basic Params
+## Built-in Param | IndRMove
 
 * **ToRelDegree** : 리셋할 각도 값을 설정하여 현재 자세에서 가장 가까운 값으로 회전, 재정의한다.
 * **ResetType** : 옵션의 값에 따라 각도 값을 재정의 한다.(표 참고)

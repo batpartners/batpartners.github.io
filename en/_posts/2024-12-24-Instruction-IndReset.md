@@ -43,7 +43,7 @@ Additionally, the resulting angles can be constrained or guided using a user-def
 * **MechUnit** : Specifies the name of the actual positioner robot. (Default is *STN1*)
 * **AxisNum** : Specifies the index of the axis to be reset.
 
-## Built-in Param | Basic Params
+## Built-in Param | IndReset
 
 * **RefDegree** : Defines the target angle value for resetting. The positioner’s current posture will be redefined to the nearest possible configuration relative to this angle.
 * **ResetType** : Determines the angle reset strategy based on the selected option. (Refer to the table for details)
