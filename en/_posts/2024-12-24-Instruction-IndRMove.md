@@ -43,7 +43,7 @@ The final angle can also be redefined using a specified `ToRelDegree` value to g
 * **MechUnit** : Specifies the name of the actual positioner robot. (Default is *STN1*)
 * **AxisNum** : Specifies the index of the axis to be reset.
 
-## Built-in Param | Basic Params
+## Built-in Param | IndRMove
 
 * **ToRelDegree** : Sets the target angle for resetting. The axis will be rotated and redefined to the nearest possible configuration relative to the current posture.
 * **ResetType** : Determines how the angle is redefined based on the selected option. (Refer to the table for details)
