@@ -48,7 +48,7 @@ tags:
 * **RamSpeed** : 설정한 각도값으로 이동하는 증감시의 가속도 속도값을을 설정한다.(%)
 
 <p align="center">
-<table style="border-collapse: collapse: width: 51 %; height: 200px;" border="0.5" data-ke-style="sytle4">
+<table style="border-collapse: collapse: width: 51 %; height: 150x;" border="0.5" data-ke-style="sytle4">
   <thead style="background-color: #F2F2F2; font-weight: bold; text-align: center;">
     <tr>
       <th style="width: 10%; height: 15px; text-align: center; font-weight: bolder;">ResetType</th>
@@ -67,6 +67,7 @@ tags:
   </tbody>
 </table>
 </p>
+<br>
 
 # Output
 
