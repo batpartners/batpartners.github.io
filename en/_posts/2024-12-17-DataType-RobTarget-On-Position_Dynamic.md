@@ -1,8 +1,8 @@
 ---
-title: "RobTarget On Position"
+title: "RobTarget On Position(Dynamic)"
 layout: single
 header:
-  teaser: "/assets/images/02_RobtargetOnPositioner.png"
+  teaser: "/assets/images/positioner_dynamic.png"
 
 collection: Datatype
 entries_layout: grid
@@ -13,8 +13,8 @@ categories:
 
 translated: true
 lang: en
-permalink: /en/datatype/DataType-RobTarget-On-Position/
-translation_link: /datatype/DataType-RobTarget-On-Position/
+permalink: /en/datatype/DataType-RobTarget-On-Position_Dynamic/
+translation_link: /datatype/DataType-RobTarget-On-Position_Dynamic/
 
 sidebar:
   nav: "sidebar"
@@ -36,13 +36,14 @@ tags:
 * RobTarget On Positioner includes information such as the position and orientation of the robot's TCP (Tool Center Point) and the angle information of the additional axes along the planned movement path.
   * Reference: ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001).
 
-<p align="center">  <img src="/assets/images/02_RobtargetOnPositioner.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/positioner_dynamic.png" align="center" width="32%"></p>
 
 # Input
 
-* **GERTY Positioner** : Inputs Positioner Data.
+* **Positioner** : Inputs Positioner Data.
 * **Name [Text/Item]** : Specify the variable name of the ABB RobTarget as a string.
-* **Plane [Plane/DataTree]** : Receives data for the ToolPath Plane planned by the user.
+* **Target Plane [Plane/DataTree]** : Receives data for the ToolPath Plane planned by the user.
+* **Base Plane [Plane/DataTree]** : Inputs the Base Plane data that serves as the reference for the Target Plane.
 * **Angle [Number/Item]** : Modifies the robot's posture by changing the angle of the TargetPlane's normal.
 * **WobjData [Plane]** : Defines the reference plane according to the workspace as Work Object Data.
 

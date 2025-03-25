@@ -16,8 +16,10 @@ sidebar:
     children:
       - title: "RobTarget"
         url: /datatype/DataType-RobTarget/
-      - title: "RobTarget On Position"
-        url: /datatype/DataType-RobTarget-On-Position/
+      - title: "RobTarget On Position(Dynamic)"
+        url: /datatype/DataType-RobTarget-On-Position_Dynamic/
+      - title: "RobTarget On Position(Static)"
+        url: /datatype/DataType-RobTarget-On-Position_Static/        
       - title: "WobjData"
         url: /datatype/DataType-WobjData/
       - title: "ToolData"
@@ -63,6 +65,10 @@ sidebar:
         url: /instruction/Instruction-Sub-Procedures/
       - title: "Wait Time"
         url: /instruction/Instruction-Wait-Time/
+      - title: "IndReset"
+        url: /instruction/Instruction-IndReset/
+      - title: "IndRMove"
+        url: /instruction/Instruction-IndRMove/       
   - title: "4. Core"
     children:
       - title: "Code Solver"

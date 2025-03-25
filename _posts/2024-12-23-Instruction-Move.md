@@ -52,4 +52,4 @@ tags:
 
 # Output
 
-* **Instructions** : 입력된 Input에 따라 정의된 Move Instructions을 출력합니다
+* **Instructions** : 입력된 Input에 따라 정의된 Move Instructions을 출력한다.

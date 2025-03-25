@@ -1,8 +1,8 @@
 ---
-title: "RobTarget On Position"
+title: "RobTarget On Position(Static)"
 layout: single
 header:
-  teaser: "/assets/images/02_RobtargetOnPositioner.png"
+  teaser: "/assets/images/positioner_static.png"
 
 collection: Datatype
 entries_layout: grid
@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /datatype/DataType-RobTarget-On-Position/
+permalink: /datatype/DataType-RobTarget-On-Position_Static/
 
-translation_link: /en/datatype/DataType-RobTarget-On-Position/
+translation_link: /en/datatype/DataType-RobTarget-On-Position_Static/
 
 sidebar:
   nav: "sidebar"
@@ -38,14 +38,16 @@ tags:
 
   * 참고자료 : ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001)
 
-<p align="center">  <img src="/assets/images/02_RobtargetOnPositioner.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/positioner_static.png" align="center" width="32%"></p>
 
 
 # Input
 
-* **GERTY Positioner** : Positioner Data를 입력한다.
+* **Positioner** : Positioner Data를 입력한다.
 * **Name [Text/Item]** : ABB RobTarget의 변수명을 String으로 기재한다.
-* **Plane [Plane/DataTree]** : 사용자가 계획한 ToolPath Plane의 데이터를 받는다.
+* **Target Plane [Plane/DataTree]** : 사용자가 계획한 ToolPath Plane의 데이터를 받는다.
+* **Base Plane [Plane/DataTree]** : Target plane의 기준이 되는 Base Plane의 데이터를 입력 받는다.
+* **Reference Plane [Plane/DataTree]** : Target Plane의 각 브랜치 당 기준이 되는 Plane 값을 입력한다.
 * **Angle [Number/Item]** : TargetPlane의 Normal의 각도를 변경하여 로봇의 자세를 수정할 수 있다.
 * **WobjData [Plane]** : Work Object Data로 작업영역에 따라 기준 Plane을 재정할 수 있다.
 

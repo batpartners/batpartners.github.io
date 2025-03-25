@@ -80,5 +80,5 @@ tags:
 
 # Output
 
-* **Instructions** : 입력된 조건에 따라 정의된 TriggIOs Instruction을 출력합니다
+* **Instructions** : 입력된 조건에 따라 정의된 TriggIOs Instruction을 출력한다.
 

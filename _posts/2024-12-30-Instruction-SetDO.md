@@ -47,4 +47,4 @@ tags:
 
 # Output
 
-* **Instructions** : Instructions에 넣을 SetDO로 출력합니다
+* **Instructions** : Instructions에 넣을 SetDO로 출력한다.
