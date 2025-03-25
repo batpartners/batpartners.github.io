@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-* ABB 산업용 로봇을 관리하는 컴포넌트이다. 사용자는 해당되는 산업용 로봇을 선택하여 시뮬레이션에 적용할 수 있다.
+* ABB 산업용 로봇을 관리하는 컴포넌트이다. 사용자는 ABB 스물다섯 기종 중, 해당되는 산업용 로봇을 선택하여 시뮬레이션에 적용할 수 있다.
 
 <p align="center">  <img src="/assets/images/ABBRobot.png" align="center" width="32%"></p>
 
@@ -46,7 +46,7 @@ tags:
 * **Model** : ABB 산업용 로봇 모델을 선택한다.
 * **Display Colour** : 로봇 색상을 변경한다.
 
-<br>
+<p align="center">  <img src="/assets/images/ABBrobot_adative_00.png" align="center" width="85%"></p>
 
 # Output
 

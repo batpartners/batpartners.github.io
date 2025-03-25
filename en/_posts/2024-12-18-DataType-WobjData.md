@@ -41,14 +41,13 @@ It allows transforming the position of the internal work object from WobjData to
 * **Name [Text]** : Enter the variable name for the UserFrame.
 * **UserFrame [Plane]** : Set the Base Plane.
 
-## Built-in Param | Preview Params​
+## Felxible Option
 
-* **Used [Boolean]**: Indicates whether this signal is used or not. (Default: True)
-* **Start [Boolean]**: Sets the starting point of this signal. (Default: false = End point)
-* **Distance(mm)**: Defines the signal of the device in distance units from the StartPoint/EndPoint.
-* **Equip Lag(sec.)**: Defines the signal of the device in seconds from the StartPoint/EndPoint.
+* **Fixed WobjData** : Redefines the Target Plane relative to a stationary reference coordinate system.
+* **Movable WobjData** : Redefines the Target Plane relative to a movable (dynamic) reference coordinate system.
 
-<br>
+<p align="center">  <img src="/assets/images/wobj_movable.png" align="center" width="45%"></p>
+
 
 # Output
 

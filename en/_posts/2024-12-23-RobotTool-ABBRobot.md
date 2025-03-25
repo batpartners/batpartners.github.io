@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-* This is a component for managing ABB industrial robots. Users can select the applicable industrial robot and apply it to the simulation.
+* A component used to manage ABB industrial robots. It allows users to select a specific robot model from 25 supported ABB types and apply the selected model to the simulation environment.
 
 <p align="center">  <img src="/assets/images/ABBRobot.png" align="center" width="32%"></p>
 
@@ -46,6 +46,8 @@ tags:
 
 * **Model** : Select the ABB industrial robot model. 
 * **Display Colour** : Change the robot color.
+
+<p align="center">  <img src="/assets/images/ABBrobot_adative_00.png" align="center" width="85%"></p>
 
 # Output
 
