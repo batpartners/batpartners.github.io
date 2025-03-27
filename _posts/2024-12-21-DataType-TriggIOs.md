@@ -3,7 +3,7 @@ title: "TriggIOs"
 
 layout: single
 header:
-  teaser: "/assets/images/07_TriggIOs.png"
+  teaser: "/assets/images/TriggIOs.png"
 
 collection: Datatype
 entries_layout: grid
@@ -34,7 +34,7 @@ tags:
 
 * TriggIOs 컴포넌트는 고유의 IOData 값을 활용하여 사용자가 정의한 값으로 치환하여 내보내는 컴포넌트이다.
 
-<p align="center">  <img src="/assets/images/07_TriggIOs.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/TriggIOs.png" align="center" width="32%"></p>
 
 # Input
 

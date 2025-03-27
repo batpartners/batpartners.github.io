@@ -3,7 +3,7 @@ title: "TriggIOs"
 
 layout: single
 header:
-  teaser: "/assets/images/07_TriggIOs.png"
+  teaser: "/assets/images/TriggIOs.png"
 
 collection: Datatype
 entries_layout: grid
@@ -34,7 +34,7 @@ tags:
 
 * The TriggIOs component is used to replace specific IO signals with user-defined values based on its internal IOData configuration.
 
-<p align="center">  <img src="/assets/images/07_TriggIOs.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/TriggIOs.png" align="center" width="32%"></p>
 
 # Input
 
