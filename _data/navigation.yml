@@ -26,13 +26,18 @@ sidebar:
         url: /datatype/DataType-ToolData/
       - title: "ToolImporter"
         url: /datatype/DataType-ToolImporter/
+      - title: "TriggIOs"
+        url: /datatype/DataType-TriggIOs/        
       - title: "ArcData"
         url: /datatype/DataType-ArcData/
       - title: "IOData"
         url: /datatype/DataType-IOData/
       - title: "SeamData"
         url: /datatype/DataType-SeamData/
-
+      - title: "WeaveData"
+        url: /datatype/DataType-WeaveData/ 
+      - title: "WeldData"
+        url: /datatype/DataType-WeldData/ 
   - title: "2. Robot/Tool"
     children:
       - title: "ABBRobot"
@@ -71,6 +76,8 @@ sidebar:
         url: /instruction/Instruction-IndRMove/       
   - title: "4. Core"
     children:
+      - title: "Analysis"
+        url: /core/Core-Analysis/
       - title: "Code Solver"
         url: /core/Core-Code-Solver/
       - title: "Display Solver"
@@ -145,8 +152,6 @@ sidebar:
     children:
       - title: "FileImportAndExport"
         url: /setup/Setup-FileImportAndExport
-      - title: "GERTYLicense"
-        url: /setup/Setup-GERTYLicense
       - title: "GetMachineIDs"
         url: /setup/Setup-GetMachineIDs
       - title: "GetUSBIDs"
