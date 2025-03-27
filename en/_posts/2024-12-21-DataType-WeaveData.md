@@ -60,7 +60,6 @@ tags:
 * **Height(mm)** : Height refers to the lift height of the robot during weaving and is used to define the vertical displacement of the weave.
 <p align="center"><img src="/assets/images/weave_height.PNG" align="center" width="72%"></p>
 
-  - `Text Source: ABB Application Manual – Arc and Arc Sensor (3HAC050988-001 Rev. E)`
   - `Image Source: ABB Robotics Documentation (© ABB, 2004–2018)`
 <br>
 
