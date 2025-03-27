@@ -41,7 +41,7 @@ tags:
 * **Name [String]** : 신호 이름을 작성한다. (e.g., `ExtrudeON` or `ExtrudeOFF`)
 * **IOs** : 설정한 값의 고유 신호를 연결한다.
 
-<p align="center">  <img src="/assets/images/TriggIOs_ex.png" align="center" width="80%"></p>
+<p align="center">  <img src="/assets/images/TriggIOstemplate.png" align="center" width="80%"></p>
 
 <br>
 
