@@ -41,7 +41,7 @@ tags:
 * **Name [String]** : Specifies the name of the signal. (e.g., ExtrudeON, ExtrudeOFF)
 * **IOs** : Connects the signal to a unique I/O identifier defined by the user.
 
-<p align="center">  <img src="/assets/images/TriggIOs_ex.png" align="center" width="80%"></p>
+<p align="center">  <img src="/assets/images/TriggIOstemplate.png" align="center" width="80%"></p>
 
 <br>
 
