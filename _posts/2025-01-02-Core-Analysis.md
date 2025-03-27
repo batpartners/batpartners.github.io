@@ -41,7 +41,7 @@ tags:
 # Input
 
 * **GERTY Solver** : GERTY Solver 값을 연결한다.
-
+<p align="center">  <img src="/assets/images/Analysis_template.png" align="center" width="80%"></p>
 <br>
 
 # Output
@@ -49,3 +49,5 @@ tags:
 * **RobAx Angle** : 로봇 축과 각도 값을 출력한다.
 * **Error Idx** : 로봇 에러 인덱스 값을 출력한다.
 * **Error Report** : 에러 요인에 대한 정보를 출력한다.
+<br>
+<p align="center">  <img src="/assets/images/ErrorReport_00.png" align="center" width="80%"></p>

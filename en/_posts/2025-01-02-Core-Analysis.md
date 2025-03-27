@@ -42,7 +42,7 @@ It allows users to identify the locations where robot errors occur.
 # Input
 
 * **GERTY Solver** : Connects the `GERTY Solver` values to the component.
-
+<p align="center">  <img src="/assets/images/Analysis_template.png" align="center" width="80%"></p>
 <br>
 
 # Output
@@ -50,3 +50,5 @@ It allows users to identify the locations where robot errors occur.
 * **RobAx Angle**: Outputs the robot joint indices and corresponding angle values.  
 * **Error Idx**: Outputs the index values where robot errors have occurred.  
 * **Error Report**: Outputs detailed information regarding the causes of the errors.
+<br>
+<p align="center">  <img src="/assets/images/ErrorReport_00.png" align="center" width="80%"></p>
