@@ -60,9 +60,12 @@ tags:
 * **Height(mm)** : 높이는 위빙시 로봇이 들어올리는 높이로, 해당 높이를 설정한다.
 <p align="center"><img src="/assets/images/weave_height.PNG" align="center" width="72%"></p>
 
+  - `Text Source: ABB Application Manual – Arc and Arc Sensor (3HAC050988-001 Rev. E)`
+  - `Image Source: ABB Robotics Documentation (© ABB, 2004–2018)`
 <br>
 
 # Output
 
 * **WeaveData** : 설정한 용접 위빙 데이터를 WeaveData로 치환해 내보낸다.
 * **Code** : 설정한 용접 위빙 데이터를 코드로 전환한 데이터로, 사용자는 실제 용접 값 설정을 사전에 확인할 수 있다.
+

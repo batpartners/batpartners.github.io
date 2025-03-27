@@ -43,7 +43,7 @@ tags:
 ## Built-in Param | WeaveData
 
 * **Shape** : Sets the welding pattern. Available options are: `None`, `ZigZag`, `V-Shaped`, `Triangular`, and `Circular`.
-<p align="center"><img src="/assets/images/ArcShape.png" align="center" width="72%"></p>
+<p align="center"><img src="/assets/images/ArcShape.png" align="center" width="65%"></p>
 
 * **Type**: Specifies the type of welding weave. Available options are `Geometric`, `Wrist`, `Rapid_1`, and `Rapid_2`.  
   - *Geometric*: Geometric weaving using all robot axes.  
@@ -60,9 +60,13 @@ tags:
 * **Height(mm)** : Height refers to the lift height of the robot during weaving and is used to define the vertical displacement of the weave.
 <p align="center"><img src="/assets/images/weave_height.PNG" align="center" width="72%"></p>
 
+  - `Text Source: ABB Application Manual – Arc and Arc Sensor (3HAC050988-001 Rev. E)`
+  - `Image Source: ABB Robotics Documentation (© ABB, 2004–2018)`
 <br>
 
 # Output
 
 * **WeaveData**: Outputs the configured welding weave settings as a *WeaveData* object.  
 * **Code**: Converts the configured weave data into a code representation, allowing users to preview the actual welding parameters in advance.
+
+
