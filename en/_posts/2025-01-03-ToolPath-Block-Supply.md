@@ -38,7 +38,7 @@ tags:
 
 # Input
 
-* **BasePlane [Plane]** :  Input the reference plane that defines the position and orientation of the generated block stack.
+* **Base Plane [Plane]** :  Input the reference plane that defines the position and orientation of the generated block stack.
 * **Unit Block [Box]** : Input the unit block model in the form of a box.
 * **Spacing [Box]** :Input the array cell defining the spacing of the unit block’s box array.
 * **Block Count [int]** : Input the total number of blocks to be used.

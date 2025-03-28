@@ -41,7 +41,7 @@ tags:
 # Input
 
 * **Curves[Curve / List]** : Select the curves to be drawn.
-* **Base Plane [Plane]** : Input the reference plane for drawing. The Target Plane is generated as a plane in the same xy direction as the Base Plane.
+* **Reference Plane [Plane]** : Input the reference plane for drawing. The Target Plane is generated as a plane in the same xy direction as the Base Plane.
 * **Geometry [Brep/Mesh / Optional]**: Input the geometry for the curves to be drawn on. Either a Mesh or Brep must be provided. The curves must be on the Geometry.
 
 ## Built in param | Drawing

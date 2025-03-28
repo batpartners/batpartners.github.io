@@ -42,7 +42,7 @@ tags:
 # Input
 
 * **Geometry**: Input the Geometry parameter of Mesh or Surface.
-* **Base Plane** : Input the base plane for Target Orientation when Tilting weight=0.
+* **Reference Plane** : Input the base plane for Target Orientation when Tilting weight=0.
 
 <p align="center"><img src="/assets/images/Parallel-768x238.png" align="center" width="80%"></p>
 

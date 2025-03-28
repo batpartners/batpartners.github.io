@@ -38,7 +38,7 @@ tags:
 # Input
 
 * **Brep**: Input a Brep or Surface UV object.
-* **Base Plane**: Input the reference plane for Target Orientation when Tilting weight = 0.
+* **Reference Plane**: Input the reference plane for Target Orientation when Tilting weight = 0.
 
 <p align="center"><img src="/assets/images/UVfinishing-768x238.png" align="center" width="80%"></p>
 

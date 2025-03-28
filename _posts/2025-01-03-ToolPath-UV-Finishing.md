@@ -38,7 +38,7 @@ tags:
 # Input
 
 * **Brep** : Brep 또는 Surface UV객체를 입력한다.
-* **Base Plane** : Tilting weight=0일 때, Target Orientation 기준 평면을 입력한다.
+* **Reference Plane** : Tilting weight=0일 때, Target Orientation 기준 평면을 입력한다.
 
 <p align="center"><img src="/assets/images/UVfinishing-768x238.png" align="center" width="80%"></p>
 

@@ -38,7 +38,7 @@ tags:
 
 # Input
 
-* **BasePlane [Plane]** : Sets the reference plane for the Unit Block, which determines the orientation direction for the Gripper TCP later on. 
+* **Base Plane [Plane]** : Sets the reference plane for the Unit Block, which determines the orientation direction for the Gripper TCP later on. 
 * **Unit Block [Box]** : Inputs the Unit Block modeling to be used in Box format.
 * **Wall [Brep]** : Inputs the modeling of the shape where the bricks will be stacked.
 

@@ -33,8 +33,9 @@ tags:
 # Description
 
 * TriggIOs 컴포넌트는 고유의 IOData 값을 활용하여 사용자가 정의한 값으로 치환하여 내보내는 컴포넌트이다.
+triggios는 로봇의 이동 경로상 고정된 위치에서 디지털 출력 신호, 디지털 출력 신호 그룹 또는 아날로그 출력 신호를 설정하기 위한 조건과 동작을 정의하는 데 사용된다.
 
-<p align="center">  <img src="/assets/images/TriggIOs.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/TriggIOs.png" align="center" width="27%"></p>
 
 # Input
 

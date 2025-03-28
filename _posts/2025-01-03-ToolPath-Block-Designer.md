@@ -38,7 +38,7 @@ tags:
 
 # Input
 
-* **BasePlane [Plane]** : Unit Block에 대한 기준 평면을 설정한다. 이는 추후 Gripper TCP가 Orient되는 방향을 특정하는 평면에 해당한다.  
+* **Base Plane [Plane]** : Unit Block에 대한 기준 평면을 설정한다. 이는 추후 Gripper TCP가 Orient되는 방향을 특정하는 평면에 해당한다.  
 * **Unit Block [Box]** : 사용할 Unit Block 모델링을 Box 형식으로 입력한다.
 * **Wall [Brep]** : 벽돌을 적층할 형상의 모델링을 입력한다. 
 

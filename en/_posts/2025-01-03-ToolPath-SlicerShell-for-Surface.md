@@ -40,7 +40,7 @@ tags:
 # Input
 
 * **Geometry [Geometry]** : Input the geometry modeling.
-* **Base Plane [Plane]** : Redefine and input the base plane of the modeling. Defaults to World XY.
+* **Reference Plane [Plane]** : Redefine and input the base plane of the modeling. Defaults to World XY.
 
 ## Built-in Param | Slicing Params
 

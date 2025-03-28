@@ -35,7 +35,7 @@ tags:
 * The TriggIOs component is used to replace specific IO signals with user-defined values based on its internal IOData configuration.
 triggios is used to define conditions and actions for setting a digital output signal, a group of digital output signals, or an analog output signal at a fixed position along the robot’s movement path.
 
-<p align="center">  <img src="/assets/images/TriggIOs.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/TriggIOs.png" align="center" width="27%"></p>
 
 # Input
 

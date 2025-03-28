@@ -41,7 +41,7 @@ tags:
 # Input
 
 * **Geometry**: Input the volume to be roughed out as a solid (Brep) or mesh (Mesh) type.
-* **Base Plane** : Input the reference plane that determines the end mill entry direction (Contour direction), target orientation, starting position of the toolpath, collision avoidance height for machining surfaces, etc.
+* **Reference Plane** : Input the reference plane that determines the end mill entry direction (Contour direction), target orientation, starting position of the toolpath, collision avoidance height for machining surfaces, etc.
 
 ## Built-in Param | Roughing
 

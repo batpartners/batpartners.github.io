@@ -39,7 +39,7 @@ tags:
 
 # Input
 
-* **BasePlane [Plane]** : 생성되는 Block 더미의 위치와 방향을 정의하는 기준 평면을 입력한다.
+* **Base Plane [Plane]** : 생성되는 Block 더미의 위치와 방향을 정의하는 기준 평면을 입력한다.
 * **Unit Block [Box]** : 사용할 Unit Block 모델링을 Box 형식으로 입력한다.
 * **Spacing [Box]** : Unit Block의 BoxArray 간격을 정의하는, Array Cell을입력한다.
 * **Block Count [int]** : 사용될 Block의 총 개수를 입력한다.

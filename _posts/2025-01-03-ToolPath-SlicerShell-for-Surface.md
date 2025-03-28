@@ -40,7 +40,7 @@ tags:
 # Input
 
 * **Geometry [Geometry]** : Geometry 모델링을 입력한다.
-* **Base Plane [Plane]** : 모델링의 기준 평면을 재정의해 입력한다. 기본 값으로 World XY을 받는다.
+* **Reference Plane [Plane]** : 모델링의 기준 평면을 재정의해 입력한다. 기본 값으로 World XY을 받는다.
 
 ## Built-in Param | Slicing Params
 

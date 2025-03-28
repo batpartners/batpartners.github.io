@@ -39,7 +39,7 @@ tags:
 # Input
 
 * **Curves[Curve/List]** : 작성하고자 하는 curve를 선택한다.
-* **Base Plane [Plane]** : 드로잉하는 평면의 기준 Plane을 입력한다. Target Plane 은 Base Plane과 같은 xy방향의 평면으로 생성된다.
+* **Reference Plane [Plane]** : 드로잉하는 평면의 기준 Plane을 입력한다. Target Plane 은 Base Plane과 같은 xy방향의 평면으로 생성된다.
 * **Geometry [Brep/Mesh/Optional]**: 드로잉할 커브의 Geometry를 입력한다. Mesh 또는 Brep을 입력해야만 한다. 이때, Curve는 반드시 Geometry 위에 있어야 한다.
 
 ## Built in param | Drawing
