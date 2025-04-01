@@ -58,3 +58,8 @@ tags:
 # Output
 
 * **RobTargets** : Print ProgramData of Robtargets in each area. Then, link this data to Instructions.
+
+<p align="center"> 
+<video src="/assets/images/Static_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
+</video>
+</p>
