@@ -14,9 +14,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /datatype/DataType-WeldData/
+permalink: /en/datatype/DataType-WeldData/
 
-translation_link: /en/datatype/DataType-WeldData/
+translation_link: /datatype/DataType-WeldData/
 sidebar:
   nav: "sidebar"
 toc: true
