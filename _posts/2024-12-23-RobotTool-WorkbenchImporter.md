@@ -57,3 +57,8 @@ tags:
 * **Mass [Double]** : 툴의 Mass 정보를 내보낸다.
 * **Centeroid [Generic Number]** : 툴의 무게중심 값을 내보낸다. (e.g., 0,0,0 값의 형태)
 * **Inertia [Generic Number]** : 툴의 관성모멘트 값을 내보낸다. (e.g., 0,0,0 값의 형태)
+
+<p align="center"> 
+<video src="/assets/images/WorkbenchImporter_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
+</video>
+</p>

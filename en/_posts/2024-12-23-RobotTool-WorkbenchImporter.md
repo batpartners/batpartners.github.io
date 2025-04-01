@@ -60,3 +60,8 @@ In the "Get Workbench Data" mode, it provides complete Workbench information, wh
 * **Mass [Double]** : Exports the mass information of the tool.
 * **Centeroid [Generic Number]** : Exports the tool's center of mass value (e.g., in the form of 0,0,0).
 * **Inertia [Generic Number]** : Exports the tool's moment of inertia value (e.g., in the form of 0,0,0).
+
+<p align="center"> 
+<video src="/assets/images/WorkbenchImporter_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
+</video>
+</p>

@@ -56,3 +56,8 @@ tags:
 * **GERTY Positioner** : Exports the information of the user-defined positioner.
 * **Arm** : Exports the coordinate values of the current position of the robot arm.
 * **Plate** : Exports the coordinate values of the current plane of the robot workbench.
+
+<p align="center"> 
+<video src="/assets/images/Workbench_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
+</video>
+</p>
