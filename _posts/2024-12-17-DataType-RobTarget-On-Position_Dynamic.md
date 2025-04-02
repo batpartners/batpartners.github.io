@@ -50,6 +50,10 @@ tags:
 * **Angle [Number/Item]** : TargetPlane의 Normal의 각도를 변경하여 로봇의 자세를 수정할 수 있다.
 * **WobjData [Plane]** : Work Object Data로 작업영역에 따라 기준 Plane을 재정할 수 있다.
 
+<p align="center"> 
+<video src="/assets/images/RobtargetPosition(Dynamic)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
+</video></p>
+
 ## Built-in Param | Basic Params​
 
 * **Split Start** : TargetPalne의 첫번째 TargetPlane Data를 분리할 수 있다. 기본으로 False상태를 갖는다.

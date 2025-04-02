@@ -47,6 +47,10 @@ tags:
 * **Angle [Number/Item]** : Modifies the robot's posture by changing the angle of the TargetPlane's normal.
 * **WobjData [Plane]** : Defines the reference plane according to the workspace as Work Object Data.
 
+<p align="center"> 
+<video src="/assets/images/RobtargetPosition(Dynamic)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
+</video></p>
+
 ## Built-in Param | Basic Params​
 
 * **Split Start** : Can split the first TargetPlane Data of the TargetPlane. The default state is False.
