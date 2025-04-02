@@ -34,6 +34,7 @@ tags:
 * This component defines *ArcData* based on the filler material conditions (Weld Schedule) and welding mode.
 *ArcData* is a fundamental data format used in *ABB Arc Instructions* for arc welding. It serves as a *sub-data* that contains shared condition values for *SeamData* and *WeldData*.
 ArcData stores information such as the program identification ID for each filler material, wire feed speed, voltage, and current.
+* Although it belongs to DataType, it is not directly connected to the GERTY Core, but is instead used in conjunction by linking it to WeldData or SeamData.
 
 <p align="center">  <img src="/assets/images/ArcData.png" align="center" width="32%"></p>
 
