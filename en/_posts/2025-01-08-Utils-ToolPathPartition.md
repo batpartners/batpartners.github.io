@@ -45,6 +45,7 @@ tags:
 * **End(mm)** : Determines the partition distance (mm) from the end point.  
 * **Substitution(%)** : If the distance value settings exceed the actual length of the distance, the partition for the respective point can be set as a percentage.
 
+<p align="center">  <img src="/assets/images/partitionSplit_00.png" align="center" width="92%"></p>
 <br>
 
 # Output

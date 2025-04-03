@@ -48,6 +48,9 @@ tags:
 * **Inertia [Text/String]** : Enter the measured moment of inertia of the tool according to the robot's movement. The format should be 0d,0d,0d.
 * **Export [Boolean]** : The user can save the entered tool information for future use.
 
+<p align="center"> 
+<video src="/assets/images/ToolData_Export.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Tool Export</figcaption>
+</p>
 
 ## Built-in Param | Basic Params​
 

@@ -35,7 +35,6 @@ tags:
 <br>
 
 <p align="center">  <img src="/assets/images/ToolData.png" align="center" width="32%"></p>
-<br>
 
 # Input
 
@@ -50,6 +49,9 @@ tags:
 * **Inertia [Text/String]** : 측정된,  ****로봇의 움직임에 따른 Tool의 관성모멘트 값을 입력한다. 기입형식은 0d,0d,0d 이다.
 * **Export [Boolean]** : 사용자는 입력한 툴 정보를 저장하여 사용할 수 있다.
 
+<p align="center"> 
+<video src="/assets/images/ToolData_Export.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Tool Export</figcaption>
+</p>
 
 ## Built-in Param | Basic Params​
 

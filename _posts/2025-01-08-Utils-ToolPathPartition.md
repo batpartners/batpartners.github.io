@@ -45,6 +45,7 @@ tags:
 * **End(mm)** : 끝 지점부터의 파티션 거리(mm)를 결정한다.
 * **Substitution(%)** : 거리값 설정이 실제 거리값의 길이를 초과할 경우, 해당 지점의 파티션은 퍼센트지로 설정할 수 있다.
 
+<p align="center">  <img src="/assets/images/partitionSplit_00.png" align="center" width="92%"></p>
 <br>
 
 # Output
