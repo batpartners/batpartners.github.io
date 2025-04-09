@@ -50,26 +50,29 @@ The final angle can also be redefined using a specified `ToRelDegree` value to g
 * **RamSpeed** : Specifies the acceleration/deceleration speed (as a percentage) when moving toward the defined target angle.
 
 <p align="center">
-<table style="border-collapse: collapse: width: 51 %; height: 150x;" border="0.5" data-ke-style="sytle4">
+<table style="border-collapse: collapse: width: 51 %; height: 150x;">
   <thead style="background-color: #F2F2F2; font-weight: bold; text-align: center;">
     <tr>
       <th style="width: 10%; height: 15px; text-align: center; font-weight: bolder;">ResetType</th>
-      <th style="width: 25%; height: 15px; text-align: center; font-weight: bolder;">Short</th>
-      <th style="width: 25%; height: 15x; text-align: center; font-weight: bolder;">Fwd</th>
-      <th style="width: 25%; height: 15px; text-align: center; font-weight: bolder;">Bwd</th>
+      <td><strong>Description</strong></td>
     </tr>
   </thead>
-  <tbody>
+  <tbody>   
     <tr>
-      <td><strong>Description</strong></td>
-      <td style="width: 25%; height: 15px;">Resets the joint angle to the closest value with the shortest angular distance.</td>
-      <td style="width: 25%; height: 15px;">Resets the joint angle based on the remainder when divided by 360°, i.e., <code>Angle % 360</code>.</td>
-      <td style="width: 25%; height: 15px;">Resets the joint angle based on <code>360° - (Angle % 360)</code>.</td>
+      <th style="width: 25%; height: 15px; text-align: center; font-weight: bolder;">Short</th>
+      <td style="width: 25%; height: 15px;">가장 짧은 각도 값으로 현재 축 각도 값 재정의.</td>
+    </tr>
+    <tr>  
+      <th style="width: 25%; height: 15px; text-align: center; font-weight: bolder;">Fwd</th>
+      <td style="width: 25%; height: 15px;">현재 축 각도 값을 360도로 나눈 나머지 각도 값 기준으로 재정의, i.e., <code>Angle % 360</code>.</td>
+    </tr>
+    <tr>
+      <th style="width: 25%; height: 15px; text-align: center; font-weight: bolder;">Bwd</th>
+      <td style="width: 25%; height: 15px;">현재 축 각도 값을 360도로 나눈 나머지 각도값을 360도에서 뺸 값을을 기준으로 재정의<code>360° - (Angle % 360)</code>.</td>
     </tr>
   </tbody>
 </table>
 </p>
-<br>
 
 # Output
 
