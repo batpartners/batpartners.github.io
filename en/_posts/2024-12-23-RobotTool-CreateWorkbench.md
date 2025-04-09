@@ -42,6 +42,10 @@ tags:
 * **WorkBenchFCPl** : Sets the flange center plane for the workbench.
 * **Export [Boolean]** : Allows the user to save the workbench.
 
+<p align="center"> 
+<video src="/assets/images/Workbench_Export.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Workbench Export</figcaption>
+</p>
+
 ## Built-in Param : Basic Params
 
 * **Display Colour** : Sets the color of the robot model.
