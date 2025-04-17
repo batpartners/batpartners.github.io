@@ -67,7 +67,7 @@ Reference : ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001)
 
 ## Built-in Param : Basic Params​
 * **Split Start** : If the generated *RobTarget* consists of *two or more* items in a *List/DataTree*, the first *RobTarget* is separated and output through a dedicated *Output node*.
-* **Split Start** : If the generated *RobTarget* consists of *two or more* items in a *List/DataTree*, the last *RobTarget* is separated and output through a dedicated *Output node*.
+* **Split End** : If the generated *RobTarget* consists of *two or more* items in a *List/DataTree*, the last *RobTarget* is separated and output through a dedicated *Output node*.
 
 <figure>
   <img src="/assets/images/DataTypes/RobTarget/split Robtargets_exam.png" alt="split_RobT">

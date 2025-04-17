@@ -64,7 +64,7 @@ RobTarget On Positioner은 계획한 이동 경로 위에서, 로봇 TCP(Tool Ce
 
 ## Built-in Param : Basic Params​
 * **Split Start** : (생성된 RobTarget이 2개 이상으로 구성된 List / DataTree인 경우) 별도 Output node를 통해, 첫 번째 RobTarget을 분리하여 내보냄. 
-* **Split Start** : (생성된 RobTarget이 2개 이상으로 구성된 List / DataTree인 경우) 별도 Output node를 통해, 마지막 RobTarget을 분리하여 내보냄. 
+* **Split End** : (생성된 RobTarget이 2개 이상으로 구성된 List / DataTree인 경우) 별도 Output node를 통해, 마지막 RobTarget을 분리하여 내보냄. 
 
 <figure>
   <img src="/assets/images/DataTypes/RobTarget/split Robtargets_exam.png" alt="split_RobT">
