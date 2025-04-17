@@ -2,7 +2,7 @@
 title: "RobTarget"
 layout: single
 header:
-  teaser: "/assets/images/Robtarget.png"
+  teaser: "/assets/images/01_robtarget.png"
 
 collection: Datatype
 entries_layout: grid
@@ -29,7 +29,7 @@ tags:
 
 🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
-<p align="center">  <img src="/assets/images/DataTypes/RobTarget/Robtarget_comp.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/01_robtarget.png" align="center" width="32%"></p>
 
 
 # Description
