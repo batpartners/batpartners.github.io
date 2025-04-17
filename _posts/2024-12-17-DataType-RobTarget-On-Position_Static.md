@@ -58,7 +58,7 @@ tags:
 ## Built-in Param | Basic Params​
 
 * **Split Start** : TargetPalne의 첫번째 TargetPlane Data를 분리할 수 있다. 기본으로 False상태를 갖는다.
-* **Split Start** : TargetPalne의 마지막 TargetPlane Data를 분리할 수 있다. 기본으로 False상태를 갖는다.
+* **Split End** : TargetPalne의 마지막 TargetPlane Data를 분리할 수 있다. 기본으로 False상태를 갖는다.
 
 <br>
 

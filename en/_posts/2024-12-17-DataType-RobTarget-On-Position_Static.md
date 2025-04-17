@@ -55,7 +55,7 @@ tags:
 ## Built-in Param | Basic Params​
 
 * **Split Start** : Can split the first TargetPlane Data of the TargetPlane. The default state is False.
-* **Split Start** : Can split the last TargetPlane Data of the TargetPlane. The default state is False.
+* **Split End** : Can split the last TargetPlane Data of the TargetPlane. The default state is False.
 
 <br>
 
