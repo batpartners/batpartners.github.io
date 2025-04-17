@@ -2,7 +2,7 @@
 title: "RobTarget On Position(Dynamic)"
 layout: single
 header:
-  teaser: "/assets/images/positioner_dynamic.png"
+  teaser: "/assets/images/positioner_dynamic_00.png"
 
 collection: Datatype
 entries_layout: grid
@@ -36,7 +36,7 @@ tags:
 * RobTarget On Positioner includes information such as the position and orientation of the robot's TCP (Tool Center Point) and the angle information of the additional axes along the planned movement path.
   * Reference: ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001).
 
-<p align="center">  <img src="/assets/images/positioner_dynamic.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/positioner_dynamic_00.png" align="center" width="32%"></p>
 
 # Input
 

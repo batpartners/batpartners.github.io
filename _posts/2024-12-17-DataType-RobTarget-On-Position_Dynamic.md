@@ -2,7 +2,7 @@
 title: "RobTarget On Position(Dynamic)"
 layout: single
 header:
-  teaser: "/assets/images/positioner_dynamic.png"
+  teaser: "/assets/images/positioner_dynamic_00.png"
 
 collection: Datatype
 entries_layout: grid
@@ -38,7 +38,7 @@ tags:
 
   * 참고자료 : ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001)
 
-<p align="center">  <img src="/assets/images/positioner_dynamic.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/positioner_dynamic_00.png" align="center" width="32%"></p>
 
 
 # Input
