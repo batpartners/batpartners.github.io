@@ -38,7 +38,7 @@ tags:
 
 # Input
 
-* ***ool Geometry [Mesh]** : 스핀들 본체 메쉬를 입력한다.
+* **Tool Geometry [Mesh]** : 스핀들 본체 메쉬를 입력한다.
 * **Endmill StartPl [Plane]** : 엔드밀이 장착 되는 바닥면을 TCP와 같은 Plane으로 입력한다.
 
 ## Built-in Param : Basic Params

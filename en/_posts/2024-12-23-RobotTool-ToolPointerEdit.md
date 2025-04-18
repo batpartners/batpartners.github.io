@@ -38,7 +38,7 @@ Considering models with and without the end mill included, it allows for setting
 
 # Input
 
-* ***ool Geometry [Mesh]** : Input the mesh of the spindle body.
+* **Tool Geometry [Mesh]** : Input the mesh of the spindle body.
 * **Endmill StartPl [Plane]** : Input the plane where the end mill attaches, similar to the TCP (Tool Center Point).
 
 ## Built-in Param : Basic Params
