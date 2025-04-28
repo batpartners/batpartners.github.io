@@ -38,7 +38,6 @@ tags:
 
 # Input
 
-* **GERTY Robot [GERTY Robot/Item]** : 제어할 로봇기종에 따라 설정된, Robot 컴포넌트의 결과값을 입력한다.
 * **GERTY Solver [GERTY Solver/Item]** : GERTY Core 컴포넌트가 출력하는 GERTY Solver 데이터를 입력한다. 
 
 ## Built-in Param | Basic Params
