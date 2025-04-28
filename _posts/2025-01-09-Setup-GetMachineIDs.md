@@ -1,5 +1,5 @@
 ---
-title: "GERTYLicense"
+title: "GetMachineIDs"
 layout: single
 header:
   teaser: "/assets/images/GetMachineIDs.png"
