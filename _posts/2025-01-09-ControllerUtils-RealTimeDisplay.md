@@ -39,8 +39,6 @@ tags:
 
 * **GERTY Robot**: 로봇 컴포넌트 데이터를 입력받는다.
 * **SystemID** : 로봇 컨트롤러 데이터를 입력받는다.
-* **Unit** : 로봇 유닛 데이터를 입력받는다.
-* **Signals** : 신호 정보 값을 입력받는다. 
 
 ## Built-in Param | CurrentTCP
 
