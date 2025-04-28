@@ -40,14 +40,13 @@ tags:
 
 # Input
 
-* **Time [Double]**: 숫자형식(Double)의 값을 입력한다.
+* **Time [Double]**: 지연할 초단위를 숫자형식(Double)의 값으로 입력한다.
 
 <br>
 
 ## Built-in Param | WaitTime
 
 * **In Position [Boolean]** : 해당 Target Point 위치에 도달 후 지연한다.
-* **Time(sec.)** : 지연할 초단위를 설정한다.
 
 <br>
 
