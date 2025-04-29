@@ -55,4 +55,4 @@ tags:
 
 # Output
 
-* **GERTY Workbench**: 사용자 정의 된 Workbench 정보를 내보낸낸다.
+* **Workbench**: 사용자 정의된 Workbench 정보를 내보낸다.
