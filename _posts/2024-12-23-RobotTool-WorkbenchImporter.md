@@ -44,19 +44,17 @@ tags:
 
 # Output
 
-## Get Tool Data - Mode
-
-* **Tool Data** : 입력된 툴 이름(Name), 툴 모델링(Mesh), 플랜지(Base Plane), TCP, Mass, Centeroid, Inerta값을 Tool Data로 내보낸다.
-
-## Get Tool Data Input - Mode
+## Workbench Data Common - Mode
 
 * **Name [String]** : 입력한 툴 이름을 내보낸다.
-* **Tool Geometry [Mesh]** : 입력한 툴 모델링(Mesh)을 내보낸다.
-* **Base Plane [Plane]** : 로봇 6번 플랜지에 장착 되는 툴 바닥면 Plane을 내보낸다.
-* **TCP [Plane]** : 툴의 Tool Center Plane 값을 내보낸다.
-* **Mass [Double]** : 툴의 Mass 정보를 내보낸다.
-* **Centeroid [Generic Number]** : 툴의 무게중심 값을 내보낸다. (e.g., 0,0,0 값의 형태)
-* **Inertia [Generic Number]** : 툴의 관성모멘트 값을 내보낸다. (e.g., 0,0,0 값의 형태)
+* **Workbench Mesh [Mesh]** : 입력한 툴 모델링(Mesh)을 내보낸다.
+* **Top Plane [Plane]** : 로봇 6번 플랜지에 장착 되는 툴 바닥면 Plane을 내보낸다.
+* **Bottom Plane [Plane]** : 툴의 Tool Center Plane 값을 내보낸다.
+
+
+## Workbench Data Detail - Mode
+
+* **Tool Data** : 입력된 툴 이름(Name), 툴 모델링(Mesh), 플랜지(Base Plane), TCP, Mass, Centeroid, Inerta값을 Tool Data로 내보낸다.
 
 <p align="center"> 
 <video src="/assets/images/WorkbenchImporter_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
