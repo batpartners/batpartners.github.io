@@ -46,11 +46,33 @@ tags:
 * **Model** : ABB 산업용 로봇 모델을 선택한다.
 * **Display Colour** : 로봇 색상을 변경한다.
 
+## ABB Robots | Robot Linear Control
+
+* **Config Opt** : 로봇의 4번 6번 축의 회전값을 180도만큼 반전시킨다.
+* **Align TCP** : Tool TCP의 Z-Axis를 가까운 방향으로 정렬한다.
+* **Reset Pose** : 로봇의 기본 자세로 변경한다.
+
+## ABB Robots | Robot Joint Control
+
+* **Robot Axis 1** : 로봇 모델의 1번축을 설정(-180° to 180°)할 수 있습니다.
+* **Robot Axis 2** : 로봇 모델의 2번축을 설정(-90° to 150°)할 수 있습니다.
+* **Robot Axis 3** : 로봇 모델의 3번축을 설정(-180° to 75°)할 수 있습니다.
+* **Robot Axis 4** : 로봇 모델의 4번축을 설정(-400° to 400°)할 수 있습니다.
+* **Robot Axis 5** : 로봇 모델의 5번축을 설정(-125° to 120°)할 수 있습니다.
+* **Robot Axis 6** : 로봇 모델의 6번축을 설정(-400° to 400°)할 수 있습니다.
+
+
+## ABB Robots | External Joint Control
+
+* **Robot Axis 1** : 로봇 모델의 1번축을 설정(-180° to 180°)할 수 있습니다.
+* **Robot Axis 2** : 로봇 모델의 2번축을 설정(-180° to 180°)할 수 있습니다.
+
+
+
 <p align="center">  <img src="/assets/images/ABBrobot_adative_00.png" align="center" width="85%"></p>
 
 # Output
 
 * **GERTY Robot** : 설정한 로봇 정보를 출력한다.
-* **Joint Planes** : 로봇 축 정보를 출력한다.
-* **Mounting Plane** : ABB로봇의 6번축 또는 툴 데이터의 Base Plane에 대한 위치값을 출력한다.
-* **Tool Center Plane** : ABB로봇에 장착 된 툴의 TCP정보를 출력한다.
+* **Current Pose** : 로봇 모델의 현재 자세에서의 각 축의 각도값을 출력한다.
+* **TCP** : 로봇 모델에 장착 된 툴의 TCP정보를 출력한다.
