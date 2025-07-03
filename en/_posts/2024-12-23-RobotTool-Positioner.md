@@ -43,7 +43,7 @@ tags:
 ## Built-in Param : Preview Params​
 
 * **Model** : Specifies the positioner model.
-* **Display Colour** : Redefines the color of the positioner model.
+* **Positioner Colour** : Redefines the color of the positioner model.
 
 ## Built-in Param : Vector Params​
 
@@ -56,6 +56,8 @@ tags:
 * **GERTY Positioner** : Exports the information of the user-defined positioner.
 * **Arm** : Exports the coordinate values of the current position of the robot arm.
 * **Plate** : Exports the coordinate values of the current plane of the robot workbench.
+* **ConnectPl** : Outputs the coordinate plane linking the robot workbench and the positioner.
+
 
 <p align="center"> 
 <video src="/assets/images/Workbench_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">

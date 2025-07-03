@@ -43,7 +43,7 @@ tags:
 ## Built-in Param : Preview Params​
 
 * **Model** : 포지셔너 모델을 지정한다.
-* **Display Colour** : 포지셔너 모델의 색을 재정의한다.
+* **Positioner Colour** : 포지셔너 모델의 색을 재정의한다.
 
 ## Built-in Param : Vector Params​
 
@@ -57,6 +57,7 @@ tags:
 * **GERTY Positioner** : 사용자 정의 된 포지셔너의 정보를 내보낸다.
 * **Arm** : 로봇 암 현재 자세의 좌표값을 내보낸다.
 * **Plate** :  로봇 작업대의 현재 Plane의 좌표값을 내보낸다.
+* **ConnectPl** :  로봇 작업대와 포지셔너가 연결된 좌표 평면을 출력한다.
 
 <p align="center"> 
 <video src="/assets/images/Workbench_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
