@@ -47,7 +47,7 @@ Reference : ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001)
 
 * **Robot_Base [Plane/Item]**: Input the *Plane* to be converted into the *ABB RobTarget* format.  
 
-* **Tilting Weight [Number/Item]**: Input the *Tilting Weight* to be converted into the *ABB RobTarget* format.
+* **Tilting Weight [Number/Item]**: Set the *tilting weight* value between the *BasePlane* and the *ParameterPlane* as the reference for the TargetPlane.
 
 <figure>
   <img src="/assets/images/DataTypes/RobTarget/TiltingWeight_RobT.gif" alt="Tilting_RobT">
