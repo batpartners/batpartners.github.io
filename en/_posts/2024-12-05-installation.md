@@ -58,7 +58,7 @@ If the form is not visible, send an email to **contact@b-at.kr**.
 </figure>
 
 
-
+<!-- 
 # 3. FileImportAndExport
 
 User will receive the license via email.<br> 
@@ -67,7 +67,7 @@ Right-click on the **FilePath** component, select **"Select one existing file"**
 
 <figure>
 	<a href="https://i.postimg.cc/1XxtLHQv/2-license-Import-1.png"><img src="https://i.postimg.cc/1XxtLHQv/2-license-Import-1.png"></a>
-</figure>
+</figure> -->
 
 
 Use the **GERTYLicense** component to check your license information.<br> 

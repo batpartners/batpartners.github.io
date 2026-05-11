@@ -57,7 +57,7 @@ License 구매 시, GetMachineIDs 컴포넌트을 꺼내서 고유의 MAC주소 
 
 
 
-# 3. FileImportAndExport
+<!-- # 3. FileImportAndExport
 
 이후 이메일을 통해 라이센스를 받을 수 있다.<br>
 받은 라이센스는 FileImporterAndExporter 컴포넌트를 사용한다. <br>
@@ -65,7 +65,7 @@ FilePath 컴포넌트에서 오른쪽 마우스 클릭 후, Select one exsiting 
 
 <figure>
 	<a href="https://i.postimg.cc/1XxtLHQv/2-license-Import-1.png"><img src="https://i.postimg.cc/1XxtLHQv/2-license-Import-1.png"></a>
-</figure>
+</figure> -->
 
 
 GERTYLicense 컴포넌트를 통해 자신의 라이센스 정보를 확인한다.<br>
