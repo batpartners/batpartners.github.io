@@ -30,7 +30,7 @@ tags:
 
 In Rhino's `PackageManager`, search for `GERTY` and install the latest version.<br> 
 Restart Rhino after installation.<br>
-The trial license will be activated automatically and can be used for **15 days**.<br>
+The trial license will be activated automatically and can be used for **30 days**.<br>
 
 If `Automatically update packages when Rhino starts` is selected, the latest version of GERTY will always be used.
 
