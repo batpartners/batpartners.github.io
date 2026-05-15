@@ -33,7 +33,7 @@ Trial License로 자동 실행되며 **30일**간 사용할 수 있다.<br>
 `Automatically update packages when Rhino starts` 가 선택 되었다면 최신의 거티를 사용할 수 있다.
 
 <figure>
-	<a href="https://i.postimg.cc/hPqP5NGm/0-packagemanager-00.png"><img src="https://i.postimg.cc/hPqP5NGm/0-packagemanager-00.png"></a>
+	<a href="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"><img src="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"></a>
 </figure>
 
 
@@ -45,15 +45,13 @@ License 구매 시, GetMachineIDs 컴포넌트을 꺼내서 고유의 MAC주소 
 출력된 데이터를 `Copy Data Only` 한다. `Copy Data Only`는 패널에서 마우스 오른쪽 클릭시 확인할 수 있다.
 
 <figure>
-	<a href="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"><img src="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"></a>
+	<a href="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"><img src="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"></a>
 </figure>
+
 
 복사한 MAC주소는 Trial Request Page 버튼에 연결된 페이지 양식에 기재 후 제출한다.<br>
 만일 해당 양식이 보이지 않을 경우, **contact@b-at.kr** 로 이메일을 보낸다.
 
-<figure>
-	<a href="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"><img src="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"></a>
-</figure>
 
 
 

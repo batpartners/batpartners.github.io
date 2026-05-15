@@ -35,9 +35,8 @@ The trial license will be activated automatically and can be used for **30 days*
 If `Automatically update packages when Rhino starts` is selected, the latest version of GERTY will always be used.
 
 <figure>
-	<a href="https://i.postimg.cc/hPqP5NGm/0-packagemanager-00.png"><img src="https://i.postimg.cc/hPqP5NGm/0-packagemanager-00.png"></a>
+	<a href="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"><img src="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"></a>
 </figure>
-
 
 
 # 2. GetMachineIDs
@@ -47,15 +46,13 @@ When purchasing a license, use the **GetMachineIDs** component to retrieve the u
 Copy the extracted data using **"Copy Data Only"**, which can be accessed by right-clicking on the panel.
 
 <figure>
-	<a href="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"><img src="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"></a>
+	<a href="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"><img src="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"></a>
 </figure>
 
 Paste the copied MAC address into the form on the page linked to the **Trial Request Page** button and submit it.<br> 
 If the form is not visible, send an email to **contact@b-at.kr**.
 
-<figure>
-	<a href="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"><img src="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"></a>
-</figure>
+
 
 
 <!-- 
