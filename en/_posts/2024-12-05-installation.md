@@ -26,8 +26,7 @@ tags:
 
 🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
-# 1. Installation & Trial Period
-
+# 1. Installation & Trial Period<br>
 1) Plugin Installation<br>
 Locate 'GERTY' in the Rhino PackageManager, install the latest version, and restart Rhino.<br>
 
