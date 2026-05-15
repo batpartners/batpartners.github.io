@@ -26,13 +26,16 @@ tags:
 
 🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
-# 1. PackageManager
+# 1. Installation & Trial Period
 
-In Rhino's `PackageManager`, search for `GERTY` and install the latest version.<br> 
-Restart Rhino after installation.<br>
-The trial license will be activated automatically and can be used for **30 days**.<br>
+1) Plugin Installation<br>
+Locate 'GERTY' in the Rhino PackageManager, install the latest version, and restart Rhino.<br>
 
-If `Automatically update packages when Rhino starts` is selected, the latest version of GERTY will always be used.
+2) Trial License<br>
+Upon initial launch, a 30-day Trial License will be automatically activated, granting full access to all features.<br>
+
+3) Automatic Updates<br>
+To ensure you are always utilizing the most recent version of GERTY, please enable the 'Automatically update packages when Rhino starts' option in your settings.<br>
 
 <figure>
 	<a href="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"><img src="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"></a>
@@ -41,29 +44,33 @@ If `Automatically update packages when Rhino starts` is selected, the latest ver
 
 # 2. GetHardwareIDs
 
-If the Trial License expires, you can subscribe to GERTY's paid service.<br> 
-When purchasing a license, use the **GetHardwareIDs** component to retrieve the unique MAC address data.<br> 
-Copy the extracted data using **"Copy Data Only"**, which can be accessed by right-clicking on the panel.
+1) Paid Subscription<br>
+Upon the expiration of the trial period, users may transition to a paid subscription service for continued access to GERTY.<br>
+
+2) Hardware Identification<br>
+When purchasing a license, please utilize the GetHardwareIDs component to retrieve your device's unique MAC address data.<br>
+
+3) Copying Identification Data<br>
+The extracted data can be retrieved by right-clicking on the output panel and selecting the "Copy Data Only" option to ensure an accurate copy.<br>
 
 <figure>
 	<a href="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"><img src="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"></a>
 </figure>
 
-Paste the copied MAC address into the form on the page linked to the **Contect Support** button and submit it.<br> 
-If the form is not visible, send an email to **contact@b-at.kr**.
+Please input the copied MAC address into the submission form provided via the 'Contact Support' button.<br>
 
+# 3. Check the License
 
-# 3. FileImportAndExport
-
-You can receive your license via email after the trial period ends.<br>
-Paste the received license into the 'Activate GERTY License' tab under the 'GERTY Ver.2' ribbon at the top of Grasshopper.<br>
-Then, completely close the Rhino window and restart it to complete the installation.
+Following the conclusion of the trial period, users may purchase a license via email.
+<br>Once the license is issued, please navigate to 'GERTY Ver.2' > 'Activate GERTY License' in the Grasshopper top ribbon to enter your key.
+<br>To finalize the installation and apply the license, a complete restart of Rhino is required.<br>
+Upon successful installation, you may verify your remaining license period at any time within the GERTY Ver.2 menu.<br>
+You can now launch and utilize the specialized GERTY templates to begin your workflow and explore the full suite of features.<br>
 
 <figure>
 	<a href="https://i.postimg.cc/ZR7VtN2n/License-Active.png"><img src="https://i.postimg.cc/ZR7VtN2n/License-Active.png"></a>
 </figure>
 
-Once the installation is complete, you can check the remaining license period in GERTY Ver.2 and start using the software by launching the provided GERTY templates.<br>
-For any other issues, contact **contact@b-at.kr**.
+In the event that the submission form is unavailable or not displayed correctly, please forward the required information to our support team at contact@b-at.kr.
 
 
