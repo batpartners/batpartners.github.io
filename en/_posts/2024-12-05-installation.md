@@ -39,36 +39,31 @@ If `Automatically update packages when Rhino starts` is selected, the latest ver
 </figure>
 
 
-# 2. GetMachineIDs
+# 2. GetHardwareIDs
 
 If the Trial License expires, you can subscribe to GERTY's paid service.<br> 
-When purchasing a license, use the **GetMachineIDs** component to retrieve the unique MAC address data.<br> 
+When purchasing a license, use the **GetHardwareIDs** component to retrieve the unique MAC address data.<br> 
 Copy the extracted data using **"Copy Data Only"**, which can be accessed by right-clicking on the panel.
 
 <figure>
 	<a href="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"><img src="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"></a>
 </figure>
 
-Paste the copied MAC address into the form on the page linked to the **Trial Request Page** button and submit it.<br> 
+Paste the copied MAC address into the form on the page linked to the **Contect Support** button and submit it.<br> 
 If the form is not visible, send an email to **contact@b-at.kr**.
 
 
-
-
-<!-- 
 # 3. FileImportAndExport
 
-User will receive the license via email.<br> 
-Use the **FileImporterAndExporter** component to apply the license.<br> 
-Right-click on the **FilePath** component, select **"Select one existing file"**, and link the license file.
+You can receive your license via email after the trial period ends.<br>
+Paste the received license into the 'Activate GERTY License' tab under the 'GERTY Ver.2' ribbon at the top of Grasshopper.<br>
+Then, completely close the Rhino window and restart it to complete the installation.
 
 <figure>
-	<a href="https://i.postimg.cc/1XxtLHQv/2-license-Import-1.png"><img src="https://i.postimg.cc/1XxtLHQv/2-license-Import-1.png"></a>
-</figure> -->
+	<a href="https://i.postimg.cc/ZR7VtN2n/License-Active.png"><img src="https://i.postimg.cc/ZR7VtN2n/License-Active.png"></a>
+</figure>
 
-
-Use the **GERTYLicense** component to check your license information.<br> 
-If **Available** is confirmed, the GERTY installation is complete.<br> 
+Once the installation is complete, you can check the remaining license period in GERTY Ver.2 and start using the software by launching the provided GERTY templates.<br>
 For any other issues, contact **contact@b-at.kr**.
 
 
