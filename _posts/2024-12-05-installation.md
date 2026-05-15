@@ -65,8 +65,7 @@ tags:
 체험판(Trial) 기간 종료 후에는 안내된 이메일(contact@b-at.kr)을 통해 정식 라이선스를 구매하여 이용하실 수 있습니다.
 발급받은 라이선스 키는 Grasshopper 상단 리본 메뉴의 'GERTY Ver.2' > 'Activate GERTY License' 경로에 입력해 주시기 바랍니다.
 
-라이선스 등록 후, Rhino를 완전히 종료하고 재실행하시면 모든 설치 및 활성화 과정이 완료됩니다.설치 및 활성화가 완료되면, GERTY Ver.2 메뉴에서 라이선스 잔여 기간을 상시 확인하실 수 있습니다.<br>
-제공되는 GERTY 전용 템플릿을 실행하여 즉시 프로젝트를 시작하고 다양한 기능을 활용해 보시기 바랍니다.<br>
+라이선스 등록 후, Rhino를 완전히 종료하고 재실행하시면 모든 설치 및 활성화 과정이 완료됩니다.설치 및 활성화가 완료되면, GERTY Ver.2 메뉴에서 라이선스 잔여 기간을 상시 확인하실 수 있습니다. 제공되는 GERTY 전용 템플릿을 실행하여 즉시 프로젝트를 시작하고 다양한 기능을 활용해 보시기 바랍니다.<br>
 
 <figure>
 	<a href="https://i.postimg.cc/ZR7VtN2n/License-Active.png"><img src="https://i.postimg.cc/ZR7VtN2n/License-Active.png"></a>
