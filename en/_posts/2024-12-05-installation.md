@@ -47,14 +47,14 @@ When purchasing a license, use the **GetMachineIDs** component to retrieve the u
 Copy the extracted data using **"Copy Data Only"**, which can be accessed by right-clicking on the panel.
 
 <figure>
-	<a href="https://i.postimg.cc/y6D9qVd0/Getmachine-IDs-00.png"><img src="https://i.postimg.cc/y6D9qVd0/Getmachine-IDs-00.png"></a>
+	<a href="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"><img src="https://i.postimg.cc/dDMMFGCG/Package-Manager.png"></a>
 </figure>
 
 Paste the copied MAC address into the form on the page linked to the **Trial Request Page** button and submit it.<br> 
 If the form is not visible, send an email to **contact@b-at.kr**.
 
 <figure>
-	<a href="https://i.postimg.cc/WbhgR9g7/1-MACAddress-01.png"><img src="https://i.postimg.cc/WbhgR9g7/1-MACAddress-01.png"></a>
+	<a href="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"><img src="https://i.postimg.cc/g0c21Pm6/Machine-ID.png"></a>
 </figure>
 
 
