@@ -17,7 +17,7 @@ search: false
 }
 
 /* --------------------------------------------------
- * 🌲 무한 하위 카테고리 사이드바 들여쓰기 및 스타일
+ * 🌲 무한 하위 카테고리 사이드바 들여쓰기 및 스타일 (글자 크기 UP)
  * -------------------------------------------------- */
 .nav__list {
   ul {
@@ -29,19 +29,20 @@ search: false
   // 중첩된 하위 ul이 등장할 때마다 자동으로 오른쪽으로 15px씩 들여쓰기
   ul ul {
     padding-left: 15px !important; 
-    margin-top: 4px !important;
-    margin-bottom: 4px !important;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
   }
 
   li {
-    margin-bottom: 3px !important;
+    margin-bottom: 5px !important; // 글자가 커진 만큼 행간 여백도 살짝 늘렸습니다.
 
     a {
       display: inline-block;
-      padding: 3px 0;
+      padding: 4px 0;
       color: #666 !important;
       text-decoration: none;
-      font-size: 0.95em;
+      /* 💡 최상위 자식 글자 크기 조정 (기존보다 약 2px 키움) */
+      font-size: 1.1em !important; 
 
       &:hover {
         color: #000 !important;
@@ -54,8 +55,9 @@ search: false
       }
     }
 
+    /* 💡 하위 카테고리로 들어가도 글자가 너무 작아지지 않게 밸런스를 맞춤 */
     ul a {
-      font-size: 0.9em;
+      font-size: 1.0em !important; 
     }
   }
 }
