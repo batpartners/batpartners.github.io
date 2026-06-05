@@ -42,7 +42,7 @@ search: false
       color: #666 !important;
       text-decoration: none;
       /* 💡 최상위 자식 글자 크기 조정 (기존보다 약 2px 키움) */
-      font-size: 1.8em !important; 
+      font-size: 1.2em !important; 
 
       &:hover {
         color: #000 !important;
@@ -57,7 +57,7 @@ search: false
 
     /* 💡 하위 카테고리로 들어가도 글자가 너무 작아지지 않게 밸런스를 맞춤 */
     ul a {
-      font-size: 1.5em !important; 
+      font-size: 1.1em !important; 
     }
   }
 }
