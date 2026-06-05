@@ -16,6 +16,49 @@ search: false
     font-style: normal;
 }
 
+/* --------------------------------------------------
+ * 🌲 무한 하위 카테고리 사이드바 들여쓰기 및 스타일
+ * -------------------------------------------------- */
+.nav__list {
+  ul {
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  // 중첩된 하위 ul이 등장할 때마다 자동으로 오른쪽으로 15px씩 들여쓰기
+  ul ul {
+    padding-left: 15px !important; 
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+  }
+
+  li {
+    margin-bottom: 3px !important;
+
+    a {
+      display: inline-block;
+      padding: 3px 0;
+      color: #666 !important;
+      text-decoration: none;
+      font-size: 0.95em;
+
+      &:hover {
+        color: #000 !important;
+        text-decoration: underline;
+      }
+
+      &.active {
+        font-weight: bold !important;
+        color: #ff5a5f !important; /* 활성화된 메뉴 포인트 색상 */
+      }
+    }
+
+    ul a {
+      font-size: 0.9em;
+    }
+  }
+}
 
 // .page__content {
 //     p,
