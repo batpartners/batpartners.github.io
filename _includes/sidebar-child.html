@@ -1,0 +1,16 @@
+<ul>
+  {% for child in include.children %}
+    <li>
+      {% if child.url %}
+        <a href="{{ child.url | relative_url }}" {% if child.url == page.url %}class="active"{% endif %}>{{ child.title }}</a>
+      {% else %}
+        <span>{{ child.title }}</span>
+      {% endif %}
+
+      {% comment %} 이 자식이 또 하위 자식을 가지고 있다면 스스로를 다시 호출 {% endcomment %}
+      {% if child.children %}
+        {% include sidebar-child.html children=child.children %}
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
