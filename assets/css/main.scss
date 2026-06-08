@@ -64,6 +64,39 @@ search: false
   }
 }
 
+/* ==================================================
+ * 📋 오직 본문 우측 TOC(Contents) 위젯 글자 크기만 확대
+ * ================================================== */
+.toc__menu {
+  /* 1. 목차 리스트 글자 크기를 기본 대비 확실하게 키움 */
+  .toc__list-items {
+    font-size: 1.1em !important; /* 👈 원래 엄청 작던(0.75em) 글씨를 시원하게 확대 */
+    
+    li {
+      margin-bottom: 7px !important; /* 글자가 커진 만큼 가독성을 위해 줄간격 확보 */
+      
+      a {
+        color: #555 !important; /* 글자 색상을 조금 더 선명하고 읽기 쉽게 수정 */
+        font-weight: 500 !important;
+        text-decoration: none !important;
+
+        /* 마우스 올렸을 때 효과 */
+        &:hover {
+          color: #000 !important;
+          font-weight: bold !important;
+        }
+      }
+    }
+
+    /* 혹시 목차 내부에 소제목(H3 등)으로 인한 하위 목차가 생겨도 글자가 작아지지 않게 방어 */
+    ul {
+      font-size: 1.0em !important; 
+      padding-left: 12px !important;
+      margin-top: 5px !important;
+    }
+  }
+}
+
 // .page__content {
 //     p,
 //     li,
