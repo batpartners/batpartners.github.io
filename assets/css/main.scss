@@ -62,36 +62,28 @@ html, body {
 }
 
 /* ==================================================
- * 📋 [사이드바 절대 방어] 오직 본문 우측 TOC 목록만 확대
+ * 📋 [강제 타격] 오직 본문 우측 TOC(Contents) 위젯 글자 크기만 확대
  * ================================================== */
-/* 1. 사이드바(.nav__list) 내부에 있는 모든 TOC 규칙은 강제로 초기화하여 사이드바 변형을 원천 차단합니다. */
-.nav__list .toc__menu,
-.nav__list .toc__list-items,
-.nav__list .toc__list-items li a {
-  font-size: 1.05em !important; 
-  font-weight: normal !important;
-  color: #666 !important;
-}
-
-/* 2. 오직 포스트 본문 우측 영역(.sidebar__right)에 둥둥 떠 있는 TOC 위젯만 타격합니다. */
-aside.sidebar__right .toc {
+/* 테마의 반응형 데스크톱 스타일(.sidebar__right)까지 명시하여 우선순위를 최상위로 올립니다. */
+.sidebar__right .toc .toc__menu, 
+.toc__menu {
   
-  // "Contents" 메인 타이틀 크기
+  /* 1. Contents 헤더 제목 크기 */
   .toc__title {
-    font-size: 0.9em !important;
+    font-size: 0.85em !important; 
   }
 
-  // 실제 본문 목차 리스트 (1. 설치 및 체험판 안내 등)
+  /* 2. 실제 본문 목차 리스트 글자 크기 강제 확장 */
   ul.toc__list-items {
-    font-size: 1.2em !important; /* 👈 드디어 사이드바 영향 없이 이곳만 확실하게 커집니다! */
+    font-size: 1.25em !important; /* 👈 안 바뀌는 걸 보려고 일부러 '매우 크게' 잡았습니다. 잘 바뀌면 1.15em 정도로 낮추세요! */
     
     li {
-      margin-bottom: 8px !important; /* 글자가 커진 만큼 가독성을 위해 여백 조절 */
+      margin-bottom: 8px !important; /* 줄간격 여백 확보 */
       
       a {
         display: inline-block !important;
-        color: #333 !important; /* 조금 더 선명한 색상 */
-        font-weight: bold !important; /* 커진 게 한눈에 보이도록 일단 볼드 처리 */
+        color: #333 !important; /* 글씨 식별이 잘 되도록 더 진하게 고정 */
+        font-weight: bold !important; /* 바뀌었는지 한눈에 알 수 있게 강제 볼드 처리 */
         text-decoration: none !important;
         line-height: 1.4 !important;
 
@@ -102,10 +94,11 @@ aside.sidebar__right .toc {
       }
     }
 
-    // 하위 제목(### 등)이 목차에 들어올 때의 크기
+    /* 하위 목차 구조 (### 제목 등) 크기 방어 */
     ul {
-      font-size: 0.9em !important;
+      font-size: 0.95em !important; 
       padding-left: 12px !important;
+      margin-top: 5px !important;
     }
   }
 }
