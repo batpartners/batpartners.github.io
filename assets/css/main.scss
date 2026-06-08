@@ -17,7 +17,7 @@ search: false
 }
 
 /* --------------------------------------------------
- * 🌲 무한 하위 카테고리 사이드바 들여쓰기 및 스타일 (글자 크기 UP)
+ * 🌲 사이드바 계층별 글자 크기 정밀 제어 스타일
  * -------------------------------------------------- */
 .nav__list {
   ul {
@@ -26,7 +26,7 @@ search: false
     padding: 0 !important;
   }
 
-  // 중첩된 하위 ul이 등장할 때마다 자동으로 오른쪽으로 15px씩 들여쓰기
+  // 하위 카테고리 들여쓰기 여백 (기존 유지)
   ul ul {
     padding-left: 15px !important; 
     margin-top: 5px !important;
@@ -34,30 +34,32 @@ search: false
   }
 
   li {
-    margin-bottom: 5px !important; // 글자가 커진 만큼 행간 여백도 살짝 늘렸습니다.
+    margin-bottom: 5px !important;
 
-    a {
-      display: inline-block;
-      padding: 4px 0;
-      color: #666 !important;
-      text-decoration: none;
-      /* 💡 최상위 자식 글자 크기 조정 (기존보다 약 2px 키움) */
-      font-size: 1.1em !important; 
+    // 1️⃣ [1단계 하위 - What is GERTY?] 글자 크기 고정
+    // 너무 부담스럽지 않게 기본 크기(또는 약간만 큰 상태)로 묶어둡니다.
+    & > a, & > span, & > .nav__sub-title {
+      display: inline-block !important;
+      padding: 4px 0 !important;
+      color: #444 !important;
+      font-size: 1.05em !important; /* 👈 1단계 글자 크기 (부담스러우면 1.0em으로 수정) */
+      font-weight: normal !important;
+      text-decoration: none !important;
 
-      &:hover {
-        color: #000 !important;
-        text-decoration: underline;
-      }
-
-      &.active {
-        font-weight: bold !important;
-        color: #ff5a5f !important; /* 활성화된 메뉴 포인트 색상 */
-      }
+      &:hover { color: #000 !important; }
     }
 
-    /* 💡 하위 카테고리로 들어가도 글자가 너무 작아지지 않게 밸런스를 맞춤 */
-    ul a {
-      font-size: 1.0em !important; 
+    // 2️⃣ [2단계 이하 하위 - Features 등 하위의 하위] 글자 크기 독립 제어
+    // 상위 항목에 영향을 주지 않고 오직 안쪽 깊은 메뉴의 글자만 키웁니다.
+    ul a, ul span, ul .nav__sub-title {
+      display: inline-block !important;
+      padding: 3px 0 !important;
+      color: #666 !important;
+      font-size: 1.05em !important; /* 👈 원래 0.9em이던 걸 1단계와 거의 같게 강제 확장! */
+      font-weight: normal !important;
+
+      &:hover { color: #000 !important; }
+      &.active { font-weight: bold !important; color: #ff5a5f !important; }
     }
   }
 }
