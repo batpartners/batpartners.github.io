@@ -70,12 +70,12 @@ html, body {
   
   /* 1. Contents 헤더 제목 크기 */
   .toc__title {
-    font-size: 0.85em !important; 
+    font-size: 1.85em !important; 
   }
 
   /* 2. 실제 본문 목차 리스트 글자 크기 강제 확장 */
   ul.toc__list-items {
-    font-size: 1.25em !important; /* 👈 안 바뀌는 걸 보려고 일부러 '매우 크게' 잡았습니다. 잘 바뀌면 1.15em 정도로 낮추세요! */
+    font-size: 2.25em !important; /* 👈 안 바뀌는 걸 보려고 일부러 '매우 크게' 잡았습니다. 잘 바뀌면 1.15em 정도로 낮추세요! */
     
     li {
       margin-bottom: 8px !important; /* 줄간격 여백 확보 */
@@ -96,7 +96,7 @@ html, body {
 
     /* 하위 목차 구조 (### 제목 등) 크기 방어 */
     ul {
-      font-size: 0.95em !important; 
+      font-size: 1.95em !important; 
       padding-left: 12px !important;
       margin-top: 5px !important;
     }
