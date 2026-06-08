@@ -8,12 +8,11 @@ search: false
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
-@font-face {
-    font-family: "NanumSquare", sans-serif;
-    font-optical-sizing: auto;
-    src: url('https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css') format('woff2');
-    font-weight: 400;
-    font-style: normal;
+/* 💡 [수정] 나눔스퀘어 웹폰트 정상 로드 방식으로 변경 */
+@import url('https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css');
+
+html, body {
+  font-family: "NanumSquare", sans-serif !important;
 }
 
 /* --------------------------------------------------
@@ -26,7 +25,7 @@ search: false
     padding: 0 !important;
   }
 
-  // 하위 카테고리 들여쓰기 여백 (기존 유지)
+  // 하위 카테고리 들여쓰기 여백
   ul ul {
     padding-left: 15px !important; 
     margin-top: 5px !important;
@@ -36,26 +35,24 @@ search: false
   li {
     margin-bottom: 5px !important;
 
-    // 1️⃣ [1단계 하위 - What is GERTY?] 글자 크기 고정
-    // 너무 부담스럽지 않게 기본 크기(또는 약간만 큰 상태)로 묶어둡니다.
+    // 1️⃣ [1단계 하위] 글자 크기 고정
     & > a, & > span, & > .nav__sub-title {
       display: inline-block !important;
       padding: 4px 0 !important;
       color: #444 !important;
-      font-size: 1.05em !important; /* 👈 1단계 글자 크기 (부담스러우면 1.0em으로 수정) */
+      font-size: 1.05em !important; 
       font-weight: normal !important;
       text-decoration: none !important;
 
       &:hover { color: #000 !important; }
     }
 
-    // 2️⃣ [2단계 이하 하위 - Features 등 하위의 하위] 글자 크기 독립 제어
-    // 상위 항목에 영향을 주지 않고 오직 안쪽 깊은 메뉴의 글자만 키웁니다.
+    // 2️⃣ [2단계 이하 하위] Features 등 하위의 하위 글자 크기 독립 제어
     ul a, ul span, ul .nav__sub-title {
       display: inline-block !important;
       padding: 3px 0 !important;
       color: #666 !important;
-      font-size: 1.05em !important; /* 👈 원래 0.9em이던 걸 1단계와 거의 같게 강제 확장! */
+      font-size: 1.05em !important; 
       font-weight: normal !important;
 
       &:hover { color: #000 !important; }
@@ -65,32 +62,41 @@ search: false
 }
 
 /* ==================================================
- * 📋 오직 본문 우측 TOC(Contents) 위젯 글자 크기만 확대
+ * 📋 [강제 타격] 오직 본문 우측 TOC(Contents) 위젯 글자 크기만 확대
  * ================================================== */
+/* 테마의 반응형 데스크톱 스타일(.sidebar__right)까지 명시하여 우선순위를 최상위로 올립니다. */
+.sidebar__right .toc .toc__menu, 
 .toc__menu {
-  /* 1. 목차 리스트 글자 크기를 기본 대비 확실하게 키움 */
-  .toc__list-items {
-    font-size: 1.1em !important; /* 👈 원래 엄청 작던(0.75em) 글씨를 시원하게 확대 */
+  
+  /* 1. Contents 헤더 제목 크기 */
+  .toc__title {
+    font-size: 0.85em !important; 
+  }
+
+  /* 2. 실제 본문 목차 리스트 글자 크기 강제 확장 */
+  ul.toc__list-items {
+    font-size: 1.25em !important; /* 👈 안 바뀌는 걸 보려고 일부러 '매우 크게' 잡았습니다. 잘 바뀌면 1.15em 정도로 낮추세요! */
     
     li {
-      margin-bottom: 7px !important; /* 글자가 커진 만큼 가독성을 위해 줄간격 확보 */
+      margin-bottom: 8px !important; /* 줄간격 여백 확보 */
       
       a {
-        color: #555 !important; /* 글자 색상을 조금 더 선명하고 읽기 쉽게 수정 */
-        font-weight: 500 !important;
+        display: inline-block !important;
+        color: #333 !important; /* 글씨 식별이 잘 되도록 더 진하게 고정 */
+        font-weight: bold !important; /* 바뀌었는지 한눈에 알 수 있게 강제 볼드 처리 */
         text-decoration: none !important;
+        line-height: 1.4 !important;
 
-        /* 마우스 올렸을 때 효과 */
         &:hover {
           color: #000 !important;
-          font-weight: bold !important;
+          text-decoration: underline !important;
         }
       }
     }
 
-    /* 혹시 목차 내부에 소제목(H3 등)으로 인한 하위 목차가 생겨도 글자가 작아지지 않게 방어 */
+    /* 하위 목차 구조 (### 제목 등) 크기 방어 */
     ul {
-      font-size: 1.0em !important; 
+      font-size: 0.95em !important; 
       padding-left: 12px !important;
       margin-top: 5px !important;
     }
@@ -124,4 +130,3 @@ search: false
 //       font-size: 20px; // change to whatever
 //     }
 //   }
-
