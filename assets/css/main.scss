@@ -16,7 +16,7 @@ html, body {
 }
 
 /* --------------------------------------------------
- * 🌲 사이드바 계층별 글자 크기 정밀 제어 스타일
+ * 🌲 사이드바 계층별 글자 크기 정밀 제어 스타일 (슬림 다운 버전)
  * -------------------------------------------------- */
 .nav__list {
   ul {
@@ -25,38 +25,47 @@ html, body {
     padding: 0 !important;
   }
 
-  // 하위 카테고리 들여쓰기 여백
+  // 뎁스 간 간격 및 들여쓰기 여백 (자연스럽게 조절)
   ul ul {
-    padding-left: 13px !important; 
-    margin-top: 2px !important;
-    margin-bottom: 2px !important;
+    padding-left: 12px !important; /* 들여쓰기 깊이를 살짝 줄여 안정감 부여 */
+    margin-top: 1px !important;
+    margin-bottom: 1px !important;
   }
 
   li {
-    margin-bottom: 5px !important;
+    margin-bottom: 2px !important; /* 항목 간 위아래 불필요한 유격 최소화 */
+    line-height: 1.3 !important;
 
-    // 1️⃣ [1단계 하위] 글자 크기 고정
+    // 1️⃣ [1단계 대메뉴 - What is GERTY?, Installation 등]
+    // 당황스럽지 않게 테마 본래의 차분하고 작은 크기로 원상복구합니다.
     & > a, & > span, & > .nav__sub-title {
       display: inline-block !important;
-      padding: 3px 0 !important;
-      color: #444 !important;
-      font-size: 0.95em !important; 
-      font-weight: normal !important;
+      padding: 2px 0 !important;
+      color: #333 !important;
+      font-size: 0.9em !important; /* 👈 1.05em에서 0.9em으로 대폭 축소하여 부담감을 줄였습니다 */
+      font-weight: 500 !important;  /* 너무 두껍지 않은 적당한 굵기 */
       text-decoration: none !important;
 
       &:hover { color: #000 !important; }
     }
 
-    // 2️⃣ [2단계 이하 하위] Features 등 하위의 하위 글자 크기 독립 제어
+    // 2️⃣ [2단계 중메뉴 - 🔥 Features 및 하위 항목들 완전히 조준]
+    // 이제 대메뉴가 작아졌으니, 하위 카테고리도 겉돌지 않게 같이 크기를 맞춰줍니다.
     ul a, ul span, ul .nav__sub-title {
       display: inline-block !important;
-      padding: 3px 0 !important;
+      padding: 1px 0 !important;
       color: #666 !important;
-      font-size: 0.95em !important; 
+      font-size: 0.85em !important; /* 👈 대메뉴(0.9em)보다 아주 살짝만 작게 하여 위계를 살리되, 기존보단 잘 보이게 조절 */
       font-weight: normal !important;
 
-      &:hover { color: #000 !important; }
-      &.active { font-weight: bold !important; color: #ff5a5f !important; }
+      &:hover { 
+        color: #000 !important; 
+        font-weight: bold !important;
+      }
+      &.active { 
+        font-weight: bold !important; 
+        color: #ff5a5f !important; 
+      }
     }
   }
 }
