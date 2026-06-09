@@ -134,7 +134,7 @@
             {% endif %}
 
             <!-- {% capture listItem %}<a{{ anchorAttributes }}>{{ anchorBody }}</a>{% endcapture %} -->
-             {% capture listItem %}<a{{ anchorAttributes }} style="font-size: 0.95rem !important; font-weight: 500 !important;">{{ anchorBody }}</a>{% endcapture %}
+             {% capture listItem %}<a{{ anchorAttributes }} style="font-size: 0.65rem !important; font-weight: 500 !important;">{{ anchorBody }}</a>{% endcapture %}
         {% elsif skipNoIDs == true %}
             {% continue %}
         {% else %}
@@ -182,9 +182,20 @@
             {% capture rootAttributes %}{{ rootAttributes }} id="{{ include.id }}"{% endcapture %}
         {% endif %}
 
+        <!-- {% if rootAttributes %}
+            {% assign nodes = jekyll_toc | split: '>' %}
+            {% capture jekyll_toc %}<{{ listModifier }}{{ rootAttributes }}>{{ nodes | shift | join: '>' }}>{% endcapture %}
+        {% endif %} -->
         {% if rootAttributes %}
             {% assign nodes = jekyll_toc | split: '>' %}
             {% capture jekyll_toc %}<{{ listModifier }}{{ rootAttributes }}>{{ nodes | shift | join: '>' }}>{% endcapture %}
         {% endif %}
     {% endif %}
 {% endcapture %}{% assign tocWorkspace = '' %}{{ deprecation_warnings }}{{ jekyll_toc -}}
+
+<style>
+  .toc__menu .toc__title {
+    font-size: 0.8rem !important; /* 👈 너무 크면 1.0rem 이나 0.95rem으로 줄이시면 됩니다! */
+    font-weight: bold !important;
+  }
+</style>
