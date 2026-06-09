@@ -16,7 +16,7 @@ html, body {
 }
 
 /* --------------------------------------------------
- * 🌲 사이드바 계층별 글자 크기 및 여백 정밀 제어 스타일 (크기 완전 통일 버전)
+ * 🌲 사이드바 계층별 글자 크기 및 여백 정밀 제어 스타일 (위계 강화 버전)
  * -------------------------------------------------- */
 .nav__list {
   ul {
@@ -36,28 +36,30 @@ html, body {
     margin-bottom: 3px !important; 
     line-height: 1.35 !important;
 
-    // 1️⃣ [1단계 대메뉴 - 0. ABOUT GERTY, 1. DATATYPE 등 대제목]
+    // 1️⃣ [👑 최상위 대제목 - 0. ABOUT GERTY, 1. DATATYPE]
+    // 하위 항목들과 완벽한 차이를 두기 위해 굵고 1포인트 더 크게 수정했습니다.
     & > a, & > span, & > .nav__sub-title {
       display: inline-block !important;
       padding: 3px 0 0px 0 !important; 
-      margin-top: 8px !important;     
-      margin-bottom: 0px !important;  /* 대제목 밑 여백 밀착 유지 */
-      color: #333 !important;
-      font-size: 14px !important;     /* 👈 비율(em)이 아닌 고정값(px)으로 당황스럽지 않은 표준 크기 지정 */
-      font-weight: 500 !important;  
+      margin-top: 10px !important;     /* 위쪽 카테고리 덩어리와의 구분감 확보 */
+      margin-bottom: 1px !important;  /* 대제목 밑 여백 밀착 유지 */
+      color: #223344 !important;      /* 조금 더 깊이감 있고 선명한 톤 */
+      font-size: 15px !important;     /* 👈 1포인트 확실하게 키움 */
+      font-weight: 800 !important;    /* 👈 묵직하고 뚜렷하게 볼드 처리 */
       text-decoration: none !important;
+      letter-spacing: -0.3px !important;
 
       &:hover { color: #000 !important; }
     }
 
-    // 2️⃣ [2단계 이하 모든 하위 카테고리 - Features, RobTarget 및 그 하위의 모든 항목]
-    // 💡 부모 크기에 영향을 받지 않도록 고정 크기를 주어 하위와 하위의 하위 크기를 완벽히 일치시킵니다.
+    // 2️⃣ [2단계 이하 모든 하위 카테고리 - Features, Installation, RobTarget 및 하위의 하위]
+    // 대메뉴보다 한 단계 작게 고정되어, 깊게 들어가도 글자가 줄어들지 않고 완벽하게 동일한 크기를 유지합니다.
     ul a, ul span, ul .nav__sub-title {
       display: inline-block !important;
-      padding: 2px 0 !important;
+      padding: 2.5px 0 !important;
       margin-top: 0 !important;      
       color: #555 !important;
-      font-size: 13.5px !important;   /* 👈 하위의 하위로 내려가도 덧셈/곱셈 없이 무조건 13.5px로 고정됩니다! */
+      font-size: 13.5px !important;   /* 👈 하위/하위의 하위 구분 없이 13.5px 절대 고정 */
       font-weight: normal !important;
 
       &:hover { 
