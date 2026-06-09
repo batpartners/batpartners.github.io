@@ -16,7 +16,7 @@ html, body {
 }
 
 /* --------------------------------------------------
- * 🌲 사이드바 계층별 글자 크기 및 여백 정밀 제어 스타일 (밀착 버전)
+ * 🌲 사이드바 계층별 글자 크기 및 여백 정밀 제어 스타일 (크기 완전 통일 버전)
  * -------------------------------------------------- */
 .nav__list {
   ul {
@@ -25,10 +25,10 @@ html, body {
     padding: 0 !important;
   }
 
-  // 뎁스 간 간격 및 들여쓰기 여백 (계층감 유지)
+  // 뎁스 간 간격 및 들여쓰기 여백
   ul ul {
     padding-left: 14px !important; 
-    margin-top: 1px !important;   /* 👈 하위 목록이 시작할 때 상단 여백을 극도로 축소 */
+    margin-top: 1px !important;   
     margin-bottom: 2px !important;
   }
 
@@ -37,27 +37,27 @@ html, body {
     line-height: 1.35 !important;
 
     // 1️⃣ [1단계 대메뉴 - 0. ABOUT GERTY, 1. DATATYPE 등 대제목]
-    // 🔥 하위 카테고리가 헷갈리지 않도록 하단 여백(margin-bottom)을 완전히 없애 밀착시킵니다.
     & > a, & > span, & > .nav__sub-title {
       display: inline-block !important;
-      padding: 3px 0 0px 0 !important; /* 아래쪽 패딩 제거 */
-      margin-top: 8px !important;     /* 위쪽 카테고리 그룹과의 유격은 유지 */
-      margin-bottom: 0px !important;  /* 👈 [핵심] 대제목 바로 밑에 생기던 거대한 여백 원천 차단! */
+      padding: 3px 0 0px 0 !important; 
+      margin-top: 8px !important;     
+      margin-bottom: 0px !important;  /* 대제목 밑 여백 밀착 유지 */
       color: #333 !important;
-      font-size: 1.0em !important;    /* 마음에 들어 하신 중간 크기 고정 */
+      font-size: 14px !important;     /* 👈 비율(em)이 아닌 고정값(px)으로 당황스럽지 않은 표준 크기 지정 */
       font-weight: 500 !important;  
       text-decoration: none !important;
 
       &:hover { color: #000 !important; }
     }
 
-    // 2️⃣ [2단계 중메뉴 - Features, RobTarget 및 하위 항목들]
+    // 2️⃣ [2단계 이하 모든 하위 카테고리 - Features, RobTarget 및 그 하위의 모든 항목]
+    // 💡 부모 크기에 영향을 받지 않도록 고정 크기를 주어 하위와 하위의 하위 크기를 완벽히 일치시킵니다.
     ul a, ul span, ul .nav__sub-title {
       display: inline-block !important;
       padding: 2px 0 !important;
-      margin-top: 0 !important;      /* 대제목 바로 밑의 첫 항목이 붕 뜨지 않게 방어 */
+      margin-top: 0 !important;      
       color: #555 !important;
-      font-size: 0.95em !important;   /* 마음에 들어 하신 중간 크기 고정 */
+      font-size: 13.5px !important;   /* 👈 하위의 하위로 내려가도 덧셈/곱셈 없이 무조건 13.5px로 고정됩니다! */
       font-weight: normal !important;
 
       &:hover { 
