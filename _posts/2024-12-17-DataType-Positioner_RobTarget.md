@@ -43,7 +43,7 @@ tags:
 ## Dynamic 모드
 
 | 이름 | 타입 | 설명 |
-| :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- |
 | Positioner | Positioner | ABB Positioner |
 | Target Planes | Plane | RobTarget으로 변환할 평면 |
 | Z Rotation | Angle | RobTarget을 자기 자신의 Z축 기준으로 회전 (단위: 도) |
