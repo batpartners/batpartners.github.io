@@ -14,7 +14,6 @@ categories:
 translated: true
 lang: ko
 permalink: /datatype/DataType-Positioner_RobTarget/
-
 translation_link: /en/datatype/DataType-Positioner_RobTarget/
 
 sidebar:

@@ -57,7 +57,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/1_Positioner_Robtarget_3.png" align="center" width="32%"></p>
 
-
 *	RobTarget
   *	Name : 생성할 RobTarget 변수의 명칭을 정의합니다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용됩니다.
 *	Output
@@ -66,9 +65,11 @@ tags:
 
 <br>
 
-# Output
+# | 출력(Outputs)
 
-* **RobTargets** : 각 영역의 Robtargets의 ProgramData를 출력한다. 이후, 해당 데이터를  Instructions에 연결한다.
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| RobTargets | RobTarget | ABB Rapid RobTargets 코드 출력 |
 
 <p align="center"> 
 <video src="/assets/images/Static_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
