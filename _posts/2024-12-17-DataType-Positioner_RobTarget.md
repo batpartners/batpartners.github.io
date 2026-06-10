@@ -36,7 +36,7 @@ tags:
 
   * 참고자료 : ABB RAPID Instructions Documentation (Document ID: 3HAC050917-001)
 
-<p align="center">  <img src="/assets/images/new/1_Datatype/1_Positioner Robtarget.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/new/1_Positioner Robtarget.png" align="center" width="32%"></p>
 
 
 # | 입력(Inputs)
