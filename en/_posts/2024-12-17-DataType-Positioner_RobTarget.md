@@ -36,7 +36,6 @@ Supports writing user-defined positioner RAPID code based on the positioner-spec
 <p align="center">  <img src="/assets/images/new/1_Positioner_Robtarget.png" align="center" width="32%"></p>
 
 
-
 # | Inputs
 ## Dynamic Mode
 

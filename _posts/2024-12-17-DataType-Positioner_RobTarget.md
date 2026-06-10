@@ -35,9 +35,6 @@ tags:
 포지셔너 전용 RobTarget을 기반으로, 사용자가 정의한 포지셔너 RAPID 코드를 작성할 수 있도록 지원합니다. 우클릭 컨텍스트 메뉴로 Dynamic, Static 모드 전환이 가능합니다.
 
 <p align="center">  <img src="/assets/images/new/1_Positioner_Robtarget.png" align="center" width="32%"></p>
-<p align="center">
-  <img src="{{ site.baseurl }}/assets/images/new/1_Datatype/1_Positioner_Robtarget.png" align="center" width="32%">
-</p>
 
 
 # | 입력(Inputs)
