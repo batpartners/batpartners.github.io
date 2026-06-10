@@ -36,7 +36,7 @@ tags:
 
 <p align="center">  <img src="/assets/images/new/1_Positioner_Robtarget.png" align="center" width="32%"></p>
 <p align="center">  <img src="/assets/images/positioner_static.png" align="center" width="32%"></p>
-<p align="center">  <img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_1" align="center" width="32%"></p>
 
 
 
