@@ -40,7 +40,6 @@ tags:
 <p align="center">  <img src="/assets/images/01_robtarget.png" align="center" width="32%"></p>
 
 
-
 # | 입력(Inputs)
 ## Dynamic 모드
 
