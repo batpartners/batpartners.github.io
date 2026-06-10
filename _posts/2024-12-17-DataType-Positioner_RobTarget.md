@@ -37,7 +37,6 @@ tags:
 <p align="center">  <img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
 <p align="center">  <img src="/assets/images/positioner_static.png" align="center" width="32%"></p>
 <p align="center">  <img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
-<p align="center">  <img src="/assets/images/01_robtarget.png" align="center" width="32%"></p>
 
 
 # | 입력(Inputs)
