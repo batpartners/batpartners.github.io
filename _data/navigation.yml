@@ -22,10 +22,10 @@ sidebar:
       - title: "Positioner RobTarget"
         url: /datatype/DataType-Positioner_RobTarget/
         children:
-          - title: "Dynamic"
-            url: /datatype/DataType-Positioner_RobTarget/
+          # - title: "Dynamic"
+          #   url: /datatype/DataType-Positioner_RobTarget/
           - title: "Static"
-            url: /datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Static/
+            url: /datatype/DataType-Positioner_RobTarget_Static/
       - title: "WobjData"
         url: /datatype/DataType-WobjData/
       - title: "ToolData"
