@@ -20,7 +20,7 @@ sidebar:
       - title: "RobTarget"
         url: /datatype/DataType-RobTarget/
       - title: "Positioner RobTarget"
-        url: /datatype/DataType-RobTarget-On-Position_Dynamic/
+        url: /datatype/DataType-Positioner_RobTarget/
       - title: "RobTarget On Position(Static)"
         url: /datatype/DataType-RobTarget-On-Position_Static/        
       - title: "WobjData"

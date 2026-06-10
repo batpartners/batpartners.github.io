@@ -15,7 +15,7 @@ translated: true
 lang: ko
 permalink: /datatype/DataType-Positioner_RobTarget/
 
-translation_link: /en/datatype/DataType-RobTarget-On-Position_Dynamic/
+translation_link: /en/datatype/DataType-Positioner_RobTarget/
 
 sidebar:
   nav: "sidebar"
@@ -54,7 +54,7 @@ tags:
 ## Static 모드
 
 | 이름 | 타입 | 설명 |
-| :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- |
 | Positioner | Positioner | ABB Positioner |
 | Target Planes | Plane | RobTarget으로 변환할 평면 |
 | Z Rotation | Angle | RobTarget을 자기 자신의 Z축 기준으로 회전 (단위: 도) |
@@ -77,7 +77,7 @@ tags:
 # | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
-| :--- | :--- | :--- | :--- |
+| :--- | :--- | :--- |
 | RobTargets | RobTarget | ABB Rapid RobTargets 코드 출력 |
 
 <p align="center"> 

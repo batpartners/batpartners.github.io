@@ -1,5 +1,5 @@
 ---
-title: "RobTarget On Position(Dynamic)"
+title: "Positioner RobTarget"
 layout: single
 header:
   teaser: "/assets/images/positioner_dynamic_00.png"
@@ -13,8 +13,8 @@ categories:
 
 translated: true
 lang: en
-permalink: /en/datatype/DataType-RobTarget-On-Position_Dynamic/
-translation_link: /datatype/DataType-RobTarget-On-Position_Dynamic/
+permalink: /en/datatype/DataType-Positioner_RobTarget/
+translation_link: /datatype/DataType-Positioner_RobTarget/
 
 sidebar:
   nav: "sidebar"
