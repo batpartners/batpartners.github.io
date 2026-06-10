@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Static
+permalink: /datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Static/     
 
-translation_link: /en/datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Static
+translation_link: /en/datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Static/     
 
 sidebar:
   nav: "sidebar"
