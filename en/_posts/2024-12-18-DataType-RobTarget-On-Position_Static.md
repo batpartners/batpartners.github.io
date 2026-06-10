@@ -40,28 +40,34 @@ tags:
 
 # Input
 
-* **Positioner** : Inputs Positioner Data.
-* **Name [Text/Item]** : Specify the variable name of the ABB RobTarget as a string.
-* **Target Plane [Plane/DataTree]** : Receives data for the ToolPath Plane planned by the user.
-* **Base Plane [Plane/DataTree]** : Receives data for the ToolPath Plane planned by the user.
-* **Reference Plane [Plane/DataTree]** : Inputs the reference Plane value for each branch of the Target Plane.
-* **Angle [Number/Item]** : Modifies the robot's posture by changing the angle of the TargetPlane's normal.
-* **WobjData [Plane]** : Defines the reference plane according to the workspace as Work Object Data.
+## Static Mode
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| Positioner | Positioner | ABB Positioner |
+| Target Planes | Plane | Target planes to be converted into RobTargets |
+| Z Rotation | Angle | Rotates the RobTarget around its own Z-axis (Unit: Degrees) |
+| Target Base | Plane | The reference plane where the inputted Target Plane is defined. The inputted Target Plane defines the RobTarget oriented to the Positioner's Mounting Plane based on this plane. |
+| Reference Plane | Plane | Reference plane for positioner orientation in Static mode |
+| WobjData | WobjData | ABB Workobject coordinate system |
 
 <p align="center"> 
 <video src="/assets/images/RobtargetPosition(Static)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
 </video></p>
 
-## Built-in Param | Basic Params​
+## | Required Parameters
 
-* **Split Start** : Can split the first TargetPlane Data of the TargetPlane. The default state is False.
-* **Split End** : Can split the last TargetPlane Data of the TargetPlane. The default state is False.
+* RobTarget
+  * Name: Defines the name of the RobTarget variable to be created. This variable serves as a unique identifier to store the robot's target position and orientation.
+* Output
+  * Split Start: Extracts and outputs the data corresponding to the first index within each branch of the inputted TargetPlane data.
+  * Split End: Extracts and outputs the data corresponding to the last index within each branch of the inputted TargetPlane data.
 
-<br>
+# | Outputs
 
-# Output
-
-* **RobTargets** : Print ProgramData of Robtargets in each area. Then, link this data to Instructions.
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| RobTargets | RobTarget | Outputs the ABB RAPID RobTargets code |
 
 <p align="center"> 
 <video src="/assets/images/Static_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
