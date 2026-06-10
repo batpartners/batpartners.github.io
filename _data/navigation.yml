@@ -23,7 +23,7 @@ sidebar:
         url: /datatype/DataType-Positioner_RobTarget/
         children:
           - title: "Dynamic"
-            # url: /datatype/DataType-Positioner_RobTarget/
+            url: /datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Dynamic/
           - title: "Static"
             url: /datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Static/
       - title: "WobjData"

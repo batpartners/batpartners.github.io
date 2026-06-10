@@ -1,8 +1,8 @@
 ---
-title: "Positioner_RobTarget"
+title: "Positioner RobTarget"
 layout: single
 header:
-  teaser: "/assets/images/positioner_static.png"
+  teaser: "/assets/images/positioner_dynamic_00.png"
 
 collection: Datatype
 entries_layout: grid
@@ -13,8 +13,8 @@ categories:
 
 translated: true
 lang: ko
-permalink: /datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Static/
-translation_link: /en/datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Static/
+permalink: /datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Dynamic/
+translation_link: /en/datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Dynamic/
 
 sidebar:
   nav: "sidebar"
@@ -27,18 +27,17 @@ tags:
   - GERTY
 ---
 
-
 🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
 포지셔너 전용 RobTarget을 기반으로, 사용자가 정의한 포지셔너 RAPID 코드를 작성할 수 있도록 지원합니다. 우클릭 컨텍스트 메뉴로 Dynamic, Static 모드 전환이 가능합니다.
 
-<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_1.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
+
 
 # | 입력(Inputs)
-
-## Static 모드
+## Dynamic 모드
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
@@ -46,16 +45,15 @@ tags:
 | Target Planes | Plane | RobTarget으로 변환할 평면 |
 | Z Rotation | Angle | RobTarget을 자기 자신의 Z축 기준으로 회전 (단위: 도) |
 | Target Base | Plane | 입력된 Target Plane이 정의된 기준 평면. 입력된 Target Plane은 이 평면을 기준으로, Positioner의 Mounting Plane에 오리엔트 된 RobTarget을 정의. |
-| Reference Plane | Plane | Static 모드에서 포지셔너 정위(Orientation)를 위한 기준평면 |
 | WobjData | WobjData | ABB 작업 평면 좌표계 |
 
 <p align="center"> 
-<video src="/assets/images/RobtargetPosition(Static)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
+<video src="/assets/images/RobtargetPosition(Dynamic)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
 </video></p>
 
 ## | 필수 파라미터 (Required Parameter)
 
-<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_3.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_2.png" align="center" width="32%"></p>
 
 
 *	RobTarget
@@ -66,11 +64,13 @@ tags:
 
 <br>
 
-# Output
+# | 출력(Outputs)
 
-* **RobTargets** : 각 영역의 Robtargets의 ProgramData를 출력한다. 이후, 해당 데이터를  Instructions에 연결한다.
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| RobTargets | RobTarget | ABB Rapid RobTargets 코드 출력 |
 
 <p align="center"> 
-<video src="/assets/images/Static_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
+<video src="/assets/images/Dynamic_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
 </video>
 </p>
