@@ -36,7 +36,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/1_Positioner_Robtarget_1.png" align="center" width="32%"></p>
 
-
 # | 입력(Inputs)
 
 ## Static 모드

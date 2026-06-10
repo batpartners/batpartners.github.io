@@ -48,8 +48,6 @@ tags:
 | Target Base | Plane | 입력된 Target Plane이 정의된 기준 평면. 입력된 Target Plane은 이 평면을 기준으로, Positioner의 Mounting Plane에 오리엔트 된 RobTarget을 정의. |
 | WobjData | WobjData | ABB 작업 평면 좌표계 |
 
-<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_1.png" align="center" width="32%"></p>
-
 <p align="center"> 
 <video src="/assets/images/RobtargetPosition(Dynamic)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
 </video></p>
