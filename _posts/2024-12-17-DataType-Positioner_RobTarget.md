@@ -38,6 +38,9 @@ tags:
 <p align="center">
   <img src="{{ site.baseurl }}/assets/images/new/1_Datatype/1_Positioner_Robtarget.png" align="center" width="32%">
 </p>
+<p align="center">
+  <img src="{{ site.baseurl }}/assets/images/new/1_Datatype/1_Positioner_Robtarget.png" align="center" width="32%">
+</p>
 
 
 # | 입력(Inputs)
