@@ -48,6 +48,7 @@ tags:
 | Target Base | Plane | 입력된 Target Plane이 정의된 기준 평면. 입력된 Target Plane은 이 평면을 기준으로, Positioner의 Mounting Plane에 오리엔트 된 RobTarget을 정의. |
 | WobjData | WobjData | ABB 작업 평면 좌표계 |
 
+<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_1.png" align="center" width="32%"></p>
 
 ## Static 모드
 
@@ -65,6 +66,10 @@ tags:
 </video></p>
 
 ## | 필수 파라미터 (Required Parameter)
+
+<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_2.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_3.png" align="center" width="32%"></p>
+
 
 *	RobTarget
   *	Name : 생성할 RobTarget 변수의 명칭을 정의합니다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용됩니다.
