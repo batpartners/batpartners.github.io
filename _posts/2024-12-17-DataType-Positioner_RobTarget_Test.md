@@ -33,7 +33,25 @@ tags:
 
 포지셔너 전용 RobTarget을 기반으로, 사용자가 정의한 포지셔너 RAPID 코드를 작성할 수 있도록 지원합니다. 우클릭 컨텍스트 메뉴로 Dynamic, Static 모드 전환이 가능합니다.
 
-<br>
+<p align="center">  <img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
+
+
+# | 입력(Inputs)
+## Dynamic 모드
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| Positioner | Positioner | ABB Positioner |
+| Target Planes | Plane | RobTarget으로 변환할 평면 |
+| Z Rotation | Angle | RobTarget을 자기 자신의 Z축 기준으로 회전 (단위: 도) |
+| Target Base | Plane | 입력된 Target Plane이 정의된 기준 평면. 입력된 Target Plane은 이 평면을 기준으로, Positioner의 Mounting Plane에 오리엔트 된 RobTarget을 정의. |
+| WobjData | WobjData | ABB 작업 평면 좌표계 |
+
+<p align="center"> 
+<video src="/assets/images/RobtargetPosition(Dynamic)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
+</video></p>
+
+## | 필수 파라미터 (Required Parameter)
 
 <style>
   /* 탭 시스템 전체 컨테이너 */
@@ -120,12 +138,10 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs" checked>
   <input type="radio" id="tab2" name="gh-tabs">
-  <input type="radio" id="tab3" name="gh-tabs">
 
   <ul class="tab-buttons">
-    <li><label for="tab1">Description</label></li>
-    <li><label for="tab2">Details</label></li>
-    <li><label for="tab3">Reviews</label></li>
+    <li><label for="tab1">RobTarget</label></li>
+    <li><label for="tab2">Output</label></li>
   </ul>
 
   <div class="tab-content" id="content1">
@@ -141,29 +157,9 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Positioner</strong></td>
-          <td>Positioner</td>
-          <td>ABB Positioner</td>
-        </tr>
-        <tr>
-          <td><strong>Target Planes</strong></td>
-          <td>Plane</td>
-          <td>RobTarget으로 변환할 평면</td>
-        </tr>
-        <tr>
-          <td><strong>Z Rotation</strong></td>
-          <td>Angle</td>
-          <td>RobTarget을 자기 자신의 Z축 기준으로 회전 (단위: 도)</td>
-        </tr>
-        <tr>
-          <td><strong>Target Base</strong></td>
-          <td>Plane</td>
-          <td>입력된 Target Plane이 정의된 기준 평면. 입력된 Target Plane은 이 평면을 기준으로, Positioner의 Mounting Plane에 오리엔트 된 RobTarget을 정의.</td>
-        </tr>
-        <tr>
-          <td><strong>WobjData</strong></td>
-          <td>WobjData</td>
-          <td>ABB 작업 평면 좌표계</td>
+          <td><strong>Name</strong></td>
+          <td>String</td>
+          <td>생성할 `RobTarget` 변수의 명칭을 정의합니다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용됩니다.</td>
         </tr>
       </tbody>
     </table>
@@ -175,9 +171,10 @@ tags:
   </div>
 
   <div class="tab-content" id="content2">
-    <h3>| 내부 내장 파라미터 (Built-in Parameters)</h3>
-    <p>컴포넌트 내부 하단의 Split 스위치 조작에 따라 우측 출력단(Outputs) 레이아웃이 연동되어 실시간으로 변경됩니다.</p>
-
+    <h4>Split Start</h4>
+    <p>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 추출하여 출력합니다.</p>
+    <h4>Split End</h4>
+    <p>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 추출하여 출력합니다.</p>
     <p align="center" style="margin: 25px 0;">
       <img src="/assets/images/1_Positioner_RobTarget.png" width="38%" style="margin-right: 15px;" alt="Default Mode">
       <img src="/assets/images/1_Positioner_RobTarget_2.png" width="38%" alt="Toggled Mode">
@@ -185,72 +182,33 @@ tags:
     <sub style="display: block; text-align: center; color: #666; margin-top: -15px; margin-bottom: 25px;">[UI 비교] 좌: 기본 상태 (토글 OFF) / 우: Split 토글 활성화 상태</sub>
 
     <blockquote style="background: #fafafa; border-left: 4px solid #777; padding: 15px; margin-bottom: 15px;">
-      <strong>📦 RobTarget 변수 설정</strong><br>
+      <strong>RobTarget 변수 설정</strong><br>
       • <strong>Name</strong> : 생성할 <code>RobTarget</code> 변수의 명칭을 정의합니다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용됩니다.
     </blockquote>
 
     <blockquote style="background: #fafafa; border-left: 4px solid #e53935; padding: 15px;">
-      <strong>🔄 Output 옵션 (동적 아웃풋 스위치 감지)</strong><br>
+      <strong>Output 옵션 (동적 아웃풋 스위치 감지)</strong><br>
       • <strong>Split Start</strong> (<code>False</code> ➔ <code>True</code>) : 스위치 활성화 시, 입력 패스의 첫 번째 인덱스를 출력하는 <code>Start Target</code> 노드가 우측 아웃풋단에 실시간으로 확장 오픈됩니다.<br>
       • <strong>Split End</strong> (<code>False</code> ➔ <code>True</code>) : 스위치 활성화 시, 입력 패스의 마지막 인덱스를 출력하는 <code>End Target</code> 노드가 우측 아웃풋단에 실시간으로 확장 오픈됩니다.
     </blockquote>
   </div>
 
-  <div class="tab-content" id="content3">
-    <h3>| 출력(Outputs) : 스위치 조건별 데이터 명세</h3>
-
-    <h4>1) 기본 출력 (Default)</h4>
-    <p>내부 토글 스위치가 모두 꺼져 있을 때 생성되는 메인 데이터 포트입니다.</p>
-    
-    <table>
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>RobTargets</strong></td>
-          <td>RobTarget</td>
-          <td>입력 평면 전체 데이터 구조에 1:1 매칭되어 파싱된 ABB Rapid RobTargets 전체 코드 스트링 리스트를 반환합니다.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h4 style="margin-top: 30px;">2) 스위치 활성화 시 조건부 확장 출력 (Conditional Outputs)</h4>
-    <p>내부 스위치 컴포넌트의 토글 상태에 따라 추가 배열 형태로 활성화되는 출력 데이터 명세입니다.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>활성화 트리거 스위치</th>
-          <th>데이터 설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Start Target</strong></td>
-          <td>RobTarget</td>
-          <td><code>Split Start</code> ▶ <strong>ON</strong></td>
-          <td>입력 타깃 패스의 첫 번째 인덱스(First Index) 데이터만 안전하게 슬라이싱하여 코드로 반환합니다.</td>
-        </tr>
-        <tr>
-          <td><strong>End Target</strong></td>
-          <td>RobTarget</td>
-          <td><code>Split End</code> ▶ <strong>ON</strong></td>
-          <td>입력 타깃 패스의 마지막 인덱스(Last Index) 데이터만 안전하게 슬라이싱하여 코드로 반환합니다.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <p align="center" style="margin-top: 30px;"> 
-      <video src="/assets/images/Dynamic_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>
-    </p>
-  </div>
 </div>
 
 <br>
+
+<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_2.png" align="center" width="32%"></p>
+
+
+# | 출력(Outputs)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| Start Targets | RobTarget | ABB Rapid RobTargets 첫번째 브랜치 코드 출력 |
+| RobTargets | RobTarget | ABB Rapid RobTargets 코드 출력 |
+| End Targets | RobTarget | ABB Rapid RobTargets 마지막 브랜치 코드 출력 |
+
+<p align="center"> 
+<video src="/assets/images/Dynamic_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
+</video>
+</p>
