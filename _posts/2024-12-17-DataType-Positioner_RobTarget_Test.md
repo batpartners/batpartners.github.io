@@ -161,11 +161,7 @@ tags:
         </tr>
       </tbody>
     </table>
-    <p align="center" style="margin-top: 25px;"> 
-      <sub style="display: block; text-align: center; color: #666; margin-top: 5px;">Top View Execution</sub>
-    </p>
   </div>
-
   <div class="tab-content" id="content2">
   <table class="spec-table">
       <thead>
@@ -192,24 +188,8 @@ tags:
       <img src="/assets/images/1_Positioner_RobTarget.png" width="38%" style="margin-right: 15px;" alt="Default Mode">
       <img src="/assets/images/1_Positioner_RobTarget_2.png" width="38%" alt="Toggled Mode">
     </p>
-    <sub style="display: block; text-align: center; color: #666; margin-top: -15px; margin-bottom: 25px;">[UI 비교] 좌: 기본 상태 (토글 OFF) / 우: Split 토글 활성화 상태</sub>
-
-    <blockquote style="background: #fafafa; border-left: 4px solid #777; padding: 15px; margin-bottom: 15px;">
-      <strong>RobTarget 변수 설정</strong><br>
-      • <strong>Name</strong> : 생성할 <code>RobTarget</code> 변수의 명칭을 정의합니다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용됩니다.
-    </blockquote>
-
-    <blockquote style="background: #fafafa; border-left: 4px solid #e53935; padding: 15px;">
-      <strong>Output 옵션 (동적 아웃풋 스위치 감지)</strong><br>
-      • <strong>Split Start</strong> (<code>False</code> ➔ <code>True</code>) : 스위치 활성화 시, 입력 패스의 첫 번째 인덱스를 출력하는 <code>Start Target</code> 노드가 우측 아웃풋단에 실시간으로 확장 오픈됩니다.<br>
-      • <strong>Split End</strong> (<code>False</code> ➔ <code>True</code>) : 스위치 활성화 시, 입력 패스의 마지막 인덱스를 출력하는 <code>End Target</code> 노드가 우측 아웃풋단에 실시간으로 확장 오픈됩니다.
-    </blockquote>
   </div>
-
-</div>
-
-<br>
-
+  </div>
 <p align="center">  <img src="/assets/images/1_Positioner_Robtarget_2.png" align="center" width="32%"></p>
 
 
