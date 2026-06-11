@@ -53,14 +53,14 @@ tags:
 
 ## | 필수 파라미터 (Required Parameter)
 
-<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_2.png" align="center" width="32%"></p>
+> ### **RobTarget**
+> * **Name** : 생성할 `RobTarget` 변수의 명칭을 정의합니다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용됩니다.
 
+***
 
-*	RobTarget
-  *	Name : 생성할 RobTarget 변수의 명칭을 정의합니다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용됩니다.
-*	Output
-  * Split Start : 입력 데이터 TargetPlane의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 추출하여 출력합니다.
-  * Split End : 입력 데이터 TargetPlane의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 추출하여 출력합니다.
+> ### **Output**
+> * **Split Start** : 입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 추출하여 출력합니다.
+> * **Split End** : 입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 추출하여 출력합니다.
 
 <br>
 
