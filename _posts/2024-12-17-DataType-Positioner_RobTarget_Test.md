@@ -53,6 +53,8 @@ tags:
 
 ## | 필수 파라미터 (Required Parameter)
 
+<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_2.png" align="center" width="32%"></p>
+
 <style>
   /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
@@ -190,8 +192,6 @@ tags:
     </p>
   </div>
   </div>
-<p align="center">  <img src="/assets/images/1_Positioner_Robtarget_2.png" align="center" width="32%"></p>
-
 
 # | 출력(Outputs)
 
