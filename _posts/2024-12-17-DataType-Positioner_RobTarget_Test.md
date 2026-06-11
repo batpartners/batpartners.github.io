@@ -60,7 +60,7 @@ tags:
   .tabs-container {
     position: relative;
     margin: 40px 0;
-    min-height: 600px; /* 콘텐츠가 바뀔 때 하단 내용이 출렁이는 걸 방지 */
+    min-height: 220px; /* 콘텐츠가 바뀔 때 하단 내용이 출렁이는 걸 방지 */
   }
 
   /* 라디오 버튼 숨기기 */
@@ -190,8 +190,8 @@ tags:
       <img src="/assets/images/1_Positioner_RobTarget.png" width="38%" style="margin-right: 15px;" alt="Default Mode">
       <img src="/assets/images/1_Positioner_RobTarget_2.png" width="38%" alt="Toggled Mode">
     </p>
-  </div>
-  </div>
+</div>
+</div>
 
 # | 출력(Outputs)
 
