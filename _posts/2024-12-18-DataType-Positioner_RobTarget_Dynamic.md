@@ -60,7 +60,7 @@ tags:
 
 <p align="center">
   <img src="/assets/images/1_Positioner_Robtarget.png" width="35%" style="margin-right: 10px;" alt="Default Mode">
-  <img src="/assets/images/1_Positioner_RobTarget_2.png" width="35%" alt="Toggled Mode">
+  <img src="/assets/images/1_Positioner_Robtarget_2.png" width="35%" alt="Toggled Mode">
 </p>
 <sub style="display: block; text-align: center; color: #666; margin-top: -10px;">왼쪽: 기본 상태 (토글 비활성화) / 오른쪽: Split 토글 활성화 상태</sub>
 
