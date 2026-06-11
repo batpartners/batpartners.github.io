@@ -163,9 +163,7 @@ tags:
         </tr>
       </tbody>
     </table>
-
     <p align="center" style="margin-top: 25px;"> 
-      <video src="/assets/images/RobtargetPosition(Dynamic)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>
       <sub style="display: block; text-align: center; color: #666; margin-top: 5px;">Top View Execution</sub>
     </p>
   </div>
