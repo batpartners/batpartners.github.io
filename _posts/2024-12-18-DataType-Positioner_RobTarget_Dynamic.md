@@ -1,5 +1,5 @@
 ---
-title: "Positioner RobTarget (Dynamic)"
+title: "Positioner RobTarget"
 layout: single
 header:
   teaser: "/assets/images/positioner_dynamic_00.png"
