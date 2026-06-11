@@ -145,8 +145,6 @@ tags:
   </ul>
 
   <div class="tab-content" id="content1">
-    <h3>| 입력(Inputs) : Dynamic 모드</h3>
-    
     <table class="spec-table">
       <thead>
         <tr>
@@ -169,10 +167,27 @@ tags:
   </div>
 
   <div class="tab-content" id="content2">
-    <h4>Split Start</h4>
-    <p>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 추출하여 출력합니다.</p>
-    <h4>Split End</h4>
-    <p>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 추출하여 출력합니다.</p>
+  <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Split Start</strong></td>
+          <td>String</td>
+          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 추출하여 출력합니다.</td>
+        </tr>
+        <tr>
+          <td><strong>Split End</strong></td>
+          <td>String</td>
+          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 추출하여 출력합니다.</td>
+        </tr>
+      </tbody>
+    </table>
     <p align="center" style="margin: 25px 0;">
       <img src="/assets/images/1_Positioner_RobTarget.png" width="38%" style="margin-right: 15px;" alt="Default Mode">
       <img src="/assets/images/1_Positioner_RobTarget_2.png" width="38%" alt="Toggled Mode">
