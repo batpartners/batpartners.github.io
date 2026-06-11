@@ -59,17 +59,17 @@ tags:
 컴포넌트 하단의 세부 파라미터 설정을 통해 변수 이름을 지정하거나 출력 데이터의 구조를 동적으로 제어할 수 있습니다.
 
 <p align="center">
-  <img src="/assets/images/1_Positioner_RobTarget.png" width="35%" style="margin-right: 10px;" alt="Default Mode">
+  <img src="/assets/images/1_Positioner_Robtarget.png" width="35%" style="margin-right: 10px;" alt="Default Mode">
   <img src="/assets/images/1_Positioner_RobTarget_2.png" width="35%" alt="Toggled Mode">
 </p>
 <sub style="display: block; text-align: center; color: #666; margin-top: -10px;">왼쪽: 기본 상태 (토글 비활성화) / 오른쪽: Split 토글 활성화 상태</sub>
 
-> ### **📦 RobTarget 그룹**
+> ### ** RobTarget 그룹**
 > * **Name** : 생성할 `RobTarget` 변수의 명칭을 정의합니다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용됩니다.
 
 ***
 
-> ### **⚙️ Output 옵션 (동적 아웃풋 스위치)**
+> ### ** Output 옵션 (동적 아웃풋 스위치)**
 > 하단의 토글 스위치를 켜고 끔에 따라 **`| 출력(Outputs)`** 단의 파라미터 구성이 실시간으로 변경됩니다.
 > * **Split Start** (`False` / `True`) : 스위치를 활성화하면, 입력 데이터 `TargetPlane` 각 브랜치(Branch) 내 첫 번째 인덱스 데이터를 추출하는 **`Start Target`** 출력단이 생성됩니다.
 > * **Split End** (`False` / `True`) : 스위치를 활성화하면, 입력 데이터 `TargetPlane` 각 브랜치(Branch) 내 마지막 인덱스 데이터를 추출하는 **`End Target`** 출력단이 생성됩니다.
