@@ -163,15 +163,15 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs" checked>
-  <input type="radio" id="tab2" name="gh-tabs">
+  <input type="radio" id="tab2" name="gh-tabs" checked>
+  <input type="radio" id="tab3" name="gh-tabs">
 
   <ul class="tab-buttons">
-    <li><label for="tab1">RobTarget</label></li>
-    <li><label for="tab2">Output</label></li>
+    <li><label for="tab2">RobTarget</label></li>
+    <li><label for="tab3">Output</label></li>
   </ul>
 
-  <div class="tab-content" id="content1">
+  <div class="tab-content" id="content2">
     <table class="spec-table">
       <thead>
         <tr>
@@ -189,7 +189,7 @@ tags:
       </tbody>
     </table>
   </div>
-  <div class="tab-content" id="content2">
+  <div class="tab-content" id="content3">
   <table class="spec-table">
       <thead>
         <tr>
