@@ -37,6 +37,7 @@ tags:
 
 
 # | 입력(Inputs)
+
 *Static 모드*
 
 | 이름 | 타입 | 설명 |

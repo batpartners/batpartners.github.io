@@ -36,7 +36,8 @@ Based on the positioner-specific RobTarget, this component assists users in gene
 <p align="center"><img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
 
 # | Inputs
-## Static Mode
+
+*Static 모드*
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
