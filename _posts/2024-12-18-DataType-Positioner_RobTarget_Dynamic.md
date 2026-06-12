@@ -33,8 +33,7 @@ tags:
 
 포지셔너 전용 RobTarget을 기반으로, 사용자가 정의한 포지셔너 RAPID 코드를 작성할 수 있도록 지원합니다. 우클릭 컨텍스트 메뉴로 Dynamic, Static 모드 전환이 가능합니다.
 
-<p align="center">  <img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
-
+<p align="center"><img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
 
 # | 입력(Inputs)
 ## Dynamic 모드
@@ -57,8 +56,8 @@ tags:
   /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
-    margin: 40px 0;
-    min-height: 220px; /* 콘텐츠가 바뀔 때 하단 내용이 출렁이는 걸 방지 */
+    margin: 30px 0;
+    min-height: 160px; /* 불필요한 하단 공백 최소화 */
   }
 
   /* 라디오 버튼 숨기기 */
@@ -75,6 +74,10 @@ tags:
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+  .tab-buttons li {
+    margin: 0;
+    padding: 0;
   }
 
   .tab-buttons label {
@@ -102,31 +105,35 @@ tags:
   /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
   .tab-content {
     display: none;
-    padding: 25px 20px;
+    padding: 20px;
     border: 1px solid #ddd;
-    border-top: none;
     background: #fff;
     animation: fadeIn 0.3s ease;
   }
 
-  /* 💡 라디오 버튼 체크 상태에 따른 탭 버튼 스타일 동적 매칭 */
-  #tab1:checked ~ .tab-buttons label[for="tab1"],
-  #tab2:checked ~ .tab-buttons label[for="tab2"],
-  #tab3:checked ~ .tab-buttons label[for="tab3"] {
+  /* 💡 1번 탭 그룹 스타일 및 노출 제어 */
+  #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff;
-    color: #e53935; /* 선택된 탭 텍스트 하이라이트 색상 (제공해주신 이미지 핑크/레드 계열 반영) */
+    color: #e53935;
     border-bottom: 1px solid #fff;
-    padding-bottom: 13px; /* border-bottom을 가려 일체감 부여 */
+    padding-bottom: 13px;
     margin-bottom: -1px;
     z-index: 2;
   }
+  #tab1:checked ~ #content1 { display: block; }
 
-  /* 💡 라디오 버튼 체크 상태에 따라 해당하는 콘텐츠 박스만 노출 */
-  #tab1:checked ~ #content1,
-  #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3 {
-    display: block;
+  /* 💡 2번 탭 그룹 스타일 및 노출 제어 */
+  #tab2:checked ~ .tab-buttons label[for="tab2"],
+  #tab3:checked ~ .tab-buttons label[for="tab3"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
   }
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3 { display: block; }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -134,15 +141,14 @@ tags:
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
-<div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs" checked>
 
+<div class="tabs-container">
+  <input type="radio" id="tab1" name="gh-tabs-1" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">RobTarget</label></li>
   </ul>
-
   <div class="tab-content" id="content1">
-    <table class="spec-table">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>이름</th>
@@ -159,20 +165,16 @@ tags:
       </tbody>
     </table>
   </div>
- 
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs" checked>
-  <input type="radio" id="tab3" name="gh-tabs">
-
+  <input type="radio" id="tab2" name="gh-tabs-2" checked><input type="radio" id="tab3" name="gh-tabs-2">
   <ul class="tab-buttons">
     <li><label for="tab2">RobTarget</label></li>
     <li><label for="tab3">Output</label></li>
   </ul>
-
   <div class="tab-content" id="content2">
-    <table class="spec-table">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>이름</th>
@@ -190,7 +192,7 @@ tags:
     </table>
   </div>
   <div class="tab-content" id="content3">
-  <table class="spec-table">
+    <table class="spec-table" style="margin: 0 0 20px 0;">
       <thead>
         <tr>
           <th>이름</th>
@@ -211,15 +213,11 @@ tags:
         </tr>
       </tbody>
     </table>
-    <p align="center" style="margin: 25px 0;">
-      <img src="/assets/images/1_Positioner_Robtarget.png" width="38%" style="margin-right: 15px;" alt="Default Mode">
-      <img src="/assets/images/1_Positioner_Robtarget_2.png" width="38%" alt="Toggled Mode">
+    <p align="center" style="margin: 15px 0 0 0;">
+      <img src="/assets/images/1_Positioner_Robtarget.png" width="38%" style="margin-right: 15px;" alt="Default Mode"><img src="/assets/images/1_Positioner_Robtarget_2.png" width="38%" alt="Toggled Mode">
     </p>
+  </div>
 </div>
-</div>
-
-
-
 
 # | 출력(Outputs)
 
@@ -230,6 +228,5 @@ tags:
 | End Targets | RobTarget | ABB Rapid RobTargets 마지막 브랜치 코드 출력 |
 
 <p align="center"> 
-<video src="/assets/images/Dynamic_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
-</video>
+<video src="/assets/images/Dynamic_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>
 </p>
