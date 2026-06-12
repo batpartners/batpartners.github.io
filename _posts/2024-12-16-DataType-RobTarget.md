@@ -174,7 +174,7 @@ tags:
     <li><label for="tab3">Output</label></li>
   </ul>
     <div class="tab-content" id="content2">
-<p align="center"><img src="/assets/images/0_RobTarget_3" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/0_RobTarget_2.png" align="center" width="32%"></p>
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
