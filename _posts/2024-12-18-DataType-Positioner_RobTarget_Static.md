@@ -1,5 +1,5 @@
 ---
-title: "Positioner_RobTarget"
+title: "Positioner RobTarget"
 layout: single
 header:
   teaser: "/assets/images/positioner_static.png"
