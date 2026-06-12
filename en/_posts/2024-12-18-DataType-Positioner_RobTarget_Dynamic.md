@@ -52,8 +52,6 @@ Based on the positioner-specific RobTarget, this component assists users in gene
 
 ## | Required Parameter
 
-<p align="center"><img src="/assets/images/1_Positioner_Robtarget_2.png" align="center" width="32%"></p>
-
 <style>
   /* 탭 시스템 전체 컨테이너 */
   .tabs-container {

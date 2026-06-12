@@ -8,9 +8,6 @@ sidebar:
     children:
       - title: "What is GERTY?"
         url: /about%20gerty/About-GERTY
-        children:
-          - title: "Features"
-            url: /about%20gerty/About-GERTY/Features
       - title: "Installation"
         url: /about%20gerty/installation/
       - title: "Tutorial"
