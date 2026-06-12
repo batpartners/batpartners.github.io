@@ -190,9 +190,7 @@ tags:
         </tr>
       </tbody>
     </table>
-    <figure>
-  <img src="/assets/images/DataTypes/RobTarget/Set_Angle_RobT.gif" alt="Set_Angle_RobT">
-</figure>
+<p align="center"><img src="/assets/images/0_RobTarget_2.png" align="center" width="32%"></p>
   </div>
   <div class="tab-content" id="content3">
     <table class="spec-table" style="margin: 0 0 20px 0;">
@@ -216,9 +214,7 @@ tags:
         </tr>
       </tbody>
     </table>
-    <p align="center" style="margin: 15px 0 0 0;">
-      <img src="/assets/images/1_Positioner_Robtarget.png" width="38%" style="margin-right: 15px;" alt="Default Mode"><img src="/assets/images/1_Positioner_Robtarget_2.png" width="38%" alt="Toggled Mode">
-    </p>
+<p align="center"><img src="/assets/images/0_RobTarget_3" align="center" width="32%"></p>
   </div>
 </div>
 
