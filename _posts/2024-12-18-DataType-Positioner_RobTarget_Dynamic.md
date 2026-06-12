@@ -167,7 +167,7 @@ tags:
   </div>
 </div>
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-2" checked><input type="radio" id="tab3" name="gh-tabs-2">
+  <input type="radio" id="tab2" name="gh-tabs-2" checked>
   <ul class="tab-buttons">
     <li><label for="tab2">Output</label></li>
   </ul>

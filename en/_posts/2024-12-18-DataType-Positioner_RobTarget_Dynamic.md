@@ -145,7 +145,7 @@ Based on the positioner-specific RobTarget, this component assists users in gene
 </style>
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs" checked><input type="radio" id="tab2" name="gh-tabs">
+  <input type="radio" id="tab1" name="gh-tabs-1" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">RobTarget</label></li>
   </ul>
@@ -170,7 +170,7 @@ Based on the positioner-specific RobTarget, this component assists users in gene
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs" checked><input type="radio" id="tab2" name="gh-tabs">
+  <input type="radio" id="tab2" name="gh-tabs-2">
   <ul class="tab-buttons">
     <li><label for="tab2">Output</label></li>
   </ul>
