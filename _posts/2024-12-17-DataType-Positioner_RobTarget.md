@@ -36,7 +36,8 @@ tags:
 <p align="center"><img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
 
 # | 입력(Inputs)
-## Dynamic 모드
+
+* Dynamic 모드
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
