@@ -20,7 +20,7 @@ sidebar:
       - title: "RobTarget"
         url: /datatype/DataType-RobTarget/
       - title: "Positioner RobTarget"
-        url: /datatype/DataType-Positioner_RobTarget/Positioner_RobTarget_Dynamic/
+        url: /datatype/DataType-Positioner_RobTarget/
         children:
           - title: "Dynamic"
             url: /datatype/DataType-Positioner_RobTarget/Positioner_RobTarget_Dynamic/

@@ -166,32 +166,12 @@ tags:
     </table>
   </div>
 </div>
-
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-2" checked><input type="radio" id="tab3" name="gh-tabs-2">
   <ul class="tab-buttons">
-    <li><label for="tab2">RobTarget</label></li>
-    <li><label for="tab3">Output</label></li>
+    <li><label for="tab2">Output</label></li>
   </ul>
   <div class="tab-content" id="content2">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Name</strong></td>
-          <td>String</td>
-          <td>생성할 `RobTarget` 변수의 명칭을 정의합니다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용됩니다.</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <div class="tab-content" id="content3">
     <table class="spec-table" style="margin: 0 0 20px 0;">
       <thead>
         <tr>
