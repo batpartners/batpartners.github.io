@@ -168,14 +168,13 @@ Based on the positioner-specific RobTarget, this component assists users in gene
     </table>
   </div>
 </div>
-
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-2">
+  <input type="radio" id="tab2" name="gh-tabs-2" checked>
   <ul class="tab-buttons">
     <li><label for="tab2">Output</label></li>
   </ul>
   <div class="tab-content" id="content2">
-    <table class="spec-table" style="margin:0 0 15px 0;">
+    <table class="spec-table" style="margin:0 0 20px 0;">
       <thead>
         <tr>
           <th>Name</th>
