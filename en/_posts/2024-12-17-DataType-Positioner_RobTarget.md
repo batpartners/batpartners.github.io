@@ -135,7 +135,7 @@ Based on the positioner-specific RobTarget, this component assists users in gene
     <li><label for="tab2">Output</label></li>
   </ul>
   <div class="tab-content" id="content1">
-    <table class="spec-table">
+    <table class="spec-table" style="margin:0;">
       <thead>
         <tr>
           <th>Name</th>
@@ -153,7 +153,7 @@ Based on the positioner-specific RobTarget, this component assists users in gene
     </table>
   </div>
   <div class="tab-content" id="content2">
-    <table class="spec-table">
+    <table class="spec-table" style="margin:0 0 15px 0;">
       <thead>
         <tr>
           <th>Name</th>
