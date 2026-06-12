@@ -13,8 +13,8 @@ categories:
 
 translated: true
 lang: en
-permalink: /en/datatype/DataType-Positioner_RobTarget/
-translation_link: /datatype/DataType-Positioner_RobTarget/
+permalink: /en/datatype/DataType-Positioner_RobTarget/Positioner_RobTarget_Dynamic
+translation_link: /datatype/DataType-Positioner_RobTarget/Positioner_RobTarget_Dynamic
 
 sidebar:
   nav: "sidebar"
