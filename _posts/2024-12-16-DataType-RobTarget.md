@@ -214,10 +214,10 @@ tags:
         </tr>
       </tbody>
     </table>
+    <br>
 <p align="center"><img src="/assets/images/0_RobTarget_3" align="center" width="32%"></p>
   </div>
 </div>
-
 <figure>
   <img src="/assets/images/DataTypes/RobTarget/split Robtargets_exam.png" alt="split_RobT">
   <figcaption> Robtarget 데이터 셋의 가장 첫번째, 마지막 Robtarget을 분리</figcaption>
