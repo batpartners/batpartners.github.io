@@ -29,7 +29,7 @@ tags:
 
 🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
-<p align="center">  <img src="/assets/images/01_robtarget.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/0_RobTarget.png" align="center" width="32%"></p>
 
 
 # Description
