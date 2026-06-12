@@ -216,12 +216,11 @@ tags:
     </table>
   </div>
 </div>
-<figure>
-  <img src="/assets/images/DataTypes/RobTarget/split Robtargets_exam.png" alt="split_RobT">
-  <figcaption> Robtarget 데이터 셋의 가장 첫번째, 마지막 Robtarget을 분리</figcaption>
-</figure>
-<br>
 
-# Output
+# | 출력(Outputs)
 
-* **RobTargets** : 각 영역의 Robtargets의 ProgramData를 출력한다. 이후, 해당 데이터를  Instructions에 연결한다.
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| Start Targets | RobTarget | ABB Rapid RobTargets 첫번째 브랜치 코드 출력 |
+| RobTargets | RobTarget | ABB Rapid RobTargets 코드 출력 |
+| End Targets | RobTarget | ABB Rapid RobTargets 마지막 브랜치 코드 출력 |
