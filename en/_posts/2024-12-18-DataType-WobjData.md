@@ -31,24 +31,28 @@ tags:
 
 # Description
 
-* WobjData is a component that defines the internal work object of a robot.
-It allows transforming the position of the internal work object from WobjData to a user-defined UserFrame, and can be adapted to the robot's model and additional axes by changing to Fixed WobjData and MovableData.
+Defines an ABB Work Object (Workpiece Coordinate System). This component specifies the User Frame (`uframe`), which defines the local coordinate system of the workstation relative to the World Coordinate System, and the Object Frame (`oframe`). It supports toggling between two modes via a right-click context menu: `Movable` (Work Object synchronized with an external axis) and `Fixed` (Standard stationary Work Object).
 
-<p align="center">  <img src="/assets/images/04_WobjData.png" align="center" width="32%"></p>
-
-# Input
-
-* **Name [Text]** : Enter the variable name for the UserFrame.
-* **UserFrame [Plane]** : Set the Base Plane.
-
-## Felxible Option
-
-* **Fixed WobjData** : Redefines the Target Plane relative to a stationary reference coordinate system.
-* **Movable WobjData** : Redefines the Target Plane relative to a movable (dynamic) reference coordinate system.
-
-<p align="center">  <img src="/assets/images/wobj_movable.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/2_WobjData.png" align="center" width="32%"></p>
 
 
-# Output
+# | Inputs
 
-* **WobjData** : Outputs the defined WobjData.
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| *Name* | Text | Defines the variable name for the `UserFrame`. |
+| *UserFrame* | Plane | Sets the Base Plane for the coordinate system. |
+
+## | Flexible Options
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| *Fixed WobjData* | - | Redefines the `Target Plane` as a reference plane at a fixed/stationary position. |
+| *Movable WobjData* | - | Redefines the `Target Plane` as a reference plane at a movable/dynamic position. |
+
+
+# | Outputs
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| **WobjData** | WobjData | Outputs the defined `WobjData` structure. |
