@@ -27,7 +27,7 @@ tags:
   - GERTY
 ---
 
-🌐 [KO]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 <p align="center">  <img src="/assets/images/0_RobTarget.png" align="center" width="32%"></p>
 
@@ -51,6 +51,8 @@ Defines a `RobTarget` for robot-only motions without external axes. External axi
 </figure>
 
 ## | Required Parameters
+
+<p align="center"><img src="/assets/images/0_RobTarget_2.png" align="center" width="32%"></p>
 
 <style>
   /* Global Tab System Container */
@@ -141,7 +143,6 @@ Defines a `RobTarget` for robot-only motions without external axes. External axi
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
-
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-1" checked>
   <ul class="tab-buttons">
@@ -174,7 +175,6 @@ Defines a `RobTarget` for robot-only motions without external axes. External axi
     <li><label for="tab3">Output</label></li>
   </ul>
   <div class="tab-content" id="content2">
-    <p align="center"><img src="/assets/images/0_RobTarget_2.png" align="center" width="32%"></p>
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
