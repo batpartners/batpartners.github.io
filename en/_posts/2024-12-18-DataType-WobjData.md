@@ -144,9 +144,10 @@ Defines an ABB Work Object (Workpiece Coordinate System). This component specifi
 </style>
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-1" checked>
+  <input type="radio" id="tab1" name="gh-tabs-1" checked><input type="radio" id="tab2" name="gh-tabs-2">
   <ul class="tab-buttons">
     <li><label for="tab1">WobjData</label></li>
+    <li><label for="tab2">Preview</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table" style="margin: 0;">
@@ -163,25 +164,6 @@ Defines an ABB Work Object (Workpiece Coordinate System). This component specifi
           <td>String</td>
           <td>Defines the variable name for the generated `WobjData`. This variable serves as a unique identifier for the specific Work Object location.</td>
         </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-<div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-2" checked>
-  <ul class="tab-buttons">
-    <li><label for="tab2">Preview</label></li>
-  </ul>
-  <div class="tab-content" id="content2">
-    <table class="spec-table" style="margin: 0 0 20px 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
         <tr>
           <td><strong>Frame Size</strong></td>
           <td>String</td>
@@ -189,9 +171,6 @@ Defines an ABB Work Object (Workpiece Coordinate System). This component specifi
         </tr>
       </tbody>
     </table>
-    <p align="center" style="margin: 15px 0 0 0;">
-      <img src="/assets/images/1_Positioner_Robtarget.png" width="38%" style="margin-right: 15px;" alt="Default Mode"><img src="/assets/images/1_Positioner_Robtarget_2.png" width="38%" alt="Toggled Mode">
-    </p>
   </div>
 </div>
 
