@@ -46,12 +46,10 @@ tags:
 | WobjData | WobjData | ABB 작업 평면 좌표계 |
 | Chaining | Boolean | 작업평면(WorkObj)과 타겟(RobTarget) 관계를 고정. 뷰포트 상에서 작업평면 변경 시 타겟 위치와 방향도 변경. |
 
-<figure>
-  <img src="/assets/images/DataTypes/RobTarget/TiltingWeight_RobT.gif" alt="Tilting_RobT">
-  <figcaption> Tilting</figcaption>
-</figure>
 
 ## | 필수 파라미터 (Required Parameter)
+
+<p align="center"><img src="/assets/images/0_RobTarget_2.png" align="center" width="32%"></p>
 
 <style>
   /* 탭 시스템 전체 컨테이너 */
@@ -174,7 +172,6 @@ tags:
     <li><label for="tab3">Output</label></li>
   </ul>
     <div class="tab-content" id="content2">
-<p align="center"><img src="/assets/images/0_RobTarget_2.png" align="center" width="32%"></p>
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
@@ -224,3 +221,8 @@ tags:
 | Start Targets | RobTarget | ABB Rapid RobTargets 첫번째 브랜치 코드 출력 |
 | RobTargets | RobTarget | ABB Rapid RobTargets 코드 출력 |
 | End Targets | RobTarget | ABB Rapid RobTargets 마지막 브랜치 코드 출력 |
+
+<figure>
+  <img src="/assets/images/DataTypes/RobTarget/TiltingWeight_RobT.gif" alt="Tilting_RobT">
+  <figcaption> Tilting</figcaption>
+</figure>
