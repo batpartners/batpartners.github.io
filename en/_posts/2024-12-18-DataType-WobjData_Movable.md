@@ -12,10 +12,9 @@ categories:
   - DataType
 
 translated: true
-lang: ko
-permalink: /datatype/DataType-WobjData/
-
-translation_link: /en/datatype/DataType-WobjData/
+lang: en
+permalink: /en/datatype/DataType-WobjData/
+translation_link: /datatype/DataType-WobjData/
 
 sidebar:
   nav: "sidebar"
@@ -28,36 +27,31 @@ tags:
   - GERTY
 ---
 
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-ABB 워크오브젝트(워크피스 좌표계) 정의. 월드 좌표계에서 작업대의 로컬 좌표계를 정의하는 사용자 프레임(uframe) 및 오브젝트 프레임(oframe) 지정. 우클릭 컨텍스트 메뉴로 Movable(외부축에 의해 움직이는 워크오브젝트), Fixed(고정된 일반 워크오브젝트) 두 모드 전환 지원.
+Defines an ABB Work Object (Workpiece Coordinate System). This component specifies the User Frame (`uframe`), which defines the local coordinate system of the workstation relative to the World Coordinate System, and the Object Frame (`oframe`). It supports toggling between two modes via a right-click context menu: `Movable` (Work Object synchronized with an external axis) and `Fixed` (Standard stationary Work Object).
 
 <p align="center">  <img src="/assets/images/2_WobjData.png" align="center" width="32%"></p>
 
 
-# | 입력(Input)
+# | Inputs
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| *User Frame* | Plane | WobjData의 사용자 프레임 (uframe)으로 사용되는 평면 |
-| *Object Frame* | Plane | WobjData의 객체 프레임(oframe)으로 사용되는 평면 |
-| *Override Wobj* | Plane | 입력된 워크오브젝트 데이터로 컴포넌트 출력을 덮어씀. (선택) 연결 시 다른 인풋값과 관계없이 이 데이터가 우선 적용. |
+| *User Frame* | Plane | The plane used as the User Frame (`uframe`) for the `WobjData`. |
+| *Object Frame* | Plane | The plane used as the Object Frame (`oframe`) for the `WobjData`. |
+| *Override Wobj* | Plane | Overrides the component's output with the provided Work Object data (Optional). When connected, this data takes priority regardless of other inputs. |
 
-## 옵션 변경(Felxible Option)
+## | Flexible Options
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| *Fixed WobjData* | - | Target Plane이 고정된 위치의 기준 평면으로 재정의 |
-| *Movable WobjData* | - | Target Plane이 이동 가능한 위치의 기준 평면으로 재정의 |
+| *Fixed WobjData* | - | Redefines the target plane as a reference plane at a fixed/stationary position. |
+| *Movable WobjData* | - | Redefines the target plane as a reference plane at a movable/dynamic position. |
 
-
-## | 필수 파라미터 (Required Parameter)
-
-<p align="center" style="margin: 15px 0 0 0;">
-      <img src="/assets/images/2_WobjData.png" width="38%" style="margin-right: 15px;" alt="Default Mode"><img src="/assets/images/2_WobjData_1.png" width="38%" alt="Toggled Mode">
-</p>
+## | Required Parameter
 
 <style>
   /* 탭 시스템 전체 컨테이너 */
@@ -148,7 +142,6 @@ ABB 워크오브젝트(워크피스 좌표계) 정의. 월드 좌표계에서 �
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
-
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-wobj" checked><input type="radio" id="tab2" name="gh-tabs-wobj">
   
@@ -156,49 +149,46 @@ ABB 워크오브젝트(워크피스 좌표계) 정의. 월드 좌표계에서 �
     <li><label for="tab1">WobjData</label></li>
     <li><label for="tab2">Preview</label></li>
   </ul>
-  
   <div class="tab-content" id="content1">
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>생성할 `WobjData` 변수의 명칭을 정의합니다. 해당 WobjData 위치의 고유 식별자로 사용됩니다.</td>
+          <td>Defines the variable name for the generated `WobjData`. This variable serves as a unique identifier for the specific Work Object location.</td>
         </tr>
       </tbody>
     </table>
   </div>
-
   <div class="tab-content" id="content2">
     <table class="spec-table" style="margin: 0 0 20px 0;">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Frame Size</strong></td>
           <td>Number</td>
-          <td>WobjFrame의 평면 좌표계 축 디스플레이 크기를 조절합니다.</td>
+          <td>Adjusts the display size of the local coordinate system axes for the `WobjFrame`.</td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
 
+# | Outputs
 
-# | 출력(Output)
-
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **WobjData** | WobjData | 정의된 ABB WobjData 출력 |
+| **WobjData** | WobjData | Outputs the defined ABB `WobjData` structure. |

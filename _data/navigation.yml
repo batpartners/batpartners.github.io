@@ -25,6 +25,11 @@ sidebar:
             url: /datatype/DataType-Positioner_RobTarget/DataType-Positioner_RobTarget_Static/
       - title: "WobjData"
         url: /datatype/DataType-WobjData/
+        children:
+          - title: "Fixed"
+            url: /datatype/DataType-WobjData/DataType-WobjData_Fixed/
+          - title: "Movable"
+            url: /datatype/DataType-WobjData/DataType-WobjData_Movable/
       - title: "ToolData"
         url: /datatype/DataType-ToolData/
       - title: "ToolImporter"

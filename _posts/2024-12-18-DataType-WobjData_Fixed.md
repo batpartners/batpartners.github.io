@@ -1,5 +1,5 @@
 ---
-title: "WobjData"
+title: "WobjData(Fixed)"
 layout: single
 header:
   teaser: "/assets/images/04_WobjData.png"
@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /datatype/DataType-WobjData/
+permalink: /datatype/DataType-WobjData/DataType-WobjData_Fixed
 
-translation_link: /en/datatype/DataType-WobjData/
+translation_link: /en/datatype/DataType-WobjData/DataType-WobjData_Fixed
 
 sidebar:
   nav: "sidebar"
