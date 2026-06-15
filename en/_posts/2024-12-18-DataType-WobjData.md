@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Defines an ABB Work Object (Workpiece Coordinate System). This component specifies the User Frame, which defines the local coordinate system of the workstation relative to the World Coordinate System, and the Object Frame. It supports toggling between two modes via a right-click context menu: `Movable` (Work Object synchronized with an external axis) and `Fixed` (Standard stationary Work Object).
+Defines an ABB Work Object (Workpiece Coordinate System). This component specifies the User Frame (`uframe`), which defines the local coordinate system of the workstation relative to the World Coordinate System, and the Object Frame (`oframe`). It supports toggling between two modes via a right-click context menu: `Movable` (Work Object synchronized with an external axis) and `Fixed` (Standard stationary Work Object).
 
 <p align="center">  <img src="/assets/images/2_WobjData.png" align="center" width="32%"></p>
 
@@ -40,8 +40,8 @@ Defines an ABB Work Object (Workpiece Coordinate System). This component specifi
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| *User Frame* | Plane | The plane used as the User Frame for the `WobjData`. |
-| *Object Frame* | Plane | The plane used as the Object Frame for the `WobjData`. |
+| *User Frame* | Plane | The plane used as the User Frame (`uframe`) for the `WobjData`. |
+| *Object Frame* | Plane | The plane used as the Object Frame (`oframe`) for the `WobjData`. |
 | *Override Wobj* | Plane | Overrides the component's output with the provided Work Object data (Optional). When connected, this data takes priority regardless of other inputs. |
 
 ## | Flexible Options
