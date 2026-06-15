@@ -45,10 +45,6 @@ Defines a `RobTarget` for robot-only motions without external axes. External axi
 | WobjData | WobjData | ABB Work Object coordinate system. |
 | Chaining | Boolean | Locks the relationship between the Work Object (`WorkObj`) and the target (`RobTarget`). When the Work Object is modified in the viewport, the target's position and orientation update accordingly. |
 
-<figure>
-  <img src="/assets/images/DataTypes/RobTarget/TiltingWeight_RobT.gif" alt="Tilting_RobT">
-  <figcaption> Tilting</figcaption>
-</figure>
 
 ## | Required Parameters
 
@@ -224,3 +220,8 @@ Defines a `RobTarget` for robot-only motions without external axes. External axi
 | Start Targets | RobTarget | Outputs the ABB RAPID `RobTargets` code corresponding to the first data branch. |
 | RobTargets | RobTarget | Outputs the main ABB RAPID `RobTargets` motion code sequence. |
 | End Targets | RobTarget | Outputs the ABB RAPID `RobTargets` code corresponding to the last data branch. |
+
+<figure>
+  <img src="/assets/images/DataTypes/RobTarget/TiltingWeight_RobT.gif" alt="Tilting_RobT">
+  <figcaption> Tilting</figcaption>
+</figure>
