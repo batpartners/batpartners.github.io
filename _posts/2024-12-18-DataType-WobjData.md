@@ -32,23 +32,29 @@ tags:
 
 # Description
 
-* WobjData는 로봇의 내부 작업객체를 정의하는 컴포넌트이다. 내부 작업물의 위치를 WobjData로부터 사용자 정의(UserFrame)로 만들 수 있으며, 로봇의 기종 및 부가축에 맞춰 Fixed WobjData와 MovableData로 변경한다.
+ABB 워크오브젝트(워크피스 좌표계) 정의. 월드 좌표계에서 작업대의 로컬 좌표계를 정의하는 사용자 프레임(uframe) 및 오브젝트 프레임(oframe) 지정. 우클릭 컨텍스트 메뉴로 Movable(외부축에 의해 움직이는 워크오브젝트), Fixed(고정된 일반 워크오브젝트) 두 모드 전환 지원.
 
 <p align="center">  <img src="/assets/images/2_WobjData.png" align="center" width="32%"></p>
 
 
-# Input
+# | 입력(Input)
 
-* **Name [Text]** : UserFrame의 변수명을 입력한다.
-* **UserFrame [Plane]** : Base Plane을 설정한다.
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| *Name* | Text | UserFrame의 변수명을 입력한다. |
+| *UserFrame* | Plane | Base Plane을 설정한다. |
 
 ## Felxible Option
 
-* **Fixed WobjData** : Target plane이 고정된 위치의 기준 평면으로로 재정의 된다.
-* **Movable WobjData** : Target Plane이 이동성있는 위치의 기준 평면으로 재정의 된다.
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| *Fixed WobjData* | - | Target Plane이 고정된 위치의 기준 평면으로 재정의된다. |
+| *Movable WobjData* | - | Target Plane이 이동 가능한 위치의 기준 평면으로 재정의된다. |
 <br>
 <p align="center">  <img src="/assets/images/wobj_movable.png" align="center" width="45%"></p>
 
-# Output
+# | 출력(Output)
 
-* **WobjData** : 정의된 WobjData를 출력한다.
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **WobjData** | WobjData | 정의된 WobjData를 출력한다. |
