@@ -184,9 +184,6 @@ Defines an ABB Work Object (Workpiece Coordinate System). This component specifi
         </tr>
       </tbody>
     </table>
-    <p align="center" style="margin: 15px 0 0 0;">
-      <img src="/assets/images/1_Positioner_Robtarget.png" width="38%" style="margin-right: 15px;" alt="Default Mode"><img src="/assets/images/1_Positioner_Robtarget_2.png" width="38%" alt="Toggled Mode">
-    </p>
   </div>
 </div>
 
