@@ -50,12 +50,13 @@ tags:
 </p>
 
 ## | 필수 파라미터 (Required Parameter)
+
 <style>
   /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
     margin: 30px 0;
-    min-height: 160px; /* 불필요한 하단 공백 최소화 */
+    min-height: 160px;
   }
 
   /* 라디오 버튼 숨기기 */
@@ -120,9 +121,10 @@ tags:
   }
   #tab1:checked ~ #content1 { display: block; }
 
-  /* 💡 2번 탭 그룹 스타일 및 노출 제어 */
+  /* 💡 2, 3, 4번 탭 그룹 스타일 및 노출 제어 */
   #tab2:checked ~ .tab-buttons label[for="tab2"],
-  #tab3:checked ~ .tab-buttons label[for="tab3"] {
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"] {
     background: #fff;
     color: #e53935;
     border-bottom: 1px solid #fff;
@@ -131,7 +133,8 @@ tags:
     z-index: 2;
   }
   #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3 { display: block; }
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4 { display: block; }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -140,8 +143,8 @@ tags:
   }
 </style>
 
-<div class="tab-content" id="content">
-  <input type="radio" id="tab1" name="gh-tabs-1" checked>
+<div class="tabs-container">
+  <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">ToolData</label></li>
   </ul>
@@ -164,13 +167,20 @@ tags:
     </table>
   </div>
 </div>
-<div class="tab-content" id="content2">
-  <input type="radio" id="tab2" name="gh-tabs-2" checked><input type="radio" id="tab3" name="gh-tabs-3"><input type="radio" id="tab4" name="gh-tabs-4">
+
+<div class="tabs-container">
+  <input type="radio" id="tab2" name="gh-tabs-options" checked>
+  <input type="radio" id="tab3" name="gh-tabs-options">
+  <input type="radio" id="tab4" name="gh-tabs-options">
+  
   <ul class="tab-buttons">
     <li><label for="tab2">LoadData</label></li>
+    <li><label for="tab3">Preview</label></li>
+    <li><label for="tab4">Export</label></li>
   </ul>
+
   <div class="tab-content" id="content2">
-    <table class="spec-table" style="margin: 0 0 20px 0;">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>이름</th>
@@ -197,16 +207,14 @@ tags:
         <tr>
           <td><strong>Inertia</strong></td>
           <td>String</td>
-          <td>관성 모멘트 (Ix,Iy,Iz")</td>
+          <td>관성 모멘트 (Ix,Iy,Iz)</td>
         </tr>        
       </tbody>
     </table>
   </div>
-  <ul class="tab-buttons">
-    <li><label for="tab3">Preview</label></li>
-  </ul>
+
   <div class="tab-content" id="content3">
-    <table class="spec-table" style="margin: 0 0 20px 0;">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>이름</th>
@@ -223,11 +231,9 @@ tags:
       </tbody>
     </table>
   </div>
-  <ul class="tab-buttons">
-    <li><label for="tab4">Export</label></li>
-  </ul>
+
   <div class="tab-content" id="content4">
-    <table class="spec-table" style="margin: 0 0 20px 0;">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>이름</th>
