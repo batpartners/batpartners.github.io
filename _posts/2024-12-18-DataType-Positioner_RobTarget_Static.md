@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-포지셔너 전용 RobTarget을 기반으로, 사용자가 정의한 포지셔너 RAPID 코드를 작성할 수 있도록 지원합니다. 우클릭 컨텍스트 메뉴로 Dynamic, Static 모드 전환이 가능합니다.
+포지셔너(외부축) 회전각을 포함한 RobTarget 정의합니다. 우클릭 컨텍스트 메뉴로 Dynamic, Static 모드 전환이 가능합니다.
 
 <p align="center">  <img src="/assets/images/1_Positioner_Robtarget_1.png" align="center" width="32%"></p>
 

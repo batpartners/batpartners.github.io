@@ -30,21 +30,21 @@ tags:
 
 🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
-<p align="center">  <img src="/assets/images/0_RobTarget.png" align="center" width="32%"></p>
-
-
 # Description
 
 외부축 없이 로봇 단독 모션을 위한 RobTarget 정의. 외부축 값은 9E9(미사용)로 자동 설정합니다.
+
+<p align="center">  <img src="/assets/images/0_RobTarget.png" align="center" width="32%"></p>
+
 
 # | 입력(Inputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| Target Planes | Plane | RobTarget으로 변환할 평면입니다. |
-| Z Rotation | Number | RobTarget을 자기 자신의 Z축 기준으로 회전.(단위 : 도) |
+| Target Planes | Plane | RobTarget으로 변환할 평면 |
+| Z Rotation | Number | RobTarget을 자기 자신의 Z축 기준으로 회전 (단위 : 도) |
 | WobjData | WobjData | ABB 작업 평면 좌표계 |
-| Chaining | Boolean | 작업평면(WorkObj)과 타겟(RobTarget) 관계를 고정. 뷰포트 상에서 작업평면 변경 시 타겟 위치와 방향도 변경. |
+| Chaining | Boolean | 작업평면(WorkObj)과 타겟(RobTarget) 관계를 고정. 뷰포트 상에서 작업평면 변경 시 타겟 위치와 방향도 변경 |
 
 
 ## | 필수 파라미터 (Required Parameter)
