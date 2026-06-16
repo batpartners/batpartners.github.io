@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-ABB 워크오브젝트(워크피스 좌표계)를 지정합니다. 월드 좌표계에서 작업대의 로컬 좌표계를 정의하는 사용자 프레임(uframe) 및 오브젝트 프레임(oframe) 지정하여 워크오브젝트 기준으로 타겟평면 좌표를 변경할 수 있습니다. 우클릭 컨텍스트 메뉴로 Movable(외부축에 의해 움직이는 워크오브젝트), Fixed(고정된 일반 워크오브젝트) 두 모드 전환 지원.
+ABB 워크오브젝트(워크피스 좌표계)를 지정. 월드 좌표계에서 작업대의 로컬 좌표계를 정의하는 사용자 프레임(uframe) 및 오브젝트 프레임(oframe) 지정하여 워크오브젝트 기준으로 타겟평면 좌표를 변경 가능. 우클릭 컨텍스트 메뉴로 Movable(외부축에 의해 움직이는 워크오브젝트), Fixed(고정된 일반 워크오브젝트) 두 모드 전환 지원.
 
 <p align="center">  <img src="/assets/images/2_WobjData.png" align="center" width="32%"></p>
 
@@ -166,7 +166,7 @@ ABB 워크오브젝트(워크피스 좌표계)를 지정합니다. 월드 좌표
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>생성할 `WobjData` 변수의 명칭을 정의합니다. 해당 WobjData 위치의 고유 식별자로 사용됩니다.</td>
+          <td>생성할 `WobjData` 변수 정의. 해당 WobjData 위치의 고유 식별자로 사용.</td>
         </tr>
       </tbody>
     </table>
@@ -187,7 +187,7 @@ ABB 워크오브젝트(워크피스 좌표계)를 지정합니다. 월드 좌표
         <tr>
           <td><strong>Frame Size</strong></td>
           <td>Number</td>
-          <td>WobjFrame의 평면 좌표계 축 디스플레이 크기를 조절합니다.</td>
+          <td>WobjFrame의 평면 좌표계 축 디스플레이 크기를 조절.</td>
         </tr>
       </tbody>
     </table>

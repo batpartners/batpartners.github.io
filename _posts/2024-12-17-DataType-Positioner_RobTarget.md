@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-포지셔너(외부축) 회전각을 포함한 RobTarget 정의합니다. 우클릭 컨텍스트 메뉴로 Dynamic, Static 모드 전환이 가능합니다.
+포지셔너(외부축) 회전각을 포함한 RobTarget 정의. 우클릭 컨텍스트 메뉴로 Dynamic, Static 모드 전환이 가능.
 
 <p align="center"><img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
 
@@ -44,7 +44,7 @@ tags:
 | Positioner | Positioner | ABB Positioner |
 | Target Planes | Plane | RobTarget으로 변환할 평면 |
 | Z Rotation | Angle | RobTarget을 자기 자신의 Z축 기준으로 회전 (단위: 도) |
-| Target Base | Plane | 입력된 Target Plane이 정의된 기준 평면. 입력된 Target Plane은 이 평면을 기준으로, Positioner의 Mounting Plane에 오리엔트 된 RobTarget을 정의. |
+| Target Base | Plane | 입력된 Target Plane이 정의된 기준 평면. 입력된 Target Plane은 이 평면을 기준으로, Positioner의 Mounting Plane에 오리엔트 된 RobTarget을 정의 |
 | WobjData | WobjData | ABB 작업 평면 좌표계 |
 
 <p align="center"> 
@@ -161,7 +161,7 @@ tags:
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>생성할 `RobTarget` 변수의 명칭을 정의. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용.</td>
+          <td>생성할 `RobTarget` 변수의 명칭을 정의. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용</td>
         </tr>
       </tbody>
     </table>
@@ -185,12 +185,12 @@ tags:
         <tr>
           <td><strong>Split Start</strong></td>
           <td>String</td>
-          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 추출하여 출력합니다.</td>
+          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 추출하여 출력</td>
         </tr>
         <tr>
           <td><strong>Split End</strong></td>
           <td>String</td>
-          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 추출하여 출력합니다.</td>
+          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 추출하여 출력</td>
         </tr>
       </tbody>
     </table>

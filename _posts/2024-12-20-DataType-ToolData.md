@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-사용자 정의 툴(엔드 이펙터) 데이터 정의. 우클릭 컨텍스트 메뉴로 Define (직접 설정), Import (미리 저장된 툴 데이터에서 가져오기) 모드 전환 지원합니다.
+사용자 정의 툴(엔드 이펙터) 데이터 정의. 우클릭 컨텍스트 메뉴로 Define (직접 설정), Import (미리 저장된 툴 데이터에서 가져오기) 모드 전환 가능.
 <br>
 
 <p align="center">  <img src="/assets/images/3_ToolData.png" align="center" width="32%"></p>
@@ -41,8 +41,8 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Tool Geo** | Mesh | 툴(엔드 이펙터)의 형상 메시 |
-| **Base Plane** | Plane | ABB 로봇 플랜지에 대한 툴 장착 기준면. TCP 및 지오메트리 (형상)의 기준을 정의. |
-| **TCP** | Plane | 툴 끝단의 TCP (Tool Center Point) 위치. 툴 베이스 (Base Plane)를 기준으로 한 위치와 방향을 정의. |
+| **Base Plane** | Plane | ABB 로봇 플랜지에 대한 툴 장착 기준면. TCP 및 지오메트리 (형상)의 기준을 정의 |
+| **TCP** | Plane | 툴 끝단의 TCP (Tool Center Point) 위치. 툴 베이스 (Base Plane)를 기준으로 한 위치와 방향을 정의 |
 | **Tool Load** | ToolLoad | 툴의 부하 데이터 (LoadData). 연결되지 않은 경우, 도구 지오메트리의 경계 상자 (Bounding box)에서 추정하여 작성 |
 
 <p align="center"> 
@@ -161,7 +161,7 @@ tags:
         <tr>
           <td><strong>Tool Name</strong></td>
           <td>String</td>
-          <td>생성할 `ToolData` 변수의 명칭을 정의합니다.</td>
+          <td>생성할 `ToolData` 변수 정의.</td>
         </tr>
       </tbody>
     </table>

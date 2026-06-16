@@ -14,7 +14,7 @@ categories:
 
 translated: true
 lang: ko
-permalink: /datatype/DataType-ToolImporter/
+permalink: /datatype/DataType-ToolData/DataType-ToolImporter/
 
 translation_link: /en/datatype/DataType-ToolImporter/
 sidebar:
