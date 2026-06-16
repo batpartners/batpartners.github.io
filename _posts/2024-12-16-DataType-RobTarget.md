@@ -159,7 +159,7 @@ tags:
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>생성할 `RobTarget` 변수의 명칭을 정의합니다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용됩니다.</td>
+          <td>생성할 `RobTarget` 변수의 명칭을 정의. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용.</td>
         </tr>
       </tbody>
     </table>
@@ -202,12 +202,12 @@ tags:
         <tr>
           <td><strong>Split Start</strong></td>
           <td>String</td>
-          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 추출하여 출력합니다.</td>
+          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 추출하여 출력.</td>
         </tr>
         <tr>
           <td><strong>Split End</strong></td>
           <td>String</td>
-          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 추출하여 출력합니다.</td>
+          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 추출하여 출력.</td>
         </tr>
       </tbody>
     </table>

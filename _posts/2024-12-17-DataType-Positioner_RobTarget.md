@@ -161,7 +161,7 @@ tags:
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>생성할 `RobTarget` 변수의 명칭을 정의합니다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용됩니다.</td>
+          <td>생성할 `RobTarget` 변수의 명칭을 정의. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용.</td>
         </tr>
       </tbody>
     </table>
