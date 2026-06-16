@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /datatype/DataType-WobjData/DataType-WobjData_Fixed
+permalink: /datatype/DataType-WobjData/DataType-WobjData_Fixed/
 
-translation_link: /en/datatype/DataType-WobjData/DataType-WobjData_Fixed
+translation_link: /en/datatype/DataType-WobjData/DataType-WobjData_Fixed/
 
 sidebar:
   nav: "sidebar"
