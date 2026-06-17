@@ -34,9 +34,7 @@ sidebar:
         url: /datatype/DataType-ToolData/
         children:
           - title: "Tool Importer"
-            url: /datatype/DataType-ToolData/DataType-ToolImporter
-      - title: "ToolImporter"
-        url: /datatype/DataType-ToolImporter/
+            url: /datatype/DataType-ToolData/DataType-ToolImporter/
       - title: "TriggIOs"
         url: /datatype/DataType-TriggIOs/        
       - title: "ArcData"
