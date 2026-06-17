@@ -35,12 +35,12 @@ sidebar:
         children:
           - title: "Tool Importer"
             url: /datatype/DataType-ToolData/DataType-ToolImporter/
+      - title: "IODEvent"
+        url: /datatype/DataType-IODEvent/
       - title: "TriggIOs"
-        url: /datatype/DataType-TriggIOs/        
+        url: /datatype/DataType-TriggIOs/
       - title: "ArcData"
         url: /datatype/DataType-ArcData/
-      - title: "IOData"
-        url: /datatype/DataType-IOData/
       - title: "SeamData"
         url: /datatype/DataType-SeamData/
       - title: "WeaveData"
