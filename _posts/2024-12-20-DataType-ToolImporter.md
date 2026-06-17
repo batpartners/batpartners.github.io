@@ -33,7 +33,6 @@ tags:
 
 사용자 정의 툴(엔드 이펙터) 데이터 정의. 우클릭 컨텍스트 메뉴로 Define (직접 설정), Import (미리 저장된 툴 데이터에서 가져오기) 모드 전환 가능.
 <br>
-
 <p align="center">  <img src="/assets/images/3_ToolData_3.png" align="center" width="32%"></p>
 
 # | 입력(Input)
