@@ -211,6 +211,7 @@ tags:
         </tr>        
       </tbody>
     </table>
+<p align="center">  <img src="/assets/images/3_ToolData.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -230,8 +231,8 @@ tags:
         </tr>
       </tbody>
     </table>
+<p align="center">  <img src="/assets/images/3_ToolData_1.png" align="center" width="32%"></p>
   </div>
-
   <div class="tab-content" id="content4">
     <table class="spec-table" style="margin: 0;">
       <thead>
@@ -249,6 +250,7 @@ tags:
         </tr>
       </tbody>
     </table>
+<p align="center">  <img src="/assets/images/3_ToolData_2.png" align="center" width="32%"></p>
   </div>  
 </div>
 
