@@ -34,7 +34,7 @@ tags:
 
 이동 경로상의 지정 위치에서 하나 이상의 IO Event를 발생시키는 위치 트리거 정의. ABB Trigger Move 인스트럭션 (TriggLIOs, TriggJIOs) 에서 사용.
 
-<p align="center">  <img src="/assets/images/5_TriggIOs.png" align="center" width="27%"></p>
+<p align="center">  <img src="/assets/images/5_TriggIOs.png" align="center" width="32%"></p>
 
 # | 입력(Input)
 
