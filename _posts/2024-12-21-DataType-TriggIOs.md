@@ -139,7 +139,7 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ToolData</label></li>
+    <li><label for="tab1">TriggIOs</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table" style="margin: 0;">
