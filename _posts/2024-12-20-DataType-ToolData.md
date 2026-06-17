@@ -34,14 +34,15 @@ tags:
 사용자 정의 툴(엔드 이펙터) 데이터 정의. 우클릭 컨텍스트 메뉴로 Define (직접 설정), Import (미리 저장된 툴 데이터에서 가져오기) 모드 전환 가능.
 <br>
 
-<p align="center">  <img src="/assets/images/3_ToolData_3.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/3_ToolData.png" align="center" width="32%"></p>
 
 # | 입력(Input)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Base Plane** | Plane | ABB 로봇 플랜지에 대한 툴 장착 기준면. TCP 및 지오메트리 (형상)의 기준을 정의. |
-| **TCP** | Plane | 툴 끝단의 TCP (Tool Center Point) 위치. 툴 베이스 (Base Plane)를 기준으로 한 위치와 방향을 정의. |
+| **Tool Geo** | Mesh | 툴(엔드 이펙터)의 형상 메시 |
+| **Base Plane** | Plane | ABB 로봇 플랜지에 대한 툴 장착 기준면. TCP 및 지오메트리 (형상)의 기준을 정의 |
+| **TCP** | Plane | 툴 끝단의 TCP (Tool Center Point) 위치. 툴 베이스 (Base Plane)를 기준으로 한 위치와 방향을 정의 |
 | **Tool Load** | ToolLoad | 툴의 부하 데이터 (LoadData). 연결되지 않은 경우, 도구 지오메트리의 경계 상자 (Bounding box)에서 추정하여 작성 |
 
 <p align="center"> 
@@ -189,6 +190,11 @@ tags:
       </thead>
       <tbody>
         <tr>
+          <td><strong>Reset</strong></td>
+          <td>Button</td>
+          <td>Reset</td>
+        </tr>
+        <tr>
           <td><strong>Mass(kg)</strong></td>
           <td>String</td>
           <td>무게(kg)</td>
@@ -205,7 +211,6 @@ tags:
         </tr>        
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/3_ToolData_3.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -225,8 +230,8 @@ tags:
         </tr>
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/3_ToolData_4.png" align="center" width="32%"></p>
   </div>
+
   <div class="tab-content" id="content4">
     <table class="spec-table" style="margin: 0;">
       <thead>
@@ -244,7 +249,6 @@ tags:
         </tr>
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/3_ToolData_5.png" align="center" width="32%"></p>
   </div>  
 </div>
 
