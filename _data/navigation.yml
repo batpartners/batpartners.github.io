@@ -34,7 +34,7 @@ sidebar:
         url: /datatype/DataType-ToolData/
         children:
           - title: "Tool Importer"
-            url: /datatype/DataType-ToolData/DataType-ToolImporter/
+            url: /datatype/DataType-ToolImporter/
       - title: "IODEvent"
         url: /datatype/DataType-IODEvent/
       - title: "TriggIOs"
