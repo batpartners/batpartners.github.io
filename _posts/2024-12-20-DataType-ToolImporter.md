@@ -32,8 +32,8 @@ tags:
 
 # Description
 
-* Tool Importer 컴포넌트는 "Get Tool Data" 모드와 "Get Tool Data Input" 모드가 있으며, 전자의 경우 완전한 툴 정보값으로 Robot 컴포넌트의 Tool Data 입력값으로 사용할 수 있다. 후자의 경우 불완전한 툴 정보값으로 Tool Data 컴포넌트의 입력값으로 활용할 수 있다.
-
+사용자 정의 툴(엔드 이펙터) 데이터 정의. 우클릭 컨텍스트 메뉴로 Define (직접 설정), Import (미리 저장된 툴 데이터에서 가져오기) 모드 전환 지원합니다.
+<br>
 <p align="center">  <img src="/assets/images/toolimporter.png" align="center" width="50%"></p>
 
 # Input
