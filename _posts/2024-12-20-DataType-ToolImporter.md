@@ -160,6 +160,11 @@ tags:
           <td>String</td>
           <td>생성할 `ToolData` 변수 정의.</td>
         </tr>
+        <tr>
+          <td><strong>Preset</strong></td>
+          <td>Dropdown</td>
+          <td>이전에 저장한 ToolData 프리셋 목록.</td>
+        </tr>        
       </tbody>
     </table>
   </div>
