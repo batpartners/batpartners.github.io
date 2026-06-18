@@ -105,7 +105,7 @@ tags:
     animation: fadeIn 0.3s ease;
   }
 
-  /* 💡 1번 탭 그룹 스타일 및 노출 제어 */
+  /* 💡 1번 탭 (SeamData 단독) 제어 */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff;
     color: #e53935;
@@ -116,7 +116,7 @@ tags:
   }
   #tab1:checked ~ #content1 { display: block; }
 
-  /* 💡 2, 3, 4번 탭 그룹 스타일 및 노출 제어 */
+  /* 💡 2, 3, 4번 탭 (ArcData 그룹) 제어 */
   #tab2:checked ~ .tab-buttons label[for="tab2"],
   #tab3:checked ~ .tab-buttons label[for="tab3"],
   #tab4:checked ~ .tab-buttons label[for="tab4"] {
@@ -131,6 +131,21 @@ tags:
   #tab3:checked ~ #content3,
   #tab4:checked ~ #content4 { display: block; }
 
+  /* 💡 5, 6, 7번 탭 (Params 그룹) 제어 */
+  #tab5:checked ~ .tab-buttons label[for="tab5"],
+  #tab6:checked ~ .tab-buttons label[for="tab6"],
+  #tab7:checked ~ .tab-buttons label[for="tab7"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
+  }
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6,
+  #tab7:checked ~ #content7 { display: block; }
+
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
@@ -139,7 +154,7 @@ tags:
 </style>
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-seamdata" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">SeamData</label></li>
   </ul>
@@ -164,9 +179,9 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-options" checked>
-  <input type="radio" id="tab3" name="gh-tabs-options">
-  <input type="radio" id="tab4" name="gh-tabs-options">
+  <input type="radio" id="tab2" name="gh-tabs-arcdata" checked>
+  <input type="radio" id="tab3" name="gh-tabs-arcdata">
+  <input type="radio" id="tab4" name="gh-tabs-arcdata">
   
   <ul class="tab-buttons">
     <li><label for="tab2">Ignition ArcData</label></li>
@@ -281,9 +296,9 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab5" name="gh-tabs-options" checked>
-  <input type="radio" id="tab6" name="gh-tabs-options">
-  <input type="radio" id="tab7" name="gh-tabs-options">
+  <input type="radio" id="tab5" name="gh-tabs-params" checked>
+  <input type="radio" id="tab6" name="gh-tabs-params">
+  <input type="radio" id="tab7" name="gh-tabs-params">
   
   <ul class="tab-buttons">
     <li><label for="tab5">Ignition Params</label></li>
@@ -291,7 +306,7 @@ tags:
     <li><label for="tab7">End Params</label></li>
   </ul>
 
-  <div class="tab-content" id="content3">
+  <div class="tab-content" id="content5">
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
@@ -321,37 +336,7 @@ tags:
     <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="content3">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Purge Time</strong></td>
-          <td>Number</td>
-          <td>보호 가스로, 가스 라인과 용접 토치를 채우는 데 걸리는 시간 (초). 만약 용접 시작 위치로 이동하는 시간이 퍼지 시간보다 짧은 경우, 용접 시작 위치에서 퍼지 시간이 만료될 때까지 대기.</td>
-        </tr>
-        <tr>
-          <td><strong>Purgeflow Time</strong></td>
-          <td>Number</td>
-          <td>보호 가스로, 용접 대상물에 가스를 미리 흘려주는 데 걸리는 시간 (초). 이 시간 동안 로봇은 아크가 점화되기 전까지 해당 위치에서 정지</td>
-        </tr>
-        <tr>
-          <td><strong>Move Delay</strong></td>
-          <td>Number</td>
-          <td>아크 점화 시점에서 아크가 안정순간부터 가열 단계가 시작될 때가지의 지연 시간 (초)</td>
-        </tr>
-      </tbody>
-    </table>
-    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
-  </div>
-
-  <div class="tab-content" id="content3">
+  <div class="tab-content" id="content6">
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
@@ -378,6 +363,36 @@ tags:
         </tr>
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
+  </div>
+
+  <div class="tab-content" id="content7">
+    <table class="spec-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Crater Time</strong></td>
+          <td>Number</td>
+          <td>용접 종료 단계 시, 크레이터 충전 시간 (초)</td>
+        </tr>
+        <tr>
+          <td><strong>Burnback Time</strong></td>
+          <td>Number</td>
+          <td>용접 종료 시 와이어가 용융 풀에 들러붙는 것을 방지하기 위해, 와이어 송급 정지 후 아크를 유지하는 추가 연소 시간 (초)</td>
+        </tr>
+        <tr>
+          <td><strong>Postflow Time</strong></td>
+          <td>Number</td>
+          <td>용접이 완전히 끝난 후, 냉각 및 산화 방지를 위해 보호 가스를 추가로 흘려주는 시간 (초)</td>
+        </tr>
+      </tbody>
+    </table>
     <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
   </div>
 </div>
@@ -387,4 +402,4 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **SeamData** | SeamData | 입력한 ABB SeamData를 출력 |
-| **Code** | String | Codea를 출력 |
+| **Code** | String | Code를 출력 |
