@@ -206,7 +206,7 @@ tags:
         </tr>        
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -241,8 +241,9 @@ tags:
         </tr> 
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
   </div>
+
   <div class="tab-content" id="content4">
     <table class="spec-table" style="margin: 0;">
       <thead>
@@ -275,22 +276,22 @@ tags:
         </tr> 
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
   </div>
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-options" checked>
-  <input type="radio" id="tab3" name="gh-tabs-options">
-  <input type="radio" id="tab4" name="gh-tabs-options">
+  <input type="radio" id="tab5" name="gh-tabs-options" checked>
+  <input type="radio" id="tab6" name="gh-tabs-options">
+  <input type="radio" id="tab7" name="gh-tabs-options">
   
   <ul class="tab-buttons">
-    <li><label for="tab2">Ignition Params</label></li>
-    <li><label for="tab3">Heat Params</label></li>
-    <li><label for="tab4">End Params</label></li>
+    <li><label for="tab5">Ignition Params</label></li>
+    <li><label for="tab6">Heat Params</label></li>
+    <li><label for="tab7">End Params</label></li>
   </ul>
 
-  <div class="tab-content" id="content2">
+  <div class="tab-content" id="content3">
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
@@ -317,9 +318,10 @@ tags:
         </tr>
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
   </div>
-    <div class="tab-content" id="content2">
+
+  <div class="tab-content" id="content3">
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
@@ -346,9 +348,10 @@ tags:
         </tr>
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
   </div>
-    <div class="tab-content" id="content2">
+
+  <div class="tab-content" id="content3">
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
@@ -375,7 +378,7 @@ tags:
         </tr>
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
   </div>
 </div>
 
