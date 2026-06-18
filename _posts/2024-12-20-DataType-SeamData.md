@@ -194,7 +194,7 @@ tags:
           <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed</strong></td>
+          <td><strong>Wirefeed(m/min)</strong></td>
           <td>Number</td>
           <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
         </tr>
@@ -229,7 +229,7 @@ tags:
           <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed</strong></td>
+          <td><strong>Wirefeed(m/min)</strong></td>
           <td>Number</td>
           <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
         </tr>
@@ -263,7 +263,7 @@ tags:
           <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed</strong></td>
+          <td><strong>Wirefeed(m/min)</strong></td>
           <td>Number</td>
           <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
         </tr>
@@ -281,6 +281,214 @@ tags:
     </table>
 <p align="center">  <img src="/assets/images/3_ToolData_2.png" align="center" width="32%"></p>
   </div>  
+</div>
+<div class="tab-content" id="content3">
+    <table class="spec-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Voltage</strong></td>
+          <td>Number</td>
+          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
+        </tr>
+        <tr>
+          <td><strong>Wirefeed(m/min)</strong></td>
+          <td>Number</td>
+          <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
+        </tr>
+        <tr>
+          <td><strong>Control</strong></td>
+          <td>Number</td>
+          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
+        </tr>
+        <tr>
+          <td><strong>Current</strong></td>
+          <td>Number</td>
+          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
+        </tr> 
+      </tbody>
+    </table>
+<p align="center">  <img src="/assets/images/3_ToolData_1.png" align="center" width="32%"></p>
+  </div>
+  <div class="tab-content" id="content4">
+    <table class="spec-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Purge Time</strong></td>
+          <td>Number</td>
+          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
+        </tr>
+        <tr>
+          <td><strong>Wirefeed(m/min)</strong></td>
+          <td>Number</td>
+          <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
+        </tr>
+        <tr>
+          <td><strong>Control</strong></td>
+          <td>Number</td>
+          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
+        </tr>
+        <tr>
+          <td><strong>Current</strong></td>
+          <td>Number</td>
+          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
+        </tr> 
+      </tbody>
+    </table>
+<p align="center">  <img src="/assets/images/3_ToolData_2.png" align="center" width="32%"></p>
+  </div>  
+</div>
+
+<div class="tabs-container">
+  <input type="radio" id="tab2" name="gh-tabs-options" checked>
+  <input type="radio" id="tab3" name="gh-tabs-options">
+  <input type="radio" id="tab4" name="gh-tabs-options">
+  
+  <ul class="tab-buttons">
+    <li><label for="tab2">Ignition Params</label></li>
+    <li><label for="tab3">Heat Params</label></li>
+    <li><label for="tab4">End Params</label></li>
+  </ul>
+
+  <div class="tab-content" id="content2">
+    <table class="spec-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Purge Time</strong></td>
+          <td>Number</td>
+          <td>보호 가스로, 가스 라인과 용접 토치를 채우는 데 걸리는 시간 (초). 만약 용접 시작 위치로 이동하는 시간이 퍼지 시간보다 짧은 경우, 용접 시작 위치에서 퍼지 시간이 만료될 때까지 대기.</td>
+        </tr>
+        <tr>
+          <td><strong>Purgeflow Time</strong></td>
+          <td>Number</td>
+          <td>보호 가스로, 용접 대상물에 가스를 미리 흘려주는 데 걸리는 시간 (초). 이 시간 동안 로봇은 아크가 점화되기 전까지 해당 위치에서 정지</td>
+        </tr>
+        <tr>
+          <td><strong>Move Delay</strong></td>
+          <td>Number</td>
+          <td>아크 점화 시점에서 아크가 안정순간부터 가열 단계가 시작될 때가지의 지연 시간 (초)</td>
+        </tr>
+      </tbody>
+    </table>
+<p align="center">  <img src="/assets/images/3_ToolData.png" align="center" width="32%"></p>
+  </div>
+
+
+<div class="tabs-container">
+  <input type="radio" id="tab2" name="gh-tabs-options" checked>
+  <input type="radio" id="tab3" name="gh-tabs-options">
+  <input type="radio" id="tab4" name="gh-tabs-options">
+  
+  <ul class="tab-buttons">
+    <li><label for="tab2">Ignition Params</label></li>
+    <li><label for="tab3">Heat Params</label></li>
+    <li><label for="tab4">End Params</label></li>
+  </ul>
+
+  <div class="tab-content" id="content2">
+    <table class="spec-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Purge Time</strong></td>
+          <td>Number</td>
+          <td>보호 가스로, 가스 라인과 용접 토치를 채우는 데 걸리는 시간 (초). 만약 용접 시작 위치로 이동하는 시간이 퍼지 시간보다 짧은 경우, 용접 시작 위치에서 퍼지 시간이 만료될 때까지 대기.</td>
+        </tr>
+        <tr>
+          <td><strong>Purgeflow Time</strong></td>
+          <td>Number</td>
+          <td>보호 가스로, 용접 대상물에 가스를 미리 흘려주는 데 걸리는 시간 (초). 이 시간 동안 로봇은 아크가 점화되기 전까지 해당 위치에서 정지</td>
+        </tr>
+        <tr>
+          <td><strong>Move Delay</strong></td>
+          <td>Number</td>
+          <td>아크 점화 시점에서 아크가 안정순간부터 가열 단계가 시작될 때가지의 지연 시간 (초)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    <div class="tab-content" id="content2">
+    <table class="spec-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Purge Time</strong></td>
+          <td>Number</td>
+          <td>보호 가스로, 가스 라인과 용접 토치를 채우는 데 걸리는 시간 (초). 만약 용접 시작 위치로 이동하는 시간이 퍼지 시간보다 짧은 경우, 용접 시작 위치에서 퍼지 시간이 만료될 때까지 대기.</td>
+        </tr>
+        <tr>
+          <td><strong>Purgeflow Time</strong></td>
+          <td>Number</td>
+          <td>보호 가스로, 용접 대상물에 가스를 미리 흘려주는 데 걸리는 시간 (초). 이 시간 동안 로봇은 아크가 점화되기 전까지 해당 위치에서 정지</td>
+        </tr>
+        <tr>
+          <td><strong>Move Delay</strong></td>
+          <td>Number</td>
+          <td>아크 점화 시점에서 아크가 안정순간부터 가열 단계가 시작될 때가지의 지연 시간 (초)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+    <div class="tab-content" id="content2">
+    <table class="spec-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Heat Speed</strong></td>
+          <td>Number</td>
+          <td>용접 단계 시작 시, 가열 중의 용접 속도</td>
+        </tr>
+        <tr>
+          <td><strong>Heat Time</strong></td>
+          <td>Number</td>
+          <td>용접 단계 시작 시, 가열 시간 (초). Heat Time은 Heat Distance 또는 Heat Speed 값이 0인 경우 유효</td>
+        </tr>
+        <tr>
+          <td><strong>Heat Distance</strong></td>
+          <td>Number</td>
+          <td>용접 시작 시, 가열 데이터가 적용되어야 하는 이동 거리</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 # | 출력(Output)
