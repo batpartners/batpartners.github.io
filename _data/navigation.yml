@@ -39,8 +39,6 @@ sidebar:
         url: /datatype/DataType-IODEvent/
       - title: "TriggIOs"
         url: /datatype/DataType-TriggIOs/
-      - title: "ArcData"
-        url: /datatype/DataType-ArcData/
       - title: "SeamData"
         url: /datatype/DataType-SeamData/
       - title: "WeaveData"
