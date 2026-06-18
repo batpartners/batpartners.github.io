@@ -221,6 +221,7 @@ tags:
         </tr>        
       </tbody>
     </table>
+    <br>
     <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
   </div>
 
@@ -256,6 +257,7 @@ tags:
         </tr> 
       </tbody>
     </table>
+    <br>
     <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
   </div>
 
@@ -291,6 +293,7 @@ tags:
         </tr> 
       </tbody>
     </table>
+    <br>
     <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
   </div>
 </div>
@@ -333,6 +336,7 @@ tags:
         </tr>
       </tbody>
     </table>
+    <br>
     <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
   </div>
 
@@ -363,6 +367,7 @@ tags:
         </tr>
       </tbody>
     </table>
+    <br>
     <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
   </div>
 
@@ -393,6 +398,7 @@ tags:
         </tr>
       </tbody>
     </table>
+    <br>
     <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
   </div>
 </div>
