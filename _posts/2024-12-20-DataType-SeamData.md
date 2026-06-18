@@ -32,49 +32,260 @@ tags:
 
 # Description
 
-* ArcData 및 관련 파라미터를 이용하여, SeamData를 정의하는 컴포넌트이다. 
-SeamData는 용접의 시작과 끝을 제어하는데 사용되는 데이터이다. 용접 단계는 크게, Ignition phase - Heating phase- Welding phase- End phase의 4단계로 구성된다. SeamData는 시작 및 종료 단계에 해당하는 Ignition과 Heating , 그리고 End(Fill) 단계의 ArcData와 함께, 각 단계에 관련된 파라미터 값들을 포함하고 있다.
+용접 심(Seam)의 시작 및 종료 단계 데이터 정의. 점화(Ignition), 가열(Heat), 종료(End) 세 구간의 타이밍 및 아크 조건 지정. 일반적으로 한 심 전체 또는 여러 심에 걸쳐 동일 값 유지.
 
 <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
 
-# Input
-
-* **Name [text/item]** : SeamData의 변수명을 입력한다. 변수명은 숫자로 시작할수 없으며, 현재 템플릿에서 사용중인 다른 프로그램 데이터와 중복된 변수명은 할당할 수 없다.
-* **Ign_ArcData [ArcData/item]** : Ignition Phase에서 사용될 ArcData를 입력한다.
-* **Heat_ArcData [ArcData/item]** : Heat Phase에서 사용될 ArcData를 입력한다.
-* **End_ArcData [ArcData/item]** : End Phase (Filling)에서 사용될 ArcData를 입력한다.
-
-<figure class="half">
-    <a href="https://b-at.kr/wp-content/uploads/2023/05/Untitled-1.png"><img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-1.png"></a>
-    <a href="https://b-at.kr/wp-content/uploads/2023/05/Untitled-1.png"><img src="https://b-at.kr/wp-content/uploads/2023/05/Untitled-1.png"></a>
-</figure>
-
-## Built-in Param | Ignition Phase Param
-
-* **Purge Time [Num/item]** : PurgeTime은 가스 라인과 토치 내부를 보호가스로 채우기 위한 시간을 초(s.)단위로 설정하는 파라미터. ArcLStart 또는 ArcCStart 인스트럭션에 의해 프로그램된, 특정자세에서 용접 시작 타겟에 도달하는 시점보다 PurgeTime 시간만큼 앞선 시점부터, 미리 가스 흐름을 인가시키게 된다.
-* **Preflow Time [Num/item]** : PreflowTime은 용접 모재에 보호가스를 미리 흘려보내기 위한 시간을 초(s.)단위로 설정하는 파라미터. 로봇은 아크가 발화되기 전에 설정된 preflowtime 동안 용접 시작 타겟에서 정지한 상태를 유지한다.
-* **Ignition move delay [Num/item]** : Ignition phase에서 Arc가 안정되는 시점부터, Heating Phase가 시작될 때까지 딜레이를 초(s)단위로 설정한다. Ignition movement delay 동안 Ignition 관련 참조값들이 유효하다.
-
-
-## Built-in Param : Heat Phase Param​
-
-* **Heat Speed [Num/item]** : Weld phase 시작점에서 Heating하는 동안 용접속도.
-* **Heat Time [Num/item]** : Weld phase 시작점에서 Heating하는 시간(sec.). Heat Time은 Heat distance와 Heat speed가 0일때 적용됨, 즉, 거리 기준 설정값을 사용하지 않아야만,시간 기반 설정을 사용 가능하다.
-* **Heat Distance [Num/item]** : Weld phase 시작점에서 Heat data가 활성화되어야 하는 구간 거리.
-
-
-## Built-in Param : Heat Phase Param​
-
-* **Cool Time [Num/item]** : Crater-filling 과 같은 다른 종료 작업이 일어나기 전, Weld Phase 프로세스가 닫히는 시간(초단위).
-* **Fill Time [Num/item]** : 용접 End Phase에서 Crater-filling 시간.
-* **BBack Time [Num/item]** : 와이어 공급이 멈출때, 와이어가 번백되는 시간(초). BBackTime 파라미터는 MIG/MAG 용접 프로세스가 꺼질때, 와이어가 팁 또는 비드에 붙는 현상을 방지하기 위해 사용.
-* **RBack Time [Num/item]** : 용접장비가 꺼질때, 냉각된 와이어가 롤백되는 시간(초). RBackTime 파라미터는 TIG 용접 프로세스가 꺼질때, 와이어가 팁 또는 비드에 붙는 현상을 방지하기 위해 사용.
-* **Postflow Time [Num/item]** : End Phase가 끝난 이후 보호가스를 내뿜는 시간을 초단위로 설정. Postflow Time은 보호가스를 통해, 냉각과정에서 와이어와 용접부의 산화를 방지하기 위해 사용.
-
-
 <br>
 
-# Output
+<p align="center">  <img src="/assets/images/3_ToolData.png" align="center" width="32%"></p>
 
-* **SeamData [SeamData/item]** : Input 과 관련 설정값에 따라, 정의된 SeamData를 출력한다.
-* **Code [Text/Item]** : 정의된 SeamData 코드를 String으로 출력한다.
+# | 입력(Input)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **Weld Sched** | Weld Sched | 사용할 용접 프로그램 번호(스케줄) 및 용접 모드. |
+| **Weight** | Number | wirefeed1에 대한 가중치 |
+
+
+## | 필수 파라미터 (Required Parameter)
+
+<style>
+  /* 탭 시스템 전체 컨테이너 */
+  .tabs-container {
+    position: relative;
+    margin: 30px 0;
+    min-height: 160px;
+  }
+
+  /* 라디오 버튼 숨기기 */
+  .tabs-container input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  /* 탭 버튼 스타일 (상단 바 정렬) */
+  .tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tab-buttons li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .tab-buttons label {
+    display: block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #f5f5f5;
+    color: #777;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .tab-buttons label:hover {
+    background: #e9e9e9;
+    color: #333;
+  }
+
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    animation: fadeIn 0.3s ease;
+  }
+
+  /* 💡 1번 탭 그룹 스타일 및 노출 제어 */
+  #tab1:checked ~ .tab-buttons label[for="tab1"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
+  }
+  #tab1:checked ~ #content1 { display: block; }
+
+  /* 💡 2, 3, 4번 탭 그룹 스타일 및 노출 제어 */
+  #tab2:checked ~ .tab-buttons label[for="tab2"],
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
+  }
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4 { display: block; }
+
+  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<div class="tabs-container">
+  <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
+  <ul class="tab-buttons">
+    <li><label for="tab1">SeamData</label></li>
+  </ul>
+  <div class="tab-content" id="content1">
+    <table class="spec-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td>String</td>
+          <td>변수명</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="tabs-container">
+  <input type="radio" id="tab2" name="gh-tabs-options" checked>
+  <input type="radio" id="tab3" name="gh-tabs-options">
+  <input type="radio" id="tab4" name="gh-tabs-options">
+  
+  <ul class="tab-buttons">
+    <li><label for="tab2">Ignition ArcData</label></li>
+    <li><label for="tab3">Heat ArcData</label></li>
+    <li><label for="tab4">End ArcData</label></li>
+  </ul>
+
+  <div class="tab-content" id="content2">
+    <table class="spec-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Voltage</strong></td>
+          <td>Number</td>
+          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
+        </tr>
+        <tr>
+          <td><strong>Wirefeed</strong></td>
+          <td>Number</td>
+          <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
+        </tr>
+        <tr>
+          <td><strong>Control</strong></td>
+          <td>Number</td>
+          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
+        </tr>
+        <tr>
+          <td><strong>Current</strong></td>
+          <td>Number</td>
+          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
+        </tr>        
+      </tbody>
+    </table>
+<p align="center">  <img src="/assets/images/3_ToolData.png" align="center" width="32%"></p>
+  </div>
+
+  <div class="tab-content" id="content3">
+    <table class="spec-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Voltage</strong></td>
+          <td>Number</td>
+          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
+        </tr>
+        <tr>
+          <td><strong>Wirefeed</strong></td>
+          <td>Number</td>
+          <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
+        </tr>
+        <tr>
+          <td><strong>Control</strong></td>
+          <td>Number</td>
+          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
+        </tr>
+        <tr>
+          <td><strong>Current</strong></td>
+          <td>Number</td>
+          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
+        </tr> 
+      </tbody>
+    </table>
+<p align="center">  <img src="/assets/images/3_ToolData_1.png" align="center" width="32%"></p>
+  </div>
+  <div class="tab-content" id="content4">
+    <table class="spec-table" style="margin: 0;">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Voltage</strong></td>
+          <td>Number</td>
+          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
+        </tr>
+        <tr>
+          <td><strong>Wirefeed</strong></td>
+          <td>Number</td>
+          <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
+        </tr>
+        <tr>
+          <td><strong>Control</strong></td>
+          <td>Number</td>
+          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
+        </tr>
+        <tr>
+          <td><strong>Current</strong></td>
+          <td>Number</td>
+          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
+        </tr> 
+      </tbody>
+    </table>
+<p align="center">  <img src="/assets/images/3_ToolData_2.png" align="center" width="32%"></p>
+  </div>  
+</div>
+
+# | 출력(Output)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **SeamData** | SeamData | 입력한 ABB SeamData를 출력 |
+| **Code** | String | Codea를 출력 |
