@@ -173,6 +173,11 @@ tags:
           <td>String</td>
           <td>변수명</td>
         </tr>
+        <tr>
+          <td><strong>Link ArcData</strong></td>
+          <td>Boolean</td>
+          <td>모든 단계(Ignition, Heat, End)의 ArcData 값을 연동. TRUE: 한쪽을 조절하면 나머지도 같은 값으로 맞춰짐. FALSE: 단계별 독립 조절 (기본값).</td>
+        </tr>
       </tbody>
     </table>
   </div>
