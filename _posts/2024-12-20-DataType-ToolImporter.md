@@ -30,23 +30,25 @@ tags:
 
 # Description
 
-사용자 정의 툴(엔드 이펙터) 데이터 정의. 우클릭 컨텍스트 메뉴로 Define (직접 설정), Import (미리 저장된 툴 데이터에서 가져오기) 모드 전환 가능.
+# Description
+
+Defines custom tool (end-effector) data. Supports switching between Define mode (manual configuration) and Import mode (loading pre-saved tool data) via the right-click context menu.
 <br>
 <p align="center">  <img src="/assets/images/3_ToolData_3.png" align="center" width="32%"></p>
 
-# | 입력(Input)
+# | Input
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Base Plane** | Plane | ABB 로봇 플랜지에 대한 툴 장착 기준면. TCP 및 지오메트리 (형상)의 기준을 정의. |
-| **TCP** | Plane | 툴 끝단의 TCP (Tool Center Point) 위치. 툴 베이스 (Base Plane)를 기준으로 한 위치와 방향을 정의. |
-| **Tool Load** | ToolLoad | 툴의 부하 데이터 (LoadData). 연결되지 않은 경우, 도구 지오메트리의 경계 상자 (Bounding box)에서 추정하여 작성 |
+| **Base Plane** | Plane | The tool mounting reference plane relative to the ABB robot flange. Defines the baseline for TCP and geometry (shape). |
+| **TCP** | Plane | The position of the TCP (Tool Center Point) at the end of the tool. Defines its position and orientation relative to the tool base (Base Plane). |
+| **Tool Load** | ToolLoad | The load data (LoadData) of the tool. If not connected, it is estimated and generated based on the bounding box of the tool geometry. |
 
 <p align="center"> 
 <video src="/assets/images/ToolData_Export.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Tool Export</figcaption>
 </p>
 
-## | 필수 파라미터 (Required Parameter)
+## | Required Parameter
 
 <style>
   /* 탭 시스템 전체 컨테이너 */
@@ -149,21 +151,21 @@ tags:
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Tool Name</strong></td>
           <td>String</td>
-          <td>생성할 `ToolData` 변수 정의.</td>
+          <td>Defines the variable name for the generated `ToolData`.</td>
         </tr>
         <tr>
           <td><strong>Preset</strong></td>
           <td>Dropdown</td>
-          <td>이전에 저장한 ToolData 프리셋 목록.</td>
+          <td>List of previously saved ToolData presets.</td>
         </tr>        
       </tbody>
     </table>
@@ -185,26 +187,26 @@ tags:
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Mass(kg)</strong></td>
           <td>String</td>
-          <td>무게(kg)</td>
+          <td>Weight (kg)</td>
         </tr>
         <tr>
           <td><strong>Centroid</strong></td>
           <td>String</td>
-          <td>무게 중심 좌표 (x,y,z)</td>
+          <td>Center of gravity coordinates (x, y, z)</td>
         </tr>
         <tr>
           <td><strong>Inertia</strong></td>
           <td>String</td>
-          <td>관성 모멘트 (Ix,Iy,Iz)</td>
+          <td>Moment of inertia (Ix, Iy, Iz)</td>
         </tr>        
       </tbody>
     </table>
@@ -215,16 +217,16 @@ tags:
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Color</strong></td>
           <td>Color</td>
-          <td>시각화 색상</td>
+          <td>Visualization color</td>
         </tr>
       </tbody>
     </table>
@@ -234,16 +236,16 @@ tags:
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Export</strong></td>
           <td>Button</td>
-          <td>툴데이터를 사용자 로컬 지정 경로에 파일로 저장</td>
+          <td>Saves the tool data as a file to a user-specified local directory.</td>
         </tr>
       </tbody>
     </table>
@@ -251,11 +253,11 @@ tags:
   </div>  
 </div>
 
-# | 출력(Output)
+# | Output
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **ToolData** | ToolData | 입력한 ABB ToolData를 출력 |
+| **ToolData** | ToolData | Outputs the configured ABB ToolData. |
 
 
 <p align="center">  <img src="/assets/images/ToolData_GIF_00-1.gif" align="center" width="100%"></p>
