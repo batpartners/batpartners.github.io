@@ -14,8 +14,8 @@ categories:
 
 translated: true
 lang: en
-permalink: /en/datatype/DataType-IOEvent/
-translation_link: /datatype/DataType-IOEvent/
+permalink: /en/datatype/DataType-IODEvent/
+translation_link: /datatype/DataType-IODEvent/
 
 sidebar:
   nav: "sidebar"
