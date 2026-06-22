@@ -212,6 +212,7 @@ Defines custom tool (end-effector) data. Supports switching between Define mode 
         </tr>        
       </tbody>
     </table>
+    <br>    
 <p align="center">  <img src="/assets/images/3_ToolData_3.png" align="center" width="32%"></p>
   </div>
 
@@ -232,6 +233,7 @@ Defines custom tool (end-effector) data. Supports switching between Define mode 
         </tr>
       </tbody>
     </table>
+    <br>
 <p align="center">  <img src="/assets/images/3_ToolData_4.png" align="center" width="32%"></p>
   </div>
   <div class="tab-content" id="content4">
@@ -251,6 +253,7 @@ Defines custom tool (end-effector) data. Supports switching between Define mode 
         </tr>
       </tbody>
     </table>
+    <br>
 <p align="center">  <img src="/assets/images/3_ToolData_5.png" align="center" width="32%"></p>
   </div>  
 </div>
