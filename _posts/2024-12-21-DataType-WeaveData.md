@@ -351,7 +351,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
   </div>
 </div>
 
