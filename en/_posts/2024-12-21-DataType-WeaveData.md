@@ -104,8 +104,13 @@ Defines the weaving motion performed during arc welding. Specifies the weaving g
     animation: fadeIn 0.3s ease;
   }
 
-  /* 💡 활성화된 탭 라벨 스타일 공통 적용 */
-  .tabs-container input[type="radio"]:checked ~ .tab-buttons label {
+  /* 💡 [수정] 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
+  #tab1:checked ~ .tab-buttons label[for="tab1"],
+  #tab2:checked ~ .tab-buttons label[for="tab2"],
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"],
+  #tab5:checked ~ .tab-buttons label[for="tab5"],
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
     background: #fff;
     color: #e53935;
     border-bottom: 1px solid #fff;
