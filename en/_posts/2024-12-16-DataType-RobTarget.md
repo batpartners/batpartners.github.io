@@ -109,6 +109,12 @@ Defines a `RobTarget` for robot-only motions without external axes. External axi
     animation: fadeIn 0.3s ease;
   }
 
+    /* 테이블 너비를 컨테이너에 맞춰 100%로 고정 */
+  .spec-table {
+    width: 100%;
+    table-layout: fixed; /* 테이블 내 셀 너비 비율을 일정하게 유지 */
+  }
+
   /* 💡 Tab Group 1 Style and Visibility Control */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff;

@@ -114,6 +114,12 @@ ABB 워크오브젝트(워크피스 좌표계)를 지정. 월드 좌표계에서
     animation: fadeIn 0.3s ease;
   }
 
+    /* 테이블 너비를 컨테이너에 맞춰 100%로 고정 */
+  .spec-table {
+    width: 100%;
+    table-layout: fixed; /* 테이블 내 셀 너비 비율을 일정하게 유지 */
+  }
+
   /* 💡 1번 탭 그룹 스타일 및 노출 제어 */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff;
