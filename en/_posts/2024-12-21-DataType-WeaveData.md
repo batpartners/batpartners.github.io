@@ -104,6 +104,12 @@ Defines the weaving motion performed during arc welding. Specifies the weaving g
     animation: fadeIn 0.3s ease;
   }
 
+  /* 테이블 너비를 컨테이너에 맞춰 100%로 고정 */
+  .spec-table {
+    width: 100%;
+    table-layout: fixed; /* 테이블 내 셀 너비 비율을 일정하게 유지 */
+  }
+
   /* 💡 [수정] 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
   #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],

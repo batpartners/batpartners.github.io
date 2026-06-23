@@ -104,6 +104,12 @@ tags:
     animation: fadeIn 0.3s ease;
   }
 
+  /* 테이블 너비를 컨테이너에 맞춰 100%로 고정 */
+  .spec-table {
+    width: 100%;
+    table-layout: fixed; /* 테이블 내 셀 너비 비율을 일정하게 유지 */
+  }
+
   /* 💡 활성화된 탭 라벨 스타일 공통 적용 */
   .tabs-container input[type="radio"]:checked ~ .tab-buttons label {
     background: #fff;
