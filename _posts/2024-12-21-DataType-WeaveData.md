@@ -104,8 +104,8 @@ tags:
     animation: fadeIn 0.3s ease;
   }
 
-  /* 💡 1번 탭 (SeamData 단독) 제어 */
-  #tab1:checked ~ .tab-buttons label[for="tab1"] {
+  /* 💡 활성화된 탭 라벨 스타일 공통 적용 */
+  .tabs-container input[type="radio"]:checked ~ .tab-buttons label {
     background: #fff;
     color: #e53935;
     border-bottom: 1px solid #fff;
@@ -113,37 +113,16 @@ tags:
     margin-bottom: -1px;
     z-index: 2;
   }
-  #tab1:checked ~ #content1 { display: block; }
 
-  /* 💡 2, 3, 4번 탭 (ArcData 그룹) 제어 */
-  #tab2:checked ~ .tab-buttons label[for="tab2"],
-  #tab3:checked ~ .tab-buttons label[for="tab3"],
-  #tab4:checked ~ .tab-buttons label[for="tab4"] {
-    background: #fff;
-    color: #e53935;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 13px;
-    margin-bottom: -1px;
-    z-index: 2;
-  }
+  /* 💡 라디오 버튼 체크 상태에 따른 콘텐츠 표시 제어 */
+  #tab1:checked ~ #content1,
   #tab2:checked ~ #content2,
   #tab3:checked ~ #content3,
-  #tab4:checked ~ #content4 { display: block; }
-
-  /* 💡 5, 6, 7번 탭 (Params 그룹) 제어 */
-  #tab5:checked ~ .tab-buttons label[for="tab5"],
-  #tab6:checked ~ .tab-buttons label[for="tab6"],
-  #tab7:checked ~ .tab-buttons label[for="tab7"] {
-    background: #fff;
-    color: #e53935;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 13px;
-    margin-bottom: -1px;
-    z-index: 2;
-  }
+  #tab4:checked ~ #content4,
   #tab5:checked ~ #content5,
-  #tab6:checked ~ #content6,
-  #tab7:checked ~ #content7 { display: block; }
+  #tab6:checked ~ #content6 { 
+    display: block; 
+  }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -153,7 +132,7 @@ tags:
 </style>
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-seamdata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-weavedata" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">WeaveData</label></li>
   </ul>
@@ -182,9 +161,9 @@ tags:
           <td>String</td>
           <td>위빙 모션에 사용되는 축 설정.<br>
                 [0]: Geometric. 전체 축(1-6) 활용 (주파수↓ / 정확도↑)<br>
-                "[1]: Wrist. 손목축(4-6) 위주 + 메인축(1-3)은 미세보정 (주파수↑ / 정확도↓)<br>
-                "[2]: Rapid1. 메인축(1-3) 활용(레거시)\n<br>
-                "[3]: Rapid2. 손목축(4-6) 활용(레거시)</td>
+                [1]: Wrist. 손목축(4-6) 위주 + 메인축(1-3)은 미세보정 (주파수↑ / 정확도↓)<br>
+                [2]: Rapid1. 메인축(1-3) 활용(레거시)<br>
+                [3]: Rapid2. 손목축(4-6) 활용(레거시)</td>
         </tr>        
       </tbody>
     </table>
@@ -218,7 +197,7 @@ tags:
           <td><strong>Length</strong></td>
           <td>Number</td>
           <td>Type이 Geometric/Wrist인 경우: 위빙 사이클 길이 (mm)<br>
-                • Type이 Rapid1/Rapid2인 경우:, 위빙 사이클 주파수 (Hz)<br>
+                • Type이 Rapid1/Rapid2인 경우: 위빙 사이클 주파수 (Hz)<br>
                 • Shape이 Circular인 경우: 원형 패턴 간격</td>
         </tr>
         <tr>
@@ -321,12 +300,10 @@ tags:
   </div>
 </div>
 
-
 <div class="tabs-container">
-  <input type="radio" id="tab" name="gh-tabs-arcdata" checked>
-  
+  <input type="radio" id="tab6" name="gh-tabs-preview" checked>
   <ul class="tab-buttons">
-    <li><label for="tab5">Preview</label></li>
+    <li><label for="tab6">Preview</label></li>
   </ul>
 
   <div class="tab-content" id="content6">
@@ -362,4 +339,3 @@ tags:
 | :--- | :--- | :--- |
 | **WeaveData** | WeaveData | ABB WeaveData |
 | **Code** | String | Code를 출력 |
-
