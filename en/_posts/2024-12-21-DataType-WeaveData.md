@@ -14,9 +14,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /datatype/DataType-WeaveData/
+permalink: /en/datatype/DataType-WeaveData/
 
-translation_link: /en/datatype/DataType-WeaveData/
+translation_link: /datatype/DataType-WeaveData/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -28,7 +28,7 @@ tags:
   - GERTY
 ---
 
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
