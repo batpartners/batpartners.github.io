@@ -201,7 +201,7 @@ tags:
     <li><label for="tab2">Dimension</label></li>
     <li><label for="tab3">Dwell</label></li>
     <li><label for="tab4">Orient</label></li>
-    <li><label for="tab4">Bias</label></li>
+    <li><label for="tab5">Bias</label></li>
   </ul>
 
   <div class="tab-content" id="content2">
@@ -328,7 +328,7 @@ tags:
     <li><label for="tab5">Preview</label></li>
   </ul>
 
-  <div class="tab-content" id="content5">
+  <div class="tab-content" id="content6">
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
