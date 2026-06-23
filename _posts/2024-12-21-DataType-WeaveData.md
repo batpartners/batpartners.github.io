@@ -321,8 +321,9 @@ tags:
   </div>
 </div>
 
+
 <div class="tabs-container">
-  <input type="radio" id="tab6" name="gh-tabs-params" checked>
+  <input type="radio" id="tab" name="gh-tabs-arcdata" checked>
   
   <ul class="tab-buttons">
     <li><label for="tab5">Preview</label></li>
