@@ -36,21 +36,39 @@ tags:
 
 <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
 
-# | 입력(Input)
-
-| 이름 | 타입 | 설명 |
-| :--- | :--- | :--- |
-| **Base Plane** | Plane | 위빙 패턴 시각화의 기준 평면. (X = 진행 방향, Y = 수평, Z = 수직) |
-
-
-## | 필수 파라미터 (Required Parameter)
-
 <style>
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+  .page__content table,
+  .page__content .spec-table,
+  .tab-content table, 
+  .tab-content .spec-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    margin: 20px 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  .page__content table th:nth-child(1), .page__content table td:nth-child(1),
+  .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
+  
+  .page__content table th:nth-child(2), .page__content table td:nth-child(2),
+  .tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { width: 15% !important; }
+  
+  .page__content table th:nth-child(3), .page__content table td:nth-child(3),
+  .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
+
   /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
     margin: 30px 0;
     min-height: 160px;
+    width: 100% !important;
+    clear: both;
   }
 
   /* 라디오 버튼 숨기기 */
@@ -67,6 +85,7 @@ tags:
     margin: 0;
     padding: 0;
     list-style: none;
+    width: 100%;
   }
   .tab-buttons li {
     margin: 0;
@@ -101,16 +120,11 @@ tags:
     padding: 20px;
     border: 1px solid #ddd;
     background: #fff;
-    animation: fadeIn 0.3s ease;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* 테이블 너비를 컨테이너에 맞춰 100%로 고정 */
-  .spec-table {
-    width: 100%;
-    table-layout: fixed; /* 테이블 내 셀 너비 비율을 일정하게 유지 */
-  }
-
-  /* 💡 [수정] 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
+  /* 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
   #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],
   #tab3:checked ~ .tab-buttons label[for="tab3"],
@@ -125,7 +139,7 @@ tags:
     z-index: 2;
   }
 
-  /* 💡 라디오 버튼 체크 상태에 따른 콘텐츠 표시 제어 */
+  /* 라디오 버튼 체크 상태에 따른 콘텐츠 표시 제어 */
   #tab1:checked ~ #content1,
   #tab2:checked ~ #content2,
   #tab3:checked ~ #content3,
@@ -141,6 +155,15 @@ tags:
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
+
+# | 입력(Input)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **Base Plane** | Plane | 위빙 패턴 시각화의 기준 평면. (X = 진행 방향, Y = 수평, Z = 수직) |
+
+
+## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-weavedata" checked>
