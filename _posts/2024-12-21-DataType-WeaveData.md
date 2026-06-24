@@ -312,10 +312,10 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <div class="tab-buttons-wrapper">
-    <input type="radio" id="tab6" name="gh-tabs-preview" checked>
-    <label for="tab6">Preview</label>
-  </div>
+  <input type="radio" id="tab6" name="gh-tabs-preview" checked>
+  <ul class="tab-buttons">
+    <li><label for="tab6">Preview</label></li>
+  </ul>
 
   <div class="tab-content" id="content6">
     <table class="spec-table">
