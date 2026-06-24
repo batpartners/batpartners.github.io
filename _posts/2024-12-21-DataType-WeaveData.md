@@ -36,117 +36,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
 
-<style>
-  /* 💡 [전체 통합] 본문 내의 모든 표(외부 마크다운 표 + 탭 내부 표) 너비를 동일하게 고정 */
-  .page__content table,
-  .tabs-container table, 
-  .tabs-container .spec-table {
-    display: table !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    min-width: 100% !important;
-    table-layout: fixed !important;       /* 가로 폭 비율 강제 고정 */
-    word-break: break-all !important;     /* 글자 수 차이로 인한 셀 밀림 방지 */
-    margin: 20px 0 !important;
-  }
-  
-  /* 모든 표의 컬럼 비율을 하나로 통일 (이름: 20%, 타입: 15%, 설명: 65%) */
-  .page__content table th:nth-child(1), .page__content table td:nth-child(1),
-  .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
-  
-  .page__content table th:nth-child(2), .page__content table td:nth-child(2),
-  .tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { width: 15% !important; }
-  
-  .page__content table th:nth-child(3), .page__content table td:nth-child(3),
-  .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
-
-  /* 탭 시스템 전체 컨테이너 */
-  .tabs-container {
-    margin: 30px 0;
-    width: 100% !important;
-    max-width: 100% !important;
-    display: block !important;
-    clear: both;
-  }
-
-  /* 라디오 버튼 숨기기 */
-  .tabs-container input[type="radio"] {
-    position: absolute !important;
-    opacity: 0 !important;
-    z-index: -1 !important;
-  }
-
-  /* 탭 버튼들을 감싸는 상단 바 */
-  .tab-buttons-wrapper {
-    display: flex !important;
-    border-bottom: 1px solid #ddd !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-  }
-
-  /* 일반 탭 라벨 스타일 */
-  .tab-buttons-wrapper label {
-    display: block !important;
-    padding: 12px 24px !important;
-    font-size: 14px !important;
-    font-weight: bold !important;
-    text-transform: uppercase !important;
-    cursor: pointer !important;
-    background: #f5f5f5 !important;
-    color: #777 !important;
-    border: 1px solid #ddd !important;
-    border-bottom: none !important;
-    margin-right: 4px !important;
-    border-top-left-radius: 4px !important;
-    border-top-right-radius: 4px !important;
-    transition: all 0.2s ease !important;
-  }
-
-  .tab-buttons-wrapper label:hover {
-    background: #e9e9e9 !important;
-    color: #333 !important;
-  }
-
-  /* 체크된 라디오 버튼 바로 다음(+)에 오는 라벨만 정확하게 붉은색 활성화 */
-  .tabs-container input[type="radio"]:checked + label {
-    background: #fff !important;
-    color: #e53935 !important;
-    border-bottom: 1px solid #fff !important;
-    padding-bottom: 13px !important;
-    margin-bottom: -1px !important;
-    position: relative !important;
-    z-index: 2 !important;
-  }
-
-  /* 콘텐츠 박스 기본 설정 (숨김) */
-  .tab-content {
-    display: none;
-    padding: 20px !important;
-    border: 1px solid #ddd !important;
-    background: #fff !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-  }
-
-  /* 각 라디오 버튼 체크 상태에 따라 해당 콘텐츠 보여주기 */
-  #tab1:checked ~ #content1,
-  #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3,
-  #tab4:checked ~ #content4,
-  #tab5:checked ~ #content5,
-  #tab6:checked ~ #content6 { 
-    display: block !important; 
-  }
-
-  /* 탭 전환시 부드러운 페이드인 애니메이션 */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(2px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
-
 # | 입력(Input)
 
 | 이름 | 타입 | 설명 |
@@ -155,6 +44,103 @@ tags:
 
 
 ## | 필수 파라미터 (Required Parameter)
+
+<style>
+  /* 탭 시스템 전체 컨테이너 */
+  .tabs-container {
+    position: relative;
+    margin: 30px 0;
+    min-height: 160px;
+  }
+
+  /* 라디오 버튼 숨기기 */
+  .tabs-container input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  /* 탭 버튼 스타일 (상단 바 정렬) */
+  .tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .tab-buttons li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .tab-buttons label {
+    display: block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #f5f5f5;
+    color: #777;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .tab-buttons label:hover {
+    background: #e9e9e9;
+    color: #333;
+  }
+
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    animation: fadeIn 0.3s ease;
+  }
+
+  /* 테이블 너비를 컨테이너에 맞춰 100%로 고정 */
+  .spec-table {
+    width: 100%;
+    table-layout: fixed; /* 테이블 내 셀 너비 비율을 일정하게 유지 */
+  }
+
+  /* 💡 [수정] 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
+  #tab1:checked ~ .tab-buttons label[for="tab1"],
+  #tab2:checked ~ .tab-buttons label[for="tab2"],
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"],
+  #tab5:checked ~ .tab-buttons label[for="tab5"],
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
+  }
+
+  /* 💡 라디오 버튼 체크 상태에 따른 콘텐츠 표시 제어 */
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6 { 
+    display: block; 
+  }
+
+  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 
 <div class="tabs-container">
   <div class="tab-buttons-wrapper">
