@@ -143,11 +143,10 @@ tags:
 </style>
 
 <div class="tabs-container">
-  <div class="tab-buttons-wrapper">
-    <input type="radio" id="tab1" name="gh-tabs-weavedata" checked>
-    <label for="tab1">WeaveData</label>
-  </div>
-  
+  <input type="radio" id="tab1" name="gh-tabs-weavedata" checked>
+  <ul class="tab-buttons">
+    <li><label for="tab1">WeaveData</label></li>
+  </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
       <thead>
