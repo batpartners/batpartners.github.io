@@ -197,19 +197,17 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <div class="tab-buttons-wrapper">
-    <input type="radio" id="tab2" name="gh-tabs-arcdata" checked>
-    <label for="tab2">Dimension</label>
-
-    <input type="radio" id="tab3" name="gh-tabs-arcdata">
-    <label for="tab3">Dwell</label>
-
-    <input type="radio" id="tab4" name="gh-tabs-arcdata">
-    <label for="tab4">Orient</label>
-
-    <input type="radio" id="tab5" name="gh-tabs-arcdata">
-    <label for="tab5">Bias</label>
-  </div>
+  <input type="radio" id="tab2" name="gh-tabs-arcdata" checked>
+  <input type="radio" id="tab3" name="gh-tabs-arcdata">
+  <input type="radio" id="tab4" name="gh-tabs-arcdata">
+  <input type="radio" id="tab5" name="gh-tabs-arcdata">
+  
+  <ul class="tab-buttons">
+    <li><label for="tab2">Dimension</label></li>
+    <li><label for="tab3">Dwell</label></li>
+    <li><label for="tab4">Orient</label></li>
+    <li><label for="tab5">Bias</label></li>
+  </ul>
 
   <div class="tab-content" id="content2">
     <table class="spec-table">
