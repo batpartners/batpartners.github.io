@@ -38,41 +38,37 @@ tags:
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
-.page__content table,
-.page__content .spec-table,
-.tab-content table, 
-.tab-content .spec-table {
-  display: table !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 100% !important;
-  table-layout: fixed !important;       /* 👈 셀 너비 비율 고정을 위한 필수 속성 */
-  word-break: break-all !important;     /* 👈 글자가 길어져도 표가 찌그러지지 않게 자동 줄바꿈 */
-  margin: 20px 0 !important;
-  box-sizing: border-box !important;
-}
-
-/* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
-.page__content table th:nth-child(1), .page__content table td:nth-child(1),
-.tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { 
-  width: 20% !important; /* 👈 '이름' 열의 너비 */
-}
-
-.page__content table th:nth-child(2), .page__content table td:nth-child(2),
-.tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { 
-  width: 15% !important; /* 👈 '타입' 열의 너비 */
-}
-
-.page__content table th:nth-child(3), .page__content table td:nth-child(3),
-.tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { 
-  width: 65% !important; /* 👈 '설명' 열의 너비 (합산 100%) */
-}
+  .page__content table,
+  .page__content .spec-table,
+  .tab-content table, 
+  .tab-content .spec-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    margin: 20px 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  .page__content table th:nth-child(1), .page__content table td:nth-child(1),
+  .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
+  
+  .page__content table th:nth-child(2), .page__content table td:nth-child(2),
+  .tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { width: 15% !important; }
+  
+  .page__content table th:nth-child(3), .page__content table td:nth-child(3),
+  .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
   /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
     margin: 30px 0;
-    min-height: 160px; /* 불필요한 하단 공백 최소화 */
+    min-height: 160px;
+    width: 100% !important;
+    clear: both;
   }
 
   /* 라디오 버튼 숨기기 */
@@ -89,6 +85,7 @@ tags:
     margin: 0;
     padding: 0;
     list-style: none;
+    width: 100%;
   }
   .tab-buttons li {
     margin: 0;
@@ -123,29 +120,17 @@ tags:
     padding: 20px;
     border: 1px solid #ddd;
     background: #fff;
-    animation: fadeIn 0.3s ease;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-    /* 테이블 너비를 컨테이너에 맞춰 100%로 고정 */
-  .spec-table {
-    width: 100%;
-    table-layout: fixed; /* 테이블 내 셀 너비 비율을 일정하게 유지 */
-  }
-
-  /* 💡 1번 탭 그룹 스타일 및 노출 제어 */
-  #tab1:checked ~ .tab-buttons label[for="tab1"] {
-    background: #fff;
-    color: #e53935;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 13px;
-    margin-bottom: -1px;
-    z-index: 2;
-  }
-  #tab1:checked ~ #content1 { display: block; }
-
-  /* 💡 2번 탭 그룹 스타일 및 노출 제어 */
+  /* 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
+  #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],
-  #tab3:checked ~ .tab-buttons label[for="tab3"] {
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"],
+  #tab5:checked ~ .tab-buttons label[for="tab5"],
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
     background: #fff;
     color: #e53935;
     border-bottom: 1px solid #fff;
@@ -153,8 +138,16 @@ tags:
     margin-bottom: -1px;
     z-index: 2;
   }
+
+  /* 라디오 버튼 체크 상태에 따른 콘텐츠 표시 제어 */
+  #tab1:checked ~ #content1,
   #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3 { display: block; }
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6 { 
+    display: block; 
+  }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -162,7 +155,6 @@ tags:
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
-
 
 # | 입력(Inputs)
 
