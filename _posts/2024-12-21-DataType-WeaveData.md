@@ -164,7 +164,6 @@ tags:
 
 
 ## | 필수 파라미터 (Required Parameter)
-
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-weavedata" checked>
   <ul class="tab-buttons">
