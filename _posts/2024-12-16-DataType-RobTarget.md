@@ -36,22 +36,38 @@ tags:
 
 <p align="center">  <img src="/assets/images/0_RobTarget.png" align="center" width="32%"></p>
 
-
-# | 입력(Inputs)
-
-| 이름 | 타입 | 설명 |
-| :--- | :--- | :--- |
-| Target Planes | Plane | RobTarget으로 변환할 평면 |
-| Z Rotation | Number | RobTarget을 자기 자신의 Z축 기준으로 회전한다. (단위 : 도) |
-| WobjData | WobjData | ABB 작업 평면 좌표계 |
-| Chaining | Boolean | 작업평면(WorkObj)과 타겟(RobTarget) 관계를 고정하낟. 뷰포트 상에서 작업평면 변경 시 타겟 위치와 방향도 변경할 수 있다. |
-
-
-## | 필수 파라미터 (Required Parameter)
-
-<p align="center"><img src="/assets/images/0_RobTarget_2.png" align="center" width="32%"></p>
-
 <style>
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+.page__content table,
+.page__content .spec-table,
+.tab-content table, 
+.tab-content .spec-table {
+  display: table !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 100% !important;
+  table-layout: fixed !important;       /* 👈 셀 너비 비율 고정을 위한 필수 속성 */
+  word-break: break-all !important;     /* 👈 글자가 길어져도 표가 찌그러지지 않게 자동 줄바꿈 */
+  margin: 20px 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+.page__content table th:nth-child(1), .page__content table td:nth-child(1),
+.tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { 
+  width: 20% !important; /* 👈 '이름' 열의 너비 */
+}
+
+.page__content table th:nth-child(2), .page__content table td:nth-child(2),
+.tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { 
+  width: 15% !important; /* 👈 '타입' 열의 너비 */
+}
+
+.page__content table th:nth-child(3), .page__content table td:nth-child(3),
+.tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { 
+  width: 65% !important; /* 👈 '설명' 열의 너비 (합산 100%) */
+}
+
   /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
@@ -146,6 +162,21 @@ tags:
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
+
+
+# | 입력(Inputs)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| Target Planes | Plane | RobTarget으로 변환할 평면 |
+| Z Rotation | Number | RobTarget을 자기 자신의 Z축 기준으로 회전한다. (단위 : 도) |
+| WobjData | WobjData | ABB 작업 평면 좌표계 |
+| Chaining | Boolean | 작업평면(WorkObj)과 타겟(RobTarget) 관계를 고정하낟. 뷰포트 상에서 작업평면 변경 시 타겟 위치와 방향도 변경할 수 있다. |
+
+
+## | 필수 파라미터 (Required Parameter)
+
+<p align="center"><img src="/assets/images/0_RobTarget_2.png" align="center" width="32%"></p>
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-1" checked>
