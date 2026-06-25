@@ -36,25 +36,6 @@ ABB 워크오브젝트(워크피스 좌표계)를 지정. 월드 좌표계에서
 
 <p align="center">  <img src="/assets/images/2_WobjData.png" align="center" width="32%"></p>
 
-
-# | 입력(Input)
-
-| 이름 | 타입 | 설명 |
-| :--- | :--- | :--- |
-| *User Frame* | Plane | WobjData의 사용자 프레임 (uframe)으로 사용되는 평면 |
-| *Object Frame* | Plane | WobjData의 객체 프레임(oframe)으로 사용되는 평면 |
-| *Override Wobj* | Plane | 입력된 워크오브젝트 데이터로 컴포넌트 출력을 덮어씀. (선택) 연결 시 다른 인풋값과 관계없이 이 데이터가 우선 적용. |
-
-## 옵션 변경(Felxible Option)
-
-| 이름 | 타입 | 설명 |
-| :--- | :--- | :--- |
-| *Fixed WobjData* | - | Target Plane이 고정된 위치의 기준 평면으로 재정의 |
-| *Movable WobjData* | - | Target Plane이 이동 가능한 위치의 기준 평면으로 재정의 |
-
-
-## | 필수 파라미터 (Required Parameter)
-
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
   .page__content table,
@@ -175,6 +156,23 @@ ABB 워크오브젝트(워크피스 좌표계)를 지정. 월드 좌표계에서
   }
 </style>
 
+# | 입력(Input)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| *User Frame* | Plane | WobjData의 사용자 프레임 (uframe)으로 사용되는 평면 |
+| *Object Frame* | Plane | WobjData의 객체 프레임(oframe)으로 사용되는 평면 |
+| *Override Wobj* | Plane | 입력된 워크오브젝트 데이터로 컴포넌트 출력을 덮어씀. (선택) 연결 시 다른 인풋값과 관계없이 이 데이터가 우선 적용. |
+
+## 옵션 변경(Felxible Option)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| *Fixed WobjData* | - | Target Plane이 고정된 위치의 기준 평면으로 재정의 |
+| *Movable WobjData* | - | Target Plane이 이동 가능한 위치의 기준 평면으로 재정의 |
+
+
+## | 필수 파라미터 (Required Parameter)
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-wobj" checked><input type="radio" id="tab2" name="gh-tabs-wobj">
   
