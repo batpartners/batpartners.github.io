@@ -36,14 +36,6 @@ tags:
 
 <p align="center">  <img src="/assets/images/5_TriggIOs.png" align="center" width="32%"></p>
 
-# | 입력(Input)
-
-| 이름 | 타입 | 설명 |
-| :--- | :--- | :--- |
-| **IOEvent** | IOEvent | ABB TriggIOs를 위한 IOEvents 콜렉션 |
-
-## | 필수 파라미터 (Required Parameter)
-
 <style>
   /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
@@ -142,6 +134,13 @@ tags:
   }
 </style>
 
+# | 입력(Input)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **IOEvent** | IOEvent | ABB TriggIOs를 위한 IOEvents 콜렉션 |
+
+## | 필수 파라미터 (Required Parameter)
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
   <ul class="tab-buttons">
