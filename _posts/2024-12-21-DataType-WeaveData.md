@@ -165,12 +165,13 @@ tags:
 
 
 ## | 필수 파라미터 (Required Parameter)
+
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-weavedata" checked>
+  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">WeaveData</label></li>
+    <li><label for="sm-tab1">WeaveData</label></li>
   </ul>
-  <div class="tab-content" id="content1">
+  <div class="tab-content" id="sm-content1">
     <table class="spec-table">
       <thead>
         <tr>
@@ -183,21 +184,21 @@ tags:
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>변수명.</td>
+          <td>변수명</td>
         </tr>
         <tr>
           <td><strong>Weave Shape</strong></td>
           <td>String</td>
-          <td>위빙 패턴 모양. [0]: 없음, [1]: 지그재그(수평), [2]: V형(수직), [3]: 삼각형(수직), [4]: 원형(수직).</td>
+          <td>위빙 패턴 모양.<br>[0]: 없음, [1]: 지그재그(수평), [2]: V형(수직), [3]: 삼각형(수직), [4]: 원형(수직)</td>
         </tr>
         <tr>
           <td><strong>Weave Type</strong></td>
           <td>String</td>
           <td>위빙 모션에 사용되는 축 설정.<br>
-                [0]: Geometric. 전체 축(1-6) 활용 (주파수↓ / 정확도↑)<br>
-                [1]: Wrist. 손목축(4-6) 위주 + 메인축(1-3)은 미세보정 (주파수↑ / 정확도↓)<br>
-                [2]: Rapid1. 메인축(1-3) 활용 (레거시)<br>
-                [3]: Rapid2. 손목축(4-6) 활용 (레거시)</td>
+              [0]: Geometric. 전체 축(1-6) 활용 (주파수↓ / 정확도↑)<br>
+              [1]: Wrist. 손목축(4-6) 위주 + 메인축(1-3)은 미세보정 (주파수↑ / 정확도↓)<br>
+              [2]: Rapid1. 메인축(1-3) 활용(레거시)<br>
+              [3]: Rapid2. 손목축(4-6) 활용(레거시)</td>
         </tr>        
       </tbody>
     </table>
@@ -205,19 +206,19 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-arcdata" checked>
-  <input type="radio" id="tab3" name="gh-tabs-arcdata">
-  <input type="radio" id="tab4" name="gh-tabs-arcdata">
-  <input type="radio" id="tab5" name="gh-tabs-arcdata">
+  <input type="radio" id="arc-tab2" name="gh-tabs-arcdata" checked>
+  <input type="radio" id="arc-tab3" name="gh-tabs-arcdata">
+  <input type="radio" id="arc-tab4" name="gh-tabs-arcdata">
+  <input type="radio" id="arc-tab5" name="gh-tabs-arcdata">
   
   <ul class="tab-buttons">
-    <li><label for="tab2">Dimension</label></li>
-    <li><label for="tab3">Dwell</label></li>
-    <li><label for="tab4">Orient</label></li>
-    <li><label for="tab5">Bias</label></li>
+    <li><label for="arc-tab2">Dimension</label></li>
+    <li><label for="arc-tab3">Dwell</label></li>
+    <li><label for="arc-tab4">Orient</label></li>
+    <li><label for="arc-tab5">Bias</label></li>
   </ul>
 
-  <div class="tab-content" id="content2">
+  <div class="tab-content" id="arc-content2">
     <table class="spec-table">
       <thead>
         <tr>
@@ -230,27 +231,27 @@ tags:
         <tr>
           <td><strong>Length</strong></td>
           <td>Number</td>
-          <td>Type이 Geometric/Wrist인 경우: 위빙 사이클 길이 (mm).<br>
-                • Type이 Rapid1/Rapid2인 경우: 위빙 사이클 주파수 (Hz).<br>
-                • Shape이 Circular인 경우: 원형 패턴 간격.</td>
+          <td>• Type이 Geometric/Wrist인 경우: 위빙 사이클 길이 (mm)<br>
+              • Type이 Rapid1/Rapid2인 경우:, 위빙 사이클 주파수 (Hz)<br>
+              • Shape이 Circular인 경우: 원형 패턴 간격</td>
         </tr>
         <tr>
           <td><strong>Width</strong></td>
           <td>Number</td>
-          <td>위빙 패턴의 전체 진폭 (mm). (원형 위빙의 경우, 반지름을 나타냄).</td>
+          <td>위빙 패턴의 전체 진폭 (mm) (원형 위빙의 경우, 반지름).</td>
         </tr>
         <tr>
           <td><strong>Height</strong></td>
           <td>Number</td>
-          <td>패턴의 수직 높이 (mm). V형 및 삼각형 패턴에서만 사용되며, 지그재그 및 원형 설정에서는 무시됨.</td>
+          <td>패턴의 수직 높이 (mm). V형 / 삼각형에서만 사용되며, 지그재그/원형은 무시.</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="content3">
+  <div class="tab-content" id="arc-content3">
     <table class="spec-table">
       <thead>
         <tr>
@@ -263,25 +264,25 @@ tags:
         <tr>
           <td><strong>Dwell Left</strong></td>
           <td>Number</td>
-          <td>TCP가 위빙 패턴의 좌측 반환점에서 지연되거나 심(seam) 방향으로만 전진 이동하는 길이 (mm). 한쪽 비드량을 늘릴 때 사용.</td>
+          <td>TCP가 위빙패턴의 좌측 반환점에서 심 방향으로만 이동하는 길이 (mm). 한쪽 비드량을 늘릴 때 사용.</td>
         </tr>
         <tr>
           <td><strong>Dwell Center</strong></td>
           <td>Number</td>
-          <td>TCP가 위빙 패턴의 중앙(영점)을 지날 때 심 방향으로만 이동하는 길이 (mm).</td>
+          <td>TCP가 위빙패턴의 중앙(영점)을 지날 때 심 방향으로만 이동하는 길이 (mm).</td>
         </tr>
         <tr>
           <td><strong>Dwell Right</strong></td>
           <td>Number</td>
-          <td>TCP가 위빙 패턴의 우측 반환점에서 지연되거나 심 방향으로만 전진 이동하는 길이 (mm). Dwell Left와 대칭.</td>
+          <td>TCP가 위빙패턴의 우측 반환점에서 심 방향으로만 이동하는 길이 (mm). 좌측 정지와 대칭.</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData_1.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="content4">
+  <div class="tab-content" id="arc-content4">
     <table class="spec-table">
       <thead>
         <tr>
@@ -294,25 +295,25 @@ tags:
         <tr>
           <td><strong>Dir Angle(°)</strong></td>
           <td>Number</td>
-          <td>진행 방향 경로에 대한 위빙 패턴의 방향 각도(°).</td>
+          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
           <td><strong>Tilt Angle(°)</strong></td>
           <td>Number</td>
-          <td>표면 또는 토치 오리엔테이션에 대한 위빙 평면의 기울기 각도(°).</td>
+          <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
         </tr>
         <tr>
           <td><strong>Orient Angle(°)</strong></td>
           <td>Number</td>
-          <td>위빙 패턴 매트릭스의 회전을 정의하는 오리엔테이션 각도(°).</td>
+          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData_2.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="content5">
+  <div class="tab-content" id="arc-content5">
     <table class="spec-table">
       <thead>
         <tr>
@@ -325,22 +326,23 @@ tags:
         <tr>
           <td><strong>Weave Bias</strong></td>
           <td>Number</td>
-          <td>위빙 패턴의 중심선을 진행 방향 기준 좌측(+) 또는 우측(-)으로 편향시키는 오프셋 거리 (mm). 지그재그 위빙 전용.</td>
+          <td>위빙 패턴의 중심선을 진행방향 좌/우 (+/-)로 편향하는 거리 (mm). Zigzag 위빙 전용.</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData_3.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
   </div>
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab6" name="gh-tabs-preview" checked>
+  <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
+  
   <ul class="tab-buttons">
-    <li><label for="tab6">Preview</label></li>
+    <li><label for="prm-tab5">Preview</label></li>
   </ul>
 
-  <div class="tab-content" id="content6">
+  <div class="tab-content" id="prm-content5">
     <table class="spec-table">
       <thead>
         <tr>
@@ -353,17 +355,17 @@ tags:
         <tr>
           <td><strong>Frame Size</strong></td>
           <td>Number</td>
-          <td>시각화 프레임 매트릭스의 크기.</td>
+          <td>프레임 크기</td>
         </tr>
         <tr>
           <td><strong>Preview Cycles</strong></td>
           <td>Number</td>
-          <td>미리보기 시각화 디스플레이에 렌더링되는 위빙 패턴의 반복 사이클 수.</td>
+          <td>위빙 패턴 시각화 반복 사이클 수</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
   </div>
 </div>
 
