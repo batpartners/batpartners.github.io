@@ -124,29 +124,31 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (WeaveData 필수 파라미터) */
-  #wv-tab1:checked ~ .tab-buttons label[for="wv-tab1"] {
+  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
+  #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
-  #wv-tab1:checked ~ #wv-content1 { display: block; }
+  #sm-tab1:checked ~ #sm-content1 { display: block; }
 
-  /* 💡 2번째 탭 그룹 제어 (Dimension / Dwell / Orient / Bias 세트) */
+  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
   #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
   #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
-  #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"],
-  #arc-tab5:checked ~ .tab-buttons label[for="arc-tab5"] {
+  #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #arc-tab2:checked ~ #arc-content2,
   #arc-tab3:checked ~ #arc-content3,
-  #arc-tab4:checked ~ #arc-content4,
-  #arc-tab5:checked ~ #arc-content5 { display: block; }
+  #arc-tab4:checked ~ #arc-content4 { display: block; }
 
-  /* 💡 3번째 탭 그룹 제어 (Preview 세트) */
-  #pv-tab6:checked ~ .tab-buttons label[for="pv-tab6"] {
+  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
+  #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
+  #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
+  #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
-  #pv-tab6:checked ~ #pv-content6 { display: block; }
+  #prm-tab5:checked ~ #prm-content5,
+  #prm-tab6:checked ~ #prm-content6,
+  #prm-tab7:checked ~ #prm-content7 { display: block; }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -163,13 +165,12 @@ tags:
 
 
 ## | 필수 파라미터 (Required Parameter)
-
 <div class="tabs-container">
-  <input type="radio" id="wv-tab1" name="gh-tabs-weavedata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-weavedata" checked>
   <ul class="tab-buttons">
-    <li><label for="wv-tab1">WeaveData</label></li>
+    <li><label for="tab1">WeaveData</label></li>
   </ul>
-  <div class="tab-content" id="wv-content1">
+  <div class="tab-content" id="content1">
     <table class="spec-table">
       <thead>
         <tr>
@@ -204,19 +205,19 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="arc-tab2" name="gh-tabs-arcdata" checked>
-  <input type="radio" id="arc-tab3" name="gh-tabs-arcdata">
-  <input type="radio" id="arc-tab4" name="gh-tabs-arcdata">
-  <input type="radio" id="arc-tab5" name="gh-tabs-arcdata">
+  <input type="radio" id="tab2" name="gh-tabs-arcdata" checked>
+  <input type="radio" id="tab3" name="gh-tabs-arcdata">
+  <input type="radio" id="tab4" name="gh-tabs-arcdata">
+  <input type="radio" id="tab5" name="gh-tabs-arcdata">
   
   <ul class="tab-buttons">
-    <li><label for="arc-tab2">Dimension</label></li>
-    <li><label for="arc-tab3">Dwell</label></li>
-    <li><label for="arc-tab4">Orient</label></li>
-    <li><label for="arc-tab5">Bias</label></li>
+    <li><label for="tab2">Dimension</label></li>
+    <li><label for="tab3">Dwell</label></li>
+    <li><label for="tab4">Orient</label></li>
+    <li><label for="tab5">Bias</label></li>
   </ul>
 
-  <div class="tab-content" id="arc-content2">
+  <div class="tab-content" id="content2">
     <table class="spec-table">
       <thead>
         <tr>
@@ -249,7 +250,7 @@ tags:
     <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="arc-content3">
+  <div class="tab-content" id="content3">
     <table class="spec-table">
       <thead>
         <tr>
@@ -280,7 +281,7 @@ tags:
     <p align="center">  <img src="/assets/images/9_WeaveData_1.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="arc-content4">
+  <div class="tab-content" id="content4">
     <table class="spec-table">
       <thead>
         <tr>
@@ -311,7 +312,7 @@ tags:
     <p align="center">  <img src="/assets/images/9_WeaveData_2.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="arc-content5">
+  <div class="tab-content" id="content5">
     <table class="spec-table">
       <thead>
         <tr>
@@ -331,15 +332,13 @@ tags:
     <br>
     <p align="center">  <img src="/assets/images/9_WeaveData_3.png" align="center" width="32%"></p>
   </div>
-</div>
-
-<div class="tabs-container">
-  <input type="radio" id="pv-tab6" name="gh-tabs-preview" checked>
+  <div class="tabs-container">
+  <input type="radio" id="tab6" name="gh-tabs-preview" checked>
   <ul class="tab-buttons">
-    <li><label for="pv-tab6">Preview</label></li>
+    <li><label for="tab6">Preview</label></li>
   </ul>
 
-  <div class="tab-content" id="pv-content6">
+  <div class="tab-content" id="content6">
     <table class="spec-table">
       <thead>
         <tr>
