@@ -133,20 +133,20 @@ tags:
   /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
   #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
   #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
-  #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
+  #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"],
+  #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #arc-tab2:checked ~ #arc-content2,
   #arc-tab3:checked ~ #arc-content3,
-  #arc-tab4:checked ~ #arc-content4 { display: block; }
+  #arc-tab4:checked ~ #arc-content4,
+  #prm-tab5:checked ~ #prm-content5 { display: block; }
 
   /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
-  #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
   #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
   #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
-  #prm-tab5:checked ~ #prm-content5,
   #prm-tab6:checked ~ #prm-content6,
   #prm-tab7:checked ~ #prm-content7 { display: block; }
 
