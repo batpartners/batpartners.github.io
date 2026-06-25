@@ -332,7 +332,9 @@ tags:
     <br>
     <p align="center">  <img src="/assets/images/9_WeaveData_3.png" align="center" width="32%"></p>
   </div>
-  <div class="tabs-container">
+</div>
+
+<div class="tabs-container">
   <input type="radio" id="tab6" name="gh-tabs-preview" checked>
   <ul class="tab-buttons">
     <li><label for="tab6">Preview</label></li>
