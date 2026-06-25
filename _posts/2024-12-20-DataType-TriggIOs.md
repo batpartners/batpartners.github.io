@@ -147,7 +147,7 @@ tags:
     <li><label for="tab1">TriggIOs</label></li>
   </ul>
   <div class="tab-content" id="content1">
-    <table class="spec-table" style="margin: 0;">
+    <table class="spec-table">
       <thead>
         <tr>
           <th>이름</th>
