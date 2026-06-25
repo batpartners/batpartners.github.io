@@ -49,7 +49,7 @@ tags:
     table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
     word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -124,20 +124,31 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
-  #tab1:checked ~ .tab-buttons label[for="tab1"] {
-    background: #fff;
-    color: #e53935;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 13px;
-    margin-bottom: -1px;
-    z-index: 2;
+  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
+  #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
-  
-  /* 라디오 버튼 체크 상태에 따른 콘텐츠 표시 제어 */
-  #tab1:checked ~ #content1 { 
-    display: block; 
+  #sm-tab1:checked ~ #sm-content1 { display: block; }
+
+  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
+  #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
+  #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
+  #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
+  #arc-tab2:checked ~ #arc-content2,
+  #arc-tab3:checked ~ #arc-content3,
+  #arc-tab4:checked ~ #arc-content4 { display: block; }
+
+  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
+  #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
+  #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
+  #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #prm-tab5:checked ~ #prm-content5,
+  #prm-tab6:checked ~ #prm-content6,
+  #prm-tab7:checked ~ #prm-content7 { display: block; }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -157,12 +168,12 @@ tags:
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-seamdata" checked>
+  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">SeamData</label></li>
+    <li><label for="sm-tab1">SeamData</label></li>
   </ul>
-  <div class="tab-content" id="content1">
-    <table class="spec-table" style="margin: 0;">
+  <div class="tab-content" id="sm-content1">
+    <table class="spec-table">
       <thead>
         <tr>
           <th>이름</th>
@@ -187,18 +198,18 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-arcdata" checked>
-  <input type="radio" id="tab3" name="gh-tabs-arcdata">
-  <input type="radio" id="tab4" name="gh-tabs-arcdata">
+  <input type="radio" id="arc-tab2" name="gh-tabs-arcdata" checked>
+  <input type="radio" id="arc-tab3" name="gh-tabs-arcdata">
+  <input type="radio" id="arc-tab4" name="gh-tabs-arcdata">
   
   <ul class="tab-buttons">
-    <li><label for="tab2">Ignition ArcData</label></li>
-    <li><label for="tab3">Heat ArcData</label></li>
-    <li><label for="tab4">End ArcData</label></li>
+    <li><label for="arc-tab2">Ignition ArcData</label></li>
+    <li><label for="arc-tab3">Heat ArcData</label></li>
+    <li><label for="arc-tab4">End ArcData</label></li>
   </ul>
 
-  <div class="tab-content" id="content2">
-    <table class="spec-table" style="margin: 0;">
+  <div class="tab-content" id="arc-content2">
+    <table class="spec-table">
       <thead>
         <tr>
           <th>이름</th>
@@ -233,8 +244,8 @@ tags:
     <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="content3">
-    <table class="spec-table" style="margin: 0;">
+  <div class="tab-content" id="arc-content3">
+    <table class="spec-table">
       <thead>
         <tr>
           <th>이름</th>
@@ -269,8 +280,8 @@ tags:
     <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="content4">
-    <table class="spec-table" style="margin: 0;">
+  <div class="tab-content" id="arc-content4">
+    <table class="spec-table">
       <thead>
         <tr>
           <th>이름</th>
@@ -307,18 +318,18 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab5" name="gh-tabs-params" checked>
-  <input type="radio" id="tab6" name="gh-tabs-params">
-  <input type="radio" id="tab7" name="gh-tabs-params">
+  <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
+  <input type="radio" id="prm-tab6" name="gh-tabs-params">
+  <input type="radio" id="prm-tab7" name="gh-tabs-params">
   
   <ul class="tab-buttons">
-    <li><label for="tab5">Ignition Params</label></li>
-    <li><label for="tab6">Heat Params</label></li>
-    <li><label for="tab7">End Params</label></li>
+    <li><label for="prm-tab5">Ignition Params</label></li>
+    <li><label for="prm-tab6">Heat Params</label></li>
+    <li><label for="prm-tab7">End Params</label></li>
   </ul>
 
-  <div class="tab-content" id="content5">
-    <table class="spec-table" style="margin: 0;">
+  <div class="tab-content" id="prm-content5">
+    <table class="spec-table">
       <thead>
         <tr>
           <th>이름</th>
@@ -348,8 +359,8 @@ tags:
     <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="content6">
-    <table class="spec-table" style="margin: 0;">
+  <div class="tab-content" id="prm-content6">
+    <table class="spec-table">
       <thead>
         <tr>
           <th>이름</th>
@@ -379,8 +390,8 @@ tags:
     <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="content7">
-    <table class="spec-table" style="margin: 0;">
+  <div class="tab-content" id="prm-content7">
+    <table class="spec-table">
       <thead>
         <tr>
           <th>이름</th>
