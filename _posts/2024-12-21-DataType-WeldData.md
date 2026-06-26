@@ -122,31 +122,23 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
-  #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
+  /* 💡 1번째 탭 그룹 제어 (WeldData 변수명 개요) */
+  #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
-  #sm-tab1:checked ~ #sm-content1 { display: block; }
+  #tab1:checked ~ #content1 { display: block; }
 
-  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
-  #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
-  #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
-  #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
+  /* 💡 2번째 탭 그룹 제어 (Weld ArcData 세트) */
+  #tab2:checked ~ .tab-buttons label[for="tab2"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
-  #arc-tab2:checked ~ #arc-content2,
-  #arc-tab3:checked ~ #arc-content3,
-  #arc-tab4:checked ~ #arc-content4 { display: block; }
+  #tab2:checked ~ #content2 { display: block; }
 
-  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
-  #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
-  #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
-  #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
+  /* 💡 3번째 탭 그룹 제어 (Weld Param 세트) */
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
-  #prm-tab5:checked ~ #prm-content5,
-  #prm-tab6:checked ~ #prm-content6,
-  #prm-tab7:checked ~ #prm-content7 { display: block; }
+  #tab6:checked ~ #content6 { display: block; }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -161,12 +153,13 @@ tags:
 | :--- | :--- | :--- |
 | **Weld Sched** | Weld Sched | 사용할 용접 프로그램 번호(스케줄) 및 용접 모드 |
 | **Weight** | Number| wirefeed1에 대한 가중치 |
-| **WeaveData** | WeaveData | ABB WeaveData |
+| **WeaveData** | WeaveData | ABB WeaveData 구성 데이터 |
 
 
 ## | 필수 파라미터 (Required Parameter)
+
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-weavedata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">WeldData</label></li>
   </ul>
@@ -229,10 +222,9 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/WeldData_1.png" align="center" width="32%"></p>
   </div>
-
-<div class="tabs-container">
+</div> <div class="tabs-container">
   <input type="radio" id="tab6" name="gh-tabs-preview" checked>
   <ul class="tab-buttons">
     <li><label for="tab6">Weld Param</label></li>
@@ -251,17 +243,17 @@ tags:
         <tr>
           <td><strong>Weld Speed(mm/s)</strong></td>
           <td>Number</td>
-          <td>시각화 프레임 매트릭스의 크기.</td>
+          <td>용접 중 TCP 선속도 (mm/s). 실제 비드 형상 및 적층 높이를 결정하는 핵심 요소.</td>
         </tr>
         <tr>
           <td><strong>Preview Cycles</strong></td>
           <td>Number</td>
-          <td>용접 중 TCP 속도 (mm/s)</td>
+          <td>컴포넌트 뷰포트 내 용접 궤적 시각화의 반복 사이클 수.</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/WeldData_2.png" align="center" width="32%"></p>
   </div>
 </div>
 
@@ -269,5 +261,5 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **WeldData** | WeldData | ABB WeldData |
+| **WeldData** | WeldData | 설정된 ABB WeldData 구성 스트림을 출력합니다. |
 | **Code** | String | 컴파일된 RAPID 명령 코드를 출력합니다. |
