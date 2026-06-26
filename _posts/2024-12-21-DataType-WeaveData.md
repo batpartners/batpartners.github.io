@@ -124,31 +124,29 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
+  /* 💡 1번째 탭 그룹 제어 (WeaveData 개요) */
   #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #sm-tab1:checked ~ #sm-content1 { display: block; }
 
-  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
+  /* 💡 2번째 탭 그룹 제어 (Dimension / Dwell / Orient / Bias 세트) - 선택자 동기화 완료 */
   #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
   #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
   #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"],
-  #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"] {
+  #arc-tab5:checked ~ .tab-buttons label[for="arc-tab5"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #arc-tab2:checked ~ #arc-content2,
   #arc-tab3:checked ~ #arc-content3,
   #arc-tab4:checked ~ #arc-content4,
-  #prm-tab5:checked ~ #prm-content5 { display: block; }
+  #arc-tab5:checked ~ #arc-content5 { display: block; }
 
-  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
-  #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
-  #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
+  /* 💡 3번째 탭 그룹 제어 (Preview 세트) */
+  #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
-  #prm-tab6:checked ~ #prm-content6,
-  #prm-tab7:checked ~ #prm-content7 { display: block; }
+  #prm-tab6:checked ~ #prm-content6 { display: block; }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -232,7 +230,7 @@ tags:
           <td><strong>Length</strong></td>
           <td>Number</td>
           <td>• Type이 Geometric/Wrist인 경우: 위빙 사이클 길이 (mm)<br>
-              • Type이 Rapid1/Rapid2인 경우:, 위빙 사이클 주파수 (Hz)<br>
+              • Type이 Rapid1/Rapid2인 경우: 위빙 사이클 주파수 (Hz)<br>
               • Shape이 Circular인 경우: 원형 패턴 간격</td>
         </tr>
         <tr>
@@ -248,7 +246,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="arc-content3">
@@ -279,7 +277,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_WeaveData_1.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="arc-content4">
@@ -295,22 +293,22 @@ tags:
         <tr>
           <td><strong>Dir Angle(°)</strong></td>
           <td>Number</td>
-          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
+          <td>진행 방향 경로에 대한 위빙 패턴의 방향 각도(°).</td>
         </tr>
         <tr>
           <td><strong>Tilt Angle(°)</strong></td>
           <td>Number</td>
-          <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
+          <td>표면 또는 토치 오리엔테이션에 대한 위빙 평면의 기울기 각도(°).</td>
         </tr>
         <tr>
           <td><strong>Orient Angle(°)</strong></td>
           <td>Number</td>
-          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
+          <td>위빙 패턴 매트릭스의 회전을 정의하는 오리엔테이션 각도(°).</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_WeaveData_2.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="arc-content5">
@@ -331,18 +329,18 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_WeaveData_3.png" align="center" width="32%"></p>
   </div>
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
+  <input type="radio" id="prm-tab6" name="gh-tabs-params" checked>
   
   <ul class="tab-buttons">
-    <li><label for="prm-tab5">Preview</label></li>
+    <li><label for="prm-tab6">Preview</label></li>
   </ul>
 
-  <div class="tab-content" id="prm-content5">
+  <div class="tab-content" id="prm-content6">
     <table class="spec-table">
       <thead>
         <tr>
@@ -365,7 +363,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
   </div>
 </div>
 
