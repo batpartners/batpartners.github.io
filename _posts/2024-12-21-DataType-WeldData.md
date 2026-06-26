@@ -222,7 +222,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/WeldData_1.png" align="center" width="32%"></p>
+    <p align="center"><img src="/assets/images/WeldData_1.png" align="center" width="32%"></p>
   </div>
 </div> <div class="tabs-container">
   <input type="radio" id="tab6" name="gh-tabs-preview" checked>
@@ -253,7 +253,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/WeldData_2.png" align="center" width="32%"></p>
+    <p align="center"><img src="/assets/images/WeldData_2.png" align="center" width="32%"></p>
   </div>
 </div>
 
