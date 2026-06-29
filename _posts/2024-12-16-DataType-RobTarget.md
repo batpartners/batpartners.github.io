@@ -158,6 +158,8 @@ tags:
 
 # | 입력(Inputs)
 
+*Algin 비활성화 모드*
+
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | Target Planes | Plane | RobTarget으로 변환할 평면 |
