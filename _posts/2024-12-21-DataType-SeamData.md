@@ -224,9 +224,9 @@ tags:
           <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min)</strong></td>
+          <td><strong>Wirefeed(m/min) or (mm/s)</strong></td>
           <td>Number</td>
-          <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
+          <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
         </tr>
         <tr>
           <td><strong>Control</strong></td>
@@ -241,7 +241,10 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
+<p align="center">
+  <img src="/assets/images/7_SeamData.png" style="display: inline-block; width: 32%; margin-right: 5px;">
+  <img src="/assets/images/7_SeamData_3.png" style="display: inline-block; width: 32%; margin-left: 5px;">
+</p>
   </div>
 
   <div class="tab-content" id="arc-content3">
@@ -260,9 +263,9 @@ tags:
           <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min)</strong></td>
+          <td><strong>Wirefeed(m/min) or (mm/s)</strong></td>
           <td>Number</td>
-          <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
+          <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
         </tr>
         <tr>
           <td><strong>Control</strong></td>
@@ -277,7 +280,10 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
+<p align="center">
+  <img src="/assets/images/7_SeamData_1.png" style="display: inline-block; width: 32%; margin-right: 5px;">
+  <img src="/assets/images/7_SeamData_4.png" style="display: inline-block; width: 32%; margin-left: 5px;">
+</p>
   </div>
 
   <div class="tab-content" id="arc-content4">
@@ -296,9 +302,9 @@ tags:
           <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min)</strong></td>
+          <td><strong>Wirefeed(m/min) or (mm/s)</strong></td>
           <td>Number</td>
-          <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
+          <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
         </tr>
         <tr>
           <td><strong>Control</strong></td>
@@ -313,7 +319,10 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
+    <p align="center">
+  <img src="/assets/images/7_SeamData_2.png" style="display: inline-block; width: 32%; margin-right: 5px;">
+  <img src="/assets/images/7_SeamData_5.png" style="display: inline-block; width: 32%; margin-left: 5px;">
+</p>
   </div>
 </div>
 
@@ -339,17 +348,17 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Purge Time</strong></td>
+          <td><strong>Purge Time(s)</strong></td>
           <td>Number</td>
           <td>보호 가스로, 가스 라인과 용접 토치를 채우는 데 걸리는 시간 (초). 만약 용접 시작 위치로 이동하는 시간이 퍼지 시간보다 짧은 경우, 용접 시작 위치에서 퍼지 시간이 만료될 때까지 대기.</td>
         </tr>
         <tr>
-          <td><strong>Purgeflow Time</strong></td>
+          <td><strong>Purgeflow Time(s)</strong></td>
           <td>Number</td>
           <td>보호 가스로, 용접 대상물에 가스를 미리 흘려주는 데 걸리는 시간 (초). 이 시간 동안 로봇은 아크가 점화되기 전까지 해당 위치에서 정지</td>
         </tr>
         <tr>
-          <td><strong>Move Delay</strong></td>
+          <td><strong>Move Delay(s)</strong></td>
           <td>Number</td>
           <td>아크 점화 시점에서 아크가 안정순간부터 가열 단계가 시작될 때가지의 지연 시간 (초)</td>
         </tr>
@@ -375,7 +384,7 @@ tags:
           <td>용접 단계 시작 시, 가열 중의 용접 속도</td>
         </tr>
         <tr>
-          <td><strong>Heat Time</strong></td>
+          <td><strong>Heat Time(s)</strong></td>
           <td>Number</td>
           <td>용접 단계 시작 시, 가열 시간 (초). Heat Time은 Heat Distance 또는 Heat Speed 값이 0인 경우 유효</td>
         </tr>
@@ -401,20 +410,30 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Crater Time</strong></td>
+          <td><strong>Cool Time(s)</strong></td>
           <td>Number</td>
-          <td>용접 종료 단계 시, 크레이터 충전 시간 (초)</td>
+          <td>Filling이 수행되기 전, 공정이 유지되는 시간 (초)</td>
         </tr>
         <tr>
-          <td><strong>Burnback Time</strong></td>
+          <td><strong>Fill Time(s)</strong></td>
           <td>Number</td>
-          <td>용접 종료 시 와이어가 용융 풀에 들러붙는 것을 방지하기 위해, 와이어 송급 정지 후 아크를 유지하는 추가 연소 시간 (초)</td>
+          <td>용접 종료 단계 (end phase), 크레이터 채움 시간 (초)</td>
         </tr>
         <tr>
-          <td><strong>Postflow Time</strong></td>
+          <td><strong>Burn-Back Time(s)</strong></td>
           <td>Number</td>
-          <td>용접이 완전히 끝난 후, 냉각 및 산화 방지를 위해 보호 가스를 추가로 흘려주는 시간 (초)</td>
+          <td>전극 송급이 정지된 후, 용접 전극을 태워 되돌리는 시간 (초). "MIG/MAG 공정이 종료될 때, 전극이 응고 중인 용접부에 달라붙는 것을 방지하며 종료 시점에 두번 사용.<br>첫 번째 : 용접 단계가 종료될 때, 두 번째 : 크레이터 충전(crater-filling)</td>
         </tr>
+        <tr>
+          <td><strong>Rollback Time(s)</strong></td>
+          <td>Number</td>
+          <td>전원이 차단된 후, 콜드 와이어를 되감는 시간 (초). TIG 공정이 종료될 때, 와이어가 응고 중인 용접부에 달라붙는 것을 방지</td>
+        </tr>
+        <tr>
+          <td><strong>Postflow Time(s)</strong></td>
+          <td>Number</td>
+          <td>공정 종료 후, 보호 가스로 퍼지하는 데 필요한 시간 (초). 냉각 중에 용접 전극과 이음부가 산화되는 것을 방지</td>
+        </tr>               
       </tbody>
     </table>
     <br>
