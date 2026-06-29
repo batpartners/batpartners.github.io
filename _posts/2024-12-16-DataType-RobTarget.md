@@ -165,7 +165,7 @@ tags:
 | WobjData | WobjData | ABB 작업 평면 좌표계 |
 | Chaining | Boolean | 작업평면(WorkObj)과 타겟(RobTarget) 관계를 고정하낟. 뷰포트 상에서 작업평면 변경 시 타겟 위치와 방향도 변경할 수 있다. |
 
-
+*Algin 활성화 모드*
 <p align="center"><img src="/assets/images/0_RobTarget_2.png" align="center" width="32%"></p>
 
 | 이름 | 타입 | 설명 |
