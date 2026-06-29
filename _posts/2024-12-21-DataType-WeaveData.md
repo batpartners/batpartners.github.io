@@ -372,4 +372,4 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **WeaveData** | WeaveData | 설정된 ABB WeaveData 구성 스트림을 출력합니다. |
-| **Code** | String | 컴파일된 RAPID 명령 코드를 출력합니다. |
+| **Code** | String | 컴파일된 RAPID 명령 코드를 출력합니다. | 
