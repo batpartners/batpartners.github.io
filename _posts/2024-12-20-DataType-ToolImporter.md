@@ -287,6 +287,3 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **ToolData** | ToolData | 입력한 ABB ToolData를 출력 |
-
-
-<p align="center">  <img src="/assets/images/ToolData_GIF_00-1.gif" align="center" width="100%"></p>
