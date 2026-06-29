@@ -224,7 +224,7 @@ tags:
           <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min) or (mm/s)</strong></td>
+          <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
           <td>Number</td>
           <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
         </tr>
@@ -263,7 +263,7 @@ tags:
           <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min) or (mm/s)</strong></td>
+          <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
           <td>Number</td>
           <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
         </tr>
@@ -302,7 +302,7 @@ tags:
           <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min) or (mm/s)</strong></td>
+          <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
           <td>Number</td>
           <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
         </tr>
