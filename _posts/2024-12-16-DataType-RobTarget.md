@@ -203,6 +203,7 @@ tags:
         </tr>
       </tbody>
     </table>
+ <p align="center"><img src="/assets/images/0_RobTarget_4.png" align="center" width="32%"></p>
   </div>
 </div>
 <div class="tabs-container">
@@ -251,7 +252,7 @@ tags:
         </tr>
       </tbody>
     </table>
- <p align="center"><img src="/assets/images/0_RobTarget_3.png" align="center" width="32%"></p>
+ <p align="center"><img src="/assets/images/0_RobTarget_5.png" align="center" width="32%"></p>
   </div>
 </div>
 
