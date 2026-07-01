@@ -194,6 +194,7 @@ tags:
         </tr>
       </tbody>
     </table>
+<p align="center">  <img src="/assets/images/7_SeamData_10.png" align="center" width="32%"></p>
   </div>
 </div>
 
@@ -242,7 +243,7 @@ tags:
     </table>
     <br>
 <p align="center">
-  <img src="/assets/images/7_SeamData.png" style="display: inline-block; width: 32%; margin-right: 5px;">
+  <img src="/assets/images/7_SeamData_11.png" style="display: inline-block; width: 32%; margin-right: 5px;">
   <img src="/assets/images/7_SeamData_3.png" style="display: inline-block; width: 32%; margin-left: 5px;">
 </p>
   </div>
@@ -281,7 +282,7 @@ tags:
     </table>
     <br>
 <p align="center">
-  <img src="/assets/images/7_SeamData_1.png" style="display: inline-block; width: 32%; margin-right: 5px;">
+  <img src="/assets/images/7_SeamData_12.png" style="display: inline-block; width: 32%; margin-right: 5px;">
   <img src="/assets/images/7_SeamData_4.png" style="display: inline-block; width: 32%; margin-left: 5px;">
 </p>
   </div>
@@ -320,7 +321,7 @@ tags:
     </table>
     <br>
     <p align="center">
-  <img src="/assets/images/7_SeamData_2.png" style="display: inline-block; width: 32%; margin-right: 5px;">
+  <img src="/assets/images/7_SeamData_13.png" style="display: inline-block; width: 32%; margin-right: 5px;">
   <img src="/assets/images/7_SeamData_5.png" style="display: inline-block; width: 32%; margin-left: 5px;">
 </p>
   </div>
@@ -365,7 +366,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_13_1.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="prm-content6">
@@ -396,7 +397,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_14.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="prm-content7">
@@ -437,7 +438,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_15.png" align="center" width="32%"></p>
   </div>
 </div>
 
