@@ -192,6 +192,7 @@ triggios 배열의 단일 I/O 트리거 이벤트 정의. 대상 출력 신호, 
         </tr>        
       </tbody>
     </table>
+<p align="center">  <img src="/assets/images/4_IOEvent_1.png" align="center" width="32%"></p>
   </div>
 </div>
 <div class="tabs-container">
@@ -231,6 +232,7 @@ triggios 배열의 단일 I/O 트리거 이벤트 정의. 대상 출력 신호, 
         </tr>          
       </tbody>
     </table>
+<p align="center">  <img src="/assets/images/4_IOEvent_2.png" align="center" width="32%"></p>
   </div>
 </div>
 
