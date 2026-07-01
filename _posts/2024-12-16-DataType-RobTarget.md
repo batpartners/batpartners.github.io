@@ -229,6 +229,7 @@ tags:
         </tr>
       </tbody>
     </table>
+ <p align="center"><img src="/assets/images/0_RobTarget_5.png" align="center" width="32%"></p>
   </div>
   <div class="tab-content" id="content3">
     <table class="spec-table" style="margin: 0 0 20px 0;">
@@ -252,7 +253,7 @@ tags:
         </tr>
       </tbody>
     </table>
- <p align="center"><img src="/assets/images/0_RobTarget_5.png" align="center" width="32%"></p>
+ <p align="center"><img src="/assets/images/0_RobTarget_6.png" align="center" width="32%"></p>
   </div>
 </div>
 
