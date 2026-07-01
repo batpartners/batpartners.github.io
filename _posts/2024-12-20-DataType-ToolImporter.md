@@ -184,7 +184,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Tool Name</strong></td>
+          <td><strong>Name</strong></td>
           <td>String</td>
           <td>생성할 `ToolData` 변수 정의.</td>
         </tr>
@@ -195,6 +195,7 @@ tags:
         </tr>        
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/3_ToolData_20.png" align="center" width="32%"></p>
   </div>
 </div>
 
@@ -237,7 +238,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/3_ToolData_3.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/3_ToolData_21.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -258,7 +259,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/3_ToolData_4.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/3_ToolData_22.png" align="center" width="32%"></p>
   </div>
   <div class="tab-content" id="content4">
     <table class="spec-table">
@@ -278,7 +279,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/3_ToolData_5.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/3_ToolData_23.png" align="center" width="32%"></p>
   </div>  
 </div>
 
