@@ -1,20 +1,16 @@
 ---
 title: "ABBRobot"
-
 layout: single
 header:
   teaser: "/assets/images/ABBRobot.png"
-
 collection: RobotTool
 entries_layout: grid
 author_profile: true
-
 categories:
   - RobotTool
 translated: true
 lang: ko
 permalink: /robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option
-
 translation_link: /en/robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option
 sidebar:
   nav: "sidebar"
@@ -22,7 +18,6 @@ toc: true
 toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
-
 tags: 
   - GERTY
 ---
@@ -128,8 +123,7 @@ tags:
   #tab2:checked ~ .tab-buttons label[for="tab2"],
   #tab3:checked ~ .tab-buttons label[for="tab3"],
   #tab4:checked ~ .tab-buttons label[for="tab4"],
-  #tab5:checked ~ .tab-buttons label[for="tab5"],
-  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+  #tab5:checked ~ .tab-buttons label[for="tab5"] {
     background: #fff;
     color: #e53935;
     border-bottom: 1px solid #fff;
@@ -143,15 +137,8 @@ tags:
   #tab2:checked ~ #content2,
   #tab3:checked ~ #content3,
   #tab4:checked ~ #content4,
-  #tab5:checked ~ #content5,
-  #tab6:checked ~ #content6 { 
+  #tab5:checked ~ #content5 { 
     display: block; 
-  }
-
-  /* 탭 전환시 부드러운 페이드인 애니메이션 */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(2px); }
-    to { opacity: 1; transform: translateY(0); }ddd
   }
 </style>
 
@@ -171,7 +158,7 @@ tags:
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-robot" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">ABB Robots</label></li>
   </ul>
@@ -202,8 +189,8 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-options" checked>
-  <input type="radio" id="tab3" name="gh-tabs-options">
+  <input type="radio" id="tab2" name="gh-tabs-linear" checked>
+  <input type="radio" id="tab3" name="gh-tabs-linear">
   
   <ul class="tab-buttons">
     <li><label for="tab2">Robot Linear Jog</label></li>
@@ -232,8 +219,7 @@ tags:
         <tr>
           <td><strong>Config Option</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: cfx = 1. 로봇 축 4, 6의 구성(Configuration) 반전<br>
-              • FALSE: cfx = 0 기본값</td>
+          <td>• TRUE: cfx = 1. 로봇 축 4, 6의 구성(Configuration) 반전<br>• FALSE: cfx = 0 기본값</td>
         </tr>        
       </tbody>
     </table>
@@ -264,14 +250,14 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab4" name="gh-tabs-options" checked>
-  <input type="radio" id="tab5" name="gh-tabs-options">
+  <input type="radio" id="tab4" name="gh-tabs-joint" checked>
+  <input type="radio" id="tab5" name="gh-tabs-joint">
   
   <ul class="tab-buttons">
     <li><label for="tab4">Robot Joint Jog</label></li>
     <li><label for="tab5">External Joint Jog</label></li>
   </ul>
-  <div class="tab-content" id="content2">
+  <div class="tab-content" id="content4">
     <table class="spec-table">
       <thead>
         <tr>
@@ -310,14 +296,14 @@ tags:
           <td><strong>RobAx 6</strong></td>
           <td>Number</td>
           <td>로봇 6번 축</td>
-        </tr>                              
+        </tr>                                      
       </tbody>
     </table>
     <br>    
     <p align="center">  <img src="/assets/images/0_ABBRobot_20.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="content3">
+  <div class="tab-content" id="content5">
     <table class="spec-table">
       <thead>
         <tr>
@@ -333,27 +319,27 @@ tags:
           <td>부가축 1번</td>
         </tr>
         <tr>
-          <td><strong>RobAx 2</strong></td>
+          <td><strong>ExtAx 2</strong></td>
           <td>Number</td>
           <td>부가축 2번 축</td>
         </tr>
         <tr>
-          <td><strong>RobAx 3</strong></td>
+          <td><strong>ExtAx 3</strong></td>
           <td>Number</td>
           <td>부가축 3번 축</td>
         </tr>
         <tr>
-          <td><strong>RobAx 4</strong></td>
+          <td><strong>ExtAx 4</strong></td>
           <td>Number</td>
           <td>부가축 4번 축</td>
         </tr>
         <tr>
-          <td><strong>RobAx 5</strong></td>
+          <td><strong>ExtAx 5</strong></td>
           <td>Number</td>
           <td>부가축 5번 축</td>
         </tr>
         <tr>
-          <td><strong>RobAx 6</strong></td>
+          <td><strong>ExtAx 6</strong></td>
           <td>Number</td>
           <td>부가축 6번 축</td>
         </tr> 
