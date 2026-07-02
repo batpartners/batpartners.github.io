@@ -3,17 +3,14 @@ title: "Positioner"
 layout: single
 header:
   teaser: "/assets/images/Positioner.png"
-
 collection: RobotTool
 entries_layout: grid
 author_profile: true
-
 categories:
   - RobotTool
 translated: true
 lang: ko
 permalink: /robottool/RobotTool-Positioner/
-
 translation_link: /en/robottool/RobotTool-Positioner/
 sidebar:
   nav: "sidebar"
@@ -21,7 +18,6 @@ toc: true
 toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
-
 tags: 
   - GERTY
 ---
@@ -122,7 +118,7 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
+  /* 💡 최대 6개까지 대응 가능한 라벨 활성화 스타일 */
   #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],
   #tab3:checked ~ .tab-buttons label[for="tab3"],
@@ -137,7 +133,7 @@ tags:
     z-index: 2;
   }
 
-  /* 라디오 버튼 체크 상태에 따른 콘텐츠 표시 제어 */
+  /* 💡 최대 6개까지 대응 가능한 콘텐츠 표시 제어 */
   #tab1:checked ~ #content1,
   #tab2:checked ~ #content2,
   #tab3:checked ~ #content3,
@@ -145,12 +141,6 @@ tags:
   #tab5:checked ~ #content5,
   #tab6:checked ~ #content6 { 
     display: block; 
-  }
-
-  /* 탭 전환시 부드러운 페이드인 애니메이션 */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(2px); }
-    to { opacity: 1; transform: translateY(0); }ddd
   }
 </style>
 
@@ -164,9 +154,9 @@ tags:
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-model" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ABB Robots</label></li>
+    <li><label for="tab1">ABB Positioner</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -209,6 +199,7 @@ tags:
     <li><label for="tab3">RAPID</label></li>
     <li><label for="tab4">Preview</label></li>
   </ul>
+
   <div class="tab-content" id="content2">
     <table class="spec-table">
       <thead>
@@ -251,16 +242,15 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Color</strong></td>
-          <td>Color</td>
-          <td>시각화 색상</td>
+          <td><strong>Mechanical Unit</strong></td>
+          <td>String</td>
+          <td>RAPID 구문 내 MechUnit 매핑 파라미터</td>
         </tr>
       </tbody>
     </table>
     <br>    
     <p align="center">  <img src="/assets/images/1_ABBPositioner_12.png" align="center" width="32%"></p>
   </div>
-</div>
 
   <div class="tab-content" id="content4">
     <table class="spec-table">
