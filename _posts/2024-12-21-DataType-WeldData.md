@@ -33,6 +33,7 @@ tags:
 # Description
 
 아크가 안정적으로 유지되는 실제 용접 구간의 파라미터 정의. 심을 따라 적용되는 용접 속도, 전압, 와이어 송급 조건 등 지정.
+
 <p align="center"><img src="/assets/images/8_WeldData.png" align="center" width="32%"></p>
 
 <style>
@@ -181,6 +182,7 @@ tags:
         </tr>
       </tbody>
     </table>
+<p align="center"><img src="/assets/images/8_WeldData_10.png" align="center" width="32%"></p>
   </div>
 </div>
 
@@ -223,7 +225,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center"><img src="/assets/images/8_WeldData.png" align="center" width="32%"></p>
+    <p align="center"><img src="/assets/images/8_WeldData_11.png" align="center" width="32%"></p>
   </div>
 </div> <div class="tabs-container">
   <input type="radio" id="tab6" name="gh-tabs-preview" checked>
@@ -254,7 +256,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center"><img src="/assets/images/8_WeldData_1.png" align="center" width="32%"></p>
+    <p align="center"><img src="/assets/images/8_WeldData_12.png" align="center" width="32%"></p>
   </div>
 </div>
 
