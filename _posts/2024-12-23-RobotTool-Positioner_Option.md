@@ -28,7 +28,7 @@ tags:
 
 컴포넌트 아이콘 우클릭 후, [Define Positioner] 선택시 노출. 포지셔너 장치의 기구학 구성 정의.
 
-<p align="center">  <img src="/assets/images/1_ABBPositioner_3.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/1_ABBPositioner_3_1.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
