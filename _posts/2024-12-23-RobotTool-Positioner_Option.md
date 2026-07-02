@@ -10,8 +10,8 @@ categories:
   - RobotTool
 translated: true
 lang: ko
-permalink: /robottool/RobotTool-Positioner/
-translation_link: /en/robottool/RobotTool-Positioner/
+permalink: /robottool/RobotTool-Positioner/RobotTool-Positioner_Option
+translation_link: /en/robottool/RobotTool-Positioner/RobotTool-Positioner_Option
 sidebar:
   nav: "sidebar"
 toc: true
@@ -26,9 +26,9 @@ tags:
 
 # Description
 
-포지셔너 장치의 기구학 구성 정의. 축 형상 직접 지정, 또는 ABB IRBP 시리즈 카탈로그에서 선택 지원.
+컴포넌트 아이콘 우클릭 후, [Define Positioner] 선택시 노출. 포지셔너 장치의 기구학 구성 정의.
 
-<p align="center">  <img src="/assets/images/1_ABBPositioner.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/1_ABBPositioner_3.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -148,6 +148,8 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
+| **Positioner Geo** | Mesh | 포지셔너 각 링크의 형상 메시. |
+| **Joint Planes** | Plane | 고정 베이스부터 플랜지까지 포지셔너의 기구학 체인을 순서대로 정의하는 평면 리스트.<br>고정 기준 좌표계(Base) - 각 회전축 좌표계(J1, J2, ...) - 워크밴치/워크피스 부착면(Flange)에 순서대로 설정.(즉, N축 포지셔너의 경우 총 N+2개 평면 입력 필요.) |
 | **Mounting Plane** | Plane | 포지셔너의 플랜지 평면. 워크벤치(작업대)가 장착되는 상단 기준면. 기본값: WorldXY. |
 | **Workbench** | Workbench | 포지셔너 플랜지에 장착되는 워크벤치(작업대) 정의 (선택). |
 
@@ -174,15 +176,10 @@ tags:
           <td>포지셔너(MechUnit) 변수명</td>
         </tr>
         <tr>
-          <td><strong>Positioner Model</strong></td>
+          <td><strong>Axis Type</strong></td>
           <td>String</td>
           <td>ABB 포지셔너 모델</td>
         </tr>        
-        <tr>
-          <td><strong>Spec</strong></td>
-          <td>String</td>
-          <td>선택한 ABB 포지셔너 모델 스펙 — 작업 직경(D) 및 플레이트 높이(H)</td>
-        </tr>
       </tbody>
     </table>
     <p align="center">  <img src="/assets/images/1_ABBPositioner_10.png" align="center" width="32%"></p>

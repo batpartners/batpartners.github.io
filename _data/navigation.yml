@@ -54,6 +54,9 @@ sidebar:
             url: /robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option
       - title: "Positioner"
         url: /robottool/RobotTool-Positioner/
+        children:
+          - title: "Extra Option"
+            url: /robottool/RobotTool-Positioner/RobotTool-Positioner_Option
       - title: "CreateWorkBench"
         url: /robottool/RobotTool-CreateWorkbench/
       - title: "ToolPointerEdit"
