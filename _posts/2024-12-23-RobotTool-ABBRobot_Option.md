@@ -184,7 +184,7 @@ tags:
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/0_ABBRobot.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/0_ABBRobot_10.png" align="center" width="32%"></p>
   </div>
 </div>
 
@@ -224,7 +224,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/0_ABBRobot.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -245,7 +245,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/0_ABBRobot_1.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/0_ABBRobot_12.png" align="center" width="32%"></p>
   </div>
 </div>
 
