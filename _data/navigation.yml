@@ -49,6 +49,9 @@ sidebar:
     children:
       - title: "ABBRobot"
         url: /robottool/RobotTool-ABBRobot/
+        children:
+          - title: "Extra Option"
+            url: /robottool/RobotTool-ABBRobot/RobotTool-ABBRobot-ExtraOption/
       - title: "Positioner"
         url: /robottool/RobotTool-Positioner/
       - title: "CreateWorkBench"

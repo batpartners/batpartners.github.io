@@ -13,9 +13,9 @@ categories:
   - RobotTool
 translated: true
 lang: ko
-permalink: /robottool/RobotTool-ABBRobot/
+permalink: /robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option
 
-translation_link: /en/robottool/RobotTool-ABBRobot/
+translation_link: /en/robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option
 sidebar:
   nav: "sidebar"
 toc: true
@@ -31,9 +31,9 @@ tags:
 
 # Description
 
-사용할 ABB 로봇 정의. ABB IRB 시리즈 카탈로그의 사전 정의된 제원에서 선택.
+사용할 ABB 로봇 정의. 컴포넌트 아이콘 우클릭, [Show joint Jog Params]을 선택하여 선택한 로봇의 각 축을 설정할 수 있음. ABB IRB 시리즈 카탈로그의 사전 정의된 제원에서 선택.
 
-<p align="center">  <img src="/assets/images/0_ABBRobot.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/0_ABBRobot_2.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -197,7 +197,7 @@ tags:
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/0_ABBRobot_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/0_ABBRobot.png" align="center" width="32%"></p>
   </div>
 </div>
 
@@ -238,7 +238,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/0_ABBRobot.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -259,10 +259,110 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/0_ABBRobot_12.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/0_ABBRobot_1.png" align="center" width="32%"></p>
   </div>
 </div>
 
+<div class="tabs-container">
+  <input type="radio" id="tab4" name="gh-tabs-options" checked>
+  <input type="radio" id="tab5" name="gh-tabs-options">
+  
+  <ul class="tab-buttons">
+    <li><label for="tab4">Robot Joint Jog</label></li>
+    <li><label for="tab5">External Joint Jog</label></li>
+  </ul>
+  <div class="tab-content" id="content2">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>RobAx 1</strong></td>
+          <td>Number</td>
+          <td>로봇 1번 축</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 2</strong></td>
+          <td>Number</td>
+          <td>로봇 2번 축</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 3</strong></td>
+          <td>Number</td>
+          <td>로봇 3번 축</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 4</strong></td>
+          <td>Number</td>
+          <td>로봇 4번 축</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 5</strong></td>
+          <td>Number</td>
+          <td>로봇 5번 축</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 6</strong></td>
+          <td>Number</td>
+          <td>로봇 6번 축</td>
+        </tr>                              
+      </tbody>
+    </table>
+    <br>    
+    <p align="center">  <img src="/assets/images/0_ABBRobot_20.png" align="center" width="32%"></p>
+  </div>
+
+  <div class="tab-content" id="content3">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ExtAx 1</strong></td>
+          <td>Number</td>
+          <td>부가축 1번</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 2</strong></td>
+          <td>Number</td>
+          <td>부가축 2번 축</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 3</strong></td>
+          <td>Number</td>
+          <td>부가축 3번 축</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 4</strong></td>
+          <td>Number</td>
+          <td>부가축 4번 축</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 5</strong></td>
+          <td>Number</td>
+          <td>부가축 5번 축</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 6</strong></td>
+          <td>Number</td>
+          <td>부가축 6번 축</td>
+        </tr> 
+      </tbody>
+    </table>
+    <br>    
+    <p align="center">  <img src="/assets/images/0_ABBRobot_21.png" align="center" width="32%"></p>
+  </div>
+</div>
 
 # | 출력(Output)
 
