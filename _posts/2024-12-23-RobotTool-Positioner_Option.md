@@ -182,7 +182,7 @@ tags:
         </tr>        
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_30.png" align="center" width="32%"></p>
   </div>
 </div>
 
@@ -213,7 +213,7 @@ tags:
           <td>포지셔너의 암 동작 활성화</td>
         </tr>
         <tr>
-          <td><strong>Approach Direction</strong></td>
+          <td><strong>Approach Dir</strong></td>
           <td>Number</td>
           <td>포지셔너 기준 TCP의 접근 방향. 포지셔너가 이 방향으로의 접근을 기준으로 회전 자세 결정.</td>
         </tr>
@@ -225,7 +225,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_11.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_31.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -239,14 +239,19 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Mechanical Unit</strong></td>
+          <td><strong>Arm Joint Index</strong></td>
           <td>String</td>
-          <td>RAPID 구문 내 MechUnit 매핑 파라미터</td>
+          <td>포지셔너 암(Arm) 축 각도를 할당할, RobTarget 내부 ExtJoint 배열의 인덱스 (1~6). 다른 외부축 인덱스와 중복 불가.<br>"- 예: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]</td>
         </tr>
+        <tr>
+          <td><strong>Plate Joint Index</strong></td>
+          <td>String</td>
+          <td>포지셔너 플레이트(Plate) 축 각도를 할당할 RobTarget ExtJoint 배열의 인덱스 (1~6). 다른 외부축 인덱스와 중복 불가.<br>- 예: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]</td>
+        </tr>        
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_12.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_32.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="content4">
@@ -267,7 +272,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_13.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_33.png" align="center" width="32%"></p>
   </div>
 </div>
 
