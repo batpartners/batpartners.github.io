@@ -30,36 +30,262 @@ tags:
 
 # Description
 
-* ABB Positioner 기종 모델링을 사용자 정의할 수 있는 컴포넌트이다.
+포지셔너 장치의 기구학 구성 정의. 축 형상 직접 지정, 또는 ABB IRBP 시리즈 카탈로그에서 선택 지원.
 
-<p align="center">  <img src="/assets/images/Positioner.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/1_ABBPositioner.png" align="center" width="32%"></p>
 
-# Input
+<style>
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+  .page__content table,
+  .page__content .spec-table,
+  .tab-content table, 
+  .tab-content .spec-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    margin: 20px 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  .page__content table th:nth-child(1), .page__content table td:nth-child(1),
+  .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
+  
+  .page__content table th:nth-child(2), .page__content table td:nth-child(2),
+  .tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { width: 15% !important; }
+  
+  .page__content table th:nth-child(3), .page__content table td:nth-child(3),
+  .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-* **Name [Text]** : Positioner 고유이름을 설정할 수 있다. 설정하지 않을 경우, 기본값으로 STN1으로 출력된다.
-* **PositionerFCPL [Plane]**: Positioner Flange Center Plane의 약자로, 포지셔너 플랜지의 센터 플래인을 넣을 수 있다.
-* **WorkBench [WorkBench Data]** : Positioner의 workbench 모델링을 넣을 수 있다.
+  /* 탭 시스템 전체 컨테이너 */
+  .tabs-container {
+    position: relative;
+    margin: 30px 0;
+    min-height: 160px;
+    width: 100% !important;
+    clear: both;
+  }
 
-## Built-in Param : Preview Params​
+  /* 라디오 버튼 숨기기 */
+  .tabs-container input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
 
-* **Model** : 포지셔너 모델을 지정한다.
-* **Positioner Colour** : 포지셔너 모델의 색을 재정의한다.
+  /* 탭 버튼 스타일 (상단 바 정렬) */
+  .tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+  }
+  .tab-buttons li {
+    margin: 0;
+    padding: 0;
+  }
 
-## Built-in Param : Vector Params​
+  .tab-buttons label {
+    display: block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #f5f5f5;
+    color: #777;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition: all 0.2s ease;
+  }
 
-* **Enable Arm** : 포지셔너의 자세를 고정시킬 수 있다. 기본설정은 포지셔너 암 고정이 해제 되어있다.
-* **Approaching Dir.** : 포지셔너에 접근하는 경로의 방향을 재정의한한다.
-* **TCP Dir.** : 포지셔너에 접근하는 TCP의 방향을 재정의 재정의한한다.
-<br>
+  .tab-buttons label:hover {
+    background: #e9e9e9;
+    color: #333;
+  }
 
-# Output
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
 
-* **GERTY Positioner** : 사용자 정의 된 포지셔너의 정보를 내보낸다.
-* **Arm** : 로봇 암 현재 자세의 좌표값을 내보낸다.
-* **Plate** :  로봇 작업대의 현재 Plane의 좌표값을 내보낸다.
-* **ConnectPl** :  로봇 작업대와 포지셔너가 연결된 좌표 평면을 출력한다.
+  /* 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
+  #tab1:checked ~ .tab-buttons label[for="tab1"],
+  #tab2:checked ~ .tab-buttons label[for="tab2"],
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"],
+  #tab5:checked ~ .tab-buttons label[for="tab5"],
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
+  }
 
-<p align="center"> 
-<video src="/assets/images/Workbench_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
-</video>
-</p>
+  /* 라디오 버튼 체크 상태에 따른 콘텐츠 표시 제어 */
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6 { 
+    display: block; 
+  }
+
+  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }ddd
+  }
+</style>
+
+# | 입력(Input)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **Mounting Plane** | Plane | 포지셔너의 플랜지 평면. 워크벤치(작업대)가 장착되는 상단 기준면. 기본값: WorldXY. |
+| **Workbench** | Workbench | 포지셔너 플랜지에 장착되는 워크벤치(작업대) 정의 (선택). |
+
+## | 필수 파라미터 (Required Parameter)
+
+<div class="tabs-container">
+  <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
+  <ul class="tab-buttons">
+    <li><label for="tab1">ABB Robots</label></li>
+  </ul>
+  <div class="tab-content" id="content1">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>MechUnit Name</strong></td>
+          <td>String</td>
+          <td>포지셔너(MechUnit) 변수명</td>
+        </tr>
+        <tr>
+          <td><strong>Positioner Model</strong></td>
+          <td>String</td>
+          <td>ABB 포지셔너 모델</td>
+        </tr>        
+        <tr>
+          <td><strong>Spec</strong></td>
+          <td>String</td>
+          <td>선택한 ABB 포지셔너 모델 스펙 — 작업 직경(D) 및 플레이트 높이(H)</td>
+        </tr>
+      </tbody>
+    </table>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_10.png" align="center" width="32%"></p>
+  </div>
+</div>
+
+<div class="tabs-container">
+  <input type="radio" id="tab2" name="gh-tabs-options" checked>
+  <input type="radio" id="tab3" name="gh-tabs-options">
+  <input type="radio" id="tab4" name="gh-tabs-options">
+  
+  <ul class="tab-buttons">
+    <li><label for="tab2">Motion</label></li>
+    <li><label for="tab3">RAPID</label></li>
+    <li><label for="tab4">Preview</label></li>
+  </ul>
+  <div class="tab-content" id="content2">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Enable Arm</strong></td>
+          <td>Toggle</td>
+          <td>포지셔너의 암 동작 활성화</td>
+        </tr>
+        <tr>
+          <td><strong>Approach Direction</strong></td>
+          <td>Number</td>
+          <td>포지셔너 기준 TCP의 접근 방향. 포지셔너가 이 방향으로의 접근을 기준으로 회전 자세 결정.</td>
+        </tr>
+        <tr>
+          <td><strong>TCP Dir</strong></td>
+          <td>Number</td>
+          <td>포지셔너가 최종적으로 정렬시킬 TCP의 방향</td>
+        </tr>        
+      </tbody>
+    </table>
+    <br>    
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_11.png" align="center" width="32%"></p>
+  </div>
+
+  <div class="tab-content" id="content3">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Color</strong></td>
+          <td>Color</td>
+          <td>시각화 색상</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>    
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_12.png" align="center" width="32%"></p>
+  </div>
+</div>
+
+  <div class="tab-content" id="content4">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Color</strong></td>
+          <td>Color</td>
+          <td>시각화 색상</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>    
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_13.png" align="center" width="32%"></p>
+  </div>
+</div>
+
+# | 출력(Output)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **Positioner** | Positioner | 로봇과 연동할 외부축 포지셔너 (Positioner). |
