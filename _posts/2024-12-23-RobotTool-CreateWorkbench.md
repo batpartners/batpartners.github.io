@@ -185,7 +185,7 @@ tags:
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/2_Workbench_.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/2_Workbench_20.png" align="center" width="32%"></p>
   </div>
 </div>
 
@@ -215,7 +215,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/2_Workbench_.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/2_Workbench_21.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -229,7 +229,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/2_Workbench_.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/2_Workbench_22.png" align="center" width="32%"></p>
   </div>
 </div>
 
