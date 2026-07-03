@@ -237,5 +237,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Robot Setup** | Robot Setup | 구성된 로봇 셋업. 베이스·툴·포지셔너·주변 모델이 묶인 로봇 정의. |
-| **Current TCP** | Plane | 로봇 셋업의 현재 TCP 평면. |
+| **Workbench** | Workbench | 성된 작업대 정의. |
