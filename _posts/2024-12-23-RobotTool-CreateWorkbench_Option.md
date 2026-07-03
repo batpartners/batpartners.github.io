@@ -13,9 +13,9 @@ categories:
   - RobotTool
 translated: true
 lang: ko
-permalink: /robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench Option
+permalink: /robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option
 
-translation_link: /en/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench Option
+translation_link: /en/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option
 sidebar:
   nav: "sidebar"
 toc: true
