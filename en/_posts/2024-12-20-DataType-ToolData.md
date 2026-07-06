@@ -45,9 +45,9 @@ Defines custom tool (end-effector) data. Supports switching between Define mode 
 | **TCP** | Plane | The position of the TCP (Tool Center Point) at the end of the tool. Defines its position and orientation relative to the tool base (Base Plane). |
 | **Tool Load** | ToolLoad | The load data (LoadData) of the tool. If not connected, it is estimated and generated based on the bounding box of the tool geometry. |
 
-<p align="center"> 
+<!-- <p align="center"> 
 <video src="/assets/images/ToolData_Export.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Tool Export</figcaption>
-</p>
+</p> -->
 
 ## | Required Parameter
 
