@@ -165,10 +165,6 @@ tags:
 | **TCP** | Plane | 툴 끝단의 TCP (Tool Center Point) 위치. 툴 베이스 (Base Plane)를 기준으로 한 위치와 방향을 정의 |
 | **Tool Load** | ToolLoad | 툴의 부하 데이터 (LoadData). 연결되지 않은 경우, 도구 지오메트리의 경계 상자 (Bounding box)에서 추정하여 작성 |
 
-<p align="center"> 
-<video src="/assets/images/ToolData_Export.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Tool Export</figcaption>
-</p>
-
 ## | 필수 파라미터 (Required Parameter)
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
@@ -289,4 +285,4 @@ tags:
 | **ToolData** | ToolData | 입력한 ABB ToolData를 출력 |
 
 
-<p align="center">  <img src="/assets/images/ToolData_GIF_00-1.gif" align="center" width="100%"></p>
+<p align="center">  <img src="/assets/images/ToolData_GIF_00.mp4" align="center" width="100%"></p>
