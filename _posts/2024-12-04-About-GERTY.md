@@ -28,9 +28,8 @@ tags:
 🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # About GERTY
-<figure>
-	<a href="/assets/images/30.jpg"></a>
-</figure>
+
+<p align="center">  <img src="/assets/images/30.jpg" align="center" width="80%"></p>
 
 GERTY는 로봇암 기반의 맞춤형 가공 기법의 프로그래밍을 돕는 CAM 소프트웨어 솔루션이다.
 
