@@ -33,7 +33,7 @@ tags:
 
 포지셔너(외부축) 회전각을 포함한 RobTarget 정의. 우클릭 컨텍스트 메뉴로 Dynamic, Static 모드 전환.
 
-<p align="center"><img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/1_Positioner Robtarget.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -224,7 +224,7 @@ tags:
       </tbody>
     </table>
     <p align="center" style="margin: 15px 0 0 0;">
-      <img src="/assets/images/1_Positioner_Robtarget.png" width="38%" style="margin-right: 15px;" alt="Default Mode"><img src="/assets/images/1_Positioner_Robtarget_2.png" width="38%" alt="Toggled Mode">
+      <img src="/assets/images/1_Positioner Robtarget.png" width="38%" style="margin-right: 15px;" alt="Default Mode"><img src="/assets/images/1_Positioner Robtarget_2.png" width="38%" alt="Toggled Mode">
     </p>
   </div>
 </div>

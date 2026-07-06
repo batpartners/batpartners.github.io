@@ -61,7 +61,7 @@ sidebar:
         url: /robottool/RobotTool-CreateWorkbench/
         children:
           - title: "Extra Option"
-            url: /robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option
+            url: /robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Optionddd
       - title: "ToolPointerEdit"
         url: /robottool/RobotTool-ToolPointerEdit/
       - title: "Workbench Importer"
