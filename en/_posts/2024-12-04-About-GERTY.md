@@ -27,9 +27,9 @@ tags:
 🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # About GERTY
-<figure>
-	<a href="/assets/images/30.jpg"><img src="/assets/images/30.jpg"></a>
-</figure>
+
+<p align="center">  <img src="/assets/images/30.jpg" align="center" width="80%"></p>
+
 
 GERTY is a CAM software solution designed to assist in the programming of custom machining techniques based on robotic arms.
 
