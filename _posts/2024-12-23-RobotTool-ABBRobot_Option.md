@@ -151,9 +151,6 @@ tags:
 | **Positioner** | Positioner | 로봇과 연동할 외부축 포지셔너 (Positioner). |
 | **Pedestal** | Mesh | 로봇 받침대·작업대 등 주변 환경 메시 (선택). |
 
-<p align="center"> 
-<video src="/assets/images/ToolData_Export.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Tool Export</figcaption>
-</p>
 
 ## | 필수 파라미터 (Required Parameter)
 
