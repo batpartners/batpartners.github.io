@@ -158,7 +158,7 @@ tags:
 | **Workpieces** | Mesh | 작업물 형상 메시 (선택) |
 
 <p align="center"> 
-<video src="/assets/images/WorkbenchImporter_gif.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Tool Export</figcaption>
+<video src="/assets/images/WorkbenchImporter_gif.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video>
 </p>
 
 ## | 필수 파라미터 (Required Parameter)
