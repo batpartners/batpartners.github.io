@@ -194,7 +194,7 @@ tags:
         </tr>                
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/8_WeldData_10.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/3_ArcMove_1.png" align="center" width="32%"></p>
   </div>
 </div>
 
