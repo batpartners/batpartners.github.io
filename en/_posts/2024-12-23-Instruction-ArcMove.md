@@ -1,17 +1,17 @@
 ---
-title: "CreateWorkbench"
+title: "ArcMove"
 layout: single
 header:
-  teaser: "/assets/images/2_Workbench_2.png"
-collection: RobotTool
+  teaser: "/assets/images/ArcMove.png"
+collection: Datatype
 entries_layout: grid
 author_profile: true
 categories:
-  - RobotTool
+  - Instruction
 translated: true
 lang: en
-permalink: /en/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option
-translation_link: /ko/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option
+permalink: /en/instruction/Instruction-ArcMove/
+translation_link: /ko/instruction/Instruction-ArcMove/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -22,14 +22,13 @@ tags:
   - GERTY
 ---
 
-🌐 [KO]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Defines the workbench for the positioner.
+Generates ABB arc instructions for welding (ArcLStart, ArcL, ArcLEnd).
 
-<p align="center">  <img src="/assets/images/2_Workbench.png" align="center" width="32%"></p>
-
+<p align="center"><img src="/assets/images/3_ArcMove.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [Unify Table Width] Expand all markdown tables in the body and tables inside tabs to 100% of the screen width */
@@ -44,7 +43,7 @@ Defines the workbench for the positioner.
     table-layout: fixed !important;       /* Forcefully fix cell width ratio within the table */
     word-break: break-all !important;     /* Prevent cell shrinkage and allow line breaks for long text inputs */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;
+    box-sizing: border-box !important;    /* Absolutely prevent horizontal overflow due to padding */
   }
   
   /* 💡 [Unify Column Ratio] Match the structure of 1st column (20%), 2nd column (15%), and 3rd column (65%) identically for all tables */
@@ -119,49 +118,28 @@ Defines the workbench for the positioner.
     box-sizing: border-box !important;
   }
 
-  /* Active tab style */
-  #tab1:checked ~ .tab-buttons label[for="tab1"],
-  #tab2:checked ~ .tab-buttons label[for="tab2"],
-  #tab3:checked ~ .tab-buttons label[for="tab3"],
-  #tab4:checked ~ .tab-buttons label[for="tab4"],
-  #tab5:checked ~ .tab-buttons label[for="tab5"] {
-    background: #fff;
-    color: #e53935;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 13px;
-    margin-bottom: -1px;
-    z-index: 2;
+  /* 💡 Active tab label style */
+  #tab1:checked ~ .tab-buttons label[for="tab1"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
-
-  /* Content display control */
-  #tab1:checked ~ #content1,
-  #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3,
-  #tab4:checked ~ #content4,
-  #tab5:checked ~ #content5 { 
-    display: block; 
-  }
+  #tab1:checked ~ #content1 { display: block; }
 </style>
 
 # | Input
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Workbench Geo** | Mesh | Geometry mesh of the workbench |
-| **Base Plane** | Plane | Reference plane for mounting the workbench to the positioner flange |
-| **Top Plane** | Plane | Top plane of the workbench |
-| **Workpieces** | Mesh | Workpiece geometry mesh (Optional) |
+| **RobTargets** | RobTarget | Target motion positions. Connect to the output of a RobTarget or Positioner RobTarget component. |
+| **SeamData** | SeamData| ABB Seam Data |
+| **WeldData** | WeldData | ABB Weld Data |
 
-<p align="center"> 
-<video src="/assets/images/WorkbenchImporter_gif.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video>
-</p>
 
 ## | Required Parameter
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-robot" checked>
+  <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">Workbench</label></li>
+    <li><label for="tab1">Arc Move</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -174,69 +152,31 @@ Defines the workbench for the positioner.
       </thead>
       <tbody>
         <tr>
-          <td><strong>Name</strong></td>
+          <td><strong>Type/Speed/Zone</strong></td>
           <td>String</td>
-          <td>Workbench name</td>
+          <td>Select motion type, speed, and zone (blend radius)</td>
         </tr>
+        <tr>
+          <td><strong>Arc Start</strong></td>
+          <td>Toggle</td>
+          <td>• TRUE: Apply ArcLStart to the first target<br>
+              • FALSE: Apply ArcL to the first target</td>
+        </tr>
+        <tr>
+          <td><strong>Arc End</strong></td>
+          <td>Toggle</td>
+          <td>• TRUE: Apply ArcLEnd to the last target<br>
+              • FALSE: Apply ArcL to the last target</td>
+        </tr>                
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/2_Workbench_10.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/3_ArcMove_1.png" align="center" width="32%"></p>
   </div>
 </div>
 
-<div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-linear" checked>
-  <input type="radio" id="tab3" name="gh-tabs-linear">
-  
-  <ul class="tab-buttons">
-    <li><label for="tab2">Preview</label></li>
-    <li><label for="tab3">Export</label></li>
-  </ul>
-  <div class="tab-content" id="content2">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>WorkBench Color</strong></td>
-          <td>Color</td>
-          <td>Visualization color</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/2_Workbench_11.png" align="center" width="32%"></p>
-  </div>
-
-  <div class="tab-content" id="content3">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>WorkPiece Color</strong></td>
-          <td>Button</td>
-          <td>Aligns the TCP parallel to the World coordinate axis (±X, ±Y, ±Z) closest to the current TCP direction. Identical to the Align function in ABB FlexPendant Jogging.</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/2_Workbench_12.png" align="center" width="32%"></p>
-  </div>
-</div>
 
 # | Output
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Workbench** | Workbench | Generated workbench definition. |
+| **Instruction** | Instruction | Generated ABB instruction. Pass to the 'Instructions' input of the Core component. |
