@@ -32,12 +32,12 @@ tags:
 
 # Description
 
-Defines the ABB robot to be used. Select from the predefined specifications in the ABB IRB series catalog.
+Define the ABB robot to use. By right-clicking the component icon and selecting [Show joint Jog Params], you can set each axis of the selected robot. Select from the pre-defined specifications in the ABB IRB series catalog.
 
-<p align="center">  <img src="/assets/images/0_ABBRobot.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/0_ABBRobot_2.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [Unified Table Width] Forces all markdown tables and tab-internal tables to 100% width */
+  /* 💡 [Unify Table Width] Expand all markdown tables in the body and tables inside tabs to 100% of the screen width */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -46,13 +46,13 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Forces strict column width ratios */
-    word-break: break-all !important;     /* Prevents cell shrinkage and ensures wrapping */
+    table-layout: fixed !important;       /* Forcefully fix cell width ratio within the table */
+    word-break: break-all !important;     /* Prevent cell shrinkage and allow line breaks for long text inputs */
     margin: 20px 0 !important;
     box-sizing: border-box !important;
   }
   
-  /* 💡 [Unified Column Ratio] Matches the 1st column (20%), 2nd column (15%), and 3rd column (65%) structure */
+  /* 💡 [Unify Column Ratio] Match the structure of 1st column (20%), 2nd column (15%), and 3rd column (65%) identically for all tables */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -62,7 +62,7 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab System Container */
+  /* Tab system entire container */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -71,14 +71,14 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
     clear: both;
   }
 
-  /* Hide Radio Buttons */
+  /* Hide radio buttons */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* Tab Buttons Style (Top Alignment) */
+  /* Tab button style (top bar alignment) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -114,7 +114,7 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
     color: #333;
   }
 
-  /* Tab Content Box Settings (Hidden by Default) */
+  /* Content box default settings (hidden by default) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -124,13 +124,12 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
     box-sizing: border-box !important;
   }
 
-  /* Activates corresponding label (Red text) when the matching radio button is checked */
+  /* When an exactly matching radio button is checked, only the corresponding label is activated (red) */
   #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],
   #tab3:checked ~ .tab-buttons label[for="tab3"],
   #tab4:checked ~ .tab-buttons label[for="tab4"],
-  #tab5:checked ~ .tab-buttons label[for="tab5"],
-  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+  #tab5:checked ~ .tab-buttons label[for="tab5"] {
     background: #fff;
     color: #e53935;
     border-bottom: 1px solid #fff;
@@ -139,20 +138,13 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
     z-index: 2;
   }
 
-  /* Display control based on checked radio state */
+  /* Control content display based on radio button check status */
   #tab1:checked ~ #content1,
   #tab2:checked ~ #content2,
   #tab3:checked ~ #content3,
   #tab4:checked ~ #content4,
-  #tab5:checked ~ #content5,
-  #tab6:checked ~ #content6 { 
+  #tab5:checked ~ #content5 { 
     display: block; 
-  }
-
-  /* Smooth Fade-in Animation for Tabs */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(2px); }
-    to { opacity: 1; transform: translateY(0); }
   }
 </style>
 
@@ -161,15 +153,15 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Base Plane** | Plane | Robot base coordinate system plane. Default: WorldXY. |
-| **ToolData** | ToolData | ABB tool data (ToolData) to be applied to the robot. |
-| **Positioner** | Positioner | External axis positioner to be synchronized with the robot. |
-| **Pedestal** | Mesh | Surrounding environment meshes such as robot pedestals and workbenches (Optional). |
+| **ToolData** | ToolData | ABB tool data (ToolData) to apply to the robot. |
+| **Positioner** | Positioner | External axis positioner to interface with the robot. |
+| **Pedestal** | Mesh | Surrounding environment mesh such as robot pedestal/workbench (Optional). |
 
 
 ## | Required Parameter
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-robot" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">ABB Robots</label></li>
   </ul>
@@ -186,12 +178,12 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
         <tr>
           <td><strong>Robot Model</strong></td>
           <td>String</td>
-          <td>ABB robot model.</td>
+          <td>ABB robot model</td>
         </tr>
         <tr>
           <td><strong>Spec</strong></td>
           <td>String</td>
-          <td>Selected ABB robot model specifications — payload (kg) and reach (mm).</td>
+          <td>Selected ABB robot model specifications — payload (kg) and reach (mm)</td>
         </tr>
       </tbody>
     </table>
@@ -200,8 +192,8 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-options" checked>
-  <input type="radio" id="tab3" name="gh-tabs-options">
+  <input type="radio" id="tab2" name="gh-tabs-linear" checked>
+  <input type="radio" id="tab3" name="gh-tabs-linear">
   
   <ul class="tab-buttons">
     <li><label for="tab2">Robot Linear Jog</label></li>
@@ -220,18 +212,17 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
         <tr>
           <td><strong>Reset Pose</strong></td>
           <td>Button</td>
-          <td>Resets the robot pose.</td>
+          <td>Reset robot pose</td>
         </tr>
         <tr>
           <td><strong>Align Gumball</strong></td>
           <td>Button</td>
-          <td>Aligns the TCP parallel to the nearest World coordinate axis (±X, ±Y, ±Z) based on its current orientation. Identical to the Align function in ABB FlexPendant Jogging.</td>
+          <td>Aligns the TCP parallel to the World coordinate axis (±X, ±Y, ±Z) closest to the current TCP orientation. Identical to the Align function in ABB FlexPendant Jogging.</td>
         </tr>
         <tr>
           <td><strong>Config Option</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: cfx = 1. Inverts the configuration of robot axes 4 and 6.<br>
-              • FALSE: cfx = 0. Default.</td>
+          <td>• TRUE: cfx = 1. Invert configuration of robot axes 4 and 6<br>• FALSE: cfx = 0 Default</td>
         </tr>        
       </tbody>
     </table>
@@ -252,7 +243,7 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
         <tr>
           <td><strong>Color</strong></td>
           <td>Color</td>
-          <td>Visualization color.</td>
+          <td>Visualization color</td>
         </tr>
       </tbody>
     </table>
@@ -261,10 +252,110 @@ Defines the ABB robot to be used. Select from the predefined specifications in t
   </div>
 </div>
 
+<div class="tabs-container">
+  <input type="radio" id="tab4" name="gh-tabs-joint" checked>
+  <input type="radio" id="tab5" name="gh-tabs-joint">
+  
+  <ul class="tab-buttons">
+    <li><label for="tab4">Robot Joint Jog</label></li>
+    <li><label for="tab5">External Joint Jog</label></li>
+  </ul>
+  <div class="tab-content" id="content4">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>RobAx 1</strong></td>
+          <td>Number</td>
+          <td>Robot axis 1</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 2</strong></td>
+          <td>Number</td>
+          <td>Robot axis 2</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 3</strong></td>
+          <td>Number</td>
+          <td>Robot axis 3</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 4</strong></td>
+          <td>Number</td>
+          <td>Robot axis 4</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 5</strong></td>
+          <td>Number</td>
+          <td>Robot axis 5</td>
+        </tr>
+        <tr>
+          <td><strong>RobAx 6</strong></td>
+          <td>Number</td>
+          <td>Robot axis 6</td>
+        </tr>                                      
+      </tbody>
+    </table>
+    <br>    
+    <p align="center">  <img src="/assets/images/0_ABBRobot_20.png" align="center" width="32%"></p>
+  </div>
+
+  <div class="tab-content" id="content5">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>ExtAx 1</strong></td>
+          <td>Number</td>
+          <td>External axis 1</td>
+        </tr>
+        <tr>
+          <td><strong>ExtAx 2</strong></td>
+          <td>Number</td>
+          <td>External axis 2</td>
+        </tr>
+        <tr>
+          <td><strong>ExtAx 3</strong></td>
+          <td>Number</td>
+          <td>External axis 3</td>
+        </tr>
+        <tr>
+          <td><strong>ExtAx 4</strong></td>
+          <td>Number</td>
+          <td>External axis 4</td>
+        </tr>
+        <tr>
+          <td><strong>ExtAx 5</strong></td>
+          <td>Number</td>
+          <td>External axis 5</td>
+        </tr>
+        <tr>
+          <td><strong>ExtAx 6</strong></td>
+          <td>Number</td>
+          <td>External axis 6</td>
+        </tr> 
+      </tbody>
+    </table>
+    <br>    
+    <p align="center">  <img src="/assets/images/0_ABBRobot_21.png" align="center" width="32%"></p>
+  </div>
+</div>
 
 # | Output
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Robot Setup** | Robot Setup | Configured robot setup. The robot definition combined with base, tool, positioner, and environment models. |
+| **Robot Setup** | Robot Setup | Configured robot setup. Robot definition grouping the base, tool, positioner, and surrounding models. |
 | **Current TCP** | Plane | Current TCP plane of the robot setup. |
