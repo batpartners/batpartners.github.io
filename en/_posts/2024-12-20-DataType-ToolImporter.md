@@ -32,42 +32,51 @@ tags:
 
 # Description
 
-# Description
-
 Defines custom tool (end-effector) data. Supports switching between Define mode (manual configuration) and Import mode (loading pre-saved tool data) via the right-click context menu.
 <br>
 <p align="center">  <img src="/assets/images/3_ToolData_3.png" align="center" width="32%"></p>
 
-# | Input
-
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| **Base Plane** | Plane | The tool mounting reference plane relative to the ABB robot flange. Defines the baseline for TCP and geometry (shape). |
-| **TCP** | Plane | The position of the TCP (Tool Center Point) at the end of the tool. Defines its position and orientation relative to the tool base (Base Plane). |
-| **Tool Load** | ToolLoad | The load data (LoadData) of the tool. If not connected, it is estimated and generated based on the bounding box of the tool geometry. |
-
-<!-- <p align="center"> 
-<video src="/assets/images/ToolData_Export.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Tool Export</figcaption>
-</p> -->
-
-## | Required Parameter
-
 <style>
-  /* 탭 시스템 전체 컨테이너 */
+  /* 💡 [Unified Table Width] Forces all markdown tables and tab-internal tables to 100% width */
+  .page__content table,
+  .page__content .spec-table,
+  .tab-content table, 
+  .tab-content .spec-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed !important;       /* Forces strict column width ratios */
+    word-break: break-all !important;     /* Prevents cell shrinkage and ensures wrapping */
+    margin: 20px 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* 💡 [Unified Column Ratio] Matches the 1st column (20%), 2nd column (15%), and 3rd column (65%) structure */
+  .page__content table th:nth-child(1), .page__content table td:nth-child(1),
+  .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
+  
+  .page__content table th:nth-child(2), .page__content table td:nth-child(2),
+  .tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { width: 15% !important; }
+  
+  .page__content table th:nth-child(3), .page__content table td:nth-child(3),
+  .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
+
+  /* Tab System Container */
   .tabs-container {
     position: relative;
     margin: 30px 0;
     min-height: 160px;
   }
 
-  /* 라디오 버튼 숨기기 */
+  /* Hide Radio Buttons */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* 탭 버튼 스타일 (상단 바 정렬) */
+  /* Tab Buttons Style (Top Alignment) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -102,22 +111,18 @@ Defines custom tool (end-effector) data. Supports switching between Define mode 
     color: #333;
   }
 
-  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  /* Tab Content Box Settings (Hidden by Default) */
   .tab-content {
     display: none;
     padding: 20px;
     border: 1px solid #ddd;
     background: #fff;
     animation: fadeIn 0.3s ease;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-    /* 테이블 너비를 컨테이너에 맞춰 100%로 고정 */
-  .spec-table {
-    width: 100%;
-    table-layout: fixed; /* 테이블 내 셀 너비 비율을 일정하게 유지 */
-  }
-
-  /* 💡 1번 탭 그룹 스타일 및 노출 제어 */
+  /* 💡 1st Tab Group Control */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff;
     color: #e53935;
@@ -128,7 +133,7 @@ Defines custom tool (end-effector) data. Supports switching between Define mode 
   }
   #tab1:checked ~ #content1 { display: block; }
 
-  /* 💡 2, 3, 4번 탭 그룹 스타일 및 노출 제어 */
+  /* 💡 2nd, 3rd, 4th Tab Group Control */
   #tab2:checked ~ .tab-buttons label[for="tab2"],
   #tab3:checked ~ .tab-buttons label[for="tab3"],
   #tab4:checked ~ .tab-buttons label[for="tab4"] {
@@ -143,12 +148,23 @@ Defines custom tool (end-effector) data. Supports switching between Define mode 
   #tab3:checked ~ #content3,
   #tab4:checked ~ #content4 { display: block; }
 
-  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  /* Smooth Fade-in Animation for Tabs */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
+
+# | Input
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| **Base Plane** | Plane | The tool mounting reference plane relative to the ABB robot flange. Defines the baseline for TCP and geometry (shape). |
+| **TCP** | Plane | The position of the TCP (Tool Center Point) at the end of the tool. Defines its position and orientation relative to the tool base (Base Plane). |
+| **Tool Load** | ToolLoad | The load data (LoadData) of the tool. If not connected, it is estimated and generated based on the bounding box of the tool geometry. |
+
+## | Required Parameter
+
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
