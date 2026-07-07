@@ -1,43 +1,38 @@
 ---
-title: "ArcMove"
-
+title: "CreateWorkbench"
 layout: single
 header:
-  teaser: "/assets/images/ArcMove.png"
-
-collection: Datatype
+  teaser: "/assets/images/2_Workbench_2.png"
+collection: RobotTool
 entries_layout: grid
 author_profile: true
-
 categories:
-  - Instruction
-
+  - RobotTool
 translated: true
-lang: ko
-permalink: /en/instruction/Instruction-ArcMove/
-
-translation_link: /instruction/Instruction-ArcMove/
+lang: en
+permalink: /en/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option
+translation_link: /ko/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option
 sidebar:
   nav: "sidebar"
 toc: true
 toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
-
 tags: 
   - GERTY
 ---
 
-🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KO]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-용접용 ABB 아크 인스트럭션 (ArcLStart, ArcL, ArcLEnd) 생성.
+Defines the workbench for the positioner.
 
-<p align="center"><img src="/assets/images/3_ArcMove.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/2_Workbench.png" align="center" width="32%"></p>
+
 
 <style>
-  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+  /* 💡 [Unify Table Width] Expand all markdown tables in the body and tables inside tabs to 100% of the screen width */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -46,13 +41,13 @@ tags:
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;       /* Forcefully fix cell width ratio within the table */
+    word-break: break-all !important;     /* Prevent cell shrinkage and allow line breaks for long text inputs */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;
   }
   
-  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  /* 💡 [Unify Column Ratio] Match the structure of 1st column (20%), 2nd column (15%), and 3rd column (65%) identically for all tables */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -62,7 +57,7 @@ tags:
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* 탭 시스템 전체 컨테이너 */
+  /* Tab system entire container */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -71,14 +66,14 @@ tags:
     clear: both;
   }
 
-  /* 라디오 버튼 숨기기 */
+  /* Hide radio buttons */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* 탭 버튼 스타일 (상단 바 정렬) */
+  /* Tab button style (top bar alignment) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -114,7 +109,7 @@ tags:
     color: #333;
   }
 
-  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  /* Content box default settings (hidden by default) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -124,83 +119,124 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (WeldData 변수명 개요) */
-  #tab1:checked ~ .tab-buttons label[for="tab1"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  /* Active tab style */
+  #tab1:checked ~ .tab-buttons label[for="tab1"],
+  #tab2:checked ~ .tab-buttons label[for="tab2"],
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"],
+  #tab5:checked ~ .tab-buttons label[for="tab5"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
   }
-  #tab1:checked ~ #content1 { display: block; }
 
-  /* 💡 2번째 탭 그룹 제어 (Weld ArcData 세트) */
-  #tab2:checked ~ .tab-buttons label[for="tab2"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #tab2:checked ~ #content2 { display: block; }
-
-  /* 💡 3번째 탭 그룹 제어 (Weld Param 세트) */
-  #tab6:checked ~ .tab-buttons label[for="tab6"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #tab6:checked ~ #content6 { display: block; }
-
-  /* 탭 전환시 부드러운 페이드인 애니메이션 */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(2px); }
-    to { opacity: 1; transform: translateY(0); }
+  /* Content display control */
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5 { 
+    display: block; 
   }
 </style>
 
-# | 입력(Input)
+# | Input
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **RobTargets** | RobTarget | 모션 목표 위치. RobTarget 또는 Positioner RobTarget 컴포넌트 출력 연결. |
-| **SeamData** | SeamData| ABB Seam Data |
-| **WeldData** | WeldData | ABB Weld Data |
+| **Workbench Geo** | Mesh | Geometry mesh of the workbench |
+| **Base Plane** | Plane | Reference plane for mounting the workbench to the positioner flange |
+| **Top Plane** | Plane | Top plane of the workbench |
+| **Workpieces** | Mesh | Workpiece geometry mesh (Optional) |
 
+<p align="center"> 
+<video src="/assets/images/WorkbenchImporter_gif.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video>
+</p>
 
-## | 필수 파라미터 (Required Parameter)
+## | Required Parameter
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-robot" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">Arc Move</label></li>
+    <li><label for="tab1">Workbench</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Type/Speed/Zone</strong></td>
+          <td><strong>Name</strong></td>
           <td>String</td>
-          <td>모션 유형, 속도, 경유 반경 선택</td>
+          <td>Workbench name</td>
         </tr>
-        <tr>
-          <td><strong>Arc Start</strong></td>
-          <td>Toggle</td>
-          <td>• TRUE: 첫 번째 타겟에 대하여, ArcLStart 적용<br>
-              • FALSE: 첫 번째 타겟에 대하여, ArcL 적용</td>
-        </tr>
-        <tr>
-          <td><strong>Arc End</strong></td>
-          <td>Toggle</td>
-          <td>• TRUE: 마지막 타겟에 대하여, ArcLEnd 적용<br>
-              • FALSE:  마지막 타겟에 대하여, ArcL 적용 </td>
-        </tr>                
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/3_ArcMove_1.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/2_Workbench_10.png" align="center" width="32%"></p>
   </div>
 </div>
 
+<div class="tabs-container">
+  <input type="radio" id="tab2" name="gh-tabs-linear" checked>
+  <input type="radio" id="tab3" name="gh-tabs-linear">
+  
+  <ul class="tab-buttons">
+    <li><label for="tab2">Preview</label></li>
+    <li><label for="tab3">Export</label></li>
+  </ul>
+  <div class="tab-content" id="content2">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>WorkBench Color</strong></td>
+          <td>Color</td>
+          <td>Visualization color</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>    
+    <p align="center">  <img src="/assets/images/2_Workbench_11.png" align="center" width="32%"></p>
+  </div>
 
-# | 출력(Output)
+  <div class="tab-content" id="content3">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>WorkPiece Color</strong></td>
+          <td>Button</td>
+          <td>Aligns the TCP parallel to the World coordinate axis (±X, ±Y, ±Z) closest to the current TCP direction. Identical to the Align function in ABB FlexPendant Jogging.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>    
+    <p align="center">  <img src="/assets/images/2_Workbench_12.png" align="center" width="32%"></p>
+  </div>
+</div>
 
-| 이름 | 타입 | 설명 |
+# | Output
+
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달 |
+| **Workbench** | Workbench | Generated workbench definition. |
