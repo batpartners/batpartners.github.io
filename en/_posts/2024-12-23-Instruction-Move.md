@@ -161,20 +161,19 @@ Generates ABB move instructions (MoveL, MoveJ).
         <tr>
           <td><strong>Type/Speed/Zone</strong></td>
           <td>String</td>
-          <td>• TRUE: Apply MoveJ to the first and last targets<br>
-              • FALSE: Apply the selected motion type to all targets</td>
+          <td>Motion type, (Predefined) SpeedData, and (Predefined) ZoneData to be used</td>
         </tr>
         <tr>
           <td><strong>MoveJ Start End</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: Apply ArcLStart to the first target<br>
-              • FALSE: Apply ArcL to the first target</td>
+          <td>• TRUE: applies MoveJ to the first and last targets<br>
+              • FALSE: applies the configured motion type to all targets</td>
         </tr>
         <tr>
           <td><strong>Fine Start End</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: Apply 'fine' Zone to the first and last targets<br>
-              • FALSE: Apply the specified Zone value to all targets</td>
+          <td>• TRUE: applies fine zone to the first and last targets<br>
+              • FALSE: applies the configured zone value to all targets</td>
         </tr>                
       </tbody>
     </table>

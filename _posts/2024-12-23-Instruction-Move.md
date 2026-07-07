@@ -174,14 +174,13 @@ ABB Move 인스트럭션(MoveL, MoveJ) 생성.
         <tr>
           <td><strong>Type/Speed/Zone</strong></td>
           <td>String</td>
-          <td>• TRUE: 첫번째, 마지막 타겟에 대하여 MoveJ 적용<br>
-              • FALSE: 모든 타겟에 대하여 설정된 모션 유형 적용</td>
+          <td>모션 유형, 속도, 경유 반경</td>
         </tr>
         <tr>
           <td><strong>MoveJ Start End</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: 첫 번째 타겟에 대하여, ArcLStart 적용<br>
-              • FALSE: 첫 번째 타겟에 대하여, ArcL 적용</td>
+          <td>• TRUE: 첫번째, 마지막 타겟에 대하여 MoveJ 적용<br>
+              • FALSE: 모든 타겟에 대하여 설정된 모션 유형 적용</td>
         </tr>
         <tr>
           <td><strong>Fine Start End</strong></td>
