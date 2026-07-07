@@ -62,10 +62,6 @@ sidebar:
         children:
           - title: "Extra Option"
             url: /robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option
-      - title: "ToolPointerEdit"
-        url: /robottool/RobotTool-ToolPointerEdit/
-      - title: "Workbench Importer"
-        url: /robottool/RobotTool-WorkbenchImporter/
   - title: "3. Instruction"
     children:
       - title: "ArcMove"
