@@ -269,6 +269,3 @@ Defines custom tool (end-effector) data. Supports switching between Define mode 
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **ToolData** | ToolData | Outputs the configured ABB ToolData. |
-
-
-<p align="center">  <img src="/assets/images/ToolData_GIF_00-1.gif" align="center" width="100%"></p>

@@ -33,7 +33,8 @@ tags:
 
 Based on the positioner-specific RobTarget, this component assists users in generating custom positioner RAPID code. Users can toggle between Dynamic and Static modes via the right-click context menu.
 
-<p align="center"><img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/1_Positioner Robtarget.png" align="center" width="32%"></p>
+
 
 # | Inputs
 
