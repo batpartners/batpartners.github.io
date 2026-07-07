@@ -188,3 +188,7 @@ Generates ABB move instructions (MoveL, MoveJ).
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Instruction** | Instruction | Generated ABB instruction. Pass to the 'Instructions' input of the Core component. |
+
+<p align="center"> 
+<video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>
+</p>
