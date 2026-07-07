@@ -202,3 +202,7 @@ ABB Move 인스트럭션(MoveL, MoveJ) 생성.
 | :--- | :--- | :--- |
 | **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |
 
+<p align="center"> 
+<video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>
+</p>
+
