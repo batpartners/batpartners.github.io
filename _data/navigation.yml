@@ -78,8 +78,8 @@ sidebar:
         url: /instruction/Instruction-AccSet/
       - title: "PathAccLim"
         url: /instruction/Instruction-PathAccLim/
-      - title: "SetDO"
-        url: /instruction/Instruction-SetDO/
+      - title: "SetOutput"
+        url: /instruction/Instruction-SetOutput/
       - title: "Sub Procedures"
         url: /instruction/Instruction-Sub-Procedures/
       - title: "Wait Time"
