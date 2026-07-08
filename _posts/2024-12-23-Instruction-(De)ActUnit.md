@@ -132,9 +132,9 @@ tags:
   #tab1:checked ~ #content1 { display: block; }
 </style>
 
-# | Input
+# | 입력(Input)
 
-## | Required Parameter
+## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
@@ -169,7 +169,7 @@ tags:
   </div>
 </div>
 
-# | Output
+# | 출력(Output)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
