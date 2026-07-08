@@ -186,13 +186,14 @@ tags:
           <td>Fine Point(Zone이 Fine인 타겟) 진입 시 감속 램프 비율 (%, 선택).<br>
               • 최종 감속 램프 = Ramp × FinePointRamp.<br>
               • 범위: 0 초과 ~ 100%. 기본값 100%.</td>
-        </tr>                
+        </tr>
       </tbody>
     </table>
 <p align="center"><img src="/assets/images/5_AccSet_1.png" align="center" width="32%"></p>
   </div>
 </div>
 
+<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/AccSet_1-1.png" align="center" width="72%"></p>
 
 # | 출력(Output)
 
