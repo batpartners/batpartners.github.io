@@ -1,5 +1,5 @@
 ---
-title: "Move"
+title: "MoveXO"
 
 layout: single
 header:
@@ -13,9 +13,9 @@ categories:
   - Instruction
 translated: true
 lang: ko
-permalink: /instruction/Instruction-Move/
+permalink: /instruction/Instruction-MoveOutput/
 
-translation_link: /en/instruction/Instruction-Move/
+translation_link: /en/instruction/Instruction-MoveOutput/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -31,9 +31,9 @@ tags:
 
 # Description
 
-ABB Move 인스트럭션(MoveL, MoveJ) 생성.
+디지털, 그룹, 아날로그 출력 신호를 동반하는 ABB Move 인스트럭션(MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO) 생성.
 
-<p align="center"><img src="/assets/images/0_Move.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/1_MoveOutput.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -153,13 +153,15 @@ ABB Move 인스트럭션(MoveL, MoveJ) 생성.
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **RobTargets** | RobTarget | 모션 목표 위치. RobTarget 또는 Positioner RobTarget 컴포넌트 출력 연결. |
+| **Signal** | String | 모션을 적용할 신호명 |
+| **DO Value** | Boolean | 디지털 출력 값 |
 
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">Move</label></li>
+    <li><label for="tab1">ABB MoveOutput</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -190,7 +192,7 @@ ABB Move 인스트럭션(MoveL, MoveJ) 생성.
         </tr>                
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/0_Move_1.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/1_MoveOutput_1.png" align="center" width="32%"></p>
   </div>
 </div>
 

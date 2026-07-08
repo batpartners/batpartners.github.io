@@ -68,8 +68,8 @@ sidebar:
         url: /instruction/Instruction-ArcMove/
       - title: "Move"
         url: /instruction/Instruction-Move/
-      - title: "MoveXO"
-        url: /instruction/Instruction-MoveXO/        
+      - title: "MoveOutput"
+        url: /instruction/Instruction-MoveOutput/   
       - title: "TriggIOMove"
         url: /instruction/Instruction-TriggIOMove/
       - title: "(De)ActUnit"
