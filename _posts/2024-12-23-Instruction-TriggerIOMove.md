@@ -13,10 +13,10 @@ categories:
   - Instruction
 
 translated: true
-lang: en
-permalink: /en/instruction/Instruction-TriggerIOMove/
+lang: ko
+permalink: /instruction/Instruction-TriggerIOMove/
 
-translation_link: /instruction/Instruction-TriggerIOMove/
+translation_link: /en/instruction/Instruction-TriggerIOMove/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -28,16 +28,16 @@ tags:
   - GERTY
 ---
 
-🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Generates ABB Trigger Move instructions (TriggLIOs, TriggJIOs) that perform movements while generating one or more I/O signals at specified locations along the path.
+경로상의 지정 위치에서 하나 이상의 I/O 신호를 발생시키며 이동을 수행하는 ABB Trigger Move 인스트럭션 (TriggLIOs, TriggJIOs) 생성.
 
 <p align="center"><img src="/assets/images/2_TriggerMove.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [Unify Table Width] Expand all markdown tables and tab-internal tables to 100% of the screen width */
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -46,13 +46,13 @@ Generates ABB Trigger Move instructions (TriggLIOs, TriggJIOs) that perform move
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Force fixed cell width ratio */
-    word-break: break-all !important;     /* Prevent cell shrinkage and enable line breaks for long text */
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* Prevent horizontal overflow due to padding */
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
-  /* 💡 [Unify Column Ratio] Consistent structure for all tables (20%, 15%, 65%) */
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -62,7 +62,7 @@ Generates ABB Trigger Move instructions (TriggLIOs, TriggJIOs) that perform move
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab system container */
+  /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -71,14 +71,14 @@ Generates ABB Trigger Move instructions (TriggLIOs, TriggJIOs) that perform move
     clear: both;
   }
 
-  /* Hide radio buttons */
+  /* 라디오 버튼 숨기기 */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* Tab button style */
+  /* 탭 버튼 스타일 (상단 바 정렬) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -114,7 +114,7 @@ Generates ABB Trigger Move instructions (TriggLIOs, TriggJIOs) that perform move
     color: #333;
   }
 
-  /* Content box default settings */
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -124,26 +124,39 @@ Generates ABB Trigger Move instructions (TriggLIOs, TriggJIOs) that perform move
     box-sizing: border-box !important;
   }
 
-  /* Tab group control */
+  /* 💡 1번째 탭 그룹 제어 (WeldData 변수명 개요) */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab1:checked ~ #content1 { display: block; }
 
+  /* 💡 2번째 탭 그룹 제어 (Weld ArcData 세트) */
+  #tab2:checked ~ .tab-buttons label[for="tab2"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #tab2:checked ~ #content2 { display: block; }
+
+  /* 💡 3번째 탭 그룹 제어 (Weld Param 세트) */
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #tab6:checked ~ #content6 { display: block; }
+
+  /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
 
-# | Input
+# | 입력(Input)
 
-| Name | Type | Description |
+| 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **RobTargets** | RobTarget | Target motion positions. Connect the output of a RobTarget or Positioner RobTarget component. |
+| **RobTargets** | RobTarget | 모션 목표 위치. RobTarget 또는 Positioner RobTarget 컴포넌트 출력 연결. |
 | **TriggIOs** | TriggIOs | ABB TriggIOs |
 
-## | Required Parameter
+## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
@@ -154,26 +167,26 @@ Generates ABB Trigger Move instructions (TriggLIOs, TriggJIOs) that perform move
     <table class="spec-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Type/Speed/Zone</strong></td>
           <td>String</td>
-          <td>Motion type, speed, and zone radius</td>
+          <td>모션 유형, 속도, 경유 반경</td>
         </tr>
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/2_TriggerMove_1.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/2_TriggerMove.png" align="center" width="32%"></p>
   </div>
 </div>
 
 
-# | Output
+# | 출력(Output)
 
-| Name | Type | Description |
+| 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Pass to the 'Instructions' input of the Core component. |
+| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |

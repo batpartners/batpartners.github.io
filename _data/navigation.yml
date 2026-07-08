@@ -70,8 +70,8 @@ sidebar:
         url: /instruction/Instruction-Move/
       - title: "MoveOutput"
         url: /instruction/Instruction-MoveOutput/   
-      - title: "TriggIOMove"
-        url: /instruction/Instruction-TriggIOMove/
+      - title: "TriggerIOMove"
+        url: /instruction/Instruction-TriggerIOMove/
       - title: "(De)ActUnit"
         url: /instruction/Instruction-(De)ActUnit/
       - title: "AccSet"
