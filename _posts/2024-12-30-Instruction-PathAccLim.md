@@ -151,10 +151,6 @@ tags:
 
 # | 입력(Input)
 
-| 이름 | 타입 | 설명 |
-| :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |
-
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">

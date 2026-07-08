@@ -133,10 +133,6 @@ Generates a PathAccLim instruction to set or disable the acceleration and decele
 
 # | Input
 
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Pass to the 'Instructions' input of the Core component. |
-
 ## | Required Parameter
 
 <div class="tabs-container">
