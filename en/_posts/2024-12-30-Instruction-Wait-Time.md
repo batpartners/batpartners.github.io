@@ -144,7 +144,7 @@ Creates a WaitTime instruction that pauses robot motion for the specified durati
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr>dd
           <td><strong>In Position</strong></td>
           <td>Toggle</td>
           <td>• TRUE: starts the wait timer after the robot reaches a complete standstill.<br>

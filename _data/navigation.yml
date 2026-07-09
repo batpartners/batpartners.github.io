@@ -90,7 +90,7 @@ sidebar:
       - title: "WaitDI"
         url: /instruction/Instruction-WaitDI/
       - title: "WaitTime"
-        url: /instruction/Instruction-WaitTime/
+        url: /instruction/Instruction-Wait-Time/
       - title: "IndReset"
         url: /instruction/Instruction-IndReset/
       - title: "IndRMove"
