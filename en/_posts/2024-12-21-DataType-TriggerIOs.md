@@ -14,9 +14,9 @@ categories:
 
 translated: true
 lang: en
-permalink: /en/datatype/DataType-TriggIOs/
+permalink: /en/datatype/DataType-TriggerIOs/
 
-translation_link: /datatype/DataType-TriggIOs/
+translation_link: /datatype/DataType-TriggerIOs/
 sidebar:
   nav: "sidebar"
 toc: true

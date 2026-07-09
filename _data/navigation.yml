@@ -87,8 +87,10 @@ sidebar:
             url: /instruction/Instruction-SubProc_Composition/
           - title: "Script"
             url: /instruction/Instruction-SubProc_Composition/Instruction-SubProc_Script/
-      - title: "Wait Time"
-        url: /instruction/Instruction-Wait-Time/
+      - title: "WaitDI"
+        url: /instruction/Instruction-WaitDI/
+      - title: "WaitTime"
+        url: /instruction/Instruction-WaitTime/
       - title: "IndReset"
         url: /instruction/Instruction-IndReset/
       - title: "IndRMove"
