@@ -14,8 +14,8 @@ categories:
 
 translated: true
 lang: en
-permalink: /en/instruction/Instruction-Wait-Time/
-translation_link: /instruction/Instruction-Wait-Time/
+permalink: /en/instruction/Instruction-WaitDI/
+translation_link: /instruction/Instruction-WaitDI/
 
 sidebar:
   nav: "sidebar"
@@ -32,9 +32,9 @@ tags:
 
 # Description
 
-Creates a WaitTime instruction that pauses robot motion for the specified duration (s).
+Creates a WaitDI instruction to pause robot motion until the specified digital input (DI) signal reaches the target value.
 
-<p align="center"><img src="/assets/images/10_WaitTIme.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/9_WaitDI.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [Table Width Optimization] */
@@ -132,7 +132,7 @@ Creates a WaitTime instruction that pauses robot motion for the specified durati
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">In Position</label></li>
+    <li><label for="tab1">WaitDI</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -145,14 +145,13 @@ Creates a WaitTime instruction that pauses robot motion for the specified durati
       </thead>
       <tbody>
         <tr>
-          <td><strong>In Position</strong></td>
+          <td><strong>Value</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: starts the wait timer after the robot reaches a complete standstill.<br>
-              • FALSE: timer starts as soon as the program pointer (PP) reaches the instruction.</td>
+          <td>Digital input value.</td>
         </tr>
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/10_WaitTIme_1.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/9_WaitDI_1.png" align="center" width="32%"></p>
   </div>
 </div>
 

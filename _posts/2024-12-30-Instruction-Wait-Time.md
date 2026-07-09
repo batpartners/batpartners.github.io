@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-지정된 디지털 입력(DI) 신호가 목표 값에 도달할 때까지 로봇 모션을 대기시키는 WaitDI 인스트럭션 생성.
+지정된 시간 (초) 동안 로봇 모션을 일시 정지시키는 WaitTime 인스트럭션 생성.
 
 <p align="center"><img src="/assets/images/10_WaitTIme.png" align="center" width="32%"></p>
 
@@ -153,7 +153,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Signal** | String | 지정된 디지털 입력(DI) 신호가 목표 값에 도달할 때까지 로봇 모션을 대기시키는 WaitDI 인스트럭션 생성. |
+| **Time(s)** | Number | 프로그램 실행이 대기할 시간 (초). |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -173,9 +173,10 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Value</strong></td>
+          <td><strong>In Position</strong></td>
           <td>Toggle</td>
-          <td>디지털 입력 값</td>
+          <td>• True: 로봇이 완전히 정지(Standstill)된 후 대기 시간 카운트 시작.<br>
+              • FALSE: 프로그램 포인터(PP)가 인스트럭션 도달 즉시 카운트 시작.</td>
         </tr>
       </tbody>
     </table>
