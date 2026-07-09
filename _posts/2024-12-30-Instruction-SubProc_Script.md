@@ -153,14 +153,8 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Proc Code** | String | Full RAPID procedure code including PROC header and ENDPROC.<br>
-                            Example:<br>
-                            PROC CustomProc(num n, robtarget t)<br>
-                              MoveJ t, v100, fine, tool0;<br>
-                            ENDPROC |
-| **Call** | String | Call instruction string(s). One per call site.<br>
-                      Example: <br> CustomProc 5, target1;<br>
-                      Multiple inputs produce multiple call instruction objects sharing the same procedure declaration. |
+| **Proc Code** | String | Full RAPID procedure code including PROC header and ENDPROC.<br>Example:<br><code>PROC CustomProc(num n, robtarget t)<br>&nbsp;&nbsp;MoveJ t, v100, fine, tool0;<br>ENDPROC</code> |
+| **Call** | String | Call instruction string(s). One per call site.<br>Example:<br><code>CustomProc 5, target1;</code><br>Multiple inputs produce multiple call instruction objects sharing the same procedure declaration. |
 
 # | 출력(Output)
 
