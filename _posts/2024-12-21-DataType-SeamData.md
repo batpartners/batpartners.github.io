@@ -32,46 +32,12 @@ tags:
 
 # Description
 
----
-title: "SeamData"
-
-layout: single
-header:
-  teaser: "/assets/images/7_SeamData.png"
-
-collection: Datatype
-entries_layout: grid
-author_profile: true
-
-categories:
-  - DataType
-
-translated: true
-lang: en
-permalink: /en/datatype/DataType-SeamData/
-
-translation_link: /datatype/DataType-DataType-SeamData/
-sidebar:
-  nav: "sidebar"
-toc: true
-toc_label: "Contents"
-toc_icon: "cog"
-toc_sticky: true
-
-tags: 
-  - GERTY
----
-
-🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
-
-# Description
-
-Defines data for the start and end phases of a weld seam. Specifies the timing and arc conditions for three phases: Ignition, Heat, and End. Generally maintains the same values across an entire seam or multiple seams.
+용접 심(Seam)의 시작 및 종료 단계 데이터 정의. 점화(Ignition), 가열(Heat), 종료(End) 세 구간의 타이밍 및 아크 조건 지정. 일반적으로 한 심 전체 또는 여러 심에 걸쳐 동일 값 유지.
 
 <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [Unified Table Width] Forces all markdown tables and tab-internal tables to 100% width */
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -80,13 +46,13 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Forces strict column width ratios */
-    word-break: break-all !important;     /* Prevents cell shrinkage and ensures wrapping */
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* Absolute prevention of horizontal overflow due to padding */
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
-  /* 💡 [Unified Column Ratio] Matches the 1st column (20%), 2nd column (15%), and 3rd column (65%) structure */
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -96,7 +62,7 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab System Container */
+  /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -105,14 +71,14 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
     clear: both;
   }
 
-  /* Hide Radio Buttons */
+  /* 라디오 버튼 숨기기 */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* Tab Buttons Style (Top Alignment) */
+  /* 탭 버튼 스타일 (상단 바 정렬) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -148,7 +114,7 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
     color: #333;
   }
 
-  /* Tab Content Box Settings (Hidden by Default) */
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -158,13 +124,13 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
     box-sizing: border-box !important;
   }
 
-  /* 💡 1st Tab Group Control (SeamData Required Parameters) */
+  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
   #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #sm-tab1:checked ~ #sm-content1 { display: block; }
 
-  /* 💡 2nd Tab Group Control (ArcData Series) */
+  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
   #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
   #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
   #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
@@ -174,7 +140,7 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
   #arc-tab3:checked ~ #arc-content3,
   #arc-tab4:checked ~ #arc-content4 { display: block; }
 
-  /* 💡 3rd Tab Group Control (Params Series) */
+  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
   #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
   #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
   #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
@@ -184,22 +150,22 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
   #prm-tab6:checked ~ #prm-content6,
   #prm-tab7:checked ~ #prm-content7 { display: block; }
 
-  /* Smooth Fade-in Animation for Tabs */
+  /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
 
-# | Input
+# | 입력(Input)
 
-| Name | Type | Description |
+| 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Weld Sched** | Weld Sched | The welding program number (schedule) and welding mode to be used. |
-| **Weight** | Number | Weight factor for wirefeed1. |
+| **Weld Sched** | Weld Sched | 사용할 용접 프로그램 번호(스케줄) 및 용접 모드. |
+| **Weight** | Number | wirefeed1에 대한 가중치 |
 
 
-## | Required Parameter
+## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
   <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
@@ -210,21 +176,21 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
     <table class="spec-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>Variable name.</td>
+          <td>변수명</td>
         </tr>
         <tr>
           <td><strong>Link ArcData</strong></td>
           <td>Boolean</td>
-          <td>Links ArcData values across all phases (Ignition, Heat, End). TRUE: adjusting one automatically syncs the others to the same value. FALSE: independent phase adjustment (Default).</td>
+          <td>모든 단계(Ignition, Heat, End)의 ArcData 값을 연동. TRUE: 한쪽을 조절하면 나머지도 같은 값으로 맞춰짐. FALSE: 단계별 독립 조절 (기본값).</td>
         </tr>
       </tbody>
     </table>
@@ -247,31 +213,31 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
     <table class="spec-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Voltage</strong></td>
           <td>Number</td>
-          <td>Welding voltage (ABB convention). Fronius TPS/TPS-i: Arc length correction.</td>
+          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
           <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
           <td>Number</td>
-          <td>Wire feed speed (m/min). Right-click the icon to change unit to (mm/s). Common to both ABB / Fronius.</td>
+          <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
         </tr>
         <tr>
           <td><strong>Control</strong></td>
           <td>Number</td>
-          <td>Control parameter (ABB convention). Fronius TPS/TPS-i: Dynamic correction.</td>
+          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
         </tr>
         <tr>
           <td><strong>Current</strong></td>
           <td>Number</td>
-          <td>Welding current (ABB convention). Not used in Fronius TPS/TPS-i.</td>
+          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
         </tr>        
       </tbody>
     </table>
@@ -286,31 +252,31 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
     <table class="spec-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Voltage</strong></td>
           <td>Number</td>
-          <td>Welding voltage (ABB convention). Fronius TPS/TPS-i: Arc length correction.</td>
+          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
           <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
           <td>Number</td>
-          <td>Wire feed speed (m/min). Right-click the icon to change unit to (mm/s). Common to both ABB / Fronius.</td>
+          <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
         </tr>
         <tr>
           <td><strong>Control</strong></td>
           <td>Number</td>
-          <td>Control parameter (ABB convention). Fronius TPS/TPS-i: Dynamic correction.</td>
+          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
         </tr>
         <tr>
           <td><strong>Current</strong></td>
           <td>Number</td>
-          <td>Welding current (ABB convention). Not used in Fronius TPS/TPS-i.</td>
+          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
         </tr> 
       </tbody>
     </table>
@@ -325,31 +291,31 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
     <table class="spec-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Voltage</strong></td>
           <td>Number</td>
-          <td>Welding voltage (ABB convention). Fronius TPS/TPS-i: Arc length correction.</td>
+          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
         </tr>
         <tr>
           <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
           <td>Number</td>
-          <td>Wire feed speed (m/min). Right-click the icon to change unit to (mm/s). Common to both ABB / Fronius.</td>
+          <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
         </tr>
         <tr>
           <td><strong>Control</strong></td>
           <td>Number</td>
-          <td>Control parameter (ABB convention). Fronius TPS/TPS-i: Dynamic correction.</td>
+          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
         </tr>
         <tr>
           <td><strong>Current</strong></td>
           <td>Number</td>
-          <td>Welding current (ABB convention). Not used in Fronius TPS/TPS-i.</td>
+          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
         </tr> 
       </tbody>
     </table>
@@ -376,26 +342,26 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
     <table class="spec-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Purge Time(s)</strong></td>
           <td>Number</td>
-          <td>Pre-purge time (seconds) to fill the gas lines and welding torch with shielding gas. If the travel time to the weld start position is shorter than the purge time, the robot waits at the start position until the purge time expires.</td>
+          <td>보호 가스로, 가스 라인과 용접 토치를 채우는 데 걸리는 시간 (초). 만약 용접 시작 위치로 이동하는 시간이 퍼지 시간보다 짧은 경우, 용접 시작 위치에서 퍼지 시간이 만료될 때까지 대기.</td>
         </tr>
         <tr>
           <td><strong>Purgeflow Time(s)</strong></td>
           <td>Number</td>
-          <td>Preflow time (seconds) to flow shielding gas onto the workpiece beforehand. During this period, the robot stays stationary at the position before the arc ignites.</td>
+          <td>보호 가스로, 용접 대상물에 가스를 미리 흘려주는 데 걸리는 시간 (초). 이 시간 동안 로봇은 아크가 점화되기 전까지 해당 위치에서 정지</td>
         </tr>
         <tr>
           <td><strong>Move Delay(s)</strong></td>
           <td>Number</td>
-          <td>The delay time (seconds) from the moment the arc stabilizes at ignition until the heating phase begins.</td>
+          <td>아크 점화 시점에서 아크가 안정순간부터 가열 단계가 시작될 때가지의 지연 시간 (초)</td>
         </tr>
       </tbody>
     </table>
@@ -407,26 +373,26 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
     <table class="spec-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Heat Speed</strong></td>
           <td>Number</td>
-          <td>Welding speed during heating at the beginning of the weld phase.</td>
+          <td>용접 단계 시작 시, 가열 중의 용접 속도</td>
         </tr>
         <tr>
           <td><strong>Heat Time(s)</strong></td>
           <td>Number</td>
-          <td>Heating duration (seconds) at the beginning of the weld phase. Heat Time is effective only if Heat Distance or Heat Speed is set to 0.</td>
+          <td>용접 단계 시작 시, 가열 시간 (초). Heat Time은 Heat Distance 또는 Heat Speed 값이 0인 경우 유효</td>
         </tr>
         <tr>
           <td><strong>Heat Distance</strong></td>
           <td>Number</td>
-          <td>The travel distance over which the heating data is applied at the beginning of welding.</td>
+          <td>용접 시작 시, 가열 데이터가 적용되어야 하는 이동 거리</td>
         </tr>
       </tbody>
     </table>
@@ -438,36 +404,36 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
     <table class="spec-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Cool Time(s)</strong></td>
           <td>Number</td>
-          <td>The time (seconds) the process is held before crater filling is executed.</td>
+          <td>Filling이 수행되기 전, 공정이 유지되는 시간 (초)</td>
         </tr>
         <tr>
           <td><strong>Fill Time(s)</strong></td>
           <td>Number</td>
-          <td>Crater filling time (seconds) during the welding end phase.</td>
+          <td>용접 종료 단계 (end phase), 크레이터 채움 시간 (초)</td>
         </tr>
         <tr>
           <td><strong>Burn-Back Time(s)</strong></td>
           <td>Number</td>
-          <td>The time (seconds) used to burn back the weld electrode after the wire feed stops. This prevents the electrode from sticking to the solidifying weld pool at the end of the MIG/MAG process, applied twice during termination.<br>First: when the welding phase ends, Second: during crater filling.</td>
+          <td>전극 송급이 정지된 후, 용접 전극을 태워 되돌리는 시간 (초). "MIG/MAG 공정이 종료될 때, 전극이 응고 중인 용접부에 달라붙는 것을 방지하며 종료 시점에 두번 사용.<br>첫 번째 : 용접 단계가 종료될 때, 두 번째 : 크레이터 충전(crater-filling)</td>
         </tr>
         <tr>
           <td><strong>Rollback Time(s)</strong></td>
           <td>Number</td>
-          <td>The time (seconds) used to retract the cold wire after power shutdown. Prevents the wire from sticking to the solidifying weld pool at the end of the TIG process.</td>
+          <td>전원이 차단된 후, 콜드 와이어를 되감는 시간 (초). TIG 공정이 종료될 때, 와이어가 응고 중인 용접부에 달라붙는 것을 방지</td>
         </tr>
         <tr>
           <td><strong>Postflow Time(s)</strong></td>
           <td>Number</td>
-          <td>Post-purge time (seconds) required for shielding gas after the process terminates. Prevents oxidation of the weld electrode and the seam joint during cooling.</td>
+          <td>공정 종료 후, 보호 가스로 퍼지하는 데 필요한 시간 (초). 냉각 중에 용접 전극과 이음부가 산화되는 것을 방지</td>
         </tr>               
       </tbody>
     </table>
@@ -476,9 +442,9 @@ Defines data for the start and end phases of a weld seam. Specifies the timing a
   </div>
 </div>
 
-# | Output
+# | 출력(Output)
 
-| Name | Type | Description |
+| 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **SeamData** | SeamData | Outputs the configured ABB SeamData stream. |
-| **Code** | String | Outputs the compiled RAPID command code. |
+| **SeamData** | SeamData | 입력한 ABB SeamData를 출력 |
+| **Code** | String | Code를 출력 |

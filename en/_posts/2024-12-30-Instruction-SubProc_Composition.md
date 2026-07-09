@@ -14,8 +14,8 @@ categories:
 
 translated: true
 lang: en
-permalink: /en/instruction/Instruction-Sub-Procedures/
-translation_link: /instruction/Instruction-Sub-Procedures/
+permalink: /en/instruction/Instruction-SubProc_Composition/
+translation_link: /instruction/Instruction-SubProc_Composition/
 
 sidebar:
   nav: "sidebar"

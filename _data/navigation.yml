@@ -80,8 +80,13 @@ sidebar:
         url: /instruction/Instruction-PathAccLim/
       - title: "SetOutput"
         url: /instruction/Instruction-SetOutput/
-      - title: "Sub Procedures"
-        url: /instruction/Instruction-Sub-Procedures/
+      - title: "SubProc"
+        url: /instruction/Instruction-SubProc_Composition/
+        children:
+          - title: "Composition"
+            url: /instruction/Instruction-SubProc_Composition/
+          - title: "Script"
+            url: /instruction/Instruction-SubProc_Composition/Instruction-SubProc_Script/
       - title: "Wait Time"
         url: /instruction/Instruction-Wait-Time/
       - title: "IndReset"
