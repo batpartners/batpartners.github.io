@@ -14,8 +14,8 @@ categories:
 
 translated: true
 lang: en
-permalink: /instruction/Instruction-IndRMove_Option/
-translation_link: /en/instruction/Instruction-IndRMove_Option/
+permalink: /instruction/Instruction-IndRMove/Instruction-IndRMove_Option/
+translation_link: /en/instruction/Instruction-IndRMove/Instruction-IndRMove_Option/
 
 sidebar:
   nav: "sidebar"

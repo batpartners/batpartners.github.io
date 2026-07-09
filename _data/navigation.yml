@@ -94,7 +94,12 @@ sidebar:
       - title: "IndReset"
         url: /instruction/Instruction-IndReset/
       - title: "IndRMove"
-        url: /instruction/Instruction-IndRMove/       
+        url: /instruction/Instruction-IndRMove/
+        children:
+          - title: "Numeric Reference"
+            url: /instruction/Instruction-IndRMove/
+          - title: "Positional Reference"
+            url: /instruction/Instruction-IndRMove/Instruction-IndRMove_Option/
   - title: "4. Core"
     children:
       - title: "Analysis"
