@@ -171,32 +171,24 @@ tags:
         <tr>
           <td><strong>MechUnit</strong></td>
           <td>String</td>
-          <td>포지셔너(MechUnit) 변수명</td>
+          <td>메카니컬 유닛 이름</td>
         </tr>
         <tr>
-          <td><strong>Positioner Model</strong></td>
+          <td><strong>Target Axis</strong></td>
           <td>String</td>
-          <td>ABB 포지셔너 모델</td>
+          <td>대상 축 번호 (1–6). 독립 모드 복귀 또는 논리 위치 재정의 대상.</td>
         </tr>        
-        <tr>
-          <td><strong>Spec</strong></td>
-          <td>String</td>
-          <td>선택한 ABB 포지셔너 모델 스펙 — 작업 직경(D) 및 플레이트 높이(H)</td>
-        </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/11_IndRMove_10.png" align="center" width="32%"></p>
   </div>
 </div>
 
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
-  <input type="radio" id="tab3" name="gh-tabs-options">
-  <input type="radio" id="tab4" name="gh-tabs-options">
   
   <ul class="tab-buttons">
-    <li><label for="tab2">Motion</label></li>
-    <li><label for="tab3">RAPID</label></li>
+    <li><label for="tab2">Setting</label></li>
   </ul>
 
   <div class="tab-content" id="content2">
@@ -230,27 +222,6 @@ tags:
     <p align="center">  <img src="/assets/images/1_ABBPositioner_11.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="content3">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Mechanical Unit</strong></td>
-          <td>String</td>
-          <td>RAPID 구문 내 MechUnit 매핑 파라미터</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_12.png" align="center" width="32%"></p>
-  </div>
-</div>
 
 # | 출력(Output)
 
