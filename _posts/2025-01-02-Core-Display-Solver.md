@@ -154,6 +154,10 @@ tags:
 
 # | 입력(Input)
 
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| GERTY Solver | GERTY Solver | GERTY Solver |
+
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
