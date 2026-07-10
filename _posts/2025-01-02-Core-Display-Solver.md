@@ -36,7 +36,7 @@ tags:
 
 정의된 로봇 모션을 Rhino 뷰포트에서 시뮬레이션 및 시각화.
 
-<p align="center">  <img src="/assets/images/12_IndReset.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/1_DisplaySolver.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -183,49 +183,15 @@ tags:
         </tr>        
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/12_IndReset_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_DisplaySolver_1.png" align="center" width="32%"></p>
   </div>
-</div>
-
-<div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-options" checked>
-  
-  <ul class="tab-buttons">
-    <li><label for="tab2">Setting</label></li>
-  </ul>
-
-  <div class="tab-content" id="content2">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>RefNum(°)</strong></td>
-          <td>Number</td>
-          <td>목표 위치 (각도)를 숫자 (°)로 직접 지정.</td>
-        </tr>
-        <tr>
-          <td><strong>Direction</strong></td>
-          <td>String</td>
-          <td>이동 방향.\n" +
-              • Short: 최단 경로 (±180° 이내)<br>
-              • Fwd: 양의 방향으로 이동 (최대 360°)<br>
-              • Bwd: 음의 방향으로 이동 (최대 360°)</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/12_IndReset_11.png" align="center" width="32%"></p>
-  </div>
-
 
 # | 출력(Output)
 
+<div class="page__content">
+
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |
+| **Current TCP** | Plane | 현재 TCP 평면 |
+
+</div>
