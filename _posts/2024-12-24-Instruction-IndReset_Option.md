@@ -14,8 +14,8 @@ categories:
 
 translated: true
 lang: en
-permalink: /instruction/Instruction-IndReset_Option/
-translation_link: /en/instruction/Instruction-IndReset_Option/
+permalink: /instruction/Instruction-IndReset/Instruction-IndReset_Option/
+translation_link: /en/instruction/Instruction-IndReset/Instruction-IndReset_Option/
 
 sidebar:
   nav: "sidebar"

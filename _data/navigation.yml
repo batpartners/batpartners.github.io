@@ -93,6 +93,11 @@ sidebar:
         url: /instruction/Instruction-Wait-Time/
       - title: "IndReset"
         url: /instruction/Instruction-IndReset/
+        children:
+          - title: "Numeric Reference"
+            url: /instruction/Instruction-IndReset/
+          - title: "Positional Reference"
+            url: /instruction/Instruction-IndReset/Instruction-IndReset_Option/
       - title: "IndRMove"
         url: /instruction/Instruction-IndRMove/
         children:

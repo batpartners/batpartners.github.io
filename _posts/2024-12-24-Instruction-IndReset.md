@@ -33,7 +33,7 @@ tags:
 
 독립/일반 모드 축의 논리 위치 초기화 인스트럭션(IndReset) 생성. 독립 모드 축의 경우 일반 모드 복귀까지 동시 수행. 실행 전 모든 축 정지 필요. 누적된 외부축 각도값 초기화에 주로 사용.
 
-<p align="center">  <img src="/assets/images/11_IndRMove.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/12_IndReset.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -180,7 +180,7 @@ tags:
         </tr>        
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/11_IndRMove_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/12_IndReset_10.png" align="center" width="32%"></p>
   </div>
 </div>
 
@@ -202,24 +202,22 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Enable Arm</strong></td>
-          <td>Toggle</td>
-          <td>포지셔너의 암 동작 활성화</td>
+          <td><strong>RefNum(°)</strong></td>
+          <td>Number</td>
+          <td>목표 위치 (각도)를 숫자 (°)로 직접 지정.</td>
         </tr>
         <tr>
-          <td><strong>Approach Direction</strong></td>
-          <td>Number</td>
-          <td>포지셔너 기준 TCP의 접근 방향. 포지셔너가 이 방향으로의 접근을 기준으로 회전 자세 결정.</td>
+          <td><strong>Direction</strong></td>
+          <td>String</td>
+          <td>이동 방향.\n" +
+              • Short: 최단 경로 (±180° 이내)<br>
+              • Fwd: 양의 방향으로 이동 (최대 360°)<br>
+              • Bwd: 음의 방향으로 이동 (최대 360°)</td>
         </tr>
-        <tr>
-          <td><strong>TCP Dir</strong></td>
-          <td>Number</td>
-          <td>포지셔너가 최종적으로 정렬시킬 TCP의 방향</td>
-        </tr>        
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_11.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/12_IndReset_11.png" align="center" width="32%"></p>
   </div>
 
 
