@@ -186,12 +186,9 @@ tags:
     <p align="center">  <img src="/assets/images/1_DisplaySolver_1.png" align="center" width="32%"></p>
   </div>
 
-# | 출력(Output)
 
-<div class="page__content">
+# | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Current TCP** | Plane | 현재 TCP 평면 |
-
-</div>
+| Current TCP | Plane | 현재 TCP 평면 |
