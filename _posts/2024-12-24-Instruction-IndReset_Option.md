@@ -31,47 +31,202 @@ tags:
 
 # Description
 
-* IndReset는 포지셔너의 현재 자세를 설정한 옵션에 따라 가까운 각도값으로 재정의하는 컴포넌트이다.
-옵션값은 Short, Forward, Bacward 가 있으며 RefDegree 설정 값에 따라 재정의 할 수도 있다.
+독립/일반 모드 축의 논리 위치 초기화 인스트럭션(IndReset) 생성. 독립 모드 축의 경우 일반 모드 복귀까지 동시 수행. 실행 전 모든 축 정지 필요. 누적된 외부축 각도값 초기화에 주로 사용.
 
-<p align="center">  <img src="/assets/images/IndReset_00.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/12_IndReset_1.png" align="center" width="32%"></p>
 
-# Input
+<style>
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+  .page__content table,
+  .page__content .spec-table,
+  .tab-content table, 
+  .tab-content .spec-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    margin: 20px 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  .page__content table th:nth-child(1), .page__content table td:nth-child(1),
+  .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
+  
+  .page__content table th:nth-child(2), .page__content table td:nth-child(2),
+  .tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { width: 15% !important; }
+  
+  .page__content table th:nth-child(3), .page__content table td:nth-child(3),
+  .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-* **MechUnit** : 실제 포지셔너 로봇의 이름을 입력한다.(기본값은 STN1) 
-* **AxisNum** : 리셋할 축의 번호를 입력한다.
+  /* 탭 시스템 전체 컨테이너 */
+  .tabs-container {
+    position: relative;
+    margin: 30px 0;
+    min-height: 160px;
+    width: 100% !important;
+    clear: both;
+  }
 
-## Built-in Param | IndReset
+  /* 라디오 버튼 숨기기 */
+  .tabs-container input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
 
-* **RefDegree** : 리셋할 각도 값을 설정하여 현재 자세에서 가장 가까운 값으로 재정의 된다.
-* **ResetType** : 옵션의 값에 따라 각도 값을 재정의 한다.(표 참고)
+  /* 탭 버튼 스타일 (상단 바 정렬) */
+  .tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+  }
+  .tab-buttons li {
+    margin: 0;
+    padding: 0;
+  }
 
-<p align="center">
-<table style="border-collapse: collapse: width: 51 %; height: 150x;">
-  <thead style="background-color: #F2F2F2; font-weight: bold; text-align: center;">
-    <tr>
-      <th style="width: 10%; height: 15px; text-align: center; font-weight: bolder;">ResetType</th>
-      <td><strong>Description</strong></td>
-    </tr>
-  </thead>
-  <tbody>   
-    <tr>
-      <th style="width: 25%; height: 15px; text-align: center; font-weight: bolder;">Short</th>
-      <td style="width: 25%; height: 15px;">가장 짧은 각도 값으로 현재 축 각도 값 재정의.</td>
-    </tr>
-    <tr>  
-      <th style="width: 25%; height: 15px; text-align: center; font-weight: bolder;">Fwd</th>
-      <td style="width: 25%; height: 15px;">현재 축 각도 값을 360도로 나눈 나머지 각도 값 기준으로 재정의, i.e., <code>Angle % 360</code>.</td>
-    </tr>
-    <tr>
-      <th style="width: 25%; height: 15px; text-align: center; font-weight: bolder;">Bwd</th>
-      <td style="width: 25%; height: 15px;">현재 축 각도 값을 360도로 나눈 나머지 각도값을 360도에서 뺸 값을을 기준으로 재정의<code>360° - (Angle % 360)</code>.</td>
-    </tr>
-  </tbody>
-</table>
-</p>
+  .tab-buttons label {
+    display: block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #f5f5f5;
+    color: #777;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .tab-buttons label:hover {
+    background: #e9e9e9;
+    color: #333;
+  }
+
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 💡 최대 6개까지 대응 가능한 라벨 활성화 스타일 */
+  #tab1:checked ~ .tab-buttons label[for="tab1"],
+  #tab2:checked ~ .tab-buttons label[for="tab2"],
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"],
+  #tab5:checked ~ .tab-buttons label[for="tab5"],
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
+  }
+
+  /* 💡 최대 6개까지 대응 가능한 콘텐츠 표시 제어 */
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6 { 
+    display: block; 
+  }
+</style>
+
+# | 입력(Input)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **RobTarget** | RobTarget | 논리 축 각도를 재정렬하기 위해 사용되는 참조 자세(Reference Position). Direction이 Short / Fwd / Bwd일 때만 유효. RefNum와 병용 불가. |
+
+## | 필수 파라미터 (Required Parameter)
+
+<div class="tabs-container">
+  <input type="radio" id="tab1" name="gh-tabs-model" checked>
+  <ul class="tab-buttons">
+    <li><label for="tab1">ABB Positioner</label></li>
+  </ul>
+  <div class="tab-content" id="content1">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>MechUnit</strong></td>
+          <td>String</td>
+          <td>메카니컬 유닛 이름</td>
+        </tr>
+        <tr>
+          <td><strong>Target Axis</strong></td>
+          <td>String</td>
+          <td>대상 축 번호 (1–6). 독립 모드 복귀 또는 논리 위치 재정의 대상.</td>
+        </tr>        
+      </tbody>
+    </table>
+    <p align="center">  <img src="/assets/images/12_IndReset_20.png" align="center" width="32%"></p>
+  </div>
+</div>
+
+<div class="tabs-container">
+  <input type="radio" id="tab2" name="gh-tabs-options" checked>
+  
+  <ul class="tab-buttons">
+    <li><label for="tab2">Setting</label></li>
+  </ul>
+
+  <div class="tab-content" id="content2">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>RefNum(°)</strong></td>
+          <td>Number</td>
+          <td>목표 위치 (각도)를 숫자 (°)로 직접 지정.</td>
+        </tr>
+        <tr>
+          <td><strong>Direction</strong></td>
+          <td>String</td>
+          <td>이동 방향.\n" +
+              • Short: 최단 경로 (±180° 이내)<br>
+              • Fwd: 양의 방향으로 이동 (최대 360°)<br>
+              • Bwd: 음의 방향으로 이동 (최대 360°)</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>    
+    <p align="center">  <img src="/assets/images/12_IndReset_21.png" align="center" width="32%"></p>
+  </div>
 
 
-# Output
+# | 출력(Output)
 
-* **Instructions** : 입력된 조건에 따라 정의된 IndReset Instruction을 출력한다.
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |

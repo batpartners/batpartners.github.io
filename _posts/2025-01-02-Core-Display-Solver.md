@@ -32,48 +32,200 @@ tags:
 
 # Description
 
-* DisplaySolver는  Robot 컴포넌트 및 GERTY Core 컴포넌트로부터 입력된 Input 데이터에 따라 라이노 뷰포트 상에, 로봇의 연속 동작을 프리뷰하는 컴포넌트.  
+# Description
 
-<p align="center">  <img src="/assets/images/displaysolver.png" align="center" width="32%"></p>
+정의된 로봇 모션을 Rhino 뷰포트에서 시뮬레이션 및 시각화.
 
-# Input
+<p align="center">  <img src="/assets/images/12_IndReset.png" align="center" width="32%"></p>
 
-* **GERTY Solver [GERTY Solver/Item]** : GERTY Core 컴포넌트가 출력하는 GERTY Solver 데이터를 입력한다. 
+<style>
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+  .page__content table,
+  .page__content .spec-table,
+  .tab-content table, 
+  .tab-content .spec-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    margin: 20px 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  .page__content table th:nth-child(1), .page__content table td:nth-child(1),
+  .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
+  
+  .page__content table th:nth-child(2), .page__content table td:nth-child(2),
+  .tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { width: 15% !important; }
+  
+  .page__content table th:nth-child(3), .page__content table td:nth-child(3),
+  .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-## Built-in Param | Basic Params
+  /* 탭 시스템 전체 컨테이너 */
+  .tabs-container {
+    position: relative;
+    margin: 30px 0;
+    min-height: 160px;
+    width: 100% !important;
+    clear: both;
+  }
 
-* **Simulation Pop-up** : On 설정하여 로봇의 동작 시뮬레이션을 조작할 수 있는 Popup을 실행한다. 
+  /* 라디오 버튼 숨기기 */
+  .tabs-container input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
 
-<p align="center">  <img src="/assets/images/popup-info.png" align="center" width="80%"></p>
+  /* 탭 버튼 스타일 (상단 바 정렬) */
+  .tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+  }
+  .tab-buttons li {
+    margin: 0;
+    padding: 0;
+  }
 
-* **Simulaition Pop-up interface** :
-<p align="center">  <img src="/assets/images/jointmode-robot-01.png" align="center" width="80%"></p>
+  .tab-buttons label {
+    display: block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #f5f5f5;
+    color: #777;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition: all 0.2s ease;
+  }
 
-1) **Target Info**: 뷰포트에 Preview되는 로봇 동작의 RobTarget 정보를 보여주는 패널.<br>
-* **Input [TextBox]** : 시뮬레이션 상에서 현재 로봇의 동작에 해당하는, Robtarget의 Index를 보여준다. Index를 직접 타이핑하여, 특정 RobTarget에서의  동작을 곧바로 프리뷰하는 기능을 포함한다.
-* **RobTarget [TextBox]** : 시뮬레이션 상에서 현재 로봇의 동작에 해당하는, Robtarget의 변수명를 보여준다. 변수명을 직접 타이핑하여, 특정 RobTarget에서의  동작을 곧바로 프리뷰하는 기능을 포함한다.
-* **Joint Mode [Button]** : 현재 로봇의 동작에서, 로봇 및 포지셔너 각 축의 각도(Angle) 값을 보여준다.
-* **Linear Mode [Button]** : 설정된 Workobject를 기준으로, 현재 로봇의 동작을 정의하는, Target Plane의 위치(Coordinate)와 방향(Orient/Quaternion)값을 보여준다.
+  .tab-buttons label:hover {
+    background: #e9e9e9;
+    color: #333;
+  }
 
-<p align="center">  <img src="/assets/images/linearmode_example.png" align="center" width="80%"></p>
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
 
-2) **Simulation**: 로봇의 연속동작을 시뮬레이션하기 위한 슬라이더 인터페이스 패널.<br>
-* **Simulation [Slider]** : 마우스 드래그 또는 플레이어 버튼 인터페이스로 메인 슬라이더 값을 조절하여, 계획한 로봇의 동작을 시뮬레이션 할 수 있다.
-* **Step Backward/Step Forward [Button]** : 버튼을 클릭하여, 현재 RobTarget 동작으로부터 직전/직후 RobTarget의 동작을 프리뷰한다.
-* **Play [Button]** : 버튼을 클릭하여, 현재 RobTarget  동작으로부터 이후의 연속 동작을 시뮬레이션 한다. 
-* **Stop [Button]** : 시뮬레이션 Play가 활성화된 상태에서, 한번 클릭하면 시뮬레이션을 일시 정지한다. 더블 클릭하면 메인 슬라이더를 시작 지점으로 초기화한다. 
-* **Speed [Slider]** : Play 버튼 작동시, 시뮬레이션 진행 속도를 설정한다.
-* **Error Messege** : 입력된 툴패스를 움직이는 과정에서, 동작 에러가 예상되는 경우, Simulation 패널 우측 상단에 관련 메시지를 표시한다. 시뮬레이션 과정에서 확인할 수 있는 동작 에러는 `Singularity / Out of Reach / Over Angle / Configuration`의 4가지 이다. 
+  /* 💡 최대 6개까지 대응 가능한 라벨 활성화 스타일 */
+  #tab1:checked ~ .tab-buttons label[for="tab1"],
+  #tab2:checked ~ .tab-buttons label[for="tab2"],
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"],
+  #tab5:checked ~ .tab-buttons label[for="tab5"],
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
+  }
+
+  /* 💡 최대 6개까지 대응 가능한 콘텐츠 표시 제어 */
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6 { 
+    display: block; 
+  }
+</style>
+
+# | 입력(Input)
+
+## | 필수 파라미터 (Required Parameter)
+
+<div class="tabs-container">
+  <input type="radio" id="tab1" name="gh-tabs-model" checked>
+  <ul class="tab-buttons">
+    <li><label for="tab1">ABB Positioner</label></li>
+  </ul>
+  <div class="tab-content" id="content1">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>MechUnit</strong></td>
+          <td>String</td>
+          <td>메카니컬 유닛 이름</td>
+        </tr>
+        <tr>
+          <td><strong>Target Axis</strong></td>
+          <td>String</td>
+          <td>대상 축 번호 (1–6). 독립 모드 복귀 또는 논리 위치 재정의 대상.</td>
+        </tr>        
+      </tbody>
+    </table>
+    <p align="center">  <img src="/assets/images/12_IndReset_10.png" align="center" width="32%"></p>
+  </div>
+</div>
+
+<div class="tabs-container">
+  <input type="radio" id="tab2" name="gh-tabs-options" checked>
+  
+  <ul class="tab-buttons">
+    <li><label for="tab2">Setting</label></li>
+  </ul>
+
+  <div class="tab-content" id="content2">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>RefNum(°)</strong></td>
+          <td>Number</td>
+          <td>목표 위치 (각도)를 숫자 (°)로 직접 지정.</td>
+        </tr>
+        <tr>
+          <td><strong>Direction</strong></td>
+          <td>String</td>
+          <td>이동 방향.\n" +
+              • Short: 최단 경로 (±180° 이내)<br>
+              • Fwd: 양의 방향으로 이동 (최대 360°)<br>
+              • Bwd: 음의 방향으로 이동 (최대 360°)</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>    
+    <p align="center">  <img src="/assets/images/12_IndReset_11.png" align="center" width="32%"></p>
+  </div>
 
 
-3) **Preview Options**: 시뮬레이션 시 RobTarget 및 TCP Tracing 등을 보일지 결정하는 옵션값을 설정한다. <br>
-* **Preview All Targets [Checkbox]** : 동작 시뮬레이션 진행률에 따라서, 입력된RobTarget들을 함께 Preview한다.
-* **Enable TCP Tracing [Checkbox]** : 동작 시뮬레이션 진행률에 따라서, TCP 움직임의 트레이싱 커브를 함께 Preview한다.
-* **Range [Slider]** : 트레이싱 범위를 설정한다. 
-* **Color [Button]** : 트레이싱 커브의 색을 설정한다.
+# | 출력(Output)
 
-<br>
-
-# Output
-
-* **Tool Center Plane [Plane/Item]** : 현재 프리뷰되는 로봇의 동작에서 TCP(Tool Center Point)를 평면 객체로 출력한다.
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |
