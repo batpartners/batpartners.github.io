@@ -229,6 +229,7 @@ tags:
     <br>    
     <p align="center">  <img src="/assets/images/11_IndRMove_11.png" align="center" width="32%"></p>
   </div>
+</div>  
 
 
 # | 출력(Output)
