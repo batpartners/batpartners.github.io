@@ -182,6 +182,7 @@ tags:
     </table>
     <p align="center">  <img src="/assets/images/12_IndReset_10.png" align="center" width="32%"></p>
   </div>
+</div>
 
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
@@ -219,7 +220,6 @@ tags:
     <p align="center">  <img src="/assets/images/12_IndReset_11.png" align="center" width="32%"></p>
   </div>
 </div>
-
 
 # | 출력(Output)
 
