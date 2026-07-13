@@ -241,9 +241,3 @@ tags:
     </tbody>
   </table>
 </div>
-
-# 타이틀
-
-| 이름 | 타입 | 설명 |
-|---|---|---|
-| Instruction | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |
