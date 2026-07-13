@@ -193,6 +193,7 @@ tags:
     </table>
     <p align="center">  <img src="/assets/images/11_IndRMove_20.png" align="center" width="32%"></p>
   </div>
+</div>
 
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
@@ -243,10 +244,23 @@ tags:
 
 # | 출력(Output)
 
-<div class="page__content">
-
-| 이름 | 타입 | 설명 |
-| :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |
-
+<div style="margin-top: 30px;">
+  <div class="page__content">
+    <table>
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Instruction</strong></td>
+          <td>Instruction</td>
+          <td>생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
