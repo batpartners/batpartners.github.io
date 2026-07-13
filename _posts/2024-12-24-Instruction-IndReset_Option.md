@@ -167,7 +167,7 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
   <ul class="tab-buttons">
-    <li><label for="sm-tab1">SeamData</label></li>
+    <li><label for="sm-tab1">IndReset</label></li>
   </ul>
   <div class="tab-content" id="sm-content1">
     <table class="spec-table">

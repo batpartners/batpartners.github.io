@@ -48,7 +48,7 @@ tags:
     table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
     word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -123,36 +123,29 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
-  #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  /* 💡 최대 6개까지 대응 가능한 라벨 활성화 스타일 */
+  #tab1:checked ~ .tab-buttons label[for="tab1"],
+  #tab2:checked ~ .tab-buttons label[for="tab2"],
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"],
+  #tab5:checked ~ .tab-buttons label[for="tab5"],
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
   }
-  #sm-tab1:checked ~ #sm-content1 { display: block; }
 
-  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
-  #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
-  #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
-  #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #arc-tab2:checked ~ #arc-content2,
-  #arc-tab3:checked ~ #arc-content3,
-  #arc-tab4:checked ~ #arc-content4 { display: block; }
-
-  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
-  #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
-  #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
-  #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #prm-tab5:checked ~ #prm-content5,
-  #prm-tab6:checked ~ #prm-content6,
-  #prm-tab7:checked ~ #prm-content7 { display: block; }
-
-  /* 탭 전환시 부드러운 페이드인 애니메이션 */
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(2px); }
-    to { opacity: 1; transform: translateY(0); }
+  /* 💡 최대 6개까지 대응 가능한 콘텐츠 표시 제어 */
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6 { 
+    display: block; 
   }
 </style>
 
@@ -167,7 +160,7 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-model" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ABB Positioner</label></li>
+    <li><label for="tab1">IndMove</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -197,11 +190,9 @@ tags:
 
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
-  
   <ul class="tab-buttons">
     <li><label for="tab2">Settings</label></li>
   </ul>
-
   <div class="tab-content" id="content2">
     <table class="spec-table">
       <thead>
