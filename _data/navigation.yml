@@ -120,8 +120,8 @@ sidebar:
         url: /core/Core-GERTY-Core/
   - title: "5. ToolPath"
     children:
-      - title: "Drawing"
-        url: /toolpath/ToolPath-Drawing/
+      - title: "Curve Tracing"
+        url: /toolpath/ToolPath-CurveTracing/
       - title: "FlyByBranch"
         url: /toolpath/ToolPath-FlyByBranch/
       - title: "FlyByCustom"
