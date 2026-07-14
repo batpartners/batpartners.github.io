@@ -163,7 +163,7 @@ tags:
   <ul class="tab-buttons">
     <li><label for="tab1">Program Settings</label></li>
   </ul>
-  <div class="tab-content" id="sm-content1">
+  <div class="tab-content" id="content1">
     <table class="spec-table">
       <thead>
         <tr>
