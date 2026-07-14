@@ -195,13 +195,19 @@ tags:
           <td>툴 방향 반전.</td>
         </tr>
         <tr>
+          <td><strong>UV Flip</strong></td>
+          <td>Toggle</td>
+          <td>열선 경로의 UV 방향 전환. U·V 양방향이 모두 1차 (degree 1)인 룰드 서피스인 경우에만 작동.<br>
+              • TRUE: V 방향. / • FALSE: U 방향 (기본값).</td>
+        </tr>
+        <tr>
           <td><strong>Extension</strong></td>
           <td>Number</td>
           <td>경로의 시작과 끝을 진행 방향으로 연장하는 거리 (mm).</td>
         </tr>        
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/4_WireCuttingFromCurvs_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/5_WireCuttingFromSrf_10.png" align="center" width="32%"></p>
   </div>
 </div>
 
