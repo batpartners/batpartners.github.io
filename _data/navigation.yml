@@ -138,8 +138,8 @@ sidebar:
         url: /toolpath/ToolPath-ParallelFinishing/
       - title: "UVFinishing"
         url: /toolpath/ToolPath-UV-Finishing/
-      - title: "BuildUp Deposition"
-        url: /toolpath/ToolPath-BuildUp-Deposition/
+      - title: "Deposition Builder"
+        url: /toolpath/ToolPath-DepositionBuilder/
       - title: "BuildUp WAAM"
         url: /toolpath/ToolPath-BuildUp-WAAM/
       - title: "SlicerFill"
