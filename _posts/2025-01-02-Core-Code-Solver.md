@@ -182,17 +182,23 @@ tags:
           <td><strong>Program Name</strong></td>
           <td>String</td>
           <td>생성될 로봇 프로그램의 이름</td>
-        </tr>        
+        </tr>
+        <tr>
+          <td><strong>Enable Socket</strong></td>
+          <td>Toggle</td>
+          <td>RAPID 코드 내에 소켓 통신용 모듈로 프로그램 내보내기</td>
+        </tr>      
       </tbody>
     </table>
 <p align="center"><img src="/assets/images/0_CodeSolver_10.png" align="center" width="32%"></p>
   </div>
 </div>
 
+
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-codesolver" checked>
+  <input type="radio" id="tab2" name="gh-tabs-codesolver2" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">Export</label></li>
+    <li><label for="tab2">Export</label></li>
   </ul>
   <div class="tab-content" id="content2">
     <table class="spec-table">
