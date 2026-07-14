@@ -31,7 +31,8 @@ tags:
 🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
-정의된 로봇 모션을 Rhino 뷰포트에서 시뮬레이션 및 시각화.
+
+정의된 로봇 셋업과 인스트럭션으로부터 로봇 동작 연산. Display Solver 및 CodeSolver 실행에 필요한 기초 데이터 생성.
 
 <p align="center">  <img src="/assets/images/2_GERTYCore.png" align="center" width="32%"></p>
 
@@ -153,7 +154,9 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| GERTY Solver | GERTY Solver | GERTY Solver |
+| Robot Setup | Robot Setup | 구성된 로봇 셋업. 베이스·툴·포지셔너·주변 모델이 묶인 로봇 정의. |
+| Instructions | Instructions | 실행할 ABB 인스트럭션 콜렉션. 리스트 순서가 로봇 실행 순서와 직접 대응되므로, 의도한 모션 시퀀스에 맞게 순서 정렬 필요. |
+| SubProc | SubProc | 호출되는 ABB 서브프로시저 (선택) |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -187,4 +190,5 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| Current TCP | Plane | 현재 TCP 평면 |
+| GERTY Solver | GERTY Solver | GERTY Solver |
+| GERTY Code | GERTY Code | GERTY Code |
