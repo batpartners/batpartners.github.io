@@ -232,7 +232,7 @@ tags:
               Local path / Controller path / Contents</td>
         </tr>        
         <tr>
-          <td><strong>Open Code in Editor</strong></td>
+          <td><strong>Open in Editor</strong></td>
           <td>Button</td>
           <td>생성된 RAPID 코드를 VSCode로 열어 편집. VSCode 미설치 시 메모장으로 자동 실행.</td>
         </tr>                        
