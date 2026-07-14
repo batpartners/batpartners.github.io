@@ -1,9 +1,9 @@
 ---
-title: "WireCuttingFromCrvs"
+title: "WireCuttingFromSrf"
 
 layout: single
 header:
-  teaser: "/assets/images/4_WireCuttingFromCurvs.png"
+  teaser: "/assets/images/HotwireToolpathfromSrf.png"
 
 collection: ToolPath
 entries_layout: grid
@@ -14,9 +14,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /toolpath/ToolPath-WireCuttingFromCrvs/
+permalink: /toolpath/ToolPath-WireCuttingFromSrf/
 
-translation_link: /en/toolpath/ToolPath-WireCuttingFromCrvs/
+translation_link: /en/toolpath/ToolPath-WireCuttingFromSrf/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -32,9 +32,9 @@ tags:
 
 # Description
 
-두 커브로부터 열선 절단용 경로를 생성
+룰드 서피스로부터 열선 절단용 툴패스를 생성
 
-<p align="center">  <img src="/assets/images/4_WireCuttingFromCurvs.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/5_WireCuttingFromSrf.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -161,8 +161,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Rail A** | Curve | 룰드 서피스를 정의하기 위한 첫 번째 레일 커브 |
-| **Rail B** | Curve | 룰드 서피스를 정의하기 위한 두 번째 레일 커브 |
+| **Surface* | Surface | 룰드 서피스 |
 | **Target Count** | Number | 절단 경로를 구성할 타겟 평면의 개수. |
 | **Parameter** | Number | 타겟 평면의 원점으로 사용되는 Span상의 파라미터 (0.0 ~ 1.0). |
 | **Attractor** | Geometry | 각 타겟 평면의 Z를 지향시킬 어트랙터 객체 (Point 또는 Curve). |
