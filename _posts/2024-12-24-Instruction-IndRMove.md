@@ -156,7 +156,7 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-model" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ABB Positioner</label></li>
+    <li><label for="tab1">IndMove</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">

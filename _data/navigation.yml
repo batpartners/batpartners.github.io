@@ -107,7 +107,7 @@ sidebar:
             url: /instruction/Instruction-IndRMove/Instruction-IndRMove_Option/
   - title: "4. Core"
     children:
-      - title: "Analysis"
+      - title: "Analysis Deconstructor"
         url: /core/Core-Analysis/
       - title: "Code Solver"
         url: /core/Core-Code-Solver/

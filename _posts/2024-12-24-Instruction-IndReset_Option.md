@@ -215,15 +215,16 @@ tags:
         <tr>
           <td><strong>RefNum(°)</strong></td>
           <td>Number</td>
-          <td>목표 위치 (각도)를 숫자 (°)로 직접 지정.</td>
+          <td>계측 기준 위치를 숫자 (°)로 지정. Direction이 Short / Fwd / Bwd일 때만 유효.</td>
         </tr>
         <tr>
           <td><strong>Direction</strong></td>
           <td>String</td>
-          <td>이동 방향.\n" +
-              • Short: 최단 경로 (±180° 이내)<br>
-              • Fwd: 양의 방향으로 이동 (최대 360°)<br>
-              • Bwd: 음의 방향으로 이동 (최대 360°)</td>
+          <td>계측 시스템 조정 방식.<br>
+              • Short: 기준 위치까지 최단 경로 (±180° 이내)<br>
+              • Fwd: 기준 위치의 양의 방향으로 조정<br>
+              • Bwd: 기준 위치의 음의 방향으로 조정<br>
+              • Old: 현재 논리 위치 유지 (기본값).</td>
         </tr>   
       </tbody>
     </table>
