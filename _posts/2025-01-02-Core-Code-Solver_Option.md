@@ -159,7 +159,7 @@ tags:
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-codesolver" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">Program Settings</label></li>
   </ul>
@@ -195,7 +195,7 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-welddata" checked>
+  <input type="radio" id="tab2" name="gh-tabs-codesolver" checked>
   <ul class="tab-buttons">
     <li><label for="tab2">Export</label></li>
   </ul>
