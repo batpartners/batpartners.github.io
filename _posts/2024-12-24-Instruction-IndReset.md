@@ -186,11 +186,9 @@ tags:
 
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
-  
   <ul class="tab-buttons">
     <li><label for="tab2">Settings</label></li>
   </ul>
-
   <div class="tab-content" id="content2">
     <table class="spec-table">
       <thead>
@@ -204,15 +202,16 @@ tags:
         <tr>
           <td><strong>RefNum(°)</strong></td>
           <td>Number</td>
-          <td>목표 위치 (각도)를 숫자 (°)로 직접 지정.</td>
+          <td>계측 기준 위치를 숫자 (°)로 지정. Direction이 Short / Fwd / Bwd일 때만 유효.</td>
         </tr>
         <tr>
           <td><strong>Direction</strong></td>
           <td>String</td>
-          <td>이동 방향.\n" +
-              • Short: 최단 경로 (±180° 이내)<br>
-              • Fwd: 양의 방향으로 이동 (최대 360°)<br>
-              • Bwd: 음의 방향으로 이동 (최대 360°)</td>
+          <td>계측 시스템 조정 방식.<br>
+              • Short: 기준 위치까지 최단 경로 (±180° 이내)<br>
+              • Fwd: 기준 위치의 양의 방향으로 조정<br>
+              • Bwd: 기준 위치의 음의 방향으로 조정<br>
+              • Old: 현재 논리 위치 유지 (기본값).</td>
         </tr>
       </tbody>
     </table>
@@ -221,85 +220,8 @@ tags:
   </div>
 </div>
 
-------------
-
-<div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-model" checked>
-  <ul class="tab-buttons">
-    <li><label for="tab1">IndMove</label></li>
-  </ul>
-  <div class="tab-content" id="content1">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>MechUnit</strong></td>
-          <td>String</td>
-          <td>메카니컬 유닛 이름</td>
-        </tr>
-        <tr>
-          <td><strong>Target Axis</strong></td>
-          <td>String</td>
-          <td>대상 축 번호 (1–6). 독립 모드 복귀 또는 논리 위치 재정의 대상.</td>
-        </tr>        
-      </tbody>
-    </table>
-    <p align="center">  <img src="/assets/images/11_IndRMove_20.png" align="center" width="32%"></p>
-  </div>
-</div>
-
-<div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-options" checked>
-  <ul class="tab-buttons">
-    <li><label for="tab2">Settings</label></li>
-  </ul>
-  <div class="tab-content" id="content2">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>RefNum(°)</strong></td>
-          <td>Number</td>
-          <td>목표 위치 (각도)를 숫자 (°)로 직접 지정.</td>
-        </tr>
-        <tr>
-          <td><strong>Direction</strong></td>
-          <td>String</td>
-          <td>이동 방향.\n" +
-              • Short: 최단 경로 (±180° 이내)<br>
-              • Fwd: 양의 방향으로 이동 (최대 360°)<br>
-              • Bwd: 음의 방향으로 이동 (최대 360°)</td>
-        </tr>
-        <tr>
-          <td><strong>Speed</strong></td>
-          <td>Number</td>
-          <td>축 이동 속도 (°/s)</td>
-        </tr>
-        <tr>
-          <td><strong>Ramp(%)</strong></td>
-          <td>Number</td>
-          <td>가속/감속 성능 감소 비율 (%). 100% = 최대 성능. 낮출수록 가속/감속 완화.</td>
-        </tr>      
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/11_IndRMove_21.png" align="center" width="32%"></p>
-  </div>
-</div>
-
 # | 출력(Output)
+
 <div style="margin-top: 30px;">
   <div class="page__content">
     <table>
