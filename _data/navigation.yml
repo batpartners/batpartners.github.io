@@ -136,7 +136,7 @@ sidebar:
         url: /toolpath/ToolPath-Roughing/
       - title: "ParallelFinishing"
         url: /toolpath/ToolPath-ParallelFinishing/
-      - title: "UV Finishing"
+      - title: "UVFinishing"
         url: /toolpath/ToolPath-UV-Finishing/
       - title: "BuildUp Deposition"
         url: /toolpath/ToolPath-BuildUp-Deposition/
