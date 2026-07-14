@@ -132,8 +132,8 @@ sidebar:
         url: /toolpath/ToolPath-WireCuttingFromCrvs/
       - title: "WireCuttingFromSrf"
         url: /toolpath/ToolPath-WireCuttingFromSrf/
-      - title: "ObjRoughing"
-        url: /toolpath/ToolPath-ObjRoughing/
+      - title: "Roughing"
+        url: /toolpath/ToolPath-Roughing/
       - title: "ParallelFinishing"
         url: /toolpath/ToolPath-ParallelFinishing/
       - title: "UV Finishing"
