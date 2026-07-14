@@ -159,11 +159,11 @@ tags:
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-codesolver" checked>
+  <input type="radio" id="sm-tab1" name="gh-tabs-codesolver" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">Program Settings</label></li>
+    <li><label for="sm-tab1">Program Settings</label></li>
   </ul>
-  <div class="tab-content" id="content1">
+  <div class="tab-content" id="sm-content1">
     <table class="spec-table">
       <thead>
         <tr>
@@ -194,10 +194,11 @@ tags:
   </div>
 </div>
 
+
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-codesolver" checked>
+  <input type="radio" id="tab2" name="gh-tabs-codesolver2" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">Export</label></li>
+    <li><label for="tab2">Export</label></li>
   </ul>
   <div class="tab-content" id="content2">
     <table class="spec-table">
