@@ -166,7 +166,7 @@ tags:
 
 ## | 필수 파라미터 (Required Parameter)
 
-div class="tabs-container">
+<div class="tabs-container">
   <input type="radio" id="arc-tab2" name="gh-tabs-arcdata" checked>
   <input type="radio" id="arc-tab3" name="gh-tabs-arcdata">
 
