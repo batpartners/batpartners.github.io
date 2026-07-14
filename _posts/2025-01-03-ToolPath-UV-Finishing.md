@@ -166,12 +166,15 @@ tags:
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
+  <input type="radio" id="arc-tab2" name="gh-tabs-arcdata" checked>
+  <input type="radio" id="arc-tab3" name="gh-tabs-arcdata">
 
   <ul class="tab-buttons">
-    <li><label for="sm-tab1">Settings</label></li>
+    <li><label for="arc-tab2">Settings</label></li>
+    <li><label for="arc-tab3">Preview</label></li>
   </ul>
-  <div class="tab-content" id="sm-content1">
+  
+  <div class="tab-content" id="arc-content2">
     <table class="spec-table">
       <thead>
         <tr>
@@ -205,16 +208,8 @@ tags:
     </table>
     <p align="center">  <img src="/assets/images/8_UVFinishing_10.png" align="center" width="32%"></p>
   </div>
-</div>
-
-<div class="tabs-container">
-  <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
   
-  <ul class="tab-buttons">
-    <li><label for="prm-tab5">Preview</label></li>
-  </ul>
-
-  <div class="tab-content" id="prm-content5">
+  <div class="tab-content" id="arc-content3">
     <table class="spec-table">
       <thead>
         <tr>

@@ -175,6 +175,7 @@ tags:
     <li><label for="arc-tab2">Settings</label></li>
     <li><label for="arc-tab3">Preview</label></li>
   </ul>
+  
   <div class="tab-content" id="arc-content2">
     <table class="spec-table">
       <thead>
