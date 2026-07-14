@@ -195,9 +195,9 @@ tags:
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-codesolver" checked>
+  <input type="radio" id="tab1" name="gh-tabs-codesolver" checked>
   <ul class="tab-buttons">
-    <li><label for="tab2">Export</label></li>
+    <li><label for="tab1">Export</label></li>
   </ul>
   <div class="tab-content" id="content2">
     <table class="spec-table">
