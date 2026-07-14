@@ -111,6 +111,9 @@ sidebar:
         url: /core/Core-Analysis/
       - title: "Code Solver"
         url: /core/Core-Code-Solver/
+        children:
+          - title: "GERTY Core Option"
+            url: /core/Core-Code-Solver/Core-Code-Solver_Option/
       - title: "Display Solver"
         url: /core/Core-Display-Solver/
       - title: "GERTY Core"

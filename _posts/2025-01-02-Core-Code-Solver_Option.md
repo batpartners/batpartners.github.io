@@ -14,9 +14,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /core/Core-Code-Solver/
+permalink: /core/Core-Code-Solver/Core-Code-Solver_Option/
 
-translation_link: /en/core/Core-Code-Solver/
+translation_link: /en/core/Core-Code-Solver/Core-Code-Solver_Option/
 sidebar:
   nav: "sidebar"
 toc: true
