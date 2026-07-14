@@ -31,28 +31,160 @@ tags:
 🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
+정의된 로봇 모션을 Rhino 뷰포트에서 시뮬레이션 및 시각화.
 
-* 로봇 컴포넌트로부터 제어할 ABB로봇, 포지셔너 등 제원 정보를 포함하는 GERTY Core 컴포넌트이다. RobTarget과 Robot Instruction의 데이터를 읽고 ProgramData로 출력한다.
+<p align="center">  <img src="/assets/images/2_GERTYCore.png" align="center" width="32%"></p>
 
-<p align="center">  <img src="/assets/images/GERTYCore.png" align="center" width="32%"></p>
+<style>
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+  .page__content table,
+  .page__content .spec-table,
+  .tab-content table, 
+  .tab-content .spec-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    margin: 20px 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  .page__content table th:nth-child(1), .page__content table td:nth-child(1),
+  .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
+  
+  .page__content table th:nth-child(2), .page__content table td:nth-child(2),
+  .tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { width: 15% !important; }
+  
+  .page__content table th:nth-child(3), .page__content table td:nth-child(3),
+  .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-<br>
+  /* 탭 시스템 전체 컨테이너 */
+  .tabs-container {
+    position: relative;
+    margin: 30px 0;
+    min-height: 160px;
+    width: 100% !important;
+    clear: both;
+  }
 
-# Input
+  /* 라디오 버튼 숨기기 */
+  .tabs-container input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
 
-* **GERTY Robot [GERTY Robot/Item]** : Robot 컴포넌트로부터 제어할 ABB 로봇, 포지셔너 등 제원 정보를 포함하는, GERTY Robot 객체를 입력한다.
-* **ProgramData [ABB DataType/List]** : 현재 템플릿에서 생성한 Instruction에 활용되는, 모든 ABB_DataType을 List 형식으로 입력한다. ProgramData는 각 Instruction 에서 호출되는 데이터로, 순서는 크게 중요하지 않다.
-* **Instructions [ABB Instructions/List]** : 템플릿에서 생성한 Motion/Action Instruction 을 List형식으로 입력한다. 이때 Instruction은 RAPID PROGRAM의 Main Procedure 부분의 코드작성과 관련된다. 실행시 PP(Program Pointer)에 의해 직접 스캔되는 명령어에 해당되기 때문에, 로봇의 동작 순서대로 입력해야 한다.
-* **Sub_PROC. [ABB Procedure/Item]** : Main Procedure에서 반복적으로 사용되는 Instruction 묶음을 Sub Procedure Module 형식으로 정의/입력할 수 있다.
-* **Config Option (Cfx =1) [Switch/Item]** : True 입력시, RobTarget Collection으로 부터 연속 동작에 대한 역기구학 연산 과정에서 도출되는 ConfigData의 Cfx 값에 1을 적용한다. 이를통해 같은 동작에서 5번 축 각도 부호를 반대로 취하도록 제어할 수 있다.
+  /* 탭 버튼 스타일 (상단 바 정렬) */
+  .tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+  }
+  .tab-buttons li {
+    margin: 0;
+    padding: 0;
+  }
 
-<p align="center">  <img src="https://b-at.kr/wp-content/uploads/2023/05/core_1.png" align="center" width="72%"></p>
+  .tab-buttons label {
+    display: block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #f5f5f5;
+    color: #777;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition: all 0.2s ease;
+  }
 
-* **Ignore Errors [Switch/Item]** : True 입력시, 발생하는 동작상 에러(Config Error, Singularity, Out of reach, Over angle)를 모두 무시한다. 동작상 Error가 하나라도 발생하면, Offline Code Solver 컴포넌트에서 최종 코드 저장이 진행되지 않기 때문에, 사용자의 판단하에, 무시할수 있는 수준의 Error인 경우, Ignore Errors 를 활성화 시켜 코드를 저장할수 있다.  
+  .tab-buttons label:hover {
+    background: #e9e9e9;
+    color: #333;
+  }
 
-<br>
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
 
-# Output
+  /* 💡 최대 6개까지 대응 가능한 라벨 활성화 스타일 */
+  #tab1:checked ~ .tab-buttons label[for="tab1"],
+  #tab2:checked ~ .tab-buttons label[for="tab2"],
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"],
+  #tab5:checked ~ .tab-buttons label[for="tab5"],
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
+  }
 
-* **GERTY Solver [GERTY Solver/Item]** : 입력된 조건에 따라, 연산된 GERTY Solver 객체를 출력한다. GERTY Solver는 ToolPath를 구성하는 각 RobTarget 위치에서, 로봇 및 포지셔너 장비의 회전축 및 회전각 정보를 포함한다.
-* **GERTY Code [GERTY Code/Item]** : 입력된 조건에 따라, 연산된 GERTY Code 객체를 출력한다. GERTY Code는 입력된 ProgramData의 선언 및 할당, Instruction 코드의 순차적인 작성 정보를 포함한다.
+  /* 💡 최대 6개까지 대응 가능한 콘텐츠 표시 제어 */
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6 { 
+    display: block; 
+  }
+</style>
+
+# | 입력(Input)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| GERTY Solver | GERTY Solver | GERTY Solver |
+
+## | 필수 파라미터 (Required Parameter)
+
+<div class="tabs-container">
+  <input type="radio" id="tab1" name="gh-tabs-model" checked>
+  <ul class="tab-buttons">
+    <li><label for="tab1">Simulation</label></li>
+  </ul>
+  <div class="tab-content" id="content1">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Simulation Window</strong></td>
+          <td>Toggle</td>
+          <td>시뮬레이션 컨트롤 창 열기/닫기</td>
+        </tr>
+      </tbody>
+    </table>
+    <p align="center">  <img src="/assets/images/2_GERTYCore_10.png" align="center" width="32%"></p>
+  </div>
+</div>
+
+# | 출력(Outputs)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| Current TCP | Plane | 현재 TCP 평면 |

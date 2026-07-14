@@ -32,8 +32,6 @@ tags:
 
 # Description
 
-# Description
-
 정의된 로봇 모션을 Rhino 뷰포트에서 시뮬레이션 및 시각화.
 
 <p align="center">  <img src="/assets/images/1_DisplaySolver.png" align="center" width="32%"></p>
@@ -163,7 +161,7 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-model" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ABB Positioner</label></li>
+    <li><label for="tab1">Simulation</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -176,20 +174,15 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>MechUnit</strong></td>
-          <td>String</td>
-          <td>메카니컬 유닛 이름</td>
+          <td><strong>Simulation Window</strong></td>
+          <td>Toggle</td>
+          <td>시뮬레이션 컨트롤 창 열기/닫기</td>
         </tr>
-        <tr>
-          <td><strong>Target Axis</strong></td>
-          <td>String</td>
-          <td>대상 축 번호 (1–6). 독립 모드 복귀 또는 논리 위치 재정의 대상.</td>
-        </tr>        
       </tbody>
     </table>
     <p align="center">  <img src="/assets/images/1_DisplaySolver_1.png" align="center" width="32%"></p>
   </div>
-  </div>
+</div>
 
 # | 출력(Outputs)
 

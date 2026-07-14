@@ -199,7 +199,7 @@ tags:
   <ul class="tab-buttons">
     <li><label for="tab2">Export</label></li>
   </ul>
-  <div class="tab-content" id="content1">
+  <div class="tab-content" id="content2">
     <table class="spec-table">
       <thead>
         <tr>
