@@ -128,8 +128,8 @@ sidebar:
         url: /toolpath/ToolPath-FlyByCustom/
       - title: "FlyByTree"
         url: /toolpath/ToolPath-FlyByTree/
-      - title: "HotWireToolPathFromCrvs"
-        url: /toolpath/ToolPath-HotWireToolPathFromCrvs/
+      - title: "WireCuttingFromCrvs"
+        url: /toolpath/ToolPath-WireCuttingFromCrvs/
       - title: "HotWireToolPathFromSrf"
         url: /toolpath/ToolPath-HotWireToolPathFromSrf/
       - title: "ObjRoughing"
