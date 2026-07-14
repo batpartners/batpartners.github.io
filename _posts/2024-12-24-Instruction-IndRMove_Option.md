@@ -234,7 +234,6 @@ tags:
 </div>
 
 # | 출력(Output)
-
 <div style="margin-top: 30px;">
   <div class="page__content">
     <table>

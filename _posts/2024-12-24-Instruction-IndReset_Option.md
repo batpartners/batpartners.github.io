@@ -235,7 +235,6 @@ tags:
 
 
 # | 출력(Output)
-
 <div class="page__content">
   <table>
     <thead>
