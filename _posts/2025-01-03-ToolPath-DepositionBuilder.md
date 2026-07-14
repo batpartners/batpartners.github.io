@@ -168,14 +168,14 @@ tags:
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
-  <input type="radio" id="sm-tab2" name="gh-tabs-seamdata">
+  <input type="radio" id="arc-tab2" name="gh-tabs-arcdata" checked>
+  <input type="radio" id="arc-tab3" name="gh-tabs-arcdata">
 
   <ul class="tab-buttons">
-    <li><label for="sm-tab1">Settings</label></li>
-    <li><label for="sm-tab1">Preview</label></li>
+    <li><label for="arc-tab2">Settings</label></li>
+    <li><label for="arc-tab3">Preview</label></li>
   </ul>
-  <div class="tab-content" id="sm-content1">
+  <div class="tab-content" id="arc-content2">
     <table class="spec-table">
       <thead>
         <tr>
@@ -203,7 +203,7 @@ tags:
     <p align="center">  <img src="/assets/images/9_DepositionBuilder_10.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="sm-content2">
+  <div class="tab-content" id="arc-content3">
     <table class="spec-table">
       <thead>
         <tr>
