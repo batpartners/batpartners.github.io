@@ -32,58 +32,273 @@ tags:
 
 # Description
 
-* 입력되는 로봇 TCP 주요 경로(Target Plane Input) DataTree의 각 Branch의 사이사이를 지나는, 새로운 이동경로를 생성하는 컴포넌트이다. FlyBy 컴포넌트는 기본적으로 입력된 주요경로 Branch[i]의 마지막 Plane과 인접한 주요경로 Branch[i+1]의 첫번째 Plane을 이용하여, 사용자가 입력한 거리만큼 떨어진 위치에, 새로운 FlyBy Target Plane들을 정의한다.
+사용자 정의 벡터를 사용하여, Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) 타겟 평면 생성. 경로 Segment 간 이동 시 작업물에서 이탈하는 경로 구성.
 
-<p align="center">  <img src="/assets/images/FlyByCustom.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/2_FlybyCustom.png" align="center" width="32%"></p>
 
-# Input
-
-* **TargetPlanes [Plane/DataTree]**: FlyBy Targets을 적용하기 위해, TCP 주요 경로에 해당하는 Target Plane들을 입력한다.
-* **Approaching Dir.** : 진입하는 이동경로의 방향을 사용자가 정의한다.
-* **Leaving Dir.** : 진출하는 이동경로의 방향을 사용자가 정의한다.
-
-## Built in param | Advanced Params
-
-Advanced Param은 이동 경로의 프로파일을 결정하는 옵션입니다. 이동경로의 프로파일은, Builtin Parma : Basic 에서 사용자가 선택한 조건에 따라, 이동경로 처음과 마지막 Flyby Plane이 주요경로로부터 이격되는 방향 벡터를 Blend 하는 방식으로 결정된다.
+<style>
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+  .page__content table,
+  .page__content .spec-table,
+  .tab-content table, 
+  .tab-content .spec-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    margin: 20px 0 !important;
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+  }
   
-  * **Continuity** : 선택하는 연속성 조건에 따라, 생성되는 FlyBy Plane들의 원점이 선형 또는 비선형 커브 위에 있도록 한다. 기본값 : Position(G0)
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  .page__content table th:nth-child(1), .page__content table td:nth-child(1),
+  .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
-  `연속성 설명 참고 : Rhinoceros 도움말 – 연속성 설명 /| Rhino 3D 모델링 (mcneel.com)`
+  .page__content table th:nth-child(2), .page__content table td:nth-child(2),
+  .tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { width: 15% !important; }
+  
+  .page__content table th:nth-child(3), .page__content table td:nth-child(3),
+  .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-<div className="multi-headings" align="center">
-  <table style="border-collapse: collapse: width: 51 %; height: 280px;">
-    <thead>
-      <tr>
-        <th style="text-align: center;">Type</th>
-        <th style="text-align: center;">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th style="width: 45%; height: 20px; text-align: center;">Position(G0)</th>
-        <td style="width: 45%; height: 20px;"> 이동경로의 첫번째와 마지막 Plane 원점의 위치만 연속성(G0)을 갖는 Blend Curve를 이동경로의 프로파일로 취합니다. </td>
-      </tr>
-      <tr>
-        <th style="width: 45%; height: 20px; text-align: center;">Tangency(G1)</th>
-        <td style="width: 45%; height: 20px;"> 이동경로의 첫번째와 마지막 Plane 원점의 위치와 해당 위치에서 이격 방향벡터와 같은 방향의 접선을 갖는, G1 연속성의 Blend Curve를 이동경로의 프로파일로 취합니다. </td>
-      </tr>
-      <tr>
-        <th style="width: 45%; height: 20px; text-align: center;">Curvature(G2)</th>
-        <td style="width: 45%; height: 20px;"> 이동경로의 첫번째와 마지막 Plane 원점의 위치와 해당 위치에서 이격 방향벡터와 같은 방향의 접선, 같은 곡률반지름을 갖는, G2 연속성의 Blend Curve를 이동경로의 프로파일로 취합니다.</td>
-      </tr>
-    </tbody>
-  </table>
+  /* 탭 시스템 전체 컨테이너 */
+  .tabs-container {
+    position: relative;
+    margin: 30px 0;
+    min-height: 160px;
+    width: 100% !important;
+    clear: both;
+  }
+
+  /* 라디오 버튼 숨기기 */
+  .tabs-container input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  /* 탭 버튼 스타일 (상단 바 정렬) */
+  .tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+  }
+  .tab-buttons li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .tab-buttons label {
+    display: block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #f5f5f5;
+    color: #777;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .tab-buttons label:hover {
+    background: #e9e9e9;
+    color: #333;
+  }
+
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
+  #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #sm-tab1:checked ~ #sm-content1 { display: block; }
+
+  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
+  #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
+  #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
+  #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #arc-tab2:checked ~ #arc-content2,
+  #arc-tab3:checked ~ #arc-content3,
+  #arc-tab4:checked ~ #arc-content4 { display: block; }
+
+  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
+  #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
+  #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
+  #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #prm-tab5:checked ~ #prm-content5,
+  #prm-tab6:checked ~ #prm-content6,
+  #prm-tab7:checked ~ #prm-content7 { display: block; }
+
+  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+# | 입력(Input)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **Target Planes** | Plane | 전이경로 생성 기준이 될 타겟 평면 DataTree. 경로 Segment 단위로 Branch 구성. |
+| **Approach Dir** | Vector | 각 경로 Branch의 진입 방향 벡터. Target Planes DataTree와 Branch별 매칭  단일 벡터 입력 시 모든 Branch에 일괄 적용. |
+| **Departure Dir** | Vector | 각 경로 Branch의 진출 방향 벡터. Target Planes DataTree와 Branch별 매칭. 단일 벡터 입력 시 모든 브랜치에 일괄 적용. |
+
+## | 필수 파라미터 (Required Parameter)
+
+<div class="tabs-container">
+  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
+
+  <ul class="tab-buttons">
+    <li><label for="sm-tab1">Flyby Targets</label></li>
+  </ul>
+  <div class="tab-content" id="sm-content1">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Target Count</strong></td>
+          <td>Number</td>
+          <td>전이 경로를 구성하는 타겟 평면의 개수.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p align="center">  <img src="/assets/images/2_FlybyCustom_10.png" align="center" width="32%"></p>
+  </div>
 </div>
 
-<p align="center"><img src="/assets/images/Untitled-1-2-768x223.png" align="center" width="80%"></p>
-<p align="center"><img src="/assets/images/Untitled-2-1-768x457.png" align="center" width="80%"></p>
-<p align="center"><img src="/assets/images/Untitled-3-1-768x418.png" align="center" width="80%"></p>
+<div class="tabs-container">
+  <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
+  <input type="radio" id="prm-tab6" name="gh-tabs-params">
+  <input type="radio" id="prm-tab7" name="gh-tabs-params">
+  
+  <ul class="tab-buttons">
+    <li><label for="prm-tab5">Offset</label></li>
+    <li><label for="prm-tab6">Blend</label></li>
+    <li><label for="prm-tab7">Preview</label></li>
+  </ul>
 
-  * **Bulge Start** : (Tangency/Curvature 조건인 경우,) 0-1사이의 값을 입력하여, 연속성을 유지한 상태에서 이동경로 프로파일의 시작부분 형상을 편집한다.
-  * **Bulge End** : (Tangency/Curvature 조건인 경우,)0-1사이의 값을 입력하여, 연속성을 유지한 상태에서 이동경로 프로파일의 끝부분 형상을 편집한다.
+  <div class="tab-content" id="prm-content5">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Link</strong></td>
+          <td>Toggle</td>
+          <td>Approach와 Departure 값을 연동. TRUE: 한쪽을 조절하면 다른 쪽도 같은 값으로 맞춰짐. FALSE: 각각 독립 조절 (기본값).</td>
+        </tr>
+        <tr>
+          <td><strong>Approach(mm)</strong></td>
+          <td>Number</td>
+          <td>전이 경로의 진입 지점을 첫 타겟 평면에서 이격할 거리 (mm).</td>
+        </tr>
+        <tr>
+          <td><strong>Departure(mm)</strong></td>
+          <td>Number</td>
+          <td>전이 경로의 진출 지점을 마지막 타겟 평면에서 이격할 거리 (mm).</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p align="center">  <img src="/assets/images/2_FlybyCustom_20.png" align="center" width="32%"></p>
+  </div>
 
-<br>
+  <div class="tab-content" id="prm-content6">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Continuity</strong></td>
+          <td>String</td>
+          <td>전이 경로 블렌드의 연속성 유형.<br>
+              [Position]: 위치 연속 (G0).<br>
+              [Tangency]: 접선 연속 (G1).<br>
+              [Curvature]: 곡률 연속 (G2).</td>
+        </tr>
+        <tr>
+          <td><strong>Link</strong></td>
+          <td>Toggle</td>
+          <td>'Bulge Start'와 'Bulge End' 값을 연동. TRUE: 한쪽을 조절하면 다른 쪽도 같은 값으로 맞춰짐. FALSE: 각각 독립 조절 (기본값).</td>
+        </tr>
+        <tr>
+          <td><strong>Bulge Start</strong></td>
+          <td>Number</td>
+          <td>블렌드 시작점의 불룩함 (Bulge) 정도.</td>
+        </tr>
+        <tr>
+          <td><strong>Bulge End</strong></td>
+          <td>Number</td>
+          <td>블렌드 끝점의 불룩함 (Bulge) 정도.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p align="center">  <img src="/assets/images/2_FlybyCustom_21.png" align="center" width="32%"></p>
+  </div>
 
-# Output
+  <div class="tab-content" id="prm-content7">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Frame Size</strong></td>
+          <td>Number</td>
+          <td>프레임 크기</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p align="center">  <img src="/assets/images/2_FlybyCustom_22.png" align="center" width="32%"></p>
+  </div>
+</div>
 
-* **Fly-by Targets** : 입력된 조건에 따라, 생성된 이동경로를 DataTree 형태로 출력한다. 이때 FlyBy Targets Output은 주요경로에의 최초 진입/최후 진출에 해당하는 FlyBy Plane까지를 포함하기 때문에, Target Planes Input의 Branch 개수보다 1개 많은 Branch를 갖는다. 또, 이동경로 Instruction 할당 이후, 주요 경로에 대한 Instruction과 데이터 병합을 용이하게 하기 위해, [0]-[2]-[4]-… 로 시작하는 짝수의 Path를 갖는 DataTree가 된다.
+# | 출력(Output)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **Target Planes** | Plane | 생성된 트레이싱 경로 타겟 평면 |
