@@ -160,16 +160,20 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Geometry** | Geometry | 정삭 가공할 Brep 또는 Surface 형상. |
-| **Reference Plane** | Plane | 정삭 경로 생성의 기준 평면. |
+| **Deposition ToolPaths** | Data | 슬라이서 컴포넌트에서 생성된 적층 툴패스 데이터. |
+| **Reference Plane** | Plane | PreExtrusion 경로 생성 기준 평면. |
+| **PreExtrusion Curve** | Curve | 압출 시작 전 노즐을 준비하는 사전 압출(Pre-extrusion) 경로 커브. |
+| **First Part** | Boolean | 현재 Deposition ToolPath가 최하단(첫 번째) 파트인지 여부를 나타내는 플래그. FALSE: PreExtrusion 무시. |
 
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
   <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
+  <input type="radio" id="sm-tab2" name="gh-tabs-seamdata">
 
   <ul class="tab-buttons">
     <li><label for="sm-tab1">Settings</label></li>
+    <li><label for="sm-tab1">Preview</label></li>
   </ul>
   <div class="tab-content" id="sm-content1">
     <table class="spec-table">
@@ -182,39 +186,24 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Deposition ToolPaths</strong></td>
-          <td>Deposition ToolPaths</td>
-          <td>정삭 경로의 UV 진행 방향 전환.</td>
+          <td><strong>Infill First</strong></td>
+          <td>Toggle</td>
+          <td>• TRUE: 적층 순서를 채움(Infill) → 외곽(Shell) 순으로 적용<br>
+              • FALSE: 적층 순서를 외곽(Shell) → 채움(Infill) 순으로 적용</td>
         </tr>
         <tr>
-          <td><strong>Stepover</strong></td>
-          <td>Number</td>
-          <td>인접 절삭 경로 간 간격 (mm).</td>
+          <td><strong>Layer by Layer</strong></td>
+          <td>Toggle</td>
+          <td>여러 오브젝트의 Deposition ToolPaths 처리 순서 설정.<br>
+              • TRUE: 레이어 단위 적층 (모든 오브젝트의 동일 레이어를 순차 처리).<br>
+              • FALSE: 오브젝트 단위 적층 (오브젝트별 전체 레이어 순차 처리).</td>
         </tr>
-        <tr>
-          <td><strong>Tilt Weight</strong></td>
-          <td>Number</td>
-          <td>Geometry 표면 법선 방향으로 TCP를 기울여, 엔드밀이 표면과 직각을 이루는 정도 조절 (0.0 = Reference Plane Z, 1.0 = 표면 법선).</td>
-        </tr>
-        <tr>
-          <td><strong>Tolerance</strong></td>
-          <td>Number</td>
-          <td>경로의 근사 허용 오차.</td>
-        </tr>     
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/8_UVFinishing_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_DepositionBuilder_10.png" align="center" width="32%"></p>
   </div>
-</div>
 
-<div class="tabs-container">
-  <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
-  
-  <ul class="tab-buttons">
-    <li><label for="prm-tab5">Preview</label></li>
-  </ul>
-
-  <div class="tab-content" id="prm-content5">
+  <div class="tab-content" id="sm-content2">
     <table class="spec-table">
       <thead>
         <tr>
@@ -225,6 +214,16 @@ tags:
       </thead>
       <tbody>
         <tr>
+          <td><strong>Preview Color</strong></td>
+          <td>Color</td>
+          <td>시각화 색상</td>
+        </tr>
+        <tr>
+          <td><strong>Layer Number</strong></td>
+          <td>Number</td>
+          <td>프리뷰할 레이어</td>
+        </tr>
+        <tr>
           <td><strong>Frame Size</strong></td>
           <td>Number</td>
           <td>프레임 크기</td>
@@ -232,7 +231,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/4_WireCuttingFromCurvs_11.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_DepositionBuilder_11.png" align="center" width="32%"></p>
   </div>
 </div>
 
@@ -240,5 +239,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Target Planes** | Plane | 생성된 정삭 경로의 타겟 평면. |
-| **Contour** | Curve | 생성된 정삭 경로를 연결하는 폴리라인 패턴. |
+| **E-Start Planes** | Plane | 압출 신호가 켜지는(ON) 위치의 타겟 평면. |
+| **Movement Planes** | Plane | 적층 경로의 모션 타겟 평면. |
+| **E-End Planes** | Plane | 압출 신호가 꺼지는(OFF) 위치의 타겟 평면. |
+| **E-End idx** | Integer | Deposition ToolPaths 전체 콜렉션에서 압출 종료 (E-End) 타겟의 위치 인덱스. 각 타겟별 인스트럭션 할당 전후 데이터 병합(Merge)에 활용. |
