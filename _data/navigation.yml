@@ -144,8 +144,8 @@ sidebar:
         url: /toolpath/ToolPath-SolidFill/
       - title: "Solid Offset Fill"
         url: /toolpath/ToolPath-SolidOffsetFill/
-      - title: "SlicerShell for Solid"
-        url: /toolpath/ToolPath-SlicerShell-for-Solid/
+      - title: "Solid Shell"
+        url: /toolpath/ToolPath-SolidShell/
       - title: "SlicerShell for Surface"
         url: /toolpath/ToolPath-SlicerShell-for-Surface/
       - title: "Block Designer"
