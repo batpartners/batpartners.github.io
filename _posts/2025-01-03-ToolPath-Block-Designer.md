@@ -188,19 +188,21 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Unit Block</strong></td>
-          <td>Box</td>
-          <td>적층할 단위 블록 형상.</td>
+          <td><strong>Divide Distance</strong></td>
+          <td>Toggle</td>
+          <td>블록 간격 산정 방식.<br>
+              • TRUE: 고정 간격 분할 (유닛 너비 + 수평 간격).<br>
+              • FALSE: 균등 개수 분할 (레이어 길이 ÷ (유닛 너비 + 간격)을 정수화) (기본값).</td>
         </tr>
         <tr>
-          <td><strong>Wall</strong></td>
-          <td>Brep</td>
-          <td>블록을 배치할 대상 벽체 형상.</td>
+          <td><strong>Horizontal Spacing</strong></td>
+          <td>Number</td>
+          <td>블록 간의 수평 간격 (mm)</td>
         </tr>
         <tr>
-          <td><strong>Wall Base</strong></td>
-          <td>Plane</td>
-          <td>벽체를 레이어로 슬라이싱하는 기준 평면. Z축 방향으로 레이어 생성. 기본값: WorldXY.</td>
+          <td><strong>Vertical Spacing</strong></td>
+          <td>Number</td>
+          <td>블록 간의 수직 간격 (mm)</td>
         </tr>
       </tbody>
     </table>
@@ -219,16 +221,9 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Tilt Target</strong></td>
-          <td>Toggle</td>
-          <td>'Tilt Weight'가 TCP를 기울일 대상 전환.<br>
-              • TRUE: Geometry 표면 법선 방향으로 기울임 ('Geometry' 입력 필요).<br>
-              • FALSE: Curve 접선 방향으로 기울임 (기본값).</td>
-        </tr>
-        <tr>
-          <td><strong>Tilt Weight</strong></td>
+          <td><strong>Frame Size</strong></td>
           <td>Number</td>
-          <td>Geometry 표면 법선 또는 Curve 접선 방향으로 TCP를 기울이는 정도 (0.0 = Reference Plane Z, 1.0 = Tilt Target이 지정한 방향).</td>
+          <td>프레임 크기</td>
         </tr>
       </tbody>
     </table>
