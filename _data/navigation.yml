@@ -176,6 +176,10 @@ sidebar:
         url: /utils/Utils-Surface-Frame/
       - title: "Tree Branch"
         url: /utils/Utils-TreeBranch/
+      - title: "Multi-Slider"
+        url: /utils/Utils-MultiSlider/
+      - title: "RAPID Deconstructor"
+        url: /utils/Utils-RapidDecontructor/
       - title: "Overhang Mapper"
         url: /utils/Utils-OverhangMapper/
       - title: "ToolpathPartition"
