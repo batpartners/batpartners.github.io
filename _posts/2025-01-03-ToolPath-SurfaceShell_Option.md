@@ -1,8 +1,8 @@
 ---
-title: "Solid Shell"
+title: "Surface Shell"
 layout: single
 header:
-  teaser: "/assets/images/12_SolidShell.png"
+  teaser: "/assets/images/13_SurfaceShell.png"
 
 collection: ToolPath
 entries_layout: grid
@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /toolpath/ToolPath-SolidShell/ToolPath-SolidShell_Option/
+permalink: /toolpath/ToolPath-SurfaceShell/ToolPath-SurfaceShell_Option/
 
-translation_link: /en/toolpath/ToolPath-SolidShell/ToolPath-SolidShell_Option/
+translation_link: /en/toolpath/ToolPath-SurfaceShell/ToolPath-SurfaceShell_Option/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -33,7 +33,7 @@ tags:
 
 닫힌 솔리드 형상에서 외곽(Shell) 적층 경로를 생성
 
-<p align="center">  <img src="/assets/images/12_SolidShell_3.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/13_SurfaceShell_3.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -162,8 +162,8 @@ tags:
 | :--- | :--- | :--- |
 | **Geometry** | Geometry | 슬라이싱 대상 형상. Brep 또는 Mesh 입력. |
 | **Reference Plane** | Plane | 슬라이싱 기준 평면. 빌드 플레이트 방향과 동일하게 설정. 평면의 Z축 방향으로 레이어가 생성됨. 기본값: WorldXY. |
-| **Seams** | Curve | 각 레이어 외곽 경로의 시작점(Seam) 위치를 결정하는 가이드 커브. 커브와 외곽 경로의 교차점이 레이어 시작점으로 설정됨. |
 | **Edges** | Curve | 형상의 Edge 주변에 형성된 타겟 평면을 Edge의 접선(Tangent) 방향으로 기울이는 데 사용되는 가이드 커브. |
+| **Dir Pattern** | Boolean | 레이어별 적층경로 진행 방향의 반전 여부를 정의하는 불리언 패턴.입력된 패턴은 레이어 순서에 따라 순환 반복됨. |
 | **Angle Ranges** | Number | Angle Ranges |
 | **Multiple** | Number | Multiple |
 
@@ -191,9 +191,9 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Setback</strong></td>
-          <td>Number</td>
-          <td>입력 형상 경계 기준 외곽 경로의 내외부 이격(오프셋) 거리 (mm).</td>
+          <td><strong>End Fillet Type</strong></td>
+          <td>String</td>
+          <td>이격된 외곽 적층 경로 끝단의 마감 유형. ('Outline Shells'가 2 이상일 때 유효)</td>
         </tr>
         <tr>
           <td><strong>Outline Shells</strong></td>
@@ -222,7 +222,7 @@ tags:
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/12_SolidShell_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/13_SurfaceShell_10.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="arc-content3">
@@ -334,6 +334,5 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Shell ToolPaths** | Shell ToolPaths | 생성된 적층 경로 데이터. |
-| **Shell Profile** | Shell Profile | 생성된 외곽 적층 경로의 기준 프로파일 정보. |
 | **First Part** | Boolean | 현재 Deposition ToolPath가 최하단(첫 번째) 파트인지 여부를 나타내는 플래그. |
 | **Shell Contours** | Curve | 생성된 외곽 적층 경로를 연결하는 폴리라인. |

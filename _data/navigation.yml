@@ -149,8 +149,11 @@ sidebar:
         children:
           - title: "Option"
             url: /toolpath/ToolPath-SolidShell/ToolPath-SolidShell_Option/
-      - title: "SlicerShell for Surface"
-        url: /toolpath/ToolPath-SlicerShell-for-Surface/
+      - title: "Surface Shell"
+        url: /toolpath/ToolPath-SurfaceShell/
+        children:
+          - title: "Option"
+            url: /toolpath/ToolPath-SurfaceShell/ToolPath-SurfaceShell_Option/
       - title: "Block Designer"
         url: /toolpath/ToolPath-Block-Designer/
       - title: "Block Supply"
