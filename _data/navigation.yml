@@ -154,6 +154,8 @@ sidebar:
         children:
           - title: "Option"
             url: /toolpath/ToolPath-SurfaceShell/ToolPath-SurfaceShell_Option/
+      - title: "WAAM Builder"
+        url: /toolpath/ToolPath-WAAMBuilder/
       - title: "Block Designer"
         url: /toolpath/ToolPath-Block-Designer/
       - title: "Block Supply"
