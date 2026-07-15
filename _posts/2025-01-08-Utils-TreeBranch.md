@@ -161,8 +161,8 @@ DataTree에서 특정 Branch를 순번 인덱스로 추출
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Tree** | Tree | Branch를 추출할 DataTree. |
-| **Index** | Integer | 추출할 Branch의 순번. Path 값이 아닌 순서 기준.<br>
-            • 예: {0}, {2}, {4} 세 Branch를 가진 DataTree에서 Index 1 → {2} Branch 추출. |
+| **Index** | Integer | 추출할 Branch의 순번. Path 값이 아닌 순서 기준.
+• 예: {0}, {2}, {4} 세 Branch를 가진 DataTree에서 Index 1 → {2} Branch 추출. |
 
 # | 출력(Output)
 

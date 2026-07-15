@@ -190,7 +190,7 @@ Values of multiple slider widgets.
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/6_MultiSlider.png" align="center" width="45%"></p>
+    <p align="center">  <img src="/assets/images/6_MultiSlider_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
