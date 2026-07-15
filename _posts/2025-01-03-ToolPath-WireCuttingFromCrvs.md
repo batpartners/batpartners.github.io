@@ -208,7 +208,7 @@ tags:
     <p align="center">  <img src="/assets/images/4_WireCuttingFromCurvs_10.png" align="center" width="32%"></p>
   </div>
 
-  <div class="tab-content" id="arc-content2">
+  <div class="tab-content" id="arc-content3">
     <table class="spec-table">
       <thead>
         <tr>
