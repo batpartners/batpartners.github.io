@@ -32,27 +32,240 @@ tags:
 
 # Description
 
-* 계획된 Block Wall에 사용된 Unit Block 모델링, 필요한 Block의 총 개수 등의 데이터로부터, 공급부 Block 더미 모델링 및  Block을 집어 올리는 Target Plane을 생성하는 컴포넌트.
+전체 블록 개수와 유닛 형상을 기반으로, 공급부에 블록을 배치하는 Pick 타겟 생성.
+
+<p align="center">  <img src="/assets/images/16_BlockSupply.png" align="center" width="32%"></p>
+
+<style>
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+  .page__content table,
+  .page__content .spec-table,
+  .tab-content table, 
+  .tab-content .spec-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    margin: 20px 0 !important;
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+  }
+  
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  .page__content table th:nth-child(1), .page__content table td:nth-child(1),
+  .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
+  
+  .page__content table th:nth-child(2), .page__content table td:nth-child(2),
+  .tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { width: 15% !important; }
+  
+  .page__content table th:nth-child(3), .page__content table td:nth-child(3),
+  .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
+
+  /* 탭 시스템 전체 컨테이너 */
+  .tabs-container {
+    position: relative;
+    margin: 30px 0;
+    min-height: 160px;
+    width: 100% !important;
+    clear: both;
+  }
+
+  /* 라디오 버튼 숨기기 */
+  .tabs-container input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  /* 탭 버튼 스타일 (상단 바 정렬) */
+  .tab-buttons {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+  }
+  .tab-buttons li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .tab-buttons label {
+    display: block;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: #f5f5f5;
+    color: #777;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    margin-right: 4px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .tab-buttons label:hover {
+    background: #e9e9e9;
+    color: #333;
+  }
+
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  .tab-content {
+    display: none;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
+  #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #sm-tab1:checked ~ #sm-content1 { display: block; }
+
+  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
+  #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
+  #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
+  #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #arc-tab2:checked ~ #arc-content2,
+  #arc-tab3:checked ~ #arc-content3,
+  #arc-tab4:checked ~ #arc-content4 { display: block; }
+
+  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
+  #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
+  #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
+  #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #prm-tab5:checked ~ #prm-content5,
+  #prm-tab6:checked ~ #prm-content6,
+  #prm-tab7:checked ~ #prm-content7 { display: block; }
+
+  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+# | 입력(Input)
+
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **Unit Block** | Box | 적층할 단위 블록 형상. |
+| **Block Count** | Integer | 공급할 블록의 총 개수. 배치 가능 개수(X×Y×Z) 초과 시 동일 배열로 겹쳐 반복 배치. |
+| **Supply Base** | Plane | 블록 공급부의 기준 평면. |
 
 
-<p align="center"><img src="/assets/images/BlockSupply.png" align="center" width="32%"></p>
+## | 필수 파라미터 (Required Parameter)
 
-# Input
+<div class="tabs-container">
+  <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
+  <input type="radio" id="prm-tab6" name="gh-tabs-params">
+  <input type="radio" id="prm-tab7" name="gh-tabs-params">
+  
+  <ul class="tab-buttons">
+    <li><label for="prm-tab5">Spacing</label></li>
+    <li><label for="prm-tab6">Count</label></li>
+    <li><label for="prm-tab7">Preview</label></li>
+  </ul>
 
-* **Base Plane [Plane]** : 생성되는 Block 더미의 위치와 방향을 정의하는 기준 평면을 입력한다.
-* **Unit Block [Box]** : 사용할 Unit Block 모델링을 Box 형식으로 입력한다.
-* **Spacing [Box]** : Unit Block의 BoxArray 간격을 정의하는, Array Cell을입력한다.
-* **Block Count [int]** : 사용될 Block의 총 개수를 입력한다.
+  <div class="tab-content" id="prm-content5">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>X Spacing</strong></td>
+          <td>Number</td>
+          <td>공급부 X축 방향 블록 간격 (mm)</td>
+        </tr>
+        <tr>
+          <td><strong>Y Spacing</strong></td>
+          <td>Number</td>
+          <td>공급부 Y축 방향 블록 간격 (mm)</td>
+        </tr>
+        <tr>
+          <td><strong>Z Spacing(mm)</strong></td>
+          <td>Number</td>
+          <td>공급부 Z축 방향 블록 간격 (mm)</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p align="center">  <img src="/assets/images/16_BlockSupply_10.png" align="center" width="45%"></p>
+  </div>
 
-## Built-in Param | Basic Params
+  <div class="tab-content" id="prm-content6">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>X Count</strong></td>
+          <td>Integer</td>
+          <td>공급부 X축 방향 블록 개수.</td>
+        </tr>
+        <tr>
+          <td><strong>Y Count</strong></td>
+          <td>Integer</td>
+          <td>공급부 Y축 방향 블록 개수.</td>
+        </tr>
+        <tr>
+          <td><strong>Z Count</strong></td>
+          <td>Integer</td>
+          <td>공급부 Z축 방향 블록 개수.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p align="center">  <img src="/assets/images/16_BlockSupply_11.png" align="center" width="45%"></p>
+  </div>
 
-* **X Count** : X 방향으로 Array할 Block 개수를 정의한다.
-* **Y Count** : Y 방향으로 Array할 Block 개수를 정의한다.
-* **Z Count** : Z 방향으로 Array할 Block 개수를 정의한다.
+  <div class="tab-content" id="prm-content7">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Frame Size</strong></td>
+          <td>Number</td>
+          <td>프레임 크기</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p align="center">  <img src="/assets/images/16_BlockSupply_12.png" align="center" width="45%"></p>
+  </div>
+</div>
 
-<br>
+# | 출력(Output)
 
-# Output
-
-* **Blocks [Mesh]** : 공급부 Block 더미 모델링의 Mesh Collection을 출력한다.
-* **Target Planes [Plane/List]** : 공급부 각 Block을 집는 지점에 위치한 Target Plane을 출력한다.
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **Pick Targets** | Plane | 각 공급 블록의 Pick 타겟 평면. |
+| **Supply Blocks** | Mesh | 공급부에 배치된 블록 메시. |

@@ -190,7 +190,7 @@ tags:
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/2_FlybyCustom_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/2_FlybyCustom_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -233,7 +233,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/2_FlybyCustom_20.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/2_FlybyCustom_20.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="prm-content6">
@@ -272,7 +272,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/2_FlybyCustom_21.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/2_FlybyCustom_21.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="prm-content7">
@@ -293,7 +293,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/2_FlybyCustom_22.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/2_FlybyCustom_22.png" align="center" width="45%"></p>
   </div>
 </div>
 

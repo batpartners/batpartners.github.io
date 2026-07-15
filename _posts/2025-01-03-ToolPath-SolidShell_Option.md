@@ -222,7 +222,7 @@ tags:
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/12_SolidShell_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/12_SolidShell_10.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="arc-content3">
@@ -258,7 +258,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/12_SolidShell_11.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/12_SolidShell_11.png" align="center" width="45%"></p>
   </div>
 
    <div class="tab-content" id="arc-content4">
@@ -292,7 +292,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/12_SolidShell_12.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/12_SolidShell_12.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -325,7 +325,7 @@ tags:
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/12_SolidShell_20.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/12_SolidShell_20.png" align="center" width="45%"></p>
   </div>
 </div>
 
