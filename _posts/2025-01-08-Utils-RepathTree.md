@@ -1,8 +1,8 @@
 ---
-title: "Dispatch Branch"
+title: "Repath Tree"
 layout: single
 header:
-  teaser: "/assets/images/0_DispatchBranch.png"
+  teaser: "/assets/images/3_RepathTree.png"
 
 collection: Utils
 entries_layout: grid
@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /utils/Utils-Dispatch-Branch/
+permalink: /utils/Utils-RepathTree/
 
-translation_link: /en/utils/Utils-Dispatch-Branch/
+translation_link: /en/utils/Utils-RepathTree/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -31,9 +31,14 @@ tags:
 
 # Description
 
-DataTree의 Branch들을 두 개의 대상 DataTree로 분배
+DataTree의 Branch 내용을 유지하면서 Branch Path를 재할당. 우클릭 컨텍스트 메뉴로 세 가지 패턴 전환.<br>
+  • Sequential: Branch를 순번({0}, {1}, {2}...)으로 재할당.<br>
+  • Odd Numbered: Branch를 홀수 순번({1}, {3}, {5}...)으로 재할당.<br>
+  • Even Numbered: Branch를 짝수 순번({0}, {2}, {4}...)으로 재할당.<br>
 
-<p align="center">  <img src="/assets/images/0_DispatchBranch.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/3_RepathTree.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/3_RepathTree_1.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/3_RepathTree_2.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -160,14 +165,12 @@ DataTree의 Branch들을 두 개의 대상 DataTree로 분배
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Tree** | Tree | 필터링할 DataTree |
-| **Pattern** | Boolean | 분배 패턴 |
+| **Tree** | Tree | Branch Path를 재할당할 DataTree. Branch 내용(데이터)은 변경되지 않음 |
 
 # | 출력(Output)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Tree A** | Tree | True 값에 대한 Branch |
-| **Tree B** | Tree | False 값에 대한 Branch |
+| **Tree** | Tree | 선택한 패턴에 따라 Branch Path가 재할당된 DataTree. |
 
-<p align="center">  <img src="/assets/images/DispatchBranch_exam-768x376.png" align="center" width="72%"></p>
+<p align="center">  <img src="/assets/images/SimplePathRemapper_exam-768x631.png" align="center" width="72%"></p>

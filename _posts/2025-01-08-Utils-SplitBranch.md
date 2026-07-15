@@ -1,8 +1,8 @@
 ---
-title: "Dispatch Branch"
+title: "Split Branch"
 layout: single
 header:
-  teaser: "/assets/images/0_DispatchBranch.png"
+  teaser: "/assets/images/4_SplitBranch.png"
 
 collection: Utils
 entries_layout: grid
@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /utils/Utils-Dispatch-Branch/
+permalink: /utils/Utils-SplitBranch/
 
-translation_link: /en/utils/Utils-Dispatch-Branch/
+translation_link: /en/utils/Utils-SplitBranch/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -31,9 +31,9 @@ tags:
 
 # Description
 
-DataTree의 Branch들을 두 개의 대상 DataTree로 분배
+DataTree를 Branch 순번 인덱스를 기준으로 두 개의 DataTree로 분할.
 
-<p align="center">  <img src="/assets/images/0_DispatchBranch.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/4_SplitBranch.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -160,14 +160,14 @@ DataTree의 Branch들을 두 개의 대상 DataTree로 분배
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Tree** | Tree | 필터링할 DataTree |
-| **Pattern** | Boolean | 분배 패턴 |
+| **Tree** | Tree | 분할할 DataTree |
+| **Index** | Integer | 분할 기준 Branch 순번. 해당 순번 이전 Branch → Tree A, 해당 순번부터 → Tree B. |
 
 # | 출력(Output)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Tree A** | Tree | True 값에 대한 Branch |
-| **Tree B** | Tree | False 값에 대한 Branch |
+| **Tree A** | Tree | 지정 인덱스 이전의 Branch로 구성된 DataTree. |
+| **Tree B** | Tree | 지정 인덱스 이후(포함)의 Branch로 구성된 DataTree. |
 
-<p align="center">  <img src="/assets/images/DispatchBranch_exam-768x376.png" align="center" width="72%"></p>
+<p align="center">  <img src="/assets/images/SplitTree_exam-768x374.png" align="center" width="72%"></p>

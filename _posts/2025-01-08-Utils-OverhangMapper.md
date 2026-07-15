@@ -1,8 +1,8 @@
 ---
-title: "Dispatch Branch"
+title: "Overhang Mapper"
 layout: single
 header:
-  teaser: "/assets/images/0_DispatchBranch.png"
+  teaser: "/assets/images/overhangrange.png"
 
 collection: Utils
 entries_layout: grid
@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /utils/Utils-Dispatch-Branch/
+permalink: /utils/Utils-OverhangRangeColor/
 
-translation_link: /en/utils/Utils-Dispatch-Branch/
+translation_link: /en/utils/Utils-OverhangRangeColor/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -31,9 +31,9 @@ tags:
 
 # Description
 
-DataTree의 Branch들을 두 개의 대상 DataTree로 분배
+입력된 Mesh형상의 오버행에 대하여 색상 매핑 및 시각화
 
-<p align="center">  <img src="/assets/images/0_DispatchBranch.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/7_OverhangMapper.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -160,14 +160,15 @@ DataTree의 Branch들을 두 개의 대상 DataTree로 분배
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Tree** | Tree | 필터링할 DataTree |
-| **Pattern** | Boolean | 분배 패턴 |
+| **Mesh** | Mesh | 메쉬 |
+| **BasePlane** | Plane | 기준 평면 |
 
 # | 출력(Output)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Tree A** | Tree | True 값에 대한 Branch |
-| **Tree B** | Tree | False 값에 대한 Branch |
+| **Mesh** | Mesh | 메쉬 |
+| **AngleData** | String | 각도 데이터 |
 
-<p align="center">  <img src="/assets/images/DispatchBranch_exam-768x376.png" align="center" width="72%"></p>
+<p align="center">  <img src="/assets/images/overhagerangecolor_01-768x310.png" align="center" width="80%"></p>
+<p align="center">  <img src="/assets/images/overhagerangecolor_02-768x284.png" align="center" width="80%"></p>

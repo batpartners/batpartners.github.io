@@ -167,4 +167,4 @@ Data의 Branch Path에서 특정 인덱스를 추출.
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Index** | Integer |추출된 인덱스 |
+| **Index** | Integer | 추출된 인덱스 |

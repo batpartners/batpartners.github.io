@@ -168,6 +168,6 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Tree** | Tree |데이터가 삽입된 DataTree |
+| **Tree** | Tree | 데이터가 삽입된 DataTree |
 
 <p align="center">  <img src="/assets/images/Insert_Items_Exam-768x587.png" align="center" width="72%"></p>
