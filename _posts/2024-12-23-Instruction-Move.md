@@ -190,7 +190,7 @@ ABB Move 인스트럭션(MoveL, MoveJ) 생성.
         </tr>                
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/0_Move_1.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/0_Move_1.png" align="center" width="45%"></p>
   </div>
 </div>
 

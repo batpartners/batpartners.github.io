@@ -182,7 +182,7 @@ tags:
         </tr>
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/8_WeldData_10.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/8_WeldData_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -225,7 +225,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center"><img src="/assets/images/8_WeldData_11.png" align="center" width="32%"></p>
+    <p align="center"><img src="/assets/images/8_WeldData_11.png" align="center" width="45%"></p>
   </div>
 </div> <div class="tabs-container">
   <input type="radio" id="tab6" name="gh-tabs-preview" checked>
@@ -256,7 +256,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center"><img src="/assets/images/8_WeldData_12.png" align="center" width="32%"></p>
+    <p align="center"><img src="/assets/images/8_WeldData_12.png" align="center" width="45%"></p>
   </div>
 </div>
 

@@ -198,7 +198,7 @@ ABB 워크오브젝트(워크피스 좌표계)를 지정. 월드 좌표계에서
       </tbody>
     </table>
     <br>
-  <p align="center">  <img src="/assets/images/2_WobjData_6.png" align="center" width="32%"></p>
+  <p align="center">  <img src="/assets/images/2_WobjData_6.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content2">
@@ -218,7 +218,7 @@ ABB 워크오브젝트(워크피스 좌표계)를 지정. 월드 좌표계에서
         </tr>
       </tbody>
     </table>
-  <p align="center">  <img src="/assets/images/2_WobjData_7.png" align="center" width="32%"></p>
+  <p align="center">  <img src="/assets/images/2_WobjData_7.png" align="center" width="45%"></p>
   </div>
 </div>
 

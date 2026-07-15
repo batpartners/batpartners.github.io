@@ -184,7 +184,7 @@ tags:
         </tr>
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/7_SetOutput_1.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/7_SetOutput_1.png" align="center" width="45%"></p>
   </div>
 </div>
 

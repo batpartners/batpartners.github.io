@@ -184,7 +184,7 @@ tags:
         </tr>        
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/11_IndRMove_20.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/11_IndRMove_20.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -229,7 +229,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/11_IndRMove_21.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/11_IndRMove_21.png" align="center" width="45%"></p>
   </div>
 </div>
 

@@ -185,7 +185,7 @@ tags:
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -228,7 +228,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_11.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_11.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -249,7 +249,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_12.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_12.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content4">
@@ -270,7 +270,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_13.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_13.png" align="center" width="45%"></p>
   </div>
 </div>
 

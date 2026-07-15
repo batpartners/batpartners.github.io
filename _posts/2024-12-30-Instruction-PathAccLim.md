@@ -190,7 +190,7 @@ tags:
         </tr>        
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/6_PathAccLim_1.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/6_PathAccLim_1.png" align="center" width="45%"></p>
   </div>
 </div>
 

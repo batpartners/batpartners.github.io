@@ -246,7 +246,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="arc-content3">
@@ -277,7 +277,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData_1.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_WeaveData_1.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="arc-content4">
@@ -308,7 +308,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData_2.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_WeaveData_2.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="arc-content5">
@@ -329,7 +329,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData_3.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_WeaveData_3.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -363,7 +363,7 @@ tags:
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="45%"></p>
   </div>
 </div>
 

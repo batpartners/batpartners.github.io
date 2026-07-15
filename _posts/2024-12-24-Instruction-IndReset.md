@@ -180,7 +180,7 @@ tags:
         </tr>        
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/12_IndReset_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/12_IndReset_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -216,7 +216,7 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/12_IndReset_11.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/12_IndReset_11.png" align="center" width="45%"></p>
   </div>
 </div>
 
