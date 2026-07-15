@@ -164,8 +164,10 @@ sidebar:
     children:
       - title: "Dispatch Branch"
         url: /utils/Utils-Dispatch-Branch/
-      - title: "Insert Items"
-        url: /utils/Utils-InsertItems/
+      - title: "Extract PathIdx"
+        url: /utils/Utils-ExtractPathIdx/
+      - title: "Insert"
+        url: /utils/Utils-Insert/
       - title: "Simple Path Remapper"
         url: /utils/Utils-SimplePathRemapper/
       - title: "Split Tree Branch"

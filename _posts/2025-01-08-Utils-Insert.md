@@ -1,8 +1,8 @@
 ---
-title: "Dispatch Branch"
+title: "Insert"
 layout: single
 header:
-  teaser: "/assets/images/0_DispatchBranch.png"
+  teaser: "/assets/images/insertTree.png"
 
 collection: Utils
 entries_layout: grid
@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /utils/Utils-Dispatch-Branch/
+permalink: /utils/Utils-Insert/
 
-translation_link: /en/utils/Utils-Dispatch-Branch/
+translation_link: /en/utils/Utils-Insert/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -31,9 +31,9 @@ tags:
 
 # Description
 
-DataTree의 Branch들을 두 개의 대상 DataTree로 분배
+데이터 콜렉션를 DataTree에 삽입.
 
-<p align="center">  <img src="/assets/images/0_DispatchBranch.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/2_Insert.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -160,14 +160,14 @@ DataTree의 Branch들을 두 개의 대상 DataTree로 분배
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Tree** | Tree | 필터링할 DataTree |
-| **Pattern** | Boolean | 분배 패턴 |
+| **Tree** | Tree | 수정할 DataTree |
+| **Items** | Tree | 삽입할 항목 |
+| **indices** | Integer | 삽입할 인덱스 |
 
 # | 출력(Output)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Tree A** | Tree |True 값에 대한 Branch |
-| **Tree B** | Tree |False 값에 대한 Branch |
+| **Tree** | Tree |데이터가 삽입된 DataTree |
 
-<p align="center">  <img src="/assets/images/DispatchBranch_exam-768x376.png" align="center" width="72%"></p>
+<p align="center">  <img src="/assets/images/Insert_Items_Exam-768x587.png" align="center" width="72%"></p>
