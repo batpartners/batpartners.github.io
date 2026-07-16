@@ -1,8 +1,8 @@
 ---
-title: "RealTime Display"
+title: "Scan IOSystems"
 layout: single
 header:
-  teaser: "/assets/images/realtimedisplay.png"
+  teaser: "/assets/images/6_ScanIOSystems.png"
 
 collection: ControllerUtils
 entries_layout: grid
@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /controllerutils/ControllerUtils-RealTimeDisplay
+permalink: /controllerutils/ControllerUtils-ScanIOSystems
 
-translation_link: /en/controllerutils/ControllerUtils-RealTimeDisplay
+translation_link: /en/controllerutils/ControllerUtils-ScanIOSystems
 sidebar:
   nav: "sidebar"
 toc: true
@@ -31,9 +31,9 @@ tags:
 
 # Description
 
-연결된 컨트롤러로부터 실시간 로봇 자세 및 I/O 신호 상태를 스트리밍하여 시각화.
+연결된 컨트롤러에 정의된 모든 I/O 신호명 가져오기.
 
-<p align="center">  <img src="/assets/images/5_RealTimeDisplay.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/6_ScanIOSystems.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -160,9 +160,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **GERTY Robot** | GERTY Robot | GERTY 로봇 |
 | **ABB Controller** | ABB Controller | PC에 연결된 ABB 컨트롤러 |
-| **Signal** | String | 스캔할 신호명 |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -170,7 +168,7 @@ tags:
   <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
   
   <ul class="tab-buttons">
-    <li><label for="sm-tab1">RealTime Stream</label></li>
+    <li><label for="sm-tab1">Info</label></li>
   </ul>
 
   <div class="tab-content" id="sm-content1">
@@ -184,26 +182,29 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Interval(ms)</strong></td>
-          <td>Number</td>
-          <td>실시간 스트림 갱신 간격 (밀리 초) 설정</td>
+          <td><strong>Gate</strong></td>
+          <td>Toggle</td>
+          <td>IO 시스템 스캔을 위한 게이트 열기/닫기</td>
         </tr>
         <tr>
-          <td><strong>RealTime Stream</strong></td>
-          <td>Toggle</td>
-          <td>실시간 스트림 시작/중지</td>
+          <td><strong>IO Unit</strong></td>
+          <td>String</td>
+          <td>스캔할 IO 유닛</td>
+        </tr>
+        <tr>
+          <td><strong>Signal Type</strong></td>
+          <td>String</td>
+          <td>스캔할 신호 유형</td>
         </tr>
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/5_RealTimeDisplay_10.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/6_ScanIOSystems_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
 # | 출력(Output)
 
+
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **RobAx Angle** | String | 로봇축 각도 |
-| **ExtAx Angle** | String | 외부축 각도 |
-| **TCP** | Plane | 현재 TCP 평면 |
-| **Signal Values** | Number | 스캔된 신호 값 |
+| **Signals** | String | 필터링된 신호 이름 |

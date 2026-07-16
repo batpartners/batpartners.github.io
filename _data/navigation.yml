@@ -192,12 +192,14 @@ sidebar:
         url: /controllerutils/ControllerUtils-ScanABBController
       - title: "Socket Sender"
         url: /controllerutils/ControllerUtils-SocketSender
+      - title: "Get ToolData"
+        url: /controllerutils/ControllerUtils-GetToolData
+      - title: "Get WobjData"
+        url: /controllerutils/ControllerUtils-GetWobjData
       - title: "RealTime Display"
         url: /controllerutils/ControllerUtils-RealTimeDisplay
       - title: "ReadAndWriteMOCData"
         url: /controllerutils/ControllerUtils-ReadAndWriteMOCData
-      - title: "ScanToolData"
-        url: /controllerutils/ControllerUtils-ScanToolData
   - title: "8. Setup"
     children:
       - title: "FileImportAndExport"

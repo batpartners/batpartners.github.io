@@ -1,8 +1,8 @@
 ---
-title: "RealTime Display"
+title: "Get ToolData"
 layout: single
 header:
-  teaser: "/assets/images/realtimedisplay.png"
+  teaser: "/assets/images/3_GetToolData.png"
 
 collection: ControllerUtils
 entries_layout: grid
@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /controllerutils/ControllerUtils-RealTimeDisplay
+permalink: /controllerutils/ControllerUtils-GetToolData
 
-translation_link: /en/controllerutils/ControllerUtils-RealTimeDisplay
+translation_link: /en/controllerutils/ControllerUtils-GetToolData
 sidebar:
   nav: "sidebar"
 toc: true
@@ -31,9 +31,9 @@ tags:
 
 # Description
 
-연결된 컨트롤러로부터 실시간 로봇 자세 및 I/O 신호 상태를 스트리밍하여 시각화.
+컨트롤러로부터 현재 활성화된 툴 데이터 가져오기.
 
-<p align="center">  <img src="/assets/images/5_RealTimeDisplay.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/3_GetToolData.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -160,50 +160,15 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **GERTY Robot** | GERTY Robot | GERTY 로봇 |
-| **ABB Controller** | ABB Controller | PC에 연결된 ABB 컨트롤러 |
-| **Signal** | String | 스캔할 신호명 |
+| ABB Controller | ABB Controller | 이 PC에 연결된 ABB 컨트롤러 |
+| Base Plane | Plane | 툴의 장착 기준 평면. TCP와 지오메트리에 대한 기준을 정의 |
 
-## | 필수 파라미터 (Required Parameter)
-
-<div class="tabs-container">
-  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
-  
-  <ul class="tab-buttons">
-    <li><label for="sm-tab1">RealTime Stream</label></li>
-  </ul>
-
-  <div class="tab-content" id="sm-content1">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Interval(ms)</strong></td>
-          <td>Number</td>
-          <td>실시간 스트림 갱신 간격 (밀리 초) 설정</td>
-        </tr>
-        <tr>
-          <td><strong>RealTime Stream</strong></td>
-          <td>Toggle</td>
-          <td>실시간 스트림 시작/중지</td>
-        </tr>
-      </tbody>
-    </table>
-<p align="center">  <img src="/assets/images/5_RealTimeDisplay_10.png" align="center" width="45%"></p>
-  </div>
-</div>
-
-# | 출력(Output)
+# | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **RobAx Angle** | String | 로봇축 각도 |
-| **ExtAx Angle** | String | 외부축 각도 |
-| **TCP** | Plane | 현재 TCP 평면 |
-| **Signal Values** | Number | 스캔된 신호 값 |
+| Name | String | 스캔된 툴데이터 이름 |
+| TCP | Plane | 스캔된 툴데이터를 위한 TCP 평면으로, 툴 베이스를 기준으로 위치와 방향을 정의. |
+| Tool Load | Tool Load | 스캔된 툴데이터의 LoadData |
+
+<p align="center">  <img src="/assets/images/RealTimeDisplay_01-768x341 (1).png" align="center" width="90%"></p>
