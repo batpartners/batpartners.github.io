@@ -169,8 +169,7 @@ tags:
   <input type="radio" id="prm-tab6" name="gh-tabs-params">
   
   <ul class="tab-buttons">
-    <li><label for="prm-tab5">UV Param</label></li>
-    <li><label for="prm-tab7">Preview</label></li>
+    <li><label for="prm-tab5">Mechanical Unit</label></li>
   </ul>
 
   <div class="tab-content" id="prm-content5">
@@ -184,19 +183,19 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>U Param</strong></td>
-          <td>Number</td>
-          <td>U 파라미터</td>
+          <td><strong>Update</strong></td>
+          <td>Button</td>
+          <td>연결된 컨트롤러를 스캔하여 메커니컬 유닛 목록을 갱신.</td>
         </tr>
         <tr>
-          <td><strong>V Param</strong></td>
-          <td>Number</td>
-          <td>V 파라미터</td>
+          <td><strong>Mechanical Unit</strong></td>
+          <td>String</td>
+          <td>축 평면을 가져올 외부 메커니컬 유닛을 선택</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/8_SurfaceFrame_10.png" align="center" width="45%"></p>
+    <p align="center">  <img src="/assets/images/0_GetMechUnits_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
