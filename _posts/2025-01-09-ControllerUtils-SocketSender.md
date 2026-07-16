@@ -1,5 +1,5 @@
 ---
-title: "ScanABBController"
+title: "Socket Sender"
 layout: single
 header:
   teaser: "/assets/images/ScanABBController.png"
@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /controllerutils/ControllerUtils-ScanABBController
+permalink: /controllerutils/ControllerUtils-SocketSender
 
-translation_link: /en/controllerutils/ControllerUtils-ScanABBController
+translation_link: /en/controllerutils/ControllerUtils-SocketSender
 sidebar:
   nav: "sidebar"
 toc: true
@@ -31,9 +31,9 @@ tags:
 
 # Description
 
-로컬 네트워크에서 사용 가능한 ABB 로봇 컨트롤러 검색 및 연결.
+ABB IRC5 컨트롤러로 모션 인스트럭션 패킷을 TCP 소켓으로 스트리밍.
 
-<p align="center">  <img src="/assets/images/1_ScanController.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/2_SocketSender.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -158,14 +158,47 @@ tags:
 
 # | 입력(Input)
 
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **SocketBundle** | SocketBundle | 소켓 클라이언트와 인스트럭션 패킷 리스트 데이터 번들 |
+
 ## | 필수 파라미터 (Required Parameter)
+
+<div class="tabs-container">
+  <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
+  
+  <ul class="tab-buttons">
+    <li><label for="prm-tab5">Connect</label></li>
+  </ul>
+
+  <div class="tab-content" id="prm-content5">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Connect</strong></td>
+          <td>Toggle</td>
+          <td>ABB 컨트롤러 연결 토글.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p align="center">  <img src="/assets/images/2_SocketSender_10.png" align="center" width="45%"></p>
+  </div>
+</div>
 
 <div class="tabs-container">
   <input type="radio" id="arc-tab2" name="gh-tabs-arcdata" checked>
   <input type="radio" id="arc-tab3" name="gh-tabs-arcdata">
   <ul class="tab-buttons">
-    <li><label for="arc-tab2">ABB Controller</label></li>
-    <li><label for="arc-tab3">Connect</label></li>
+    <li><label for="arc-tab2">Queue/Timing</label></li>
+    <li><label for="arc-tab3">Contorol</label></li>
   </ul>
   <div class="tab-content" id="arc-content2">
     <table class="spec-table">
@@ -178,18 +211,28 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Controller Type</strong></td>
-          <td>String</td>
-          <td>ABB 컨트롤러 유형</td>
+          <td><strong>Max Queue</strong></td>
+          <td>Number</td>
+          <td>로봇 큐 목표 상한. (기본: 350)</td>
         </tr>
         <tr>
-          <td><strong>Scan</strong></td>
-          <td>Button</td>
-          <td>ABB Controller 연결 스캔 업데이트</td>
+          <td><strong>MaxTick</strong></td>
+          <td>Number</td>
+          <td>타이머 1회 콜백당 최대 전송 패킷 수 (기본: 35)</td>
+        </tr>
+        <tr>
+          <td><strong>Bundle Size</strong></td>
+          <td>Number</td>
+          <td>번들 크기: 1회 전송당 묶어 보낼 인스트럭션 수 (기본: 5, 최대 권장: 8)</td>
+        </tr>
+        <tr>
+          <td><strong>Interval(ms)</strong></td>
+          <td>Number</td>
+          <td>타이머 주기 (ms). 기본 100ms = 10Hz. 줄이면 반응성 향상, 늘리면 부하 감소</td>
         </tr>
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/1_ScanController_10.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/2_SocketSender_11.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="arc-content3">
@@ -203,18 +246,21 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Controller</strong></td>
-          <td>String</td>
-          <td>스캔된 컨트롤러 목록</td>
+          <td><strong>Send</strong></td>
+          <td>Toggle</td>
+          <td>연결된 상태에서 패킷 전송을 인가하는 토글.<br>
+              • TRUE: 패킷 스트리밍 시작.<br>
+              • FALSE: 전송 중지 및 로봇 일시 정지 (기본값).</td>
         </tr>
         <tr>
-          <td><strong>Connect</strong></td>
-          <td>Toggle</td>
-          <td>ABB 컨트롤러 연결 토글</td>
+          <td><strong>Reset</strong></td>
+          <td>Button</td>
+          <td>전송 상태 초기화. 전송을 잠시 멈추고 인덱스를 처음으로 되돌려 첫 패킷부터 재전송.<br>
+              로봇은 정지 후 첫 패킷 수신 시 시작 위치부터 다시 동작.</td>
         </tr>
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/1_ScanController_20.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/2_SocketSender_13.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -222,7 +268,7 @@ tags:
   <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
   
   <ul class="tab-buttons">
-    <li><label for="sm-tab1">Info</label></li>
+    <li><label for="sm-tab1">Log & Status</label></li>
   </ul>
 
   <div class="tab-content" id="sm-content1">
@@ -236,18 +282,12 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Controller Info</strong></td>
+          <td><strong>Panel</strong></td>
           <td>Panel</td>
-          <td>연결된 컨트롤러 정보</td>
+          <td>소켓 통신 상태 및 로그 정보</td>
         </tr>
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/1_ScanController_11.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/2_SocketSender_12.png" align="center" width="45%"></p>
   </div>
 </div>
-
-# | 출력(Output)
-
-| 이름 | 타입 | 설명 |
-| :--- | :--- | :--- |
-| **ABB Controller** | ABB Controller | PC에 연결된 ABB 컨트롤러 |

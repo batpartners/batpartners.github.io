@@ -189,7 +189,9 @@ sidebar:
       - title: "Get MechUnits"
         url: /controllerutils/ControllerUtils-GetMechUnits/
       - title: "ScanABBController"
-        url: /controllerutils/ControllerUtils-ScanABBController        
+        url: /controllerutils/ControllerUtils-ScanABBController
+      - title: "Socket Sender"
+        url: /controllerutils/ControllerUtils-SocketSender
       - title: "RealTime Display"
         url: /controllerutils/ControllerUtils-RealTimeDisplay
       - title: "ReadAndWriteMOCData"
