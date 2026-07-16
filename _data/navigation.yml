@@ -186,6 +186,8 @@ sidebar:
         url: /utils/Utils-ToolPathPartition/
   - title: "7. Constroller Utils"
     children:
+      - title: "Get MechUnits"
+        url: /controllerutils/ControllerUtils-GetMechUnits/
       - title: "RealTime Display"
         url: /controllerutils/ControllerUtils-RealTimeDisplay
       - title: "ScanABBController"
