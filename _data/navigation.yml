@@ -202,9 +202,5 @@ sidebar:
         url: /controllerutils/ControllerUtils-ReadAndWriteMOCData
   - title: "8. Setup"
     children:
-      - title: "FileImportAndExport"
-        url: /setup/Setup-FileImportAndExport
-      - title: "GetMachineIDs"
-        url: /setup/Setup-GetMachineIDs
-      - title: "GetUSBIDs"
-        url: /setup/Setup-GetUSBIDs
+      - title: "Get HardwareIDs"
+        url: /setup/Setup-GetHardwareIDs
