@@ -198,8 +198,8 @@ sidebar:
         url: /controllerutils/ControllerUtils-GetWobjData
       - title: "RealTime Display"
         url: /controllerutils/ControllerUtils-RealTimeDisplay
-      - title: "ReadAndWriteMOCData"
-        url: /controllerutils/ControllerUtils-ReadAndWriteMOCData
+      - title: "Scan IOSystems"
+        url: /controllerutils/ControllerUtils-ScanIOSystems
   - title: "8. Setup"
     children:
       - title: "Get HardwareIDs"
