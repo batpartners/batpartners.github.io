@@ -166,7 +166,6 @@ tags:
 
 <div class="tabs-container">
   <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
-  <input type="radio" id="prm-tab6" name="gh-tabs-params">
   
   <ul class="tab-buttons">
     <li><label for="prm-tab5">Mechanical Unit</label></li>
