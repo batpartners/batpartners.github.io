@@ -226,7 +226,7 @@ robtarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그
         <tr>
           <td><strong>Align X</strong></td>
           <td>String</td>
-          <td>RobTarget의 +X축이 Robot Base 원점을 향하도록 자세를 보간 보정하는 옵션 활성화. 'Robot Base'(Plane)와 'Align Weight'(0 = 원본, 1 = 완전 정렬) 인풋이 추가됨</td>
+          <td>RobTarget의 +X축이 Robot Base 원점을 향하도록 자세를 보간 보정하는 옵션으로 기본값은 비활성화(False)이다. 'Robot Base'(Plane)와 'Align Weight'(0 = 원본, 1 = 완전 정렬) 인풋이 추가된다.</td>
         </tr>
       </tbody>
     </table>

@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-포지셔너(외부축) 회전각을 포함한 RobTarget 정의. 우클릭 컨텍스트 메뉴로 Dynamic, Static 모드 전환이 가능.
+Positioner Robtarget은 포지셔너(외부축) 회전각을 포함한 RobTarget을 정의한다. 컴포넌트 아이콘을 우클릭하여 Dynamic, Static 모드로 전환하여 사용할 수 있다.
 
 <p align="center"><img src="/assets/images/1_Positioner Robtarget.png" align="center" width="32%"></p>
 
@@ -165,7 +165,7 @@ tags:
 | Target Planes | Plane | RobTarget으로 변환할 평면 |
 | Z Rotation | Angle | RobTarget을 자기 자신의 Z축 기준으로 회전 (단위: 도) |
 | Target Base | Plane | 입력된 Target Plane이 정의된 기준 평면. 입력된 Target Plane은 이 평면을 기준으로, Positioner의 Mounting Plane에 오리엔트 된 RobTarget을 정의 |
-| WobjData | WobjData | ABB 작업 평면 좌표계 |
+| WobjData | WobjData |  ABB 작업 평면 좌표계를 기준으로 Target Plane 재정의한다. (선택) |
 
 <p align="center"> 
 <video src="/assets/images/RobtargetPosition(Dynamic)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
@@ -233,9 +233,9 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| Start Targets | RobTarget | ABB Rapid RobTargets 첫번째 브랜치 코드 출력 |
-| RobTargets | RobTarget | ABB Rapid RobTargets 코드 출력 |
-| End Targets | RobTarget | ABB Rapid RobTargets 마지막 브랜치 코드 출력 |
+| Start Targets | RobTarget | ABB Rapid RobTargets 첫번째 브랜치 데이터 출력 |
+| RobTargets | RobTarget | ABB Rapid RobTargets 데이터 출력 |
+| End Targets | RobTarget | ABB Rapid RobTargets 마지막 브랜치 데이터 출력 |
 
 <p align="center"> 
 <video src="/assets/images/Dynamic_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>

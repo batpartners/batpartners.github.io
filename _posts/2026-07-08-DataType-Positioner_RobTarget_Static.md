@@ -166,7 +166,7 @@ tags:
 | Z Rotation | Angle | RobTarget을 자기 자신의 Z축 기준으로 회전 (단위: 도) |
 | Target Base | Plane | 입력된 Target Plane이 정의된 기준 평면. 입력된 Target Plane은 이 평면을 기준으로, Positioner의 Mounting Plane에 오리엔트 된 RobTarget을 정의 |
 | Reference Plane | Plane | Static 모드에서 포지셔너 정위(Orientation)를 위한 기준평면 |
-| WobjData | WobjData | ABB 작업 평면 좌표계 |
+| WobjData | WobjData | ABB 작업 평면 좌표계를 기준으로 Target Plane 재정의한다. (선택) |
 
 <p align="center"> 
 <video src="/assets/images/RobtargetPosition(Static)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
