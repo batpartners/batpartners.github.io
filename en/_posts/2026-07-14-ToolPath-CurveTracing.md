@@ -1,9 +1,9 @@
 ---
-title: "FlyByBranch"
+title: "Curve Tracing"
 
 layout: single
 header:
-  teaser: "/assets/images/1_FlybyPlane.png"
+  teaser: "/assets/images/Drawing.png"
 
 collection: ToolPath
 entries_layout: grid
@@ -13,10 +13,10 @@ categories:
   - ToolPath
 
 translated: true
-lang: ko
-permalink: /toolpath/ToolPath-FlyByBranch/
+lang: en
+permalink: /en/toolpath/ToolPath-CurveTracing/
+translation_link: /toolpath/ToolPath-CurveTracing/
 
-translation_link: /en/toolpath/ToolPath-FlyByBranch/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -28,13 +28,13 @@ tags:
   - GERTY
 ---
 
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) 타겟 평면 생성. 경로 Segment 간 이동 시 작업물에서 이탈하는 경로 구성.
+Generates a robot toolpath following the input curve.
 
-<p align="center">  <img src="/assets/images/1_FlybyPlane.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/0_Drawing.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -46,10 +46,10 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;   /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -157,40 +157,15 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
   }
 </style>
 
-# | 입력(Input)
+# | Input
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Target Planes** | Plane | 전이경로 생성 기준이 될 타겟 평면 DataTree. 경로 Segment 단위로 Branch 구성. |
+| **Weld Sched** | Weld Sched | Weld program number (schedule) and welding mode to use. |
+| **Weight** | Number | Weight value for wirefeed1. |
 
-## | 필수 파라미터 (Required Parameter)
 
-<div class="tabs-container">
-  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
-
-  <ul class="tab-buttons">
-    <li><label for="sm-tab1">Flyby Targets</label></li>
-  </ul>
-  <div class="tab-content" id="sm-content1">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Target Count</strong></td>
-          <td>Number</td>
-          <td>전이 경로를 구성하는 타겟 평면의 개수.</td>
-        </tr>
-      </tbody>
-    </table>
-    <p align="center">  <img src="/assets/images/1_FlybyPlane_10.png" align="center" width="45%"></p>
-  </div>
-</div>
+## | Required Parameter
 
 <div class="tabs-container">
   <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
@@ -198,8 +173,8 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
   <input type="radio" id="prm-tab7" name="gh-tabs-params">
   
   <ul class="tab-buttons">
-    <li><label for="prm-tab5">Offset</label></li>
-    <li><label for="prm-tab6">Blend</label></li>
+    <li><label for="prm-tab5">Resolution</label></li>
+    <li><label for="prm-tab6">Tilting</label></li>
     <li><label for="prm-tab7">Preview</label></li>
   </ul>
 
@@ -207,110 +182,85 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Link</strong></td>
-          <td>Toggle</td>
-          <td>Approach와 Departure 값을 연동. TRUE: 한쪽을 조절하면 다른 쪽도 같은 값으로 맞춰짐. FALSE: 각각 독립 조절 (기본값).</td>
-        </tr>
-        <tr>
-          <td><strong>Approach Dir</strong></td>
-          <td>String</td>
-          <td>전이 경로의 진입 (Approach) 방향을 일괄 지정.<br>
-              • Motion Dir: 각 브랜치 시작부 모션 벡터의 역방향.<br>
-              • Z/Y/X Axis · Negative Z/Y/X Axis: 시작 타겟 평면의 해당 축 방향.</td>
-        </tr>
-        <tr>
-          <td><strong>Departure Dir</strong></td>
-          <td>String</td>
-          <td>전이 경로의 진출 (Departure) 방향을 일괄 지정.<br>
-              • Motion Dir: 각 브랜치 끝부 모션 벡터 방향.<br>
-              • Z/Y/X Axis · Negative Z/Y/X Axis: 마지막 타겟 평면의 해당 축 방향.</td>
-        </tr>
-        <tr>
-          <td><strong>Approach(mm)</strong></td>
+          <td><strong>Tolerance</strong></td>
           <td>Number</td>
-          <td>전이 경로의 진입 지점을 첫 타겟 평면에서 이격할 거리 (mm).</td>
+          <td>Approximation tolerance for the path.</td>
         </tr>
         <tr>
-          <td><strong>Departure(mm)</strong></td>
+          <td><strong>MinEdge</strong></td>
           <td>Number</td>
-          <td>전이 경로의 진출 지점을 마지막 타겟 평면에서 이격할 거리 (mm).</td>
+          <td>Minimum length of path segments (mm).</td>
+        </tr>
+        <tr>
+          <td><strong>MaxEdge</strong></td>
+          <td>Number</td>
+          <td>Maximum length of path segments (mm).</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/1_FlybyPlane_11.png" align="center" width="45%"></p>
+    <p align="center">  <img src="/assets/images/0_Drawing_10.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="prm-content6">
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Continuity</strong></td>
-          <td>String</td>
-          <td>전이 경로 블렌드의 연속성 유형.<br>
-              [Position]: 위치 연속 (G0).<br>
-              [Tangency]: 접선 연속 (G1).<br>
-              [Curvature]: 곡률 연속 (G2).</td>
-        </tr>
-        <tr>
-          <td><strong>Link</strong></td>
+          <td><strong>Tilt Target</strong></td>
           <td>Toggle</td>
-          <td>'Bulge Start'와 'Bulge End' 값을 연동. TRUE: 한쪽을 조절하면 다른 쪽도 같은 값으로 맞춰짐. FALSE: 각각 독립 조절 (기본값).</td>
+          <td>Switches the target to be tilted by 'Tilt Weight'.<br>
+              • TRUE: Tilts along the geometry surface normal direction (requires 'Geometry' input).<br>
+              • FALSE: Tilts along the curve tangent direction (default).</td>
         </tr>
         <tr>
-          <td><strong>Bulge Start</strong></td>
+          <td><strong>Tilt Weight</strong></td>
           <td>Number</td>
-          <td>블렌드 시작점의 불룩함 (Bulge) 정도.</td>
-        </tr>
-        <tr>
-          <td><strong>Bulge End</strong></td>
-          <td>Number</td>
-          <td>블렌드 끝점의 불룩함 (Bulge) 정도.</td>
+          <td>Degree of tilting the TCP toward the geometry surface normal or curve tangent direction (0.0 = Reference Plane Z, 1.0 = Direction specified by Tilt Target).</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/1_FlybyPlane_20.png" align="center" width="45%"></p>
+    <p align="center">  <img src="/assets/images/0_Drawing_11.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="prm-content7">
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Frame Size</strong></td>
           <td>Number</td>
-          <td>프레임 크기</td>
+          <td>Frame size.</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/1_FlybyPlane_21.png" align="center" width="45%"></p>
+    <p align="center">  <img src="/assets/images/0_Drawing_12.png" align="center" width="45%"></p>
   </div>
 </div>
 
-# | 출력(Output)
+# | Output
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Target Planes** | Plane | 생성된 트레이싱 경로 타겟 평면 |
+| **Target Planes** | Plane | Generated tracing path target planes. |

@@ -1,22 +1,21 @@
 ---
-title: "Solid Offset Fill"
-
+title: "Get HardwareIDs"
 layout: single
 header:
-  teaser: "/assets/images/11_SolidOffsetFill.png"
+  teaser: "/assets/images/GetUSBIDs.png"
 
-collection: ToolPath
+collection: Setup
 entries_layout: grid
 author_profile: true
 
 categories:
-  - ToolPath
+  - Setup
 
 translated: true
-lang: ko
-permalink: /toolpath/ToolPath-SolidOffsetFill/
+lang: en
+permalink: /en/setup/Setup-GetHardwareIDs/
 
-translation_link: /en/toolpath/ToolPath-SolidOffsetFill/
+translation_link: /setup/Setup-GetHardwareIDs/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -28,13 +27,13 @@ tags:
   - GERTY
 ---
 
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한 동심 패턴으로 내부를 채우는 적층 경로 생성.
+Collects hardware-based identifiers (MAC address, disk serial, BIOS/UUID, and USB IDs) from the local machine for device identification. Device identifiers are processed locally, and hardware IDs are neither transmitted nor stored externally.
 
-<p align="center">  <img src="/assets/images/11_SolidOffsetFill.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/0_GetHardwareIDs.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -46,8 +45,8 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
     box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
@@ -157,16 +156,48 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
   }
 </style>
 
-# | 입력(Input)
+# | Input
 
-| 이름 | 타입 | 설명 |
+## | Required Parameter
+
+<div class="tabs-container">
+  <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
+  
+  <ul class="tab-buttons">
+    <li><label for="prm-tab5">Actions</label></li>
+  </ul>
+
+  <div class="tab-content" id="prm-content5">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Refresh</strong></td>
+          <td>Button</td>
+          <td>Refreshes the local machine's hardware IDs via re-scanning.</td>
+        </tr>
+        <tr>
+          <td><strong>Contact Support</strong></td>
+          <td>Button</td>
+          <td>Connects to the Contact Form page.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p align="center">  <img src="/assets/images/0_GetHardwareIDs_10.png" align="center" width="45%"></p>
+  </div>
+</div>
+
+# | Output
+
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Shell Profile** | Shell Profile | 외곽 적층 경로의 기준 프로파일 정보. |
-| **Direction** | Boolean | 채움 패턴의 진행 방향 반전. (TRUE: 진행 방향 반전. / FALSE: 기본 방향 유지 (기본값)) |
-
-# | 출력(Output)
-
-| 이름 | 타입 | 설명 |
-| :--- | :--- | :--- |
-| **Infill ToolPaths** | Infill ToolPaths | 생성된 적층 경로 데이터. |
-| **Infill Polylines** | Curve | 생성된 채움 적층 경로를 연결하는 폴리라인 패턴. |
+| **MachineIDs** | String | Device IDs (MAC, disk serial, BIOS ID, local UUID). |
+| **USBInfos** | String | Information about connected USB devices. |
+| **USBIDs** | Data | List of connected USB device IDs. |

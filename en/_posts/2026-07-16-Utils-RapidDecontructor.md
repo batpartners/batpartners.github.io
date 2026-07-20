@@ -1,22 +1,21 @@
 ---
-title: "Solid Offset Fill"
-
+title: "RapidDecontructor"
 layout: single
 header:
-  teaser: "/assets/images/11_SolidOffsetFill.png"
+  teaser: "/assets/images/10_RapidDecontructor.png"
 
-collection: ToolPath
+collection: Utils
 entries_layout: grid
 author_profile: true
 
 categories:
-  - ToolPath
+  - Utils
 
 translated: true
-lang: ko
-permalink: /toolpath/ToolPath-SolidOffsetFill/
+lang: en
+permalink: /en/utils/Utils-RapidDecontructor/
 
-translation_link: /en/toolpath/ToolPath-SolidOffsetFill/
+translation_link: /utils/Utils-RapidDecontructor/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -28,13 +27,13 @@ tags:
   - GERTY
 ---
 
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한 동심 패턴으로 내부를 채우는 적층 경로 생성.
+ABB RAPID object (ABB DataType, ABB Instruction) deconstructor.
 
-<p align="center">  <img src="/assets/images/11_SolidOffsetFill.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/10_RapidDecontructor.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -157,16 +156,16 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
   }
 </style>
 
-# | 입력(Input)
+# | Input
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Shell Profile** | Shell Profile | 외곽 적층 경로의 기준 프로파일 정보. |
-| **Direction** | Boolean | 채움 패턴의 진행 방향 반전. (TRUE: 진행 방향 반전. / FALSE: 기본 방향 유지 (기본값)) |
+| **ProgramData** | Data | ABB program data |
+| **Instructions** | Instructions | ABB instruction object |
 
-# | 출력(Output)
+# | Output
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Infill ToolPaths** | Infill ToolPaths | 생성된 적층 경로 데이터. |
-| **Infill Polylines** | Curve | 생성된 채움 적층 경로를 연결하는 폴리라인 패턴. |
+| **Data Str.** | String | Program data source |
+| **Instruction Str.** | String | Instruction data source |

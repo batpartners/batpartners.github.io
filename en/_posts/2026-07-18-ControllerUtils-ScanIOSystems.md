@@ -1,22 +1,17 @@
 ---
-title: "Solid Offset Fill"
-
+title: "Scan IOSystems"
 layout: single
 header:
-  teaser: "/assets/images/11_SolidOffsetFill.png"
-
-collection: ToolPath
+  teaser: "/assets/images/6_ScanIOSystems.png"
+collection: ControllerUtils
 entries_layout: grid
 author_profile: true
-
 categories:
-  - ToolPath
-
+  - ControllerUtils
 translated: true
-lang: ko
-permalink: /toolpath/ToolPath-SolidOffsetFill/
-
-translation_link: /en/toolpath/ToolPath-SolidOffsetFill/
+lang: en
+permalink: /en/controllerutils/ControllerUtils-ScanIOSystems
+translation_link: /controllerutils/ControllerUtils-ScanIOSystems
 sidebar:
   nav: "sidebar"
 toc: true
@@ -28,13 +23,13 @@ tags:
   - GERTY
 ---
 
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한 동심 패턴으로 내부를 채우는 적층 경로 생성.
+Gets all I/O signal names defined in the connected controller.
 
-<p align="center">  <img src="/assets/images/11_SolidOffsetFill.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/6_ScanIOSystems.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -157,16 +152,54 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
   }
 </style>
 
-# | 입력(Input)
+# Input
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Shell Profile** | Shell Profile | 외곽 적층 경로의 기준 프로파일 정보. |
-| **Direction** | Boolean | 채움 패턴의 진행 방향 반전. (TRUE: 진행 방향 반전. / FALSE: 기본 방향 유지 (기본값)) |
+| **ABB Controller** | ABB Controller | ABB controller connected to this PC. |
 
-# | 출력(Output)
+## Required Parameter
 
-| 이름 | 타입 | 설명 |
+<div class="tabs-container">
+  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
+  
+  <ul class="tab-buttons">
+    <li><label for="sm-tab1">Info</label></li>
+  </ul>
+
+  <div class="tab-content" id="sm-content1">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Gate</strong></td>
+          <td>Toggle</td>
+          <td>Open/close gate for scanning I/O systems.</td>
+        </tr>
+        <tr>
+          <td><strong>IO Unit</strong></td>
+          <td>String</td>
+          <td>I/O unit to scan.</td>
+        </tr>
+        <tr>
+          <td><strong>Signal Type</strong></td>
+          <td>String</td>
+          <td>Signal type to scan.</td>
+        </tr>
+      </tbody>
+    </table>
+<p align="center">  <img src="/assets/images/6_ScanIOSystems_10.png" align="center" width="45%"></p>
+  </div>
+</div>
+
+# Output
+
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Infill ToolPaths** | Infill ToolPaths | 생성된 적층 경로 데이터. |
-| **Infill Polylines** | Curve | 생성된 채움 적층 경로를 연결하는 폴리라인 패턴. |
+| **Signals** | String | Filtered signal name(s). |

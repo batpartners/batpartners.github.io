@@ -14,8 +14,8 @@ categories:
 
 translated: true
 lang: en
-permalink: /instruction/Instruction-IndRMove/
-translation_link: /en/instruction/Instruction-IndRMove/
+permalink: /en/instruction/Instruction-IndRMove/
+translation_link: /instruction/Instruction-IndRMove/
 
 sidebar:
   nav: "sidebar"
@@ -27,11 +27,11 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-일반 모드 축을 독립 모드로 전환하며 1회전 이내의 지정 위치로 이동시키는 IndRMove 인스트럭션 생성. 이동 중 프로그램 실행 계속. 완료 후 IndReset으로 일반 모드 복귀 필요.
+Generates an IndRMove instruction that changes a normal mode axis to independent mode and moves it to a specified position within one revolution. Program execution continues during the movement. An IndReset instruction is required to return to normal mode after completion.
 
 <p align="center">  <img src="/assets/images/11_IndRMove.png" align="center" width="32%"></p>
 
@@ -149,9 +149,9 @@ tags:
   }
 </style>
 
-# | 입력(Input)
+# | Input
 
-## | 필수 파라미터 (Required Parameter)
+## | Required Parameter
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-model" checked>
@@ -162,21 +162,21 @@ tags:
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>MechUnit</strong></td>
           <td>String</td>
-          <td>메카니컬 유닛 이름</td>
+          <td>Mechanical unit name.</td>
         </tr>
         <tr>
           <td><strong>Target Axis</strong></td>
           <td>String</td>
-          <td>대상 축 번호 (1–6). 독립 모드 복귀 또는 논리 위치 재정의 대상.</td>
+          <td>Target axis number (1–6). The target axis for returning from independent mode or redefining the logical position.</td>
         </tr>        
       </tbody>
     </table>
@@ -195,34 +195,34 @@ tags:
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>RefNum(°)</strong></td>
           <td>Number</td>
-          <td>목표 위치 (각도)를 숫자 (°)로 직접 지정.</td>
+          <td>Directly specifies the target position (angle) as a number (°).</td>
         </tr>
         <tr>
           <td><strong>Direction</strong></td>
           <td>String</td>
-          <td>이동 방향.\n" +
-              • Short: 최단 경로 (±180° 이내)<br>
-              • Fwd: 양의 방향으로 이동 (최대 360°)<br>
-              • Bwd: 음의 방향으로 이동 (최대 360°)</td>
+          <td>Movement direction.<br>
+              • Short: Shortest path (within ±180°)<br>
+              • Fwd: Moves in the positive direction (max 360°)<br>
+              • Bwd: Moves in the negative direction (max 360°)</td>
         </tr>
         <tr>
           <td><strong>Speed</strong></td>
           <td>Number</td>
-          <td>축 이동 속도 (°/s)</td>
+          <td>Axis movement speed (°/s).</td>
         </tr>
         <tr>
           <td><strong>Ramp(%)</strong></td>
           <td>Number</td>
-          <td>가속/감속 성능 감소 비율 (%). 100% = 최대 성능. 낮출수록 가속/감속 완화.</td>
+          <td>Acceleration/deceleration performance reduction ratio (%). 100% = maximum performance. Lower values result in smoother acceleration/deceleration.</td>
         </tr>      
       </tbody>
     </table>
@@ -231,22 +231,22 @@ tags:
   </div>
 </div>  
 
-# | 출력(Output)
+# | Output
 <div style="margin-top: 30px;">
   <div class="page__content">
     <table>
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Instruction</strong></td>
           <td>Instruction</td>
-          <td>생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달.</td>
+          <td>Generated ABB instruction. Passed to the Instructions input of the Core component.</td>
         </tr>
       </tbody>
     </table>

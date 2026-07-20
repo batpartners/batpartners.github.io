@@ -1,22 +1,21 @@
 ---
-title: "FlyByBranch"
-
+title: "Socket Sender"
 layout: single
 header:
-  teaser: "/assets/images/1_FlybyPlane.png"
+  teaser: "/assets/images/2_SocketSender.png"
 
-collection: ToolPath
+collection: ControllerUtils
 entries_layout: grid
 author_profile: true
 
 categories:
-  - ToolPath
+  - ControllerUtils
 
 translated: true
-lang: ko
-permalink: /toolpath/ToolPath-FlyByBranch/
+lang: en
+permalink: /en/controllerutils/ControllerUtils-SocketSender
 
-translation_link: /en/toolpath/ToolPath-FlyByBranch/
+translation_link: /controllerutils/ControllerUtils-SocketSender
 sidebar:
   nav: "sidebar"
 toc: true
@@ -28,13 +27,13 @@ tags:
   - GERTY
 ---
 
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) 타겟 평면 생성. 경로 Segment 간 이동 시 작업물에서 이탈하는 경로 구성.
+Streams motion instruction packets to the ABB IRC5 controller via a TCP socket.
 
-<p align="center">  <img src="/assets/images/1_FlybyPlane.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/2_SocketSender.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -157,160 +156,138 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
   }
 </style>
 
-# | 입력(Input)
+# Input
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Target Planes** | Plane | 전이경로 생성 기준이 될 타겟 평면 DataTree. 경로 Segment 단위로 Branch 구성. |
+| **SocketBundle** | SocketBundle | Data bundle containing the socket client and the instruction packet list. |
 
-## | 필수 파라미터 (Required Parameter)
-
-<div class="tabs-container">
-  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
-
-  <ul class="tab-buttons">
-    <li><label for="sm-tab1">Flyby Targets</label></li>
-  </ul>
-  <div class="tab-content" id="sm-content1">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Target Count</strong></td>
-          <td>Number</td>
-          <td>전이 경로를 구성하는 타겟 평면의 개수.</td>
-        </tr>
-      </tbody>
-    </table>
-    <p align="center">  <img src="/assets/images/1_FlybyPlane_10.png" align="center" width="45%"></p>
-  </div>
-</div>
+## Required Parameter
 
 <div class="tabs-container">
   <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
-  <input type="radio" id="prm-tab6" name="gh-tabs-params">
-  <input type="radio" id="prm-tab7" name="gh-tabs-params">
   
   <ul class="tab-buttons">
-    <li><label for="prm-tab5">Offset</label></li>
-    <li><label for="prm-tab6">Blend</label></li>
-    <li><label for="prm-tab7">Preview</label></li>
+    <li><label for="prm-tab5">Connect</label></li>
   </ul>
 
   <div class="tab-content" id="prm-content5">
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Link</strong></td>
+          <td><strong>Connect</strong></td>
           <td>Toggle</td>
-          <td>Approach와 Departure 값을 연동. TRUE: 한쪽을 조절하면 다른 쪽도 같은 값으로 맞춰짐. FALSE: 각각 독립 조절 (기본값).</td>
-        </tr>
-        <tr>
-          <td><strong>Approach Dir</strong></td>
-          <td>String</td>
-          <td>전이 경로의 진입 (Approach) 방향을 일괄 지정.<br>
-              • Motion Dir: 각 브랜치 시작부 모션 벡터의 역방향.<br>
-              • Z/Y/X Axis · Negative Z/Y/X Axis: 시작 타겟 평면의 해당 축 방향.</td>
-        </tr>
-        <tr>
-          <td><strong>Departure Dir</strong></td>
-          <td>String</td>
-          <td>전이 경로의 진출 (Departure) 방향을 일괄 지정.<br>
-              • Motion Dir: 각 브랜치 끝부 모션 벡터 방향.<br>
-              • Z/Y/X Axis · Negative Z/Y/X Axis: 마지막 타겟 평면의 해당 축 방향.</td>
-        </tr>
-        <tr>
-          <td><strong>Approach(mm)</strong></td>
-          <td>Number</td>
-          <td>전이 경로의 진입 지점을 첫 타겟 평면에서 이격할 거리 (mm).</td>
-        </tr>
-        <tr>
-          <td><strong>Departure(mm)</strong></td>
-          <td>Number</td>
-          <td>전이 경로의 진출 지점을 마지막 타겟 평면에서 이격할 거리 (mm).</td>
+          <td>Toggle connection to the ABB controller.</td>
         </tr>
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/1_FlybyPlane_11.png" align="center" width="45%"></p>
-  </div>
-
-  <div class="tab-content" id="prm-content6">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Continuity</strong></td>
-          <td>String</td>
-          <td>전이 경로 블렌드의 연속성 유형.<br>
-              [Position]: 위치 연속 (G0).<br>
-              [Tangency]: 접선 연속 (G1).<br>
-              [Curvature]: 곡률 연속 (G2).</td>
-        </tr>
-        <tr>
-          <td><strong>Link</strong></td>
-          <td>Toggle</td>
-          <td>'Bulge Start'와 'Bulge End' 값을 연동. TRUE: 한쪽을 조절하면 다른 쪽도 같은 값으로 맞춰짐. FALSE: 각각 독립 조절 (기본값).</td>
-        </tr>
-        <tr>
-          <td><strong>Bulge Start</strong></td>
-          <td>Number</td>
-          <td>블렌드 시작점의 불룩함 (Bulge) 정도.</td>
-        </tr>
-        <tr>
-          <td><strong>Bulge End</strong></td>
-          <td>Number</td>
-          <td>블렌드 끝점의 불룩함 (Bulge) 정도.</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/1_FlybyPlane_20.png" align="center" width="45%"></p>
-  </div>
-
-  <div class="tab-content" id="prm-content7">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Frame Size</strong></td>
-          <td>Number</td>
-          <td>프레임 크기</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/1_FlybyPlane_21.png" align="center" width="45%"></p>
+    <p align="center">  <img src="/assets/images/2_SocketSender_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
-# | 출력(Output)
+<div class="tabs-container">
+  <input type="radio" id="arc-tab2" name="gh-tabs-arcdata" checked>
+  <input type="radio" id="arc-tab3" name="gh-tabs-arcdata">
+  <ul class="tab-buttons">
+    <li><label for="arc-tab2">Queue/Timing</label></li>
+    <li><label for="arc-tab3">Control</label></li>
+  </ul>
+  <div class="tab-content" id="arc-content2">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Max Queue</strong></td>
+          <td>Number</td>
+          <td>Target upper limit for the robot queue. (Default: 350)</td>
+        </tr>
+        <tr>
+          <td><strong>MaxTick</strong></td>
+          <td>Number</td>
+          <td>Maximum packets sent per timer callback. (Default: 35)</td>
+        </tr>
+        <tr>
+          <td><strong>Bundle Size</strong></td>
+          <td>Number</td>
+          <td>Bundle size: Number of instructions grouped per transmission. (Default: 5, Max recommended: 8)</td>
+        </tr>
+        <tr>
+          <td><strong>Interval(ms)</strong></td>
+          <td>Number</td>
+          <td>Timer interval (ms). Default 100ms = 10Hz. Decreasing improves responsiveness, increasing reduces load.</td>
+        </tr>
+      </tbody>
+    </table>
+<p align="center">  <img src="/assets/images/2_SocketSender_11.png" align="center" width="45%"></p>
+  </div>
 
-| 이름 | 타입 | 설명 |
-| :--- | :--- | :--- |
-| **Target Planes** | Plane | 생성된 트레이싱 경로 타겟 평면 |
+  <div class="tab-content" id="arc-content3">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Send</strong></td>
+          <td>Toggle</td>
+          <td>Toggle to authorize packet transmission while connected.<br>
+              • TRUE: Start packet streaming.<br>
+              • FALSE: Stop transmission and pause the robot (Default).</td>
+        </tr>
+        <tr>
+          <td><strong>Reset</strong></td>
+          <td>Button</td>
+          <td>Reset transmission state. Temporarily pauses transmission, resets index to the beginning, and retransmits from the first packet.<br>
+              The robot stops and resumes operation from the initial position upon receiving the first packet.</td>
+        </tr>
+      </tbody>
+    </table>
+<p align="center">  <img src="/assets/images/2_SocketSender_13.png" align="center" width="45%"></p>
+  </div>
+</div>
+
+<div class="tabs-container">
+  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
+  
+  <ul class="tab-buttons">
+    <li><label for="sm-tab1">Log & Status</label></li>
+  </ul>
+
+  <div class="tab-content" id="sm-content1">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Panel</strong></td>
+          <td>Panel</td>
+          <td>Socket communication status and log information.</td>
+        </tr>
+      </tbody>
+    </table>
+<p align="center">  <img src="/assets/images/2_SocketSender_12.png" align="center" width="45%"></p>
+  </div>
+</div>

@@ -13,10 +13,10 @@ categories:
   - ToolPath
 
 translated: true
-lang: ko
-permalink: /toolpath/ToolPath-SolidOffsetFill/
+lang: en
+permalink: /en/toolpath/ToolPath-SolidOffsetFill/
 
-translation_link: /en/toolpath/ToolPath-SolidOffsetFill/
+translation_link: /toolpath/ToolPath-SolidOffsetFill/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -28,16 +28,16 @@ tags:
   - GERTY
 ---
 
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한 동심 패턴으로 내부를 채우는 적층 경로 생성.
+Generates deposition paths filling the interior with concentric patterns by repeatedly offsetting the shell inward, based on the Shell Profile.
 
 <p align="center">  <img src="/assets/images/11_SolidOffsetFill.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+  /* 💡 [Table Width Unification] Fills all markdown and tab internal tables to 100% of the body width */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -46,13 +46,13 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;       /* Forces fixed cell width ratios */
+    word-break: break-all !important;     /* Prevents cell shrinkage and wraps long text */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;    /* Absolutely prevents horizontal overflow due to padding */
   }
   
-  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  /* 💡 [Column Ratio Unification] Matches the 1st (20%), 2nd (15%), and 3rd (65%) column structure across all tables */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -62,7 +62,7 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* 탭 시스템 전체 컨테이너 */
+  /* Tab System Overall Container */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -71,14 +71,14 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
     clear: both;
   }
 
-  /* 라디오 버튼 숨기기 */
+  /* Hide Radio Buttons */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* 탭 버튼 스타일 (상단 바 정렬) */
+  /* Tab Button Styles (Top Bar Alignment) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -114,7 +114,7 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
     color: #333;
   }
 
-  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  /* Content Box Default Settings (Hidden by default) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -124,13 +124,13 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
+  /* 💡 1st Tab Group Control */
   #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #sm-tab1:checked ~ #sm-content1 { display: block; }
 
-  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
+  /* 💡 2nd Tab Group Control */
   #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
   #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
   #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
@@ -140,7 +140,7 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
   #arc-tab3:checked ~ #arc-content3,
   #arc-tab4:checked ~ #arc-content4 { display: block; }
 
-  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
+  /* 💡 3rd Tab Group Control */
   #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
   #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
   #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
@@ -150,23 +150,23 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
   #prm-tab6:checked ~ #prm-content6,
   #prm-tab7:checked ~ #prm-content7 { display: block; }
 
-  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  /* Smooth Fade-in Animation on Tab Switch */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
 
-# | 입력(Input)
+# | Input
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Shell Profile** | Shell Profile | 외곽 적층 경로의 기준 프로파일 정보. |
-| **Direction** | Boolean | 채움 패턴의 진행 방향 반전. (TRUE: 진행 방향 반전. / FALSE: 기본 방향 유지 (기본값)) |
+| **Shell Profile** | Shell Profile | Reference profile information for the outer deposition path. |
+| **Direction** | Boolean | Inverts the fill pattern direction. (TRUE: Inverts the direction. / FALSE: Maintains default direction (Default)) |
 
-# | 출력(Output)
+# | Output
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Infill ToolPaths** | Infill ToolPaths | 생성된 적층 경로 데이터. |
-| **Infill Polylines** | Curve | 생성된 채움 적층 경로를 연결하는 폴리라인 패턴. |
+| **Infill ToolPaths** | Infill ToolPaths | Generated deposition path data. |
+| **Infill Polylines** | Curve | Polyline pattern connecting the generated fill deposition paths. |

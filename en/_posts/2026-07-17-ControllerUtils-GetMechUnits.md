@@ -1,22 +1,21 @@
 ---
-title: "Solid Offset Fill"
-
+title: "Get MechUnits"
 layout: single
 header:
-  teaser: "/assets/images/11_SolidOffsetFill.png"
+  teaser: "/assets/images/0_GetMechUnits.png"
 
-collection: ToolPath
+collection: Setup
 entries_layout: grid
 author_profile: true
 
 categories:
-  - ToolPath
+  - Setup
 
 translated: true
-lang: ko
-permalink: /toolpath/ToolPath-SolidOffsetFill/
+lang: en
+permalink: /en/controllerutils/ControllerUtils-GetMechUnits/
 
-translation_link: /en/toolpath/ToolPath-SolidOffsetFill/
+translation_link: /controllerutils/ControllerUtils-GetMechUnits/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -28,13 +27,13 @@ tags:
   - GERTY
 ---
 
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한 동심 패턴으로 내부를 채우는 적층 경로 생성.
+Retrieves the calibrated axis coordinate system (plane) data of external mechanical units from the connected ABB controller.
 
-<p align="center">  <img src="/assets/images/11_SolidOffsetFill.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/0_GetMechUnits.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -46,10 +45,10 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;   /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -157,16 +156,53 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
   }
 </style>
 
-# | 입력(Input)
+# | Input
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Shell Profile** | Shell Profile | 외곽 적층 경로의 기준 프로파일 정보. |
-| **Direction** | Boolean | 채움 패턴의 진행 방향 반전. (TRUE: 진행 방향 반전. / FALSE: 기본 방향 유지 (기본값)) |
+| ABB Controller | ABB Controller | ABB controller connected to the PC |
 
-# | 출력(Output)
+## | Required Parameter
 
-| 이름 | 타입 | 설명 |
+<div class="tabs-container">
+  <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
+  
+  <ul class="tab-buttons">
+    <li><label for="prm-tab5">Mechanical Unit</label></li>
+  </ul>
+
+  <div class="tab-content" id="prm-content5">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Update</strong></td>
+          <td>Button</td>
+          <td>Scans the connected controller to refresh the list of mechanical units.</td>
+        </tr>
+        <tr>
+          <td><strong>Mechanical Unit</strong></td>
+          <td>String</td>
+          <td>Selects the external mechanical unit from which to retrieve axis planes.</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p align="center">  <img src="/assets/images/0_GetMechUnits_10.png" align="center" width="45%"></p>
+  </div>
+</div>
+
+# | Outputs
+
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Infill ToolPaths** | Infill ToolPaths | 생성된 적층 경로 데이터. |
-| **Infill Polylines** | Curve | 생성된 채움 적층 경로를 연결하는 폴리라인 패턴. |
+| Joint Planes | Plane | Calibrated axis coordinate systems (planes) of the selected unit. |
+| Axis Name | String | Axis names sharing the same tree structure as Joint Planes. |
+| Info | String | Summary of axis configuration and validity for the selected unit. |
+| Warnings | String | Warning messages such as uncalibrated/locked axes or scan failures. |

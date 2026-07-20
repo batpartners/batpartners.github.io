@@ -1,43 +1,37 @@
 ---
 title: "FlyByBranch"
-
 layout: single
 header:
   teaser: "/assets/images/1_FlybyPlane.png"
-
 collection: ToolPath
 entries_layout: grid
 author_profile: true
-
 categories:
   - ToolPath
-
 translated: true
-lang: ko
-permalink: /toolpath/ToolPath-FlyByBranch/
-
-translation_link: /en/toolpath/ToolPath-FlyByBranch/
+lang: en
+permalink: /en/toolpath/ToolPath-FlyByBranch/
+translation_link: /toolpath/ToolPath-FlyByBranch/
 sidebar:
   nav: "sidebar"
 toc: true
 toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
-
 tags: 
   - GERTY
 ---
 
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) 타겟 평면 생성. 경로 Segment 간 이동 시 작업물에서 이탈하는 경로 구성.
+Generates fly-by target planes connecting each branch of the Target Plane DataTree. Configures paths that retract from the workpiece during transitions between path segments.
 
 <p align="center">  <img src="/assets/images/1_FlybyPlane.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+  /* 💡 [Table Width Unification] Uniformly set all markdown and tab internal tables to 100% of the content width */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -46,13 +40,13 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;      /* Forces fixed column width ratios */
+    word-break: break-all !important;    /* Prevents cell shrinkage and handles wrapping for long text */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;    /* Prevents horizontal overflow caused by padding */
   }
   
-  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  /* 💡 [Column Ratio Unification] Matches column widths: 1st column (20%), 2nd column (15%), 3rd column (65%) */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -62,7 +56,7 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* 탭 시스템 전체 컨테이너 */
+  /* Tab System Container */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -71,14 +65,14 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
     clear: both;
   }
 
-  /* 라디오 버튼 숨기기 */
+  /* Hide Radio Buttons */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* 탭 버튼 스타일 (상단 바 정렬) */
+  /* Tab Button Styles (Top Bar Alignment) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -114,7 +108,7 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
     color: #333;
   }
 
-  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  /* Content Box Default Settings (Hidden by default) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -124,13 +118,13 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
+  /* 💡 1st Tab Group Control */
   #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #sm-tab1:checked ~ #sm-content1 { display: block; }
 
-  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
+  /* 💡 2nd Tab Group Control */
   #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
   #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
   #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
@@ -140,7 +134,7 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
   #arc-tab3:checked ~ #arc-content3,
   #arc-tab4:checked ~ #arc-content4 { display: block; }
 
-  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
+  /* 💡 3rd Tab Group Control */
   #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
   #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
   #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
@@ -150,20 +144,20 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
   #prm-tab6:checked ~ #prm-content6,
   #prm-tab7:checked ~ #prm-content7 { display: block; }
 
-  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  /* Smooth Fade-in Animation on Tab Switch */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
 
-# | 입력(Input)
+# | Input
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Target Planes** | Plane | 전이경로 생성 기준이 될 타겟 평면 DataTree. 경로 Segment 단위로 Branch 구성. |
+| **Target Planes** | Plane | Target plane DataTree used as the basis for transition path generation. Branches are organized by path segment units. |
 
-## | 필수 파라미터 (Required Parameter)
+## | Required Parameter
 
 <div class="tabs-container">
   <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
@@ -175,16 +169,16 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Target Count</strong></td>
           <td>Number</td>
-          <td>전이 경로를 구성하는 타겟 평면의 개수.</td>
+          <td>Number of target planes constituting the transition path.</td>
         </tr>
       </tbody>
     </table>
@@ -207,40 +201,40 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Link</strong></td>
           <td>Toggle</td>
-          <td>Approach와 Departure 값을 연동. TRUE: 한쪽을 조절하면 다른 쪽도 같은 값으로 맞춰짐. FALSE: 각각 독립 조절 (기본값).</td>
+          <td>Links Approach and Departure values. TRUE: Adjusting one automatically matches the other. FALSE: Adjusts each independently (Default).</td>
         </tr>
         <tr>
           <td><strong>Approach Dir</strong></td>
           <td>String</td>
-          <td>전이 경로의 진입 (Approach) 방향을 일괄 지정.<br>
-              • Motion Dir: 각 브랜치 시작부 모션 벡터의 역방향.<br>
-              • Z/Y/X Axis · Negative Z/Y/X Axis: 시작 타겟 평면의 해당 축 방향.</td>
+          <td>Batch specifies the approach direction of the transition path.<br>
+              • Motion Dir: Reverse direction of the motion vector at the start of each branch.<br>
+              • Z/Y/X Axis · Negative Z/Y/X Axis: Corresponding axis direction of the starting target plane.</td>
         </tr>
         <tr>
           <td><strong>Departure Dir</strong></td>
           <td>String</td>
-          <td>전이 경로의 진출 (Departure) 방향을 일괄 지정.<br>
-              • Motion Dir: 각 브랜치 끝부 모션 벡터 방향.<br>
-              • Z/Y/X Axis · Negative Z/Y/X Axis: 마지막 타겟 평면의 해당 축 방향.</td>
+          <td>Batch specifies the departure direction of the transition path.<br>
+              • Motion Dir: Direction of the motion vector at the end of each branch.<br>
+              • Z/Y/X Axis · Negative Z/Y/X Axis: Corresponding axis direction of the final target plane.</td>
         </tr>
         <tr>
           <td><strong>Approach(mm)</strong></td>
           <td>Number</td>
-          <td>전이 경로의 진입 지점을 첫 타겟 평면에서 이격할 거리 (mm).</td>
+          <td>Distance (mm) to offset the approach point of the transition path from the first target plane.</td>
         </tr>
         <tr>
           <td><strong>Departure(mm)</strong></td>
           <td>Number</td>
-          <td>전이 경로의 진출 지점을 마지막 타겟 평면에서 이격할 거리 (mm).</td>
+          <td>Distance (mm) to offset the departure point of the transition path from the last target plane.</td>
         </tr>
       </tbody>
     </table>
@@ -252,34 +246,34 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Continuity</strong></td>
           <td>String</td>
-          <td>전이 경로 블렌드의 연속성 유형.<br>
-              [Position]: 위치 연속 (G0).<br>
-              [Tangency]: 접선 연속 (G1).<br>
-              [Curvature]: 곡률 연속 (G2).</td>
+          <td>Continuity type of the transition path blend.<br>
+              [Position]: Position continuity (G0).<br>
+              [Tangency]: Tangent continuity (G1).<br>
+              [Curvature]: Curvature continuity (G2).</td>
         </tr>
         <tr>
           <td><strong>Link</strong></td>
           <td>Toggle</td>
-          <td>'Bulge Start'와 'Bulge End' 값을 연동. TRUE: 한쪽을 조절하면 다른 쪽도 같은 값으로 맞춰짐. FALSE: 각각 독립 조절 (기본값).</td>
+          <td>Links 'Bulge Start' and 'Bulge End' values. TRUE: Adjusting one automatically matches the other. FALSE: Adjusts each independently (Default).</td>
         </tr>
         <tr>
           <td><strong>Bulge Start</strong></td>
           <td>Number</td>
-          <td>블렌드 시작점의 불룩함 (Bulge) 정도.</td>
+          <td>Bulge degree at the blend start point.</td>
         </tr>
         <tr>
           <td><strong>Bulge End</strong></td>
           <td>Number</td>
-          <td>블렌드 끝점의 불룩함 (Bulge) 정도.</td>
+          <td>Bulge degree at the blend end point.</td>
         </tr>
       </tbody>
     </table>
@@ -291,16 +285,16 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Frame Size</strong></td>
           <td>Number</td>
-          <td>프레임 크기</td>
+          <td>Frame size.</td>
         </tr>
       </tbody>
     </table>
@@ -309,8 +303,8 @@ Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) �
   </div>
 </div>
 
-# | 출력(Output)
+# | Output
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Target Planes** | Plane | 생성된 트레이싱 경로 타겟 평면 |
+| **Target Planes** | Plane | Generated tracing path target planes |

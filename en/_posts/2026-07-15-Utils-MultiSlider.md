@@ -1,22 +1,21 @@
 ---
-title: "Solid Offset Fill"
-
+title: "Multi-Slider"
 layout: single
 header:
-  teaser: "/assets/images/11_SolidOffsetFill.png"
+  teaser: "/assets/images/treebranch.png"
 
-collection: ToolPath
+collection: Utils
 entries_layout: grid
 author_profile: true
 
 categories:
-  - ToolPath
+  - Utils
 
 translated: true
 lang: ko
-permalink: /toolpath/ToolPath-SolidOffsetFill/
+permalink: /utils/Utils-MultiSlider/
 
-translation_link: /en/toolpath/ToolPath-SolidOffsetFill/
+translation_link: /en/utils/Utils-MultiSlider/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -32,9 +31,9 @@ tags:
 
 # Description
 
-Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한 동심 패턴으로 내부를 채우는 적층 경로 생성.
+Values of multiple slider widgets.
 
-<p align="center">  <img src="/assets/images/11_SolidOffsetFill.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/6_MultiSlider.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -159,14 +158,44 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
 
 # | 입력(Input)
 
-| 이름 | 타입 | 설명 |
-| :--- | :--- | :--- |
-| **Shell Profile** | Shell Profile | 외곽 적층 경로의 기준 프로파일 정보. |
-| **Direction** | Boolean | 채움 패턴의 진행 방향 반전. (TRUE: 진행 방향 반전. / FALSE: 기본 방향 유지 (기본값)) |
+## | 필수 파라미터 (Required Parameter)
+
+<div class="tabs-container">
+  <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
+  
+  <ul class="tab-buttons">
+    <li><label for="prm-tab5">Multi Sliders</label></li>
+  </ul>
+
+  <div class="tab-content" id="prm-content5">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Nema</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Value01</strong></td>
+          <td>Number</td>
+          <td>01 값</td>
+        </tr>
+        <tr>
+          <td><strong>ADD</strong></td>
+          <td>Number</td>
+          <td>nn 값</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p align="center">  <img src="/assets/images/6_MultiSlider_10.png" align="center" width="45%"></p>
+  </div>
+</div>
 
 # | 출력(Output)
 
-| 이름 | 타입 | 설명 |
+| Nema | Type | Description |
 | :--- | :--- | :--- |
-| **Infill ToolPaths** | Infill ToolPaths | 생성된 적층 경로 데이터. |
-| **Infill Polylines** | Curve | 생성된 채움 적층 경로를 연결하는 폴리라인 패턴. |
+| **Values** | Number | Value |

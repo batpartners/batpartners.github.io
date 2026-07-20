@@ -1,9 +1,9 @@
 ---
-title: "IndReset"
+title: "IndRMove"
 
 layout: single
 header:
-  teaser: "/assets/images/IndReset_00.png"
+  teaser: "/assets/images/11_IndRMove_1.png"
 
 collection: Instruction
 entries_layout: grid

@@ -3,7 +3,7 @@ title: "Code Solver"
 
 layout: single
 header:
-  teaser: "/assets/images/0_CodeSolver.png"
+  teaser: "/assets/images/0_CodeSolver_1.png"
 
 collection: Core
 entries_layout: grid
@@ -14,9 +14,9 @@ categories:
 
 translated: true
 lang: en
-permalink: /en/core/Core-Code-Solver/
+permalink: /en/core/Core-Code-Solver/Core-Code-Solver_Option/
 
-translation_link: /core/Core-Code-Solver/
+translation_link: /core/Core-Code-Solver/Core-Code-Solver_Option/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -32,9 +32,9 @@ tags:
 
 # Description
 
-Generates RAPID programs from defined robot motions and transmits/uploads them to a network-connected ABB controller.
+Generates RAPID programs from defined robot motions, and transmits and uploads them to a network-connected ABB controller.
 
-<p align="center"><img src="/assets/images/0_CodeSolver.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/0_CodeSolver_1.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -49,7 +49,7 @@ Generates RAPID programs from defined robot motions and transmits/uploads them t
     table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
     word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;   /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -176,21 +176,21 @@ Generates RAPID programs from defined robot motions and transmits/uploads them t
         <tr>
           <td><strong>Program Folder</strong></td>
           <td>String</td>
-          <td>Directory path where the robot program will be saved.</td>
+          <td>Directory path where the robot program will be saved</td>
         </tr>
         <tr>
           <td><strong>Program Name</strong></td>
           <td>String</td>
-          <td>Name of the robot program to be generated.</td>
+          <td>Name of the robot program to be generated</td>
         </tr>
         <tr>
           <td><strong>Enable Socket</strong></td>
           <td>Toggle</td>
-          <td>Exports the program with a socket communication module embedded within the RAPID code.</td>
-        </tr>      
+          <td>Exports the program with a socket communication module within the RAPID code</td>
+        </tr>     
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/0_CodeSolver_10.png" align="center" width="45%"></p>
+<p align="center"><img src="/assets/images/0_CodeSolver_20.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -213,31 +213,37 @@ Generates RAPID programs from defined robot motions and transmits/uploads them t
         <tr>
           <td><strong>Auto Load</strong></td>
           <td>Toggle</td>
-          <td>Automatically loads the program onto the connected robot controller after code generation.</td>
+          <td>Automatically loads the program onto the connected robot controller after code generation</td>
         </tr>
         <tr>
           <td><strong>Export</strong></td>
           <td>Button</td>
-          <td>Generates RAPID code based on configured options and saves it to the designated directory.</td>
+          <td>Generates RAPID code based on configured options and saves it to the designated directory</td>
         </tr>
         <tr>
           <td><strong>Cancel</strong></td>
           <td>Button</td>
-          <td>Cancels the ongoing code generation and export process.</td>
+          <td>Cancels the ongoing code generation and export process</td>
         </tr>
         <tr>
           <td><strong>Export Log</strong></td>
           <td>Panel</td>
-          <td>Information on the most recently saved RAPID program file. Displays file path and export results.<br>
+          <td>Information on the most recently saved RAPID program file. Displays file path, export result, etc.<br>
               Local path / Controller path / Contents</td>
         </tr>        
         <tr>
           <td><strong>Open in Editor</strong></td>
           <td>Button</td>
           <td>Opens the generated RAPID code in VSCode for editing. Automatically falls back to Notepad if VSCode is not installed.</td>
-        </tr>                        
+        </tr>                      
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/0_CodeSolver_11.png" align="center" width="45%"></p>
+<p align="center"><img src="/assets/images/0_CodeSolver_21.png" align="center" width="45%"></p>
   </div>
 </div>
+
+# | Output
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| **SocketBundle** | SocketBundle | Data bundle containing the socket client and instruction packet list |

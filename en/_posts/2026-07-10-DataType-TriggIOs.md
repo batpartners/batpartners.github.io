@@ -1,22 +1,22 @@
 ---
-title: "Solid Offset Fill"
+title: "TriggIOs"
 
 layout: single
 header:
-  teaser: "/assets/images/11_SolidOffsetFill.png"
+  teaser: "/assets/images/5_TriggIOs.png"
 
-collection: ToolPath
+collection: Datatype
 entries_layout: grid
 author_profile: true
 
 categories:
-  - ToolPath
+  - DataType
 
 translated: true
-lang: ko
-permalink: /toolpath/ToolPath-SolidOffsetFill/
+lang: en
+permalink: /en/datatype/DataType-TriggerIOs/
 
-translation_link: /en/toolpath/ToolPath-SolidOffsetFill/
+translation_link: /datatype/DataType-TriggerIOs/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -28,13 +28,13 @@ tags:
   - GERTY
 ---
 
-🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한 동심 패턴으로 내부를 채우는 적층 경로 생성.
+Defines a position trigger that generates one or more I/O events at specified locations along the movement path. Used in ABB Trigger Move instructions (TriggLIOs, TriggJIOs).
 
-<p align="center">  <img src="/assets/images/11_SolidOffsetFill.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/5_TriggIOs.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -49,7 +49,7 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
     table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
     word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -124,31 +124,20 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
-  #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  /* 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
+  #tab1:checked ~ .tab-buttons label[for="tab1"] {
+    background: #fff;
+    color: #e53935;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 13px;
+    margin-bottom: -1px;
+    z-index: 2;
   }
-  #sm-tab1:checked ~ #sm-content1 { display: block; }
-
-  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
-  #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
-  #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
-  #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  
+  /* 라디오 버튼 체크 상태에 따른 콘텐츠 표시 제어 */
+  #tab1:checked ~ #content1 { 
+    display: block; 
   }
-  #arc-tab2:checked ~ #arc-content2,
-  #arc-tab3:checked ~ #arc-content3,
-  #arc-tab4:checked ~ #arc-content4 { display: block; }
-
-  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
-  #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
-  #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
-  #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #prm-tab5:checked ~ #prm-content5,
-  #prm-tab6:checked ~ #prm-content6,
-  #prm-tab7:checked ~ #prm-content7 { display: block; }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -157,16 +146,42 @@ Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한
   }
 </style>
 
-# | 입력(Input)
+# | Input
 
-| 이름 | 타입 | 설명 |
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Shell Profile** | Shell Profile | 외곽 적층 경로의 기준 프로파일 정보. |
-| **Direction** | Boolean | 채움 패턴의 진행 방향 반전. (TRUE: 진행 방향 반전. / FALSE: 기본 방향 유지 (기본값)) |
+| **IOEvent** | IOEvent | IOEvents collection for ABB TriggIOs |
 
-# | 출력(Output)
+## | Required Parameter
 
-| 이름 | 타입 | 설명 |
+<div class="tabs-container">
+  <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
+  <ul class="tab-buttons">
+    <li><label for="tab1">TriggIOs</label></li>
+  </ul>
+  <div class="tab-content" id="content1">
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td>String</td>
+          <td>Variable name</td>
+        </tr>
+      </tbody>
+    </table>
+<p align="center">  <img src="/assets/images/5_TriggIOs_1.png" align="center" width="45%"></p>
+  </div>
+</div>
+
+# | Output
+
+| Name | Type | Description |
 | :--- | :--- | :--- |
-| **Infill ToolPaths** | Infill ToolPaths | 생성된 적층 경로 데이터. |
-| **Infill Polylines** | Curve | 생성된 채움 적층 경로를 연결하는 폴리라인 패턴. |
+| **TriggIOs** | TriggIOs | ABB TriggIOs |
