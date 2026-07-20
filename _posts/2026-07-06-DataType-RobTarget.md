@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-외부축 없이 로봇 단독 모션을 위한 RobTarget 정의한다. 외부축 값은 9E9(미사용)로 자동 설정된다.
+robtarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그리고 축의 구성 상태를 정의하는 데이터 타입으로 외부축 없이 로봇 단독 모션을 위한 RobTarget을 정의한다. 외부축 값은 9E9(미사용)로 자동 설정된다.
 
 <p align="center">  <img src="/assets/images/0_RobTarget.png" align="center" width="32%"></p>
 
@@ -162,21 +162,22 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| Target Planes | Plane | RobTarget으로 변환할 평면 |
+| Target Planes | Plane | RobTarget으로 변환할 평면 입력 |
 | Z Rotation | Number | RobTarget을 자기 자신의 Z축 기준으로 회전한다. (단위 : 도) |
-| WobjData | WobjData | ABB 작업 평면 좌표계 |
-| Chaining | Boolean | 작업평면(WorkObj)과 타겟(RobTarget) 관계를 고정한다. 뷰포트 상에서 작업평면 변경 시 타겟 위치와 방향도 변경할 수 있다. |
+| WobjData | WobjData | ABB 작업 평면 좌표계를 기준으로 Target Plane 재정의한다. (선택) |
+| Chaining | Boolean | 작업평면(WorkObj)과 타겟(RobTarget) 관계를 고정한다. 뷰포트 상에서 작업평면 변경 시 타겟 위치와 방향도 변경할 수 있다. (선택)|
 
 *Algin 활성화 모드*
+
 <p align="center"><img src="/assets/images/0_RobTarget_2.png" align="center" width="32%"></p>
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | Target Planes | Plane | RobTarget으로 변환할 평면 |
 | Z Rotation | Number | RobTarget을 자기 자신의 Z축 기준으로 회전한다. (단위 : 도) |
-| WobjData | WobjData | ABB 작업 평면 좌표계 |
+| WobjData | WobjData | ABB 작업 평면 좌표계를 기준으로 Target Plane 재정의한다. (선택) |
 | Chaining | Boolean | 작업평면(WorkObj)과 타겟(RobTarget) 관계를 고정한다. 뷰포트 상에서 작업평면 변경 시 타겟 위치와 방향도 변경할 수 있다. |
-| Robot Base | Plane | RobTarget의 +X축이 향할 기준 좌표계. 이 Plane의 원점이 정렬 타겟점이 되며, 일반적으로 로봇의 베이스 좌표계를 입력. |
+| Robot Base | Plane | RobTarget의 +X축이 향할 기준 좌표계를 설정한다. 이 Plane의 원점이 정렬 타겟점이 되며, 일반적으로 로봇의 베이스 좌표계를 입력. (선택)|
 | Align Weight | Number | 원본 자세와 완전 정렬 자세 사이의 보간 비율. 0 = 원본 RobTarget 자세 유지, 1 = +X축이 Robot Base 원점을 완전히 향하도록 정렬. |
 
 ## | 필수 파라미터 (Required Parameter)
@@ -244,12 +245,12 @@ tags:
         <tr>
           <td><strong>Split Start</strong></td>
           <td>String</td>
-          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 추출하여 출력</td>
+          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 분리하여 출력할 수 있다.</td>
         </tr>
         <tr>
           <td><strong>Split End</strong></td>
           <td>String</td>
-          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 추출하여 출력</td>
+          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 분리하여 출력할 수 있다.</td>
         </tr>
       </tbody>
     </table>
@@ -261,9 +262,9 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| Start Targets | RobTarget | ABB Rapid RobTargets 첫번째 브랜치 코드 출력 |
-| RobTargets | RobTarget | ABB Rapid RobTargets 코드 출력 |
-| End Targets | RobTarget | ABB Rapid RobTargets 마지막 브랜치 코드 출력 |
+| Start Targets | RobTarget | ABB Rapid RobTargets 첫번째 브랜치 데이터 출력 |
+| RobTargets | RobTarget | ABB Rapid RobTargets 데이터 출력 |
+| End Targets | RobTarget | ABB Rapid RobTargets 마지막 브랜치 데이터 출력 |
 
 <figure>
   <img src="/assets/images/DataTypes/RobTarget/TiltingWeight_RobT.gif" alt="Tilting_RobT">
