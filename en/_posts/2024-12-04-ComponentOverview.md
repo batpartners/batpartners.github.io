@@ -172,7 +172,6 @@ For certain components, it is possible to switch component modes or add function
 
 
 *Example*
-
 <p align="center">  <img src="/assets/images/1_Positioner_Robtarget_Dynamic.png" align="center" width="45%"></p>
 
 ------------
@@ -187,7 +186,6 @@ Options are grouped into [Tab]s based on their functions to allow detailed acces
 
 
 *Example*
-
 <div class="tabs-container">
   <input type="radio" id="arc-tab2" name="gh-tabs-arcdata" checked>
   <input type="radio" id="arc-tab3" name="gh-tabs-arcdata">
@@ -198,46 +196,9 @@ Options are grouped into [Tab]s based on their functions to allow detailed acces
   </ul>
 
   <div class="tab-content" id="arc-content2">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Align X</strong></td>
-          <td>String</td>
-          <td>An option that interpolates and corrects the posture so that the +X axis of the RobTarget points towards the Robot Base origin. The default value is False. It adds 'Robot Base' (Plane) and 'Align Weight' (0 = original, 1 = fully aligned) inputs.</td>
-        </tr>
-      </tbody>
-    </table>
  <p align="center"><img src="/assets/images/0_RobTarget_5.png" align="center" width="35%"></p>
   </div>
   <div class="tab-content" id="arc-content3">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Split Start</strong></td>
-          <td>String</td>
-          <td>Extracts and outputs the data corresponding to the first index within each branch of the input `TargetPlane` data.</td>
-        </tr>
-        <tr>
-          <td><strong>Split End</strong></td>
-          <td>String</td>
-          <td>Extracts and outputs the data corresponding to the last index within each branch of the input `TargetPlane` data.</td>
-        </tr>
-      </tbody>
-    </table>
  <p align="center"><img src="/assets/images/0_RobTarget_6.png" align="center" width="35%"></p>
   </div>
 </div>
