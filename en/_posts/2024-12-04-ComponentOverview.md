@@ -26,7 +26,7 @@ tags:
 🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 <style>
-  /* 💡 [Table Width Standardization] Force all markdown and tab internal tables to 100% width */
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -35,13 +35,13 @@ tags:
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Force fix cell width ratios */
-    word-break: break-all !important;     /* Prevent cell shrinkage and allow line breaks for long text inputs */
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* Strictly prevent horizontal overflow due to padding */
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
-  /* 💡 [Column Ratio Standardization] Match 1st(20%), 2nd(15%), 3rd(65%) column structure across all tables */
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -51,7 +51,7 @@ tags:
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab system main container */
+  /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -60,14 +60,14 @@ tags:
     clear: both;
   }
 
-  /* Hide radio buttons */
+  /* 라디오 버튼 숨기기 */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* Tab button styles (Top bar alignment) */
+  /* 탭 버튼 스타일 (상단 바 정렬) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -103,7 +103,7 @@ tags:
     color: #333;
   }
 
-  /* Content box default settings (Hidden by default) */
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -113,13 +113,13 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 💡 1st Tab Group Control (SeamData Required Parameters) */
+  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
   #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #sm-tab1:checked ~ #sm-content1 { display: block; }
 
-  /* 💡 2nd Tab Group Control (ArcData Series) */
+  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
   #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
   #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
   #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
@@ -129,7 +129,7 @@ tags:
   #arc-tab3:checked ~ #arc-content3,
   #arc-tab4:checked ~ #arc-content4 { display: block; }
 
-  /* 💡 3rd Tab Group Control (Params Series) */
+  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
   #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
   #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
   #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
@@ -139,7 +139,7 @@ tags:
   #prm-tab6:checked ~ #prm-content6,
   #prm-tab7:checked ~ #prm-content7 { display: block; }
 
-  /* Smooth fade-in animation on tab switch */
+  /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }
@@ -184,12 +184,14 @@ Options are grouped into [Tab]s based on their functions to allow detailed acces
 <div class="tabs-container">
   <input type="radio" id="arc-tab2" name="gh-tabs-2" checked>
   <input type="radio" id="arc-tab3" name="gh-tabs-2">
+
   <ul class="tab-buttons">
     <li><label for="tab2">Orientation</label></li>
     <li><label for="tab3">Output</label></li>
   </ul>
-    <div class="tab-content" id="arc-content2">
-    <table class="spec-table" style="margin: 0;">
+
+  <div class="tab-content" id="arc-content2">
+    <table class="spec-table">
       <thead>
         <tr>
           <th>Name</th>
@@ -208,7 +210,7 @@ Options are grouped into [Tab]s based on their functions to allow detailed acces
  <p align="center"><img src="/assets/images/0_RobTarget_5.png" align="center" width="45%"></p>
   </div>
   <div class="tab-content" id="arc-content3">
-    <table class="spec-table" style="margin: 0 0 20px 0;">
+    <table class="spec-table">
       <thead>
         <tr>
           <th>Name</th>
