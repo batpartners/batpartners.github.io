@@ -151,9 +151,12 @@ tags:
 The basic structure of GERTY components follows the Rhino Grasshopper architecture. They feature GERTY-specific functions and allow users to configure values for required parameters. The UI for configuring required parameters is broadly divided into 7 types, supporting data types such as **String**, **Number**, **Boolean**, and **Color**. 
 Once the input and required parameter values are defined, they are processed and passed to the output.
 
+------------
+
 ## | Input
 
-GERTY is a CAM software solution designed to assist in programming customized machining techniques based on robotic arms.
+This parameter requires an external input and can be configured by connecting a Rhino/GERTY component with a matching data type.
+Inputs consist of both required and optional values. Optional parameters can be left empty; when left unconnected, the component will turn gray, indicating normal operation.
 
 ### (1) Data Match
 
@@ -171,6 +174,8 @@ For certain components, it is possible to switch component modes or add function
 *Example*
 
 <p align="center">  <img src="/assets/images/1_Positioner_Robtarget_Dynamic.png" align="center" width="45%"></p>
+
+------------
 
 ## | Required Parameter
 
@@ -290,6 +295,8 @@ For components that require a certain amount of time for data processing, this v
 Located at the very bottom of the component, it displays the progress as a percentage (**10%** etc.).
 
 <p align="center">  <img src="/assets/images/2_SocketSender_12.png" align="center" width="35%"></p>
+
+------------
 
 # | Outputs
 
