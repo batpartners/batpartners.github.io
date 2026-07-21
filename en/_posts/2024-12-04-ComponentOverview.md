@@ -148,7 +148,7 @@ tags:
 
 # Overview
 
-The basic structure of GERTY components follows the Rhino Grasshopper architecture. They feature GERTY-specific functions and allow users to configure values for required parameters. The UI for configuring required parameters is broadly divided into 7 types, supporting data types such as String, Number, Boolean, and Color. 
+The basic structure of GERTY components follows the Rhino Grasshopper architecture. They feature GERTY-specific functions and allow users to configure values for required parameters. The UI for configuring required parameters is broadly divided into 7 types, supporting data types such as **String**, **Number**, **Boolean**, and **Color**. 
 Once the input and required parameter values are defined, they are processed and passed to the output.
 
 ## | Input
@@ -207,7 +207,7 @@ Options are grouped into [Tab]s based on their functions to allow detailed acces
         </tr>
       </tbody>
     </table>
- <p align="center"><img src="/assets/images/0_RobTarget_5.png" align="center" width="45%"></p>
+ <p align="center"><img src="/assets/images/0_RobTarget_5.png" align="center" width="35%"></p>
   </div>
   <div class="tab-content" id="arc-content3">
     <table class="spec-table">
@@ -231,7 +231,7 @@ Options are grouped into [Tab]s based on their functions to allow detailed acces
         </tr>
       </tbody>
     </table>
- <p align="center"><img src="/assets/images/0_RobTarget_6.png" align="center" width="45%"></p>
+ <p align="center"><img src="/assets/images/0_RobTarget_6.png" align="center" width="35%"></p>
   </div>
 </div>
 
@@ -240,7 +240,7 @@ Options are grouped into [Tab]s based on their functions to allow detailed acces
 The data type is **String**. It is primarily used to set user-defined variable values. In the case of the *Code Solver*, it is used to specify the saved file name and project name.
 Users can edit or input text by double-clicking on the Text Field. Note that the input value must start with an English letter, and special characters or blank spaces are not allowed.
 
-<p align="center">  <img src="/assets/images/0_RobTarget_4.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/0_RobTarget_4.png" align="center" width="35%"></p>
 
 ### b. Numeric Value (Slider)
 
@@ -250,46 +250,46 @@ Users can change or input values by dragging the pointer on the Slider Bar left/
 *Double*
 Accepts decimal values, including integers.
 
-<p align="center">  <img src="/assets/images/2_FlybyCustom_22.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/2_FlybyCustom_22.png" align="center" width="35%"></p>
 
 
 *Integer*
 Accepts only positive integer values.
 
-<p align="center">  <img src="/assets/images/1_FlybyPlane_10.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/1_FlybyPlane_10.png" align="center" width="35%"></p>
 
 ### c. DropDown
 
 The data type is **String**. Users can select models or options provided by GERTY.
 For Tool/WorkBench models, objects exported by the user can be saved and loaded into GERTY.
 
-<p align="center">  <img src="/assets/images/0_ABBRobot_10.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/0_ABBRobot_10.png" align="center" width="35%"></p>
 
 ### d. Button / Toggle Switch
 
 The data type is **Boolean**. A button temporarily reactivates the state of a component. A toggle completely switches the state of a component.
 In some components, input values and required parameters may be added or removed dynamically.
 
-<p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="35%"></p>
 
 ### e. Color Swatch
 
 The data type is **Color**. Allows users to customize the color of the active model or path in the simulation.
 
-<p align="center">  <img src="/assets/images/2_Workbench_11.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/2_Workbench_11.png" align="center" width="35%"></p>
 
 ### f. Panel
 
 The data type is **String**. When the component is active, it displays the component's output values through a panel.
 
-<p align="center">  <img src="/assets/images/1_ScanController_11.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/1_ScanController_11.png" align="center" width="35%"></p>
 
 ### g. Process Gauge
 
 For components that require a certain amount of time for data processing, this visually shares the progress with the user.
 Located at the very bottom of the component, it displays the progress as a percentage (**10%** etc.).
 
-<p align="center">  <img src="/assets/images/2_SocketSender_12.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/2_SocketSender_12.png" align="center" width="35%"></p>
 
 # | Outputs
 

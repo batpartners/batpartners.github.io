@@ -150,7 +150,7 @@ tags:
 
 # Overview
 
-GERTY 컴포넌트의 기본적인 구조는 Rhino Grasshopper 구조를 따른다. GERTY 고유 기능이 존재하며, 필수 파라미터에 해당하는 값을 설정할 수 있다. 필수 파라미터를 설정하는 UI는 크게 7가지 종류로 나눠지며, 데이터 타입으로 String/Number/Boolean/Color가 있다.
+GERTY 컴포넌트의 기본적인 구조는 Rhino Grasshopper 구조를 따른다. GERTY 고유 기능이 존재하며, 필수 파라미터에 해당하는 값을 설정할 수 있다. 필수 파라미터를 설정하는 UI는 크게 7가지 종류로 나눠지며, 데이터 타입으로 **String/Number/Boolean/Color**가 있다.
 입력과 필수 파라미터 값이 정의되면 출력 값으로 전달된다.
 
 ## | 입력(Input)
