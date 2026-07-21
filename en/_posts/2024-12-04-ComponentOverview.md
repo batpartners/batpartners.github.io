@@ -153,7 +153,7 @@ Once the input and required parameter values are defined, they are processed and
 
 ------------
 
-## | Input
+# | Input
 
 This parameter requires an external input and can be configured by connecting a Rhino/GERTY component with a matching data type.
 Inputs consist of both required and optional values. Optional parameters can be left empty; when left unconnected, the component will turn gray, indicating normal operation.
