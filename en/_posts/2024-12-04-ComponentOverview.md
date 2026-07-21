@@ -179,6 +179,8 @@ For certain components, it is possible to switch component modes or add function
 
 ## | Required Parameter
 
+It must be included in the component value, but can be overridden by the user.
+
 ### (1) Category Tab
 
 Options are grouped into [Tab]s based on their functions to allow detailed access to specific category settings. The selected [Tab] is highlighted in a darker color, allowing users to customize the related settings. Any required parameters that are not customized will follow the default values set by GERTY.
