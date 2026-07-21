@@ -189,12 +189,12 @@ Options are grouped into [Tab]s based on their functions to allow detailed acces
 *Example*
 
 <div class="tabs-container">
-  <input type="radio" id="arc-tab2" name="gh-tabs-2" checked>
-  <input type="radio" id="arc-tab3" name="gh-tabs-2">
+  <input type="radio" id="arc-tab2" name="gh-tabs-arcdata" checked>
+  <input type="radio" id="arc-tab3" name="gh-tabs-arcdata">
 
   <ul class="tab-buttons">
-    <li><label for="tab2">Orientation</label></li>
-    <li><label for="tab3">Output</label></li>
+    <li><label for="arc-tab2">Orientation</label></li>
+    <li><label for="arc-tab3">Output</label></li>
   </ul>
 
   <div class="tab-content" id="arc-content2">
