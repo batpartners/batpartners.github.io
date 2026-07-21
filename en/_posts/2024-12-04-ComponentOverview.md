@@ -182,12 +182,13 @@ GERTY is a CAM software solution designed to assist in programming customized ma
 *Example*
 
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-2" checked><input type="radio" id="tab3" name="gh-tabs-2">
+  <input type="radio" id="arc-tab2" name="gh-tabs-2" checked>
+  <input type="radio" id="arc-tab3" name="gh-tabs-2">
   <ul class="tab-buttons">
     <li><label for="tab2">Orientation</label></li>
     <li><label for="tab3">Output</label></li>
   </ul>
-    <div class="tab-content" id="content2">
+    <div class="tab-content" id="arc-content2">
     <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
@@ -206,7 +207,7 @@ GERTY is a CAM software solution designed to assist in programming customized ma
     </table>
  <p align="center"><img src="/assets/images/0_RobTarget_5.png" align="center" width="45%"></p>
   </div>
-  <div class="tab-content" id="content3">
+  <div class="tab-content" id="arc-content3">
     <table class="spec-table" style="margin: 0 0 20px 0;">
       <thead>
         <tr>
