@@ -215,13 +215,12 @@ Users can edit or input text by double-clicking on the Text Field. Note that the
 The data type is **Number**, which is broadly divided into **Double** and **Integer**.
 Users can change or input values by dragging the pointer on the Slider Bar left/right or by double-clicking it.
 
-*Double*
+*Double*<br>
 Accepts decimal values, including integers.
 
 <p align="center">  <img src="/assets/images/2_FlybyCustom_22.png" align="center" width="35%"></p>
 
-
-*Integer*
+*Integer*<br>
 Accepts only positive integer values.
 
 <p align="center">  <img src="/assets/images/1_FlybyPlane_10.png" align="center" width="35%"></p>
