@@ -159,7 +159,7 @@ GERTY is a CAM software solution designed to assist in programming customized ma
 
 * The basic value connection method is identical to standard Grasshopper components. GERTY specific parameters exist and can be connected and used according to data matching rules.
 
-<p align="center">  <img src="/assets/images/Asset_1.png" align="center" width="45%"></p>
+<p align="center">  <img src="/assets/images/Asset_1.png" align="center" width="80%"></p>
 
 ## (2) Mode Option
 
