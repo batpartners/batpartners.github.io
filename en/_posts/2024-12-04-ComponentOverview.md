@@ -155,17 +155,17 @@ Once the input and required parameter values are defined, they are processed and
 
 GERTY is a CAM software solution designed to assist in programming customized machining techniques based on robotic arms.
 
-## (1) Data Match
+### (1) Data Match
 
-* The basic value connection method is identical to standard Grasshopper components. GERTY specific parameters exist and can be connected and used according to data matching rules.
+The basic value connection method is identical to standard Grasshopper components. GERTY specific parameters exist and can be connected and used according to data matching rules.
 
 <p align="center">  <img src="/assets/images/Asset_1.png" align="center" width="80%"></p>
 
-## (2) Mode Option
+### (2) Mode Option
 
-* For certain components, it is possible to switch component modes or add functions. You can check this by right-clicking on the component icon. The applicable components are as follows:
+For certain components, it is possible to switch component modes or add functions. You can check this by right-clicking on the component icon. The applicable components are as follows:
 
-> *ToolData*, *WobjData*, *Positioner RobTarget*, *SeamData*, *WeldData*, *TPSiSynergic*, *TPSSynergic*, *ABB Positioner*, *ABB Robot*, *WorkBench*, *Code Solver*, *Solid Shell*, *Surface Shell*, *RePath Tree*
+> `ToolData`, `WobjData`, `Positioner RobTarget`, `SeamData`, `WeldData`, `TPSiSynergic`, `TPSSynergic`, `ABB Positioner`, `ABB Robot`, `WorkBench`, `Code Solver`, `Solid Shell`, `Surface Shell`, `RePath Tree`
 
 
 *Example*
@@ -176,7 +176,7 @@ GERTY is a CAM software solution designed to assist in programming customized ma
 
 ### (1) Category Tab
 
-* Options are grouped into [Tab]s based on their functions to allow detailed access to specific category settings. The selected [Tab] is highlighted in a darker color, allowing users to customize the related settings. Any required parameters that are not customized will follow the default values set by GERTY.
+Options are grouped into [Tab]s based on their functions to allow detailed access to specific category settings. The selected [Tab] is highlighted in a darker color, allowing users to customize the related settings. Any required parameters that are not customized will follow the default values set by GERTY.
 
 
 *Example*
