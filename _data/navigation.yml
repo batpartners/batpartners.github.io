@@ -8,6 +8,8 @@ sidebar:
     children:
       - title: "What is GERTY?"
         url: /about%20gerty/About-GERTY
+      - title: "Component Overview"
+        url: /about%20gerty/About-GERTY/ComponentForm
       - title: "Installation"
         url: /about%20gerty/installation/
       - title: "Tutorial"
