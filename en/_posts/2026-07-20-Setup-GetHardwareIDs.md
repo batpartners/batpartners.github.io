@@ -193,7 +193,6 @@ Collects hardware-based identifiers (MAC address, disk serial, BIOS/UUID, and US
     <p align="center">  <img src="/assets/images/0_GetHardwareIDs_10.png" align="center" width="45%"></p>
   </div>
 </div>
-<br>
 
 <div class="page__content" markdown="1">
 
