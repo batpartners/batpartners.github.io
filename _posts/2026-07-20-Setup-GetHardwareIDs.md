@@ -185,7 +185,7 @@ tags:
         <tr>
           <td><strong>Contact Support</strong></td>
           <td>Button</td>
-          <td>문의(Contact Form) 페이지 연결.</td>
+          <td>[Contact Form](https://b-at.kr/gerty-license-form/) 페이지 연결.</td>
         </tr>
       </tbody>
     </table>
