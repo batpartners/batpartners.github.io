@@ -185,7 +185,7 @@ Collects hardware-based identifiers (MAC address, disk serial, BIOS/UUID, and US
         <tr>
           <td><strong>Contact Support</strong></td>
           <td>Button</td>
-          <td>Contact<a href="https://b-at.kr/gerty-license-form/" target="_blank"> Form page.</a></td>
+          <td><a href="https://b-at.kr/gerty-license-form/" target="_blank">Contact Form</a> Page Link</td>
         </tr>
       </tbody>
     </table>
@@ -193,6 +193,9 @@ Collects hardware-based identifiers (MAC address, disk serial, BIOS/UUID, and US
     <p align="center">  <img src="/assets/images/0_GetHardwareIDs_10.png" align="center" width="45%"></p>
   </div>
 </div>
+<br>
+
+<div class="page__content" markdown="1">
 
 # | Output
 
@@ -201,3 +204,5 @@ Collects hardware-based identifiers (MAC address, disk serial, BIOS/UUID, and US
 | **MachineIDs** | String | Device IDs (MAC, disk serial, BIOS ID, local UUID). |
 | **USBInfos** | String | Information about connected USB devices. |
 | **USBIDs** | Data | List of connected USB device IDs. |
+
+</div>
