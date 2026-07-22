@@ -16,6 +16,8 @@ lang: en
 permalink: /en/controllerutils/ControllerUtils-GetToolData/
 
 translation_link: /controllerutils/ControllerUtils-GetToolData/
+
+
 sidebar:
   nav: "sidebar"
 toc: true
