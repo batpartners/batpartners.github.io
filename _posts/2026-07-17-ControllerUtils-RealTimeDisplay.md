@@ -161,7 +161,7 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **GERTY Robot** | GERTY Robot | GERTY 로봇 |
-| **ABB Controller** | ABB Controller | PC에 연결된 ABB 컨트롤러 |
+| **ABB Controller** | ABB Controller | PC에 연결된 <a href="https://batpartners.github.io/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB 컨트롤러</a> |
 | **Signal** | String | 스캔할 신호명 |
 
 ## | 필수 파라미터 (Required Parameter)
