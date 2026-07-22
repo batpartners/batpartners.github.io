@@ -156,7 +156,7 @@ Gets all I/O signal names defined in the connected controller.
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **ABB Controller** | ABB Controller | ABB controller connected to this PC. |
+| **ABB Controller** | ABB Controller | <a href="https://batpartners.github.io/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to this PC. |
 
 ## Required Parameter
 

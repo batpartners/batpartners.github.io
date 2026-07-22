@@ -156,7 +156,7 @@ Streams and visualizes real-time robot poses and I/O signal states from the conn
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **GERTY Robot** | GERTY Robot | GERTY robot |
-| **ABB Controller** | ABB Controller | ABB controller connected to the PC |
+| **ABB Controller** | ABB Controller | <a href="https://batpartners.github.io/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to the PC |
 | **Signal** | String | Name of the signal to scan |
 
 ## | Required Parameter

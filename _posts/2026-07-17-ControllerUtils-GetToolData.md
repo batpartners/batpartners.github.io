@@ -160,15 +160,15 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| ABB Controller | ABB Controller | 이 PC에 연결된 ABB 컨트롤러 |
+| ABB Controller | ABB Controller | 이 PC에 연결된 <a href="https://batpartners.github.io/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB 컨트롤러</a> |
 | Base Plane | Plane | 툴의 장착 기준 평면. TCP와 지오메트리에 대한 기준을 정의 |
 
 # | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| Name | String | 스캔된 툴데이터 이름 |
-| TCP | Plane | 스캔된 툴데이터를 위한 TCP 평면으로, 툴 베이스를 기준으로 위치와 방향을 정의. |
-| Tool Load | Tool Load | 스캔된 툴데이터의 LoadData |
+| Name | String | 스캔된 <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">ToolData</a> 이름 |
+| TCP | Plane | 스캔된 <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">ToolData</a>를 위한 TCP 평면으로, 툴 베이스를 기준으로 위치와 방향을 정의. |
+| Tool Load | Tool Load | 스캔된 <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">ToolData</a>의 LoadData |
 
 <p align="center">  <img src="/assets/images/RealTimeDisplay_01-768x341 (1).png" align="center" width="90%"></p>
