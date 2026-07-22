@@ -166,32 +166,31 @@ tags:
   <ul class="tab-buttons">
     <li><label for="prm-tab5">Actions</label></li>
   </ul>
-
-  <div class="tab-content" id="prm-content5">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Refresh</strong></td>
-          <td>Button</td>
-          <td>재검색을 통해 로컬 머신의 하드웨어 ID를 새로고침.</td>
-        </tr>
-        <tr>
-          <td><strong>Contact Support</strong></td>
-          <td>Button</td>
-          <td>[Contact Form](https://b-at.kr/gerty-license-form/) 페이지 연결.</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/0_GetHardwareIDs_10.png" align="center" width="45%"></p>
-  </div>
+  
+<div class="tab-content" id="prm-content5">
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>이름</th>
+        <th>타입</th>
+        <th>설명</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Refresh</strong></td>
+        <td>Button</td>
+        <td>재검색을 통해 로컬 머신의 하드웨어 ID를 새로고침.</td>
+      </tr>
+      <tr>
+        <td><strong>Contact Support</strong></td>
+        <td>Button</td>
+        <td><a href="https://b-at.kr/gerty-license-form/" target="_blank">Contact Form</a> 페이지 연결.</td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <p align="center">  <img src="/assets/images/0_GetHardwareIDs_10.png" align="center" width="45%"></p>
 </div>
 
 # | 출력(Output)

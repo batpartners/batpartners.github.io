@@ -185,7 +185,7 @@ Collects hardware-based identifiers (MAC address, disk serial, BIOS/UUID, and US
         <tr>
           <td><strong>Contact Support</strong></td>
           <td>Button</td>
-          <td>Connects to the [Contact Form](https://b-at.kr/gerty-license-form/) page.</td>
+          <td>Contact<a href="https://b-at.kr/gerty-license-form/" target="_blank"> Form page.</a></td>
         </tr>
       </tbody>
     </table>
