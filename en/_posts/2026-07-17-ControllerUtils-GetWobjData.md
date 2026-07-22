@@ -155,7 +155,7 @@ Gets the currently active workobject data from the controller.
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| ABB Controller | ABB Controller | <a href="https://batpartners.github.io/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to this PC |
+| ABB Controller | ABB Controller | <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to this PC |
 
 # | Outputs
 
@@ -163,5 +163,5 @@ Gets the currently active workobject data from the controller.
 | :--- | :--- | :--- |
 | Name | String | Scanned workobject name |
 | UserFrame | Plane | User frame (uFrame) plane of the scanned workobject |
-| ObjFrame | Plane | Plane defined as the object frame (oFrame) of <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">Wobjdata</a> |
-| WobjData | WobjData | Scanned <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">Wobjdata</a> |
+| ObjFrame | Plane | Plane defined as the object frame (oFrame) of <a href="https://batpartners.github.io/en/datatype/DataType-WobjData/" target="_blank">Wobjdata</a> |
+| WobjData | WobjData | Scanned <a href="https://batpartners.github.io/en/datatype/DataType-WobjData/" target="_blank">Wobjdata</a> |

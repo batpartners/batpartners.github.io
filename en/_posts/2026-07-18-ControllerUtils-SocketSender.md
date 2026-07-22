@@ -184,7 +184,7 @@ Streams motion instruction packets to the ABB IRC5 controller via a TCP socket.
         <tr>
           <td><strong>Connect</strong></td>
           <td>Toggle</td>
-          <td>Toggle connection to the ABB controller.</td>
+          <td>Toggle connection to the <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a>.</td>
         </tr>
       </tbody>
     </table>

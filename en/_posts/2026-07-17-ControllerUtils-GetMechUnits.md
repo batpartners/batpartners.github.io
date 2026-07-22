@@ -160,7 +160,7 @@ Retrieves the calibrated axis coordinate system (plane) data of external mechani
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| ABB Controller | ABB Controller | ABB controller connected to the PC |
+| ABB Controller | ABB Controller | <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to the PC |
 
 ## | Required Parameter
 

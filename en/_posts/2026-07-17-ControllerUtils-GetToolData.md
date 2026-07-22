@@ -160,15 +160,15 @@ Gets currently active tool data from the controller.
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| ABB Controller | ABB Controller | ABB controller connected to this PC. |
+| ABB Controller | ABB Controller | <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to this PC. |
 | Base Plane | Plane | Mounting reference plane of the tool. Defines the baseline for TCP and geometry. |
 
 # | Outputs
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| Name | String | Scanned tool data name. |
-| TCP | Plane | TCP plane for the scanned tool data, defining position and orientation based on the tool base. |
-| Tool Load | Tool Load | LoadData of the scanned tool data. |
+| Name | String | Scanned <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a> name. |
+| TCP | Plane | TCP plane for the scanned <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a>, defining position and orientation based on the tool base. |
+| Tool Load | Tool Load | LoadData of the scanned <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a>. |
 
 <p align="center">  <img src="/assets/images/RealTimeDisplay_01-768x341 (1).png" align="center" width="90%"></p>
