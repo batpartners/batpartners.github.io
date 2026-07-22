@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /controllerutils/ControllerUtils-RealTimeDisplay
+permalink: /controllerutils/ControllerUtils-RealTimeDisplay/
 
-translation_link: /en/controllerutils/ControllerUtils-RealTimeDisplay
+translation_link: /en/controllerutils/ControllerUtils-RealTimeDisplay/
 sidebar:
   nav: "sidebar"
 toc: true

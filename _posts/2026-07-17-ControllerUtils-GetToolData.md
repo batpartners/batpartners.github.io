@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /controllerutils/ControllerUtils-GetToolData
+permalink: /controllerutils/ControllerUtils-GetToolData/
 
-translation_link: /en/controllerutils/ControllerUtils-GetToolData
+translation_link: /en/controllerutils/ControllerUtils-GetToolData/
 sidebar:
   nav: "sidebar"
 toc: true

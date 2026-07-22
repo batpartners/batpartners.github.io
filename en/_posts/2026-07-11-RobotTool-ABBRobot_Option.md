@@ -14,8 +14,8 @@ categories:
 
 translated: true
 lang: en
-permalink: /en/robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option
-translation_link: /robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option
+permalink: /en/robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option/
+translation_link: /robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option/
 
 sidebar:
   nav: "sidebar"

@@ -10,9 +10,9 @@ sidebar:
 
 translated: true
 lang: ko
-permalink: /about%20gerty/About-GERTY/ComponentOverview
+permalink: /about%20gerty/About-GERTY/ComponentOverview/
 
-translation_link: /en/about%20gerty/About-GERTY/ComponentOverview
+translation_link: /en/about%20gerty/About-GERTY/ComponentOverview/
 
 sidebar:
   nav: "sidebar"

@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /controllerutils/ControllerUtils-SocketSender
+permalink: /controllerutils/ControllerUtils-SocketSender/
 
-translation_link: /en/controllerutils/ControllerUtils-SocketSender
+translation_link: /en/controllerutils/ControllerUtils-SocketSender/
 sidebar:
   nav: "sidebar"
 toc: true

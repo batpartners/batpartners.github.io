@@ -10,8 +10,8 @@ categories:
   - RobotTool
 translated: true
 lang: en
-permalink: /en/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option
-translation_link: /ko/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option
+permalink: /en/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option/
+translation_link: /ko/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option/
 sidebar:
   nav: "sidebar"
 toc: true

@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /controllerutils/ControllerUtils-ScanIOSystems
+permalink: /controllerutils/ControllerUtils-ScanIOSystems/
 
-translation_link: /en/controllerutils/ControllerUtils-ScanIOSystems
+translation_link: /en/controllerutils/ControllerUtils-ScanIOSystems/
 sidebar:
   nav: "sidebar"
 toc: true

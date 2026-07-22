@@ -10,8 +10,8 @@ categories:
   - RobotTool
 translated: true
 lang: en
-permalink: /en/robottool/RobotTool-Positioner/RobotTool-Positioner_Option
-translation_link: /ko/robottool/RobotTool-Positioner/RobotTool-Positioner_Option
+permalink: /en/robottool/RobotTool-Positioner/RobotTool-Positioner_Option/
+translation_link: /ko/robottool/RobotTool-Positioner/RobotTool-Positioner_Option/
 sidebar:
   nav: "sidebar"
 toc: true

@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /controllerutils/ControllerUtils-GetWobjData
+permalink: /controllerutils/ControllerUtils-GetWobjData/
 
-translation_link: /en/controllerutils/ControllerUtils-GetWobjData
+translation_link: /en/controllerutils/ControllerUtils-GetWobjData/
 sidebar:
   nav: "sidebar"
 toc: true

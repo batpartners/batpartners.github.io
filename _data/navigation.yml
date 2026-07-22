@@ -7,14 +7,14 @@ sidebar:
   - title: "0. About GERTY"
     children:
       - title: "What is GERTY?"
-        url: /about%20gerty/About-GERTY
+        url: /about%20gerty/About-GERTY/
         children:
           - title: "Component Overview"
-            url: /about%20gerty/About-GERTY/ComponentOverview
+            url: /about%20gerty/About-GERTY/ComponentOverview/
       - title: "Installation"
         url: /about%20gerty/installation/
       - title: "Tutorial"
-        url: /about%20gerty/Tutorial
+        url: /about%20gerty/Tutorial/
   - title: "1. DataType"
     children:
       - title: "RobTarget"
@@ -54,7 +54,7 @@ sidebar:
         url: /robottool/RobotTool-ABBRobot/
         children:
           - title: "Extra Option"
-            url: /robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option
+            url: /robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option/
       - title: "Positioner"
         url: /robottool/RobotTool-Positioner/
         children:
@@ -64,7 +64,7 @@ sidebar:
         url: /robottool/RobotTool-CreateWorkbench/
         children:
           - title: "Extra Option"
-            url: /robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option
+            url: /robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option/
   - title: "3. Instruction"
     children:
       - title: "ArcMove"
@@ -192,18 +192,18 @@ sidebar:
       - title: "Get MechUnits"
         url: /controllerutils/ControllerUtils-GetMechUnits/
       - title: "ScanABBController"
-        url: /controllerutils/ControllerUtils-ScanABBController
+        url: /controllerutils/ControllerUtils-ScanABBController/
       - title: "Socket Sender"
-        url: /controllerutils/ControllerUtils-SocketSender
+        url: /controllerutils/ControllerUtils-SocketSender/
       - title: "Get ToolData"
-        url: /controllerutils/ControllerUtils-GetToolData
+        url: /controllerutils/ControllerUtils-GetToolData/
       - title: "Get WobjData"
-        url: /controllerutils/ControllerUtils-GetWobjData
+        url: /controllerutils/ControllerUtils-GetWobjData/
       - title: "RealTime Display"
-        url: /controllerutils/ControllerUtils-RealTimeDisplay
+        url: /controllerutils/ControllerUtils-RealTimeDisplay/
       - title: "Scan IOSystems"
-        url: /controllerutils/ControllerUtils-ScanIOSystems
+        url: /controllerutils/ControllerUtils-ScanIOSystems/
   - title: "8. Setup"
     children:
       - title: "Get HardwareIDs"
-        url: /setup/Setup-GetHardwareIDs
+        url: /setup/Setup-GetHardwareIDs/

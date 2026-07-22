@@ -10,8 +10,8 @@ categories:
   - ControllerUtils
 translated: true
 lang: en
-permalink: /en/controllerutils/ControllerUtils-ScanABBController
-translation_link: /controllerutils/ControllerUtils-ScanABBController
+permalink: /en/controllerutils/ControllerUtils-ScanABBController/
+translation_link: /controllerutils/ControllerUtils-ScanABBController/
 sidebar:
   nav: "sidebar"
 toc: true

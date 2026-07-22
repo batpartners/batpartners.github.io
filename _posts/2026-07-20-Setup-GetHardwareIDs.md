@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /setup/Setup-GetHardwareIDs
+permalink: /setup/Setup-GetHardwareIDs/
 
-translation_link: /en/setup/Setup-GetHardwareIDs
+translation_link: /en/setup/Setup-GetHardwareIDs/
 sidebar:
   nav: "sidebar"
 toc: true

@@ -10,8 +10,8 @@ categories:
   - RobotTool
 translated: true
 lang: ko
-permalink: /robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option
-translation_link: /en/robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option
+permalink: /robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option/
+translation_link: /en/robottool/RobotTool-ABBRobot/RobotTool-ABBRobot_Option/
 sidebar:
   nav: "sidebar"
 toc: true

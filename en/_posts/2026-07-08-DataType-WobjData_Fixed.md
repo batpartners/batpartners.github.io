@@ -13,8 +13,8 @@ categories:
 
 translated: true
 lang: en
-permalink: /en/datatype/DataType-WobjData/DataType-WobjData_Fixed
-translation_link: /datatype/DataType-WobjData/DataType-WobjData_Fixed
+permalink: /en/datatype/DataType-WobjData/DataType-WobjData_Fixed/
+translation_link: /datatype/DataType-WobjData/DataType-WobjData_Fixed/
 
 sidebar:
   nav: "sidebar"

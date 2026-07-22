@@ -10,9 +10,9 @@ sidebar:
 
 translated: true
 lang: en
-permalink: /en/about%20gerty/About-GERTY/ComponentOverview
+permalink: /en/about%20gerty/About-GERTY/ComponentOverview/
 
-translation_link: /about%20gerty/About-GERTY/ComponentOverview
+translation_link: /about%20gerty/About-GERTY/ComponentOverview/
 
 toc: true
 toc_label: "Contents"

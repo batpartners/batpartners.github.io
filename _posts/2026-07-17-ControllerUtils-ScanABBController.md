@@ -13,9 +13,9 @@ categories:
 
 translated: true
 lang: ko
-permalink: /controllerutils/ControllerUtils-ScanABBController
+permalink: /controllerutils/ControllerUtils-ScanABBController/
 
-translation_link: /en/controllerutils/ControllerUtils-ScanABBController
+translation_link: /en/controllerutils/ControllerUtils-ScanABBController/
 sidebar:
   nav: "sidebar"
 toc: true

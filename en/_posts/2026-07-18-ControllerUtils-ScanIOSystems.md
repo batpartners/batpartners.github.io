@@ -10,8 +10,8 @@ categories:
   - ControllerUtils
 translated: true
 lang: en
-permalink: /en/controllerutils/ControllerUtils-ScanIOSystems
-translation_link: /controllerutils/ControllerUtils-ScanIOSystems
+permalink: /en/controllerutils/ControllerUtils-ScanIOSystems/
+translation_link: /controllerutils/ControllerUtils-ScanIOSystems/
 sidebar:
   nav: "sidebar"
 toc: true
