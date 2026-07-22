@@ -285,4 +285,4 @@ Defines custom tool (end-effector) data. You can switch between 'Define' (manual
 | :--- | :--- | :--- |
 | **ToolData** | ToolData | Outputs the configured ABB ToolData stream. |
 
-<p align="center">  <img src="/assets/images/ToolData_GIF_00.mp4" align="center" width="100%"></p>
+<p align="center">  <img src="/assets/images/ToolData_GIF_00-1.gif" align="center" width="100%"></p>

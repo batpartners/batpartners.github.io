@@ -285,4 +285,4 @@ tags:
 | :--- | :--- | :--- |
 | **ToolData** | ToolData | 입력한 ABB ToolData를 출력 |
 
-<p align="center">  <img src="/assets/images/ToolData_GIF_00.mp4" align="center" width="100%"></p>
+<p align="center">  <img src="/assets/images/ToolData_GIF_00-1.gif" align="center" width="100%"></p>
