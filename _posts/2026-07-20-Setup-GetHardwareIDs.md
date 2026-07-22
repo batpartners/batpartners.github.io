@@ -192,6 +192,7 @@ tags:
   <br>
   <p align="center">  <img src="/assets/images/0_GetHardwareIDs_10.png" align="center" width="45%"></p>
 </div>
+<br>
 
 <div class="page__content" markdown="1">
 
