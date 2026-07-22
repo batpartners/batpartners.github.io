@@ -168,5 +168,5 @@ tags:
 | :--- | :--- | :--- |
 | Name | String | 스캔된 워크오브젝트 이름 |
 | UserFrame | Plane | 스캔된 워크오브젝트의 유저 프레임(uFrame) 평면 |
-| ObjFrame | Plane | <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">워크오브젝트 데이터(Wobjdata)</a>의 오브젝트 프레임(oFrame)으로 정의된 평면 |
-| WobjData | WobjData | 스캔된 <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">워크오브젝트 데이터(Wobjdata)</a> |
+| ObjFrame | Plane | <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">Wobjdata</a>의 오브젝트 프레임(oFrame)으로 정의된 평면 |
+| WobjData | WobjData | 스캔된 <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">Wobjdata</a> |
