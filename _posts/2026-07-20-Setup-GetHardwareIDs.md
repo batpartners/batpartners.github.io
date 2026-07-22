@@ -166,7 +166,7 @@ tags:
   <ul class="tab-buttons">
     <li><label for="prm-tab5">Actions</label></li>
   </ul>
-  
+
 <div class="tab-content" id="prm-content5">
   <table class="spec-table">
     <thead>
@@ -194,9 +194,12 @@ tags:
 </div>
 
 # | 출력(Output)
+<div class="page__content" markdown="1">
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **MachineIDs** | String | 기기 ID (MAC, 디스크 시리얼, BIOS ID, 로컬 UUID) |
 | **USBInfos** | String | 연결된 USB 장치에 대한 정보. |
 | **USBIDs** | Data | 기기에 연결된 USB 장치 ID 목록. |
+
+</div>
