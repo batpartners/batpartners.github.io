@@ -13,10 +13,10 @@ categories:
   - Core
 
 translated: true
-lang: en
-permalink: /en/core/Core-Code-Solver/
+lang: ko
+permalink: /core/Core-Code-Solver/
 
-translation_link: /core/Core-Code-Solver/
+translation_link: /en/core/Core-Code-Solver/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -28,11 +28,11 @@ tags:
   - GERTY
 ---
 
-🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-Generates RAPID programs from defined robot motions and transmits/uploads them to a network-connected ABB controller.
+정의된 로봇 모션으로부터 RAPID 프로그램 생성 및 네트워크에 연결된 ABB 컨트롤러로 전송 및 업로드.
 
 <p align="center"><img src="/assets/images/0_CodeSolver.png" align="center" width="32%"></p>
 
@@ -149,14 +149,15 @@ Generates RAPID programs from defined robot motions and transmits/uploads them t
   }
 </style>
 
-# | Input
+# | 입력(Input)
 
-| Name | Type | Description |
+| 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **GERTY Code** | GERTY Code | GERTY Code |
-| **ABB Controller** | ABB Controller | ABB controller connected to this PC (Optional) |
+| **ABB Controller** | ABB Controller | 이 PC에 연결된 ABB 컨트롤러 (선택) |
 
-## | Required Parameter
+
+## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-codesolver" checked>
@@ -167,26 +168,21 @@ Generates RAPID programs from defined robot motions and transmits/uploads them t
     <table class="spec-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Program Folder</strong></td>
           <td>String</td>
-          <td>Directory path where the robot program will be saved.</td>
+          <td>로봇 프로그램이 저장될 디렉토리 경로</td>
         </tr>
         <tr>
           <td><strong>Program Name</strong></td>
           <td>String</td>
-          <td>Name of the robot program to be generated.</td>
-        </tr>
-        <tr>
-          <td><strong>Enable Socket</strong></td>
-          <td>Toggle</td>
-          <td>Exports the program with a socket communication module embedded within the RAPID code.</td>
+          <td>생성될 로봇 프로그램의 이름</td>
         </tr>      
       </tbody>
     </table>
@@ -204,37 +200,37 @@ Generates RAPID programs from defined robot motions and transmits/uploads them t
     <table class="spec-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>Auto Load</strong></td>
           <td>Toggle</td>
-          <td>Automatically loads the program onto the connected robot controller after code generation.</td>
+          <td>코드 생성 후 자동으로 연결된 로봇 컨트롤러에 프로그램 로드</td>
         </tr>
         <tr>
           <td><strong>Export</strong></td>
           <td>Button</td>
-          <td>Generates RAPID code based on configured options and saves it to the designated directory.</td>
+          <td>설정된 옵션에 따라 Rapid 코드를 생성 및 지정된 디렉토리에 저장</td>
         </tr>
         <tr>
           <td><strong>Cancel</strong></td>
           <td>Button</td>
-          <td>Cancels the ongoing code generation and export process.</td>
+          <td>현재 진행 중인 코드 생성 및 내보내기 작업 취소</td>
         </tr>
         <tr>
           <td><strong>Export Log</strong></td>
           <td>Panel</td>
-          <td>Information on the most recently saved RAPID program file. Displays file path and export results.<br>
+          <td>직전에 저장된 RAPID 프로그램 파일 정보. 파일 경로 및 내보내기 결과 표시.<br>
               Local path / Controller path / Contents</td>
         </tr>        
         <tr>
           <td><strong>Open in Editor</strong></td>
           <td>Button</td>
-          <td>Opens the generated RAPID code in VSCode for editing. Automatically falls back to Notepad if VSCode is not installed.</td>
+          <td>생성된 RAPID 코드를 VSCode로 열어 편집. VSCode 미설치 시 메모장으로 자동 실행.</td>
         </tr>                        
       </tbody>
     </table>
