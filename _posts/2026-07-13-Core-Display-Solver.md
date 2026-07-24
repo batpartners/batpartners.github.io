@@ -167,20 +167,20 @@ tags:
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th style="width: 35%; white-space: nowrap;">이름</th>
+          <th style="width: 20%;">타입</th>
+          <th style="width: 45%;">설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Simulation Window</strong></td>
+          <td style="white-space: nowrap;"><strong>Simulation Window</strong></td>
           <td>Toggle</td>
           <td>시뮬레이션 컨트롤 창 열기/닫기</td>
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/1_DisplaySolver_1.png" align="center" width="45%"></p>
+    <p align="center"><img src="/assets/images/1_DisplaySolver_1.png" align="center" width="45%"></p>
   </div>
 </div>
 
