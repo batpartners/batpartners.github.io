@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-디지털, 그룹, 아날로그 출력 신호 값을 변경하는 SetDO / SetGO / SetAO 인스트럭션 생성. 우클릭 컨텍스트 메뉴로 신호 타입 전환.
+인스트럭션 리스트로부터 RAPID 서브 프로시저(SubProcedure) 블록 생성. 명명된 PROC으로 출력되어 메인 루틴에서 호출 가능.
 
 <p align="center"><img src="/assets/images/8_SubProcedure_1.png" align="center" width="32%"></p>
 

@@ -32,8 +32,7 @@ tags:
 
 # Description
 
-Creates SetDO / SetGO / SetAO instructions to change digital, group, and analog output signal values. Toggle signal types via the right-click context menu.
-
+Creates a RAPID sub-procedure block from a list of instructions. The block is generated as a named PROC and can be called from the main routine.
 <p align="center"><img src="/assets/images/8_SubProcedure.png" align="center" width="32%"></p>
 
 <style>
