@@ -150,8 +150,8 @@ tags:
 | :--- | :--- | :--- |
 | **Positioner Geo** | Mesh | 포지셔너 각 링크의 형상 메시. |
 | **Joint Planes** | Plane | 고정 베이스부터 플랜지까지 포지셔너의 기구학 체인을 순서대로 정의하는 평면 리스트.<br>고정 기준 좌표계(Base) - 각 회전축 좌표계(J1, J2, ...) - 워크밴치/워크피스 부착면(Flange)에 순서대로 설정.(즉, N축 포지셔너의 경우 총 N+2개 평면 입력 필요.) |
-| **Mounting Plane** | Plane | 포지셔너의 플랜지 평면. 워크벤치(작업대)가 장착되는 상단 기준면. 기본값: WorldXY. |
-| **Workbench** | Workbench | 포지셔너 플랜지에 장착되는 워크벤치(작업대) 정의 (선택). |
+| **Mounting Plane** | Plane | 포지셔너의 플랜지 평면. <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a>가 장착되는 상단 기준면. 기본값: WorldXY. |
+| **Workbench** | Workbench | 포지셔너 플랜지에 장착되는 <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> 정의 (선택). |
 
 ## | 필수 파라미터 (Required Parameter)
 

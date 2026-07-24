@@ -155,7 +155,7 @@ tags:
 | :--- | :--- | :--- |
 | **Weld Sched** | Weld Sched | 사용할 용접 프로그램 번호(스케줄) 및 용접 모드 |
 | **Weight** | Number| wirefeed1에 대한 가중치 |
-| **WeaveData** | WeaveData | ABB WeaveData 구성 데이터 |
+| **WeaveData** | WeaveData | <a href="https://batpartners.github.io/datatype/DataType-WeaveData/" target="_blank">ABB WeaveData</a> 구성 데이터 |
 
 
 ## | 필수 파라미터 (Required Parameter)

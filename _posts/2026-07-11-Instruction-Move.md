@@ -152,7 +152,7 @@ ABB Move 인스트럭션(MoveL, MoveJ) 생성.
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **RobTargets** | RobTarget | 모션 목표 위치. RobTarget 또는 Positioner RobTarget 컴포넌트 출력 연결. |
+| **RobTargets** | RobTarget | 모션 목표 위치. <a href="https://batpartners.github.io/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> 또는 <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> 컴포넌트 출력 연결. |
 
 ## | 필수 파라미터 (Required Parameter)
 

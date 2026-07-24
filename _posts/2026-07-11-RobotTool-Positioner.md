@@ -148,8 +148,8 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Mounting Plane** | Plane | 포지셔너의 플랜지 평면. 워크벤치(작업대)가 장착되는 상단 기준면. 기본값: WorldXY. |
-| **Workbench** | Workbench | 포지셔너 플랜지에 장착되는 워크벤치(작업대) 정의 (선택). |
+| **Mounting Plane** | Plane | 포지셔너의 플랜지 평면. <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a>가 장착되는 상단 기준면. 기본값: WorldXY. |
+| **Workbench** | Workbench | 포지셔너 플랜지에 장착되는 <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> 정의 (선택). |
 
 ## | 필수 파라미터 (Required Parameter)
 

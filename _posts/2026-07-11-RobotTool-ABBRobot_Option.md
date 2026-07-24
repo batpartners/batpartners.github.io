@@ -147,8 +147,8 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Base Plane** | Plane | 로봇 베이스 좌표계 평면. 기본값: WorldXY. |
-| **ToolData** | ToolData | 로봇에 적용할 ABB 툴 데이터(ToolData) |
-| **Positioner** | Positioner | 로봇과 연동할 외부축 포지셔너 (Positioner). |
+| **ToolData** | ToolData | 로봇에 적용할 ABB <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">ToolData</a> |
+| **Positioner** | Positioner | 로봇과 연동할 외부축 <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">Positioner</a>. |
 | **Pedestal** | Mesh | 로봇 받침대·작업대 등 주변 환경 메시 (선택). |
 
 
