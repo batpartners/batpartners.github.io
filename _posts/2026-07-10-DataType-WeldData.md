@@ -237,14 +237,14 @@ tags:
     <table class="spec-table">
       <thead>
         <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
+          <th style="width: 35%; white-space: nowrap;">이름</th>
+          <th style="width: 20%;">타입</th>
+          <th style="width: 45%;">설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Weld Speed(mm/s)</strong></td>
+          <td style="white-space: nowrap;"><strong>Weld Speed(mm/s)</strong></td>
           <td>Number</td>
           <td>용접 중 TCP 선속도 (mm/s). 실제 비드 형상 및 적층 높이를 결정하는 핵심 요소.</td>
         </tr>
@@ -259,6 +259,7 @@ tags:
     <p align="center"><img src="/assets/images/8_WeldData_12.png" align="center" width="45%"></p>
   </div>
 </div>
+
 
 # | 출력(Output)
 
