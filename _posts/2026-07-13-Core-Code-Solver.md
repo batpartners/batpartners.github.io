@@ -154,7 +154,7 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **GERTY Code** | GERTY Code | GERTY Code |
-| **ABB Controller** | ABB Controller | 이 PC에 연결된 ABB 컨트롤러 (선택) |
+| **ABB Controller** | ABB Controller | 이 PC에 연결된  <a href="https://batpartners.github.io/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> (선택) |
 
 
 ## | 필수 파라미터 (Required Parameter)

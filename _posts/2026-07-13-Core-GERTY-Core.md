@@ -156,7 +156,7 @@ tags:
 | :--- | :--- | :--- |
 | Robot Setup | Robot Setup | 구성된 로봇 셋업. 베이스·툴·포지셔너·주변 모델이 묶인 로봇 정의. |
 | Instructions | Instructions | 실행할 ABB 인스트럭션 콜렉션. 리스트 순서가 로봇 실행 순서와 직접 대응되므로, 의도한 모션 시퀀스에 맞게 순서 정렬 필요. |
-| SubProc | SubProc | 호출되는 <a href="https://batpartners.github.io/instruction/Instruction-SubProc_Composition/" target="_blank">ABB 서브프로시저</a> (선택) |
+| SubProc | SubProc | 호출되는 <a href="https://batpartners.github.io/instruction/Instruction-SubProc_Composition/" target="_blank">ABB Procedure</a> (선택) |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -190,5 +190,5 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| GERTY Solver | GERTY Solver | <a href="https://batpartners.github.io/core/Core-Display-Solver/" target="_blank">GERTY Solver</a> |
-| GERTY Code | GERTY Code | <a href="https://batpartners.github.io/core/Core-Code-Solver/" target="_blank">GERTY Code</a> |
+| GERTY Solver | GERTY Solver | <a href="https://batpartners.github.io/core/Core-Display-Solver/" target="_blank">GERTY Solver</a> 연결 |
+| GERTY Code | GERTY Code | <a href="https://batpartners.github.io/core/Core-Code-Solver/" target="_blank">GERTY Code</a> 연결 |
