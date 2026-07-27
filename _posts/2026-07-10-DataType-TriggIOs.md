@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-이동 경로상의 지정 위치에서 하나 이상의 IO Event를 발생시키는 위치 트리거 정의. ABB Trigger Move 인스트럭션 (TriggLIOs, TriggJIOs) 에서 사용.
+이동 경로상의 지정 위치에서 하나 이상의 IO Event를 발생시키는 위치 트리거 컴포넌트로, 사용자는 신호의 변수 이름을 정의한다. ABB Trigger Move 인스트럭션 (TriggLIOs, TriggJIOs)과 함께 사용된다.
 
 <p align="center">  <img src="/assets/images/5_TriggIOs.png" align="center" width="32%"></p>
 

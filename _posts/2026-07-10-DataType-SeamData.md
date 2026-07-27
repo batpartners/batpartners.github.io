@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-용접 심(Seam)의 시작 및 종료 단계 데이터 정의. 점화(Ignition), 가열(Heat), 종료(End) 세 구간의 타이밍 및 아크 조건 지정. 일반적으로 한 심 전체 또는 여러 심에 걸쳐 동일 값 유지.
+용접 심(Seam)의 시작 및 종료 단계 데이터 정의하는 컴포넌트이다. 점화(Ignition), 가열(Heat), 종료(End) 세 구간의 타이밍 및 아크 조건 세부 지정을 할 수 있으며, 일반적으로 한 심 전체 또는 여러 심에 걸쳐 동일 값 유지한다.
 
 <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
 
