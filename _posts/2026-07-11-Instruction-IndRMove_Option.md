@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-일반 모드 축을 독립 모드로 전환하며 1회전 이내의 지정 위치로 이동시키는 IndRMove 인스트럭션 생성. 이동 중 프로그램 실행 계속. 완료 후 IndReset으로 일반 모드 복귀 필요.
+부가축을 독립 모드로 전환하며 1회전 이내의 지정 위치로 이동시키는 컴포넌트이다. IndRMove 인스트럭션으로 작성되며, 작업을 수행 후 IndReset으로 일반 모드 초기화가 필요하다.
 
 <p align="center">  <img src="/assets/images/11_IndRMove_1.png" align="center" width="32%"></p>
 

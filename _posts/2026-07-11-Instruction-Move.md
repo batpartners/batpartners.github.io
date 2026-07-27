@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-ABB Move 인스트럭션(MoveL, MoveJ) 생성.
+ABB Move 인스트럭션(MoveL, MoveJ) 설정하는 컴포넌트이다.
 
 <p align="center"><img src="/assets/images/0_Move.png" align="center" width="32%"></p>
 
