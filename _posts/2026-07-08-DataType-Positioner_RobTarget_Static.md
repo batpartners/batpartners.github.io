@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-포지셔너(외부축) 회전각을 포함한 RobTarget 정의. 우클릭 컨텍스트 메뉴로 Dynamic, Static 모드 전환이 가능.
+Positioner Robtarget은 포지셔너(외부축) 회전각을 포함한 RobTarget을 정의한다. 컴포넌트 아이콘을 우클릭하여 Dynamic, Static 모드로 전환이 가능하다.
 
 <p align="center">  <img src="/assets/images/1_Positioner Robtarget_1.png" align="center" width="32%"></p>
 
