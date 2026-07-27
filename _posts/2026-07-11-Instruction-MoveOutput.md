@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-디지털, 그룹, 아날로그 출력 신호를 동반하는 ABB Move 인스트럭션(MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO) 생성.
+디지털, 그룹, 아날로그 출력 신호를 동반하는 ABB Move 인스트럭션(MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO)을 설정하는 컴포넌트이다.
 
 <p align="center"><img src="/assets/images/1_MoveOutput.png" align="center" width="32%"></p>
 

@@ -26,7 +26,7 @@ tags:
 
 # Description
 
-사용할 ABB 로봇 정의. 컴포넌트 아이콘 우클릭, [Show joint Jog Params]을 선택하여 선택한 로봇의 각 축을 설정할 수 있음. ABB IRB 시리즈 카탈로그의 사전 정의된 제원에서 선택.
+사용할 ABB 로봇을 임포트하는 컴포넌트이다. 사용자가 소유하는 로봇을 선택, 이후 옴셥을 설정할 수 있다. 로봇 모델은 ABB IRB 시리즈 카탈로그의 사전 정의된 제원에서 선택이 가능하다. 컴포넌트 아이콘 우클릭, [Show joint Jog Params]을 선택하여 선택한 로봇의 각 축을 추가 운용하여 시뮬레이션을 설정할 수 있다. 
 
 <p align="center">  <img src="/assets/images/0_ABBRobot_2.png" align="center" width="32%"></p>
 

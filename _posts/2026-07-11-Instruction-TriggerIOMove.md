@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-경로상의 지정 위치에서 하나 이상의 I/O 신호를 발생시키며 이동을 수행하는 ABB Trigger Move 인스트럭션 (TriggLIOs, TriggJIOs) 생성.
+경로상의 지정 위치에서 하나 이상의 I/O 신호를 발생시키며 이동을 수행하는 ABB Trigger Move 인스트럭션(TriggLIOs, TriggJIOs)을 설정하는 컴포넌트이다.
 
 <p align="center"><img src="/assets/images/2_TriggerMove.png" align="center" width="32%"></p>
 
