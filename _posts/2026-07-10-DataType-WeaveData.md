@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-아크 용접 중 수행되는 위빙 (Weaving) 모션 정의. 위빙 형상, 진폭, 주파수, dwell 파라미터 지정.
+아크 용접 중 수행되는 위빙 (Weaving) 모션 정의하는 컴포넌트이다. 위빙 형상, 진폭, 주파수, dwell 파라미터 지정한다.
 
 <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
 
@@ -371,5 +371,5 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **WeaveData** | WeaveData | 설정된 ABB WeaveData 구성 스트림을 출력합니다. |
-| **Code** | String | 컴파일된 RAPID 명령 코드를 출력합니다. | 
+| **WeaveData** | WeaveData | 설정된 ABB WeaveData 구성 스트림을 출력. |
+| **Code** | String | 컴파일된 RAPID 명령 코드를 출력. | 
