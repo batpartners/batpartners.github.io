@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-용접용 ABB 아크 인스트럭션 (ArcLStart, ArcL, ArcLEnd) 생성.
+용접용 ABB 아크 인스트럭션(ArcLStart, ArcL, ArcLEnd)을 설정하는 컴포넌트이다.
 
 <p align="center"><img src="/assets/images/3_ArcMove.png" align="center" width="32%"></p>
 

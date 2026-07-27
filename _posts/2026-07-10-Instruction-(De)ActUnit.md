@@ -33,7 +33,7 @@ tags:
 
 # Description
 
-메카니컬 유닛(Mechanical Unit)을 활성화 또는 비활성화하는 ActUnit/DeactUnit 인스트럭션 생성. RAPID 프로그램 실행 중 외부축 장비(포지셔너, 트랙 등)의 활성/비활성 전환에 사용.
+메카니컬 유닛(Mechanical Unit)을 활성화 또는 비활성화하는 ActUnit/DeactUnit 인스트럭션을 생성하는 컴포넌트이다. RAPID 프로그램 실행 중 외부축 장비(포지셔너, 트랙 등)의 활성/비활성 전환에 사용된다.
 
 <p align="center"><img src="/assets/images/4_DeActUnit.png" align="center" width="32%"></p>
 

@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-독립/일반 모드 축의 논리 위치 초기화 인스트럭션(IndReset) 생성. 독립 모드 축의 경우 일반 모드 복귀까지 동시 수행. 실행 전 모든 축 정지 필요. 누적된 외부축 각도값 초기화에 주로 사용.
+부가 축의 위치와 회전값을 초기화(IndReset)하는 컴포넌트이다. 모션 인스트럭션 실행 전 누적된 외부축 각도값 초기화에 주로 사용한다.
 
 <p align="center">  <img src="/assets/images/12_IndReset_1.png" align="center" width="32%"></p>
 
