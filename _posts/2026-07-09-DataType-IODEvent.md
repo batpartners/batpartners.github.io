@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-triggios 배열의 단일 I/O 트리거 이벤트 정의. 대상 출력 신호, 경로상 트리거 위치, 설정 값 지정. 여러 IOEvent를 TriggIOs 컴포넌트에 묶어 triggios 데이터 구성.
+triggios 배열의 단일 I/O 트리거 이벤트 정의하는 컴포넌트이다. 대상 출력 신호, 경로상 트리거 위치, 설정 값을 지정한다. 여러 IOEvent를 TriggIOs 컴포넌트에 묶어 triggios 데이터 구성한다.
 
 <p align="center">  <img src="/assets/images/4_IOEvent.png" align="center" width="32%"></p>
 

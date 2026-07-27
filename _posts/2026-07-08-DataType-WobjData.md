@@ -163,7 +163,7 @@ wobjdata는 로봇이 작업하는 대상(작업물)의 고유 좌표계를 정�
 | :--- | :--- | :--- |
 | *User Frame* | Plane | WobjData의 사용자 프레임 (uframe)으로 사용되는 평면 |
 | *Object Frame* | Plane | WobjData의 객체 프레임(oframe)으로 사용되는 평면 |
-| *Override Wobj* | Plane | 입력된 워크오브젝트 데이터로 컴포넌트 출력을 덮어씀. (선택) 연결 시 다른 인풋값과 관계없이 이 데이터가 우선 적용. |
+| *Override Wobj* | Plane | 입력된 워크오브젝트 데이터로 컴포넌트 출력을 덮어 사용. (선택) 연결 시 다른 인풋값과 관계없이 이 데이터가 우선 적용. |
 
 ## 옵션 변경(Felxible Option)
 
@@ -196,7 +196,7 @@ wobjdata는 로봇이 작업하는 대상(작업물)의 고유 좌표계를 정�
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>생성할 `WobjData` 변수의 명칭을 정의합니다. 해당 WobjData 위치의 고유 식별자로 사용됩니다.</td>
+          <td>생성할 `WobjData` 변수의 명칭을 정의합니다. 해당 WobjData 위치의 고유 식별자로 사용.</td>
         </tr>
       </tbody>
     </table>
@@ -215,7 +215,7 @@ wobjdata는 로봇이 작업하는 대상(작업물)의 고유 좌표계를 정�
         <tr>
           <td><strong>Frame Size</strong></td>
           <td>Number</td>
-          <td>WobjFrame의 평면 좌표계 축 디스플레이 크기를 조절합니다.</td>
+          <td>WobjFrame의 평면 좌표계 축 디스플레이 크기를 조절.</td>
         </tr>
       </tbody>
     </table>
