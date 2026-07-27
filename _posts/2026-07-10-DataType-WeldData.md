@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-아크가 안정적으로 유지되는 실제 용접 구간의 파라미터 정의. 심을 따라 적용되는 용접 속도, 전압, 와이어 송급 조건 등 지정.
+아크가 안정적으로 유지되는 실제 용접 구간의 파라미터를 정의하는 컴포넌트이다. 심을 따라 적용되는 용접 속도, 전압, 와이어 송급 조건 등을 지정할 수 있다.
 
 <p align="center"><img src="/assets/images/8_WeldData.png" align="center" width="32%"></p>
 
