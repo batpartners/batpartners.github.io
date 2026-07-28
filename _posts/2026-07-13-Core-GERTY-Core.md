@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-정의된 로봇 셋업과 인스트럭션으로부터 로봇 동작 연산. Display Solver 및 CodeSolver 실행에 필요한 기초 데이터 생성.
+GERTY Core는 정의된 로봇 셋업과 인스트럭션으로부터 로봇 동작을 연산하는 컴포넌트이다. Display Solver 및 CodeSolver 실행에 필요한 기초 데이터 생성한다.
 
 <p align="center">  <img src="/assets/images/2_GERTYCore.png" align="center" width="32%"></p>
 

@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-정의된 로봇 모션을 Rhino 뷰포트에서 시뮬레이션 및 시각화.
+Display Solver는 사용자가 정의한 로봇 모션을 Rhino 뷰포트에서 시뮬레이션 및 시각화하여 전 작업과정을 확인할 수 있는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/1_DisplaySolver.png" align="center" width="32%"></p>
 
