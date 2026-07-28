@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-지정된 디지털 입력(DI) 신호가 목표 값에 도달할 때까지 로봇 모션을 대기시키는 WaitDI 인스트럭션 생성.
+지정된 디지털 입력(DI) 신호가 목표 값에 도달할 때까지 로봇 모션을 대기시키는 WaitDI 인스트럭션을 생성하는 컴포넌트이다.
 
 <p align="center"><img src="/assets/images/9_WaitDI.png" align="center" width="32%"></p>
 
@@ -153,7 +153,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Signal** | String | 지정된 디지털 입력(DI) 신호가 목표 값에 도달할 때까지 로봇 모션을 대기시키는 WaitDI 인스트럭션 생성. |
+| **Signal** | String | 디지털 입력(DI) 신호 값 |
 
 ## | 필수 파라미터 (Required Parameter)
 

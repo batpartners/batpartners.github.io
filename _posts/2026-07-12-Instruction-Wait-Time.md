@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-지정된 시간 (초) 동안 로봇 모션을 일시 정지시키는 WaitTime 인스트럭션 생성.
+WaitTime은 지정된 시간 (초) 동안 로봇 모션을 일시 정지시키는 컴포넌트이다.
 
 <p align="center"><img src="/assets/images/10_WaitTIme.png" align="center" width="32%"></p>
 

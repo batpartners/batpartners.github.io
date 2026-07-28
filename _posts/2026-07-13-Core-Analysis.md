@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Core 컴포넌트가 산출한 Analysis 객체를 텍스트 로그로 출력. 타겟별 로봇 자세 에러 및 도달 가능성 이슈 리포트.
+Core 컴포넌트가 산출한 코드 정보를 로봇 축 각도 값, 에러가 발생한 인덱스, 에러 사유로 텍스트 로그로 출력하는 컴포넌트이다.
 
 <p align="center"><img src="/assets/images/3_AnalysisDeconstructor.png" align="center" width="32%"></p>
 
