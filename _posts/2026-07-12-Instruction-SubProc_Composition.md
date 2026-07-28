@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-인스트럭션 리스트로부터 RAPID 서브 프로시저(SubProcedure) 블록 생성. 명명된 PROC으로 출력되어 메인 루틴에서 호출 가능.
+인스트럭션 리스트로부터 RAPID 서브 프로시저(SubProcedure) 블록을 생성하는 컴포넌트이다. 명명된 PROC으로 코드가 출력되어 메인 루틴 실행시, 코드 호출이 가능 하다.
 
 <p align="center"><img src="/assets/images/8_SubProcedure.png" align="center" width="32%"></p>
 
