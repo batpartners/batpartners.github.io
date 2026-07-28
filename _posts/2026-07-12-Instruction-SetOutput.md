@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-디지털, 그룹, 아날로그 출력 신호 값을 변경하는 SetDO / SetGO / SetAO 인스트럭션 생성. 우클릭 컨텍스트 메뉴로 신호 타입 전환.
+SetOutput은 디지털, 그룹, 아날로그 출력 신호 값을 변경하는 SetDO / SetGO / SetAO 인스트럭션을 생성하는 컴포넌트이다. 우클릭 컨텍스트 메뉴로 신호 타입을 전환할 수 있다. DO는 Digital Output, GO는 Group Output, AO는 Analog Output이다.
 
 <p align="center"><img src="/assets/images/7_SetOutput.png" align="center" width="32%"></p>
 
