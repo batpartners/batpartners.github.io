@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-블록 유닛과 벽체 형상을 기반으로, 표준 적층 패턴으로 블록을 배치하는 Place 타겟 생성.
+블록 유닛과 벽체 형상을 기반으로, 표준 적층 패턴으로 블록을 배치하는 Place 타겟을 생성하는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/15_BlockDesign.png" align="center" width="32%"></p>
 

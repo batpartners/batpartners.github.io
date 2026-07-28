@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-전체 블록 개수와 유닛 형상을 기반으로, 공급부에 블록을 배치하는 Pick 타겟 생성.
+전체 블록 개수와 유닛 형상을 기반으로, 공급부에 블록을 배치하는 Pick 타겟을 생성하는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/16_BlockSupply.png" align="center" width="32%"></p>
 

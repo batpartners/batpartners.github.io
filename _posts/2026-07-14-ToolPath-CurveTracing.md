@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-입력 커브를 따라가는 로봇 툴패스 생성.
+CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로봇 툴패스 컴포넌트이다. 작업 평면의 정확도, 틸팅 정도를 설정할 수 있습니다.
 
 <p align="center">  <img src="/assets/images/0_Drawing.png" align="center" width="32%"></p>
 
