@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-포지셔너용 워크벤치(WorkBench) 정의.
+포지셔너용 워크벤치(WorkBench)를 사용자 정의할 수 있는 컴포넌트이다. 사용중인 작업대의 모델링을 시뮬레이션에 적용시켜 포지셔너 작업 과정을 원활히 확인할 수 있다.
 
 <p align="center">  <img src="/assets/images/2_Workbench_2.png" align="center" width="32%"></p>
 
