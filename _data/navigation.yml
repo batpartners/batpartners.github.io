@@ -59,7 +59,7 @@ sidebar:
         url: /robottool/RobotTool-Positioner/
         children:
           - title: "Extra Option"
-            url: /robottool/RobotTool-Positioner/RobotTool-Positioner_Option
+            url: /robottool/RobotTool-Positioner/RobotTool-Positioner_Option/
       - title: "CreateWorkBench"
         url: /robottool/RobotTool-CreateWorkbench/
         children:
