@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-이동 경로상의 TCP 가속도 및 감속도 제한을 설정하거나 해제하는 PathAccLim 인스트럭션 생성.
+PathAccLim은 이동 경로상의 TCP 가속도 및 감속도 제한을 설정하거나 해제하는 PathAccLim 인스트럭션 컴포넌트이다.
 
 <p align="center"><img src="/assets/images/6_PathAccLim.png" align="center" width="32%"></p>
 

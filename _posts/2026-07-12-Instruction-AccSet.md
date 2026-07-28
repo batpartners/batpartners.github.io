@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-로봇 가속도 및 램프 값을 감소시키는 AccSet 인스트럭션 생성. 취약 부품 핸들링이나 작업 영역 경계 근처에서 동적 부하 제한에 사용.
+AccSet은 로봇 가속도 및 램프 값을 감소시키는 AccSet 인스트럭션 컴포넌트이다. 작업 시작 또는 마무리시, 설정된 속도값으로 도달하기 전 가속도 값을 설정할 수 있다. 이 컴포넌트는 핸들링이나 작업 영역 경계 근처에서 동적 부하를 낮춘다.
 
 <p align="center"><img src="/assets/images/5_AccSet.png" align="center" width="32%"></p>
 
