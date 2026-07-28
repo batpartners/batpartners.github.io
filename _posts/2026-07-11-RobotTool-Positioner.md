@@ -26,7 +26,8 @@ tags:
 
 # Description
 
-포지셔너 장치의 기구학 구성 정의. 축 형상 직접 지정, 또는 ABB IRBP 시리즈 카탈로그에서 선택 지원.
+사용할 ABB 포지셔너 로봇을 임포트하는 컴포넌트이다. 사용자가 소유하고 있는 ABB IRBP 시리즈 포지셔너를 지원하며, 선택할 수 있다.
+지정한 모델의 세부 작업 및 시뮬레이션을 설정할 수 있다.
 
 <p align="center">  <img src="/assets/images/1_ABBPositioner.png" align="center" width="32%"></p>
 

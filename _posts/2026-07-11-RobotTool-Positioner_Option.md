@@ -26,7 +26,7 @@ tags:
 
 # Description
 
-컴포넌트 아이콘 우클릭 후, [Define Positioner] 선택시 노출. 포지셔너 장치의 기구학 구성 정의.
+사용할 ABB 포지셔너 로봇을 사용자 정의할 수 있는 컴포넌트이다. 사용자가 소유하고 있는 포지셔너 세부 설정을 완료 후, 시뮬레이션 작업이 가능하다. 컴포넌트 아이콘 우클릭 후, [Define Positioner]를 선택하여 설정할 수 있다.
 
 <p align="center">  <img src="/assets/images/1_ABBPositioner_3_1.png" align="center" width="32%"></p>
 
