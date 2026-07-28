@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-정의된 로봇 모션으로부터 RAPID 프로그램 생성 및 네트워크에 연결된 ABB 컨트롤러로 전송 및 업로드.
+정의된 RAPID 로봇 모션으로부터 프로그램 파일을 생성하며, 네트워크에 연결된 ABB 컨트롤러로 코드 파일 로드 및 업로드 작업을 하는 컴포넌트이다.
 
 <p align="center"><img src="/assets/images/0_CodeSolver_1.png" align="center" width="32%"></p>
 
