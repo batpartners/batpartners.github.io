@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) 타겟 평면 생성. 경로 Segment 간 이동 시 작업물에서 이탈하는 경로 구성.
+Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) 타겟 평면 생성하는 컴포넌트이다. 경로 Segment 간 이동 시 작업물에서 이탈하는 구간의 경로를 재구성하여 사용자가 설정한 값에 따라 타겟평면을 결정한다.
 
 <p align="center">  <img src="/assets/images/1_FlybyPlane.png" align="center" width="32%"></p>
 
