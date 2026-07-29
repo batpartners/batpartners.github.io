@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-입력된 Mesh형상의 오버행에 대하여 색상 매핑 및 시각화
+입력된 Mesh 형상의 오버행에 대하여 색상 매핑으로 시각화하여 제공하는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/7_OverhangMapper.png" align="center" width="32%"></p>
 

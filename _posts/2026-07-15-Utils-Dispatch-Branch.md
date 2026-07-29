@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-DataTree의 Branch들을 두 개의 대상 DataTree로 분배
+DataTree의 Branch들을 입력받은 패턴에 따라 두 개의 대상 DataTree로 분해하는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/0_DispatchBranch.png" align="center" width="32%"></p>
 

@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Data의 Branch Path에서 특정 인덱스를 추출.
+Data의 Branch Path에서 특정 인덱스를 추출할 수 있는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/1_ExtractPathIdx.png" align="center" width="32%"></p>
 

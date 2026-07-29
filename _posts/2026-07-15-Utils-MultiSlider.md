@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Values of multiple slider widgets.
+1개 이상의 숫자 값을 동시에 작성하여 내보낼 수 있는 컴포넌트이다. 
 
 <p align="center">  <img src="/assets/images/6_MultiSlider.png" align="center" width="32%"></p>
 

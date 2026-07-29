@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-데이터 콜렉션를 DataTree에 삽입.
+데이터 콜렉션을 특정 DataTree 인덱스에 삽입할 수 있는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/2_Insert.png" align="center" width="32%"></p>
 
