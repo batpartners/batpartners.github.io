@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-룰드 서피스로부터 열선 절단용 툴패스를 생성
+룰드 서피스로부터 열선 절단용 경로를 생성하는 컴포넌트이다. 사용자는 타겟 평면을 생성할 포인트 개수와, 룰드 서피스 내부 파라미터 값(기본 : 0.5), 선택 옵션으로 열선 툴을 부드럽게 조정할 수 있는 어트랙터 값을 설정한다. 이외의 열선 경로 방향, 툴 방향, 진입 간격의 세부 설정이 가능하다.
 
 <p align="center">  <img src="/assets/images/5_WireCuttingFromSrf.png" align="center" width="32%"></p>
 
