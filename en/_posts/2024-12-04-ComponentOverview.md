@@ -14,6 +14,8 @@ permalink: /en/about%20gerty/About-GERTY/ComponentOverview/
 
 translation_link: /about%20gerty/About-GERTY/ComponentOverview/
 
+sidebar:
+  nav: "sidebar"
 toc: true
 toc_label: "Contents"
 toc_icon: "cog"
@@ -35,8 +37,8 @@ tags:
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
     box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
@@ -148,27 +150,25 @@ tags:
 
 # | Overview
 
-The basic structure of GERTY components follows the Rhino Grasshopper architecture. They feature GERTY-specific functions and allow users to configure values for required parameters. The UI for configuring required parameters is broadly divided into 7 types, supporting data types such as **String**, **Number**, **Boolean**, and **Color**. 
-Once the input and required parameter values are defined, they are processed and passed to the output.
+The basic architecture of GERTY components follows the Rhino Grasshopper structure. GERTY features its own dedicated functions, allowing users to configure values corresponding to required parameters. The UI for configuring required parameters is divided into 7 main categories, utilizing data types such as **String, Number, Boolean, and Color**.
+Once the input and required parameter values are defined, they are passed to the output values.
 
-------------
+# | Inputs
 
-# | Input
-
-This parameter requires an external input and can be configured by connecting a Rhino/GERTY component with a matching data type.
-Inputs consist of both required and optional values. Optional parameters can be left empty; when left unconnected, the component will turn gray, indicating normal operation.
+Values that must receive external data. Rhino and GERTY components can be connected according to the data types.
+There are values that must be provided (required) and those that are optional. Optional values can be left blank, in which case the component color should appear gray to indicate a normal state.
 
 ### (1) Data Match
 
-The basic value connection method is identical to standard Grasshopper components. GERTY specific parameters exist and can be connected and used according to data matching rules.
+The method is identical to standard Grasshopper component value connections. GERTY-specific parameters exist and can be connected accordingly.
 
 <p align="center">  <img src="/assets/images/Asset_1.png" align="center" width="80%"></p>
 
 ### (2) Mode Option
 
-For certain components, it is possible to switch component modes or add functions. You can check this by right-clicking on the component icon. The applicable components are as follows:
+For certain components, switching modes or adding functions is supported. This can be checked by right-clicking while hovering the mouse over the component icon. The applicable components are as follows:
 
-> `ToolData`, `WobjData`, `Positioner RobTarget`, `SeamData`, `WeldData`, `TPSiSynergic`, `TPSSynergic`, `ABB Positioner`, `ABB Robot`, `WorkBench`, `Code Solver`, `Solid Shell`, `Surface Shell`, `RePath Tree`
+> <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">`ToolData`</a>, <a href="https://batpartners.github.io/en/datatype/DataType-WobjData/" target="_blank">`WobjData`</a>, <a href="https://batpartners.github.io/en/datatype/DataType-Positioner_RobTarget/" target="_blank">`Positioner RobTarget`</a>, <a href="https://batpartners.github.io/en/datatype/DataType-SeamData/" target="_blank">`SeamData`</a>, <a href="https://batpartners.github.io/en/datatype/DataType-WeldData/" target="_blank">`WeldData`</a>, `TPSiSynergic`, `TPSSynergic`, <a href="https://batpartners.github.io/en/robottool/RobotTool-Positioner/" target="_blank">`ABB Positioner`</a>, <a href="https://batpartners.github.io/en/robottool/RobotTool-ABBRobot/" target="_blank">`ABB Robot`</a>, <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">`WorkBench`</a>, <a href="https://batpartners.github.io/en/core/Core-Code-Solver/" target="_blank">`Code Solver`</a>, <a href="https://batpartners.github.io/en/toolpath/ToolPath-SolidShell/" target="_blank">`Solid Shell`</a>, <a href="https://batpartners.github.io/en/toolpath/ToolPath-SurfaceShell/" target="_blank">`Surface Shell`</a>, <a href="https://batpartners.github.io/en/utils/Utils-RepathTree/" target="_blank">`RePath Tree`</a>
 
 
 *Example*
@@ -176,13 +176,13 @@ For certain components, it is possible to switch component modes or add function
 
 ------------
 
-## | Required Parameter
+## | Required Parameters
 
-It must be included in the component value, but can be overridden by the user.
+These values must be included in the component and can be re-defined by the user.
 
 ### (1) Category Tab
 
-Options are grouped into [Tab]s based on their functions to allow detailed access to specific category settings. The selected [Tab] is highlighted in a darker color, allowing users to customize the related settings. Any required parameters that are not customized will follow the default values set by GERTY.
+Specific category options are grouped into [Tabs] based on functionality for detailed access. The selected [Tab] is highlighted in a dark color, allowing related settings to be customized. Required parameters that are not customized will follow the default values set by GERTY.
 
 
 *Example*
@@ -205,56 +205,56 @@ Options are grouped into [Tab]s based on their functions to allow detailed acces
 
 ### a. Text Field
 
-The data type is **String**. It is primarily used to set user-defined variable values. In the case of the *Code Solver*, it is used to specify the saved file name and project name.
-Users can edit or input text by double-clicking on the Text Field. Note that the input value must start with an English letter, and special characters or blank spaces are not allowed.
+The data type is **String**. It is primarily used to set user-defined variable values. For <a href="https://batpartners.github.io/en/core/Core-Code-Solver/" target="_blank">*Code Solver*</a>, it is used to write the saved file name and project name.
+Users can modify or write by double-clicking on the Text Field. Note that input values must start with an English letter, and special characters or empty spaces are blocked.
 
 <p align="center">  <img src="/assets/images/0_RobTarget_4.png" align="center" width="35%"></p>
 
-### b. Numeric Value (Slider)
+### b. Slider
 
-The data type is **Number**, which is broadly divided into **Double** and **Integer**.
-Users can change or input values by dragging the pointer on the Slider Bar left/right or by double-clicking it.
+The data type is **Number**, broadly categorized into **Double** and **Integer**.
+Users can change or input values by dragging the pointer on the slider bar left/right or by double-clicking the mouse.
 
 *Double*<br>
-Accepts decimal values, including integers.
+Accepts decimal values including integers.
 
 <p align="center">  <img src="/assets/images/2_FlybyCustom_22.png" align="center" width="35%"></p>
 
 *Integer*<br>
-Accepts only positive integer values.
+Accepts positive integer values only.
 
 <p align="center">  <img src="/assets/images/1_FlybyPlane_10.png" align="center" width="35%"></p>
 
 ### c. DropDown
 
 The data type is **String**. Users can select models or options provided by GERTY.
-For Tool/WorkBench models, objects exported by the user can be saved and loaded into GERTY.
+For Tool/WorkBench models, users can save and load objects they have `Export`ed into GERTY.
 
 <p align="center">  <img src="/assets/images/0_ABBRobot_10.png" align="center" width="35%"></p>
 
 ### d. Button / Toggle Switch
 
-The data type is **Boolean**. A button temporarily reactivates the state of a component. A toggle completely switches the state of a component.
-In some components, input values and required parameters may be added or removed dynamically.
+The data type is **Boolean**. Buttons temporarily re-activate the component state, while toggles completely switch the component state.
+For certain components, input values and required parameters may be added or removed dynamically.
 
 <p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="35%"></p>
 
 ### e. Color Swatch
 
-The data type is **Color**. Allows users to customize the color of the active model or path in the simulation.
+The data type is **Color**. Allows users to customize the colors of active models and paths in the simulation.
 
 <p align="center">  <img src="/assets/images/2_Workbench_11.png" align="center" width="35%"></p>
 
 ### f. Panel
 
-The data type is **String**. When the component is active, it displays the component's output values through a panel.
+The data type is **String**. When the component is active, it displays and outputs the component result values via a panel.
 
 <p align="center">  <img src="/assets/images/1_ScanController_11.png" align="center" width="35%"></p>
 
 ### g. Process Gauge
 
 For components that require a certain amount of time for data processing, this visually shares the progress with the user.
-Located at the very bottom of the component, it displays the progress as a percentage (**10%** etc.).
+Located at the bottom of the component, it displays the progress percentage (%).
 
 <p align="center">  <img src="/assets/images/2_SocketSender_12.png" align="center" width="35%"></p>
 
@@ -262,4 +262,4 @@ Located at the very bottom of the component, it displays the progress as a perce
 
 # | Outputs
 
-When input values and required parameters are successfully processed, the results are exported according to the corresponding output data values.
+When input values and required parameters are fully processed, output data values are generated and forwarded accordingly.
