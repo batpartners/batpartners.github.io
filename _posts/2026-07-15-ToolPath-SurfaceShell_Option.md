@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-닫힌 솔리드 형상에서 외곽(Shell) 적층 경로를 생성
+열린 서피스 형상에서 외곽(Shell) 적층 툴패스를 생성하는 컴포넌트이다. 타겟평면의 간격, 높이, 작업 방향(왕복, 편도), 틸딩 정도 등의 세부 설정이 가능하며, 형상이 큰 경우, 파티션으로 나누어 작업 데이터를 내보낼 수 있다. 아이콘 우클릭 시, `Use AntiOverhang` 모드로 전환이 가능하며, 해당 모드의 경우 오버행이 들어간 작업물의 세부 설정이 가능하다.
 
 <p align="center">  <img src="/assets/images/13_SurfaceShell_3.png" align="center" width="32%"></p>
 

@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Shell Profile를 기준으로, 외곽(Shell) 내부를 지그재그 계열 패턴으로 채우는 적층 경로 생성.
+Shell Profile를 기준으로, 외곽 내부를 패턴으로 채우는 적층 툴패스 컴포넌트이다. 채움 형상과 간격 등의 세부 사항을 결정할 수 있다.
 
 <p align="center">  <img src="/assets/images/10_SolidFill.png" align="center" width="32%"></p>
 

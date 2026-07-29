@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-닫힌 솔리드 형상에서 외곽(Shell) 적층 경로를 생성
+닫힌 솔리드 형상에서 외곽(Shell) 적층 툴패스를 생성하는 컴포넌트이다. 타겟평면의 시작 위치, 간격, 높이, 틸딩 정도 등의 세부 설정이 가능하며, 형상이 큰 경우, 파티션으로 나누어 작업 데이터를 내보낼 수 있다.
 
 <p align="center">  <img src="/assets/images/12_SolidShell_3.png" align="center" width="32%"></p>
 

@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Shell Profile를 기준으로, 외곽(shell)을 안쪽으로 반복 오프셋한 동심 패턴으로 내부를 채우는 적층 경로 생성.
+Shell Profile를 기준으로, 외곽(shell)을 안 또는 밖으로 오프셋한 패턴의 내부를 채움 적층 툴패스를 생성하는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/11_SolidOffsetFill.png" align="center" width="32%"></p>
 
