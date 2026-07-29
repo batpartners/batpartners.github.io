@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-슬라이서 컴포넌트에서 생성된 적층 툴패스(Deposition ToolPaths)의 해석 및 통합. 압출 시작(E-Start), 이동(Move), 압출 종료(E-End)로 목적별로 분류. 적층 경로의 정렬 및 레이어 프리뷰 기능 포함.
+슬라이서 컴포넌트에서 생성된 적층 툴패스(Deposition ToolPaths)를 입력받아 해석 및 통합하는 컴포넌트이다. 입력 받은 데이터 중, 압출 시작(E-Start), 이동(Move), 압출 종료(E-End) 등 목적별로 분리하여 출력할 수 있다. 사용자는 적층 경로의 정렬 및 레이어를 프리뷰로 확인이 가능하다.
 
 <p align="center">  <img src="/assets/images/9_DepositionBuilder.png" align="center" width="32%"></p>
 

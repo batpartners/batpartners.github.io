@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-서피스의 UV 아이소파라메트릭 커브를 따라, 정삭 (Finishing) 툴패스 생성.
+서피스의 UV 아이소파라메트릭 커브를 따라, 정삭 (Finishing) 툴패스를 생성하는 컴포넌트이다. 사용자는 타겟 평면사이의 거리와, 레이어간 간격, UV 방향 등의 작업 방식에 맞게 세부 설정이 가능하다.
 
 <p align="center">  <img src="/assets/images/8_UVFinishing.png" align="center" width="32%"></p>
 

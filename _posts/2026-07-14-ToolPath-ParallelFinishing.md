@@ -32,7 +32,8 @@ tags:
 
 # Description
 
-일방향으로 평행한 Contour 커브를 따라, 정삭(Finishing) 툴패스 생성.
+일방향으로 평행한 Contour 커브를 따라 정삭(Finishing) 툴패스를 생성하는 컴포넌트이다. 사용자는 작업물 형상에 맞게 타켓 평면 사이의 거리와, 레이어간 간격, 틸팅 등의 세부 설정을 할 수 있다.
+
 
 <p align="center">  <img src="/assets/images/6_ParallelFinishing.png" align="center" width="32%"></p>
 

@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-계단식 황삭(Roughing) 경로 생성.
+계단식 황삭(Roughing) 툴패스를 생성하는 컴포넌트이다. 사용자는 타겟 평면사이의 거리와, 레이어간 간격, 시작 방향 등의 작업 방식에 맞게 세부 설정이 가능하다.
 
 <p align="center">  <img src="/assets/images/7_Roughing.png" align="center" width="32%"></p>
 
