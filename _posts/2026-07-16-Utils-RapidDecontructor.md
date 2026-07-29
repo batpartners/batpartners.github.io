@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-ABB RAPID 객체 (ABB DataType, ABB Instruction) 디컨스트럭터.
+ABB RAPID 객체 (ABB DataType, ABB Instruction) 디컨스트럭터 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/10_RapidDecontructor.png" align="center" width="32%"></p>
 

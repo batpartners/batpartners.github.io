@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-연결된 ABB 컨트롤러에서 외부 메커니컬 유닛의 캘리브레이션된 축 좌표계 평면 데이터를 가져옴.
+연결된 ABB 컨트롤러에서 캘리브레이션된 외부 메커니컬 유닛의 축 좌표계 평면 데이터를 가져오는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/0_GetMechUnits.png" align="center" width="32%"></p>
 

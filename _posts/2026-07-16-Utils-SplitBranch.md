@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-DataTree를 Branch 순번 인덱스를 기준으로 두 개의 DataTree로 분할.
+DataTree를 입력한 Branch 순번 인덱스를 기준으로 두 개의 DataTree로 분할하는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/4_SplitBranch.png" align="center" width="32%"></p>
 

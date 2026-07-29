@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-평면 서피스로부터 평면을 생성
+평면 서피스로부터 기준 평면을 설정하는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/8_SurfaceFrame.png" align="center" width="32%"></p>
 

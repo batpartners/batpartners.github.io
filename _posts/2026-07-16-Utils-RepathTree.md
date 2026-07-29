@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-DataTree의 Branch 내용을 유지하면서 Branch Path를 재할당. 우클릭 컨텍스트 메뉴로 세 가지 패턴 전환.<br>
+DataTree의 Branch 내용을 유지하면서 Branch Path를 재할당하는 컴포넌트이다. 아이콘 우클릭 시, 컨텍스트 메뉴에서 세 가지 패턴으로 트리 구조 전환이 가능하다.<br>
   • Sequential: Branch를 순번({0}, {1}, {2}...)으로 재할당.<br>
   • Odd Numbered: Branch를 홀수 순번({1}, {3}, {5}...)으로 재할당.<br>
   • Even Numbered: Branch를 짝수 순번({0}, {2}, {4}...)으로 재할당.<br>

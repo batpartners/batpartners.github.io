@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-길이 값을 기준으로 대상 평면 리스트(브랜치)를 하위 리스트(브랜치)로 분할
+길이 값을 기준으로 대상 평면 리스트(브랜치)를 하위 리스트(브랜치)로 분할하는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/9_ToolPathpartition.png" align="center" width="32%"></p>
 

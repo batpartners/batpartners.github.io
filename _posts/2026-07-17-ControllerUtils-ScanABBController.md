@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-로컬 네트워크에서 사용 가능한 ABB 로봇 컨트롤러 검색 및 연결.
+로컬 네트워크에서 사용 가능한 ABB 로봇 컨트롤러를 검색 및 연결할 수 있는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/1_ScanController.png" align="center" width="32%"></p>
 

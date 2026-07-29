@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-컨트롤러로부터 현재 활성화된 툴 데이터 가져오기.
+현재 연결된 오프라인 컨트롤러상에서 활성화된 툴 데이터를 가져오는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/3_GetToolData.png" align="center" width="32%"></p>
 

@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-DataTree에서 특정 Branch를 순번 인덱스로 추출
+DataTree에서 입력한 순번의 인덱스를 특정 Branch로 추출하는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/5_TreeBranch.png" align="center" width="32%"></p>
 

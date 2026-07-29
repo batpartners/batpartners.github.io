@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-기기 식별을 위해 로컬 머신에서 하드웨어 기반 식별자(MAC 주소, 디스크 시리얼, BIOS/UUID 및 USB ID)를 수집. 기기 식별자는 로컬에서 처리되며, 하드웨어 ID는 외부로 전송되거나 저장되지 않음.
+기기 식별을 위해 로컬 머신에서 하드웨어 기반의 식별자(MAC 주소, 디스크 시리얼, BIOS/UUID 및 USB ID)를 수집한다. 기기 식별자는 로컬에서 처리되며, 하드웨어 ID는 외부로 전송되거나 저장되지 않는다.
 
 <p align="center">  <img src="/assets/images/0_GetHardwareIDs.png" align="center" width="32%"></p>
 

@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-연결된 컨트롤러에 정의된 모든 I/O 신호명 가져오기.
+연결된 로컬 컨트롤러에서 정의된 모든 I/O 신호명을 가져올 수 있다.
 
 <p align="center">  <img src="/assets/images/6_ScanIOSystems.png" align="center" width="32%"></p>
 

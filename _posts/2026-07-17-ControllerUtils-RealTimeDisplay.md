@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-연결된 컨트롤러로부터 실시간 로봇 자세 및 I/O 신호 상태를 스트리밍하여 시각화.
+연결된 오프라인 컨트롤러로부터 실시간으로 로봇 자세 및 I/O 신호 상태를 스트리밍하여 GERTY 시뮬레이션으로 시각화해 제공한다.
 
 <p align="center">  <img src="/assets/images/5_RealTimeDisplay.png" align="center" width="32%"></p>
 

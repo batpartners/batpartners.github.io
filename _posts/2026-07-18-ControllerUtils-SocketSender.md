@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-ABB IRC5 컨트롤러로 모션 인스트럭션 패킷을 TCP 소켓으로 스트리밍.
+최종 결정된 코드를 로컬 ABB IRC5 컨트롤러로 모션 인스트럭션 패킷을 TCP 소켓으로 스트리밍하여 내보낸다.
 
 <p align="center">  <img src="/assets/images/2_SocketSender.png" align="center" width="32%"></p>
 
