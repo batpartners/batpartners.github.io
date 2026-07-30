@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Defines weld seam data for start and end sequences. Specifies the timing and arc conditions across three distinct phases: Ignition, Heat, and End. Generally, these values remain consistent throughout an entire seam or across multiple seams.
+Defines a single I/O trigger event for a TriggIOs array. Specifies the target output signal, trigger position along the path, and configuration values. Multiple IOEvents can be grouped into the TriggIOs component to construct TriggIOs data.
 
 <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
 

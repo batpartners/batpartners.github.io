@@ -26,7 +26,7 @@ tags:
 
 # Description
 
-Defines the workbench for the positioner.
+This is a component that can be customized with a workbench for a positioner. By applying the modeling of the workbench in use to the simulation, you can smoothly check the positioner's working process. In addition, you can work on a complete simulation using the modeling of the workpieces on the workbench.
 
 <p align="center">  <img src="/assets/images/2_Workbench.png" align="center" width="32%"></p>
 

@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Creates a RAPID sub-procedure block from a list of instructions. The block is generated as a named PROC and can be called from the main routine.
+This is a component that generates a RAPID sub-procedure block from an instruction list. The code is output as a named PROC, allowing it to be called when the main routine is executed.
 
 <p align="center"><img src="/assets/images/8_SubProcedure_1.png" align="center" width="32%"></p>
 

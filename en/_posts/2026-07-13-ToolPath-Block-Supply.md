@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates Pick targets by placing blocks in the supply section based on the total number of blocks and unit geometry.
+This is a component that generates Pick targets to place blocks at the supply area based on the total number of blocks and unit geometry.
 
 <p align="center">  <img src="/assets/images/16_BlockSupply.png" align="center" width="32%"></p>
 

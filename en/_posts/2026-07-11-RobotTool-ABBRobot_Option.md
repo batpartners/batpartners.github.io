@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Define the ABB robot to use. By right-clicking the component icon and selecting [Show joint Jog Params], you can set each axis of the selected robot. Select from the pre-defined specifications in the ABB IRB series catalog.
+This is a component for importing the ABB robot to be used. Users can select their robot and then configure options. The robot model can be chosen from predefined specifications in the ABB IRB series catalog. You can set up simulations by right-clicking the component icon and selecting [Show joint Jog Params] to further operate each axis of the selected robot.
 
 <p align="center">  <img src="/assets/images/0_ABBRobot_2.png" align="center" width="32%"></p>
 

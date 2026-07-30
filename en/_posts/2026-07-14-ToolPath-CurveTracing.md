@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates a robot toolpath following the input curve.
+CurveTracing is a robot toolpath component that can trace user-defined curves. It allows you to set the working plane accuracy and tilting degree.
 
 <p align="center">  <img src="/assets/images/0_Drawing.png" align="center" width="32%"></p>
 

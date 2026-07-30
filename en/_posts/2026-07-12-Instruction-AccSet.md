@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates an AccSet instruction that reduces robot acceleration and ramp values. Used for handling fragile parts or limiting dynamic loads near workspace boundaries.
+AccSet is an AccSet instruction component that reduces robot acceleration and ramp values. At the start or end of an operation, it allows you to set the acceleration value before reaching the specified speed value. This component lowers dynamic loads during handling or near workspace boundaries.
 
 <p align="center"><img src="/assets/images/5_AccSet.png" align="center" width="32%"></p>
 

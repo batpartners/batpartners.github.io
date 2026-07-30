@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates ABB Trigger Move instructions (TriggLIOs, TriggJIOs) that perform movements while generating one or more I/O signals at specified locations along the path.
+This is a component for setting up ABB Trigger Move instructions (TriggLIOs, TriggJIOs), which perform movement while generating one or more I/O signals at specified locations along the path.
 
 <p align="center"><img src="/assets/images/2_TriggerMove.png" align="center" width="32%"></p>
 

@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates a PathAccLim instruction to set or disable the acceleration and deceleration limits for the TCP along the movement path.
+PathAccLim is a PathAccLim instruction component that sets or disables the TCP acceleration and deceleration limits along the motion path.
 
 <p align="center"><img src="/assets/images/6_PathAccLim.png" align="center" width="32%"></p>
 

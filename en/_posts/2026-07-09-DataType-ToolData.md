@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Defines custom tool (end-effector) data. You can switch between 'Define' (manual configuration) and 'Import' (load from pre-saved tool data) modes using the right-click context menu.
+Redefines user-defined tool (end-effector) data. The default is tool0, which corresponds to the coordinate system of axis 6 on an ABB robot. You can switch between Define (manual configuration) and Import (loading pre-saved tool data) modes using the right-click context menu.
 <br>
 
 <p align="center">  <img src="/assets/images/3_ToolData.png" align="center" width="32%"></p>

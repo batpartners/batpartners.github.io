@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Defines the parameters for the actual welding section where the arc is stably maintained. Specifies parameters applied along the seam, such as welding speed, voltage, and wire feed conditions.
+This is a component that defines parameters for the actual welding section where the arc is stably maintained. It allows you to specify welding speed, voltage, wire feed conditions, and other parameters applied along the seam.
 
 <p align="center"><img src="/assets/images/8_WeldData.png" align="center" width="32%"></p>
 

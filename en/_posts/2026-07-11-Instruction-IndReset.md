@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates an instruction (IndReset) to initialize the logical position of an independent or normal mode axis. In the case of an independent mode axis, it simultaneously returns the axis to normal mode. All axes must be stopped prior to execution. Primarily used to reset the accumulated angle values of external axes.
+This is a component that initializes the position and rotation values of an auxiliary axis (IndReset). It is primarily used to initialize accumulated external axis angle values before executing motion instructions.
 
 <p align="center">  <img src="/assets/images/12_IndReset.png" align="center" width="32%"></p>
 

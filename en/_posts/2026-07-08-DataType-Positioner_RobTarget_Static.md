@@ -31,51 +31,60 @@ tags:
 
 # Description
 
-Based on the positioner-specific RobTarget, this component assists users in generating custom positioner RAPID code. Users can toggle between Dynamic and Static modes via the right-click context menu.
+Positioner RobTarget defines a RobTarget including the positioner (external axis) rotation angle. You can switch between Dynamic and Static modes by right-clicking the component icon.
 
-<p align="center"><img src="/assets/images/1_Positioner_Robtarget.png" align="center" width="32%"></p>
-
-# | Inputs
-
-*Static 모드*
-
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| Positioner | Positioner | ABB Positioner instance. |
-| Target Planes | Plane | Target planes to be converted into RobTargets. |
-| Z Rotation | Angle | Rotates the RobTarget around its local Z-axis (Unit: Degrees). |
-| Target Base | Plane | The reference coordinate plane where the input Target Plane is defined. The input Target Plane defines the oriented RobTarget on the Positioner's Mounting Plane based on this reference plane. |
-| Reference Plane | Plane | The reference coordinate plane used for orienting the positioner within Static Mode. |
-| WobjData | WobjData | ABB Work Object data coordinate system. |
-
-<p align="center"> 
-<video src="/assets/images/RobtargetPosition(Static)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
-</video></p>
-
-## | Required Parameter
+<p align="center">  <img src="/assets/images/1_Positioner Robtarget_1.png" align="center" width="32%"></p>
 
 <style>
-  /* 탭 시스템 전체 컨테이너 */
+  /* 💡 [Table Width Standardization] Stretches all markdown tables and tab internal tables to 100% of the screen width within the content area */
+  .page__content table,
+  .page__content .spec-table,
+  .tab-content table, 
+  .tab-content .spec-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    table-layout: fixed !important;      /* Forces fixed cell width ratios */
+    word-break: break-all !important;    /* Prevents cell contraction and wraps long text inputs */
+    margin: 20px 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* 💡 [Column Ratio Standardization] Matches the 1st (20%), 2nd (15%), and 3rd (65%) column structure across all tables */
+  .page__content table th:nth-child(1), .page__content table td:nth-child(1),
+  .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
+  
+  .page__content table th:nth-child(2), .page__content table td:nth-child(2),
+  .tab-content table th:nth-child(2), .tab-content table td:nth-child(2) { width: 15% !important; }
+  
+  .page__content table th:nth-child(3), .page__content table td:nth-child(3),
+  .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
+
+  /* Tab System Overall Container */
   .tabs-container {
     position: relative;
     margin: 30px 0;
-    min-height: 160px; /* 불필요한 하단 공백 최소화 */
+    min-height: 160px;
+    width: 100% !important;
+    clear: both;
   }
 
-  /* 라디오 버튼 숨기기 */
+  /* Hide Radio Buttons */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* 탭 버튼 스타일 (상단 바 정렬) */
+  /* Tab Button Style (Top bar alignment) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
     margin: 0;
     padding: 0;
     list-style: none;
+    width: 100%;
   }
   .tab-buttons li {
     margin: 0;
@@ -104,35 +113,23 @@ Based on the positioner-specific RobTarget, this component assists users in gene
     color: #333;
   }
 
-  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  /* Content Box Default Settings (Hidden by default) */
   .tab-content {
     display: none;
     padding: 20px;
     border: 1px solid #ddd;
     background: #fff;
-    animation: fadeIn 0.3s ease;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-    /* 테이블 너비를 컨테이너에 맞춰 100%로 고정 */
-  .spec-table {
-    width: 100%;
-    table-layout: fixed; /* 테이블 내 셀 너비 비율을 일정하게 유지 */
-  }
-
-  /* 💡 1번 탭 그룹 스타일 및 노출 제어 */
-  #tab1:checked ~ .tab-buttons label[for="tab1"] {
-    background: #fff;
-    color: #e53935;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 13px;
-    margin-bottom: -1px;
-    z-index: 2;
-  }
-  #tab1:checked ~ #content1 { display: block; }
-
-  /* 💡 2번 탭 그룹 스타일 및 노출 제어 */
+  /* Activates (turns red) only the corresponding label when the exact matching radio button is checked */
+  #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],
-  #tab3:checked ~ .tab-buttons label[for="tab3"] {
+  #tab3:checked ~ .tab-buttons label[for="tab3"],
+  #tab4:checked ~ .tab-buttons label[for="tab4"],
+  #tab5:checked ~ .tab-buttons label[for="tab5"],
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
     background: #fff;
     color: #e53935;
     border-bottom: 1px solid #fff;
@@ -140,15 +137,43 @@ Based on the positioner-specific RobTarget, this component assists users in gene
     margin-bottom: -1px;
     z-index: 2;
   }
-  #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3 { display: block; }
 
-  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  /* Controls content display based on radio button check status */
+  #tab1:checked ~ #content1,
+  #tab2:checked ~ #content2,
+  #tab3:checked ~ #content3,
+  #tab4:checked ~ #content4,
+  #tab5:checked ~ #content5,
+  #tab6:checked ~ #content6 { 
+    display: block; 
+  }
+
+  /* Smooth fade-in animation on tab transition */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
+
+# | Inputs
+
+*Static Mode*
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| Positioner | Positioner | <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">ABB Positioner</a> |
+| Target Planes | Plane | Planes to be converted into RobTargets |
+| Z Rotation | Angle | Rotates the RobTarget based on its own Z-axis (Unit: degrees) |
+| Target Base | Plane | Reference plane where the input Target Plane is defined. The input Target Plane defines a RobTarget oriented to the Positioner's Mounting Plane based on this plane |
+| Reference Plane | Plane | Reference plane for positioner orientation in Static mode |
+| WobjData | WobjData | Redefines the Target Plane based on the <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">ABB work object coordinate system</a>. (Optional) |
+
+<p align="center"> 
+<video src="/assets/images/RobtargetPosition(Static)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
+</video></p>
+
+
+## | Required Parameter
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-1" checked>
@@ -156,7 +181,7 @@ Based on the positioner-specific RobTarget, this component assists users in gene
     <li><label for="tab1">RobTarget</label></li>
   </ul>
   <div class="tab-content" id="content1">
-    <table class="spec-table" style="margin:0;">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>Name</th>
@@ -168,7 +193,7 @@ Based on the positioner-specific RobTarget, this component assists users in gene
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>Defines the variable name of the generated <code>RobTarget</code>. This variable serves as a unique identifier to store the target position and orientation of the robot.</td>
+          <td>Defines the name of the `RobTarget` variable to be created. This variable is used as a unique identifier to store the target position and orientation of the robot.</td>
         </tr>
       </tbody>
     </table>
@@ -180,7 +205,7 @@ Based on the positioner-specific RobTarget, this component assists users in gene
     <li><label for="tab2">Output</label></li>
   </ul>
   <div class="tab-content" id="content2">
-    <table class="spec-table" style="margin:0 0 20px 0;">
+    <table class="spec-table" style="margin: 0 0 20px 0;">
       <thead>
         <tr>
           <th>Name</th>
@@ -192,16 +217,18 @@ Based on the positioner-specific RobTarget, this component assists users in gene
         <tr>
           <td><strong>Split Start</strong></td>
           <td>String</td>
-          <td>Extracts and outputs the data corresponding to the first index within each branch of the input <code>TargetPlane</code> data structure.</td>
+          <td>Extracts and outputs data corresponding to the first index within each branch of the input data `TargetPlane`.</td>
         </tr>
         <tr>
           <td><strong>Split End</strong></td>
           <td>String</td>
-          <td>Extracts and outputs the data corresponding to the last index within each branch of the input <code>TargetPlane</code> data structure.</td>
+          <td>Extracts and outputs data corresponding to the last index within each branch of the input data `TargetPlane`.</td>
         </tr>
       </tbody>
     </table>
-    <p align="center" style="margin: 15px 0 0 0;"><img src="/assets/images/1_Positioner_Robtarget.png" width="35%" style="margin-right: 15px;" alt="Default Mode"><img src="/assets/images/1_Positioner_Robtarget_2.png" width="35%" alt="Toggled Mode"></p>
+    <p align="center" style="margin: 15px 0 0 0;">
+      <img src="/assets/images/1_Positioner Robtarget_1.png" width="38%" style="margin-right: 15px;" alt="Default Mode"><img src="/assets/images/1_Positioner Robtarget_3.png" width="38%" alt="Toggled Mode">
+    </p>
   </div>
 </div>
 
@@ -209,10 +236,11 @@ Based on the positioner-specific RobTarget, this component assists users in gene
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| Start Targets | RobTarget | Outputs the ABB Rapid RobTargets code corresponding to the first branch index. |
-| RobTargets | RobTarget | Outputs the complete compiled ABB Rapid RobTargets code sequence. |
-| End Targets | RobTarget | Outputs the ABB Rapid RobTargets code corresponding to the last branch index. |
+| Start Targets | RobTarget | Outputs the first branch code of ABB RAPID RobTargets |
+| RobTargets | RobTarget | Outputs ABB RAPID RobTargets code |
+| End Targets | RobTarget | Outputs the last branch code of ABB RAPID RobTargets |
 
 <p align="center"> 
-<video src="/assets/images/Static_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>
+<video src="/assets/images/Static_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center">
+</video>
 </p>

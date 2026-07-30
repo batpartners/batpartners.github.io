@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Computes robot motions from the defined robot setup and instructions. Generates foundational data required to run the Display Solver and Code Solver.
+GERTY Core is a component that computes robot motions from defined robot setups and instructions. It generates basic data required to run Display Solver and Code Solver.
 
 <p align="center">  <img src="/assets/images/2_GERTYCore.png" align="center" width="32%"></p>
 

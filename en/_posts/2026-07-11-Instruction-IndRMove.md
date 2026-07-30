@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Generates an IndRMove instruction that changes a normal mode axis to independent mode and moves it to a specified position within one revolution. Program execution continues during the movement. An IndReset instruction is required to return to normal mode after completion.
+This is a component that switches an auxiliary axis to independent mode and moves it to a specified position within one revolution. It is generated using the IndRMove instruction, and after performing the task, it is necessary to initialize it back to normal mode using IndReset.
 
 <p align="center">  <img src="/assets/images/11_IndRMove.png" align="center" width="32%"></p>
 

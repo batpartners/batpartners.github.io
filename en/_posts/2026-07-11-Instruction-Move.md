@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Generates ABB move instructions (MoveL, MoveJ).
+This is a component that configures ABB move instructions (MoveL, MoveJ).
 
 <p align="center"><img src="/assets/images/0_Move.png" align="center" width="32%"></p>
 

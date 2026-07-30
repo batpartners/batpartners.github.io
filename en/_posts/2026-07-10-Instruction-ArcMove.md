@@ -26,7 +26,7 @@ tags:
 
 # Description
 
-Generates ABB arc instructions for welding (ArcLStart, ArcL, ArcLEnd).
+This is a component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for welding.
 
 <p align="center"><img src="/assets/images/3_ArcMove.png" align="center" width="32%"></p>
 

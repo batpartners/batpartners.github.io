@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Defines a position trigger that generates one or more I/O events at specified locations along the movement path. Used in ABB Trigger Move instructions (TriggLIOs, TriggJIOs).
+Defines a position trigger that generates one or more I/O events at specified locations along the motion path, allowing the user to define the variable name of the signal. Used in conjunction with ABB Trigger Move instructions (TriggLIOs, TriggJIOs).
 
 <p align="center">  <img src="/assets/images/5_TriggIOs.png" align="center" width="32%"></p>
 

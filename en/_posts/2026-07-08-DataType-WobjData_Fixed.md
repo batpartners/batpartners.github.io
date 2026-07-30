@@ -31,7 +31,9 @@ tags:
 
 # Description
 
-Defines an ABB Work Object (Workpiece Coordinate System). This component specifies the User Frame (`uframe`), which defines the local coordinate system of the workstation relative to the World Coordinate System, and the Object Frame (`oframe`). It supports toggling between two modes via a right-click context menu: `Movable` (Work Object synchronized with an external axis) and `Fixed` (Standard stationary Work Object).
+wobjdata is a data type that defines the unique coordinate system of the workpiece, facilitating intuitive programming based on drawings and enabling program reuse through simple coordinate adjustments when the installation environment changes.
+
+It can be defined by the user from the world coordinate system to the local coordinate system of the workbench. The user frame (uframe) and object frame (oframe) redefine the target plane coordinates relative to the workobject. Additionally, by right-clicking the component icon, users can choose between two modes: Movable (a workobject driven by external axes) and Fixed (a fixed, standard workobject).
 
 <p align="center">  <img src="/assets/images/2_WobjData.png" align="center" width="32%"></p>
 

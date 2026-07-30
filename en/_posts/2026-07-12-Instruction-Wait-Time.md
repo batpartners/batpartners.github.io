@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Creates a WaitTime instruction that pauses robot motion for the specified duration (s).
+This is a component that temporarily pauses robot motion for a specified time (in seconds).
 
 <p align="center"><img src="/assets/images/10_WaitTIme.png" align="center" width="32%"></p>
 

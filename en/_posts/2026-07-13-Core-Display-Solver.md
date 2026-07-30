@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Simulates and visualizes defined robot motions in the Rhino viewport.
+This is a component that simulates and visualizes the user-defined robot motion in the Rhino viewport, allowing you to review the entire process.
 
 <p align="center">  <img src="/assets/images/1_DisplaySolver.png" align="center" width="32%"></p>
 

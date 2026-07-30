@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Defines the weaving motion performed during arc welding. Specifies the weaving geometry shape, amplitude, frequency, and dwell parameters.
+This is a component that defines the weaving motion performed during arc welding. It specifies the weaving pattern, amplitude, frequency, and dwell parameters.
 
 <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
 

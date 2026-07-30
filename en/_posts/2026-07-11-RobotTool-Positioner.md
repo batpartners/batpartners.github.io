@@ -30,7 +30,7 @@ tags:
 
 # Description
 
-Defines the kinematic configuration of the positioner device. Supports manual specification of axis geometry or selection from the pre-defined ABB IRBP series catalog.
+This is a component that imports the ABB positioner robot to be used. It supports and allows you to select ABB IRBP series positioners owned by the user. You can configure detailed operations and simulations for the specified model.
 
 <p align="center">  <img src="/assets/images/1_ABBPositioner.png" align="center" width="32%"></p>
 

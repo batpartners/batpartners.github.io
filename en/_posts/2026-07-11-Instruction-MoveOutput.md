@@ -30,7 +30,7 @@ tags:
 
 # Description
 
-Generates ABB Move instructions (MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO) with associated digital, group, or analog output signals.
+This is a component that configures ABB Move instructions accompanied by digital, group, and analog output signals (MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO).
 
 <p align="center"><img src="/assets/images/1_MoveOutput.png" align="center" width="32%"></p>
 

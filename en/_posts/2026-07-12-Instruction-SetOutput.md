@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates a SetDO / SetGO / SetAO instruction to change digital, group, or analog output signal values. Use the right-click context menu to switch between signal types.
+SetOutput is a component that generates SetDO, SetGO, and SetAO instructions to change digital, group, and analog output signal values. You can switch the signal type using the right-click context menu. DO stands for Digital Output, GO stands for Group Output, and AO stands for Analog Output.
 
 <p align="center"><img src="/assets/images/7_SetOutput.png" align="center" width="32%"></p>
 

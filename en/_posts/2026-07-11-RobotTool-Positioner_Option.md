@@ -26,7 +26,7 @@ tags:
 
 # Description
 
-Displayed when right-clicking the component icon and selecting [Define Positioner]. Defines the kinematic configuration of the positioner device.
+This is a component that can customize the ABB positioner robot to be used. After completing the detailed settings of the positioner owned by the user, simulation work is possible. You can configure it by right-clicking the component icon and selecting [Define Positioner].
 
 <p align="center">  <img src="/assets/images/1_ABBPositioner_3_1.png" align="center" width="32%"></p>
 

@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates RAPID programs from defined robot motions, and transmits and uploads them to a network-connected ABB controller.
+This is a component that generates program files from defined RAPID robot motions and performs tasks to load and upload code files to an ABB controller connected via a network.
 
 <p align="center"><img src="/assets/images/0_CodeSolver_1.png" align="center" width="32%"></p>
 

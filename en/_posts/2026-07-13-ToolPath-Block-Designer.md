@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates Place targets for positioning blocks in standard stacking patterns based on block units and wall geometry.
+This is a component that generates Place targets to arrange blocks in a standard stacking pattern based on block units and wall geometry.
 
 <p align="center">  <img src="/assets/images/15_BlockDesign.png" align="center" width="32%"></p>
 

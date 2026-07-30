@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates ActUnit/DeactUnit instructions to activate or deactivate a Mechanical Unit. Used to switch the activation state of external axis equipment (such as positioners, tracks, etc.) during RAPID program execution.
+This is a component that generates ActUnit/DeactUnit instructions to activate or deactivate a mechanical unit. It is used to switch the activation state of external axis equipment (such as positioners or tracks) during RAPID program execution.
 
 <p align="center"><img src="/assets/images/4_DeActUnit.png" align="center" width="32%"></p>
 

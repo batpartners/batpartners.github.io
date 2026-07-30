@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Creates a WaitDI instruction to pause robot motion until the specified digital input (DI) signal reaches the target value.
+This is a component that generates a WaitDI instruction to pause robot motion until a specified digital input (DI) signal reaches the target value.
 
 <p align="center"><img src="/assets/images/9_WaitDI.png" align="center" width="32%"></p>
 

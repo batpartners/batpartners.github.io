@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Defines weld seam data for start and end sequences. Specifies the timing and arc conditions across three distinct phases: Ignition, Heat, and End. Generally, these values remain consistent throughout an entire seam or across multiple seams.
+Defines the start and end phase data of a welding seam. Allows detailed specification of timing and arc conditions across three phases: Ignition, Heat, and End. Typically, the same values are maintained for an entire seam or across multiple seams.
 
 <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
 
