@@ -1,23 +1,29 @@
 ---
 title: "ArcMove"
+
 layout: single
 header:
   teaser: "/assets/images/ArcMove.png"
+
 collection: Datatype
 entries_layout: grid
 author_profile: true
+
 categories:
   - Instruction
+
 translated: true
 lang: en
 permalink: /en/instruction/Instruction-ArcMove/
-translation_link: /ko/instruction/Instruction-ArcMove/
+
+translation_link: /instruction/Instruction-ArcMove/
 sidebar:
   nav: "sidebar"
 toc: true
 toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
+
 tags: 
   - GERTY
 ---
@@ -26,12 +32,12 @@ tags:
 
 # Description
 
-This is a component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for welding.
+A component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for welding.
 
 <p align="center"><img src="/assets/images/3_ArcMove.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [Unify Table Width] Expand all markdown tables in the body and tables inside tabs to 100% of the screen width */
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -40,13 +46,13 @@ This is a component that configures ABB arc instructions (ArcLStart, ArcL, ArcLE
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Forcefully fix cell width ratio within the table */
-    word-break: break-all !important;     /* Prevent cell shrinkage and allow line breaks for long text inputs */
+    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* Absolutely prevent horizontal overflow due to padding */
+    box-sizing: border-box !important;   /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
-  /* 💡 [Unify Column Ratio] Match the structure of 1st column (20%), 2nd column (15%), and 3rd column (65%) identically for all tables */
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -56,7 +62,7 @@ This is a component that configures ABB arc instructions (ArcLStart, ArcL, ArcLE
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab system entire container */
+  /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -65,14 +71,14 @@ This is a component that configures ABB arc instructions (ArcLStart, ArcL, ArcLE
     clear: both;
   }
 
-  /* Hide radio buttons */
+  /* 라디오 버튼 숨기기 */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* Tab button style (top bar alignment) */
+  /* 탭 버튼 스타일 (상단 바 정렬) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -108,7 +114,7 @@ This is a component that configures ABB arc instructions (ArcLStart, ArcL, ArcLE
     color: #333;
   }
 
-  /* Content box default settings (hidden by default) */
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -118,20 +124,38 @@ This is a component that configures ABB arc instructions (ArcLStart, ArcL, ArcLE
     box-sizing: border-box !important;
   }
 
-  /* 💡 Active tab label style */
+  /* 💡 1번째 탭 그룹 제어 (WeldData 변수명 개요) */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab1:checked ~ #content1 { display: block; }
+
+  /* 💡 2번째 탭 그룹 제어 (Weld ArcData 세트) */
+  #tab2:checked ~ .tab-buttons label[for="tab2"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #tab2:checked ~ #content2 { display: block; }
+
+  /* 💡 3번째 탭 그룹 제어 (Weld Param 세트) */
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #tab6:checked ~ #content6 { display: block; }
+
+  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 </style>
 
 # | Input
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **RobTargets** | RobTarget | Target motion positions. Connect to the output of a RobTarget or Positioner RobTarget component. |
-| **SeamData** | SeamData| ABB Seam Data |
-| **WeldData** | WeldData | ABB Weld Data |
+| **RobTargets** | RobTarget | Motion target position. Connects to the output of <a href="https://batpartners.github.io/en/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> or <a href="https://batpartners.github.io/en/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> component. |
+| **SeamData** | SeamData| <a href="https://batpartners.github.io/en/datatype/DataType-SeamData/" target="_blank">ABB Seam Data</a> |
+| **WeldData** | WeldData | <a href="https://batpartners.github.io/en/datatype/DataType-WeldData/" target="_blank">ABB Weld Data</a> |
 
 
 ## | Required Parameter
@@ -154,23 +178,23 @@ This is a component that configures ABB arc instructions (ArcLStart, ArcL, ArcLE
         <tr>
           <td><strong>Type/Speed/Zone</strong></td>
           <td>String</td>
-          <td>Select motion type, speed, and zone (blend radius)</td>
+          <td>Select motion type, speed, and zone radius</td>
         </tr>
         <tr>
           <td><strong>Arc Start</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: Apply ArcLStart to the first target<br>
-              • FALSE: Apply ArcL to the first target</td>
+          <td>• TRUE: Applies ArcLStart to the first target<br>
+              • FALSE: Applies ArcL to the first target</td>
         </tr>
         <tr>
           <td><strong>Arc End</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: Apply ArcLEnd to the last target<br>
-              • FALSE: Apply ArcL to the last target</td>
-        </tr>                
+          <td>• TRUE: Applies ArcLEnd to the last target<br>
+              • FALSE: Applies ArcL to the last target </td>
+        </tr>             
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/3_ArcMove_1.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/3_ArcMove_1.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -179,4 +203,4 @@ This is a component that configures ABB arc instructions (ArcLStart, ArcL, ArcLE
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Pass to the 'Instructions' input of the Core component. |
+| **Instruction** | Instruction | Generated ABB instruction. Passes to the Instructions input of the Core component |
