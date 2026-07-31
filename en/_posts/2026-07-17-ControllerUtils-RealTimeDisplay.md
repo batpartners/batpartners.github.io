@@ -3,14 +3,18 @@ title: "RealTime Display"
 layout: single
 header:
   teaser: "/assets/images/realtimedisplay.png"
+
 collection: ControllerUtils
 entries_layout: grid
 author_profile: true
+
 categories:
   - ControllerUtils
+
 translated: true
 lang: en
 permalink: /en/controllerutils/ControllerUtils-RealTimeDisplay/
+
 translation_link: /controllerutils/ControllerUtils-RealTimeDisplay/
 sidebar:
   nav: "sidebar"
@@ -18,6 +22,7 @@ toc: true
 toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
+
 tags: 
   - GERTY
 ---
@@ -26,7 +31,7 @@ tags:
 
 # Description
 
-This is a component that streams the robot posture and I/O signal status in real-time from a connected offline controller, visualizing them in the GERTY simulation.
+A component that streams robot poses and I/O signal states in real time from a connected offline controller and visualizes them through GERTY simulation.
 
 <p align="center">  <img src="/assets/images/5_RealTimeDisplay.png" align="center" width="32%"></p>
 
@@ -40,10 +45,10 @@ This is a component that streams the robot posture and I/O signal status in real
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;   /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -151,13 +156,13 @@ This is a component that streams the robot posture and I/O signal status in real
   }
 </style>
 
-# | Input
+# | Inputs
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **GERTY Robot** | GERTY Robot | GERTY robot |
 | **ABB Controller** | ABB Controller | <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to the PC |
-| **Signal** | String | Name of the signal to scan |
+| **Signal** | String | Signal name to scan |
 
 ## | Required Parameter
 
@@ -181,12 +186,12 @@ This is a component that streams the robot posture and I/O signal status in real
         <tr>
           <td><strong>Interval(ms)</strong></td>
           <td>Number</td>
-          <td>Sets the real-time stream update interval (in milliseconds)</td>
+          <td>Set real-time stream update interval (milliseconds)</td>
         </tr>
         <tr>
           <td><strong>RealTime Stream</strong></td>
           <td>Toggle</td>
-          <td>Starts/stops the real-time stream</td>
+          <td>Start/Stop real-time stream</td>
         </tr>
       </tbody>
     </table>

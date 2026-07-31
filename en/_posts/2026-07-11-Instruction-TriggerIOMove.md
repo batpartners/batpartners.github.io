@@ -32,12 +32,12 @@ tags:
 
 # Description
 
-This is a component for setting up ABB Trigger Move instructions (TriggLIOs, TriggJIOs), which perform movement while generating one or more I/O signals at specified locations along the path.
+This is a component that configures ABB Trigger Move instructions (TriggLIOs, TriggJIOs) to generate one or more I/O signals at specified positions along the path while performing movement.
 
 <p align="center"><img src="/assets/images/2_TriggerMove.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [Unify Table Width] Expand all markdown tables and tab-internal tables to 100% of the screen width */
+  /* 💡 [Table Width Unification] Makes all markdown tables and tables inside tabs 100% wide to fit the screen width */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -46,13 +46,13 @@ This is a component for setting up ABB Trigger Move instructions (TriggLIOs, Tri
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Force fixed cell width ratio */
-    word-break: break-all !important;     /* Prevent cell shrinkage and enable line breaks for long text */
+    table-layout: fixed !important;      /* Forces column width ratios to be fixed */
+    word-break: break-all !important;    /* Prevents cell contraction and enables wrapping for long text */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* Prevent horizontal overflow due to padding */
+    box-sizing: border-box !important;   /* Absolutely prevents horizontal overflow caused by padding */
   }
   
-  /* 💡 [Unify Column Ratio] Consistent structure for all tables (20%, 15%, 65%) */
+  /* 💡 [Column Ratio Unification] Matches the 1st (20%), 2nd (15%), and 3rd (65%) column structure across all tables */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -62,7 +62,7 @@ This is a component for setting up ABB Trigger Move instructions (TriggLIOs, Tri
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab system container */
+  /* Tab system overall container */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -78,7 +78,7 @@ This is a component for setting up ABB Trigger Move instructions (TriggLIOs, Tri
     z-index: -1;
   }
 
-  /* Tab button style */
+  /* Tab button style (top bar alignment) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -114,7 +114,7 @@ This is a component for setting up ABB Trigger Move instructions (TriggLIOs, Tri
     color: #333;
   }
 
-  /* Content box default settings */
+  /* Content box default settings (hidden by default) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -124,12 +124,13 @@ This is a component for setting up ABB Trigger Move instructions (TriggLIOs, Tri
     box-sizing: border-box !important;
   }
 
-  /* Tab group control */
+  /* 💡 1st tab group control */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab1:checked ~ #content1 { display: block; }
 
+  /* Smooth fade-in animation on tab switch */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }
@@ -140,7 +141,7 @@ This is a component for setting up ABB Trigger Move instructions (TriggLIOs, Tri
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **RobTargets** | RobTarget | Target motion positions. Connect the output of a RobTarget or Positioner RobTarget component. |
+| **RobTargets** | RobTarget | Motion target position. Connects to the output of <a href="https://batpartners.github.io/en/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> or <a href="https://batpartners.github.io/en/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> component. |
 | **TriggIOs** | TriggIOs | ABB TriggIOs |
 
 ## | Required Parameter
@@ -163,11 +164,11 @@ This is a component for setting up ABB Trigger Move instructions (TriggLIOs, Tri
         <tr>
           <td><strong>Type/Speed/Zone</strong></td>
           <td>String</td>
-          <td>Motion type, speed, and zone radius</td>
+          <td>Motion type, speed, zone radius</td>
         </tr>
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/2_TriggerMove_1.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/2_TriggerMove_1.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -176,4 +177,4 @@ This is a component for setting up ABB Trigger Move instructions (TriggLIOs, Tri
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Pass to the 'Instructions' input of the Core component. |
+| **Instruction** | Instruction | Generated ABB instruction. Passes to the Instructions input of the Core component. |

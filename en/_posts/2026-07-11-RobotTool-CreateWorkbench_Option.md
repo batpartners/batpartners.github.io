@@ -1,23 +1,28 @@
 ---
 title: "CreateWorkbench"
+
 layout: single
 header:
   teaser: "/assets/images/2_Workbench_2.png"
+
 collection: RobotTool
 entries_layout: grid
 author_profile: true
+
 categories:
   - RobotTool
 translated: true
 lang: en
 permalink: /en/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option/
-translation_link: /ko/robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option/
+
+translation_link: /robottool/RobotTool-CreateWorkbench/RobotTool-CreateWorkbench_Option/
 sidebar:
   nav: "sidebar"
 toc: true
 toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
+
 tags: 
   - GERTY
 ---
@@ -26,13 +31,13 @@ tags:
 
 # Description
 
-This is a component that can be customized with a workbench for a positioner. By applying the modeling of the workbench in use to the simulation, you can smoothly check the positioner's working process. In addition, you can work on a complete simulation using the modeling of the workpieces on the workbench.
+A component that allows users to define a custom workbench for a positioner. By applying the modeling of the currently used workbench to the simulation, you can smoothly monitor the positioner working process. In addition, you can work with a complete simulation including the modeling of workpieces on the workbench.
 
 <p align="center">  <img src="/assets/images/2_Workbench.png" align="center" width="32%"></p>
 
 
 <style>
-  /* 💡 [Unify Table Width] Expand all markdown tables in the body and tables inside tabs to 100% of the screen width */
+  /* 💡 [Table Width Unification] Forces all markdown tables and tables inside tabs to 100% width of the screen */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -41,13 +46,13 @@ This is a component that can be customized with a workbench for a positioner. By
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Forcefully fix cell width ratio within the table */
-    word-break: break-all !important;     /* Prevent cell shrinkage and allow line breaks for long text inputs */
+    table-layout: fixed !important;      /* Forces fixed cell width ratios */
+    word-break: break-all !important;    /* Prevents cell contraction and wraps text when long text is entered */
     margin: 20px 0 !important;
     box-sizing: border-box !important;
   }
   
-  /* 💡 [Unify Column Ratio] Match the structure of 1st column (20%), 2nd column (15%), and 3rd column (65%) identically for all tables */
+  /* 💡 [Column Ratio Unification] Matches the 1st (20%), 2nd (15%), and 3rd (65%) column structures identically for all tables */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -57,7 +62,7 @@ This is a component that can be customized with a workbench for a positioner. By
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab system entire container */
+  /* Tab System Overall Container */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -66,14 +71,14 @@ This is a component that can be customized with a workbench for a positioner. By
     clear: both;
   }
 
-  /* Hide radio buttons */
+  /* Hide Radio Buttons */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* Tab button style (top bar alignment) */
+  /* Tab Button Style (Top bar alignment) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -109,7 +114,7 @@ This is a component that can be customized with a workbench for a positioner. By
     color: #333;
   }
 
-  /* Content box default settings (hidden by default) */
+  /* Content Box Default Settings (Hidden by default) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -119,7 +124,7 @@ This is a component that can be customized with a workbench for a positioner. By
     box-sizing: border-box !important;
   }
 
-  /* Active tab style */
+  /* Activates (red color) only the corresponding label when the exact matching radio button is checked */
   #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],
   #tab3:checked ~ .tab-buttons label[for="tab3"],
@@ -133,7 +138,7 @@ This is a component that can be customized with a workbench for a positioner. By
     z-index: 2;
   }
 
-  /* Content display control */
+  /* Content display control based on radio button checked state */
   #tab1:checked ~ #content1,
   #tab2:checked ~ #content2,
   #tab3:checked ~ #content3,
@@ -148,7 +153,7 @@ This is a component that can be customized with a workbench for a positioner. By
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Workbench Geo** | Mesh | Geometry mesh of the workbench |
-| **Base Plane** | Plane | Reference plane for mounting the workbench to the positioner flange |
+| **Base Plane** | Plane | Workbench mounting reference plane relative to the positioner flange |
 | **Top Plane** | Plane | Top plane of the workbench |
 | **Workpieces** | Mesh | Workpiece geometry mesh (Optional) |
 
@@ -180,7 +185,7 @@ This is a component that can be customized with a workbench for a positioner. By
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/2_Workbench_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/2_Workbench_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -210,28 +215,21 @@ This is a component that can be customized with a workbench for a positioner. By
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/2_Workbench_11.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/2_Workbench_11.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content3">
     <table class="spec-table">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
           <td><strong>WorkPiece Color</strong></td>
           <td>Button</td>
-          <td>Aligns the TCP parallel to the World coordinate axis (±X, ±Y, ±Z) closest to the current TCP direction. Identical to the Align function in ABB FlexPendant Jogging.</td>
+          <td>Aligns the TCP parallel to the closest World coordinate axis (±X, ±Y, ±Z) based on the current TCP orientation. Equivalent to the Align function in ABB FlexPendant Jogging.</td>
         </tr>
-      </tbody>
+      </thead>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/2_Workbench_12.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/2_Workbench_12.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -239,4 +237,4 @@ This is a component that can be customized with a workbench for a positioner. By
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Workbench** | Workbench | Generated workbench definition. |
+| **Workbench** | Workbench | Outputs the defined workbench. |

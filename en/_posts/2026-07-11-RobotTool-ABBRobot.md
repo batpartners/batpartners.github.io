@@ -11,12 +11,11 @@ author_profile: true
 
 categories:
   - RobotTool
-
 translated: true
 lang: en
 permalink: /en/robottool/RobotTool-ABBRobot/
-translation_link: /robottool/RobotTool-ABBRobot/
 
+translation_link: /robottool/RobotTool-ABBRobot/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -32,12 +31,12 @@ tags:
 
 # Description
 
-This is a component for importing the ABB robot to be used. Users can select their robot and then configure options. The robot model can be chosen from predefined specifications in the ABB IRB series catalog. You can set up simulations by right-clicking the component icon and selecting [Show joint Jog Params] to further operate each axis of the selected robot.
+A component that imports the ABB robot to be used. You can select the robot owned by the user and then configure options. Robot models can be selected from predefined specifications in the ABB IRB series catalog. By right-clicking the component icon and selecting [Show joint Jog Params], you can further operate each axis of the selected robot to configure the simulation.
 
 <p align="center">  <img src="/assets/images/0_ABBRobot.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [Unified Table Width] Forces all markdown tables and tab-internal tables to 100% width */
+  /* 💡 [Table Width Unification] Makes all markdown tables and tables inside tabs 100% full width */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -46,13 +45,13 @@ This is a component for importing the ABB robot to be used. Users can select the
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Forces strict column width ratios */
-    word-break: break-all !important;     /* Prevents cell shrinkage and ensures wrapping */
+    table-layout: fixed !important;      /* Forces cell width ratio fixed */
+    word-break: break-all !important;    /* Prevents cell shrinkage and wraps text on long inputs */
     margin: 20px 0 !important;
     box-sizing: border-box !important;
   }
   
-  /* 💡 [Unified Column Ratio] Matches the 1st column (20%), 2nd column (15%), and 3rd column (65%) structure */
+  /* 💡 [Column Ratio Unification] Matches 1st(20%), 2nd(15%), 3rd(65%) column structure across all tables */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -62,7 +61,7 @@ This is a component for importing the ABB robot to be used. Users can select the
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab System Container */
+  /* Tab System Overall Container */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -78,7 +77,7 @@ This is a component for importing the ABB robot to be used. Users can select the
     z-index: -1;
   }
 
-  /* Tab Buttons Style (Top Alignment) */
+  /* Tab Button Style (Top bar alignment) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -114,7 +113,7 @@ This is a component for importing the ABB robot to be used. Users can select the
     color: #333;
   }
 
-  /* Tab Content Box Settings (Hidden by Default) */
+  /* Content Box Default Settings (Hidden by default) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -124,7 +123,7 @@ This is a component for importing the ABB robot to be used. Users can select the
     box-sizing: border-box !important;
   }
 
-  /* Activates corresponding label (Red text) when the matching radio button is checked */
+  /* Activate corresponding label (red) when exact radio button is checked */
   #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],
   #tab3:checked ~ .tab-buttons label[for="tab3"],
@@ -139,7 +138,7 @@ This is a component for importing the ABB robot to be used. Users can select the
     z-index: 2;
   }
 
-  /* Display control based on checked radio state */
+  /* Content display control according to radio button check state */
   #tab1:checked ~ #content1,
   #tab2:checked ~ #content2,
   #tab3:checked ~ #content3,
@@ -149,7 +148,7 @@ This is a component for importing the ABB robot to be used. Users can select the
     display: block; 
   }
 
-  /* Smooth Fade-in Animation for Tabs */
+  /* Smooth fade-in animation on tab transition */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }
@@ -161,9 +160,9 @@ This is a component for importing the ABB robot to be used. Users can select the
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Base Plane** | Plane | Robot base coordinate system plane. Default: WorldXY. |
-| **ToolData** | ToolData | ABB tool data (ToolData) to be applied to the robot. |
-| **Positioner** | Positioner | External axis positioner to be synchronized with the robot. |
-| **Pedestal** | Mesh | Surrounding environment meshes such as robot pedestals and workbenches (Optional). |
+| **ToolData** | ToolData | ABB <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a> to apply to the robot. |
+| **Positioner** | Positioner | External axis <a href="https://batpartners.github.io/en/robottool/RobotTool-Positioner/" target="_blank">Positioner</a> to link with the robot. |
+| **Pedestal** | Mesh | Surrounding environment mesh such as robot pedestal and workbench (Optional). |
 
 
 ## | Required Parameter
@@ -186,16 +185,16 @@ This is a component for importing the ABB robot to be used. Users can select the
         <tr>
           <td><strong>Robot Model</strong></td>
           <td>String</td>
-          <td>ABB robot model.</td>
+          <td>ABB robot model</td>
         </tr>
         <tr>
           <td><strong>Spec</strong></td>
           <td>String</td>
-          <td>Selected ABB robot model specifications — payload (kg) and reach (mm).</td>
+          <td>Selected ABB robot model specification — Payload (kg) and Reach (mm)</td>
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/0_ABBRobot_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/0_ABBRobot_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -220,23 +219,23 @@ This is a component for importing the ABB robot to be used. Users can select the
         <tr>
           <td><strong>Reset Pose</strong></td>
           <td>Button</td>
-          <td>Resets the robot pose.</td>
+          <td>Reset robot pose</td>
         </tr>
         <tr>
           <td><strong>Align Gumball</strong></td>
           <td>Button</td>
-          <td>Aligns the TCP parallel to the nearest World coordinate axis (±X, ±Y, ±Z) based on its current orientation. Identical to the Align function in ABB FlexPendant Jogging.</td>
+          <td>Aligns the TCP parallel to the World coordinate axis (±X, ±Y, ±Z) closest to the current TCP orientation. Identical to the Align function in ABB FlexPendant Jogging.</td>
         </tr>
         <tr>
           <td><strong>Config Option</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: cfx = 1. Inverts the configuration of robot axes 4 and 6.<br>
-              • FALSE: cfx = 0. Default.</td>
+          <td>• TRUE: cfx = 1. Inverts the configuration of robot axes 4 and 6<br>
+              • FALSE: cfx = 0 Default value</td>
         </tr>        
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -252,12 +251,12 @@ This is a component for importing the ABB robot to be used. Users can select the
         <tr>
           <td><strong>Color</strong></td>
           <td>Color</td>
-          <td>Visualization color.</td>
+          <td>Visualization color</td>
         </tr>
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/0_ABBRobot_12.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/0_ABBRobot_12.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -266,5 +265,5 @@ This is a component for importing the ABB robot to be used. Users can select the
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Robot Setup** | Robot Setup | Configured robot setup. The robot definition combined with base, tool, positioner, and environment models. |
+| **Robot Setup** | Robot Setup | Configured robot setup. Robot definition bundled with base, tool, positioner, and environment models. |
 | **Current TCP** | Plane | Current TCP plane of the robot setup. |

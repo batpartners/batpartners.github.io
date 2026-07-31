@@ -3,7 +3,7 @@ title: "Code Solver"
 
 layout: single
 header:
-  teaser: "/assets/images/0_CodeSolver_1.png"
+  teaser: "/assets/images/codesolver.png"
 
 collection: Core
 entries_layout: grid
@@ -37,7 +37,7 @@ This is a component that generates program files from defined RAPID robot motion
 <p align="center"><img src="/assets/images/0_CodeSolver_1.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
+  /* 💡 [Table Width Standardization] Forces all markdown tables and tables inside tabs to 100% width of the screen */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -46,13 +46,13 @@ This is a component that generates program files from defined RAPID robot motion
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;      /* Forces fixed cell width ratios within the table */
+    word-break: break-all !important;    /* Prevents cell shrinking and wraps text when long inputs occur */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;   /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;    /* Absolutely prevents horizontal overflow caused by padding */
   }
   
-  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
+  /* 💡 [Column Ratio Standardization] Matches the 1st (20%), 2nd (15%), and 3rd (65%) column structure across all tables */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -62,7 +62,7 @@ This is a component that generates program files from defined RAPID robot motion
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* 탭 시스템 전체 컨테이너 */
+  /* Tab System Overall Container */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -71,14 +71,14 @@ This is a component that generates program files from defined RAPID robot motion
     clear: both;
   }
 
-  /* 라디오 버튼 숨기기 */
+  /* Hide Radio Buttons */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* 탭 버튼 스타일 (상단 바 정렬) */
+  /* Tab Button Style (Top bar alignment) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -114,7 +114,7 @@ This is a component that generates program files from defined RAPID robot motion
     color: #333;
   }
 
-  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
+  /* Content Box Default Settings (Hidden by default) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -124,25 +124,25 @@ This is a component that generates program files from defined RAPID robot motion
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (WeldData 변수명 개요) */
+  /* 💡 1st Tab Group Control */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab1:checked ~ #content1 { display: block; }
 
-  /* 💡 2번째 탭 그룹 제어 (Weld ArcData 세트) */
+  /* 💡 2nd Tab Group Control */
   #tab2:checked ~ .tab-buttons label[for="tab2"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab2:checked ~ #content2 { display: block; }
 
-  /* 💡 3번째 탭 그룹 제어 (Weld Param 세트) */
+  /* 💡 3rd Tab Group Control */
   #tab6:checked ~ .tab-buttons label[for="tab6"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab6:checked ~ #content6 { display: block; }
 
-  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  /* Smooth fade-in animation on tab transition */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }
@@ -154,7 +154,7 @@ This is a component that generates program files from defined RAPID robot motion
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **GERTY Code** | GERTY Code | GERTY Code |
-| **ABB Controller** | ABB Controller | ABB controller connected to this PC (Optional) |
+| **ABB Controller** | ABB Controller | <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to this PC (Optional) |
 
 ## | Required Parameter
 
@@ -186,8 +186,7 @@ This is a component that generates program files from defined RAPID robot motion
         <tr>
           <td><strong>Enable Socket</strong></td>
           <td>Toggle</td>
-          <td>Exports the program with a socket communication module within the RAPID code</td>
-        </tr>     
+          <td>Exports the program into the RAPID code as a socket communication module</td>
       </tbody>
     </table>
 <p align="center"><img src="/assets/images/0_CodeSolver_20.png" align="center" width="45%"></p>
@@ -213,12 +212,12 @@ This is a component that generates program files from defined RAPID robot motion
         <tr>
           <td><strong>Auto Load</strong></td>
           <td>Toggle</td>
-          <td>Automatically loads the program onto the connected robot controller after code generation</td>
+          <td>Automatically loads the program to the connected robot controller after code generation</td>
         </tr>
         <tr>
           <td><strong>Export</strong></td>
           <td>Button</td>
-          <td>Generates RAPID code based on configured options and saves it to the designated directory</td>
+          <td>Generates RAPID code according to the configured options and saves it to the specified directory</td>
         </tr>
         <tr>
           <td><strong>Cancel</strong></td>
@@ -228,14 +227,12 @@ This is a component that generates program files from defined RAPID robot motion
         <tr>
           <td><strong>Export Log</strong></td>
           <td>Panel</td>
-          <td>Information on the most recently saved RAPID program file. Displays file path, export result, etc.<br>
+          <td>Information on the most recently saved RAPID program file. Displays file path and export results.<br>
               Local path / Controller path / Contents</td>
-        </tr>        
         <tr>
           <td><strong>Open in Editor</strong></td>
           <td>Button</td>
-          <td>Opens the generated RAPID code in VSCode for editing. Automatically falls back to Notepad if VSCode is not installed.</td>
-        </tr>                      
+          <td>Opens the generated RAPID code in VSCode for editing. Automatically launches Notepad if VSCode is not installed.</td>
       </tbody>
     </table>
 <p align="center"><img src="/assets/images/0_CodeSolver_21.png" align="center" width="45%"></p>
@@ -246,4 +243,4 @@ This is a component that generates program files from defined RAPID robot motion
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **SocketBundle** | SocketBundle | Data bundle containing the socket client and instruction packet list |
+| **SocketBundle** | SocketBundle | Data bundle of socket client and instruction packet list |

@@ -16,8 +16,6 @@ lang: en
 permalink: /en/controllerutils/ControllerUtils-GetToolData/
 
 translation_link: /controllerutils/ControllerUtils-GetToolData/
-
-
 sidebar:
   nav: "sidebar"
 toc: true
@@ -29,11 +27,11 @@ tags:
   - GERTY
 ---
 
-🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-This is a component that retrieves the active tool data from the currently connected offline controller.
+A component that retrieves the active tool data from the currently connected offline controller.
 
 <p align="center">  <img src="/assets/images/3_GetToolData.png" align="center" width="32%"></p>
 
@@ -47,10 +45,10 @@ This is a component that retrieves the active tool data from the currently conne
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;   /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -162,15 +160,15 @@ This is a component that retrieves the active tool data from the currently conne
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| ABB Controller | ABB Controller | <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to this PC. |
-| Base Plane | Plane | Mounting reference plane of the tool. Defines the baseline for TCP and geometry. |
+| ABB Controller | ABB Controller | <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to this PC |
+| Base Plane | Plane | Mounting base plane of the tool. Defines the criteria for TCP and geometry |
 
 # | Outputs
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| Name | String | Scanned <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a> name. |
-| TCP | Plane | TCP plane for the scanned <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a>, defining position and orientation based on the tool base. |
-| Tool Load | Tool Load | LoadData of the scanned <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a>. |
+| Name | String | Name of the scanned <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a> |
+| TCP | Plane | TCP plane for the scanned <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a>, defining position and orientation relative to the tool base. |
+| Tool Load | Tool Load | LoadData of the scanned <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a> |
 
 <p align="center">  <img src="/assets/images/RealTimeDisplay_01-768x341 (1).png" align="center" width="90%"></p>

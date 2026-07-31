@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-This is a component that retrieves the axis coordinate system plane data of a calibrated external mechanical unit from a connected ABB controller.
+A component that retrieves the axis coordinate system plane data of calibrated external mechanical units from the connected ABB controller.
 
 <p align="center">  <img src="/assets/images/0_GetMechUnits.png" align="center" width="32%"></p>
 
@@ -45,10 +45,10 @@ This is a component that retrieves the axis coordinate system plane data of a ca
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;   /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -184,12 +184,12 @@ This is a component that retrieves the axis coordinate system plane data of a ca
         <tr>
           <td><strong>Update</strong></td>
           <td>Button</td>
-          <td>Scans the connected controller to refresh the list of mechanical units.</td>
+          <td>Scans the connected controller to update the list of mechanical units.</td>
         </tr>
         <tr>
           <td><strong>Mechanical Unit</strong></td>
           <td>String</td>
-          <td>Selects the external mechanical unit from which to retrieve axis planes.</td>
+          <td>Selects the external mechanical unit to retrieve axis planes from.</td>
         </tr>
       </tbody>
     </table>
@@ -198,11 +198,11 @@ This is a component that retrieves the axis coordinate system plane data of a ca
   </div>
 </div>
 
-# | Outputs
+# | Output
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| Joint Planes | Plane | Calibrated axis coordinate systems (planes) of the selected unit. |
-| Axis Name | String | Axis names sharing the same tree structure as Joint Planes. |
-| Info | String | Summary of axis configuration and validity for the selected unit. |
+| Joint Planes | Plane | Calibrated axis coordinate system (planes) of the selected unit. |
+| Axis Name | String | Axis names matching the same tree structure as Joint Planes. |
+| Info | String | Summary of the axis configuration and validity of the selected unit. |
 | Warnings | String | Warning messages such as uncalibrated/locked axes or scan failures. |

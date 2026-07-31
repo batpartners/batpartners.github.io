@@ -3,14 +3,18 @@ title: "Get WobjData"
 layout: single
 header:
   teaser: "/assets/images/4_GetWobjData.png"
+
 collection: ControllerUtils
 entries_layout: grid
 author_profile: true
+
 categories:
   - ControllerUtils
+
 translated: true
 lang: en
 permalink: /en/controllerutils/ControllerUtils-GetWobjData/
+
 translation_link: /controllerutils/ControllerUtils-GetWobjData/
 sidebar:
   nav: "sidebar"
@@ -18,6 +22,7 @@ toc: true
 toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
+
 tags: 
   - GERTY
 ---
@@ -26,7 +31,7 @@ tags:
 
 # Description
 
-This is a component that retrieves the active workobject data from the currently connected offline controller.
+A component that retrieves the activated work object data from the currently connected offline controller.
 
 <p align="center">  <img src="/assets/images/4_GetWobjData.png" align="center" width="32%"></p>
 
@@ -40,10 +45,10 @@ This is a component that retrieves the active workobject data from the currently
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;   /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -161,7 +166,7 @@ This is a component that retrieves the active workobject data from the currently
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| Name | String | Scanned workobject name |
-| UserFrame | Plane | User frame (uFrame) plane of the scanned workobject |
+| Name | String | Scanned work object name |
+| UserFrame | Plane | User frame (uFrame) plane of the scanned work object |
 | ObjFrame | Plane | Plane defined as the object frame (oFrame) of <a href="https://batpartners.github.io/en/datatype/DataType-WobjData/" target="_blank">Wobjdata</a> |
 | WobjData | WobjData | Scanned <a href="https://batpartners.github.io/en/datatype/DataType-WobjData/" target="_blank">Wobjdata</a> |

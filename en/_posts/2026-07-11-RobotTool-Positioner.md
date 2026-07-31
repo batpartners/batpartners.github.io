@@ -2,26 +2,22 @@
 title: "Positioner"
 layout: single
 header:
-  teaser: "/assets/images/Positioner.png"
-
+  teaser: "/assets/images/1_ABBPositioner.png"
 collection: RobotTool
 entries_layout: grid
 author_profile: true
-
 categories:
   - RobotTool
 translated: true
 lang: en
 permalink: /en/robottool/RobotTool-Positioner/
 translation_link: /robottool/RobotTool-Positioner/
-
 sidebar:
   nav: "sidebar"
 toc: true
 toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
-
 tags: 
   - GERTY
 ---
@@ -30,12 +26,13 @@ tags:
 
 # Description
 
-This is a component that imports the ABB positioner robot to be used. It supports and allows you to select ABB IRBP series positioners owned by the user. You can configure detailed operations and simulations for the specified model.
+This is a component that imports and defines the ABB positioner robot to be used. It supports and allows you to select ABB IRBP series positioners owned by the user.
+You can configure detailed tasks and simulations for the specified model.
 
 <p align="center">  <img src="/assets/images/1_ABBPositioner.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [Unify Table Width] Expand all markdown tables in the body and tables inside tabs to 100% of the screen width */
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -44,13 +41,13 @@ This is a component that imports the ABB positioner robot to be used. It support
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Forcefully fix cell width ratio within the table */
-    word-break: break-all !important;     /* Prevent cell shrinkage and allow line breaks for long text inputs */
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
     box-sizing: border-box !important;
   }
   
-  /* 💡 [Unify Column Ratio] Match the structure of 1st column (20%), 2nd column (15%), and 3rd column (65%) identically for all tables */
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -60,7 +57,7 @@ This is a component that imports the ABB positioner robot to be used. It support
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab system entire container */
+  /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -69,14 +66,14 @@ This is a component that imports the ABB positioner robot to be used. It support
     clear: both;
   }
 
-  /* Hide radio buttons */
+  /* 라디오 버튼 숨기기 */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* Tab button style (top bar alignment) */
+  /* 탭 버튼 스타일 (상단 바 정렬) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -112,7 +109,7 @@ This is a component that imports the ABB positioner robot to be used. It support
     color: #333;
   }
 
-  /* Content box default settings (hidden by default) */
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -122,7 +119,7 @@ This is a component that imports the ABB positioner robot to be used. It support
     box-sizing: border-box !important;
   }
 
-  /* 💡 Max 6 elements active label style */
+  /* 💡 최대 6개까지 대응 가능한 라벨 활성화 스타일 */
   #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],
   #tab3:checked ~ .tab-buttons label[for="tab3"],
@@ -137,7 +134,7 @@ This is a component that imports the ABB positioner robot to be used. It support
     z-index: 2;
   }
 
-  /* 💡 Max 6 elements content display control */
+  /* 💡 최대 6개까지 대응 가능한 콘텐츠 표시 제어 */
   #tab1:checked ~ #content1,
   #tab2:checked ~ #content2,
   #tab3:checked ~ #content3,
@@ -152,8 +149,8 @@ This is a component that imports the ABB positioner robot to be used. It support
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Mounting Plane** | Plane | Flange plane of the positioner. The top reference plane where the workbench is mounted. Default: WorldXY. |
-| **Workbench** | Workbench | Defines the workbench mounted on the positioner flange (Optional). |
+| **Mounting Plane** | Plane | Flange plane of the positioner. The upper reference plane where the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> is mounted. Default: WorldXY. |
+| **Workbench** | Workbench | Defines the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> mounted on the positioner flange (Optional). |
 
 ## | Required Parameter
 
@@ -185,11 +182,11 @@ This is a component that imports the ABB positioner robot to be used. It support
         <tr>
           <td><strong>Spec</strong></td>
           <td>String</td>
-          <td>Selected ABB positioner model specifications — working diameter (D) and plate height (H)</td>
+          <td>Selected ABB positioner model specifications — Working diameter (D) and plate height (H)</td>
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_10.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -217,22 +214,22 @@ This is a component that imports the ABB positioner robot to be used. It support
         <tr>
           <td><strong>Enable Arm</strong></td>
           <td>Toggle</td>
-          <td>Enable positioner arm motion</td>
+          <td>Enables the arm motion of the positioner</td>
         </tr>
         <tr>
           <td><strong>Approach Direction</strong></td>
           <td>Number</td>
-          <td>Approach direction of the TCP relative to the positioner. The positioner determines its rotation posture based on this approach direction.</td>
+          <td>Approach direction of the TCP relative to the positioner. Determines the rotation posture based on approach in this direction.</td>
         </tr>
         <tr>
           <td><strong>TCP Dir</strong></td>
           <td>Number</td>
-          <td>Direction of the TCP that the positioner will ultimately align to</td>
+          <td>Direction of the TCP that the positioner ultimately aligns with</td>
         </tr>        
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_11.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_11.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -248,12 +245,12 @@ This is a component that imports the ABB positioner robot to be used. It support
         <tr>
           <td><strong>Mechanical Unit</strong></td>
           <td>String</td>
-          <td>MechUnit mapping parameter in the RAPID instruction</td>
+          <td>MechUnit mapping parameter in RAPID statements</td>
         </tr>
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_12.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_12.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content4">
@@ -274,7 +271,7 @@ This is a component that imports the ABB positioner robot to be used. It support
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_13.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_13.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -282,4 +279,4 @@ This is a component that imports the ABB positioner robot to be used. It support
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Positioner** | Positioner | External axis positioner to interface with the robot. |
+| **Positioner** | Positioner | External axis positioner to be linked with the robot. |

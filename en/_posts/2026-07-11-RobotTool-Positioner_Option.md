@@ -11,7 +11,7 @@ categories:
 translated: true
 lang: en
 permalink: /en/robottool/RobotTool-Positioner/RobotTool-Positioner_Option/
-translation_link: /ko/robottool/RobotTool-Positioner/RobotTool-Positioner_Option/
+translation_link: /robottool/RobotTool-Positioner/RobotTool-Positioner_Option/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -26,12 +26,12 @@ tags:
 
 # Description
 
-This is a component that can customize the ABB positioner robot to be used. After completing the detailed settings of the positioner owned by the user, simulation work is possible. You can configure it by right-clicking the component icon and selecting [Define Positioner].
+This is a component that allows you to customize the ABB positioner robot to be used. After completing the detailed settings of the positioner you own, simulation work is available. You can configure it by right-clicking the component icon and selecting [Define Positioner].
 
 <p align="center">  <img src="/assets/images/1_ABBPositioner_3_1.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [Unify Table Width] Expand all markdown tables in the body and tables inside tabs to 100% of the screen width */
+  /* 💡 [Table Width Unification] Fills all markdown tables and tables inside tabs to 100% of the screen width */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -40,13 +40,13 @@ This is a component that can customize the ABB positioner robot to be used. Afte
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Forcefully fix cell width ratio within the table */
-    word-break: break-all !important;     /* Prevent cell shrinkage and allow line breaks for long text inputs */
+    table-layout: fixed !important;       /* Forcefully fix the cell width ratio within the table */
+    word-break: break-all !important;     /* Prevent cell shrinkage and wrap lines when entering long text */
     margin: 20px 0 !important;
     box-sizing: border-box !important;
   }
   
-  /* 💡 [Unify Column Ratio] Match the structure of 1st column (20%), 2nd column (15%), and 3rd column (65%) identically for all tables */
+  /* 💡 [Column Ratio Unification] Match the 1st (20%), 2nd (15%), and 3rd (65%) column structure identically across all tables */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -56,7 +56,7 @@ This is a component that can customize the ABB positioner robot to be used. Afte
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab system entire container */
+  /* Tab System Overall Container */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -65,14 +65,14 @@ This is a component that can customize the ABB positioner robot to be used. Afte
     clear: both;
   }
 
-  /* Hide radio buttons */
+  /* Hide Radio Buttons */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* Tab button style (top bar alignment) */
+  /* Tab Button Style (Top Bar Alignment) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -108,7 +108,7 @@ This is a component that can customize the ABB positioner robot to be used. Afte
     color: #333;
   }
 
-  /* Content box default settings (hidden by default) */
+  /* Content Box Default Settings (Hidden by default) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -118,7 +118,7 @@ This is a component that can customize the ABB positioner robot to be used. Afte
     box-sizing: border-box !important;
   }
 
-  /* 💡 Max 6 elements active label style */
+  /* 💡 Label Activation Style supporting up to 6 tabs */
   #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],
   #tab3:checked ~ .tab-buttons label[for="tab3"],
@@ -133,7 +133,7 @@ This is a component that can customize the ABB positioner robot to be used. Afte
     z-index: 2;
   }
 
-  /* 💡 Max 6 elements content display control */
+  /* 💡 Content Display Control supporting up to 6 tabs */
   #tab1:checked ~ #content1,
   #tab2:checked ~ #content2,
   #tab3:checked ~ #content3,
@@ -149,9 +149,9 @@ This is a component that can customize the ABB positioner robot to be used. Afte
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Positioner Geo** | Mesh | Geometry mesh for each link of the positioner. |
-| **Joint Planes** | Plane | A list of planes defining the kinematic chain of the positioner from the fixed base to the flange in order. <br>Set in order: Fixed reference coordinate system (Base) - each rotary axis coordinate system (J1, J2, ...) - workbench/workpiece mounting surface (Flange). (i.e., for an N-axis positioner, N+2 planes must be input.) |
-| **Mounting Plane** | Plane | Flange plane of the positioner. The top reference plane where the workbench is mounted. Default: WorldXY. |
-| **Workbench** | Workbench | Defines the workbench mounted on the positioner flange (Optional). |
+| **Joint Planes** | Plane | A list of planes sequentially defining the kinematic chain of the positioner from the fixed base to the flange.<br>Set in order: Fixed reference coordinate system (Base) - Each rotation axis coordinate system (J1, J2, ...) - Workbench/Workpiece attachment surface (Flange). (That is, for an N-axis positioner, a total of N+2 planes must be input.) |
+| **Mounting Plane** | Plane | The flange plane of the positioner. The top reference surface where the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> is mounted. Default value: WorldXY. |
+| **Workbench** | Workbench | Defines the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> mounted on the positioner flange (Optional). |
 
 ## | Required Parameter
 
@@ -182,7 +182,7 @@ This is a component that can customize the ABB positioner robot to be used. Afte
         </tr>        
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_30.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_30.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -215,17 +215,17 @@ This is a component that can customize the ABB positioner robot to be used. Afte
         <tr>
           <td><strong>Approach Dir</strong></td>
           <td>Number</td>
-          <td>Approach direction of the TCP relative to the positioner. The positioner determines its rotation posture based on this approach direction.</td>
+          <td>TCP approach direction relative to the positioner. The positioner determines the rotational posture based on the approach in this direction.</td>
         </tr>
         <tr>
           <td><strong>TCP Dir</strong></td>
           <td>Number</td>
-          <td>Direction of the TCP that the positioner will ultimately align to</td>
+          <td>Direction of the TCP that the positioner will ultimately align</td>
         </tr>        
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_31.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_31.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -241,17 +241,17 @@ This is a component that can customize the ABB positioner robot to be used. Afte
         <tr>
           <td><strong>Arm Joint Index</strong></td>
           <td>String</td>
-          <td>The index (1-6) of the ExtJoint array within the RobTarget to assign the positioner arm (Arm) axis angle. Cannot overlap with other external axis indices.<br>- Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]</td>
+          <td>Index (1~6) of the ExtJoint array inside RobTarget to assign the positioner arm joint angle. Cannot overlap with other external axis indices.<br>- Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]</td>
         </tr>
         <tr>
           <td><strong>Plate Joint Index</strong></td>
           <td>String</td>
-          <td>The index (1-6) of the ExtJoint array within the RobTarget to assign the positioner plate (Plate) axis angle. Cannot overlap with other external axis indices.<br>- Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]</td>
+          <td>Index (1~6) of the ExtJoint array inside RobTarget to assign the positioner plate joint angle. Cannot overlap with other external axis indices.<br>- Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]</td>
         </tr>        
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_32.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_32.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content4">
@@ -272,7 +272,7 @@ This is a component that can customize the ABB positioner robot to be used. Afte
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_33.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/1_ABBPositioner_33.png" align="center" width="45%"></p>
   </div>
 </div>
 

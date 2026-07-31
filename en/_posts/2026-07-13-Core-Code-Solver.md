@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-A component that generates program files from defined RAPID robot motions and performs tasks to load and upload code files to an ABB controller connected via a network.
+This is a component that generates program files from defined RAPID robot motions and performs tasks to load and upload code files to an ABB controller connected via a network.
 
 <p align="center"><img src="/assets/images/0_CodeSolver.png" align="center" width="32%"></p>
 
@@ -46,8 +46,8 @@ A component that generates program files from defined RAPID robot motions and pe
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;     /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;   /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
     box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
@@ -149,12 +149,12 @@ A component that generates program files from defined RAPID robot motions and pe
   }
 </style>
 
-# | 입력(Input)
+# | Input
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **GERTY Code** | GERTY Code | GERTY Code |
-| **ABB Controller** | ABB Controller | <a href="https://batpartners.github.io/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to this PC (Optional) |
+| **ABB Controller** | ABB Controller | <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to this PC (Optional) |
 
 
 ## | Required Parameter
@@ -209,28 +209,28 @@ A component that generates program files from defined RAPID robot motions and pe
         <tr>
           <td><strong>Auto Load</strong></td>
           <td>Toggle</td>
-          <td>Automatically loads the program to the connected robot controller after code generation</td>
+          <td>Automatically loads the program into the connected robot controller after code generation</td>
         </tr>
         <tr>
           <td><strong>Export</strong></td>
           <td>Button</td>
-          <td>Generates RAPID code according to the set options and saves it to the specified directory</td>
+          <td>Generates Rapid code according to the configured options and saves it to the specified directory</td>
         </tr>
         <tr>
           <td><strong>Cancel</strong></td>
           <td>Button</td>
-          <td>Cancels the ongoing code generation and export task</td>
+          <td>Cancels the ongoing code generation and export process</td>
         </tr>
         <tr>
           <td><strong>Export Log</strong></td>
           <td>Panel</td>
-          <td>Information on the recently saved RAPID program file. Displays file path and export result.<br>
+          <td>Information on the recently saved RAPID program file. Displays file path and export results.<br>
               Local path / Controller path / Contents</td>
         </tr>        
         <tr>
           <td><strong>Open in Editor</strong></td>
           <td>Button</td>
-          <td>Opens the generated RAPID code in VSCode for editing. Automatically launches Notepad if VSCode is not installed.</td>
+          <td>Opens the generated RAPID code in VSCode for editing. Automatically opens in Notepad if VSCode is not installed.</td>
         </tr>                        
       </tbody>
     </table>

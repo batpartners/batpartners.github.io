@@ -3,7 +3,7 @@ title: "GERTY Core"
 
 layout: single
 header:
-  teaser: "/assets/images/2_GERTYCore.png"
+  teaser: "/assets/images/GERTYCore.png"
 
 collection: Core
 entries_layout: grid
@@ -15,8 +15,8 @@ categories:
 translated: true
 lang: en
 permalink: /en/core/Core-GERTY-Core/
-translation_link: /core/Core-GERTY-Core/
 
+translation_link: /core/Core-GERTY-Core/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-GERTY Core is a component that computes robot motions from defined robot setups and instructions. It generates basic data required to run Display Solver and Code Solver.
+GERTY Core is a component that computes robot motions based on defined robot setups and instructions. It generates the basic data required to run the Display Solver and CodeSolver.
 
 <p align="center">  <img src="/assets/images/2_GERTYCore.png" align="center" width="32%"></p>
 
@@ -46,7 +46,7 @@ GERTY Core is a component that computes robot motions from defined robot setups 
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
     word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
     box-sizing: border-box !important;
@@ -150,15 +150,15 @@ GERTY Core is a component that computes robot motions from defined robot setups 
   }
 </style>
 
-# Input
+# | Input
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| Robot Setup | Robot Setup | Configured robot setup. A robot definition combining the base, tool, positioner, and peripheral models. |
-| Instructions | Instructions | Collection of ABB instructions to execute. Since the list order directly corresponds to the robot execution sequence, items must be arranged according to the intended motion sequence. |
-| SubProc | SubProc | Called ABB subprocedure (optional). |
+| Robot Setup | Robot Setup | Configured robot setup. Robot definition bundling base, tool, positioner, and surrounding models. |
+| Instructions | Instructions | Collection of ABB instructions to execute. Since the list order directly corresponds to the robot execution sequence, ordering them to match the intended motion sequence is required. |
+| SubProc | SubProc | Called <a href="https://batpartners.github.io/en/instruction/Instruction-SubProc_Composition/" target="_blank">ABB Procedure</a> (Optional) |
 
-## Required Parameter
+## | Required Parameter
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-model" checked>
@@ -178,7 +178,7 @@ GERTY Core is a component that computes robot motions from defined robot setups 
         <tr>
           <td><strong>Simulation Window</strong></td>
           <td>Toggle</td>
-          <td>Opens/closes the simulation control window.</td>
+          <td>Open/Close simulation control window</td>
         </tr>
       </tbody>
     </table>
@@ -186,9 +186,9 @@ GERTY Core is a component that computes robot motions from defined robot setups 
   </div>
 </div>
 
-# Outputs
+# | Outputs
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| GERTY Solver | GERTY Solver | GERTY Solver |
-| GERTY Code | GERTY Code | GERTY Code |
+| GERTY Solver | GERTY Solver | Connect to <a href="https://batpartners.github.io/en/core/Core-Display-Solver/" target="_blank">GERTY Solver</a> |
+| GERTY Code | GERTY Code | Connect to <a href="https://batpartners.github.io/en/core/Core-Code-Solver/" target="_blank">GERTY Code</a> |

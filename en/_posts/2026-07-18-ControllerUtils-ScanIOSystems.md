@@ -3,14 +3,18 @@ title: "Scan IOSystems"
 layout: single
 header:
   teaser: "/assets/images/6_ScanIOSystems.png"
+
 collection: ControllerUtils
 entries_layout: grid
 author_profile: true
+
 categories:
   - ControllerUtils
+
 translated: true
 lang: en
 permalink: /en/controllerutils/ControllerUtils-ScanIOSystems/
+
 translation_link: /controllerutils/ControllerUtils-ScanIOSystems/
 sidebar:
   nav: "sidebar"
@@ -23,11 +27,11 @@ tags:
   - GERTY
 ---
 
-🌐 [KR]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
+🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-It is possible to retrieve all defined I/O signal names from the connected local controller.
+A component that can retrieve all defined I/O signal names from the connected local controller.
 
 <p align="center">  <img src="/assets/images/6_ScanIOSystems.png" align="center" width="32%"></p>
 
@@ -41,8 +45,8 @@ It is possible to retrieve all defined I/O signal names from the connected local
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
     box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
@@ -152,13 +156,13 @@ It is possible to retrieve all defined I/O signal names from the connected local
   }
 </style>
 
-# Input
+# | 입력(Input)
 
-| Name | Type | Description |
+| 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **ABB Controller** | ABB Controller | <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to this PC. |
+| **ABB Controller** | ABB Controller | <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to the PC |
 
-## Required Parameter
+## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
   <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
@@ -180,17 +184,17 @@ It is possible to retrieve all defined I/O signal names from the connected local
         <tr>
           <td><strong>Gate</strong></td>
           <td>Toggle</td>
-          <td>Open/close gate for scanning I/O systems.</td>
+          <td>Open/close gate for scanning I/O systems</td>
         </tr>
         <tr>
           <td><strong>IO Unit</strong></td>
           <td>String</td>
-          <td>I/O unit to scan.</td>
+          <td>I/O unit to scan</td>
         </tr>
         <tr>
           <td><strong>Signal Type</strong></td>
           <td>String</td>
-          <td>Signal type to scan.</td>
+          <td>Signal type to scan</td>
         </tr>
       </tbody>
     </table>
@@ -198,8 +202,9 @@ It is possible to retrieve all defined I/O signal names from the connected local
   </div>
 </div>
 
-# Output
+# | 출력(Output)
 
-| Name | Type | Description |
+
+| 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Signals** | String | Filtered signal name(s). |
+| **Signals** | String | Filtered signal names |
