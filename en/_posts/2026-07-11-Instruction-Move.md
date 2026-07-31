@@ -14,8 +14,8 @@ categories:
 translated: true
 lang: en
 permalink: /en/instruction/Instruction-Move/
-translation_link: /instruction/Instruction-Move/
 
+translation_link: /instruction/Instruction-Move/
 sidebar:
   nav: "sidebar"
 toc: true
@@ -23,7 +23,7 @@ toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
 
-tags: 
+tags:
   - GERTY
 ---
 
@@ -31,12 +31,12 @@ tags:
 
 # Description
 
-This is a component that configures ABB move instructions (MoveL, MoveJ).
+A component that configures ABB Move instructions (MoveL, MoveJ).
 
 <p align="center"><img src="/assets/images/0_Move.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [Unify Table Width] Expand all markdown tables and tab-internal tables to 100% of the screen width */
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -45,13 +45,13 @@ This is a component that configures ABB move instructions (MoveL, MoveJ).
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Force fixed cell width ratio */
-    word-break: break-all !important;     /* Prevent cell shrinkage and enable line breaks for long text */
+    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* Prevent horizontal overflow due to padding */
+    box-sizing: border-box !important;   /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
-  /* 💡 [Unify Column Ratio] Consistent structure for all tables (20%, 15%, 65%) */
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -61,7 +61,7 @@ This is a component that configures ABB move instructions (MoveL, MoveJ).
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab system container */
+  /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -70,14 +70,14 @@ This is a component that configures ABB move instructions (MoveL, MoveJ).
     clear: both;
   }
 
-  /* Hide radio buttons */
+  /* 라디오 버튼 숨기기 */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* Tab button style */
+  /* 탭 버튼 스타일 (상단 바 정렬) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -113,7 +113,7 @@ This is a component that configures ABB move instructions (MoveL, MoveJ).
     color: #333;
   }
 
-  /* Content box default settings */
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -123,12 +123,25 @@ This is a component that configures ABB move instructions (MoveL, MoveJ).
     box-sizing: border-box !important;
   }
 
-  /* Tab group control */
+  /* 💡 1번째 탭 그룹 제어 (WeldData 변수명 개요) */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab1:checked ~ #content1 { display: block; }
 
+  /* 💡 2번째 탭 그룹 제어 (Weld ArcData 세트) */
+  #tab2:checked ~ .tab-buttons label[for="tab2"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #tab2:checked ~ #content2 { display: block; }
+
+  /* 💡 3번째 탭 그룹 제어 (Weld Param 세트) */
+  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
+  }
+  #tab6:checked ~ #content6 { display: block; }
+
+  /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
     to { opacity: 1; transform: translateY(0); }
@@ -139,7 +152,7 @@ This is a component that configures ABB move instructions (MoveL, MoveJ).
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **RobTargets** | RobTarget | Target motion positions. Connect the output of a RobTarget or Positioner RobTarget component. |
+| **RobTargets** | RobTarget | Motion target position. Connects to the output of <a href="https://batpartners.github.io/en/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> or <a href="https://batpartners.github.io/en/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> component. |
 
 ## | Required Parameter
 
@@ -161,23 +174,23 @@ This is a component that configures ABB move instructions (MoveL, MoveJ).
         <tr>
           <td><strong>Type/Speed/Zone</strong></td>
           <td>String</td>
-          <td>Motion type, (Predefined) SpeedData, and (Predefined) ZoneData to be used</td>
+          <td>Motion type, speed, zone radius</td>
         </tr>
         <tr>
           <td><strong>MoveJ Start End</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: applies MoveJ to the first and last targets<br>
-              • FALSE: applies the configured motion type to all targets</td>
+          <td>• TRUE: Apply MoveJ to the first and last targets<br>
+              • FALSE: Apply the set motion type to all targets</td>
         </tr>
         <tr>
           <td><strong>Fine Start End</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: applies fine zone to the first and last targets<br>
-              • FALSE: applies the configured zone value to all targets</td>
-        </tr>                
+          <td>• TRUE: Apply fine zone to the first and last targets<br>
+              • FALSE: Apply the set zone value to all targets </td>
+        </tr>             
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/0_Move_1.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/0_Move_1.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -186,7 +199,7 @@ This is a component that configures ABB move instructions (MoveL, MoveJ).
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Pass to the 'Instructions' input of the Core component. |
+| **Instruction** | Instruction | Generated ABB instruction. Passes to the Instructions input of the Core component. |
 
 <p align="center"> 
 <video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>

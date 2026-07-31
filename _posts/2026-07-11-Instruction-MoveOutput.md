@@ -1,5 +1,5 @@
 ---
-title: "MoveXO"
+title: "MoveOutput"
 
 layout: single
 header:
