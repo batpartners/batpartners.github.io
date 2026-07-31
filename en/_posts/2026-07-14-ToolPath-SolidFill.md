@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates deposition paths filling the inside of the shell with zigzag-based patterns, referenced from the Shell Profile.
+This is a deposition toolpath component that fills the inside of the outer boundary based on the Shell Profile. It allows you to determine detailed settings such as the fill shape and spacing.
 
 <p align="center">  <img src="/assets/images/10_SolidFill.png" align="center" width="32%"></p>
 

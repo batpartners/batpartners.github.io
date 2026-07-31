@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Creates a plane from a surface.
+This is a component that sets a reference plane from a planar surface.
 
 <p align="center">  <img src="/assets/images/8_SurfaceFrame.png" align="center" width="32%"></p>
 

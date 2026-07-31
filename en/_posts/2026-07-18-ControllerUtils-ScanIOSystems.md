@@ -27,7 +27,7 @@ tags:
 
 # Description
 
-Gets all I/O signal names defined in the connected controller.
+It is possible to retrieve all defined I/O signal names from the connected local controller.
 
 <p align="center">  <img src="/assets/images/6_ScanIOSystems.png" align="center" width="32%"></p>
 

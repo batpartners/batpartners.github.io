@@ -26,7 +26,7 @@ tags:
 
 # Description
 
-Streams and visualizes real-time robot poses and I/O signal states from the connected controller.
+This is a component that streams the robot posture and I/O signal status in real-time from a connected offline controller, visualizing them in the GERTY simulation.
 
 <p align="center">  <img src="/assets/images/5_RealTimeDisplay.png" align="center" width="32%"></p>
 

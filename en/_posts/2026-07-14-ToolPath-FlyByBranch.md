@@ -26,7 +26,7 @@ tags:
 
 # Description
 
-Generates fly-by target planes connecting each branch of the Target Plane DataTree. Configures paths that retract from the workpiece during transitions between path segments.
+This is a component that generates a transition path (Flyby) target plane connecting each branch of a target plane data tree. When moving between path segments, it reconstructs the path of the section that departs from the workpiece and determines the target plane according to the value set by the user.
 
 <p align="center">  <img src="/assets/images/1_FlybyPlane.png" align="center" width="32%"></p>
 

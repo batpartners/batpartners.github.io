@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Extracts a specific branch from a DataTree by its sequential index.
+This is a component that extracts a specific branch from a DataTree based on the input index.
 
 <p align="center">  <img src="/assets/images/5_TreeBranch.png" align="center" width="32%"></p>
 

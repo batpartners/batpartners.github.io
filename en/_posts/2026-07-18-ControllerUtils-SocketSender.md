@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Streams motion instruction packets to the ABB IRC5 controller via a TCP socket.
+It streams and exports the finalized code as motion instruction packets to a local ABB IRC5 controller via a TCP socket.
 
 <p align="center">  <img src="/assets/images/2_SocketSender.png" align="center" width="32%"></p>
 

@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Values of multiple slider widgets.
+This is a component that can output one or more numeric values simultaneously.
 
 <p align="center">  <img src="/assets/images/6_MultiSlider.png" align="center" width="32%"></p>
 

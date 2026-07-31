@@ -26,7 +26,7 @@ tags:
 
 # Description
 
-Generates shell deposition toolpaths from closed solid geometries.
+This is a component that generates shell deposition toolpaths from a closed solid geometry. It allows you to configure detailed settings such as the starting position, spacing, height, and tilting degree of the target planes. If the geometry is large, it can export the operation data by dividing it into partitions.
 
 <p align="center">  <img src="/assets/images/12_SolidShell.png" align="center" width="32%"></p>
 

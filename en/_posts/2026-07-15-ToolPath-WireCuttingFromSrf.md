@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates a hot-wire cutting toolpath from a ruled surface.
+This is a component that generates a hot-wire cutting path from a ruled surface. Users can set the number of points to generate target planes, the internal parameter value of the ruled surface (default: 0.5), and optionally, an attractor value to smoothly adjust the hot-wire tool. In addition, detailed configurations for the hot-wire path direction, tool orientation, and entry intervals are available.
 
 <p align="center">  <img src="/assets/images/5_WireCuttingFromSrf.png" align="center" width="32%"></p>
 

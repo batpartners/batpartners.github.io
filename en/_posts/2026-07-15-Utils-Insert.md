@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Inserts a data collection into a DataTree.
+This is a component that can insert a data collection into a specific DataTree index.
 
 <p align="center">  <img src="/assets/images/2_Insert.png" align="center" width="32%"></p>
 

@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates flyby target planes connecting each branch of the Target Plane DataTree using custom vectors. Configures paths that retract from the workpiece when moving between path segments.
+This is a component that generates flyby target planes connecting between branches of a Target Plane DataTree using user-defined vectors. When moving between path segments, it reconstructs the path in sections where it leaves the workpiece and determines the target planes according to the values set by the user.
 
 <p align="center">  <img src="/assets/images/2_FlybyCustom.png" align="center" width="32%"></p>
 

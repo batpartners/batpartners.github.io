@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Splits target plane lists (branches) into sub-lists (branches) based on length values.
+This is a component that splits a list (branch) of target planes into sub-lists (branches) based on length values.
 
 <p align="center">  <img src="/assets/images/9_ToolPathpartition.png" align="center" width="32%"></p>
 

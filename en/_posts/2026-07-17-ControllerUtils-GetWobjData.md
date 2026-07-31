@@ -26,7 +26,7 @@ tags:
 
 # Description
 
-Gets the currently active workobject data from the controller.
+This is a component that retrieves the active workobject data from the currently connected offline controller.
 
 <p align="center">  <img src="/assets/images/4_GetWobjData.png" align="center" width="32%"></p>
 

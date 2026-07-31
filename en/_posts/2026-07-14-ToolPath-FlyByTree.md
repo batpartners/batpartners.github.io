@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates flyby target planes that connect between DataTrees of target planes. Configures paths that depart from the workpiece when moving between toolpath DataTrees.
+This is a component that allows you to set two or more Target Plane paths. It generates flyby target planes connecting between each branch, and reconstructs the path in sections where it leaves the workpiece when moving between path segments to determine the target planes according to user-defined values.
 
 <p align="center">  <img src="/assets/images/3_FlybyTree.png" align="center" width="32%"></p>
 

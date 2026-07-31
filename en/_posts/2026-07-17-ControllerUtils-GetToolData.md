@@ -33,7 +33,7 @@ tags:
 
 # Description
 
-Gets currently active tool data from the controller.
+This is a component that retrieves the active tool data from the currently connected offline controller.
 
 <p align="center">  <img src="/assets/images/3_GetToolData.png" align="center" width="32%"></p>
 

@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Extracts a specific index from the branch path of the data.
+This is a component that can extract a specific index from the branch path of a DataTree.
 
 <p align="center">  <img src="/assets/images/1_ExtractPathIdx.png" align="center" width="32%"></p>
 

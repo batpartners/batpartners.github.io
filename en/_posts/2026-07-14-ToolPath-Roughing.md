@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates tiered roughing toolpaths.
+This is a component that generates a stepped roughing toolpath. Users can configure detailed settings according to their working methods, such as the distance between target planes, layer-to-layer spacing, and starting direction.
 
 <p align="center">  <img src="/assets/images/7_Roughing.png" align="center" width="32%"></p>
 

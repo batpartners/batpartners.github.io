@@ -31,10 +31,11 @@ tags:
 
 # Description
 
-Reassigns branch paths while preserving the contents of the DataTree branches. Switch between three patterns using the right-click context menu.<br>
-  • Sequential: Reassigns branches in sequential order ({0}, {1}, {2}...).<br>
-  • Odd Numbered: Reassigns branches in odd-numbered order ({1}, {3}, {5}...).<br>
-  • Even Numbered: Reassigns branches in even-numbered order ({0}, {2}, {4}...).<br>
+This is a component that reassigns branch paths while preserving the contents of the branches in a DataTree. Right-clicking the icon allows you to switch the tree structure into three patterns via the context menu:
+
+* **Sequential:** Reassigns branches in sequential order ({0}, {1}, {2}...).
+* **Odd Numbered:** Reassigns branches in odd-numbered order ({1}, {3}, {5}...).
+* **Even Numbered:** Reassigns branches in even-numbered order ({0}, {2}, {4}...).
 
 <p align="center">  <img src="/assets/images/3_RepathTree.png" align="center" width="32%"></p>
 <p align="center">  <img src="/assets/images/3_RepathTree_1.png" align="center" width="32%"></p>

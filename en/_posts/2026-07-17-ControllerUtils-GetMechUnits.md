@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Retrieves the calibrated axis coordinate system (plane) data of external mechanical units from the connected ABB controller.
+This is a component that retrieves the axis coordinate system plane data of a calibrated external mechanical unit from a connected ABB controller.
 
 <p align="center">  <img src="/assets/images/0_GetMechUnits.png" align="center" width="32%"></p>
 

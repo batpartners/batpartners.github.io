@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Dispatches branches of a DataTree into two target DataTrees.
+This is a component that splits the branches of a DataTree into two target DataTrees according to an input pattern.
 
 <p align="center">  <img src="/assets/images/0_DispatchBranch.png" align="center" width="32%"></p>
 

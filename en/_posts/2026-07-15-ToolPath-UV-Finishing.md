@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Generates finishing toolpaths along the UV isoparametric curves of a surface.
+This is a component that generates a finishing toolpath along the UV isoparametric curves of a surface. Users can configure detailed settings according to their working preferences, such as the distance between target planes, the interval between layers, and the UV direction.
 
 <p align="center">  <img src="/assets/images/8_UVFinishing.png" align="center" width="32%"></p>
 

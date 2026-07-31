@@ -26,7 +26,7 @@ tags:
 
 # Description
 
-Search and connect to available ABB robot controllers on the local network.
+This is a component that can search for and connect to available ABB robot controllers on the local network.
 
 <p align="center">  <img src="/assets/images/1_ScanController.png" align="center" width="32%"></p>
 

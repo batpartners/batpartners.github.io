@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Collects hardware-based identifiers (MAC address, disk serial, BIOS/UUID, and USB IDs) from the local machine for device identification. Device identifiers are processed locally, and hardware IDs are neither transmitted nor stored externally.
+Hardware-based identifiers (such as MAC address, disk serial number, BIOS/UUID, and USB ID) are collected from the local machine for device identification. The device identifiers are processed locally, and the hardware IDs are neither transmitted externally nor stored.
 
 <p align="center">  <img src="/assets/images/0_GetHardwareIDs.png" align="center" width="32%"></p>
 

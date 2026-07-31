@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates deposition paths filling the interior with concentric patterns by repeatedly offsetting the shell inward, based on the Shell Profile.
+This is a component that generates a deposition toolpath to fill the inside of a pattern created by offsetting the outer boundary (shell) inward or outward, based on the Shell Profile.
 
 <p align="center">  <img src="/assets/images/11_SolidOffsetFill.png" align="center" width="32%"></p>
 

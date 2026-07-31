@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-ABB RAPID object (ABB DataType, ABB Instruction) deconstructor.
+This is a deconstructor component for ABB RAPID objects (ABB DataType, ABB Instruction).
 
 <p align="center">  <img src="/assets/images/10_RapidDecontructor.png" align="center" width="32%"></p>
 

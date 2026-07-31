@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Splits a DataTree into two DataTrees based on the branch index sequence.
+This is a component that splits a DataTree into two DataTrees based on the input branch index.
 
 <p align="center">  <img src="/assets/images/4_SplitBranch.png" align="center" width="32%"></p>
 

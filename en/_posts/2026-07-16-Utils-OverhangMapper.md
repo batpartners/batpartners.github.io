@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Maps colors and visualizes overhangs for the input mesh geometry.
+This is a component that visualizes overhangs of an input mesh geometry by applying a color map.
 
 <p align="center">  <img src="/assets/images/7_OverhangMapper.png" align="center" width="32%"></p>
 

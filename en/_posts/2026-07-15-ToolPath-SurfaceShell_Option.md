@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-닫힌 솔리드 형상에서 외곽(Shell) 적층 경로를 생성
+This is a component that generates a shell (or perimeter) deposition toolpath for open surface geometries. It allows for detailed configurations such as target plane spacing, height, working direction (zigzag, one-way), and tilting angle. For large geometries, the working data can be exported by dividing it into partitions. Right-clicking the icon allows you to switch to the Use AntiOverhang mode, which enables detailed settings for workpieces with overhangs.
 
 <p align="center">  <img src="/assets/images/13_SurfaceShell_3.png" align="center" width="32%"></p>
 

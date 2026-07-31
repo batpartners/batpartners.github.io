@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Generates finishing toolpaths along parallel contour curves in a single direction.
+This is a component that generates a finishing toolpath along unidirectional parallel contour curves. Users can configure detailed settings such as the distance between target planes, layer-to-layer spacing, and tilting to suit the workpiece geometry.
 
 <p align="center">  <img src="/assets/images/6_ParallelFinishing.png" align="center" width="32%"></p>
 
