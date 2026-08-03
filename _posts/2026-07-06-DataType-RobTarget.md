@@ -266,7 +266,7 @@ robtarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그
 | RobTargets | RobTarget | ABB Rapid RobTargets 데이터 출력 |
 | End Targets | RobTarget | ABB Rapid RobTargets 마지막 브랜치 데이터 출력 |
 
-<figure>
+<!-- <figure>
   <img src="/assets/images/DataTypes/RobTarget/TiltingWeight_RobT.gif" alt="Tilting_RobT">
   <figcaption> Tilting</figcaption>
-</figure>
+</figure> -->

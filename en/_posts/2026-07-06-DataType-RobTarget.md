@@ -266,7 +266,7 @@ tags:
 | RobTargets | RobTarget | Outputs ABB RAPID `RobTargets` data. |
 | End Targets | RobTarget | Outputs the last branch data of ABB RAPID `RobTargets`. |
 
-<figure>
+<!-- <figure>
   <img src="/assets/images/DataTypes/RobTarget/TiltingWeight_RobT.gif" alt="Tilting_RobT">
   <figcaption> Tilting</figcaption>
-</figure>
+</figure> -->
