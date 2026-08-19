@@ -150,23 +150,24 @@ tags:
 
 # | Overview
 
-GERTY 컴포넌트의 기본적인 구조는 Rhino Grasshopper 구조를 따른다. GERTY 고유 기능이 존재하며, 필수 파라미터에 해당하는 값을 설정할 수 있다. 필수 파라미터를 설정하는 UI는 크게 7가지 종류로 나눠지며, 데이터 타입으로 **String/Number/Boolean/Color**가 있다.
-입력과 필수 파라미터 값이 정의되면 출력 값으로 전달된다.
+GERTY 컴포넌트의 기본적인 구조는 Rhino Grasshopper 구조를 따른다. GERTY 고유 기능이 존재하며, 필수 파라미터에 해당하는 값을 설정할 수 있다. GERTY UI는 크게 7가지 종류로 나눠지며, 입력과 필수 파라미터 값이 정의되면 출력 값으로 전달된다.
+
+<p align="center">  <img src="/assets/images/1_Positioner Robtarget.png" align="center" width="80%"></p>
 
 # | 입력(Input)
 
 외부 값을 입력 받아야하는 값이며, 데이터 타입에 맞게 Rhino/GERTY 컴포넌트를 연결하여 사용할 수 있다.
 반드시 입력 받아야하는 값과, 그렇지 않은 값(선택적 값)이 존재한다. 선택적 값은 비워두고 사용이 가능하며, 컴포넌트 색상이 회색이 되어야 정상이다.
 
-### (1) 데이터 매치 (DataMatch)
+### (1) 노드 연결 (Connect Node)
 
-기본적인 Grasshopper 컴포넌트 값 연결과 방법이 같다. GERTY 고유 파라미터가 존재하며, 데이터 매치에 따라 연결하여 사용이 가능하다.
+기본적인 Grasshopper 컴포넌트 값 연결과 방법이 같다.
 
 <p align="center">  <img src="/assets/images/Asset_1.png" align="center" width="80%"></p>
 
 ### (2) 모드 전환 (Mode Option)
 
-일부 컴포넌트에 한하여 컴포넌트 모드를 전환/기능 추가가 가능하다. 컴포넌트 아이콘에 마우스를 위치시켜 우클릭하여 확인할 수 있으며, 컴포넌트 종류는 다음과 같다.
+일부 컴포넌트에 한하여 컴포넌트 모드를 전환/기능 추가가 가능하다. 컴포넌트 아이콘을 우클릭하여 컨텍스트 메뉴(Context Menu)를 확인할 수 있으며, 컴포넌트 종류는 다음과 같다.
 
 > <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">`ToolData`</a>, <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">`WobjData`</a>, <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">`Positioner RobTarget`</a>, <a href="https://batpartners.github.io/datatype/DataType-SeamData/" target="_blank">`SeamData`</a>, <a href="https://batpartners.github.io/datatype/DataType-WeldData/" target="_blank">`WeldData`</a>, `TPSiSynergic`, `TPSSynergic`, <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">`ABB Positioner`</a>, <a href="https://batpartners.github.io/robottool/RobotTool-ABBRobot/" target="_blank">`ABB Robot`</a>, <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">`WorkBench`</a>, <a href="https://batpartners.github.io/core/Core-Code-Solver/" target="_blank">`Code Solver`</a>, <a href="https://batpartners.github.io/toolpath/ToolPath-SolidShell/" target="_blank">`Solid Shell`</a>, <a href="https://batpartners.github.io/toolpath/ToolPath-SurfaceShell/" target="_blank">`Surface Shell`</a>, <a href="https://batpartners.github.io/utils/Utils-RepathTree/" target="_blank">`RePath Tree`</a>
 
@@ -176,11 +177,11 @@ GERTY 컴포넌트의 기본적인 구조는 Rhino Grasshopper 구조를 따른�
 
 ------------
 
-## | 필수 파라미터(Required Parameter)
+## | GERTY UI
 
 컴포넌트 값에 반드시 포함되어야하며, 위 값의 경우 사용자가 재정의가 가능하다.
 
-### (1) 카테고리 탭 (Category Tab)
+### 탭 (Tab)
 
 특정 카테고리 옵션을 세부적으로 접근할 수 있도록 기능에 따라 [Tab]으로 그룹하였다. 선택된 [Tab]의 경우 어두운 색으로 활성화되며, 관련 설정을 사용자화 할 수 있다. 사용자화 되지 않은 필수 파라미터 값은 GERTY에서 설정한 기본값을 따른다.
 
@@ -205,15 +206,13 @@ GERTY 컴포넌트의 기본적인 구조는 Rhino Grasshopper 구조를 따른�
 
 ### a. 변수값 (Text Field)
 
-데이터 타입은 **String**이다. 사용자가 정의한 변수값을 설정하는데 주로 사용되며, <a href="https://batpartners.github.io/core/Core-Code-Solver/" target="_blank">*Code Solver*</a>의 경우 저장되는 파일명과 프로젝트 이름으로 작성된다.
-사용자는 Text Field에 마우스를 두번 연속 클릭 후 수정/작성이 가능하다. 단, 작성 값은 영문으로 시작하여야하며, 특수문자나 빈 여백은 차단한다.
+사용자는 Text Field에 마우스를 더블 클릭 후 수정/작성이 가능하다. 작성 값은 각 컴포넌트 문서를 참고. 기본적으로 영문 또는 숫자를 포함하여 기재가 가능하다.
 
 <p align="center">  <img src="/assets/images/0_RobTarget_4.png" align="center" width="35%"></p>
 
 ### b. 숫자값 (Slider)
 
-데이터 타입은 **Number**로 크게 **Double**과 **Integer**로 구분되어 사용한다.
-사용자는 Slider Bar 위의 포인터를 좌/우로 드래그 또는 마우스를 두번 연속 클릭 후 값 변경/입력이 가능하다.
+사용자는 두가지 방법으로 값 설정에 접근할 수 있다. 하나는 슬라이더 옆에 기재된 레이블을 더블 클릭하는 것, 다른 하나는 Slider Bar 위의 포인터를 좌/우로 드래그 또는 마우스를 더블 클릭 후 값 변경/입력을 할 수 있다.
 
 *Double*<br>
 정수를 포함한 소수값을 입력 받을 수 있다.
@@ -227,27 +226,26 @@ GERTY 컴포넌트의 기본적인 구조는 Rhino Grasshopper 구조를 따른�
 
 ### c. 드랍다운 (DropDown)
 
-데이터 타입은 **String**이다. GERTY에서 제공하는 모델 또는 옵션을 선택할 수 있다.
-Tool/WorkBench 모델의 경우 사용자가 `Export`한 객체를 GERTY에 저장해 불러올 수 있다.
+ GERTY에서 제공하는 모델 또는 옵션을 선택할 수 있다. Tool/WorkBench 모델의 경우 사용자가 `Export`한 객체를 GERTY에 저장해 불러올 수 있다.
 
 <p align="center">  <img src="/assets/images/0_ABBRobot_10.png" align="center" width="35%"></p>
 
 ### d. 버튼 (Button) / 토글 스위치 (Toggle)
 
-데이터 타입은 **Boolean**이다. 버튼의 경우 컴포넌트의 상태를 일시적으로 재활성화한다. 토글의 경우 컴포넌트 상태를 완전 전환한다.
+`버튼`의 경우 컴포넌트의 상태를 일시적으로 재활성화한다. `토글`의 경우 컴포넌트 상태를 완전 전환한다.
 일부 컴포넌트의 경우, 입력값과 필수 파라미터가 추가/제거 되기도 한다.
 
 <p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="35%"></p>
 
 ### e. 색상 스와치 (Color Swatch)
 
-데이터 타입은 **Color**이다. 시뮬레이션 상에서 활성 상태의 모델/경로의 색상을 사용자화할 수 있다.
+시뮬레이션 상에서 활성 상태의 모델/경로의 색상을 사용자화할 수 있다.
 
 <p align="center">  <img src="/assets/images/2_Workbench_11.png" align="center" width="35%"></p>
 
 ### f. 패널 (Panel)
 
-데이터 타입은 **String**이다. 컴포넌트 활성시, 컴포넌트 결과 값을 패널로 노출하여 제공한다.
+컴포넌트 활성시, 컴포넌트 결과 값을 패널로 노출하여 제공한다.
 
 <p align="center">  <img src="/assets/images/1_ScanController_11.png" align="center" width="35%"></p>
 
@@ -258,8 +256,3 @@ Tool/WorkBench 모델의 경우 사용자가 `Export`한 객체를 GERTY에 저�
 
 <p align="center">  <img src="/assets/images/2_SocketSender_12.png" align="center" width="35%"></p>
 
-------------
-
-# | 출력(Outputs)
-
-입력값과 필수 파라미터 값이 온전히 처리될 경우 위치하는 출력 데이터 값에 따라 내보내어진다.
