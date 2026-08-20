@@ -152,7 +152,7 @@ tags:
 
 GERTY 컴포넌트의 기본적인 구조는 Rhino Grasshopper 구조를 따른다. GERTY 고유 기능이 존재하며, 필수 파라미터에 해당하는 값을 설정할 수 있다. GERTY UI는 크게 7가지 종류로 나눠지며, 입력과 필수 파라미터 값이 정의되면 출력 값으로 전달된다.
 
-<p align="center">  <img src="/assets/images/1_Positioner Robtarget.png" align="center" width="80%"></p>
+<p align="center">  <img src="/assets/images/Component_00.png" align="center" width="80%"></p>
 
 # | 입력(Input)
 
@@ -163,11 +163,13 @@ GERTY 컴포넌트의 기본적인 구조는 Rhino Grasshopper 구조를 따른�
 
 기본적인 Grasshopper 컴포넌트 값 연결과 방법이 같다.
 
-<p align="center">  <img src="/assets/images/Asset_1.png" align="center" width="80%"></p>
+<p align="center">  <img src="/assets/images/ContextMenu_00.png" align="center" width="80%"></p>
 
 ### (2) 모드 전환 (Mode Option)
 
 일부 컴포넌트에 한하여 컴포넌트 모드를 전환/기능 추가가 가능하다. 컴포넌트 아이콘을 우클릭하여 컨텍스트 메뉴(Context Menu)를 확인할 수 있으며, 컴포넌트 종류는 다음과 같다.
+
+<p align="center">  <img src="/assets/images/Asset_1.png" align="center" width="80%"></p>
 
 > <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">`ToolData`</a>, <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">`WobjData`</a>, <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">`Positioner RobTarget`</a>, <a href="https://batpartners.github.io/datatype/DataType-SeamData/" target="_blank">`SeamData`</a>, <a href="https://batpartners.github.io/datatype/DataType-WeldData/" target="_blank">`WeldData`</a>, `TPSiSynergic`, `TPSSynergic`, <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">`ABB Positioner`</a>, <a href="https://batpartners.github.io/robottool/RobotTool-ABBRobot/" target="_blank">`ABB Robot`</a>, <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">`WorkBench`</a>, <a href="https://batpartners.github.io/core/Core-Code-Solver/" target="_blank">`Code Solver`</a>, <a href="https://batpartners.github.io/toolpath/ToolPath-SolidShell/" target="_blank">`Solid Shell`</a>, <a href="https://batpartners.github.io/toolpath/ToolPath-SurfaceShell/" target="_blank">`Surface Shell`</a>, <a href="https://batpartners.github.io/utils/Utils-RepathTree/" target="_blank">`RePath Tree`</a>
 

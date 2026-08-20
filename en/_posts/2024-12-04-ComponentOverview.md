@@ -150,8 +150,11 @@ tags:
 
 # | Overview
 
-The basic architecture of GERTY components follows the Rhino Grasshopper structure. GERTY features its own dedicated functions, allowing users to configure values corresponding to required parameters. The UI for configuring required parameters is divided into 7 main categories, utilizing data types such as **String, Number, Boolean, and Color**.
+The basic architecture of GERTY components follows the Rhino Grasshopper structure. GERTY features its own dedicated functions, allowing users to configure values corresponding to required parameters. GERTY UI for configuring required parameters is divided into 7 main categories, utilizing data types such as **String, Number, Boolean, and Color**.
 Once the input and required parameter values are defined, they are passed to the output values.
+
+<p align="center">  <img src="/assets/images/Component_00.png" align="center" width="80%"></p>
+
 
 # | Inputs
 
