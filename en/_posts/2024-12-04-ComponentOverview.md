@@ -152,7 +152,7 @@ tags:
 
 The basic structure of GERTY components follows the Rhino Grasshopper structure. GERTY has unique functions, and you can set values corresponding to essential parameters. The GERTY UI is broadly divided into 7 types, and once the input and essential parameter values are defined, they are delivered as output values.
 
-<p align="center">  <img src="/assets/images/Component_00.png" align="center" width="80%"></p>
+<p align="center">  <img src="/assets/images/Component_00.png" align="center" width="40%"></p>
 
 # | Input
 
@@ -162,7 +162,7 @@ These are values that must be received externally, and you can connect and use R
 
 The method is the same as connecting basic Grasshopper component values.
 
-<p align="center">  <img src="/assets/images/ContextMenu_00.png" align="center" width="80%"></p>
+<p align="center">  <img src="/assets/images/ContextMenu_00.png" align="center" width="40%"></p>
 
 ### (2) Mode Option
 
