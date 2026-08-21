@@ -208,13 +208,15 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
 
 ### a. Text Field
 
-사용자는 Text Field에 마우스를 더블 클릭 후 수정/작성이 가능하다. 작성 값은 각 컴포넌트 문서를 참고. 기본적으로 영문 또는 숫자를 포함하여 기재가 가능하다.
+사용자는 Text Field에 마우스를 더블 클릭 후 수정/작성이 가능하다. 기본적으로 영문과 숫자만 기재가 가능하다. 작성 값에 대한 조건은 각 컴포넌트 문서를 참고. 
 
 <p align="center">  <img src="/assets/images/0_RobTarget_4.png" align="center" width="35%"></p>
 
 ### b. Slider
 
-사용자는 두가지 방법으로 값 설정에 접근할 수 있다. 하나는 슬라이더 옆에 기재된 레이블을 더블 클릭하는 것, 다른 하나는 Slider Bar 위의 포인터를 좌/우로 드래그 또는 마우스를 더블 클릭 후 값 변경/입력을 할 수 있다.
+사용자는 두가지 방법으로 값 설정에 접근할 수 있다. 
+- 슬라이더 옆에 기재된 레이블을 더블 클릭 후 값 변경.
+- Slider Bar 위의 포인터를 좌/우로 드래그 또는 마우스를 더블 클릭 후 값 변경.
 
 <p align="center">  <img src="/assets/images/Slider_02.png" align="center" width="70%"></p>
 
@@ -236,8 +238,8 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
 
 ### d. Button / Toggle
 
-`Button`의 경우 컴포넌트의 상태를 일시적으로 재활성화한다. `Toggle`의 경우 컴포넌트 상태를 완전 전환한다.
-일부 컴포넌트의 경우, 입력값과 필수 파라미터가 추가/제거 되기도 한다.
+`Button`은 컴포넌트의 상태를 한시적으로 재활성화할 수 있으며, `Toggle`의 경우 컴포넌트 상태를 완전 전환이 가능하다.
+일부 컴포넌트의 경우, 활성화 된 값(True/False)에 따라 입력값과 필수 파라미터가 추가/제거 되기도 한다.
 
 <p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="35%"></p>
 
@@ -245,7 +247,7 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
 
 시뮬레이션 상에서 활성 상태의 모델/경로의 색상을 사용자화할 수 있다.
 
-<p align="center">  <img src="/assets/images/2_Workbench_11.png" align="center" width="35%"></p>
+<p align="center">  <img src="/assets/images/Color_00.png" align="center" width="35%"></p>
 
 ### f. Panel
 
@@ -255,8 +257,7 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
 
 ### g. Process Gauge
 
-데이터 처리에 일정 시간이 소요되는 컴포넌트에 한해, 사용자에게 시각적으로 진행 정도를 공유할 수 있도록 한다.
-컴포넌트 제일 하단에 위치하며, 퍼센트(%)로 진행 정도를 노출한다.
+데이터 처리에 일정 시간이 소요되는 컴포넌트에 한해, 사용자에게 퍼센트(%)로 시각적 진행 정도를 공유할 수 있다.
 
 <p align="center">  <img src="/assets/images/2_SocketSender_12.png" align="center" width="35%"></p>
 
