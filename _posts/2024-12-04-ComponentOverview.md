@@ -156,12 +156,12 @@ GERTY 컴포넌트는 Rhino Grasshopper 인터페이스를 따른다. 컴포넌�
 
 # | 입력(Input)
 
-외부 값을 입력 받아야하는 값이며, 데이터 타입에 맞게 Rhino/GERTY 컴포넌트를 연결하여 사용할 수 있다.
+Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할 수 있다.
 반드시 입력 받아야하는 값과, 그렇지 않은 값(선택적 값)이 존재한다. 선택적 값은 비워두고 사용이 가능하며, 컴포넌트 색상이 회색이 되어야 정상이다.
 
 ### (1) 노드 연결 (Connect Node)
 
-기본적인 Grasshopper 컴포넌트 값 연결과 방법이 같다.
+기본적인 Grasshopper 컴포넌트 사용법과 동일하다. 노드를 연결하여 값을 입력한다.
 
 <p align="center">  <img src="/assets/images/Asset_1.png" align="center" width="80%"></p>
 
