@@ -167,9 +167,9 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
 
 ### (2) 모드 전환 (Mode Option)
 
-일부 컴포넌트에 한하여 컴포넌트 모드를 전환/기능 추가가 가능하다. 컴포넌트 아이콘을 우클릭하여 컨텍스트 메뉴(Context Menu)를 확인할 수 있으며, 컴포넌트 종류는 다음과 같다.
-
 <p align="center">  <img src="/assets/images/ContextMenu_00.png" align="center" width="40%"></p>
+
+일부 컴포넌트에 한하여 컴포넌트 모드를 전환/기능 추가가 가능하다. 컴포넌트 아이콘을 우클릭하여 컨텍스트 메뉴(Context Menu)를 확인할 수 있으며, 컴포넌트 종류는 다음과 같다.
 
 > <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">`ToolData`</a>, <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">`WobjData`</a>, <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">`Positioner RobTarget`</a>, <a href="https://batpartners.github.io/datatype/DataType-SeamData/" target="_blank">`SeamData`</a>, <a href="https://batpartners.github.io/datatype/DataType-WeldData/" target="_blank">`WeldData`</a>, `TPSiSynergic`, `TPSSynergic`, <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">`ABB Positioner`</a>, <a href="https://batpartners.github.io/robottool/RobotTool-ABBRobot/" target="_blank">`ABB Robot`</a>, <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">`WorkBench`</a>, <a href="https://batpartners.github.io/core/Core-Code-Solver/" target="_blank">`Code Solver`</a>, <a href="https://batpartners.github.io/toolpath/ToolPath-SolidShell/" target="_blank">`Solid Shell`</a>, <a href="https://batpartners.github.io/toolpath/ToolPath-SurfaceShell/" target="_blank">`Surface Shell`</a>, <a href="https://batpartners.github.io/utils/Utils-RepathTree/" target="_blank">`RePath Tree`</a>
 
@@ -219,7 +219,11 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
 *Double*<br>
 정수를 포함한 소수값을 입력 받을 수 있다.
 
-<p align="center">  <img src="/assets/images/2_FlybyCustom_22.png" align="center" width="35%"></p>
+<p align="center">
+  <img src="/assets/images/Slider_00.png" width="35%" alt="Slider 00">
+  &nbsp;&nbsp;
+  <img src="/assets/images/Slider_01.png" width="35%" alt="Slider 01">
+</p>
 
 *Integer*<br>
 정수로 된 양수 값만 입력할 수 있다.
