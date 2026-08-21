@@ -232,7 +232,7 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
 
  GERTY에서 제공하는 모델 또는 옵션을 선택할 수 있다. Tool/WorkBench 모델의 경우 사용자가 `Export`한 객체를 GERTY에 저장해 불러올 수 있다.
 
-<p align="center">  <img src="/assets/images/0_ABBRobot_10.png" align="center" width="35%"></p>
+<p align="center">  <img src="/assets/images/DropDown_02.png" align="center" width="70%"></p>
 
 ### d. Button / Toggle
 
