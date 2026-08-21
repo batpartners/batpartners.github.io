@@ -214,11 +214,7 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
 
 ### b. Slider
 
-<p align="center">
-  <img src="/assets/images/Slider_00.png" width="35%" alt="Slider 00">
-  &nbsp;&nbsp;
-  <img src="/assets/images/Slider_01.png" width="35%" alt="Slider 01">
-</p>
+<p align="center">  <img src="/assets/images/Slider_02.png" align="center" width="35%"></p>
 
 사용자는 두가지 방법으로 값 설정에 접근할 수 있다. 하나는 슬라이더 옆에 기재된 레이블을 더블 클릭하는 것, 다른 하나는 Slider Bar 위의 포인터를 좌/우로 드래그 또는 마우스를 더블 클릭 후 값 변경/입력을 할 수 있다.
 
