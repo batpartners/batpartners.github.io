@@ -206,13 +206,13 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
   </div>
 </div>
 
-### a. 변수값 (Text Field)
+### a. Text Field
 
 사용자는 Text Field에 마우스를 더블 클릭 후 수정/작성이 가능하다. 작성 값은 각 컴포넌트 문서를 참고. 기본적으로 영문 또는 숫자를 포함하여 기재가 가능하다.
 
 <p align="center">  <img src="/assets/images/0_RobTarget_4.png" align="center" width="35%"></p>
 
-### b. 숫자값 (Slider)
+### b. Slider
 
 사용자는 두가지 방법으로 값 설정에 접근할 수 있다. 하나는 슬라이더 옆에 기재된 레이블을 더블 클릭하는 것, 다른 하나는 Slider Bar 위의 포인터를 좌/우로 드래그 또는 마우스를 더블 클릭 후 값 변경/입력을 할 수 있다.
 
@@ -226,32 +226,32 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
 
 <p align="center">  <img src="/assets/images/1_FlybyPlane_10.png" align="center" width="35%"></p>
 
-### c. 드랍다운 (DropDown)
+### c. DropDown
 
  GERTY에서 제공하는 모델 또는 옵션을 선택할 수 있다. Tool/WorkBench 모델의 경우 사용자가 `Export`한 객체를 GERTY에 저장해 불러올 수 있다.
 
 <p align="center">  <img src="/assets/images/0_ABBRobot_10.png" align="center" width="35%"></p>
 
-### d. 버튼 (Button) / 토글 스위치 (Toggle)
+### d. Button / Toggle
 
-`버튼`의 경우 컴포넌트의 상태를 일시적으로 재활성화한다. `토글`의 경우 컴포넌트 상태를 완전 전환한다.
+`Button`의 경우 컴포넌트의 상태를 일시적으로 재활성화한다. `Toggle`의 경우 컴포넌트 상태를 완전 전환한다.
 일부 컴포넌트의 경우, 입력값과 필수 파라미터가 추가/제거 되기도 한다.
 
 <p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="35%"></p>
 
-### e. 색상 스와치 (Color Swatch)
+### e. Color Swatch
 
 시뮬레이션 상에서 활성 상태의 모델/경로의 색상을 사용자화할 수 있다.
 
 <p align="center">  <img src="/assets/images/2_Workbench_11.png" align="center" width="35%"></p>
 
-### f. 패널 (Panel)
+### f. Panel
 
 컴포넌트 활성시, 컴포넌트 결과 값을 패널로 노출하여 제공한다.
 
 <p align="center">  <img src="/assets/images/1_ScanController_11.png" align="center" width="35%"></p>
 
-### g. 프로세스 게이지 (Process Gauge)
+### g. Process Gauge
 
 데이터 처리에 일정 시간이 소요되는 컴포넌트에 한해, 사용자에게 시각적으로 진행 정도를 공유할 수 있도록 한다.
 컴포넌트 제일 하단에 위치하며, 퍼센트(%)로 진행 정도를 노출한다.
