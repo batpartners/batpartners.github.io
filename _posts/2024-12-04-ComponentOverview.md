@@ -151,17 +151,18 @@ tags:
 # | Overview
 
 GERTY 컴포넌트는 Rhino Grasshopper 인터페이스를 따른다. 컴포넌트 내, GERTY UI를 통해 입력 값을 설정할 수 있으며, 기본적인 컴포넌트 인터페이스로는 입력과 필수 파라미터 값이 정의되면 출력 값으로 전달된다.
+GERTY UI는 [Tab]으로 기능을 구별하며, 사용자는 설정값을 변경할 수 있다.
 
 <p align="center">  <img src="/assets/images/Component_00.png" align="center" width="40%"></p>
 
 # | 입력(Input)
 
-Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할 수 있다.
+Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 인터페이스다.
 반드시 입력 받아야하는 값과, 그렇지 않은 값(선택적 값)이 존재한다. 선택적 값은 비워두고 사용이 가능하며, 컴포넌트 색상이 회색이 되어야 정상이다.
 
 ### (1) 노드 연결 (Connect Node)
 
-기본적인 Grasshopper 컴포넌트 사용법과 동일하다. 노드를 연결하여 값을 입력한다.
+기본적인 Grasshopper 컴포넌트 사용법과 동일하다. 노드를 연결하여 최종 결과 값을 쌓는다.
 
 <p align="center">  <img src="/assets/images/Asset_1.png" align="center" width="80%"></p>
 
@@ -179,13 +180,15 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
 
 ------------
 
-## | GERTY UI
+# | GERTY UI
 
-컴포넌트 값에 반드시 포함되어야하며, 사용자가 재정의할 수 있다. 기본 구조는 공통 기능 탭(Tab)과 Grasshopper 7가지, Text, Slider, Button, Toggle, DropDown, Panel, Color가 있다.
+컴포넌트 값에 반드시 포함되어야하며, 사용자가 재정의할 수 있다. 탭(Tab)으로 공통 기능을 Grasshopper 7가지, Text, Slider, Button, Toggle, DropDown, Panel, Color값 유형으로 그룹하였다.
 
 ### A. 탭 (Tab)
 
 특정 카테고리 옵션을 세부적으로 접근할 수 있도록 기능에 따라 [Tab]으로 그룹하였다. 선택된 [Tab]의 경우 어두운 색으로 활성화되며, 관련 설정을 사용자화 할 수 있다. 사용자화 되지 않은 필수 파라미터 값은 GERTY에서 설정한 기본값을 따른다.
+
+[Tab]은 큰 기능과 세부 기능으로 나뉘며, 큰 기능들은 수직 탭으로 구분하고 세부기능은 수평 탭으로 구분한다. 사용자는 [Tab]을 넘나들며 입력값을 설정할 수 있다.
 
 
 *Example*
@@ -214,7 +217,7 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 설정하여 사용할
 
 ### b. Slider
 
-사용자는 두가지 방법으로 값 설정에 접근할 수 있다. 
+사용자는 두가지 방법으로 숫자 값을 설정할 수 있다. 
 - 슬라이더 옆에 기재된 레이블을 더블 클릭 후 값 변경.
 - Slider Bar 위의 포인터를 좌/우로 드래그 또는 마우스를 더블 클릭 후 값 변경.
 
