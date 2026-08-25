@@ -250,7 +250,7 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 �
 
 시뮬레이션 상에서 활성 상태의 모델/경로의 색상을 사용자화할 수 있다.
 
-<p align="center">  <img src="/assets/images/Color_00.png" align="center" width="35%"></p>
+<p align="center">  <img src="/assets/images/Color_00.png" align="center" width="60%"></p>
 
 ### f. Panel
 
