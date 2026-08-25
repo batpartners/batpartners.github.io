@@ -168,7 +168,7 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 �
 
 ### (2) 모드 전환 (Mode Option)
 
-<p align="center">  <img src="/assets/images/ContextMenu_00.png" align="center" width="40%"></p>
+<p align="center">  <img src="/assets/images/ContextMenu_00.png" align="center" width="45%"></p>
 
 일부 컴포넌트에 한하여 컴포넌트 모드를 전환/기능 추가가 가능하다. 컴포넌트 아이콘을 우클릭하여 컨텍스트 메뉴(Context Menu)를 확인할 수 있으며, 컴포넌트 종류는 다음과 같다.
 
