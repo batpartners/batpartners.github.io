@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-robtarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그리고 축의 구성 상태를 정의하는 데이터 타입으로 외부축 없이 로봇 단독 모션을 위한 RobTarget을 정의한다. 외부축 값은 9E9(미사용)로 자동 설정된다.
+robtarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그리고 축의 구성 상태를 정의하는 컴포넌트이다. 외부축(Positioner)를 제외한 로봇 모션을 제어한다.
 
 <p align="center">  <img src="/assets/images/0_RobTarget.png" align="center" width="32%"></p>
 

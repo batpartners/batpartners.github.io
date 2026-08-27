@@ -178,13 +178,13 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 �
 *Example*
 <p align="center">  <img src="/assets/images/1_Positioner_Robtarget_Dynamic.png" align="center" width="45%"></p>
 
-------------
+
 
 # | GERTY UI
 
 컴포넌트 값에 반드시 포함되어야하며, 사용자가 재정의할 수 있다. 탭(Tab)으로 공통 기능을 Grasshopper 7가지, Text, Slider, Button, Toggle, DropDown, Panel, Color값 유형으로 그룹하였다.
 
-### A. 탭 (Tab)
+## 탭 (Tab)
 
 특정 카테고리 옵션을 세부적으로 접근할 수 있도록 기능에 따라 [Tab]으로 그룹하였다. 선택된 [Tab]의 경우 어두운 색으로 활성화되며, 관련 설정을 사용자화 할 수 있다. 사용자화 되지 않은 필수 파라미터 값은 GERTY에서 설정한 기본값을 따른다.
 95123
@@ -209,13 +209,13 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 �
   </div>
 </div>
 
-### a. Text Field
+### (a) Text Field
 
 사용자는 Text Field에 마우스를 더블 클릭 후 수정/작성이 가능하다. 기본적으로 영문과 숫자만 기재가 가능하다. 작성 값에 대한 조건은 각 컴포넌트 문서를 참고. 
 
 <p align="center">  <img src="/assets/images/0_RobTarget_4.png" align="center" width="35%"></p>
 
-### b. Slider
+### (b) Slider
 
 사용자는 두가지 방법으로 숫자 값을 설정할 수 있다. 
 - 슬라이더 옆에 기재된 레이블을 더블 클릭 후 값 변경.
@@ -233,32 +233,32 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 �
 
 <p align="center">  <img src="/assets/images/1_FlybyPlane_10.png" align="center" width="35%"></p>
 
-### c. DropDown
+### (c) DropDown
 
  GERTY에서 제공하는 모델 또는 옵션을 선택할 수 있다. Tool/WorkBench 모델의 경우 사용자가 `Export`한 객체를 GERTY에 저장해 불러올 수 있다.
 
 <p align="center">  <img src="/assets/images/DropDown_02.png" align="center" width="70%"></p>
 
-### d. Button / Toggle
+### (d) Button / Toggle
 
 `Button`은 컴포넌트의 상태를 한시적으로 재활성화할 수 있으며, `Toggle`의 경우 컴포넌트 상태를 완전 전환이 가능하다.
 일부 컴포넌트의 경우, 활성화 된 값(True/False)에 따라 입력값과 필수 파라미터가 추가/제거 되기도 한다.
 
 <p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="35%"></p>
 
-### e. Color Swatch
+### (e) Color Swatch
 
 시뮬레이션 상에서 활성 상태의 모델/경로의 색상을 사용자화할 수 있다.
 
 <p align="center">  <img src="/assets/images/Color_00.png" align="center" width="60%"></p>
 
-### f. Panel
+### (f) Panel
 
 컴포넌트 활성시, 컴포넌트 결과 값을 패널로 노출하여 제공한다.
 
 <p align="center">  <img src="/assets/images/1_ScanController_11.png" align="center" width="35%"></p>
 
-### g. Process Gauge
+### (g) Process Gauge
 
 데이터 처리에 일정 시간이 소요되는 컴포넌트에 한해, 사용자에게 퍼센트(%)로 시각적 진행 정도를 공유할 수 있다.
 
