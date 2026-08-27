@@ -168,7 +168,7 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 �
 *Example*
 <p align="center"><img src="/assets/images/1_Positioner_Robtarget_Dynamic.png" align="center" width="45%"></p>
 
-## GERTY UI
+## | GERTY UI
 
 컴포넌트 값에 반드시 포함되어야 하며, 사용자가 재정의할 수 있다. 탭(Tab)으로 공통 기능을 Grasshopper 7가지, Text, Slider, Button, Toggle, DropDown, Panel, Color값 유형으로 그룹하였다.
 
