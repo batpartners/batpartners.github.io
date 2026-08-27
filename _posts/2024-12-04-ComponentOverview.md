@@ -146,7 +146,7 @@ GERTY UI는 [Tab]으로 기능을 구별하며, 사용자는 설정값을 변경
 
 <p align="center"><img src="/assets/images/Component_00.png" align="center" width="40%"></p>
 
-## 입력 (Input)
+## | 입력 (Input)
 
 Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 인터페이스다.
 반드시 입력 받아야하는 값과, 그렇지 않은 값(선택적 값)이 존재한다. 선택적 값은 비워두고 사용이 가능하며, 컴포넌트 색상이 회색이 되어야 정상이다.
