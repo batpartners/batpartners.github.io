@@ -7,20 +7,14 @@ header:
 author_profile: true
 sidebar:
   nav: "sidebar"
-
 translated: true
 lang: ko
 permalink: /about%20gerty/About-GERTY/ComponentOverview/
-
 translation_link: /en/about%20gerty/About-GERTY/ComponentOverview/
-
-sidebar:
-  nav: "sidebar"
 toc: true
 toc_label: "Contents"
 toc_icon: "cog"
 toc_sticky: true
-
 tags: 
   - GERTY
 ---
@@ -37,8 +31,8 @@ tags:
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
-    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
+    table-layout: fixed !important;      /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;    /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
     box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
@@ -174,11 +168,8 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 �
 
 > <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">`ToolData`</a>, <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">`WobjData`</a>, <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">`Positioner RobTarget`</a>, <a href="https://batpartners.github.io/datatype/DataType-SeamData/" target="_blank">`SeamData`</a>, <a href="https://batpartners.github.io/datatype/DataType-WeldData/" target="_blank">`WeldData`</a>, `TPSiSynergic`, `TPSSynergic`, <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">`ABB Positioner`</a>, <a href="https://batpartners.github.io/robottool/RobotTool-ABBRobot/" target="_blank">`ABB Robot`</a>, <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">`WorkBench`</a>, <a href="https://batpartners.github.io/core/Core-Code-Solver/" target="_blank">`Code Solver`</a>, <a href="https://batpartners.github.io/toolpath/ToolPath-SolidShell/" target="_blank">`Solid Shell`</a>, <a href="https://batpartners.github.io/toolpath/ToolPath-SurfaceShell/" target="_blank">`Surface Shell`</a>, <a href="https://batpartners.github.io/utils/Utils-RepathTree/" target="_blank">`RePath Tree`</a>
 
-
 *Example*
 <p align="center">  <img src="/assets/images/1_Positioner_Robtarget_Dynamic.png" align="center" width="45%"></p>
-
-
 
 # | GERTY UI
 
@@ -187,9 +178,8 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 �
 ## 탭 (Tab)
 
 특정 카테고리 옵션을 세부적으로 접근할 수 있도록 기능에 따라 [Tab]으로 그룹하였다. 선택된 [Tab]의 경우 어두운 색으로 활성화되며, 관련 설정을 사용자화 할 수 있다. 사용자화 되지 않은 필수 파라미터 값은 GERTY에서 설정한 기본값을 따른다.
-95123
-[Tab]은 큰 기능과 세부 기능으로 나뉘며, 큰 기능들은 수직 탭으로 구분하고 세부기능은 수평 탭으로 구분한다. 사용자는 [Tab]을 넘나들며 입력값을 설정할 수 있다.
 
+[Tab]은 큰 기능과 세부 기능으로 나뉘며, 큰 기능들은 수직 탭으로 구분하고 세부기능은 수평 탭으로 구분한다. 사용자는 [Tab]을 넘나들며 입력값을 설정할 수 있다.
 
 *Example*
 <div class="tabs-container">
@@ -235,7 +225,7 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 �
 
 ### (c) DropDown
 
- GERTY에서 제공하는 모델 또는 옵션을 선택할 수 있다. Tool/WorkBench 모델의 경우 사용자가 `Export`한 객체를 GERTY에 저장해 불러올 수 있다.
+GERTY에서 제공하는 모델 또는 옵션을 선택할 수 있다. Tool/WorkBench 모델의 경우 사용자가 `Export`한 객체를 GERTY에 저장해 불러올 수 있다.
 
 <p align="center">  <img src="/assets/images/DropDown_02.png" align="center" width="70%"></p>
 
@@ -263,4 +253,3 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 �
 데이터 처리에 일정 시간이 소요되는 컴포넌트에 한해, 사용자에게 퍼센트(%)로 시각적 진행 정도를 공유할 수 있다.
 
 <p align="center">  <img src="/assets/images/2_SocketSender_12.png" align="center" width="35%"></p>
-
