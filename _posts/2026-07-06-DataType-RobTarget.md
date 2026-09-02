@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-robtarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그리고 축의 구성 상태를 정의하는 컴포넌트이다. 외부축(Positioner)를 제외한 로봇 모션을 제어한다.
+Robtarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그리고 축의 구성 상태를 정의하는 컴포넌트이다. 외부축(Positioner)를 제외한 로봇 모션을 제어한다.
 
 <p align="center">  <img src="/assets/images/0_RobTarget.png" align="center" width="32%"></p>
 
@@ -200,7 +200,7 @@ robtarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>생성할 `RobTarget` 변수의 명칭을 정의. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용</td>
+          <td>생성할 `RobTarget` 변수 이름 정의. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용</td>
         </tr>
       </tbody>
     </table>
