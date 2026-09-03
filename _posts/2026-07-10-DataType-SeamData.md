@@ -320,7 +320,6 @@ tags:
     <br>
     <p align="center">
   <img src="/assets/images/7_SeamData_13.png" style="display: inline-block; width: 45%; margin-right: 5px;">
-  <img src="/assets/images/7_SeamData_5.png" style="display: inline-block; width: 45%; margin-left: 5px;">
 </p>
   </div>
 </div>
