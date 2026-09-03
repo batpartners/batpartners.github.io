@@ -44,8 +44,6 @@ sidebar:
         url: /datatype/DataType-TriggIOs/
       - title: "SeamData"
         url: /datatype/DataType-SeamData/
-      - title: "SeamDat_A"
-        url: /datatype/DataType-SeamData_A/   
       - title: "WeaveData"
         url: /datatype/DataType-WeaveData/ 
       - title: "WeldData"
