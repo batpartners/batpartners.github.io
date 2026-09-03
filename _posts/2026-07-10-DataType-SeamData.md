@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-용접 심(Seam)의 시작 및 종료 단계 데이터 정의하는 컴포넌트이다. 점화(Ignition), 가열(Heat), 종료(End) 세 구간의 타이밍 및 아크 조건 세부 지정을 할 수 있으며, 일반적으로 한 심 전체 또는 여러 심에 걸쳐 동일 값 유지한다.
+용접 심(Seam)의 시작 및 종료 단계 데이터를 정의하는 컴포넌트이다. 점화(Ignition), 가열(Heat), 종료(End) 세 구간의 타이밍과 아크 조건을 세부적으로 지정할 수 있으며, 일반적으로 하나의 심(Seam) 전체 또는 여러 심에 걸쳐 동일한 설정값을 유지할 때 사용한다.
 
 <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
 
@@ -161,8 +161,8 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Weld Sched** | Weld Sched | 사용할 용접 프로그램 번호(스케줄) 및 용접 모드. |
-| **Weight** | Number | wirefeed1에 대한 가중치 |
+| **Weld Sched** | Weld Sched | 사용할 용접 프로그램 번호(스케줄) 및 용접 모드를 설정한다. |
+| **Weight** | Number | Wirefeed1에 적용할 가중치 값을 지정한다. |
 
 
 ## | 필수 파라미터 (Required Parameter)
@@ -185,12 +185,12 @@ tags:
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>변수명</td>
+          <td>컴포넌트의 변수명을 지정한다.</td>
         </tr>
         <tr>
           <td><strong>Link ArcData</strong></td>
           <td>Boolean</td>
-          <td>모든 단계(Ignition, Heat, End)의 ArcData 값을 연동. TRUE: 한쪽을 조절하면 나머지도 같은 값으로 맞춰짐. FALSE: 단계별 독립 조절 (기본값).</td>
+          <td>모든 단계(Ignition, Heat, End)의 ArcData 값을 연동할지 여부를 설정한다.<br><ul><li><strong>TRUE:</strong> 한 단계의 값을 조절하면 나머지 단계도 동일한 값으로 동기화된다.(기본값)</li><li><strong>FALSE:</strong> 각 단계를 독립적으로 조절할 수 있다.</li></ul></td>
         </tr>
       </tbody>
     </table>
@@ -222,22 +222,22 @@ tags:
         <tr>
           <td><strong>Voltage</strong></td>
           <td>Number</td>
-          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
+          <td>용접 전압을 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 아크 길이를 조정하는 데 사용된다.</td>
         </tr>
         <tr>
           <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
           <td>Number</td>
-          <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
+          <td>와이어 송급 속도를 설정한다(기본 단위: m/min).<br>※ 컴포넌트 아이콘을 우클릭하여 단위를 mm/s로 변경할 수 있다(ABB 및 Fronius 공통).</td>
         </tr>
         <tr>
           <td><strong>Control</strong></td>
           <td>Number</td>
-          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
+          <td>제어 파라미터를 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 다이내믹(Dynamic) 특성을 조정하는 데 사용된다.</td>
         </tr>
         <tr>
           <td><strong>Current</strong></td>
           <td>Number</td>
-          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
+          <td>용접 전류를 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 사용되지 않는다.</td>
         </tr>        
       </tbody>
     </table>
@@ -260,22 +260,22 @@ tags:
         <tr>
           <td><strong>Voltage</strong></td>
           <td>Number</td>
-          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
+          <td>용접 전압을 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 아크 길이를 조정하는 데 사용된다.</td>
         </tr>
         <tr>
           <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
           <td>Number</td>
-          <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
+          <td>와이어 송급 속도를 설정한다(기본 단위: m/min).<br>※ 컴포넌트 아이콘을 우클릭하여 단위를 mm/s로 변경할 수 있다(ABB 및 Fronius 공통).</td>
         </tr>
         <tr>
           <td><strong>Control</strong></td>
           <td>Number</td>
-          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
+          <td>제어 파라미터를 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 다이내믹(Dynamic) 특성을 조정하는 데 사용된다.</td>
         </tr>
         <tr>
           <td><strong>Current</strong></td>
           <td>Number</td>
-          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
+          <td>용접 전류를 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 사용되지 않는다.</td>
         </tr> 
       </tbody>
     </table>
@@ -298,22 +298,22 @@ tags:
         <tr>
           <td><strong>Voltage</strong></td>
           <td>Number</td>
-          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
+          <td>용접 전압을 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 아크 길이를 조정하는 데 사용된다.</td>
         </tr>
         <tr>
           <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
           <td>Number</td>
-          <td>와이어 송급 속도(m/min). 아이콘 우클릭 시 (mm/s) 설정. ABB / Fronius 공통.</td>
+          <td>와이어 송급 속도를 설정한다(기본 단위: m/min).<br>※ 컴포넌트 아이콘을 우클릭하여 단위를 mm/s로 변경할 수 있다(ABB 및 Fronius 공통).</td>
         </tr>
         <tr>
           <td><strong>Control</strong></td>
           <td>Number</td>
-          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹(Dynamic) 조정.</td>
+          <td>제어 파라미터를 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 다이내믹(Dynamic) 특성을 조정하는 데 사용된다.</td>
         </tr>
         <tr>
           <td><strong>Current</strong></td>
           <td>Number</td>
-          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
+          <td>용접 전류를 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 사용되지 않는다.</td>
         </tr> 
       </tbody>
     </table>
@@ -348,17 +348,17 @@ tags:
         <tr>
           <td><strong>Purge Time(s)</strong></td>
           <td>Number</td>
-          <td>보호 가스로, 가스 라인과 용접 토치를 채우는 데 걸리는 시간 (초). 만약 용접 시작 위치로 이동하는 시간이 퍼지 시간보다 짧은 경우, 용접 시작 위치에서 퍼지 시간이 만료될 때까지 대기.</td>
+          <td>보호 가스가 가스 라인과 용접 토치를 완전히 채우는 데 필요한 시간(초)을 설정한다.<br>※ 로봇이 용접 시작 위치로 이동하는 시간이 설정된 퍼지 시간보다 짧을 경우, 도착 후 남은 퍼지 시간이 만료될 때까지 대기한다.</td>
         </tr>
         <tr>
           <td><strong>Purgeflow Time(s)</strong></td>
           <td>Number</td>
-          <td>보호 가스로, 용접 대상물에 가스를 미리 흘려주는 데 걸리는 시간 (초). 이 시간 동안 로봇은 아크가 점화되기 전까지 해당 위치에서 정지</td>
+          <td>용접 대상물에 보호 가스를 사전에 공급하는 시간(초)을 설정한다.<br>※ 이 시간 동안 로봇은 아크가 점화되기 전까지 해당 위치에서 정지 상태를 유지한다.</td>
         </tr>
         <tr>
           <td><strong>Move Delay(s)</strong></td>
           <td>Number</td>
-          <td>아크 점화 시점에서 아크가 안정순간부터 가열 단계가 시작될 때가지의 지연 시간 (초)</td>
+          <td>아크가 점화되어 안정화된 시점부터 가열(Heat) 단계가 시작될 때까지의 대기 시간(초)을 설정한다.</td>
         </tr>
       </tbody>
     </table>
@@ -379,17 +379,17 @@ tags:
         <tr>
           <td><strong>Heat Speed</strong></td>
           <td>Number</td>
-          <td>용접 단계 시작 시, 가열 중의 용접 속도</td>
+          <td>용접 단계 시작 후, 가열(Heat) 단계가 진행되는 동안의 용접 이동 속도를 설정한다.</td>
         </tr>
         <tr>
           <td><strong>Heat Time(s)</strong></td>
           <td>Number</td>
-          <td>용접 단계 시작 시, 가열 시간 (초). Heat Time은 Heat Distance 또는 Heat Speed 값이 0인 경우 유효</td>
+          <td>가열(Heat) 단계를 유지하는 시간(초)을 설정한다.<br>※ 이 값은 <code>Heat Distance</code> 또는 <code>Heat Speed</code> 값이 0으로 설정된 경우에만 유효하게 적용된다.</td>
         </tr>
         <tr>
           <td><strong>Heat Distance</strong></td>
           <td>Number</td>
-          <td>용접 시작 시, 가열 데이터가 적용되어야 하는 이동 거리</td>
+          <td>가열(Heat) 단계의 데이터가 적용된 상태로 이동할 거리를 설정한다.</td>
         </tr>
       </tbody>
     </table>
@@ -410,27 +410,27 @@ tags:
         <tr>
           <td><strong>Cool Time(s)</strong></td>
           <td>Number</td>
-          <td>Filling이 수행되기 전, 공정이 유지되는 시간 (초)</td>
+          <td>크레이터 채움(Filling) 작업이 수행되기 전, 현재 상태를 유지하며 대기(냉각)하는 시간(초)을 설정한다.</td>
         </tr>
         <tr>
           <td><strong>Fill Time(s)</strong></td>
           <td>Number</td>
-          <td>용접 종료 단계 (end phase), 크레이터 채움 시간 (초)</td>
+          <td>용접 종료 단계(End Phase)에서 크레이터(Crater)를 채우는 데 소요되는 시간(초)을 설정한다.</td>
         </tr>
         <tr>
           <td><strong>Burn-Back Time(s)</strong></td>
           <td>Number</td>
-          <td>전극 송급이 정지된 후, 용접 전극을 태워 되돌리는 시간 (초). "MIG/MAG 공정이 종료될 때, 전극이 응고 중인 용접부에 달라붙는 것을 방지하며 종료 시점에 두번 사용.<br>첫 번째 : 용접 단계가 종료될 때, 두 번째 : 크레이터 충전(crater-filling)</td>
+          <td>와이어 송급이 정지된 후, 남은 용접 와이어를 태워 없애는(Burn-back) 시간(초)을 설정한다.<br>※ MIG/MAG 공정 종료 시 와이어가 응고 중인 용접부에 달라붙는 것을 방지한다. 일반적으로 용접 단계 종료 시점과 크레이터 충전 종료 시점에 각각 적용된다.</td>
         </tr>
         <tr>
           <td><strong>Rollback Time(s)</strong></td>
           <td>Number</td>
-          <td>전원이 차단된 후, 콜드 와이어를 되감는 시간 (초). TIG 공정이 종료될 때, 와이어가 응고 중인 용접부에 달라붙는 것을 방지</td>
+          <td>용접 전원이 차단된 후, 콜드 와이어(Cold Wire)를 되감는 시간(초)을 설정한다.<br>※ TIG 공정 종료 시 와이어가 응고 중인 용접부에 달라붙는 것을 방지한다.</td>
         </tr>
         <tr>
           <td><strong>Postflow Time(s)</strong></td>
           <td>Number</td>
-          <td>공정 종료 후, 보호 가스로 퍼지하는 데 필요한 시간 (초). 냉각 중에 용접 전극과 이음부가 산화되는 것을 방지</td>
+          <td>용접 공정이 종료된 후 보호 가스를 지속적으로 공급(Purge)하는 시간(초)을 설정한다.<br>※ 냉각 과정에서 용접 전극과 용접부가 산화되는 것을 방지하는 역할을 한다.</td>
         </tr>               
       </tbody>
     </table>
@@ -443,5 +443,5 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **SeamData** | SeamData | 입력한 ABB SeamData를 출력 |
-| **Code** | String | Code를 출력 |
+| **SeamData** | SeamData | 설정된 ABB SeamData 값을 출력한다. |
+| **Code** | String | 생성된 코드(Code) 데이터를 출력한다. |
