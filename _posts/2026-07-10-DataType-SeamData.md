@@ -244,7 +244,6 @@ tags:
     <br>
 <p align="center">
   <img src="/assets/images/7_SeamData_11.png" style="display: inline-block; width: 45%; margin-right: 5px;">
-  <img src="/assets/images/7_SeamData_3.png" style="display: inline-block; width: 45%; margin-left: 5px;">
 </p>
   </div>
 
@@ -283,7 +282,6 @@ tags:
     <br>
 <p align="center">
   <img src="/assets/images/7_SeamData_12.png" style="display: inline-block; width: 45%; margin-right: 5px;">
-  <img src="/assets/images/7_SeamData_4.png" style="display: inline-block; width: 45%; margin-left: 5px;">
 </p>
   </div>
 
