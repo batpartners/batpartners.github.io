@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-Positioner Robtarget은 포지셔너(외부축) 회전각을 포함한 RobTarget을 작성하는 컴포넌트이다. 컴포넌트 아이콘을 우클릭하여 Dynamic, Static 모드로 전환이 가능하다.
+Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget을 생성하는 컴포넌트이다. 컴포넌트 아이콘을 우클릭하여 Dynamic 및 Static 모드로 전환할 수 있다.
 
 <p align="center"><img src="/assets/images/1_Positioner Robtarget.png" align="center" width="32%"></p>
 
@@ -161,11 +161,11 @@ Positioner Robtarget은 포지셔너(외부축) 회전각을 포함한 RobTarget
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| Positioner | Positioner | <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">ABB Positioner</a> |
-| Target Planes | Plane | RobTarget으로 변환할 평면 |
-| Z Rotation | Angle | RobTarget을 자기 자신의 Z축 기준으로 회전 (단위: 도) |
-| Target Base | Plane | 입력된 Target Plane이 정의된 기준 평면. 입력된 Target Plane은 이 평면을 기준으로, Positioner의 Mounting Plane에 오리엔트 된 RobTarget을 정의 |
-| WobjData | WobjData | <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">ABB 작업 평면 좌표계</a>를 기준으로 Target Plane 재정의. (선택) |
+| **Positioner** | Positioner | <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">ABB Positioner</a> 컴포넌트 데이터를 입력한다. |
+| **Target Planes** | Plane | RobTarget으로 변환할 대상 평면(Plane)을 입력한다. |
+| **Z Rotation** | Angle | RobTarget을 자체 Z축을 기준으로 회전시킨다(단위: 도). |
+| **Target Base** | Plane | 입력된 Target Plane이 정의된 기준 평면(Plane)을 설정한다. 입력된 Target Plane은 이 평면을 기준으로 Positioner의 장착 평면(Mounting Plane)에 정렬된 RobTarget을 정의한다. |
+| **WobjData** | WobjData | <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">ABB 작업 평면 좌표계</a>를 기준으로 Target Plane을 재정의할 때 입력한다(선택). |
 
 <p align="center"> 
 <video src="/assets/images/RobtargetPosition(Dynamic)_Top.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"><figcaption>Top View</figcaption>
@@ -190,7 +190,7 @@ Positioner Robtarget은 포지셔너(외부축) 회전각을 포함한 RobTarget
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>생성할 `RobTarget` 변수의 명칭을 정의. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용.</td>
+          <td>생성할 <code>RobTarget</code>의 변수명을 정의한다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용된다.</td>
         </tr>
       </tbody>
     </table>
@@ -214,12 +214,12 @@ Positioner Robtarget은 포지셔너(외부축) 회전각을 포함한 RobTarget
         <tr>
           <td><strong>Split Start</strong></td>
           <td>String</td>
-          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 첫 번째 인덱스(First Index)에 해당하는 데이터를 추출하여 출력.</td>
+          <td>입력 데이터 <code>TargetPlane</code>의 각 브랜치(Branch) 내에서 첫 번째 인덱스(First Index)에 해당하는 데이터를 분리하여 출력하도록 설정한다.</td>
         </tr>
         <tr>
           <td><strong>Split End</strong></td>
           <td>String</td>
-          <td>입력 데이터 `TargetPlane`의 각 브랜치(Branch) 내 마지막 인덱스(Last Index)에 해당하는 데이터를 추출하여 출력.</td>
+          <td>입력 데이터 <code>TargetPlane</code>의 각 브랜치(Branch) 내에서 마지막 인덱스(Last Index)에 해당하는 데이터를 분리하여 출력하도록 설정한다.</td>
         </tr>
       </tbody>
     </table>
@@ -233,9 +233,9 @@ Positioner Robtarget은 포지셔너(외부축) 회전각을 포함한 RobTarget
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| Start Targets | RobTarget | ABB Rapid RobTargets 첫번째 브랜치 데이터 출력 |
-| RobTargets | RobTarget | ABB Rapid RobTargets 데이터 출력 |
-| End Targets | RobTarget | ABB Rapid RobTargets 마지막 브랜치 데이터 출력 |
+| **Start Targets** | RobTarget | 분리된 ABB Rapid RobTargets의 첫 번째 인덱스 데이터를 출력한다. |
+| **RobTargets** | RobTarget | 변환된 전체 ABB Rapid RobTargets 데이터를 출력한다. |
+| **End Targets** | RobTarget | 분리된 ABB Rapid RobTargets의 마지막 인덱스 데이터를 출력한다. |
 
 <p align="center"> 
 <video src="/assets/images/Dynamic_RobPosition_gif.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>
