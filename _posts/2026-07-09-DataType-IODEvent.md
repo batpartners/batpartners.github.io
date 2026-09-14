@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-triggios 배열의 단일 I/O 트리거 이벤트 정의하는 컴포넌트이다. 대상 출력 신호, 경로상 트리거 위치, 설정 값을 지정한다. 여러 IOEvent를 TriggIOs 컴포넌트에 묶어 triggios 데이터 구성한다.
+TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트이다. 대상 출력 신호, 경로상 트리거 위치, 설정값을 지정한다. 여러 IOEvent를 TriggIOs 컴포넌트에 묶어 전체 TriggIOs 데이터를 구성한다.
 
 <p align="center">  <img src="/assets/images/4_IOEvent.png" align="center" width="32%"></p>
 
@@ -160,9 +160,9 @@ triggios 배열의 단일 I/O 트리거 이벤트 정의하는 컴포넌트이�
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| Signal | String | 신호데이터 입력 |
-| Signal Type | String | 신호데이터의 변수명을 입력 |
-| DO Value | Double | 신호데이터의 데이터 값을 지정 |
+| **Signal** | String | 신호 데이터를 입력한다. |
+| **Signal Type** | String | 신호 데이터의 변수명을 입력한다. |
+| **DO Value** | Double | 신호 데이터의 값을 지정한다. |
 
 ## | 필수 파라미터 (Required Parameter)
 <div class="tabs-container">
@@ -183,12 +183,12 @@ triggios 배열의 단일 I/O 트리거 이벤트 정의하는 컴포넌트이�
         <tr>
           <td><strong>Signal Type</strong></td>
           <td>Dropdown</td>
-          <td>출력 신호 유형 (디지털 / 그룹 / 아날로그)</td>
+          <td>출력 신호 유형을 지정한다 (디지털 / 그룹 / 아날로그).</td>
         </tr>
         <tr>
           <td><strong>Value</strong></td>
           <td>Boolean</td>
-          <td>이벤트 활성화 여부.(True : 활성화/ False : 비활성화)</td>
+          <td>이벤트 활성화 여부를 설정한다 (True: 활성화 / False: 비활성화).</td>
         </tr>        
       </tbody>
     </table>
@@ -213,22 +213,22 @@ triggios 배열의 단일 I/O 트리거 이벤트 정의하는 컴포넌트이�
         <tr>
           <td><strong>Used</strong></td>
           <td>Boolean</td>
-          <td>True/False 설정.(True : 활성화/ False : 비활성화)</td>
+          <td>해당 이벤트의 사용 여부를 설정한다 (True: 활성화 / False: 비활성화).</td>
         </tr>
         <tr>
           <td><strong>Start</strong></td>
           <td>Boolean</td>
-          <td>거리 기준점 설정.<br>• TRUE: (TriggLIOs에 의한) 이동 시작점 기준.<br>• FALSE: (TriggLIOs에 의한) 이동 종료점 기준.</td>
+          <td>거리 기준점을 설정한다.<br>• TRUE: (TriggLIOs에 의한) 이동 시작점을 기준으로 한다.<br>• FALSE: (TriggLIOs에 의한) 이동 종료점을 기준으로 한다.</td>
         </tr>
         <tr>
           <td><strong>Distance</strong></td>
           <td>Double</td>
-          <td>TriggLIOs 이동 경로상에서 I/O 트리거가 발생할 위치 (mm). Start 파라미터에서 설정한 기준점으로부터의 거리.</td>
+          <td>TriggLIOs 이동 경로상에서 I/O 트리거가 발생할 위치(mm)를 입력한다. Start 파라미터에서 설정한 기준점으로부터의 거리이다.</td>
         </tr>
         <tr>
           <td><strong>EquipLag(s)</strong></td>
           <td>Double</td>
-          <td>외부 장비 응답 지연 보상값 (s).<br>• 양수(+): 지정 위치 도달 전에 미리 신호 발생.<br>• 음수(-): 지정 위치 통과 후 신호 발생.</td>
+          <td>외부 장비의 응답 지연 보상값(s)을 설정한다.<br>• 양수(+): 지정 위치 도달 전에 미리 신호를 발생시킨다.<br>• 음수(-): 지정 위치 통과 후 신호를 발생시킨다.</td>
         </tr>          
       </tbody>
     </table>
@@ -238,9 +238,9 @@ triggios 배열의 단일 I/O 트리거 이벤트 정의하는 컴포넌트이�
 
 <br>
 
-# | 출력(Output)
+# | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **IOEvent** | IOEvent | ABB TriggIOs용 IO 이벤트 |
-| **code** | code | code |
+| **IOEvent** | IOEvent | 정의된 ABB TriggIOs용 IO 이벤트를 출력한다. |
+| **code** | code | 생성된 코드를 출력한다. |

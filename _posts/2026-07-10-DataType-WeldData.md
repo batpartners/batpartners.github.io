@@ -33,7 +33,7 @@ tags:
 # Description
 
 아크가 안정적으로 유지되는 실제 용접 구간의 파라미터를 정의하는 컴포넌트이다. 심을 따라 적용되는 용접 속도, 전압, 와이어 송급 조건 등을 지정할 수 있다.
-
+<br>
 <p align="center"><img src="/assets/images/8_WeldData.png" align="center" width="32%"></p>
 
 <style>
@@ -49,7 +49,7 @@ tags:
     table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
     word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;     /* 패딩으로 인한 가로 폭 삐져나옴 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -124,19 +124,19 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (WeldData 변수명 개요) */
+  /* 1번째 탭 그룹 제어 */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab1:checked ~ #content1 { display: block; }
 
-  /* 💡 2번째 탭 그룹 제어 (Weld ArcData 세트) */
+  /* 2번째 탭 그룹 제어 */
   #tab2:checked ~ .tab-buttons label[for="tab2"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab2:checked ~ #content2 { display: block; }
 
-  /* 💡 3번째 탭 그룹 제어 (Weld Param 세트) */
+  /* 3번째 탭 그룹 제어 */
   #tab6:checked ~ .tab-buttons label[for="tab6"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
@@ -149,14 +149,13 @@ tags:
   }
 </style>
 
-# | 입력(Input)
+# | 입력(Inputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Weld Sched** | Weld Sched | 사용할 용접 프로그램 번호(스케줄) 및 용접 모드 |
-| **Weight** | Number| wirefeed1에 대한 가중치 |
-| **WeaveData** | WeaveData | <a href="https://batpartners.github.io/datatype/DataType-WeaveData/" target="_blank">ABB WeaveData</a> 구성 데이터 |
-
+| **Weld Sched** | Weld Sched | 사용할 용접 프로그램 번호(스케줄) 및 용접 모드를 입력한다. |
+| **Weight** | Number | <code>wirefeed1</code>에 대한 가중치를 설정한다. |
+| **WeaveData** | WeaveData | <a href="https://batpartners.github.io/datatype/DataType-WeaveData/" target="_blank">ABB WeaveData</a> 구성 데이터를 연결한다. |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -178,11 +177,12 @@ tags:
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>변수명</td>
+          <td>생성할 <code>WeldData</code>의 변수명을 정의한다.</td>
         </tr>
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/8_WeldData_10.png" align="center" width="45%"></p>
+    <br>
+    <p align="center"><img src="/assets/images/8_WeldData_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -205,30 +205,32 @@ tags:
         <tr>
           <td><strong>Voltage</strong></td>
           <td>Number</td>
-          <td>용접 전압 (ABB 컨벤션). Fronius TPS/TPS-i: 아크 길이 조정.</td>
+          <td>용접 전압을 설정한다 (ABB 컨벤션). Fronius TPS/TPS-i 사용 시 아크 길이 보정값으로 동작한다.</td>
         </tr>
         <tr>
           <td><strong>WireFeed(m/min)</strong></td>
           <td>Number</td>
-          <td>와이어 송급 속도(m/min). ABB / Fronius 공통.</td>
+          <td>와이어 송급 속도(m/min)를 설정한다. (ABB / Fronius 공통)</td>
         </tr>
         <tr>
           <td><strong>Control</strong></td>
           <td>Number</td>
-          <td>컨트롤 파라미터 (ABB 컨벤션). Fronius TPS/TPS-i: 다이내믹 (Dynamic) 조정.</td>
+          <td>컨트롤 파라미터를 설정한다 (ABB 컨벤션). Fronius TPS/TPS-i 사용 시 다이내믹(Dynamic) 보정값으로 동작한다.</td>
         </tr>
         <tr>
           <td><strong>Current</strong></td>
           <td>Number</td>
-          <td>용접 전류 (ABB 컨벤션). Fronius TPS/TPS-i에서는 사용되지 않음.</td>
-        </tr>        
+          <td>용접 전류를 설정한다 (ABB 컨벤션). Fronius TPS/TPS-i 모드에서는 사용되지 않는다.</td>
+        </tr>
       </tbody>
     </table>
     <br>
     <p align="center"><img src="/assets/images/8_WeldData_11.png" align="center" width="45%"></p>
   </div>
-</div> <div class="tabs-container">
-  <input type="radio" id="tab6" name="gh-tabs-preview" checked>
+</div>
+
+<div class="tabs-container">
+  <input type="radio" id="tab6" name="gh-tabs-weldparam" checked>
   <ul class="tab-buttons">
     <li><label for="tab6">Weld Param</label></li>
   </ul>
@@ -237,21 +239,21 @@ tags:
     <table class="spec-table">
       <thead>
         <tr>
-          <th style="width: 35%; white-space: nowrap;">이름</th>
-          <th style="width: 20%;">타입</th>
-          <th style="width: 45%;">설명</th>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td style="white-space: nowrap;"><strong>Weld Speed(mm/s)</strong></td>
+          <td><strong>Weld Speed(mm/s)</strong></td>
           <td>Number</td>
-          <td>용접 중 TCP 선속도 (mm/s). 실제 비드 형상 및 적층 높이를 결정하는 핵심 요소.</td>
+          <td>용접 중 TCP 선속도(mm/s)를 설정한다. 실제 비드 형상 및 적층 높이를 결정하는 핵심 요소이다.</td>
         </tr>
         <tr>
           <td><strong>Preview Cycles</strong></td>
           <td>Number</td>
-          <td>컴포넌트 뷰포트 내 용접 궤적 시각화의 반복 사이클 수.</td>
+          <td>컴포넌트 뷰포트 내 용접 궤적 시각화의 반복 사이클 수를 설정한다.</td>
         </tr>
       </tbody>
     </table>
@@ -260,10 +262,9 @@ tags:
   </div>
 </div>
 
-
-# | 출력(Output)
+# | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **WeldData** | WeldData | 설정된 ABB WeldData 구성 스트림을 출력 |
-| **Code** | String | 컴파일된 RAPID 명령 코드를 출력. |
+| **WeldData** | WeldData | 정의된 ABB WeldData를 출력한다. |
+| **Code** | String | 생성된 RAPID 코드 구문을 출력한다. |

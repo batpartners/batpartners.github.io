@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-툴(엔드 이펙터) 데이터를 정의할 수 있는 컴포넌트이다. 기본값은 `tool0`로 ABB로봇의 6번축 좌표계이다. Define (직접 설정), Import (미리 저장된 툴 데이터 가져오기) 모드 전환 가능하다.
+툴(엔드 이펙터) 데이터를 정의하는 컴포넌트이다. 기본값은 `tool0`이며, 이는 ABB 로봇의 6번 축 좌표계를 의미한다. 컴포넌트 아이콘을 우클릭하여 Define(직접 설정) 및 Import(미리 저장된 툴 데이터 가져오기) 모드로 전환할 수 있다.
 <br>
 
 <p align="center">  <img src="/assets/images/3_ToolData.png" align="center" width="32%"></p>
@@ -156,14 +156,14 @@ tags:
   }
 </style>
 
-# | 입력(Input)
+# | 입력(Inputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Tool Geo** | Mesh | 툴(엔드 이펙터)의 형상 메시 |
-| **Base Plane** | Plane | ABB 로봇 플랜지에 대한 툴 장착 기준면. TCP 및 지오메트리 (형상)의 기준을 정의 |
-| **TCP** | Plane | 툴 끝단의 TCP (Tool Center Point) 위치. 툴 베이스 (Base Plane)를 기준으로 한 위치와 방향을 정의 |
-| **Tool Load** | ToolLoad | 툴의 부하 데이터 (LoadData). 연결되지 않은 경우, 도구 지오메트리의 경계 상자 (Bounding box)에서 추정하여 작성 |
+| **Tool Geo** | Mesh | 툴(엔드 이펙터)의 형상 메시(Mesh)를 입력한다. |
+| **Base Plane** | Plane | ABB 로봇 플랜지에 대한 툴 장착 기준면을 입력한다. 이는 TCP 및 지오메트리(형상)의 기준을 정의한다. |
+| **TCP** | Plane | 툴 끝단의 TCP(Tool Center Point) 평면을 입력한다. 툴 베이스(Base Plane)를 기준으로 한 위치와 방향을 정의한다. |
+| **Tool Load** | ToolLoad | 툴의 부하 데이터(LoadData)를 입력한다. 데이터가 연결되지 않은 경우, 도구 지오메트리의 경계 상자(Bounding box)를 기반으로 추정하여 자동 작성된다. |
 
 
 ## | 필수 파라미터 (Required Parameter)
@@ -185,7 +185,7 @@ tags:
         <tr>
           <td><strong>Tool Name</strong></td>
           <td>String</td>
-          <td>생성할 `ToolData` 변수 정의.</td>
+          <td>생성할 <code>ToolData</code>의 변수명을 정의한다.</td>
         </tr>
       </tbody>
     </table>
@@ -217,22 +217,22 @@ tags:
         <tr>
           <td><strong>Reset</strong></td>
           <td>Button</td>
-          <td>Reset</td>
+          <td>입력된 부하 데이터를 초기화한다.</td>
         </tr>
         <tr>
           <td><strong>Mass(kg)</strong></td>
           <td>String</td>
-          <td>무게(kg)</td>
+          <td>툴의 무게(kg)를 입력한다.</td>
         </tr>
         <tr>
           <td><strong>Centroid</strong></td>
           <td>String</td>
-          <td>무게 중심 좌표 (x,y,z)</td>
+          <td>툴의 무게 중심 좌표(x, y, z)를 입력한다.</td>
         </tr>
         <tr>
           <td><strong>Inertia</strong></td>
           <td>String</td>
-          <td>관성 모멘트 (Ix,Iy,Iz)</td>
+          <td>툴의 관성 모멘트(Ix, Iy, Iz)를 입력한다.</td>
         </tr>        
       </tbody>
     </table>
@@ -252,7 +252,7 @@ tags:
         <tr>
           <td><strong>Color</strong></td>
           <td>Color</td>
-          <td>시각화 색상</td>
+          <td>툴의 시각화 색상을 설정한다.</td>
         </tr>
       </tbody>
     </table>
@@ -271,7 +271,7 @@ tags:
         <tr>
           <td><strong>Export</strong></td>
           <td>Button</td>
-          <td>툴데이터를 사용자 로컬 지정 경로에 파일로 저장</td>
+          <td>툴 데이터를 사용자 로컬의 지정된 경로에 파일로 저장한다.</td>
         </tr>
       </tbody>
     </table>
@@ -279,10 +279,10 @@ tags:
   </div>  
 </div>
 
-# | 출력(Output)
+# | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **ToolData** | ToolData | 입력한 ABB ToolData를 출력 |
+| **ToolData** | ToolData | 정의된 ABB ToolData를 출력한다. |
 
 <p align="center">  <img src="/assets/images/ToolData_GIF_00-1.gif" align="center" width="100%"></p>

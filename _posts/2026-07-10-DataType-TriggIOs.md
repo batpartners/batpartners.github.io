@@ -33,8 +33,8 @@ tags:
 # Description
 
 이동 경로상의 지정 위치에서 하나 이상의 IO Event를 발생시키는 위치 트리거 컴포넌트이다. 사용자는 신호의 변수 이름을 정의한다. ABB Trigger Move 인스트럭션 (TriggLIOs, TriggJIOs)과 함께 사용된다.
-
-<p align="center">  <img src="/assets/images/5_TriggIOs.png" align="center" width="32%"></p>
+<br>
+<p align="center"><img src="/assets/images/5_TriggIOs.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -146,7 +146,7 @@ tags:
   }
 </style>
 
-# | 입력(Input)
+# | 입력(Inputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
@@ -155,7 +155,7 @@ tags:
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-triggios" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">TriggIOs</label></li>
   </ul>
@@ -172,16 +172,17 @@ tags:
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>변수명</td>
+          <td>생성할 <code>TriggIOs</code>의 변수명을 정의한다.</td>
         </tr>
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/5_TriggIOs_1.png" align="center" width="45%"></p>
+    <br>
+    <p align="center"><img src="/assets/images/5_TriggIOs_1.png" align="center" width="45%"></p>
   </div>
 </div>
 
-# | 출력(Output)
+# | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **TriggIOs** | TriggIOs | ABB TriggIOs |
+| **TriggIOs** | TriggIOs | 정의된 ABB TriggIOs를 출력한다. |

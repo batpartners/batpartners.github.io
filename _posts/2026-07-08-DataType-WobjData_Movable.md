@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-wobjdata는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로봇이 작업하는 대상(작업물)의 고유 좌표계를 정의하며, 도면 기반의 직관적인 프로그래밍을 돕고 설치 환경 변화 시 좌표계 수정만으로 프로그램의 재사용을 가능하게 한다. 컴포넌트 아이콘을 우클릭하여 Movable(외부축에 의해 움직이는 워크오브젝트), Fixed(고정된 일반 워크오브젝트) 두 모드를 취사 선택할 수 있다.
+WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로봇이 작업하는 대상(작업물)의 고유 좌표계를 정의하며, 도면 기반의 직관적인 프로그래밍을 돕고 설치 환경 변화 시 좌표계 수정만으로 프로그램의 재사용을 가능하게 한다. 컴포넌트 아이콘을 우클릭하여 Movable(외부축에 의해 움직이는 워크오브젝트) 및 Fixed(고정된 일반 워크오브젝트) 두 가지 모드로 전환할 수 있다.
 
 <p align="center">  <img src="/assets/images/2_WobjData_2.png" align="center" width="32%"></p>
 
@@ -156,19 +156,19 @@ wobjdata는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
   }
 </style>
 
-# | 입력(Input)
+# | 입력(Inputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| *User Frame* | Plane | WobjData의 사용자 프레임 (uframe)으로 사용되는 평면 |
-| *Override Wobj* | Plane | 입력된 워크오브젝트 데이터로 컴포넌트 출력을 덮어씀. (선택) 연결 시 다른 인풋값과 관계없이 이 데이터가 우선 적용. |
+| **User Frame** | Plane | WobjData의 사용자 프레임(uframe)으로 사용할 평면(Plane)을 입력한다. |
+| **Override Wobj** | Plane | 입력된 워크오브젝트 데이터로 컴포넌트 출력을 덮어쓴다(선택). 데이터 연결 시 다른 입력값과 무관하게 해당 데이터가 우선적으로 적용된다. |
 
-## 옵션 변경(Felxible Option)
+## 옵션 변경(Flexible Option)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| *Fixed WobjData* | - | Target Plane이 고정된 위치의 기준 평면으로 재정의 |
-| *Movable WobjData* | - | Target Plane이 이동 가능한 위치의 기준 평면으로 재정의 |
+| **Fixed WobjData** | - | Target Plane을 고정된 위치의 기준 평면으로 재정의한다. |
+| **Movable WobjData** | - | Target Plane을 이동 가능한 위치의 기준 평면으로 재정의한다. |
 
 
 ## | 필수 파라미터 (Required Parameter)
@@ -194,7 +194,7 @@ wobjdata는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>생성할 `WobjData` 변수 정의. 해당 WobjData 위치의 고유 식별자로 사용.</td>
+          <td>생성할 <code>WobjData</code>의 변수명을 정의한다. 해당 변수는 WobjData 위치의 고유 식별자로 사용된다.</td>
         </tr>
       </tbody>
     </table>
@@ -215,7 +215,7 @@ wobjdata는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
         <tr>
           <td><strong>Frame Size</strong></td>
           <td>Number</td>
-          <td>WobjFrame의 평면 좌표계 축 디스플레이 크기를 조절.</td>
+          <td>WobjFrame 평면 좌표계 축의 디스플레이 크기를 조절한다.</td>
         </tr>
       </tbody>
     </table>
@@ -224,8 +224,8 @@ wobjdata는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
 </div>
 
 
-# | 출력(Output)
+# | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **WobjData** | WobjData | 정의된 ABB WobjData 출력 |
+| **WobjData** | WobjData | 정의된 ABB WobjData를 출력한다. |
