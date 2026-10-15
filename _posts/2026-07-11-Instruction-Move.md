@@ -27,11 +27,12 @@ tags:
   - GERTY
 ---
 
+
 🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-ABB Move 인스트럭션(MoveL, MoveJ) 설정하는 컴포넌트이다.
+ABB Move 인스트럭션(MoveL, MoveJ)을 설정하는 컴포넌트이다.
 
 <p align="center"><img src="/assets/images/0_Move.png" align="center" width="32%"></p>
 
@@ -123,23 +124,11 @@ ABB Move 인스트럭션(MoveL, MoveJ) 설정하는 컴포넌트이다.
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (WeldData 변수명 개요) */
+  /* 💡 탭 그룹 제어 */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab1:checked ~ #content1 { display: block; }
-
-  /* 💡 2번째 탭 그룹 제어 (Weld ArcData 세트) */
-  #tab2:checked ~ .tab-buttons label[for="tab2"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #tab2:checked ~ #content2 { display: block; }
-
-  /* 💡 3번째 탭 그룹 제어 (Weld Param 세트) */
-  #tab6:checked ~ .tab-buttons label[for="tab6"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #tab6:checked ~ #content6 { display: block; }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -148,16 +137,16 @@ ABB Move 인스트럭션(MoveL, MoveJ) 설정하는 컴포넌트이다.
   }
 </style>
 
-# | 입력(Input)
+# | 입력(Inputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **RobTargets** | RobTarget | 모션 목표 위치. <a href="https://batpartners.github.io/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> 또는 <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> 컴포넌트 출력 연결. |
+| **RobTargets** | RobTarget | 모션 목표 위치를 연결한다. <a href="https://batpartners.github.io/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> 또는 <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> 컴포넌트 출력을 연결한다. |
 
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-move" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">Move</label></li>
   </ul>
@@ -174,34 +163,33 @@ ABB Move 인스트럭션(MoveL, MoveJ) 설정하는 컴포넌트이다.
         <tr>
           <td><strong>Type/Speed/Zone</strong></td>
           <td>String</td>
-          <td>모션 유형, 속도, 경유 반경</td>
+          <td>모션 유형, 속도, 경유 반경을 설정한다.</td>
         </tr>
         <tr>
           <td><strong>MoveJ Start End</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: 첫번째, 마지막 타겟에 대하여 MoveJ 적용<br>
-              • FALSE: 모든 타겟에 대하여 설정된 모션 유형 적용</td>
+          <td>• <code>TRUE</code>: 첫 번째 및 마지막 타겟에 대하여 MoveJ를 적용한다.<br>
+              • <code>FALSE</code>: 모든 타겟에 대하여 설정된 모션 유형을 적용한다.</td>
         </tr>
         <tr>
           <td><strong>Fine Start End</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: 첫 번째 및 마지막 타겟의 Zone을 fine으로 적용<br>
-              • FALSE: 모든 타겟에 설정된 Zone 값 적용 </td>
+          <td>• <code>TRUE</code>: 첫 번째 및 마지막 타겟의 Zone을 fine으로 적용한다.<br>
+              • <code>FALSE</code>: 모든 타겟에 설정된 Zone 값을 적용한다.</td>
         </tr>                
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/0_Move_1.png" align="center" width="45%"></p>
+    <br>
+    <p align="center"><img src="/assets/images/0_Move_1.png" align="center" width="45%"></p>
   </div>
 </div>
 
-
-# | 출력(Output)
+# | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |
+| **Instruction** | Instruction | 생성된 ABB 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |
 
 <p align="center"> 
 <video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>
 </p>
-

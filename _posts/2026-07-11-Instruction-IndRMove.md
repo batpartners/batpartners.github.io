@@ -27,13 +27,15 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
+
 🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-부가축을 독립 모드로 전환하며 1회전 이내의 지정 위치로 이동시키는 컴포넌트이다. IndRMove 인스트럭션으로 작성되며, 작업을 수행 후 IndReset으로 일반 모드 초기화가 필요하다.
+부가축을 독립 모드로 전환하며 1회전 이내의 지정 위치로 이동시키는 컴포넌트이다. <code>IndRMove</code> 인스트럭션으로 작성되며, 작업 수행 후 <code>IndReset</code>으로 일반 모드 초기화가 필요하다.
 
-<p align="center">  <img src="/assets/images/11_IndRMove.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/11_IndRMove.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -123,13 +125,9 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 💡 최대 6개까지 대응 가능한 라벨 활성화 스타일 */
+  /* 💡 라벨 활성화 스타일 */
   #tab1:checked ~ .tab-buttons label[for="tab1"],
-  #tab2:checked ~ .tab-buttons label[for="tab2"],
-  #tab3:checked ~ .tab-buttons label[for="tab3"],
-  #tab4:checked ~ .tab-buttons label[for="tab4"],
-  #tab5:checked ~ .tab-buttons label[for="tab5"],
-  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+  #tab2:checked ~ .tab-buttons label[for="tab2"] {
     background: #fff;
     color: #e53935;
     border-bottom: 1px solid #fff;
@@ -138,18 +136,14 @@ tags:
     z-index: 2;
   }
 
-  /* 💡 최대 6개까지 대응 가능한 콘텐츠 표시 제어 */
+  /* 💡 콘텐츠 표시 제어 */
   #tab1:checked ~ #content1,
-  #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3,
-  #tab4:checked ~ #content4,
-  #tab5:checked ~ #content5,
-  #tab6:checked ~ #content6 { 
+  #tab2:checked ~ #content2 { 
     display: block; 
   }
 </style>
 
-# | 입력(Input)
+# | 입력(Inputs)
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -180,17 +174,16 @@ tags:
         </tr>        
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/11_IndRMove_10.png" align="center" width="45%"></p>
+    <br>
+    <p align="center"><img src="/assets/images/11_IndRMove_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
-  
   <ul class="tab-buttons">
     <li><label for="tab2">Settings</label></li>
   </ul>
-
   <div class="tab-content" id="content2">
     <table class="spec-table">
       <thead>
@@ -209,10 +202,10 @@ tags:
         <tr>
           <td><strong>Direction</strong></td>
           <td>String</td>
-          <td>이동 방향.\n" +
-              • Short: 최단 경로 (±180° 이내)<br>
-              • Fwd: 양의 방향으로 이동 (최대 360°)<br>
-              • Bwd: 음의 방향으로 이동 (최대 360°)</td>
+          <td>이동 방향을 지정.<br>
+              • <code>Short</code>: 최단 경로 (±180° 이내)<br>
+              • <code>Fwd</code>: 양의 방향으로 이동 (최대 360°)<br>
+              • <code>Bwd</code>: 음의 방향으로 이동 (최대 360°)</td>
         </tr>
         <tr>
           <td><strong>Speed</strong></td>
@@ -227,11 +220,12 @@ tags:
       </tbody>
     </table>
     <br>    
-    <p align="center">  <img src="/assets/images/11_IndRMove_11.png" align="center" width="45%"></p>
+    <p align="center"><img src="/assets/images/11_IndRMove_11.png" align="center" width="45%"></p>
   </div>
 </div>  
 
-# | 출력(Output)
+# | 출력(Outputs)
+
 <div style="margin-top: 30px;">
   <div class="page__content">
     <table>

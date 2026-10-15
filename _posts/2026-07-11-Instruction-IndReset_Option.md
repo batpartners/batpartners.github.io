@@ -27,13 +27,14 @@ toc_sticky: true
 tags: 
   - GERTY
 ---
+
 🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-부가 축의 위치와 회전값을 초기화(IndReset)하는 컴포넌트이다. 모션 인스트럭션 실행 전 누적된 외부축 각도값 초기화에 주로 사용한다.
-
-<p align="center">  <img src="/assets/images/12_IndReset_1.png" align="center" width="32%"></p>
+부가 축의 위치와 회전값을 초기화(<code>IndReset</code>)하는 컴포넌트이다. 모션 인스트럭션 실행 전 누적된 외부축 각도값 초기화에 주로 사용한다.
+<br>
+<p align="center"><img src="/assets/images/12_IndReset_1.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -48,7 +49,7 @@ tags:
     table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
     word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;     /* 패딩으로 인한 가로 폭 삐져나옴 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -123,31 +124,17 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (SeamData 필수 파라미터) */
-  #sm-tab1:checked ~ .tab-buttons label[for="sm-tab1"] {
+  /* 1번째 탭 그룹 제어 */
+  #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
-  #sm-tab1:checked ~ #sm-content1 { display: block; }
+  #tab1:checked ~ #content1 { display: block; }
 
-  /* 💡 2번째 탭 그룹 제어 (ArcData 시리즈) */
-  #arc-tab2:checked ~ .tab-buttons label[for="arc-tab2"],
-  #arc-tab3:checked ~ .tab-buttons label[for="arc-tab3"],
-  #arc-tab4:checked ~ .tab-buttons label[for="arc-tab4"] {
+  /* 2번째 탭 그룹 제어 */
+  #tab2:checked ~ .tab-buttons label[for="tab2"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
-  #arc-tab2:checked ~ #arc-content2,
-  #arc-tab3:checked ~ #arc-content3,
-  #arc-tab4:checked ~ #arc-content4 { display: block; }
-
-  /* 💡 3번째 탭 그룹 제어 (Params 시리즈) */
-  #prm-tab5:checked ~ .tab-buttons label[for="prm-tab5"],
-  #prm-tab6:checked ~ .tab-buttons label[for="prm-tab6"],
-  #prm-tab7:checked ~ .tab-buttons label[for="prm-tab7"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #prm-tab5:checked ~ #prm-content5,
-  #prm-tab6:checked ~ #prm-content6,
-  #prm-tab7:checked ~ #prm-content7 { display: block; }
+  #tab2:checked ~ #content2 { display: block; }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -156,20 +143,20 @@ tags:
   }
 </style>
 
-# | 입력(Input)
+# | 입력(Inputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **RobTarget** | RobTarget | 논리 축 각도를 재정렬하기 위해 사용되는 참조 자세(Reference Position). Direction이 Short / Fwd / Bwd일 때만 유효. RefNum와 병용 불가. |
+| **RobTarget** | RobTarget | 논리 축 각도를 재정렬하기 위해 사용되는 참조 자세(Reference Position)를 연결한다. <code>Direction</code>이 <code>Short</code> / <code>Fwd</code> / <code>Bwd</code>일 때만 유효하며, <code>RefNum</code>과 병용할 수 없다. |
 
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-indreset" checked>
   <ul class="tab-buttons">
-    <li><label for="sm-tab1">IndReset</label></li>
+    <li><label for="tab1">IndReset</label></li>
   </ul>
-  <div class="tab-content" id="sm-content1">
+  <div class="tab-content" id="content1">
     <table class="spec-table">
       <thead>
         <tr>
@@ -182,27 +169,27 @@ tags:
         <tr>
           <td><strong>MechUnit</strong></td>
           <td>String</td>
-          <td>메카니컬 유닛 이름</td>
+          <td>메카니컬 유닛 이름을 입력한다.</td>
         </tr>
         <tr>
           <td><strong>Target Axis</strong></td>
           <td>String</td>
-          <td>대상 축 번호 (1–6). 독립 모드 복귀 또는 논리 위치 재정의 대상.</td>
+          <td>대상 축 번호 (1–6)를 설정한다. 독립 모드 복귀 또는 논리 위치 재정의 대상이다.</td>
         </tr> 
       </tbody>
     </table>
-<p align="center">  <img src="/assets/images/12_IndReset_20.png" align="center" width="45%"></p>
+    <br>
+    <p align="center"><img src="/assets/images/12_IndReset_20.png" align="center" width="45%"></p>
   </div>
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="arc-tab2" name="gh-tabs-arcdata" checked>
-  
+  <input type="radio" id="tab2" name="gh-tabs-indreset-settings" checked>
   <ul class="tab-buttons">
-    <li><label for="arc-tab2">Settings</label></li>
+    <li><label for="tab2">Settings</label></li>
   </ul>
 
-  <div class="tab-content" id="arc-content2">
+  <div class="tab-content" id="content2">
     <table class="spec-table">
       <thead>
         <tr>
@@ -215,42 +202,26 @@ tags:
         <tr>
           <td><strong>RefNum(°)</strong></td>
           <td>Number</td>
-          <td>계측 기준 위치를 숫자 (°)로 지정. Direction이 Short / Fwd / Bwd일 때만 유효.</td>
+          <td>계측 기준 위치를 숫자(°)로 지정한다. <code>Direction</code>이 <code>Short</code> / <code>Fwd</code> / <code>Bwd</code>일 때만 유효하다.</td>
         </tr>
         <tr>
           <td><strong>Direction</strong></td>
           <td>String</td>
-          <td>계측 시스템 조정 방식.<br>
-              • Short: 기준 위치까지 최단 경로 (±180° 이내)<br>
-              • Fwd: 기준 위치의 양의 방향으로 조정<br>
-              • Bwd: 기준 위치의 음의 방향으로 조정<br>
-              • Old: 현재 논리 위치 유지 (기본값).</td>
+          <td>계측 시스템 조정 방식을 설정한다.<br>
+              • <code>Short</code>: 기준 위치까지 최단 경로 (±180° 이내)<br>
+              • <code>Fwd</code>: 기준 위치의 양의 방향으로 조정<br>
+              • <code>Bwd</code>: 기준 위치의 음의 방향으로 조정<br>
+              • <code>Old</code>: 현재 논리 위치 유지 (기본값)</td>
         </tr>   
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/12_IndReset_21.png" align="center" width="45%"></p>
-
+    <p align="center"><img src="/assets/images/12_IndReset_21.png" align="center" width="45%"></p>
   </div>
 </div>
 
+# | 출력(Outputs)
 
-# | 출력(Output)
-<div class="page__content">
-  <table>
-    <thead>
-      <tr>
-        <th>이름</th>
-        <th>타입</th>
-        <th>설명</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>Instruction</strong></td>
-        <td>Instruction</td>
-        <td>생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달.</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+| 이름 | 타입 | 설명 |
+| :--- | :--- | :--- |
+| **Instruction** | Instruction | 생성된 ABB 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |

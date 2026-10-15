@@ -34,11 +34,11 @@ tags:
 # Description
 
 메카니컬 유닛(Mechanical Unit)을 활성화 또는 비활성화하는 ActUnit/DeactUnit 인스트럭션을 생성하는 컴포넌트이다. RAPID 프로그램 실행 중 외부축 장비(포지셔너, 트랙 등)의 활성/비활성 전환에 사용된다.
-
+<br>
 <p align="center"><img src="/assets/images/4_DeActUnit.png" align="center" width="32%"></p>
 
 <style>
-  /* 💡 [Unify Table Width] Expand all markdown tables in the body and tables inside tabs to 100% of the screen width */
+  /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
   .page__content table,
   .page__content .spec-table,
   .tab-content table, 
@@ -47,13 +47,13 @@ tags:
     width: 100% !important;
     max-width: 100% !important;
     min-width: 100% !important;
-    table-layout: fixed !important;       /* Forcefully fix cell width ratio within the table */
-    word-break: break-all !important;     /* Prevent cell shrinkage and allow line breaks for long text inputs */
+    table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
+    word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* Absolutely prevent horizontal overflow due to padding */
+    box-sizing: border-box !important;     /* 패딩으로 인한 가로 폭 삐져나옴 방지 */
   }
   
-  /* 💡 [Unify Column Ratio] Match the structure of 1st column (20%), 2nd column (15%), and 3rd column (65%) identically for all tables */
+  /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
   .page__content table th:nth-child(1), .page__content table td:nth-child(1),
   .tab-content table th:nth-child(1), .tab-content table td:nth-child(1) { width: 20% !important; }
   
@@ -63,7 +63,7 @@ tags:
   .page__content table th:nth-child(3), .page__content table td:nth-child(3),
   .tab-content table th:nth-child(3), .tab-content table td:nth-child(3) { width: 65% !important; }
 
-  /* Tab system entire container */
+  /* 탭 시스템 전체 컨테이너 */
   .tabs-container {
     position: relative;
     margin: 30px 0;
@@ -72,14 +72,14 @@ tags:
     clear: both;
   }
 
-  /* Hide radio buttons */
+  /* 라디오 버튼 숨기기 */
   .tabs-container input[type="radio"] {
     position: absolute;
     opacity: 0;
     z-index: -1;
   }
 
-  /* Tab button style (top bar alignment) */
+  /* 탭 버튼 스타일 (상단 바 정렬) */
   .tab-buttons {
     display: flex;
     border-bottom: 1px solid #ddd;
@@ -115,7 +115,7 @@ tags:
     color: #333;
   }
 
-  /* Content box default settings (hidden by default) */
+  /* 콘텐츠 박스 기본 설정 (기본적으로 숨김) */
   .tab-content {
     display: none;
     padding: 20px;
@@ -132,12 +132,12 @@ tags:
   #tab1:checked ~ #content1 { display: block; }
 </style>
 
-# | 입력(Input)
+# | 입력(Inputs)
 
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-actunit" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">(De)ActUnit</label></li>
   </ul>
@@ -154,23 +154,24 @@ tags:
         <tr>
           <td><strong>MechUnit</strong></td>
           <td>String</td>
-          <td>메카니컬 유닛 이름</td>
+          <td>제어할 메카니컬 유닛의 이름을 입력한다.</td>
         </tr>
         <tr>
           <td><strong>Activate</strong></td>
           <td>Toggle</td>
-          <td>Mechanical Unit 활성화/비활성화 전환.<br>
+          <td>Mechanical Unit의 활성화/비활성화 여부를 설정한다.<br>
               • TRUE: 활성화 (ActUnit)<br>
               • FALSE: 비활성화 (DeactUnit)</td>
         </tr>        
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/4_DeActUnit_1.png" align="center" width="45%"></p>
+    <br>
+    <p align="center"><img src="/assets/images/4_DeActUnit_1.png" align="center" width="45%"></p>
   </div>
 </div>
 
-# | 출력(Output)
+# | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |
+| **Instruction** | Instruction | 생성된 ABB 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |

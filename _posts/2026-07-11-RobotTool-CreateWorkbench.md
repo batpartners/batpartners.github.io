@@ -27,14 +27,14 @@ tags:
   - GERTY
 ---
 
+
 🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-포지셔너용 워크벤치(WorkBench)로 사용자 정의할 수 있는 컴포넌트이다. 사용중인 작업대의 모델링을 시뮬레이션에 적용시켜 포지셔너 작업 과정을 원활히 확인할 수 있다. 또한 작업대 위의 작업물(Workpieces) 모델링을 완결된 시뮬레이션으로 작업이 가능하다. 
+포지셔너에 장착할 워크벤치(Workbench) 및 작업물(Workpiece)의 3D 모델링을 사용자 정의하는 컴포넌트이다. 실제 사용 환경의 작업대 및 작업물 형상을 시뮬레이션에 반영하여 포지셔너 구동 중 발생할 수 있는 간섭을 검증하고 경로 시뮬레이션을 정밀하게 수행할 수 있다.
 
-<p align="center">  <img src="/assets/images/2_Workbench_2.png" align="center" width="32%"></p>
-
+<p align="center"><img src="/assets/images/2_Workbench_2.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -49,7 +49,7 @@ tags:
     table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
     word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -127,9 +127,7 @@ tags:
   /* 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
   #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],
-  #tab3:checked ~ .tab-buttons label[for="tab3"],
-  #tab4:checked ~ .tab-buttons label[for="tab4"],
-  #tab5:checked ~ .tab-buttons label[for="tab5"] {
+  #tab3:checked ~ .tab-buttons label[for="tab3"] {
     background: #fff;
     color: #e53935;
     border-bottom: 1px solid #fff;
@@ -141,10 +139,14 @@ tags:
   /* 라디오 버튼 체크 상태에 따른 콘텐츠 표시 제어 */
   #tab1:checked ~ #content1,
   #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3,
-  #tab4:checked ~ #content4,
-  #tab5:checked ~ #content5 { 
+  #tab3:checked ~ #content3 { 
     display: block; 
+  }
+
+  /* 탭 전환시 부드러운 페이드인 애니메이션 */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 </style>
 
@@ -152,19 +154,19 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Workbench Geo** | Mesh | 워크벤치의 형상 메시 |
-| **Base Plane** | Plane | 포지셔너 플랜지에 대한 워크벤치 장착 기준면 |
-| **Top Plane** | Plane | 워크벤치 상단 평면 |
-| **Workpieces** | Mesh | 작업물 형상 메시 (선택) |
+| **Workbench Geo** | Mesh | 워크벤치의 3D 형상 메시 데이터를 연결한다. |
+| **Base Plane** | Plane | 포지셔너 플랜지 면에 장착되는 워크벤치의 하단 기준 좌표계 평면을 지정한다. |
+| **Top Plane** | Plane | 워크벤치 상단의 작업물 부착 기준 좌표계 평면을 지정한다. |
+| **Workpieces** | Mesh | 워크벤치 위에 고정할 작업물(Workpiece)의 3D 형상 메시 데이터를 연결한다 (선택 사항). |
 
 <p align="center"> 
-<video src="/assets/images/WorkbenchImporter_gif.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Tool Export</figcaption>
+<video src="/assets/images/WorkbenchImporter_gif.mp4" width="576" height="230" autoplay muted loop align="center"></video>
 </p>
 
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-robot" checked>
+  <input type="radio" id="tab1" name="gh-tabs-workbench" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">Workbench</label></li>
   </ul>
@@ -181,21 +183,21 @@ tags:
         <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
-          <td>작업대 이름</td>
+          <td>워크벤치의 식별 이름을 입력한다.</td>
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/2_Workbench_20.png" align="center" width="45%"></p>
+    <p align="center"><img src="/assets/images/2_Workbench_20.png" align="center" width="45%"></p>
   </div>
 </div>
 
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-linear" checked>
-  <input type="radio" id="tab3" name="gh-tabs-linear">
+  <input type="radio" id="tab2" name="gh-tabs-display" checked>
+  <input type="radio" id="tab3" name="gh-tabs-display">
   
   <ul class="tab-buttons">
     <li><label for="tab2">Preview</label></li>
-    <li><label for="tab3">Export</label></li>
+    <li><label for="tab3">Workpiece</label></li>
   </ul>
   <div class="tab-content" id="content2">
     <table class="spec-table">
@@ -210,26 +212,31 @@ tags:
         <tr>
           <td><strong>WorkBench Color</strong></td>
           <td>Color</td>
-          <td>시각화 색상</td>
+          <td>뷰포트에서 워크벤치 메시의 시각화 색상을 지정한다.</td>
         </tr>
       </tbody>
     </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/2_Workbench_21.png" align="center" width="45%"></p>
+    <p align="center"><img src="/assets/images/2_Workbench_21.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content3">
     <table class="spec-table">
       <thead>
         <tr>
+          <th>이름</th>
+          <th>타입</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
           <td><strong>WorkPiece Color</strong></td>
-          <td>Button</td>
-          <td>현재 TCP 방향에 가장 가까운 World 좌표축(±X, ±Y, ±Z)과 평행하게 TCP를 정렬. ABB FlexPendant Jogging의 Align 기능과 동일.</td>
+          <td>Color</td>
+          <td>뷰포트에서 작업물(Workpiece) 메시의 시각화 색상을 지정한다.</td>
         </tr>
       </tbody>
     </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/2_Workbench_22.png" align="center" width="45%"></p>
+    <p align="center"><img src="/assets/images/2_Workbench_22.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -237,4 +244,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Workbench** | Workbench | 성된 작업대 정의. |
+| **Workbench** | Workbench | 구성된 워크벤치 및 작업물 데이터 정의를 출력한다. Positioner 컴포넌트에 연결하여 사용한다. |

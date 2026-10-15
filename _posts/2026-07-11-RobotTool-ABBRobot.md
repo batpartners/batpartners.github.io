@@ -27,13 +27,14 @@ tags:
   - GERTY
 ---
 
+
 🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-사용할 ABB 로봇을 임포트하는 컴포넌트이다. 사용자가 소유하는 로봇을 선택, 이후 옴셥을 설정할 수 있다. 로봇 모델은 ABB IRB 시리즈 카탈로그의 사전 정의된 제원에서 선택이 가능하다. 컴포넌트 아이콘 우클릭, [Show joint Jog Params]을 선택하여 선택한 로봇의 각 축을 추가 운용하여 시뮬레이션을 설정할 수 있다.
+사용할 ABB 로봇 모델을 라이브러리에서 불러오고 관련 옵션을 설정하는 컴포넌트이다. ABB IRB 시리즈 카탈로그의 사전 정의된 제원에서 로봇 모델을 선택할 수 있으며, 컴포넌트 아이콘을 우클릭하여 **[Show joint Jog Params]**를 선택하면 로봇의 각 관절축 및 부가축을 직접 조작하며 시뮬레이션을 설정할 수 있다.
 
-<p align="center">  <img src="/assets/images/0_ABBRobot.png" align="center" width="32%"></p>
+<p align="center"><img src="/assets/images/0_ABBRobot.png" align="center" width="32%"></p>
 
 <style>
   /* 💡 [표 너비 통일] 본문 내 모든 마크다운 표와 탭 내부 표를 화면폭에 100% 꽉 채움 */
@@ -48,7 +49,7 @@ tags:
     table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
     word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;
+    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -126,10 +127,7 @@ tags:
   /* 정확히 일치하는 라디오 버튼이 체크되었을 때, 대응하는 라벨만 활성화(붉은색) */
   #tab1:checked ~ .tab-buttons label[for="tab1"],
   #tab2:checked ~ .tab-buttons label[for="tab2"],
-  #tab3:checked ~ .tab-buttons label[for="tab3"],
-  #tab4:checked ~ .tab-buttons label[for="tab4"],
-  #tab5:checked ~ .tab-buttons label[for="tab5"],
-  #tab6:checked ~ .tab-buttons label[for="tab6"] {
+  #tab3:checked ~ .tab-buttons label[for="tab3"] {
     background: #fff;
     color: #e53935;
     border-bottom: 1px solid #fff;
@@ -141,17 +139,14 @@ tags:
   /* 라디오 버튼 체크 상태에 따른 콘텐츠 표시 제어 */
   #tab1:checked ~ #content1,
   #tab2:checked ~ #content2,
-  #tab3:checked ~ #content3,
-  #tab4:checked ~ #content4,
-  #tab5:checked ~ #content5,
-  #tab6:checked ~ #content6 { 
+  #tab3:checked ~ #content3 { 
     display: block; 
   }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(2px); }
-    to { opacity: 1; transform: translateY(0); }ddd
+    to { opacity: 1; transform: translateY(0); }
   }
 </style>
 
@@ -159,16 +154,15 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Base Plane** | Plane | 로봇 베이스 좌표계 평면. 기본값: WorldXY. |
-| **ToolData** | ToolData | 로봇에 적용할 ABB <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">ToolData</a> |
-| **Positioner** | Positioner | 로봇과 연동할 외부축 <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">Positioner</a>. |
-| **Pedestal** | Mesh | 로봇 받침대·작업대 등 주변 환경 메시 (선택). |
-
+| **Base Plane** | Plane | 로봇의 베이스 좌표계 평면을 지정한다. (기본값: WorldXY) |
+| **ToolData** | ToolData | 로봇에 적용할 ABB <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">ToolData</a>를 연결한다. |
+| **Positioner** | Positioner | 로봇과 연동할 외부축 <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">Positioner</a> 컴포넌트의 출력을 연결한다. |
+| **Pedestal** | Mesh | 로봇 받침대, 작업대 등 주변 환경 메시(Mesh) 데이터를 연결한다 (선택 사항). |
 
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-robot" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">ABB Robots</label></li>
   </ul>
@@ -185,16 +179,16 @@ tags:
         <tr>
           <td><strong>Robot Model</strong></td>
           <td>String</td>
-          <td>ABB 로봇 모델</td>
+          <td>사용할 ABB 로봇 모델을 선택한다.</td>
         </tr>
         <tr>
           <td><strong>Spec</strong></td>
           <td>String</td>
-          <td>선택한 ABB 로봇 모델 스펙 — 가반하중 (kg) 및 작업 반경 (mm)</td>
+          <td>선택한 ABB 로봇 모델의 가반하중(kg) 및 작업 반경(mm) 스펙 정보를 나타낸다.</td>
         </tr>
       </tbody>
     </table>
-    <p align="center">  <img src="/assets/images/0_ABBRobot_10.png" align="center" width="45%"></p>
+    <p align="center"><img src="/assets/images/0_ABBRobot_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -219,23 +213,21 @@ tags:
         <tr>
           <td><strong>Reset Pose</strong></td>
           <td>Button</td>
-          <td>로봇 자세 초기화</td>
+          <td>로봇의 관절 자세를 초기 상태(Home Pose)로 리셋한다.</td>
         </tr>
         <tr>
           <td><strong>Align Gumball</strong></td>
           <td>Button</td>
-          <td>현재 TCP 방향에 가장 가까운 World 좌표축(±X, ±Y, ±Z)과 평행하게 TCP를 정렬. ABB FlexPendant Jogging의 Align 기능과 동일.</td>
+          <td>현재 TCP 방향에 가장 가까운 World 좌표축(±X, ±Y, ±Z)과 평행하게 TCP를 정렬한다. (ABB FlexPendant Jogging의 Align 기능과 동일)</td>
         </tr>
         <tr>
           <td><strong>Config Option</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: cfx = 1. 로봇 축 4, 6의 구성(Configuration) 반전<br>
-              • FALSE: cfx = 0 기본값</td>
+          <td>• <strong>TRUE:</strong> cfx = 1. 로봇 축 4, 6의 구성(Configuration) 반전 모드를 적용한다.<br>• <strong>FALSE:</strong> cfx = 0. 기본 구성을 적용한다.</td>
         </tr>        
       </tbody>
     </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="45%"></p>
+    <p align="center"><img src="/assets/images/0_ABBRobot_11.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -251,19 +243,17 @@ tags:
         <tr>
           <td><strong>Color</strong></td>
           <td>Color</td>
-          <td>시각화 색상</td>
+          <td>시뮬레이션 및 뷰포트에서 로봇 메시의 시각화 색상을 지정한다.</td>
         </tr>
       </tbody>
     </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/0_ABBRobot_12.png" align="center" width="45%"></p>
+    <p align="center"><img src="/assets/images/0_ABBRobot_12.png" align="center" width="45%"></p>
   </div>
 </div>
-
 
 # | 출력(Output)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Robot Setup** | Robot Setup | 구성된 로봇 셋업. 베이스·툴·포지셔너·주변 모델이 묶인 로봇 정의. |
-| **Current TCP** | Plane | 로봇 셋업의 현재 TCP 평면. |
+| **Robot Setup** | Robot Setup | 베이스, 툴, 포지셔너, 주변 메시가 통합 구성된 로봇 셋업 데이터를 출력한다. Core 컴포넌트의 Robot 입력으로 연결한다. |
+| **Current TCP** | Plane | 현재 로봇 셋업의 TCP(Tool Center Point) 평면 데이터를 출력한다. |

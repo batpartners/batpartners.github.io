@@ -32,8 +32,8 @@ tags:
 
 # Description
 
-용접용 ABB 아크 인스트럭션(ArcLStart, ArcL, ArcLEnd)을 설정하는 컴포넌트이다.
-
+용접용 ABB 아크 인스트럭션(<code>ArcLStart</code>, <code>ArcL</code>, <code>ArcLEnd</code>)을 설정하는 컴포넌트이다.
+<br>
 <p align="center"><img src="/assets/images/3_ArcMove.png" align="center" width="32%"></p>
 
 <style>
@@ -49,7 +49,7 @@ tags:
     table-layout: fixed !important;       /* 테이블 내 셀 너비 비율을 강제로 고정 */
     word-break: break-all !important;     /* 긴 텍스트 입력 시 셀 수축 방지 및 줄바꿈 */
     margin: 20px 0 !important;
-    box-sizing: border-box !important;    /* 패딩으로 인한 가로 폭 삐져나옴 절대 방지 */
+    box-sizing: border-box !important;     /* 패딩으로 인한 가로 폭 삐져나옴 방지 */
   }
   
   /* 💡 [열 비율 통일] 모든 표의 1열(20%), 2열(15%), 3열(65%) 구조를 동일하게 매칭 */
@@ -124,23 +124,11 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (WeldData 변수명 개요) */
+  /* 💡 Active tab label style */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab1:checked ~ #content1 { display: block; }
-
-  /* 💡 2번째 탭 그룹 제어 (Weld ArcData 세트) */
-  #tab2:checked ~ .tab-buttons label[for="tab2"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #tab2:checked ~ #content2 { display: block; }
-
-  /* 💡 3번째 탭 그룹 제어 (Weld Param 세트) */
-  #tab6:checked ~ .tab-buttons label[for="tab6"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #tab6:checked ~ #content6 { display: block; }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -149,19 +137,18 @@ tags:
   }
 </style>
 
-# | 입력(Input)
+# | 입력(Inputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **RobTargets** | RobTarget | 모션 목표 위치. <a href="https://batpartners.github.io/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> 또는 <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> 컴포넌트 출력 연결. |
-| **SeamData** | SeamData| <a href="https://batpartners.github.io/datatype/DataType-SeamData/" target="_blank">ABB Seam Data</a> |
-| **WeldData** | WeldData | <a href="https://batpartners.github.io/datatype/DataType-WeldData/" target="_blank">ABB Weld Data</a> |
-
+| **RobTargets** | RobTarget | 모션 목표 위치를 연결한다. <a href="https://batpartners.github.io/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> 또는 <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> 컴포넌트의 출력을 전달한다. |
+| **SeamData** | SeamData | <a href="https://batpartners.github.io/datatype/DataType-SeamData/" target="_blank">ABB SeamData</a> 구성을 연결한다. |
+| **WeldData** | WeldData | <a href="https://batpartners.github.io/datatype/DataType-WeldData/" target="_blank">ABB WeldData</a> 구성을 연결한다. |
 
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-arcmove" checked>
   <ul class="tab-buttons">
     <li><label for="tab1">Arc Move</label></li>
   </ul>
@@ -178,29 +165,31 @@ tags:
         <tr>
           <td><strong>Type/Speed/Zone</strong></td>
           <td>String</td>
-          <td>모션 유형, 속도, 경유 반경 선택</td>
+          <td>모션 유형(Motion Type), 이동 속도(Speed), 경유 반경(Zone)을 설정한다.</td>
         </tr>
         <tr>
           <td><strong>Arc Start</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: 첫 번째 타겟에 대하여, ArcLStart 적용<br>
-              • FALSE: 첫 번째 타겟에 대하여, ArcL 적용</td>
+          <td>첫 번째 타겟의 아크 시작 여부를 설정한다.<br>
+              • TRUE: 첫 번째 타겟에 <code>ArcLStart</code> 적용<br>
+              • FALSE: 첫 번째 타겟에 <code>ArcL</code> 적용</td>
         </tr>
         <tr>
           <td><strong>Arc End</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: 마지막 타겟에 대하여, ArcLEnd 적용<br>
-              • FALSE:  마지막 타겟에 대하여, ArcL 적용 </td>
-        </tr>                
+          <td>마지막 타겟의 아크 종료 여부를 설정한다.<br>
+              • TRUE: 마지막 타겟에 <code>ArcLEnd</code> 적용<br>
+              • FALSE: 마지막 타겟에 <code>ArcL</code> 적용</td>
+        </tr>        
       </tbody>
     </table>
-<p align="center"><img src="/assets/images/3_ArcMove_1.png" align="center" width="45%"></p>
+    <br>
+    <p align="center"><img src="/assets/images/3_ArcMove_1.png" align="center" width="45%"></p>
   </div>
 </div>
 
-
-# | 출력(Output)
+# | 출력(Outputs)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달 |
+| **Instruction** | Instruction | 생성된 ABB 아크 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |

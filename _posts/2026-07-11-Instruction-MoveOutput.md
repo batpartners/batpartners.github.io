@@ -27,11 +27,12 @@ tags:
   - GERTY
 ---
 
+
 🌐 [EN]( {{ page.translation_link | absolute_url }} ){: .lang-switch }
 
 # Description
 
-디지털, 그룹, 아날로그 출력 신호를 동반하는 ABB Move 인스트럭션(MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO)을 설정하는 컴포넌트이다.
+디지털(DO), 그룹(GO), 아날로그(AO) 출력 신호를 동반하는 ABB RAPID Move 인스트럭션(`MoveJDO`, `MoveLDO`, `MoveJGO`, `MoveLGO`, `MoveJAO`, `MoveLAO`)을 생성 및 설정하는 컴포넌트이다.
 
 <p align="center"><img src="/assets/images/1_MoveOutput.png" align="center" width="32%"></p>
 
@@ -123,23 +124,11 @@ tags:
     box-sizing: border-box !important;
   }
 
-  /* 💡 1번째 탭 그룹 제어 (WeldData 변수명 개요) */
+  /* 💡 1번째 탭 그룹 제어 */
   #tab1:checked ~ .tab-buttons label[for="tab1"] {
     background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
   }
   #tab1:checked ~ #content1 { display: block; }
-
-  /* 💡 2번째 탭 그룹 제어 (Weld ArcData 세트) */
-  #tab2:checked ~ .tab-buttons label[for="tab2"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #tab2:checked ~ #content2 { display: block; }
-
-  /* 💡 3번째 탭 그룹 제어 (Weld Param 세트) */
-  #tab6:checked ~ .tab-buttons label[for="tab6"] {
-    background: #fff; color: #e53935; border-bottom: 1px solid #fff; padding-bottom: 13px; margin-bottom: -1px; z-index: 2;
-  }
-  #tab6:checked ~ #content6 { display: block; }
 
   /* 탭 전환시 부드러운 페이드인 애니메이션 */
   @keyframes fadeIn {
@@ -152,9 +141,9 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **RobTargets** | RobTarget | 모션 목표 위치. <a href="https://batpartners.github.io/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> 또는 <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> 컴포넌트 출력 연결. |
-| **Signal** | String | 모션을 적용할 신호명 |
-| **DO Value** | Boolean | 디지털 출력 값 |
+| **RobTargets** | RobTarget | 로봇의 목표 이동 위치를 지정한다. <a href="https://batpartners.github.io/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> 또는 <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> 컴포넌트의 출력을 연결한다. |
+| **Signal** | String | 모션 수행 시 제어할 출력 신호(Signal) 이름을 지정한다. |
+| **DO Value** | Boolean | 해당 출력 신호에 할당할 설정값(Boolean)을 지정한다. |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -176,19 +165,19 @@ tags:
         <tr>
           <td><strong>Type/Speed/Zone</strong></td>
           <td>String</td>
-          <td>모션 유형, 속도, 경유 반경</td>
+          <td>로봇의 모션 보간 방식(MoveJ/MoveL), 이동 속도(SpeedData), 경유 반경(ZoneData)을 지정한다.</td>
         </tr>
         <tr>
           <td><strong>MoveJ Start End</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: 첫번째, 마지막 타겟에 대하여 MoveJ 적용<br>
-              • FALSE: 모든 타겟에 대하여 설정된 모션 유형 적용</td>
+          <td>• <strong>TRUE:</strong> 첫 번째 및 마지막 타겟에 대해 관절 보간 모션(MoveJ)을 우선 적용한다.<br>
+              • <strong>FALSE:</strong> 모든 타겟에 대해 설정된 모션 유형을 일괄 적용한다.</td>
         </tr>
         <tr>
           <td><strong>Fine Start End</strong></td>
           <td>Toggle</td>
-          <td>• TRUE: 첫 번째 및 마지막 타겟의 Zone을 fine으로 적용<br>
-              • FALSE: 모든 타겟에 설정된 Zone 값 적용 </td>
+          <td>• <strong>TRUE:</strong> 첫 번째 및 마지막 타겟의 경유 반경(Zone)을 정밀 정지 포인트(fine)로 적용한다.<br>
+              • <strong>FALSE:</strong> 모든 타겟에 대해 설정된 Zone 값을 일괄 적용한다.</td>
         </tr>                
       </tbody>
     </table>
@@ -196,14 +185,12 @@ tags:
   </div>
 </div>
 
-
 # | 출력(Output)
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |
+| **Instruction** | Instruction | 생성된 ABB RAPID 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 전달한다. |
 
 <p align="center"> 
 <video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>
 </p>
-
