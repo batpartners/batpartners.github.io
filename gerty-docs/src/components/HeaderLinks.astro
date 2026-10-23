@@ -2,9 +2,10 @@
 // Header: a link back to the BAT homepage, then the default social icons. (The license form is opened from the
 // GERTY plugin and linked only where the old pages linked it, so it is not in the header.)
 import Default from "@astrojs/starlight/components/SocialIcons.astro";
+import { HOMEPAGE } from "../homepage.mjs";
 
 const en = Astro.locals.starlightRoute.locale === "en";
-const links = [{ href: en ? "https://b-at.kr/en/" : "https://b-at.kr/", label: "BAT.Partners" }];
+const links = [{ href: `${HOMEPAGE}${en ? "/en/" : "/"}`, label: "BAT.Partners" }];
 ---
 
 <nav class="header-links sl-flex" aria-label={en ? "BAT Partners links" : "BAT Partners 링크"}>

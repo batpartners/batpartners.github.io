@@ -40,6 +40,6 @@ When new images or videos are added to the posts, running `npm run convert` loca
 With the custom domain set, GitHub forwards every `batpartners.github.io/...` address to `docs.b-at.kr/...`, where the
 redirect pages send it to the new page — including the URL the GERTY plugin opens (`/about%20gerty/About-GERTY/`).
 
-The homepage's "도큐먼트 / Docs" links point to `https://docs.b-at.kr/` (and `/en/`); this site's "BAT.Partners" header
-link points to `https://b-at.kr/` (and `/en/`). Step-by-step go-live (homepage on Cloudflare, docs on GitHub, DNS, mail,
-Cafe24): `D:/ClaudeWebsite/SHLDemo/DEPLOY.md`.
+The homepage's "도큐먼트 / Docs" links point to `https://docs.b-at.kr/` (and `/en/`); this site's links to the homepage use
+`HOMEPAGE` from `src/homepage.mjs` (`https://www.b-at.kr`, the homepage's main address while b-at.kr's DNS stays at Cafe24).
+Step-by-step go-live (homepage on Cloudflare, docs on GitHub, Cafe24 DNS, mail): `D:/ClaudeWebsite/SHLDemo/DEPLOY.md`.

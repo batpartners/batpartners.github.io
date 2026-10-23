@@ -33,6 +33,7 @@ import { toMdast } from "hast-util-to-mdast";
 import remarkMdx from "remark-mdx";
 import remarkStringify from "remark-stringify";
 import { docsSource, loadPosts, parseOld } from "./posts.mjs";
+import { HOMEPAGE } from "../src/homepage.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
 const SRC = docsSource(ROOT);
@@ -327,9 +328,12 @@ function flattenCell(cell) {
   cell.children = out;
 }
 
-/** On English pages, links to homepage pages that have an English version open that version. */
+/**
+ * Links to the homepage or its license form go straight to the homepage's address (HOMEPAGE, not the forwarded bare
+ * domain), and on English pages to the English version.
+ */
 const localizeHomepage = (href, locale) =>
-  locale === "en" ? href.replace(/^https?:\/\/(?:www\.)?b-at\.kr\/(gerty-license-form\/?)?$/i, (_, p) => `https://b-at.kr/en/${p ?? ""}`) : href;
+  href.replace(/^https?:\/\/(?:www\.)?b-at\.kr\/(gerty-license-form\/?)?$/i, (_, p) => `${HOMEPAGE}/${locale === "en" ? "en/" : ""}${p ?? ""}`);
 
 /** Rewrites one page's hast in place (async because media may be converted or downloaded). */
 async function transform(tree, ctx) {
@@ -675,7 +679,7 @@ ${groups.map((g) => { const s = firstSlug(g); const sec = s.split("/")[0]; retur
 ## ${t.more}
 
 <CardGrid>
-  <LinkCard title="${esc(t.home)}" href="https://b-at.kr${locale === "en" ? "/en/" : "/"}" description="${esc(t.homeD)}" />
+  <LinkCard title="${esc(t.home)}" href="${HOMEPAGE}${locale === "en" ? "/en/" : "/"}" description="${esc(t.homeD)}" />
   <LinkCard title="${esc(t.contact)}" href="mailto:contact@b-at.kr" description="${esc(t.contactD)}" />
 </CardGrid>
 `;
@@ -702,7 +706,7 @@ hero:
       link: /en/
       variant: minimal
     - text: BAT.Partners
-      link: https://b-at.kr/
+      link: ${HOMEPAGE}/
       variant: minimal
 ---
 `,
