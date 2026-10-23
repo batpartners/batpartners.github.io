@@ -1,0 +1,235 @@
+/*
+  GERTY Docs theme — matches the BAT homepage (b-at.kr): Pretendard, deep navy, logo blue #00548D.
+  Layout follows the Mintlify/Speckle docs feel: quiet header, tinted active pill in the sidebar,
+  bordered tables, rounded media, light/dark modes.
+*/
+
+:root {
+  --sl-font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo",
+    "Noto Sans KR", "Malgun Gothic", sans-serif;
+  --sl-content-width: 48rem;
+  --sl-sidebar-width: 17.5rem;
+  --radius: 0.5rem;
+
+  /* Dark mode: navy palette of the homepage */
+  --sl-color-accent-low: #0b2d4a;
+  --sl-color-accent: #3a94d6;
+  --sl-color-accent-high: #b4daf7;
+  --sl-color-white: #ffffff;
+  --sl-color-gray-1: #e4edf4;
+  --sl-color-gray-2: #c8d4de;
+  --sl-color-gray-3: #8fa3b6;
+  --sl-color-gray-4: #5d7085;
+  --sl-color-gray-5: #24405c;
+  --sl-color-gray-6: #0f2236;
+  --sl-color-black: #04101c;
+  --sl-color-bg-nav: #04101c;
+  --sl-color-bg-sidebar: #04101c;
+  --sl-color-hairline: #17304a;
+  --sl-color-hairline-light: #1b3249;
+}
+
+:root[data-theme="light"],
+[data-theme="light"] ::backdrop {
+  --sl-color-accent-low: #e3f0fa;
+  --sl-color-accent: #00548d;
+  --sl-color-accent-high: #003a63;
+  --sl-color-white: #0b1724;
+  --sl-color-gray-1: #17293b;
+  --sl-color-gray-2: #31455a;
+  --sl-color-gray-3: #5d7085;
+  --sl-color-gray-4: #8fa3b6;
+  --sl-color-gray-5: #c8d4de;
+  --sl-color-gray-6: #eaf0f5;
+  --sl-color-gray-7: #f5f8fb;
+  --sl-color-black: #ffffff;
+  --sl-color-bg-nav: #ffffff;
+  --sl-color-bg-sidebar: #ffffff;
+  --sl-color-hairline: #e3e9ef;
+  --sl-color-hairline-light: #e3e9ef;
+  --sl-color-hairline-shade: #e3e9ef;
+}
+
+/* Korean text wraps at word boundaries */
+:root:lang(ko) {
+  word-break: keep-all;
+}
+
+/* ---------- Header ---------- */
+/* Only the outer <header class="header">; Starlight also has an inner <div class="header">. */
+header.header {
+  border-bottom: 1px solid var(--sl-color-hairline);
+}
+.site-title img {
+  height: 1.6rem;
+  width: auto;
+}
+
+/* ---------- Sidebar: tinted pill for the current page (Mintlify-like) ---------- */
+.sidebar-content a[aria-current="page"],
+.sidebar-content a[aria-current="page"]:hover,
+.sidebar-content a[aria-current="page"]:focus {
+  background-color: var(--sl-color-accent-low);
+  color: var(--sl-color-text-accent);
+  font-weight: 600;
+}
+.sidebar-content a {
+  border-radius: 0.375rem;
+}
+.sidebar-content .large {
+  font-size: var(--sl-text-sm);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--sl-color-white);
+}
+
+/* ---------- Content ---------- */
+.sl-markdown-content h2 {
+  margin-top: 2.5em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.sl-markdown-content h3 {
+  margin-top: 2em;
+  font-weight: 700;
+}
+
+/* Tables: bordered card with a tinted header; first column (parameter names) does not wrap on wide screens */
+.sl-markdown-content table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--sl-color-hairline);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-size: var(--sl-text-sm);
+}
+.sl-markdown-content :is(th, td) {
+  border: 0;
+  border-bottom: 1px solid var(--sl-color-hairline);
+  padding: 0.65rem 0.85rem;
+  vertical-align: top;
+}
+.sl-markdown-content tr:last-child td {
+  border-bottom: 0;
+}
+.sl-markdown-content th {
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-white);
+  font-weight: 700;
+  text-align: start;
+}
+/* Only the description column may break inside long tokens (e.g. "torch/extruder"); names and types keep whole words. */
+.sl-markdown-content td:last-child {
+  overflow-wrap: break-word;
+}
+/* Parameter names stay on one line only where there is room; on narrow screens they wrap so the table fits. */
+@media (min-width: 50rem) {
+  .sl-markdown-content td:first-child {
+    white-space: nowrap;
+    overflow-wrap: normal;
+  }
+}
+/* Tables sit in a scroll box (written by scripts/convert.mjs): on the narrowest phones a table that still does not
+   fit scrolls sideways inside it instead of the whole page. */
+.sl-markdown-content .table-scroll {
+  overflow-x: auto;
+}
+@media (max-width: 30rem) {
+  .sl-markdown-content :is(th, td) {
+    padding-inline: 0.6rem;
+  }
+  /* Tab bars: tighter tabs, and a second row rather than a tab hidden past the edge (e.g. WeaveData's four tabs). */
+  .sl-markdown-content starlight-tabs [role="tablist"] {
+    flex-wrap: wrap;
+  }
+  .sl-markdown-content starlight-tabs [role="tab"] {
+    padding-inline: 0.6rem;
+  }
+}
+
+/* ---------- Media converted from the old pages (see scripts/convert.mjs) ---------- */
+.sl-markdown-content .doc-media {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-block: 1.5rem;
+}
+.sl-markdown-content .doc-media :is(img, video) {
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: var(--radius);
+  border: 1px solid var(--sl-color-hairline);
+  /* Light in both themes: many screenshots are transparent PNGs with black wires and labels drawn for white. */
+  background: #f5f8fb;
+}
+.sl-markdown-content .doc-media img {
+  cursor: zoom-in;
+}
+.sl-markdown-content .doc-media img:focus-visible {
+  outline: 2px solid var(--sl-color-accent);
+  outline-offset: 2px;
+}
+.sl-markdown-content .doc-media figcaption {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: var(--sl-text-sm);
+  color: var(--sl-color-gray-3);
+}
+.sl-markdown-content .doc-media figcaption p {
+  margin: 0;
+}
+/* Small screens: side-by-side shots stack and use the full width */
+@media (max-width: 40rem) {
+  .sl-markdown-content .doc-media :is(img, video)[class*="w-"] {
+    width: 100%;
+  }
+}
+
+/* Full-size image viewer (public/zoom.js). margin: auto centres it (Starlight's reset sets every margin to 0). */
+.zoom-dialog {
+  margin: auto;
+  max-width: 96vw;
+  max-height: 96vh;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  overflow: visible;
+}
+.zoom-dialog::backdrop {
+  background: rgb(4 16 28 / 0.85);
+}
+.zoom-dialog img {
+  display: block;
+  max-width: 96vw;
+  max-height: 92vh;
+  object-fit: contain;
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: zoom-out;
+}
+/* Inside the image's top-right corner, so it stays on screen however tall the image is. */
+.zoom-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgb(4 16 28 / 0.7);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* ---------- Splash (home) ---------- */
+.hero > img {
+  max-width: min(22rem, 70vw);
+}

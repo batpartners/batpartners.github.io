@@ -1,0 +1,12 @@
+{
+  "pagefind.clear_search": "지우기",
+  "pagefind.load_more": "결과 더 보기",
+  "pagefind.search_label": "사이트 검색",
+  "pagefind.filters_label": "필터",
+  "pagefind.zero_results": "‘[SEARCH_TERM]’ 검색 결과가 없습니다",
+  "pagefind.many_results": "‘[SEARCH_TERM]’ 검색 결과 [COUNT]개",
+  "pagefind.one_result": "‘[SEARCH_TERM]’ 검색 결과 [COUNT]개",
+  "pagefind.alt_search": "‘[SEARCH_TERM]’ 검색 결과가 없어 ‘[DIFFERENT_TERM]’ 결과를 보여 드립니다",
+  "pagefind.search_suggestion": "‘[SEARCH_TERM]’ 검색 결과가 없습니다. 다음 검색어를 시도해 보세요:",
+  "pagefind.searching": "‘[SEARCH_TERM]’ 검색 중…"
+}

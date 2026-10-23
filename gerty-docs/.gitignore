@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.astro/
+# The repo's root .gitignore drops lock files; this one is needed for `npm ci` on GitHub.
+!package-lock.json
+# The workflow template; in the repo it lives at the root (.github/workflows/docs.yml).
+/.github/
+
+# Made by `npm run convert` (GitHub Actions runs it before every build)
+src/content/docs/
+src/sidebar.generated.json
+src/styles/media-widths.css
+redirects.generated.json
+# legacy redirect pages; public/assets (converted images and videos) and assets-manifest.json are committed
+/public/*/
+!/public/assets/

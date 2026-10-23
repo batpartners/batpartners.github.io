@@ -1,0 +1,34 @@
+{
+  "name": "gerty-docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "GERTY documentation (Astro Starlight). Content is converted from the Jekyll repo by scripts/convert.mjs.",
+  "scripts": {
+    "convert": "node scripts/convert.mjs",
+    "dev": "astro dev --port 4321",
+    "build": "astro build",
+    "preview": "astro preview --port 4321"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "0.42.6",
+    "astro": "7.3.8",
+    "pretendard": "1.3.9",
+    "sharp": "0.35.5"
+  },
+  "devDependencies": {
+    "ffmpeg-static": "^5.3.0",
+    "hast-util-to-mdast": "10.1.2",
+    "js-yaml": "^4.1.1",
+    "rehype-raw": "7.0.0",
+    "remark-gfm": "4.0.1",
+    "remark-mdx": "3.1.1",
+    "remark-parse": "11.0.0",
+    "remark-rehype": "11.1.2",
+    "remark-stringify": "11.0.0",
+    "unified": "11.0.5"
+  },
+  "allowScripts": {
+    "ffmpeg-static@5.3.0": true
+  }
+}

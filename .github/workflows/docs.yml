@@ -1,0 +1,54 @@
+# Builds the GERTY docs (gerty-docs/, Astro Starlight) from the Jekyll posts in this repo and publishes them with
+# GitHub Pages at https://docs.b-at.kr. Runs on every push to main: edit _posts/*.md as before, push, and the site
+# updates in a few minutes. Settings → Pages → Source must be "GitHub Actions".
+#
+# Copy this file to the repo root as .github/workflows/docs.yml (the docs project itself goes to gerty-docs/).
+name: Docs
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One deployment at a time; a newer push waits for the running one instead of cancelling it.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: gerty-docs
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: gerty-docs/package-lock.json
+      - run: npm ci
+      # Reads ../_posts, ../en/_posts, ../_data/navigation.yml and ../assets (this repo).
+      - run: npm run convert
+      - run: npm run build
+      # Stops the deployment (the live site stays as it was) if a page lost text or a link points nowhere.
+      - run: node scripts/check.mjs
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: gerty-docs/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
