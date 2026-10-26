@@ -1,0 +1,17 @@
+---
+// Starlight's sidebar with our own sublist (see SidebarSublist.astro): a group whose own page has the same title is
+// shown once — the group title links to that page — instead of the title repeated as its first child.
+import MobileMenuFooter from "virtual:starlight/components/MobileMenuFooter";
+import SidebarPersister from "@astrojs/starlight/components/SidebarPersister.astro";
+import SidebarSublist from "./SidebarSublist.astro";
+
+const { sidebar } = Astro.locals.starlightRoute;
+---
+
+<SidebarPersister>
+  <SidebarSublist sublist={sidebar} />
+</SidebarPersister>
+
+<div class="md:sl-hidden">
+  <MobileMenuFooter />
+</div>

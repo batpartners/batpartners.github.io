@@ -582,11 +582,14 @@ function buildSidebar() {
     if (n.children?.length) {
       // The group's own page comes first, unless a child already links it (e.g. IndReset → "Numeric Reference");
       // listing it twice would make the "next page" link point back to the same page.
+      // The own page is marked data-group-page: src/components/SidebarSublist.astro makes the group's title link to
+      // it instead of repeating the same title as the first child. (It stays in the list for prev/next and "open".)
       const kids = n.children.map(toItem).filter(Boolean);
+      const own = { slug, label: n.title, attrs: { "data-group-page": "" } };
       return {
         label: n.title,
         collapsed: true,
-        items: kids.some((k) => k.slug === slug) ? kids : [{ slug, label: n.title }, ...kids],
+        items: kids.some((k) => k.slug === slug) ? kids : [own, ...kids],
       };
     }
     return { slug, label: n.title };

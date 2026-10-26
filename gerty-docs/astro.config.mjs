@@ -36,6 +36,7 @@ export default defineConfig({
       ],
       components: {
         SocialIcons: "./src/components/HeaderLinks.astro",
+        Sidebar: "./src/components/Sidebar.astro",
       },
       customCss: [
         "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css",

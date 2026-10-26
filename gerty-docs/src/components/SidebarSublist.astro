@@ -1,0 +1,191 @@
+---
+// Copy of Starlight's SidebarSublist.astro (0.42) with one change: when a group's first entry is its own page
+// (marked data-group-page by scripts/convert.mjs), the group title links to that page and the entry is not listed
+// again. Clicking the title opens the page (the group then opens because it holds the current page); the caret
+// still just opens/closes the group.
+import type { StarlightRouteData } from "@astrojs/starlight/route-data";
+import { Badge, Icon } from "@astrojs/starlight/components";
+import SidebarRestorePoint from "@astrojs/starlight/components/SidebarRestorePoint.astro";
+
+type SidebarEntry = StarlightRouteData["sidebar"][number];
+type SidebarLink = Extract<SidebarEntry, { type: "link" }>;
+
+interface Props {
+  sublist: SidebarEntry[];
+  nested?: boolean;
+}
+
+const { sublist, nested } = Astro.props;
+
+const hasCurrent = (entries: SidebarEntry[]): boolean =>
+  entries.some((e) => (e.type === "link" ? e.isCurrent : hasCurrent(e.entries)));
+
+/** The group's own page, if its first entry is one. */
+const groupPage = (entries: SidebarEntry[]): SidebarLink | undefined => {
+  const first = entries[0];
+  return first?.type === "link" && "data-group-page" in first.attrs ? first : undefined;
+};
+const linkAttrs = ({ "data-group-page": _, ...attrs }: SidebarLink["attrs"]) => attrs;
+---
+
+<ul class:list={{ "top-level": !nested }}>
+  {
+    sublist.map((entry) => {
+      if (entry.type === "link") {
+        return (
+          <li>
+            <a
+              href={entry.href}
+              aria-current={entry.isCurrent ? "page" : undefined}
+              class:list={[{ large: !nested }, entry.attrs.class]}
+              {...entry.attrs}
+            >
+              <span>{entry.label}</span>
+              {entry.badge && <Badge variant={entry.badge.variant} class={entry.badge.class} text={entry.badge.text} />}
+            </a>
+          </li>
+        );
+      }
+      const page = groupPage(entry.entries);
+      const label = (
+        <>
+          <span class="large">{entry.label}</span>
+          {entry.badge && <Badge variant={entry.badge.variant} class={entry.badge.class} text={entry.badge.text} />}
+        </>
+      );
+      return (
+        <li>
+          <details open={hasCurrent(entry.entries) || !entry.collapsed}>
+            <summary class:list={{ "has-page": page }}>
+              {page ? (
+                <a
+                  href={page.href}
+                  aria-current={page.isCurrent ? "page" : undefined}
+                  class:list={["group-label", page.attrs.class]}
+                  {...linkAttrs(page.attrs)}
+                >
+                  {label}
+                </a>
+              ) : (
+                <span class="group-label">{label}</span>
+              )}
+              <Icon name="right-caret" class="caret" size="1.25rem" />
+            </summary>
+            <SidebarRestorePoint />
+            <Astro.self sublist={page ? entry.entries.slice(1) : entry.entries} nested />
+          </details>
+        </li>
+      );
+    })
+  }
+</ul>
+
+<style>
+  @layer starlight.core {
+    ul {
+      --sl-sidebar-item-padding-inline: 0.5rem;
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      overflow-wrap: anywhere;
+    }
+
+    ul ul li {
+      margin-inline-start: var(--sl-sidebar-item-padding-inline);
+      border-inline-start: 1px solid var(--sl-color-hairline-light);
+      padding-inline-start: var(--sl-sidebar-item-padding-inline);
+    }
+
+    .large {
+      font-size: var(--sl-text-lg);
+      font-weight: 600;
+      color: var(--sl-color-white);
+    }
+
+    .top-level > li + li {
+      margin-top: 0.75rem;
+    }
+
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.2em var(--sl-sidebar-item-padding-inline);
+      line-height: 1.4;
+      cursor: pointer;
+      user-select: none;
+    }
+    summary::marker,
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    /* Group title that links to the group's own page: the link fills the row up to the caret, so its
+       current-page pill lines up with the page links below it. */
+    summary.has-page {
+      padding: 0;
+    }
+    summary.has-page > a {
+      flex: 1;
+      padding: 0.2em var(--sl-sidebar-item-padding-inline);
+    }
+    summary.has-page > .caret {
+      margin-inline-end: var(--sl-sidebar-item-padding-inline);
+    }
+    a[aria-current="page"] .large {
+      color: inherit;
+    }
+
+    .caret {
+      transition: transform 0.2s ease-in-out;
+      flex-shrink: 0;
+    }
+    :global([dir="rtl"]) .caret {
+      transform: rotateZ(180deg);
+    }
+    [open] > summary .caret {
+      transform: rotateZ(90deg);
+    }
+
+    a {
+      display: block;
+      border-radius: 0.25rem;
+      text-decoration: none;
+      color: var(--sl-color-gray-2);
+      padding: 0.3em var(--sl-sidebar-item-padding-inline);
+      line-height: 1.4;
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--sl-color-white);
+    }
+
+    [aria-current="page"],
+    [aria-current="page"]:hover,
+    [aria-current="page"]:focus {
+      font-weight: 600;
+      color: var(--sl-color-text-invert);
+      background-color: var(--sl-color-text-accent);
+    }
+
+    a > *:not(:last-child),
+    .group-label > *:not(:last-child) {
+      margin-inline-end: 0.25em;
+    }
+
+    @media (min-width: 50rem) {
+      .top-level > li + li {
+        margin-top: 0.5rem;
+      }
+      .large {
+        font-size: var(--sl-text-base);
+      }
+      a {
+        font-size: var(--sl-text-sm);
+      }
+    }
+  }
+</style>
