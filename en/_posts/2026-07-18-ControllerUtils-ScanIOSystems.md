@@ -168,7 +168,7 @@ A component that can retrieve all defined I/O signal names from the connected lo
   <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
   
   <ul class="tab-buttons">
-    <li><label for="sm-tab1">Info</label></li>
+    <li><label for="sm-tab1">Gate IO Systems</label></li>
   </ul>
 
   <div class="tab-content" id="sm-content1">
@@ -187,12 +187,12 @@ A component that can retrieve all defined I/O signal names from the connected lo
           <td>Open/close gate for scanning I/O systems</td>
         </tr>
         <tr>
-          <td><strong>IO Unit</strong></td>
+          <td><strong>IO Units</strong></td>
           <td>String</td>
           <td>I/O unit to scan</td>
         </tr>
         <tr>
-          <td><strong>Signal Type</strong></td>
+          <td><strong>Signal Types</strong></td>
           <td>String</td>
           <td>Signal type to scan</td>
         </tr>
@@ -207,4 +207,4 @@ A component that can retrieve all defined I/O signal names from the connected lo
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Signals** | String | Filtered signal names |
+| **SignalsInUnit** | String | Filtered signal names |

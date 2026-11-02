@@ -152,8 +152,8 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Base Plane** | Plane | 로봇의 베이스 좌표계 평면을 지정한다. (기본값: WorldXY) |
-| **ToolData** | ToolData | 로봇에 적용할 ABB <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">ToolData</a>를 연결한다. |
+| **Robot Base** | Plane | 로봇의 베이스 좌표계 평면을 지정한다. (기본값: WorldXY) |
+| **Tool Data** | ToolData | 로봇에 적용할 ABB <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">ToolData</a>를 연결한다. |
 | **Positioner** | Positioner | 로봇과 연동할 외부축 <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">Positioner</a> 컴포넌트의 출력을 연결한다. |
 | **Pedestal** | Mesh | 로봇 받침대, 작업대 등 주변 환경 메시(Mesh) 데이터를 연결한다 (선택 사항). |
 
@@ -175,14 +175,14 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Robot Model</strong></td>
+          <td><strong>Models</strong></td>
           <td>String</td>
           <td>사용할 ABB 로봇 모델을 선택한다.</td>
         </tr>
         <tr>
-          <td><strong>Spec</strong></td>
-          <td>String</td>
-          <td>선택한 ABB 로봇 모델의 가반하중(kg) 및 작업 반경(mm) 스펙 정보를 나타낸다.</td>
+          <td><strong>Colour</strong></td>
+          <td>Color</td>
+          <td>시뮬레이션 및 뷰포트에서 로봇 메시의 시각화 색상을 지정한다.</td>
         </tr>
       </tbody>
     </table>
@@ -192,11 +192,9 @@ tags:
 
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-linear" checked>
-  <input type="radio" id="tab3" name="gh-tabs-linear">
   
   <ul class="tab-buttons">
-    <li><label for="tab2">Robot Linear Jog</label></li>
-    <li><label for="tab3">Preview</label></li>
+    <li><label for="tab2">Motion Settings</label></li>
   </ul>
   <div class="tab-content" id="content2">
     <table class="spec-table">
@@ -227,26 +225,6 @@ tags:
     </table>
     <p align="center"><img src="/assets/images/0_ABBRobot_11.png" align="center" width="45%"></p>
   </div>
-
-  <div class="tab-content" id="content3">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Color</strong></td>
-          <td>Color</td>
-          <td>시뮬레이션 및 뷰포트에서 로봇 메시의 시각화 색상을 지정한다.</td>
-        </tr>
-      </tbody>
-    </table>
-    <p align="center"><img src="/assets/images/0_ABBRobot_12.png" align="center" width="45%"></p>
-  </div>
 </div>
 
 <div class="tabs-container">
@@ -268,32 +246,32 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>RobAx 1</strong></td>
+          <td><strong>Robot Axis 1</strong></td>
           <td>Number</td>
           <td>로봇 1번 축(J1)의 회전 각도를 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>RobAx 2</strong></td>
+          <td><strong>Robot Axis 2</strong></td>
           <td>Number</td>
           <td>로봇 2번 축(J2)의 회전 각도를 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>RobAx 3</strong></td>
+          <td><strong>Robot Axis 3</strong></td>
           <td>Number</td>
           <td>로봇 3번 축(J3)의 회전 각도를 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>RobAx 4</strong></td>
+          <td><strong>Robot Axis 4</strong></td>
           <td>Number</td>
           <td>로봇 4번 축(J4)의 회전 각도를 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>RobAx 5</strong></td>
+          <td><strong>Robot Axis 5</strong></td>
           <td>Number</td>
           <td>로봇 5번 축(J5)의 회전 각도를 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>RobAx 6</strong></td>
+          <td><strong>Robot Axis 6</strong></td>
           <td>Number</td>
           <td>로봇 6번 축(J6)의 회전 각도를 설정한다.</td>
         </tr>                                      
@@ -313,32 +291,32 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>ExtAx 1</strong></td>
+          <td><strong>External Axis 1</strong></td>
           <td>Number</td>
           <td>부가축 1번(E1)의 이동 거리 또는 회전 각도를 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>ExtAx 2</strong></td>
+          <td><strong>External Axis 2</strong></td>
           <td>Number</td>
           <td>부가축 2번(E2)의 이동 거리 또는 회전 각도를 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>ExtAx 3</strong></td>
+          <td><strong>External Axis 3</strong></td>
           <td>Number</td>
           <td>부가축 3번(E3)의 이동 거리 또는 회전 각도를 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>ExtAx 4</strong></td>
+          <td><strong>External Axis 4</strong></td>
           <td>Number</td>
           <td>부가축 4번(E4)의 이동 거리 또는 회전 각도를 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>ExtAx 5</strong></td>
+          <td><strong>External Axis 5</strong></td>
           <td>Number</td>
           <td>부가축 5번(E5)의 이동 거리 또는 회전 각도를 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>ExtAx 6</strong></td>
+          <td><strong>External Axis 6</strong></td>
           <td>Number</td>
           <td>부가축 6번(E6)의 이동 거리 또는 회전 각도를 설정한다.</td>
         </tr> 
@@ -352,5 +330,5 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Robot Setup** | Robot Setup | 베이스, 툴, 포지셔너, 주변 메시가 통합 구성된 로봇 셋업 데이터를 출력한다. Core 컴포넌트의 Robot 입력으로 연결한다. |
-| **Current TCP** | Plane | 현재 로봇 셋업의 TCP(Tool Center Point) 평면 데이터를 출력한다. |
+| **GERTY Robot** | Robot Setup | 베이스, 툴, 포지셔너, 주변 메시가 통합 구성된 로봇 셋업 데이터를 출력한다. Core 컴포넌트의 GERTY Robot 입력으로 연결한다. |
+| **TCP** | Plane | 현재 로봇 셋업의 TCP(Tool Center Point) 평면 데이터를 출력한다. |

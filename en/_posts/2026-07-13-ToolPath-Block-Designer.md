@@ -161,9 +161,9 @@ This is a component that generates Place targets to arrange blocks in a standard
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
+| **Base Plane** | Plane | Base plane for slicing the wall into layers. Generates layers along the Z-axis direction. Default: WorldXY. |
 | **Unit Block** | Box | Unit block geometry to be stacked. |
 | **Wall** | Brep | Target wall geometry where blocks will be placed. |
-| **Wall Base** | Plane | Base plane for slicing the wall into layers. Generates layers along the Z-axis direction. Default: WorldXY. |
 
 
 ## | Required Parameter
@@ -188,19 +188,19 @@ This is a component that generates Place targets to arrange blocks in a standard
       </thead>
       <tbody>
         <tr>
-          <td><strong>Divide Distance</strong></td>
+          <td><strong>Divide by Distance</strong></td>
           <td>Toggle</td>
           <td>Method for calculating block spacing.<br>
               • TRUE: Fixed interval division (Unit width + Horizontal spacing).<br>
               • FALSE: Uniform count division (Layer length ÷ (Unit width + Spacing) rounded to integer) (Default).</td>
         </tr>
         <tr>
-          <td><strong>Horizontal Spacing</strong></td>
+          <td><strong>Horizontal Spacing(mm)</strong></td>
           <td>Number</td>
           <td>Horizontal spacing between blocks (mm)</td>
         </tr>
         <tr>
-          <td><strong>Vertical Spacing</strong></td>
+          <td><strong>Vertical Spacing(mm)</strong></td>
           <td>Number</td>
           <td>Vertical spacing between blocks (mm)</td>
         </tr>
@@ -221,7 +221,7 @@ This is a component that generates Place targets to arrange blocks in a standard
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>Frame size</td>
         </tr>
@@ -237,7 +237,7 @@ This is a component that generates Place targets to arrange blocks in a standard
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Place Targets** | Plane | Generated tracing path target planes |
 | **Block Count** | Integer | Total number of blocks. |
-| **Layer Curves** | Curve | Stacking outline curves for each layer. |
+| **Target Planes** | Plane | Generated tracing path target planes |
 | **Block Wall** | Plane | Resulting wall mesh composed of placed blocks. |
+| **Layers** | Curve | Stacking outline curves for each layer. |

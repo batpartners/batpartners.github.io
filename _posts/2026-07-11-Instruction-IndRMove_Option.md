@@ -203,12 +203,12 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>RefNum(°)</strong></td>
+          <td><strong>ToRelNum(°)</strong></td>
           <td>Number</td>
           <td>목표 위치(각도)를 숫자(°)로 직접 지정한다.</td>
         </tr>
         <tr>
-          <td><strong>Direction</strong></td>
+          <td><strong>Direction Policy</strong></td>
           <td>String</td>
           <td>이동 방향을 설정한다.<br>
               • <code>Short</code>: 최단 경로 (±180° 이내)<br>
@@ -216,7 +216,7 @@ tags:
               • <code>Bwd</code>: 음의 방향으로 이동 (최대 360°)</td>
         </tr>
         <tr>
-          <td><strong>Speed</strong></td>
+          <td><strong>Speed(°/s)</strong></td>
           <td>Number</td>
           <td>축 이동 속도(°/s)를 설정한다.</td>
         </tr>
@@ -236,4 +236,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |
+| **Instructions** | Instruction | 생성된 ABB 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |

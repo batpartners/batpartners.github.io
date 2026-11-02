@@ -162,10 +162,10 @@ This is a component that generates shell deposition toolpaths from a closed soli
 | :--- | :--- | :--- |
 | **Geometry** | Geometry | Target geometry for slicing. Input Brep or Mesh. |
 | **Reference Plane** | Plane | Reference plane for slicing. Set identical to the build plate direction. Layers are generated along the Z-axis direction of the plane. Default: WorldXY. |
-| **Seams** | Curve | Guide curve that determines the starting point (Seam) location of each layer's outer path. The intersection between the curve and the outer path is set as the layer starting point. |
-| **Edges** | Curve | Guide curve used to tilt target planes formed around the geometry's edges along the tangent direction of the edges. |
 | **Angle Ranges** | Number | Angle Ranges |
 | **Multiple** | Number | Multiple |
+| **Seam Crvs** | Curve | Guide curve that determines the starting point (Seam) location of each layer's outer path. The intersection between the curve and the outer path is set as the layer starting point. |
+| **Edge Crvs** | Curve | Guide curve used to tilt target planes formed around the geometry's edges along the tangent direction of the edges. |
 
 ## | Required Parameter
 
@@ -191,7 +191,7 @@ This is a component that generates shell deposition toolpaths from a closed soli
       </thead>
       <tbody>
         <tr>
-          <td><strong>Setback</strong></td>
+          <td><strong>Setback(mm)</strong></td>
           <td>Number</td>
           <td>Inward/outward offset distance of the outer path based on the input geometry boundary (mm).</td>
         </tr>
@@ -201,17 +201,17 @@ This is a component that generates shell deposition toolpaths from a closed soli
           <td>Number of outer paths (shells) to be generated along the outline of the input geometry.</td>
         </tr>
         <tr>
-          <td><strong>Layer Width</strong></td>
+          <td><strong>Layer Width(mm)</strong></td>
           <td>Number</td>
           <td>Width of a single deposition path (bead width, mm).</td>
         </tr>
         <tr>
-          <td><strong>Layer Height</strong></td>
+          <td><strong>Layer Height(mm)</strong></td>
           <td>Number</td>
           <td>Height of a single deposition layer (layer thickness, mm).</td>
         </tr>
         <tr>
-          <td><strong>First Layer Height</strong></td>
+          <td><strong>First Layer Height(mm)</strong></td>
           <td>Number</td>
           <td>Height of the first deposition layer in contact with the build plate (mm).</td>
         </tr>
@@ -236,24 +236,24 @@ This is a component that generates shell deposition toolpaths from a closed soli
       </thead>
       <tbody>
         <tr>
-          <td><strong>Tilt Weight</strong></td>
+          <td><strong>Tilting Weight</strong></td>
           <td>Number</td>
           <td>Weight to tilt the target Z-axis toward the surface inclination (overhang) direction in overhang geometries. Used to align the torch/extruder with the geometry's inclination.</td>
         </tr>
         <tr>
-          <td><strong>Edge Tilt Weight</strong></td>
+          <td><strong>Edge Tilting Weight</strong></td>
           <td>Number</td>
-          <td>Weight to tilt the target toward the tangent direction of the edge in geometries with edges. Edge reference curves use the component's Edges input.</td>
+          <td>Weight to tilt the target toward the tangent direction of the edge in geometries with edges. Edge reference curves use the component's Edge Crvs input.</td>
         </tr>
         <tr>
-          <td><strong>Edge Tilt Ramp</strong></td>
+          <td><strong>Edge Tilt Ramp(mm)</strong></td>
           <td>Number</td>
           <td>Distance to blend the Edge Tilt effect (mm). Gradually applies and releases Edge Tilt before and after the edge by this distance to mitigate path movement caused by abrupt edge tangent transitions.</td>
         </tr>
         <tr>
-          <td><strong>Incremental Tilt Steps</strong></td>
+          <td><strong>Incremental Steps</strong></td>
           <td>Number</td>
-          <td>Number of layers (N) to gradually reach the configured Tilt Weight. Applies tilting step-by-step starting from initial layers near the build plate, preventing collisions and excessive robot movement caused by abrupt tilting in initial layers.</td>
+          <td>Number of layers (N) to gradually reach the configured Tilting Weight. Applies tilting step-by-step starting from initial layers near the build plate, preventing collisions and excessive robot movement caused by abrupt tilting in initial layers.</td>
         </tr>
       </tbody>
     </table>
@@ -272,7 +272,7 @@ This is a component that generates shell deposition toolpaths from a closed soli
       </thead>
       <tbody>
         <tr>
-          <td><strong>Wipe Distance</strong></td>
+          <td><strong>Wipe Distance(mm)</strong></td>
           <td>Number</td>
           <td>Nozzle wiping distance.<br>
               • Positive (+): Proceeds with an overlapping path by this additional distance from the starting point after completing the outer path.<br>
@@ -285,7 +285,7 @@ This is a component that generates shell deposition toolpaths from a closed soli
               • Example: N = 4 → Layer 1 = 0.0, Layer 2 = 0.25, Layer 3 = 0.75, Layer 4 = 0.0 (repeating).</td>
         </tr>
         <tr>
-          <td><strong>Seam Offset</strong></td>
+          <td><strong>Seam Shifting</strong></td>
           <td>Integer</td>
           <td>Offset to collectively adjust the seam positions of all layers. Uniformly shifts the entire sequence while maintaining the positional relationships between layers established by Seam Spread.</td>
         </tr>
@@ -313,13 +313,13 @@ This is a component that generates shell deposition toolpaths from a closed soli
       </thead>
       <tbody>
         <tr>
-          <td><strong>Part Count</strong></td>
+          <td><strong>Partition</strong></td>
           <td>Integer</td>
           <td>Number of parts to divide and slice the model into.<br>
               • 1: Slices the entire model. / • N: Divides the model into N parts for partial slicing.</td>
         </tr>
         <tr>
-          <td><strong>Part Number</strong></td>
+          <td><strong>Order</strong></td>
           <td>Number</td>
           <td>Part number (1 to N) to be sliced among the N divided parts.</td>
         </tr>
@@ -333,7 +333,7 @@ This is a component that generates shell deposition toolpaths from a closed soli
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Shell ToolPaths** | Shell ToolPaths | Generated deposition path data. |
-| **Shell Profile** | Shell Profile | Reference profile information of the generated outer deposition path. |
-| **First Part** | Boolean | Flag indicating whether the current Deposition ToolPath is the bottom-most (first) part. |
-| **Shell Contours** | Curve | Polylines connecting the generated outer deposition paths. |
+| **Deposition ToolPaths** | Shell ToolPaths | Generated deposition path data. |
+| **Is Bottommost** | Boolean | Flag indicating whether the current Deposition ToolPath is the bottom-most (first) part. |
+| **GERTYShellData** | Shell Profile | Reference profile information of the generated outer deposition path. |
+| **Shell polylines** | Curve | Polylines connecting the generated outer deposition paths. |

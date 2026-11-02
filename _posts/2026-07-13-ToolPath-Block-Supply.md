@@ -161,9 +161,9 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
+| **Base Plane** | Plane | 블록 공급부의 기준 평면. |
 | **Unit Block** | Box | 적층할 단위 블록 형상. |
 | **Block Count** | Integer | 공급할 블록의 총 개수. 배치 가능 개수(X×Y×Z) 초과 시 동일 배열로 겹쳐 반복 배치. |
-| **Supply Base** | Plane | 블록 공급부의 기준 평면. |
 
 
 ## | 필수 파라미터 (Required Parameter)
@@ -200,7 +200,7 @@ tags:
           <td>공급부 Y축 방향 블록 간격 (mm)</td>
         </tr>
         <tr>
-          <td><strong>Z Spacing(mm)</strong></td>
+          <td><strong>Z Spacing</strong></td>
           <td>Number</td>
           <td>공급부 Z축 방향 블록 간격 (mm)</td>
         </tr>
@@ -252,7 +252,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>프레임 크기</td>
         </tr>
@@ -267,5 +267,5 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Pick Targets** | Plane | 각 공급 블록의 Pick 타겟 평면. |
-| **Supply Blocks** | Mesh | 공급부에 배치된 블록 메시. |
+| **Blocks** | Mesh | 공급부에 배치된 블록 메시. |
+| **Target Planes** | Plane | 각 공급 블록의 Pick 타겟 평면. |

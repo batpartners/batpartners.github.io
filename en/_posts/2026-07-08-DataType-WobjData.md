@@ -186,7 +186,7 @@ It can be defined by the user from the world coordinate system to the local coor
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>Adjusts the display size of the local coordinate system axes for the `WobjFrame`.</td>
         </tr>

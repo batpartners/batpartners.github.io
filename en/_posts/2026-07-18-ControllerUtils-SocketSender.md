@@ -216,7 +216,7 @@ It streams and exports the finalized code as motion instruction packets to a loc
           <td>Target upper limit for the robot queue. (Default: 350)</td>
         </tr>
         <tr>
-          <td><strong>MaxTick</strong></td>
+          <td><strong>Max Tick</strong></td>
           <td>Number</td>
           <td>Maximum packets sent per timer callback. (Default: 35)</td>
         </tr>
@@ -268,7 +268,7 @@ It streams and exports the finalized code as motion instruction packets to a loc
   <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
   
   <ul class="tab-buttons">
-    <li><label for="sm-tab1">Log & Status</label></li>
+    <li><label for="sm-tab1">Log/Status</label></li>
   </ul>
 
   <div class="tab-content" id="sm-content1">

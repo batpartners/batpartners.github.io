@@ -216,7 +216,7 @@ tags:
           <td>로봇 큐 목표 상한. (기본: 350)</td>
         </tr>
         <tr>
-          <td><strong>MaxTick</strong></td>
+          <td><strong>Max Tick</strong></td>
           <td>Number</td>
           <td>타이머 1회 콜백당 최대 전송 패킷 수 (기본: 35)</td>
         </tr>
@@ -268,7 +268,7 @@ tags:
   <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
   
   <ul class="tab-buttons">
-    <li><label for="sm-tab1">Log & Status</label></li>
+    <li><label for="sm-tab1">Log/Status</label></li>
   </ul>
 
   <div class="tab-content" id="sm-content1">

@@ -203,10 +203,10 @@ This is a component that initializes the position and rotation values of an auxi
         <tr>
           <td><strong>RefNum(°)</strong></td>
           <td>Number</td>
-          <td>Specifies the measurement reference position as a number (°). Valid only when Direction is Short, Fwd, or Bwd.</td>
+          <td>Specifies the measurement reference position as a number (°). Valid only when Direction Policy is Short, Fwd, or Bwd.</td>
         </tr>
         <tr>
-          <td><strong>Direction</strong></td>
+          <td><strong>Direction Policy</strong></td>
           <td>String</td>
           <td>Measurement system adjustment method.<br>
               • Short: Shortest path to the reference position (within ±180°)<br>
@@ -235,7 +235,7 @@ This is a component that initializes the position and rotation values of an auxi
       </thead>
       <tbody>
         <tr>
-          <td><strong>Instruction</strong></td>
+          <td><strong>Instructions</strong></td>
           <td>Instruction</td>
           <td>Generated ABB instruction. Passed to the Instructions input of the Core component.</td>
         </tr>

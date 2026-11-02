@@ -125,7 +125,7 @@ This is a component that temporarily pauses robot motion for a specified time (i
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Signal** | String | Creates a WaitDI instruction to pause robot motion until the specified digital input (DI) signal reaches the target value. |
+| **Time(sec.)** | Number | Time (in seconds) for which program execution waits. |
 
 ## Required Parameter
 
@@ -160,4 +160,4 @@ This is a component that temporarily pauses robot motion for a specified time (i
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Connect to the Instructions input of the Core component. |
+| **Instructions** | Instruction | Generated ABB instruction. Connect to the Instructions input of the Core component. |

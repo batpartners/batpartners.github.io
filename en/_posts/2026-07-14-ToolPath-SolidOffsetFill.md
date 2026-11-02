@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-This is a component that generates a deposition toolpath to fill the inside of a pattern created by offsetting the outer boundary (shell) inward or outward, based on the Shell Profile.
+This is a component that generates a deposition toolpath to fill the inside of a pattern created by offsetting the outer boundary (shell) inward or outward, based on the GShell.
 
 <p align="center">  <img src="/assets/images/11_SolidOffsetFill.png" align="center" width="32%"></p>
 
@@ -161,7 +161,7 @@ This is a component that generates a deposition toolpath to fill the inside of a
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Shell Profile** | Shell Profile | Reference profile information for the outer deposition path. |
+| **GShell** | Shell Profile | Reference profile information for the outer deposition path. |
 | **Direction** | Boolean | Inverts the fill pattern direction. (TRUE: Inverts the direction. / FALSE: Maintains default direction (Default)) |
 
 # | Output

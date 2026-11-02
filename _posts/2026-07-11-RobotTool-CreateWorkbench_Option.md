@@ -154,10 +154,9 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Workbench Geo** | Mesh | 워크벤치의 3D 형상 메시 데이터를 연결한다. |
-| **Base Plane** | Plane | 포지셔너 플랜지 면에 장착되는 워크벤치의 하단 기준 좌표계 평면을 지정한다. |
-| **Top Plane** | Plane | 워크벤치 상단의 작업물 부착 기준 좌표계 평면을 지정한다. |
-| **Workpieces** | Mesh | 워크벤치 위에 고정할 작업물(Workpiece)의 3D 형상 메시 데이터를 연결한다 (선택 사항). |
+| **BenchBase** | Plane | 포지셔너 플랜지 면에 장착되는 워크벤치의 하단 기준 좌표계 평면을 지정한다. |
+| **BenchTop** | Plane | 워크벤치 상단의 작업물 부착 기준 좌표계 평면을 지정한다. |
+| **WorkPieces** | Mesh | 워크벤치 위에 고정할 작업물(Workpiece)의 3D 형상 메시 데이터를 연결한다 (선택 사항). |
 
 <p align="center"> 
 <video src="/assets/images/WorkbenchImporter_gif.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video>
@@ -167,8 +166,11 @@ tags:
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-workbench" checked>
+  <input type="radio" id="tab2" name="gh-tabs-workbench">
+  
   <ul class="tab-buttons">
-    <li><label for="tab1">Workbench</label></li>
+    <li><label for="tab1">WorkBench</label></li>
+    <li><label for="tab2">Export</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -185,22 +187,23 @@ tags:
           <td>String</td>
           <td>워크벤치의 식별 이름을 입력한다.</td>
         </tr>
+        <tr>
+          <td><strong>WorkBench Colour</strong></td>
+          <td>Color</td>
+          <td>뷰포트에서 워크벤치 메시의 시각화 색상을 지정한다.</td>
+        </tr>
+        <tr>
+          <td><strong>WorkPiece Colour</strong></td>
+          <td>Color</td>
+          <td>뷰포트에서 작업물(Workpiece) 메시의 시각화 색상을 지정한다.</td>
+        </tr>
       </tbody>
     </table>
     <p align="center"><img src="/assets/images/2_Workbench_10.png" align="center" width="45%"></p>
   </div>
-</div>
 
-<div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-display" checked>
-  <input type="radio" id="tab3" name="gh-tabs-display">
-  
-  <ul class="tab-buttons">
-    <li><label for="tab2">Preview</label></li>
-    <li><label for="tab3">Workpiece</label></li>
-  </ul>
   <div class="tab-content" id="content2">
-    <table class="spec-table">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>이름</th>
@@ -210,29 +213,9 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>WorkBench Color</strong></td>
-          <td>Color</td>
-          <td>뷰포트에서 워크벤치 메시의 시각화 색상을 지정한다.</td>
-        </tr>
-      </tbody>
-    </table>
-    <p align="center"><img src="/assets/images/2_Workbench_11.png" align="center" width="45%"></p>
-  </div>
-
-  <div class="tab-content" id="content3">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>WorkPiece Color</strong></td>
-          <td>Color</td>
-          <td>뷰포트에서 작업물(Workpiece) 메시의 시각화 색상을 지정한다.</td>
+          <td><strong>Export</strong></td>
+          <td>Button</td>
+          <td>워크벤치 데이터를 사용자 로컬의 지정된 경로에 파일로 저장한다.</td>
         </tr>
       </tbody>
     </table>
@@ -244,4 +227,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Workbench** | Workbench | 구성된 워크벤치 및 작업물 데이터 정의를 출력한다. Positioner 컴포넌트에 연결하여 사용한다. |
+| **WorkBench** | Workbench | 구성된 워크벤치 및 작업물 데이터 정의를 출력한다. Positioner 컴포넌트에 연결하여 사용한다. |

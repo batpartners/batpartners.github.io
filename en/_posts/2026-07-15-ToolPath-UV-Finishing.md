@@ -160,7 +160,7 @@ This is a component that generates a finishing toolpath along the UV isoparametr
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Geometry** | Geometry | Brep or Surface geometry to be finish machined. |
+| **Brep** | Geometry | Brep or Surface geometry to be finish machined. |
 | **Reference Plane** | Plane | Reference plane for finishing path generation. |
 
 ## | Required Parameter
@@ -185,19 +185,19 @@ This is a component that generates a finishing toolpath along the UV isoparametr
       </thead>
       <tbody>
         <tr>
-          <td><strong>UV Flip</strong></td>
+          <td><strong>UV Direction</strong></td>
           <td>Toggle</td>
           <td>Reverses the UV progression direction of the finishing path.</td>
         </tr>
         <tr>
-          <td><strong>Stepover</strong></td>
+          <td><strong>Stepover(mm)</strong></td>
           <td>Number</td>
           <td>Distance between adjacent cutting paths (mm).</td>
         </tr>
         <tr>
-          <td><strong>Tilt Weight</strong></td>
+          <td><strong>Tilting Weight</strong></td>
           <td>Number</td>
-          <td>Adjusts the degree to which the endmill is perpendicular to the surface by tilting the TCP along the geometry surface normal direction (0.0 = Reference Plane Z, 1.0 = Surface Normal).</td>
+          <td>Adjusts the degree to which the endmill is perpendicular to the surface by tilting the TCP along the Brep surface normal direction (0.0 = Reference Plane Z, 1.0 = Surface Normal).</td>
         </tr>
         <tr>
           <td><strong>Tolerance</strong></td>
@@ -220,7 +220,7 @@ This is a component that generates a finishing toolpath along the UV isoparametr
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>Frame size</td>
         </tr>
@@ -236,4 +236,4 @@ This is a component that generates a finishing toolpath along the UV isoparametr
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Target Planes** | Plane | Target planes of the generated finishing path. |
-| **Contour** | Curve | Polyline pattern connecting the generated finishing paths. |
+| **Curve** | Curve | Polyline pattern connecting the generated finishing paths. |

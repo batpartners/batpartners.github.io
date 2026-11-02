@@ -144,7 +144,7 @@ AccSet is an AccSet instruction component that reduces robot acceleration and ra
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">Arc Move</label></li>
+    <li><label for="tab1">Acceleration Params</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -187,4 +187,4 @@ AccSet is an AccSet instruction component that reduces robot acceleration and ra
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Passed to the Instructions input of the Core component. |
+| **Instructions** | Instruction | Generated ABB instruction. Passed to the Instructions input of the Core component. |

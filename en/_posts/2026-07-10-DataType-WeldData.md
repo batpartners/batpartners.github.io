@@ -154,7 +154,7 @@ This is a component that defines parameters for the actual welding section where
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Weld Sched** | Weld Sched | The welding program number (schedule) and welding mode to be used. |
-| **Weight** | Number | Weight factor for wirefeed1. |
+| **Weighting** | Number | Weight factor for wirefeed1. |
 | **WeaveData** | WeaveData | ABB WeaveData configuration data. |
 
 
@@ -249,11 +249,6 @@ This is a component that defines parameters for the actual welding section where
           <td><strong>Weld Speed(mm/s)</strong></td>
           <td>Number</td>
           <td>TCP linear speed during welding (mm/s). A key factor determining the actual bead shape and layer height.</td>
-        </tr>
-        <tr>
-          <td><strong>Preview Cycles</strong></td>
-          <td>Number</td>
-          <td>The number of repetition cycles for welding trajectory visualization within the component viewport.</td>
         </tr>
       </tbody>
     </table>

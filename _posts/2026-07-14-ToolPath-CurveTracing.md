@@ -161,8 +161,9 @@ CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로�
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Weld Sched** | Weld Sched | 사용할 용접 프로그램 번호(스케줄) 및 용접 모드. |
-| **Weight** | Number | wirefeed1에 대한 가중치 |
+| **Curves** | Curve | 트레이싱할 커브를 입력한다. |
+| **Reference Plane** | Plane | 툴패스의 기준 평면을 입력한다. Tilting Weight가 0.0일 때 TCP는 이 평면의 Z 방향을 따른다. |
+| **Geometry** | Geometry | TCP를 표면 법선 방향으로 기울일 때 기준이 되는 형상을 입력한다. |
 
 
 ## | 필수 파라미터 (Required Parameter)
@@ -170,12 +171,10 @@ CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로�
 <div class="tabs-container">
   <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
   <input type="radio" id="prm-tab6" name="gh-tabs-params">
-  <input type="radio" id="prm-tab7" name="gh-tabs-params">
   
   <ul class="tab-buttons">
-    <li><label for="prm-tab5">Resolution</label></li>
-    <li><label for="prm-tab6">Tilting</label></li>
-    <li><label for="prm-tab7">Preview</label></li>
+    <li><label for="prm-tab5">Settings</label></li>
+    <li><label for="prm-tab6">Preview</label></li>
   </ul>
 
   <div class="tab-content" id="prm-content5">
@@ -194,14 +193,19 @@ CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로�
           <td>경로의 근사 허용 오차.</td>
         </tr>
         <tr>
-          <td><strong>MinEdge</strong></td>
+          <td><strong>MinEdge(mm)</strong></td>
           <td>Number</td>
           <td>경로 세그먼트의 최소 길이 (mm)</td>
         </tr>
         <tr>
-          <td><strong>MaxEdge</strong></td>
+          <td><strong>MaxEdge(mm)</strong></td>
           <td>Number</td>
           <td>경로 세그먼트의 최대 길이 (mm)</td>
+        </tr>
+        <tr>
+          <td><strong>Tilting Weight</strong></td>
+          <td>Number</td>
+          <td>Geometry 표면 법선 또는 Curve 접선 방향으로 TCP를 기울이는 정도 (0.0 = Reference Plane Z, 1.0 = Geometry 표면 법선 또는 Curve 접선 방향).</td>
         </tr>
       </tbody>
     </table>
@@ -220,35 +224,7 @@ CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로�
       </thead>
       <tbody>
         <tr>
-          <td><strong>Tilt Target</strong></td>
-          <td>Toggle</td>
-          <td>'Tilt Weight'가 TCP를 기울일 대상 전환.<br>
-              • TRUE: Geometry 표면 법선 방향으로 기울임 ('Geometry' 입력 필요).<br>
-              • FALSE: Curve 접선 방향으로 기울임 (기본값).</td>
-        </tr>
-        <tr>
-          <td><strong>Tilt Weight</strong></td>
-          <td>Number</td>
-          <td>Geometry 표면 법선 또는 Curve 접선 방향으로 TCP를 기울이는 정도 (0.0 = Reference Plane Z, 1.0 = Tilt Target이 지정한 방향).</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/0_Drawing_11.png" align="center" width="45%"></p>
-  </div>
-
-  <div class="tab-content" id="prm-content7">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>프레임 크기</td>
         </tr>

@@ -161,7 +161,7 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Deposition ToolPaths** | Data | 슬라이서 컴포넌트에서 생성된 적층 툴패스 데이터. |
-| **First Part** | Boolean | 현재 Deposition ToolPath가 최하단(첫 번째) 파트인지 여부를 나타내는 플래그. |
+| **Is Bottommost** | Boolean | 현재 Deposition ToolPath가 최하단(첫 번째) 파트인지 여부를 나타내는 플래그. |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -185,7 +185,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Infill First</strong></td>
+          <td><strong>Infill first</strong></td>
           <td>Toggle</td>
           <td>• TRUE: 적층 순서를 채움(Infill) → 외곽(Shell) 순으로 적용<br>
               • FALSE: 적층 순서를 외곽(Shell) → 채움(Infill) 순으로 적용</td>
@@ -213,17 +213,17 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Preview Color</strong></td>
+          <td><strong>Preview Colour</strong></td>
           <td>Color</td>
           <td>시각화 색상</td>
         </tr>
         <tr>
-          <td><strong>Layer Number</strong></td>
+          <td><strong>Layer Preview</strong></td>
           <td>Number</td>
           <td>프리뷰할 레이어</td>
         </tr>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>프레임 크기</td>
         </tr>
@@ -238,8 +238,8 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **First Shells** | Plane |첫 번째 레이어의 외곽(Shell) 타겟 평면. First Part = FALSE 시 출력 없음. |
-| **First Infills** | Plane | 첫 번째 레이어의 채움(Infill) 타겟 평면. First Part = FALSE 시 출력 없음. |
-| **Upper Shells** | Plane | 첫 번째 레이어 이후의 외곽(Shell) 타겟 평면. |
-| **Upper Infills** | Plane | 첫 번째 레이어 이후의 채움(Infill) 타겟 평면. |
-| **Tween Shells** | Plane | 오버행(Overhang) 구간에서 기본 외곽(Shell) 레이어 사이에 부분적으로 삽입되는 외곽 경로 타겟 평면. |
+| **1st Shell Layers** | Plane |첫 번째 레이어의 외곽(Shell) 타겟 평면. Is Bottommost = FALSE 시 출력 없음. |
+| **1st Infill Layers** | Plane | 첫 번째 레이어의 채움(Infill) 타겟 평면. Is Bottommost = FALSE 시 출력 없음. |
+| **Other Shell Layers** | Plane | 첫 번째 레이어 이후의 외곽(Shell) 타겟 평면. |
+| **Other Infill Layers** | Plane | 첫 번째 레이어 이후의 채움(Infill) 타겟 평면. |
+| **Tween Shell Layers** | Plane | 오버행(Overhang) 구간에서 기본 외곽(Shell) 레이어 사이에 부분적으로 삽입되는 외곽 경로 타겟 평면. |

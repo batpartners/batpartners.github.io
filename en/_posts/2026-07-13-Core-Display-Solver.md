@@ -174,7 +174,7 @@ This is a component that simulates and visualizes the user-defined robot motion 
       </thead>
       <tbody>
         <tr>
-          <td><strong>Simulation Window</strong></td>
+          <td><strong>Simulation Pop-up</strong></td>
           <td>Toggle</td>
           <td>Opens/closes the simulation control window.</td>
         </tr>
@@ -188,4 +188,4 @@ This is a component that simulates and visualizes the user-defined robot motion 
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| Current TCP | Plane | Current TCP plane. |
+| Tool Center Plane | Plane | Current TCP plane. |

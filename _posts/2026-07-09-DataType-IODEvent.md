@@ -161,14 +161,12 @@ TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트�
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Signal** | String | 신호 데이터를 입력한다. |
-| **Signal Type** | String | 신호 데이터의 변수명을 입력한다. |
-| **DO Value** | Double | 신호 데이터의 값을 지정한다. |
 
 ## | 필수 파라미터 (Required Parameter)
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-1" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">IO Event</label></li>
+    <li><label for="tab1">IOData Signal</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table" style="margin: 0;">
@@ -186,7 +184,7 @@ TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트�
           <td>출력 신호 유형을 지정한다 (디지털 / 그룹 / 아날로그).</td>
         </tr>
         <tr>
-          <td><strong>Value</strong></td>
+          <td><strong>DO Value</strong></td>
           <td>Boolean</td>
           <td>이벤트 활성화 여부를 설정한다 (True: 활성화 / False: 비활성화).</td>
         </tr>        
@@ -221,12 +219,12 @@ TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트�
           <td>거리 기준점을 설정한다.<br>• TRUE: (TriggLIOs에 의한) 이동 시작점을 기준으로 한다.<br>• FALSE: (TriggLIOs에 의한) 이동 종료점을 기준으로 한다.</td>
         </tr>
         <tr>
-          <td><strong>Distance</strong></td>
+          <td><strong>Distance(mm)</strong></td>
           <td>Double</td>
           <td>TriggLIOs 이동 경로상에서 I/O 트리거가 발생할 위치(mm)를 입력한다. Start 파라미터에서 설정한 기준점으로부터의 거리이다.</td>
         </tr>
         <tr>
-          <td><strong>EquipLag(s)</strong></td>
+          <td><strong>EquipLag(sec.)</strong></td>
           <td>Double</td>
           <td>외부 장비의 응답 지연 보상값(s)을 설정한다.<br>• 양수(+): 지정 위치 도달 전에 미리 신호를 발생시킨다.<br>• 음수(-): 지정 위치 통과 후 신호를 발생시킨다.</td>
         </tr>          
@@ -242,5 +240,5 @@ TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트�
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **IOEvent** | IOEvent | 정의된 ABB TriggIOs용 IO 이벤트를 출력한다. |
+| **IO Data** | IOEvent | 정의된 ABB TriggIOs용 IO 이벤트를 출력한다. |
 | **code** | code | 생성된 코드를 출력한다. |

@@ -150,7 +150,7 @@ Defines a position trigger that generates one or more I/O events at specified lo
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **IOEvent** | IOEvent | IOEvents collection for ABB TriggIOs |
+| **IOs** | IOEvent | IOEvents collection for ABB TriggIOs |
 
 ## | Required Parameter
 

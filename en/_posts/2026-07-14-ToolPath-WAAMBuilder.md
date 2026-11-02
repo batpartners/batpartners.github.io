@@ -156,7 +156,7 @@ This is a component that receives, analyzes, and integrates WAAM deposition tool
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Deposition ToolPaths** | Data | Deposition toolpath data generated from the slicer component. |
-| **First Part** | Boolean | Flag indicating whether the current Deposition ToolPath is the lowest (first) part. |
+| **Is Bottommost** | Boolean | Flag indicating whether the current Deposition ToolPath is the lowest (first) part. |
 
 ## | Required Parameter
 
@@ -180,7 +180,7 @@ This is a component that receives, analyzes, and integrates WAAM deposition tool
       </thead>
       <tbody>
         <tr>
-          <td><strong>Infill First</strong></td>
+          <td><strong>Infill first</strong></td>
           <td>Toggle</td>
           <td>• TRUE: Applies deposition sequence from Infill → Shell<br>
               • FALSE: Applies deposition sequence from Shell → Infill</td>
@@ -208,17 +208,17 @@ This is a component that receives, analyzes, and integrates WAAM deposition tool
       </thead>
       <tbody>
         <tr>
-          <td><strong>Preview Color</strong></td>
+          <td><strong>Preview Colour</strong></td>
           <td>Color</td>
           <td>Visualization color.</td>
         </tr>
         <tr>
-          <td><strong>Layer Number</strong></td>
+          <td><strong>Layer Preview</strong></td>
           <td>Number</td>
           <td>Layer to preview.</td>
         </tr>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>Frame size.</td>
         </tr>
@@ -233,8 +233,8 @@ This is a component that receives, analyzes, and integrates WAAM deposition tool
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **First Shells** | Plane | Target planes for the shell of the first layer. No output when First Part = FALSE. |
-| **First Infills** | Plane | Target planes for the infill of the first layer. No output when First Part = FALSE. |
-| **Upper Shells** | Plane | Target planes for the shells of layers subsequent to the first layer. |
-| **Upper Infills** | Plane | Target planes for the infills of layers subsequent to the first layer. |
-| **Tween Shells** | Plane | Target planes for partial shell paths inserted between base shell layers in overhang sections. |
+| **1st Shell Layers** | Plane | Target planes for the shell of the first layer. No output when Is Bottommost = FALSE. |
+| **1st Infill Layers** | Plane | Target planes for the infill of the first layer. No output when Is Bottommost = FALSE. |
+| **Other Shell Layers** | Plane | Target planes for the shells of layers subsequent to the first layer. |
+| **Other Infill Layers** | Plane | Target planes for the infills of layers subsequent to the first layer. |
+| **Tween Shell Layers** | Plane | Target planes for partial shell paths inserted between base shell layers in overhang sections. |

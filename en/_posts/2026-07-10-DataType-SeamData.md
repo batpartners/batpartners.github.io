@@ -41,7 +41,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Weld Sched** | Weld Sched | The welding program number (schedule) and welding mode to be utilized. |
-| **Weight** | Number | Weight factor applied to wirefeed1. |
+| **Weighting** | Number | Weight factor applied to wirefeed1. |
 
 
 ## | Required Parameter
@@ -179,11 +179,6 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
           <td>String</td>
           <td>Variable name.</td>
         </tr>
-        <tr>
-          <td><strong>Link ArcData</strong></td>
-          <td>Boolean</td>
-          <td>Links ArcData values across all sequences (Ignition, Heat, End). TRUE: Adjusting parameters in one phase automatically syncs the others. FALSE: Allows independent tracking for each phase (Default).</td>
-        </tr>
       </tbody>
     </table>
   </div>
@@ -216,7 +211,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
           <td>Welding voltage (ABB convention). For Fronius TPS/TPS-i: Adjusts the arc length.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min)</strong></td>
+          <td><strong>WireFeed(m/min)</strong></td>
           <td>Number</td>
           <td>Wire feed speed (m/min). Common to both ABB and Fronius systems.</td>
         </tr>
@@ -252,7 +247,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
           <td>Welding voltage (ABB convention). For Fronius TPS/TPS-i: Adjusts the arc length.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min)</strong></td>
+          <td><strong>WireFeed(m/min)</strong></td>
           <td>Number</td>
           <td>Wire feed speed (m/min). Common to both ABB and Fronius systems.</td>
         </tr>
@@ -288,7 +283,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
           <td>Welding voltage (ABB convention). For Fronius TPS/TPS-i: Adjusts the arc length.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min)</strong></td>
+          <td><strong>WireFeed(m/min)</strong></td>
           <td>Number</td>
           <td>Wire feed speed (m/min). Common to both ABB and Fronius systems.</td>
         </tr>
@@ -331,17 +326,17 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
       </thead>
       <tbody>
         <tr>
-          <td><strong>Purge Time</strong></td>
+          <td><strong>Purge Time(s)</strong></td>
           <td>Number</td>
           <td>Gas pre-purge duration (s) required to fill the gas line and weld torch. If travel time to the start position is shorter than the purge time, the robot dwells at the start position until the timer expires.</td>
         </tr>
         <tr>
-          <td><strong>Purgeflow Time</strong></td>
+          <td><strong>Preflow Time(s)</strong></td>
           <td>Number</td>
           <td>Shielding gas pre-flow duration (s) over the weldment. The robot remains stationary at the ignition location during this window before the arc is initiated.</td>
         </tr>
         <tr>
-          <td><strong>Move Delay</strong></td>
+          <td><strong>Move Delay(s)</strong></td>
           <td>Number</td>
           <td>Dwell time delay (s) from the point of arc stabilization at ignition until the primary heating phase begins.</td>
         </tr>
@@ -367,7 +362,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
           <td>Travel speed maintained during the initial heating sequence at the start of welding.</td>
         </tr>
         <tr>
-          <td><strong>Heat Time</strong></td>
+          <td><strong>Heat Time(s)</strong></td>
           <td>Number</td>
           <td>Duration (s) for the initial heating sequence. Active only when Heat Distance or Heat Speed is set to 0.</td>
         </tr>
@@ -393,17 +388,27 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
       </thead>
       <tbody>
         <tr>
-          <td><strong>Crater Time</strong></td>
+          <td><strong>Cool Time(s)</strong></td>
+          <td>Number</td>
+          <td>Waiting (cooling) time (s) during which the current state is held before crater filling is performed.</td>
+        </tr>
+        <tr>
+          <td><strong>Fill Time(s)</strong></td>
           <td>Number</td>
           <td>Duration (s) allocated for crater filling during the termination phase of the weld.</td>
         </tr>
         <tr>
-          <td><strong>Burnback Time</strong></td>
+          <td><strong>Burn-back Time(s)</strong></td>
           <td>Number</td>
           <td>Additional arc burn time (s) sustained after wire feed termination to prevent the electrode wire from sticking in the solidification matrix of the weld pool.</td>
         </tr>
         <tr>
-          <td><strong>Postflow Time</strong></td>
+          <td><strong>Roll-back Time(s)</strong></td>
+          <td>Number</td>
+          <td>Time (s) for retracting the cold wire after the welding power is cut off. Prevents the wire from sticking to the solidifying weld at the end of the TIG process.</td>
+        </tr>
+        <tr>
+          <td><strong>Postflow Time(s)</strong></td>
           <td>Number</td>
           <td>Gas post-flow duration (s) supplied after arc termination to protect the cooling crater weldment from atmospheric oxidation.</td>
         </tr>

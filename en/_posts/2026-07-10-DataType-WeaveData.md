@@ -32,16 +32,9 @@ tags:
 
 # Description
 
-This is a component that defines the weaving motion performed during arc welding. It specifies the weaving pattern, amplitude, frequency, and dwell parameters.
+This is a component that defines the weaving motion performed during arc welding. It specifies the weaving pattern, amplitude, and frequency parameters.
 
 <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
-
-# | Input
-
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| **Base Plane** | Plane | Reference plane for weaving pattern visualization. (X = travel direction, Y = horizontal, Z = vertical) |
-
 
 ## | Required Parameter
 
@@ -163,12 +156,12 @@ This is a component that defines the weaving motion performed during arc welding
           <td>Variable name.</td>
         </tr>
         <tr>
-          <td><strong>Weave Shape</strong></td>
+          <td><strong>Weaving Shape</strong></td>
           <td>String</td>
           <td>Weaving pattern geometry shape. [0]: None, [1]: Zigzag (horizontal), [2]: V-shape (vertical), [3]: Triangular (vertical), [4]: Circular (vertical).</td>
         </tr>
         <tr>
-          <td><strong>Weave Type</strong></td>
+          <td><strong>Weaving Type</strong></td>
           <td>String</td>
           <td>Axis configuration used for the weaving motion.<br>
                 [0]: Geometric. Utilizes all axes (1-6) (Lower frequency / Higher accuracy)<br>
@@ -176,171 +169,25 @@ This is a component that defines the weaving motion performed during arc welding
                 [2]: Rapid1. Main axes (1-3) utilization (Legacy)<br>
                 [3]: Rapid2. Wrist axes (4-6) utilization (Legacy)</td>
         </tr>        
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-arcdata" checked>
-  <input type="radio" id="tab3" name="gh-tabs-arcdata">
-  <input type="radio" id="tab4" name="gh-tabs-arcdata">
-  <input type="radio" id="tab5" name="gh-tabs-arcdata">
-  
-  <ul class="tab-buttons">
-    <li><label for="tab2">Dimension</label></li>
-    <li><label for="tab3">Dwell</label></li>
-    <li><label for="tab4">Orient</label></li>
-    <li><label for="tab5">Bias</label></li>
-  </ul>
-
-  <div class="tab-content" id="content2">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
         <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Length</strong></td>
+          <td><strong>Length(mm)</strong></td>
           <td>Number</td>
           <td>When Type is Geometric/Wrist: Weaving cycle length (mm).<br>
                 • When Type is Rapid1/Rapid2: Weaving cycle frequency (Hz).<br>
                 • When Shape is Circular: Pitch distance for the circular pattern.</td>
         </tr>
         <tr>
-          <td><strong>Width</strong></td>
+          <td><strong>Width(mm)</strong></td>
           <td>Number</td>
           <td>Total width amplitude of the weaving pattern (mm). (Represents radius for circular weaving).</td>
         </tr>
         <tr>
-          <td><strong>Height</strong></td>
+          <td><strong>Height(mm)</strong></td>
           <td>Number</td>
           <td>Vertical height of the pattern (mm). Only utilized for V-shape and Triangular patterns; ignored for Zigzag and Circular setups.</td>
         </tr>
       </tbody>
     </table>
-    <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
-  </div>
-
-  <div class="tab-content" id="content3">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Dwell Left</strong></td>
-          <td>Number</td>
-          <td>The travel length along the seam direction (mm) while the TCP delays or moves solely forward at the left turning point of the weaving pattern. Used to increase bead volume on one side.</td>
-        </tr>
-        <tr>
-          <td><strong>Dwell Center</strong></td>
-          <td>Number</td>
-          <td>The travel length along the seam direction (mm) while the TCP passes through the center (zero point) of the weaving pattern.</td>
-        </tr>
-        <tr>
-          <td><strong>Dwell Right</strong></td>
-          <td>Number</td>
-          <td>The travel length along the seam direction (mm) while the TCP delays or moves solely forward at the right turning point of the weaving pattern. Symmetric with Dwell Left.</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData_1.png" align="center" width="32%"></p>
-  </div>
-
-  <div class="tab-content" id="content4">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Dir Angle(°)</strong></td>
-          <td>Number</td>
-          <td>The direction angle (°) of the weaving pattern relative to the travel direction path.</td>
-        </tr>
-        <tr>
-          <td><strong>Tilt Angle(°)</strong></td>
-          <td>Number</td>
-          <td>The tilt angle (°) of the weaving plane relative to the surface or torch orientation.</td>
-        </tr>
-        <tr>
-          <td><strong>Orient Angle(°)</strong></td>
-          <td>Number</td>
-          <td>The orientation angle (°) defining the rotation of the weaving pattern matrix.</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData_2.png" align="center" width="32%"></p>
-  </div>
-
-  <div class="tab-content" id="content5">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Weave Bias</strong></td>
-          <td>Number</td>
-          <td>The offset distance (mm) used to bias the weaving pattern centerline to the left (+) or right (-) relative to the path direction. Exclusive to Zigzag weaving.</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData_3.png" align="center" width="32%"></p>
-  </div>
-</div>
-
-<div class="tabs-container">
-  <input type="radio" id="tab6" name="gh-tabs-preview" checked>
-  <ul class="tab-buttons">
-    <li><label for="tab6">Preview</label></li>
-  </ul>
-
-  <div class="tab-content" id="content6">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Frame Size</strong></td>
-          <td>Number</td>
-          <td>Size of the visualization frame matrix.</td>
-        </tr>
-        <tr>
-          <td><strong>Preview Cycles</strong></td>
-          <td>Number</td>
-          <td>Number of repetitive weaving cycles rendered in the preview visualization display.</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/9_WeaveData.png" align="center" width="32%"></p>
   </div>
 </div>
 

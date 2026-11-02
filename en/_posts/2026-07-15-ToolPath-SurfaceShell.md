@@ -162,10 +162,10 @@ This is a component that generates a shell (or perimeter) deposition toolpath fo
 | :--- | :--- | :--- |
 | **Geometry** | Geometry | Target geometry to slice. Input a Brep or Mesh. |
 | **Reference Plane** | Plane | Reference plane for slicing. Set identical to the build plate orientation. Layers are generated along the Z-axis direction of the plane. Default: WorldXY. |
-| **Edges** | Curve | Guide curves used to tilt the target planes formed around the geometry edges along the tangent direction of the edges. |
-| **Dir Pattern** | Boolean | Boolean pattern defining whether to reverse the deposition path progression direction per layer. The input pattern is cyclically repeated according to the layer sequence. |
 | **Angle Ranges** | Number | Angle Ranges |
 | **Multiple** | Number | Multiple |
+| **Edge Crvs** | Curve | Guide curves used to tilt the target planes formed around the geometry edges along the tangent direction of the edges. |
+| **Direction Change** | Boolean | Boolean pattern defining whether to reverse the deposition path progression direction per layer. The input pattern is cyclically repeated according to the layer sequence. |
 
 ## | Required Parameter
 
@@ -201,17 +201,17 @@ This is a component that generates a shell (or perimeter) deposition toolpath fo
           <td>Number of outline paths (shells) to generate along the outer boundary of the input geometry.</td>
         </tr>
         <tr>
-          <td><strong>Layer Width</strong></td>
+          <td><strong>Layer Width(mm)</strong></td>
           <td>Number</td>
           <td>Width of a single deposition path (bead width, mm).</td>
         </tr>
         <tr>
-          <td><strong>Layer Height</strong></td>
+          <td><strong>Layer Height(mm)</strong></td>
           <td>Number</td>
           <td>Height of a single deposition layer (layer thickness, mm).</td>
         </tr>
         <tr>
-          <td><strong>First Layer Height</strong></td>
+          <td><strong>First Layer Height(mm)</strong></td>
           <td>Number</td>
           <td>Height of the first deposition layer contacting the build plate (mm).</td>
         </tr>
@@ -236,24 +236,24 @@ This is a component that generates a shell (or perimeter) deposition toolpath fo
       </thead>
       <tbody>
         <tr>
-          <td><strong>Tilt Weight</strong></td>
+          <td><strong>Tilting Weight</strong></td>
           <td>Number</td>
           <td>Weight to tilt the target Z-axis toward the surface slope (overhang) direction in overhang geometries. Used to align the torch or extruder with the surface inclination.</td>
         </tr>
         <tr>
-          <td><strong>Edge Tilt Weight</strong></td>
+          <td><strong>Edge Tilting Weight</strong></td>
           <td>Number</td>
-          <td>Weight to tilt the target toward the tangent direction of the edge in geometries with edges. The edge reference curve uses the Edges input of the component.</td>
+          <td>Weight to tilt the target toward the tangent direction of the edge in geometries with edges. The edge reference curve uses the Edge Crvs input of the component.</td>
         </tr>
         <tr>
-          <td><strong>Edge Tilt Ramp</strong></td>
+          <td><strong>Edge Tilt Ramp(mm)</strong></td>
           <td>Number</td>
           <td>Distance (mm) to blend the Edge Tilt effect. Gradually applies and releases Edge Tilt before and after the edge by this distance to mitigate path motion caused by abrupt edge tangent direction changes.</td>
         </tr>
         <tr>
-          <td><strong>Incremental Tilt Steps</strong></td>
+          <td><strong>Incremental Steps</strong></td>
           <td>Number</td>
-          <td>Number of layers (N) to gradually reach the configured Tilt Weight. Stepwise tilting applied from initial layers near the build plate to prevent collisions and excessive robot motion caused by abrupt tilting in initial layers.</td>
+          <td>Number of layers (N) to gradually reach the configured Tilting Weight. Stepwise tilting applied from initial layers near the build plate to prevent collisions and excessive robot motion caused by abrupt tilting in initial layers.</td>
         </tr>
       </tbody>
     </table>
@@ -272,7 +272,7 @@ This is a component that generates a shell (or perimeter) deposition toolpath fo
       </thead>
       <tbody>
         <tr>
-          <td><strong>Wipe Distance</strong></td>
+          <td><strong>Wipe Distance(mm)</strong></td>
           <td>Number</td>
           <td>Nozzle wiping distance.<br>
               • Positive (+): Continues an overlapping path by the specified distance from the start point after completing the outline path.<br>
@@ -285,7 +285,7 @@ This is a component that generates a shell (or perimeter) deposition toolpath fo
               • Example: N = 4 → Layer 1 = 0.0, Layer 2 = 0.25, Layer 3 = 0.75, Layer 4 = 0.0 (repeating).</td>
         </tr>
         <tr>
-          <td><strong>Seam Offset</strong></td>
+          <td><strong>Seam Shifting</strong></td>
           <td>Integer</td>
           <td>Offset to collectively adjust the seam positions of all layers. Uniformly shifts the entire structure while maintaining the positional relationships between layers set by Seam Spread.</td>
         </tr>
@@ -313,13 +313,13 @@ This is a component that generates a shell (or perimeter) deposition toolpath fo
       </thead>
       <tbody>
         <tr>
-          <td><strong>Part Count</strong></td>
+          <td><strong>Partition</strong></td>
           <td>Integer</td>
           <td>Number of parts to divide and slice the model equally.<br>
               • 1: Slices the entire model. / • N: Divides the model into N equal parts for partial slicing.</td>
         </tr>
         <tr>
-          <td><strong>Part Number</strong></td>
+          <td><strong>Order</strong></td>
           <td>Number</td>
           <td>Part number (1 to N) to slice among the N divided parts.</td>
         </tr>
@@ -333,6 +333,6 @@ This is a component that generates a shell (or perimeter) deposition toolpath fo
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Shell ToolPaths** | Shell ToolPaths | Generated deposition path data. |
-| **First Part** | Boolean | Flag indicating whether the current deposition toolpath is the lowest (first) part. |
-| **Shell Contours** | Curve | Polylines connecting the generated outline deposition paths. |
+| **Deposition ToolPaths** | Shell ToolPaths | Generated deposition path data. |
+| **Is Bottommost** | Boolean | Flag indicating whether the current deposition toolpath is the lowest (first) part. |
+| **Shell polylines** | Curve | Polylines connecting the generated outline deposition paths. |

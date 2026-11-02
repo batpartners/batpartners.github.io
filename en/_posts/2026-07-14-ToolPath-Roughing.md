@@ -162,7 +162,7 @@ This is a component that generates a stepped roughing toolpath. Users can config
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Geometry** | Geometry | Reference volume (Brep or Mesh) to be roughly machined away. |
-| **Reference Plane** | Plane | Reference plane for the roughing toolpath. Generates tiered layers along the Z-axis. Default: WorldXY. |
+| **Reference Planes** | Plane | Reference plane for the roughing toolpath. Generates tiered layers along the Z-axis. Default: WorldXY. |
 
 ## | Required Parameter
 
@@ -186,27 +186,27 @@ This is a component that generates a stepped roughing toolpath. Users can config
       </thead>
       <tbody>
         <tr>
-          <td><strong>Cutting Dir</strong></td>
+          <td><strong>Cutting Direction</strong></td>
           <td>Toggle</td>
           <td>Toggles the progression direction of the cutting path within the layer (Clockwise/Counter-clockwise). Determines Climb or Conventional cutting in relation to endmill rotation.</td>
         </tr>
         <tr>
-          <td><strong>Setback</strong></td>
+          <td><strong>Setback(mm)</strong></td>
           <td>Number</td>
           <td>Offset distance from the boundary of the input volume for the outer path (mm).</td>
         </tr>
         <tr>
-          <td><strong>Stepover</strong></td>
+          <td><strong>Stepover(mm)</strong></td>
           <td>Number</td>
           <td>Distance between adjacent cutting paths (mm).</td>
         </tr>
         <tr>
-          <td><strong>Stepdown</strong></td>
+          <td><strong>Stepdown(mm)</strong></td>
           <td>Number</td>
           <td>Downward cutting depth per layer (mm).</td>
         </tr>
         <tr>
-          <td><strong>Vertical Shift</strong></td>
+          <td><strong>Vertical Shift(mm)</strong></td>
           <td>Number</td>
           <td>Vertical shift distance.</td>
         </tr> 
@@ -231,7 +231,7 @@ This is a component that generates a stepped roughing toolpath. Users can config
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>Size of the frame.</td>
         </tr>
@@ -247,4 +247,4 @@ This is a component that generates a stepped roughing toolpath. Users can config
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Target Planes** | Plane | Target planes of the generated roughing toolpath. |
-| **Pattern** | Curve | Polyline pattern connecting the generated roughing toolpaths. |
+| **Tool Path** | Curve | Polyline pattern connecting the generated roughing toolpaths. |

@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Shell Profile를 기준으로, 외곽(shell)을 안 또는 밖으로 오프셋한 패턴의 내부를 채움 적층 툴패스를 생성하는 컴포넌트이다.
+GShell을 기준으로, 외곽(shell)을 안 또는 밖으로 오프셋한 패턴의 내부를 채움 적층 툴패스를 생성하는 컴포넌트이다.
 
 <p align="center">  <img src="/assets/images/11_SolidOffsetFill.png" align="center" width="32%"></p>
 
@@ -161,7 +161,7 @@ Shell Profile를 기준으로, 외곽(shell)을 안 또는 밖으로 오프셋�
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Shell Profile** | Shell Profile | 외곽 적층 경로의 기준 프로파일 정보. |
+| **GShell** | Shell Profile | 외곽 적층 경로의 기준 프로파일 정보. |
 | **Direction** | Boolean | 채움 패턴의 진행 방향 반전. (TRUE: 진행 방향 반전. / FALSE: 기본 방향 유지 (기본값)) |
 
 # | 출력(Output)

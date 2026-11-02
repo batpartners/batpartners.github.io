@@ -162,10 +162,10 @@ tags:
 | :--- | :--- | :--- |
 | **Geometry** | Geometry | 슬라이싱 대상 형상. Brep 또는 Mesh 입력. |
 | **Reference Plane** | Plane | 슬라이싱 기준 평면. 빌드 플레이트 방향과 동일하게 설정. 평면의 Z축 방향으로 레이어가 생성됨. 기본값: WorldXY. |
-| **Seams** | Curve | 각 레이어 외곽 경로의 시작점(Seam) 위치를 결정하는 가이드 커브. 커브와 외곽 경로의 교차점이 레이어 시작점으로 설정됨. |
-| **Edges** | Curve | 형상의 Edge 주변에 형성된 타겟 평면을 Edge의 접선(Tangent) 방향으로 기울이는 데 사용되는 가이드 커브. |
 | **Angle Ranges** | Number | Angle Ranges |
 | **Multiple** | Number | Multiple |
+| **Seam Crvs** | Curve | 각 레이어 외곽 경로의 시작점(Seam) 위치를 결정하는 가이드 커브. 커브와 외곽 경로의 교차점이 레이어 시작점으로 설정됨. |
+| **Edge Crvs** | Curve | 형상의 Edge 주변에 형성된 타겟 평면을 Edge의 접선(Tangent) 방향으로 기울이는 데 사용되는 가이드 커브. |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -191,7 +191,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Setback</strong></td>
+          <td><strong>Setback(mm)</strong></td>
           <td>Number</td>
           <td>입력 형상 경계 기준 외곽 경로의 내외부 이격(오프셋) 거리 (mm).</td>
         </tr>
@@ -201,17 +201,17 @@ tags:
           <td>입력 형상의 외곽선을 따라 생성할 외곽 경로(Shell)의 개수.</td>
         </tr>
         <tr>
-          <td><strong>Layer Width</strong></td>
+          <td><strong>Layer Width(mm)</strong></td>
           <td>Number</td>
           <td>단일 적층 경로의 폭(비드 폭, mm).</td>
         </tr>
         <tr>
-          <td><strong>Layer Height</strong></td>
+          <td><strong>Layer Height(mm)</strong></td>
           <td>Number</td>
           <td>단일 적층 레이어의 높이(층 두께, mm).</td>
         </tr>
         <tr>
-          <td><strong>First Layer Height</strong></td>
+          <td><strong>First Layer Height(mm)</strong></td>
           <td>Number</td>
           <td>빌드 플레이트에 접하는 첫 번째 적층 레이어의 높이 (mm).</td>
         </tr>
@@ -236,24 +236,24 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Tilt Weight</strong></td>
+          <td><strong>Tilting Weight</strong></td>
           <td>Number</td>
           <td>오버행 형상에서 타겟 Z축을 표면 기울기(오버행) 방향으로 기울이는 가중치. 토치·익스트루더를 형상 기울기에 맞춰 정렬할 때 사용.</td>
         </tr>
         <tr>
-          <td><strong>Edge Tilt Weight</strong></td>
+          <td><strong>Edge Tilting Weight</strong></td>
           <td>Number</td>
-          <td>Edge가 있는 형상에서, 타겟을 Edget의 접선(Tangent) 방향으로 기울이는 가중치. 엣지 참조 커브는 컴포넌트의 Edges 인풋을 이용.</td>
+          <td>Edge가 있는 형상에서, 타겟을 Edget의 접선(Tangent) 방향으로 기울이는 가중치. 엣지 참조 커브는 컴포넌트의 Edge Crvs 인풋을 이용.</td>
         </tr>
         <tr>
-          <td><strong>Edge Tilt Ramp</strong></td>
+          <td><strong>Edge Tilt Ramp(mm)</strong></td>
           <td>Number</td>
           <td>Edge Tilt 효과를 블렌딩하는 거리 (mm). 엣지로부터 이 거리만큼 전후로 Edge Tilt를 점진적으로 적용·해제.급격한 엣지 접선 방향 전환으로 인한 경로 움직임 완화.</td>
         </tr>
         <tr>
-          <td><strong>Incremental Tilt Steps</strong></td>
+          <td><strong>Incremental Steps</strong></td>
           <td>Number</td>
-          <td>설정된 Tilt Weight까지 점진적으로 도달하는 레이어 수(N). 빌드 플레이트 인근 초기 레이어부터 단계적으로 기울임 적용. 초기 레이어의 급격한 기울임으로 인한 충돌·과도한 로봇 움직임 방지.</td>
+          <td>설정된 Tilting Weight까지 점진적으로 도달하는 레이어 수(N). 빌드 플레이트 인근 초기 레이어부터 단계적으로 기울임 적용. 초기 레이어의 급격한 기울임으로 인한 충돌·과도한 로봇 움직임 방지.</td>
         </tr>
       </tbody>
     </table>
@@ -272,7 +272,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Wipe Distance</strong></td>
+          <td><strong>Wipe Distance(mm)</strong></td>
           <td>Number</td>
           <td>노즐 와이핑 거리.<br>
               •  양수(+): 외곽 경로 완주 후 시작점부터 추가로 해당 거리만큼 중첩된 경로를 진행.<br>
@@ -285,7 +285,7 @@ tags:
               •  예: N = 4 → 레이어1 = 0.0, 레이어2 = 0.25, 레이어3 = 0.75, 레이어4 = 0.0 반복.</td>
         </tr>
         <tr>
-          <td><strong>Seam Offset</strong></td>
+          <td><strong>Seam Shifting</strong></td>
           <td>Integer</td>
           <td>모든 레이어의 Seam 위치를 일괄 조정하는 오프셋. Seam Spread로 설정된 레이어 간 위치 관계는 유지한 채 전체를 균일하게 시프팅.</td>
         </tr>
@@ -313,13 +313,13 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Part Count</strong></td>
+          <td><strong>Partition</strong></td>
           <td>Integer</td>
           <td>모델을 등분하여 분할 슬라이싱하는 파트 수.<br>
               • 1: 모델 전체 슬라이싱. / • N: 모델을 N등분하여 부분 슬라이싱.</td>
         </tr>
         <tr>
-          <td><strong>Part Number</strong></td>
+          <td><strong>Order</strong></td>
           <td>Number</td>
           <td>N등분된 파트 중 슬라이싱할 파트 번호(1~N).</td>
         </tr>
@@ -333,7 +333,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Shell ToolPaths** | Shell ToolPaths | 생성된 적층 경로 데이터. |
-| **Shell Profile** | Shell Profile | 생성된 외곽 적층 경로의 기준 프로파일 정보. |
-| **First Part** | Boolean | 현재 Deposition ToolPath가 최하단(첫 번째) 파트인지 여부를 나타내는 플래그. |
-| **Shell Contours** | Curve | 생성된 외곽 적층 경로를 연결하는 폴리라인. |
+| **Deposition ToolPaths** | Shell ToolPaths | 생성된 적층 경로 데이터. |
+| **Is Bottommost** | Boolean | 현재 Deposition ToolPath가 최하단(첫 번째) 파트인지 여부를 나타내는 플래그. |
+| **GERTYShellData** | Shell Profile | 생성된 외곽 적층 경로의 기준 프로파일 정보. |
+| **Shell polylines** | Curve | 생성된 외곽 적층 경로를 연결하는 폴리라인. |

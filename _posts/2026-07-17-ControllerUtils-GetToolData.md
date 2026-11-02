@@ -161,7 +161,7 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | ABB Controller | ABB Controller | 이 PC에 연결된 <a href="https://batpartners.github.io/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB 컨트롤러</a> |
-| Base Plane | Plane | 툴의 장착 기준 평면. TCP와 지오메트리에 대한 기준을 정의 |
+| Tool Base | Plane | 툴의 장착 기준 평면. TCP와 지오메트리에 대한 기준을 정의 |
 
 # | 출력(Outputs)
 

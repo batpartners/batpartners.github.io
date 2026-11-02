@@ -158,9 +158,9 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Base Plane** | Plane | ABB 로봇 플랜지에 대한 툴 장착 기준면을 입력한다. 이는 TCP 및 지오메트리(형상)의 기준을 정의한다. |
-| **TCP** | Plane | 툴 끝단의 TCP(Tool Center Point) 평면을 입력한다. 툴 베이스(Base Plane)를 기준으로 한 위치와 방향을 정의한다. |
-| **Tool Load** | ToolLoad | 툴의 부하 데이터(LoadData)를 입력한다. 데이터가 연결되지 않은 경우, 도구 지오메트리의 경계 상자(Bounding box)를 기반으로 추정하여 자동 작성된다. |
+| **ToolBase** | Plane | ABB 로봇 플랜지에 대한 툴 장착 기준면을 입력한다. 이는 TCP 및 지오메트리(형상)의 기준을 정의한다. |
+| **TCP** | Plane | 툴 끝단의 TCP(Tool Center Point) 평면을 입력한다. 툴 베이스(ToolBase)를 기준으로 한 위치와 방향을 정의한다. |
+| **ToolLoad** | ToolLoad | 툴의 부하 데이터(LoadData)를 입력한다. 데이터가 연결되지 않은 경우, 도구 지오메트리의 경계 상자(Bounding box)를 기반으로 추정하여 자동 작성된다. |
 
 <p align="center"> 
 <video src="/assets/images/ToolData_Export.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Tool Export</figcaption>
@@ -171,7 +171,7 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ToolData</label></li>
+    <li><label for="tab1">Tool Data</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -184,15 +184,20 @@ tags:
       </thead>
       <tbody>
         <tr>
+          <td><strong>Tool Presets</strong></td>
+          <td>Dropdown</td>
+          <td>이전에 저장한 <code>ToolData</code> 프리셋 목록을 선택한다.</td>
+        </tr>
+        <tr>
           <td><strong>Name</strong></td>
           <td>String</td>
           <td>생성할 <code>ToolData</code>의 변수명을 정의한다.</td>
         </tr>
         <tr>
-          <td><strong>Preset</strong></td>
-          <td>Dropdown</td>
-          <td>이전에 저장한 <code>ToolData</code> 프리셋 목록을 선택한다.</td>
-        </tr>        
+          <td><strong>Colour</strong></td>
+          <td>Color</td>
+          <td>툴의 시각화 색상을 설정한다.</td>
+        </tr>
       </tbody>
     </table>
     <p align="center">  <img src="/assets/images/3_ToolData_20.png" align="center" width="45%"></p>
@@ -202,12 +207,10 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
   <input type="radio" id="tab3" name="gh-tabs-options">
-  <input type="radio" id="tab4" name="gh-tabs-options">
   
   <ul class="tab-buttons">
     <li><label for="tab2">LoadData</label></li>
-    <li><label for="tab3">Preview</label></li>
-    <li><label for="tab4">Export</label></li>
+    <li><label for="tab3">Export</label></li>
   </ul>
 
   <div class="tab-content" id="content2">
@@ -252,26 +255,6 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Color</strong></td>
-          <td>Color</td>
-          <td>툴의 시각화 색상을 설정한다.</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/3_ToolData_22.png" align="center" width="45%"></p>
-  </div>
-  <div class="tab-content" id="content4">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
           <td><strong>Export</strong></td>
           <td>Button</td>
           <td>툴 데이터를 사용자 로컬의 지정된 경로에 파일로 저장한다.</td>
@@ -287,4 +270,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **ToolData** | ToolData | 정의된 ABB ToolData를 출력한다. |
+| **Tool Data** | ToolData | 정의된 ABB ToolData를 출력한다. |

@@ -164,7 +164,7 @@ This is a component that generates a hot-wire cutting path from a ruled surface.
 | **Surface** | Surface | Ruled surface |
 | **Target Count** | Number | Number of target planes comprising the cutting path. |
 | **Parameter** | Number | Parameter on the span used as the origin of the target plane (0.0 ~ 1.0). |
-| **Attractor** | Geometry | Attractor object (Point or Curve) to direct the Z-axis of each target plane. |
+| **Wrist Object** | Geometry | Attractor object (Point or Curve) to direct the Z-axis of each target plane. |
 
 ## | Required Parameter
 
@@ -188,7 +188,7 @@ This is a component that generates a hot-wire cutting path from a ruled surface.
       </thead>
       <tbody>
         <tr>
-          <td><strong>Dir Flip</strong></td>
+          <td><strong>Cutting Dir. Flip</strong></td>
           <td>Toggle</td>
           <td>Reverses the cutting direction.</td>
         </tr>
@@ -204,7 +204,7 @@ This is a component that generates a hot-wire cutting path from a ruled surface.
               • TRUE: V direction. / • FALSE: U direction (Default).</td>
         </tr>
         <tr>
-          <td><strong>Extension</strong></td>
+          <td><strong>Extension(mm)</strong></td>
           <td>Number</td>
           <td>Distance (mm) to extend the start and end of the path along the moving direction.</td>
         </tr>        
@@ -224,7 +224,7 @@ This is a component that generates a hot-wire cutting path from a ruled surface.
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>Frame size</td>
         </tr>
@@ -240,4 +240,4 @@ This is a component that generates a hot-wire cutting path from a ruled surface.
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Target Planes** | Plane | Target planes of the generated hot-wire cutting path. |
-| **Spans** | Curve | Straight line segments connecting the two rail curves to form a ruled surface. |
+| **RibCurves** | Curve | Straight line segments connecting the two rail curves to form a ruled surface. |

@@ -152,10 +152,10 @@ This is a component that can be customized as a workbench for positioners. By ap
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Workbench Geo** | Mesh | Mesh geometry of the workbench |
-| **Base Plane** | Plane | Workbench mounting reference plane relative to the positioner flange |
-| **Top Plane** | Plane | Top plane of the workbench |
-| **Workpieces** | Mesh | Workpiece geometry mesh (Optional) |
+| **BenchGeo** | Mesh | Mesh geometry of the workbench |
+| **BenchBase** | Plane | Workbench mounting reference plane relative to the positioner flange |
+| **BenchTop** | Plane | Top plane of the workbench |
+| **WorkPieces** | Mesh | Workpiece geometry mesh (Optional) |
 
 <p align="center"> 
 <video src="/assets/images/WorkbenchImporter_gif.mp4" width="576px" height="230px" autoplay=1 muted=1 loop=1 align="center"></video><figcaption>Tool Export</figcaption>
@@ -165,8 +165,11 @@ This is a component that can be customized as a workbench for positioners. By ap
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-robot" checked>
+  <input type="radio" id="tab2" name="gh-tabs-robot">
+  
   <ul class="tab-buttons">
-    <li><label for="tab1">Workbench</label></li>
+    <li><label for="tab1">WorkBench</label></li>
+    <li><label for="tab2">Export</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -183,22 +186,23 @@ This is a component that can be customized as a workbench for positioners. By ap
           <td>String</td>
           <td>Workbench name</td>
         </tr>
+        <tr>
+          <td><strong>WorkBench Colour</strong></td>
+          <td>Color</td>
+          <td>Visualization color</td>
+        </tr>
+        <tr>
+          <td><strong>WorkPiece Colour</strong></td>
+          <td>Color</td>
+          <td>Visualization color of the workpiece mesh</td>
+        </tr>
       </tbody>
     </table>
     <p align="center">  <img src="/assets/images/2_Workbench_20.png" align="center" width="45%"></p>
   </div>
-</div>
 
-<div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-linear" checked>
-  <input type="radio" id="tab3" name="gh-tabs-linear">
-  
-  <ul class="tab-buttons">
-    <li><label for="tab2">Preview</label></li>
-    <li><label for="tab3">Export</label></li>
-  </ul>
   <div class="tab-content" id="content2">
-    <table class="spec-table">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>Name</th>
@@ -208,27 +212,12 @@ This is a component that can be customized as a workbench for positioners. By ap
       </thead>
       <tbody>
         <tr>
-          <td><strong>WorkBench Color</strong></td>
-          <td>Color</td>
-          <td>Visualization color</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/2_Workbench_21.png" align="center" width="45%"></p>
-  </div>
-
-  <div class="tab-content" id="content3">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <td><strong>WorkPiece Color</strong></td>
+          <td><strong>Export</strong></td>
           <td>Button</td>
-          <td>Aligns the TCP parallel to the World coordinate axis (±X, ±Y, ±Z) closest to the current TCP orientation. Equivalent to the Align function of ABB FlexPendant Jogging.</td>
+          <td>Saves the workbench data as a file to a user-specified local directory.</td>
         </tr>
       </tbody>
     </table>
-    <br>    
     <p align="center">  <img src="/assets/images/2_Workbench_22.png" align="center" width="45%"></p>
   </div>
 </div>
@@ -237,4 +226,4 @@ This is a component that can be customized as a workbench for positioners. By ap
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Workbench** | Workbench | Created workbench definition. |
+| **WorkBench** | Workbench | Created workbench definition. |

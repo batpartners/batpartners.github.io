@@ -160,4 +160,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **SubProc** | SubProc | 생성된 프로시저. Core 컴포넌트의 Instructions 입력으로 전달 |
+| **Sub Proc.** | SubProc | 생성된 프로시저. Core 컴포넌트의 Instructions 입력으로 전달 |

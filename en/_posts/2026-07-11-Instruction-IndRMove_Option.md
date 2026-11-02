@@ -160,7 +160,7 @@ This is a component that switches an auxiliary axis to independent mode and move
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-model" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">IndMove</label></li>
+    <li><label for="tab1">IndRMove</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -204,12 +204,12 @@ This is a component that switches an auxiliary axis to independent mode and move
       </thead>
       <tbody>
         <tr>
-          <td><strong>RefNum(°)</strong></td>
+          <td><strong>ToRelNum(°)</strong></td>
           <td>Number</td>
           <td>Directly specifies the target position (angle) as a number (°).</td>
         </tr>
         <tr>
-          <td><strong>Direction</strong></td>
+          <td><strong>Direction Policy</strong></td>
           <td>String</td>
           <td>Movement direction.<br>
               • Short: Shortest path (within ±180°)<br>
@@ -217,7 +217,7 @@ This is a component that switches an auxiliary axis to independent mode and move
               • Bwd: Moves in the negative direction (max 360°)</td>
         </tr>
         <tr>
-          <td><strong>Speed</strong></td>
+          <td><strong>Speed(°/s)</strong></td>
           <td>Number</td>
           <td>Axis movement speed (°/s).</td>
         </tr>
@@ -246,7 +246,7 @@ This is a component that switches an auxiliary axis to independent mode and move
       </thead>
       <tbody>
         <tr>
-          <td><strong>Instruction</strong></td>
+          <td><strong>Instructions</strong></td>
           <td>Instruction</td>
           <td>Generated ABB instruction. Passed to the Instructions input of the Core component.</td>
         </tr>

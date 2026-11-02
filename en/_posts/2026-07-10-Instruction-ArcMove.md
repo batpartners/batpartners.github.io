@@ -181,13 +181,13 @@ A component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for 
           <td>Select motion type, speed, and zone radius</td>
         </tr>
         <tr>
-          <td><strong>Arc Start</strong></td>
+          <td><strong>ArcLStart</strong></td>
           <td>Toggle</td>
           <td>• TRUE: Applies ArcLStart to the first target<br>
               • FALSE: Applies ArcL to the first target</td>
         </tr>
         <tr>
-          <td><strong>Arc End</strong></td>
+          <td><strong>ArcLEnd</strong></td>
           <td>Toggle</td>
           <td>• TRUE: Applies ArcLEnd to the last target<br>
               • FALSE: Applies ArcL to the last target </td>
@@ -203,4 +203,4 @@ A component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for 
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Passes to the Instructions input of the Core component |
+| **Instructions** | Instruction | Generated ABB instruction. Passes to the Instructions input of the Core component |

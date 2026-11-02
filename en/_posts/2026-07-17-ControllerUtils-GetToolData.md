@@ -161,7 +161,7 @@ A component that retrieves the active tool data from the currently connected off
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | ABB Controller | ABB Controller | <a href="https://batpartners.github.io/en/controllerutils/ControllerUtils-ScanABBController" target="_blank">ABB Controller</a> connected to this PC |
-| Base Plane | Plane | Mounting base plane of the tool. Defines the criteria for TCP and geometry |
+| Tool Base | Plane | Mounting base plane of the tool. Defines the criteria for TCP and geometry |
 
 # | Outputs
 

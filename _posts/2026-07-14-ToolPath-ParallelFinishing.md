@@ -187,19 +187,19 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Contour Direction</strong></td>
+          <td><strong>Cutting Direction</strong></td>
           <td>Toggle</td>
           <td>평행 Contour 방향 전환.<br>
               • TRUE: X 방향 (90° 회전).<br>
               • FALSE: Reference Plane +Y 방향 (기본값).</td>
         </tr>
         <tr>
-          <td><strong>Stepover</strong></td>
+          <td><strong>Stepover(mm)</strong></td>
           <td>Number</td>
           <td>인접 절삭 경로 간 간격 (mm).</td>
         </tr>
         <tr>
-          <td><strong>Tilt Weight</strong></td>
+          <td><strong>Tilting Weight</strong></td>
           <td>Number</td>
           <td>Geometry 표면 법선 방향으로 TCP를 기울여, 엔드밀이 표면과 직각을 이루는 정도 조절 (0.0 = Reference Plane Z, 1.0 = 표면 법선).</td>
         </tr>
@@ -224,7 +224,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>프레임 크기</td>
         </tr>
@@ -240,4 +240,4 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Target Planes** | Plane | 생성된 열선 절단 경로의 타겟 평면. |
-| **Contour** | Curve | 생성된 정삭 경로를 연결하는 폴리라인 패턴. |
+| **Curve** | Curve | 생성된 정삭 경로를 연결하는 폴리라인 패턴. |

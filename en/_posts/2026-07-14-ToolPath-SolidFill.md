@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-This is a deposition toolpath component that fills the inside of the outer boundary based on the Shell Profile. It allows you to determine detailed settings such as the fill shape and spacing.
+This is a deposition toolpath component that fills the inside of the outer boundary based on the GERTYShellData. It allows you to determine detailed settings such as the fill shape and spacing.
 
 <p align="center">  <img src="/assets/images/10_SolidFill.png" align="center" width="32%"></p>
 
@@ -161,7 +161,7 @@ This is a deposition toolpath component that fills the inside of the outer bound
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Shell Profile** | Shell Profile | Reference profile data for outer deposition paths. |
+| **GERTYShellData** | Shell Profile | Reference profile data for outer deposition paths. |
 
 ## | Required Parameter
 
@@ -190,12 +190,12 @@ This is a deposition toolpath component that fills the inside of the outer bound
           <td>Pattern applied to the internal fill area.</td>
         </tr>
         <tr>
-          <td><strong>External Infill Type</strong></td>
+          <td><strong>Ext-Infill Type</strong></td>
           <td>String</td>
           <td>Pattern applied to the external fill area.</td>
         </tr>
         <tr>
-          <td><strong>Rotation</strong></td>
+          <td><strong>Rotation(°)</strong></td>
           <td>Number</td>
           <td>Rotation angle applied to the fill pattern.</td>
         </tr>
@@ -225,7 +225,7 @@ This is a deposition toolpath component that fills the inside of the outer bound
           <td>Number of solid layers to generate at the bottom of the part.</td>
         </tr>
         <tr>
-          <td><strong>Fill Gap</strong></td>
+          <td><strong>Layer Gap(mm)</strong></td>
           <td>Number</td>
           <td>Gap between the shell and fill, and between internal and external fill patterns (mm).</td>
         </tr>
@@ -245,5 +245,5 @@ This is a deposition toolpath component that fills the inside of the outer bound
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Infill ToolPaths** | Infill ToolPaths Tree | Generated deposition path data. |
-| **Infill Pattern** | Curve | Polyline pattern connecting the generated fill deposition paths. |
+| **Deposition ToolPaths** | Infill ToolPaths Tree | Generated deposition path data. |
+| **Infill Polylines** | Curve | Polyline pattern connecting the generated fill deposition paths. |

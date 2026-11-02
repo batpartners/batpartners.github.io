@@ -160,7 +160,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Geometry** | Geometry | 정삭 가공할 Brep 또는 Surface 형상. |
+| **Brep** | Geometry | 정삭 가공할 Brep 또는 Surface 형상. |
 | **Reference Plane** | Plane | 정삭 경로 생성의 기준 평면. |
 
 ## | 필수 파라미터 (Required Parameter)
@@ -185,19 +185,19 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>UV Flip</strong></td>
+          <td><strong>UV Direction</strong></td>
           <td>Toggle</td>
           <td>정삭 경로의 UV 진행 방향 전환.</td>
         </tr>
         <tr>
-          <td><strong>Stepover</strong></td>
+          <td><strong>Stepover(mm)</strong></td>
           <td>Number</td>
           <td>인접 절삭 경로 간 간격 (mm).</td>
         </tr>
         <tr>
-          <td><strong>Tilt Weight</strong></td>
+          <td><strong>Tilting Weight</strong></td>
           <td>Number</td>
-          <td>Geometry 표면 법선 방향으로 TCP를 기울여, 엔드밀이 표면과 직각을 이루는 정도 조절 (0.0 = Reference Plane Z, 1.0 = 표면 법선).</td>
+          <td>Brep 표면 법선 방향으로 TCP를 기울여, 엔드밀이 표면과 직각을 이루는 정도 조절 (0.0 = Reference Plane Z, 1.0 = 표면 법선).</td>
         </tr>
         <tr>
           <td><strong>Tolerance</strong></td>
@@ -220,7 +220,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>프레임 크기</td>
         </tr>
@@ -236,4 +236,4 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Target Planes** | Plane | 생성된 정삭 경로의 타겟 평면. |
-| **Contour** | Curve | 생성된 정삭 경로를 연결하는 폴리라인 패턴. |
+| **Curve** | Curve | 생성된 정삭 경로를 연결하는 폴리라인 패턴. |

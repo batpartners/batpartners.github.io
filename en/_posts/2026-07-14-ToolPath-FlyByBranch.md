@@ -160,40 +160,13 @@ This is a component that generates a transition path (Flyby) target plane connec
 ## | Required Parameter
 
 <div class="tabs-container">
-  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
-
-  <ul class="tab-buttons">
-    <li><label for="sm-tab1">Flyby Targets</label></li>
-  </ul>
-  <div class="tab-content" id="sm-content1">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Target Count</strong></td>
-          <td>Number</td>
-          <td>Number of target planes constituting the transition path.</td>
-        </tr>
-      </tbody>
-    </table>
-    <p align="center">  <img src="/assets/images/1_FlybyPlane_10.png" align="center" width="45%"></p>
-  </div>
-</div>
-
-<div class="tabs-container">
   <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
   <input type="radio" id="prm-tab6" name="gh-tabs-params">
   <input type="radio" id="prm-tab7" name="gh-tabs-params">
   
   <ul class="tab-buttons">
-    <li><label for="prm-tab5">Offset</label></li>
-    <li><label for="prm-tab6">Blend</label></li>
+    <li><label for="prm-tab5">Basic</label></li>
+    <li><label for="prm-tab6">Advanced</label></li>
     <li><label for="prm-tab7">Preview</label></li>
   </ul>
 
@@ -208,33 +181,33 @@ This is a component that generates a transition path (Flyby) target plane connec
       </thead>
       <tbody>
         <tr>
-          <td><strong>Link</strong></td>
-          <td>Toggle</td>
-          <td>Links Approach and Departure values. TRUE: Adjusting one automatically matches the other. FALSE: Adjusts each independently (Default).</td>
-        </tr>
-        <tr>
-          <td><strong>Approach Dir</strong></td>
+          <td><strong>Approaching Dir.</strong></td>
           <td>String</td>
           <td>Batch specifies the approach direction of the transition path.<br>
               • Motion Dir: Reverse direction of the motion vector at the start of each branch.<br>
               • Z/Y/X Axis · Negative Z/Y/X Axis: Corresponding axis direction of the starting target plane.</td>
         </tr>
         <tr>
-          <td><strong>Departure Dir</strong></td>
+          <td><strong>Leaving Dir.</strong></td>
           <td>String</td>
           <td>Batch specifies the departure direction of the transition path.<br>
               • Motion Dir: Direction of the motion vector at the end of each branch.<br>
               • Z/Y/X Axis · Negative Z/Y/X Axis: Corresponding axis direction of the final target plane.</td>
         </tr>
         <tr>
-          <td><strong>Approach(mm)</strong></td>
+          <td><strong>Approaching Dist.(mm)</strong></td>
           <td>Number</td>
           <td>Distance (mm) to offset the approach point of the transition path from the first target plane.</td>
         </tr>
         <tr>
-          <td><strong>Departure(mm)</strong></td>
+          <td><strong>Leaving Dist.(mm)</strong></td>
           <td>Number</td>
           <td>Distance (mm) to offset the departure point of the transition path from the last target plane.</td>
+        </tr>
+        <tr>
+          <td><strong>Target Count</strong></td>
+          <td>Number</td>
+          <td>Number of target planes constituting the transition path.</td>
         </tr>
       </tbody>
     </table>
@@ -253,17 +226,12 @@ This is a component that generates a transition path (Flyby) target plane connec
       </thead>
       <tbody>
         <tr>
-          <td><strong>Continuity</strong></td>
+          <td><strong>Continuity Type</strong></td>
           <td>String</td>
           <td>Continuity type of the transition path blend.<br>
               [Position]: Position continuity (G0).<br>
               [Tangency]: Tangent continuity (G1).<br>
               [Curvature]: Curvature continuity (G2).</td>
-        </tr>
-        <tr>
-          <td><strong>Link</strong></td>
-          <td>Toggle</td>
-          <td>Links 'Bulge Start' and 'Bulge End' values. TRUE: Adjusting one automatically matches the other. FALSE: Adjusts each independently (Default).</td>
         </tr>
         <tr>
           <td><strong>Bulge Start</strong></td>
@@ -292,7 +260,7 @@ This is a component that generates a transition path (Flyby) target plane connec
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>Frame size.</td>
         </tr>
@@ -307,4 +275,4 @@ This is a component that generates a transition path (Flyby) target plane connec
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Target Planes** | Plane | Generated tracing path target planes |
+| **Fly-by Targets** | Plane | Generated tracing path target planes |

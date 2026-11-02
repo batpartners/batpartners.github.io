@@ -177,13 +177,13 @@ A component that configures ABB Move instructions (MoveL, MoveJ).
           <td>Motion type, speed, zone radius</td>
         </tr>
         <tr>
-          <td><strong>MoveJ Start End</strong></td>
+          <td><strong>MoveJ Start &amp; End</strong></td>
           <td>Toggle</td>
           <td>• TRUE: Apply MoveJ to the first and last targets<br>
               • FALSE: Apply the set motion type to all targets</td>
         </tr>
         <tr>
-          <td><strong>Fine Start End</strong></td>
+          <td><strong>Fine Start &amp; End</strong></td>
           <td>Toggle</td>
           <td>• TRUE: Apply fine zone to the first and last targets<br>
               • FALSE: Apply the set zone value to all targets </td>
@@ -199,7 +199,7 @@ A component that configures ABB Move instructions (MoveL, MoveJ).
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Passes to the Instructions input of the Core component. |
+| **Instructions** | Instruction | Generated ABB instruction. Passes to the Instructions input of the Core component. |
 
 <p align="center"> 
 <video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>

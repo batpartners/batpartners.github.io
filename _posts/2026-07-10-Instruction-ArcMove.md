@@ -168,14 +168,14 @@ tags:
           <td>모션 유형(Motion Type), 이동 속도(Speed), 경유 반경(Zone)을 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>Arc Start</strong></td>
+          <td><strong>ArcLStart</strong></td>
           <td>Toggle</td>
           <td>첫 번째 타겟의 아크 시작 여부를 설정한다.<br>
               • TRUE: 첫 번째 타겟에 <code>ArcLStart</code> 적용<br>
               • FALSE: 첫 번째 타겟에 <code>ArcL</code> 적용</td>
         </tr>
         <tr>
-          <td><strong>Arc End</strong></td>
+          <td><strong>ArcLEnd</strong></td>
           <td>Toggle</td>
           <td>마지막 타겟의 아크 종료 여부를 설정한다.<br>
               • TRUE: 마지막 타겟에 <code>ArcLEnd</code> 적용<br>
@@ -192,4 +192,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 아크 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |
+| **Instructions** | Instruction | 생성된 ABB 아크 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |

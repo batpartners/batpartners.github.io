@@ -34,17 +34,7 @@ tags:
 
 Defines a single I/O trigger event for a TriggIOs array. Specifies the target output signal, trigger position along the path, and configuration values. Multiple IOEvents can be grouped into the TriggIOs component to construct TriggIOs data.
 
-<p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
-
-# | Input
-
-| Name | Type | Description |
-| :--- | :--- | :--- |
-| **Weld Sched** | Weld Sched | The welding program number (schedule) and welding mode to be utilized. |
-| **Weight** | Number | Weight factor applied to wirefeed1. |
-
-
-## | Required Parameter
+<p align="center">  <img src="/assets/images/4_IOEvent.png" align="center" width="32%"></p>
 
 <style>
   /* 탭 시스템 전체 컨테이너 */
@@ -159,10 +149,17 @@ Defines a single I/O trigger event for a TriggIOs array. Specifies the target ou
   }
 </style>
 
+# | Inputs
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| **Signal** | String | Inputs the signal data. |
+
+## | Required Parameter
 <div class="tabs-container">
-  <input type="radio" id="tab1" name="gh-tabs-seamdata" checked>
+  <input type="radio" id="tab1" name="gh-tabs-1" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">SeamData</label></li>
+    <li><label for="tab1">IOData Signal</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table" style="margin: 0;">
@@ -175,33 +172,27 @@ Defines a single I/O trigger event for a TriggIOs array. Specifies the target ou
       </thead>
       <tbody>
         <tr>
-          <td><strong>Name</strong></td>
-          <td>String</td>
-          <td>Variable name.</td>
+          <td><strong>Signal Type</strong></td>
+          <td>Dropdown</td>
+          <td>Specifies the output signal type (Digital / Group / Analog).</td>
         </tr>
         <tr>
-          <td><strong>Link ArcData</strong></td>
+          <td><strong>DO Value</strong></td>
           <td>Boolean</td>
-          <td>Links ArcData values across all sequences (Ignition, Heat, End). TRUE: Adjusting parameters in one phase automatically syncs the others. FALSE: Allows independent tracking for each phase (Default).</td>
+          <td>Sets whether the event is enabled (True: enabled / False: disabled).</td>
         </tr>
       </tbody>
     </table>
+<p align="center">  <img src="/assets/images/4_IOEvent_1.png" align="center" width="45%"></p>
   </div>
 </div>
-
 <div class="tabs-container">
-  <input type="radio" id="tab2" name="gh-tabs-arcdata" checked>
-  <input type="radio" id="tab3" name="gh-tabs-arcdata">
-  <input type="radio" id="tab4" name="gh-tabs-arcdata">
-  
+  <input type="radio" id="tab2" name="gh-tabs-2" checked>
   <ul class="tab-buttons">
-    <li><label for="tab2">Ignition ArcData</label></li>
-    <li><label for="tab3">Heat ArcData</label></li>
-    <li><label for="tab4">End ArcData</label></li>
+    <li><label for="tab2">Settings</label></li>
   </ul>
-
   <div class="tab-content" id="content2">
-    <table class="spec-table" style="margin: 0;">
+    <table class="spec-table" style="margin: 0 0 20px 0;">
       <thead>
         <tr>
           <th>Name</th>
@@ -211,212 +202,36 @@ Defines a single I/O trigger event for a TriggIOs array. Specifies the target ou
       </thead>
       <tbody>
         <tr>
-          <td><strong>Voltage</strong></td>
-          <td>Number</td>
-          <td>Welding voltage (ABB convention). For Fronius TPS/TPS-i: Adjusts the arc length.</td>
+          <td><strong>Used</strong></td>
+          <td>Boolean</td>
+          <td>Sets whether this event is used (True: enabled / False: disabled).</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min)</strong></td>
-          <td>Number</td>
-          <td>Wire feed speed (m/min). Common to both ABB and Fronius systems.</td>
+          <td><strong>Start</strong></td>
+          <td>Boolean</td>
+          <td>Sets the distance reference point.<br>• TRUE: Measured from the start point of the movement (by TriggLIOs).<br>• FALSE: Measured from the end point of the movement (by TriggLIOs).</td>
         </tr>
         <tr>
-          <td><strong>Control</strong></td>
-          <td>Number</td>
-          <td>Control parameter (ABB convention). For Fronius TPS/TPS-i: Adjusts dynamic characteristics.</td>
+          <td><strong>Distance(mm)</strong></td>
+          <td>Double</td>
+          <td>Inputs the position (mm) on the TriggLIOs movement path where the I/O trigger occurs. It is the distance from the reference point set by the Start parameter.</td>
         </tr>
         <tr>
-          <td><strong>Current</strong></td>
-          <td>Number</td>
-          <td>Welding current (ABB convention). Not utilized in Fronius TPS/TPS-i setups.</td>
-        </tr>        
+          <td><strong>EquipLag(sec.)</strong></td>
+          <td>Double</td>
+          <td>Sets the response delay compensation (s) of the external equipment.<br>• Positive (+): Triggers the signal before reaching the specified position.<br>• Negative (-): Triggers the signal after passing the specified position.</td>
+        </tr>
       </tbody>
     </table>
-    <br>
-    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
-  </div>
-
-  <div class="tab-content" id="content3">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Voltage</strong></td>
-          <td>Number</td>
-          <td>Welding voltage (ABB convention). For Fronius TPS/TPS-i: Adjusts the arc length.</td>
-        </tr>
-        <tr>
-          <td><strong>Wirefeed(m/min)</strong></td>
-          <td>Number</td>
-          <td>Wire feed speed (m/min). Common to both ABB and Fronius systems.</td>
-        </tr>
-        <tr>
-          <td><strong>Control</strong></td>
-          <td>Number</td>
-          <td>Control parameter (ABB convention). For Fronius TPS/TPS-i: Adjusts dynamic characteristics.</td>
-        </tr>
-        <tr>
-          <td><strong>Current</strong></td>
-          <td>Number</td>
-          <td>Welding current (ABB convention). Not utilized in Fronius TPS/TPS-i setups.</td>
-        </tr> 
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
-  </div>
-
-  <div class="tab-content" id="content4">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Voltage</strong></td>
-          <td>Number</td>
-          <td>Welding voltage (ABB convention). For Fronius TPS/TPS-i: Adjusts the arc length.</td>
-        </tr>
-        <tr>
-          <td><strong>Wirefeed(m/min)</strong></td>
-          <td>Number</td>
-          <td>Wire feed speed (m/min). Common to both ABB and Fronius systems.</td>
-        </tr>
-        <tr>
-          <td><strong>Control</strong></td>
-          <td>Number</td>
-          <td>Control parameter (ABB convention). For Fronius TPS/TPS-i: Adjusts dynamic characteristics.</td>
-        </tr>
-        <tr>
-          <td><strong>Current</strong></td>
-          <td>Number</td>
-          <td>Welding current (ABB convention). Not utilized in Fronius TPS/TPS-i setups.</td>
-        </tr> 
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/4_IOEvent_2.png" align="center" width="45%"></p>
   </div>
 </div>
 
-<div class="tabs-container">
-  <input type="radio" id="tab5" name="gh-tabs-params" checked>
-  <input type="radio" id="tab6" name="gh-tabs-params">
-  <input type="radio" id="tab7" name="gh-tabs-params">
-  
-  <ul class="tab-buttons">
-    <li><label for="tab5">Ignition Params</label></li>
-    <li><label for="tab6">Heat Params</label></li>
-    <li><label for="tab7">End Params</label></li>
-  </ul>
+<br>
 
-  <div class="tab-content" id="content5">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Purge Time</strong></td>
-          <td>Number</td>
-          <td>Gas pre-purge duration (s) required to fill the gas line and weld torch. If travel time to the start position is shorter than the purge time, the robot dwells at the start position until the timer expires.</td>
-        </tr>
-        <tr>
-          <td><strong>Purgeflow Time</strong></td>
-          <td>Number</td>
-          <td>Shielding gas pre-flow duration (s) over the weldment. The robot remains stationary at the ignition location during this window before the arc is initiated.</td>
-        </tr>
-        <tr>
-          <td><strong>Move Delay</strong></td>
-          <td>Number</td>
-          <td>Dwell time delay (s) from the point of arc stabilization at ignition until the primary heating phase begins.</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
-  </div>
-
-  <div class="tab-content" id="content6">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Heat Speed</strong></td>
-          <td>Number</td>
-          <td>Travel speed maintained during the initial heating sequence at the start of welding.</td>
-        </tr>
-        <tr>
-          <td><strong>Heat Time</strong></td>
-          <td>Number</td>
-          <td>Duration (s) for the initial heating sequence. Active only when Heat Distance or Heat Speed is set to 0.</td>
-        </tr>
-        <tr>
-          <td><strong>Heat Distance</strong></td>
-          <td>Number</td>
-          <td>Linear distance over which the specified heating configuration is applied at the beginning of the weld segment.</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
-  </div>
-
-  <div class="tab-content" id="content7">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Crater Time</strong></td>
-          <td>Number</td>
-          <td>Duration (s) allocated for crater filling during the termination phase of the weld.</td>
-        </tr>
-        <tr>
-          <td><strong>Burnback Time</strong></td>
-          <td>Number</td>
-          <td>Additional arc burn time (s) sustained after wire feed termination to prevent the electrode wire from sticking in the solidification matrix of the weld pool.</td>
-        </tr>
-        <tr>
-          <td><strong>Postflow Time</strong></td>
-          <td>Number</td>
-          <td>Gas post-flow duration (s) supplied after arc termination to protect the cooling crater weldment from atmospheric oxidation.</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
-  </div>
-</div>
-
-# | Output
+# | Outputs
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **SeamData** | SeamData | Outputs the configured ABB SeamData configuration stream. |
-| **Code** | String | Outputs the compiled RAPID instruction code. |
+| **IO Data** | IOEvent | Outputs the defined IO event for ABB TriggIOs. |
+| **code** | code | Outputs the generated code. |

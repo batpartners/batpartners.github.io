@@ -150,7 +150,7 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-model" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">IndMove</label></li>
+    <li><label for="tab1">IndRMove</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -195,12 +195,12 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>RefNum(°)</strong></td>
+          <td><strong>ToRelNum(°)</strong></td>
           <td>Number</td>
           <td>목표 위치 (각도)를 숫자 (°)로 직접 지정.</td>
         </tr>
         <tr>
-          <td><strong>Direction</strong></td>
+          <td><strong>Direction Policy</strong></td>
           <td>String</td>
           <td>이동 방향을 지정.<br>
               • <code>Short</code>: 최단 경로 (±180° 이내)<br>
@@ -208,7 +208,7 @@ tags:
               • <code>Bwd</code>: 음의 방향으로 이동 (최대 360°)</td>
         </tr>
         <tr>
-          <td><strong>Speed</strong></td>
+          <td><strong>Speed(°/s)</strong></td>
           <td>Number</td>
           <td>축 이동 속도 (°/s)</td>
         </tr>
@@ -238,7 +238,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Instruction</strong></td>
+          <td><strong>Instructions</strong></td>
           <td>Instruction</td>
           <td>생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달.</td>
         </tr>

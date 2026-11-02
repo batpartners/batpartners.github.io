@@ -189,7 +189,7 @@ tags:
           <td>실시간 스트림 갱신 간격 (밀리 초) 설정</td>
         </tr>
         <tr>
-          <td><strong>RealTime Stream</strong></td>
+          <td><strong>Realtime Stream</strong></td>
           <td>Toggle</td>
           <td>실시간 스트림 시작/중지</td>
         </tr>
@@ -203,9 +203,9 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **RobAx Angle** | String | 로봇축 각도 |
-| **ExtAx Angle** | String | 외부축 각도 |
-| **TCP** | Plane | 현재 TCP 평면 |
+| **Robot Angle** | String | 로봇축 각도 |
+| **External Angle** | String | 외부축 각도 |
+| **CurrentPos** | Plane | 현재 TCP 평면 |
 | **Signal Values** | Number | 스캔된 신호 값 |
 
 <p align="center"> 

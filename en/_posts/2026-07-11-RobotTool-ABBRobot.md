@@ -159,8 +159,8 @@ A component that imports the ABB robot to be used. You can select the robot owne
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Base Plane** | Plane | Robot base coordinate system plane. Default: WorldXY. |
-| **ToolData** | ToolData | ABB <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a> to apply to the robot. |
+| **Robot Base** | Plane | Robot base coordinate system plane. Default: WorldXY. |
+| **Tool Data** | ToolData | ABB <a href="https://batpartners.github.io/en/datatype/DataType-ToolData/" target="_blank">ToolData</a> to apply to the robot. |
 | **Positioner** | Positioner | External axis <a href="https://batpartners.github.io/en/robottool/RobotTool-Positioner/" target="_blank">Positioner</a> to link with the robot. |
 | **Pedestal** | Mesh | Surrounding environment mesh such as robot pedestal and workbench (Optional). |
 
@@ -183,14 +183,14 @@ A component that imports the ABB robot to be used. You can select the robot owne
       </thead>
       <tbody>
         <tr>
-          <td><strong>Robot Model</strong></td>
+          <td><strong>Models</strong></td>
           <td>String</td>
           <td>ABB robot model</td>
         </tr>
         <tr>
-          <td><strong>Spec</strong></td>
-          <td>String</td>
-          <td>Selected ABB robot model specification — Payload (kg) and Reach (mm)</td>
+          <td><strong>Colour</strong></td>
+          <td>Color</td>
+          <td>Visualization color</td>
         </tr>
       </tbody>
     </table>
@@ -200,11 +200,9 @@ A component that imports the ABB robot to be used. You can select the robot owne
 
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
-  <input type="radio" id="tab3" name="gh-tabs-options">
   
   <ul class="tab-buttons">
-    <li><label for="tab2">Robot Linear Jog</label></li>
-    <li><label for="tab3">Preview</label></li>
+    <li><label for="tab2">Motion Settings</label></li>
   </ul>
   <div class="tab-content" id="content2">
     <table class="spec-table">
@@ -237,27 +235,6 @@ A component that imports the ABB robot to be used. You can select the robot owne
     <br>    
     <p align="center">  <img src="/assets/images/0_ABBRobot_11.png" align="center" width="45%"></p>
   </div>
-
-  <div class="tab-content" id="content3">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Color</strong></td>
-          <td>Color</td>
-          <td>Visualization color</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/0_ABBRobot_12.png" align="center" width="45%"></p>
-  </div>
 </div>
 
 
@@ -265,5 +242,5 @@ A component that imports the ABB robot to be used. You can select the robot owne
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Robot Setup** | Robot Setup | Configured robot setup. Robot definition bundled with base, tool, positioner, and environment models. |
-| **Current TCP** | Plane | Current TCP plane of the robot setup. |
+| **GERTY Robot** | Robot Setup | Configured robot setup. Robot definition bundled with base, tool, positioner, and environment models. |
+| **TCP** | Plane | Current TCP plane of the robot setup. |

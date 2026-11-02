@@ -153,7 +153,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | ABB 인스트럭션. |
+| **Instructions** | Instruction | ABB 인스트럭션. |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -173,7 +173,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Name</strong></td>
+          <td><strong>Procdure Name</strong></td>
           <td>String</td>
           <td>프로시저 변수명</td>
         </tr>
@@ -187,4 +187,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **SubProc** | SubProc | 생성된 프로시저. Core 컴포넌트의 Instructions 입력으로 전달 |
+| **Sub Proc.** | SubProc | 생성된 프로시저. Core 컴포넌트의 Instructions 입력으로 전달 |

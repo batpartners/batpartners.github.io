@@ -148,10 +148,10 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Positioner Geo** | Mesh | 포지셔너 각 링크의 형상 메시. |
-| **Joint Planes** | Plane | 고정 베이스부터 플랜지까지 포지셔너의 기구학 체인을 순서대로 정의하는 평면 리스트.<br>고정 기준 좌표계(Base) - 각 회전축 좌표계(J1, J2, ...) - 워크밴치/워크피스 부착면(Flange)에 순서대로 설정.(즉, N축 포지셔너의 경우 총 N+2개 평면 입력 필요.) |
-| **Mounting Plane** | Plane | 포지셔너의 플랜지 평면. <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a>가 장착되는 상단 기준면. 기본값: WorldXY. |
-| **Workbench** | Workbench | 포지셔너 플랜지에 장착되는 <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> 정의 (선택). |
+| **PositionerGeo** | Mesh | 포지셔너 각 링크의 형상 메시. |
+| **Joints** | Plane | 고정 베이스부터 플랜지까지 포지셔너의 기구학 체인을 순서대로 정의하는 평면 리스트.<br>고정 기준 좌표계(Base) - 각 회전축 좌표계(J1, J2, ...) - 워크밴치/워크피스 부착면(Flange)에 순서대로 설정.(즉, N축 포지셔너의 경우 총 N+2개 평면 입력 필요.) |
+| **MountingPl** | Plane | 포지셔너의 플랜지 평면. <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a>가 장착되는 상단 기준면. 기본값: WorldXY. |
+| **WorkBench** | Workbench | 포지셔너 플랜지에 장착되는 <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> 정의 (선택). |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -171,14 +171,19 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>MechUnit Name</strong></td>
+          <td><strong>Axis Type</strong></td>
+          <td>String</td>
+          <td>ABB 포지셔너 모델</td>
+        </tr>
+        <tr>
+          <td><strong>Name</strong></td>
           <td>String</td>
           <td>포지셔너(MechUnit) 변수명</td>
         </tr>
         <tr>
-          <td><strong>Axis Type</strong></td>
-          <td>String</td>
-          <td>ABB 포지셔너 모델</td>
+          <td><strong>Colour</strong></td>
+          <td>Color</td>
+          <td>시각화 색상</td>
         </tr>        
       </tbody>
     </table>
@@ -189,12 +194,10 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
   <input type="radio" id="tab3" name="gh-tabs-options">
-  <input type="radio" id="tab4" name="gh-tabs-options">
   
   <ul class="tab-buttons">
-    <li><label for="tab2">Motion</label></li>
-    <li><label for="tab3">RAPID</label></li>
-    <li><label for="tab4">Preview</label></li>
+    <li><label for="tab2">Motion Settings</label></li>
+    <li><label for="tab3">RAPID Setting</label></li>
   </ul>
 
   <div class="tab-content" id="content2">
@@ -213,12 +216,12 @@ tags:
           <td>포지셔너의 암 동작 활성화</td>
         </tr>
         <tr>
-          <td><strong>Approach Dir</strong></td>
+          <td><strong>Approaching Dir.</strong></td>
           <td>Number</td>
           <td>포지셔너 기준 TCP의 접근 방향. 포지셔너가 이 방향으로의 접근을 기준으로 회전 자세 결정.</td>
         </tr>
         <tr>
-          <td><strong>TCP Dir</strong></td>
+          <td><strong>TCP Dir.</strong></td>
           <td>Number</td>
           <td>포지셔너가 최종적으로 정렬시킬 TCP의 방향</td>
         </tr>        
@@ -252,27 +255,6 @@ tags:
     </table>
     <br>    
     <p align="center">  <img src="/assets/images/1_ABBPositioner_32.png" align="center" width="45%"></p>
-  </div>
-
-  <div class="tab-content" id="content4">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Color</strong></td>
-          <td>Color</td>
-          <td>시각화 색상</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_33.png" align="center" width="45%"></p>
   </div>
 </div>
 

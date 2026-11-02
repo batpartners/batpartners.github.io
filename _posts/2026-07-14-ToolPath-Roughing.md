@@ -162,7 +162,7 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Geometry** | Geometry | 황삭으로 거칠게 깎아낼 참조 볼륨 (Brep 또는 Mesh). |
-| **Reference Plane** | Plane | 황삭 경로의 기준 평면. Z축 방향으로 계단식 레이어 생성. 기본값: WorldXY. |
+| **Reference Planes** | Plane | 황삭 경로의 기준 평면. Z축 방향으로 계단식 레이어 생성. 기본값: WorldXY. |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -186,27 +186,27 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Cutting Dir</strong></td>
+          <td><strong>Cutting Direction</strong></td>
           <td>Toggle</td>
           <td>레이어 내 절삭 경로의 진행 방향 (시계/반시계) 전환. 엔드밀 회전과의 관계로 Climb / Conventional 절삭 결정.</td>
         </tr>
         <tr>
-          <td><strong>Setback</strong></td>
+          <td><strong>Setback(mm)</strong></td>
           <td>Number</td>
           <td>입력 볼륨의 경계 기준, 외곽 경로의 이격(오프셋) 거리 (mm).</td>
         </tr>
         <tr>
-          <td><strong>Stepover</strong></td>
+          <td><strong>Stepover(mm)</strong></td>
           <td>Number</td>
           <td>인접 절삭 경로 간 간격 (mm).</td>
         </tr>
         <tr>
-          <td><strong>Stepdown</strong></td>
+          <td><strong>Stepdown(mm)</strong></td>
           <td>Number</td>
           <td>레이어당 하강 절삭 깊이 (mm).</td>
         </tr>
         <tr>
-          <td><strong>Vertical Shift</strong></td>
+          <td><strong>Vertical Shift(mm)</strong></td>
           <td>Number</td>
           <td>Vertical Shift</td>
         </tr> 
@@ -231,7 +231,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>프레임 크기</td>
         </tr>
@@ -247,4 +247,4 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Target Planes** | Plane | 생성된 황삭 경로의 타겟 평면. |
-| **Pattern** | Curve | 생성된 황삭 경로를 연결하는 폴리라인 패턴. |
+| **Tool Path** | Curve | 생성된 황삭 경로를 연결하는 폴리라인 패턴. |

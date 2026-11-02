@@ -154,19 +154,19 @@ GERTY Core는 정의된 로봇 셋업과 인스트럭션으로부터 로봇 동�
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| Robot Setup | Robot Setup | 구성된 로봇 셋업. 베이스·툴·포지셔너·주변 모델이 묶인 로봇 정의. |
+| GERTY Robot | Robot Setup | 구성된 로봇 셋업. 베이스·툴·포지셔너·주변 모델이 묶인 로봇 정의. |
 | Instructions | Instructions | 실행할 ABB 인스트럭션 콜렉션. 리스트 순서가 로봇 실행 순서와 직접 대응되므로, 의도한 모션 시퀀스에 맞게 순서 정렬 필요. |
-| SubProc | SubProc | 호출되는 <a href="https://batpartners.github.io/instruction/Instruction-SubProc_Composition/" target="_blank">ABB Procedure</a> (선택) |
+| SubProc. | SubProc | 호출되는 <a href="https://batpartners.github.io/instruction/Instruction-SubProc_Composition/" target="_blank">ABB Procedure</a> (선택) |
 
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-model" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">Simulation</label></li>
+    <li><label for="tab1">GERTY Core</label></li>
   </ul>
   <div class="tab-content" id="content1">
-    <table class="spec-table">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>이름</th>
@@ -176,9 +176,9 @@ GERTY Core는 정의된 로봇 셋업과 인스트럭션으로부터 로봇 동�
       </thead>
       <tbody>
         <tr>
-          <td><strong>Simulation Window</strong></td>
+          <td><strong>Config Option (Cfx = 1)</strong></td>
           <td>Toggle</td>
-          <td>시뮬레이션 컨트롤 창 열기/닫기</td>
+          <td>• <strong>TRUE:</strong> cfx = 1. 로봇 축 4, 6의 구성(Configuration) 반전 모드를 적용한다.<br>• <strong>FALSE:</strong> cfx = 0. 기본 구성을 적용한다.</td>
         </tr>
       </tbody>
     </table>

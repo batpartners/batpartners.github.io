@@ -162,7 +162,7 @@ tags:
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| Target Planes | Plane | Input planes to be converted into `RobTarget`. |
+| Target Plane | Plane | Input planes to be converted into `RobTarget`. |
 | Z Rotation | Number | Rotates the `RobTarget` around its own Z-axis (Unit: degrees). |
 | WobjData | WobjData | Redefines the Target Plane based on the <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">ABB Work Coordinate System</a> (Optional). |
 | Chaining | Boolean | Locks the relationship between the <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">Work Object (WorkObj)</a> and the target (`RobTarget`). Allows target position and orientation to change when the work object is modified in the viewport (Optional). |
@@ -173,7 +173,7 @@ tags:
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| Target Planes | Plane | Planes to be converted into `RobTarget`. |
+| Target Plane | Plane | Planes to be converted into `RobTarget`. |
 | Z Rotation | Number | Rotates the `RobTarget` around its own Z-axis (Unit: degrees). |
 | WobjData | WobjData | Redefines the Target Plane based on the <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">ABB Work Coordinate System</a> (Optional). |
 | Chaining | Boolean | Locks the relationship between the <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">Work Object (WorkObj)</a> and the target (`RobTarget`). Allows target position and orientation to change when the work object is modified in the viewport (Optional). |

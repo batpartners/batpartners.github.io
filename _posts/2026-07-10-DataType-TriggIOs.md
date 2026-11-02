@@ -150,7 +150,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **IOEvent** | IOEvent | ABB TriggIOs를 위한 <a href="https://batpartners.github.io/datatype/DataType-IOEvents/" target="_blank">IOEvents</a> 콜렉션 |
+| **IOs** | IOEvent | ABB TriggIOs를 위한 <a href="https://batpartners.github.io/datatype/DataType-IOEvents/" target="_blank">IOEvents</a> 콜렉션 |
 
 ## | 필수 파라미터 (Required Parameter)
 

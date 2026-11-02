@@ -154,7 +154,7 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Weld Sched** | Weld Sched | 사용할 용접 프로그램 번호(스케줄) 및 용접 모드를 입력한다. |
-| **Weight** | Number | <code>wirefeed1</code>에 대한 가중치를 설정한다. |
+| **Weighting** | Number | <code>wirefeed1</code>에 대한 가중치를 설정한다. |
 | **WeaveData** | WeaveData | <a href="https://batpartners.github.io/datatype/DataType-WeaveData/" target="_blank">ABB WeaveData</a> 구성 데이터를 연결한다. |
 
 ## | 필수 파라미터 (Required Parameter)
@@ -249,11 +249,6 @@ tags:
           <td><strong>Weld Speed(mm/s)</strong></td>
           <td>Number</td>
           <td>용접 중 TCP 선속도(mm/s)를 설정한다. 실제 비드 형상 및 적층 높이를 결정하는 핵심 요소이다.</td>
-        </tr>
-        <tr>
-          <td><strong>Preview Cycles</strong></td>
-          <td>Number</td>
-          <td>컴포넌트 뷰포트 내 용접 궤적 시각화의 반복 사이클 수를 설정한다.</td>
         </tr>
       </tbody>
     </table>

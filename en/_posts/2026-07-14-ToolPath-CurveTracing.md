@@ -161,8 +161,9 @@ CurveTracing is a robot toolpath component that can trace user-defined curves. I
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Weld Sched** | Weld Sched | Weld program number (schedule) and welding mode to use. |
-| **Weight** | Number | Weight value for wirefeed1. |
+| **Curves** | Curve | The curves to trace. |
+| **Reference Plane** | Plane | The reference plane of the toolpath. With Tilting Weight 0.0 the TCP follows this plane's Z direction. |
+| **Geometry** | Geometry | The geometry whose surface normal the TCP tilts toward. |
 
 
 ## | Required Parameter
@@ -170,12 +171,10 @@ CurveTracing is a robot toolpath component that can trace user-defined curves. I
 <div class="tabs-container">
   <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
   <input type="radio" id="prm-tab6" name="gh-tabs-params">
-  <input type="radio" id="prm-tab7" name="gh-tabs-params">
   
   <ul class="tab-buttons">
-    <li><label for="prm-tab5">Resolution</label></li>
-    <li><label for="prm-tab6">Tilting</label></li>
-    <li><label for="prm-tab7">Preview</label></li>
+    <li><label for="prm-tab5">Settings</label></li>
+    <li><label for="prm-tab6">Preview</label></li>
   </ul>
 
   <div class="tab-content" id="prm-content5">
@@ -194,14 +193,19 @@ CurveTracing is a robot toolpath component that can trace user-defined curves. I
           <td>Approximation tolerance for the path.</td>
         </tr>
         <tr>
-          <td><strong>MinEdge</strong></td>
+          <td><strong>MinEdge(mm)</strong></td>
           <td>Number</td>
           <td>Minimum length of path segments (mm).</td>
         </tr>
         <tr>
-          <td><strong>MaxEdge</strong></td>
+          <td><strong>MaxEdge(mm)</strong></td>
           <td>Number</td>
           <td>Maximum length of path segments (mm).</td>
+        </tr>
+        <tr>
+          <td><strong>Tilting Weight</strong></td>
+          <td>Number</td>
+          <td>Degree of tilting the TCP toward the geometry surface normal or curve tangent direction (0.0 = Reference Plane Z, 1.0 = Geometry surface normal or curve tangent direction).</td>
         </tr>
       </tbody>
     </table>
@@ -220,35 +224,7 @@ CurveTracing is a robot toolpath component that can trace user-defined curves. I
       </thead>
       <tbody>
         <tr>
-          <td><strong>Tilt Target</strong></td>
-          <td>Toggle</td>
-          <td>Switches the target to be tilted by 'Tilt Weight'.<br>
-              • TRUE: Tilts along the geometry surface normal direction (requires 'Geometry' input).<br>
-              • FALSE: Tilts along the curve tangent direction (default).</td>
-        </tr>
-        <tr>
-          <td><strong>Tilt Weight</strong></td>
-          <td>Number</td>
-          <td>Degree of tilting the TCP toward the geometry surface normal or curve tangent direction (0.0 = Reference Plane Z, 1.0 = Direction specified by Tilt Target).</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-    <p align="center">  <img src="/assets/images/0_Drawing_11.png" align="center" width="45%"></p>
-  </div>
-
-  <div class="tab-content" id="prm-content7">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>Frame size.</td>
         </tr>

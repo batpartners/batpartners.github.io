@@ -213,7 +213,7 @@ WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>WobjFrame 평면 좌표계 축의 디스플레이 크기를 조절한다.</td>
         </tr>

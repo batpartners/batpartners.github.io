@@ -189,7 +189,7 @@ A component that streams robot poses and I/O signal states in real time from a c
           <td>Set real-time stream update interval (milliseconds)</td>
         </tr>
         <tr>
-          <td><strong>RealTime Stream</strong></td>
+          <td><strong>Realtime Stream</strong></td>
           <td>Toggle</td>
           <td>Start/Stop real-time stream</td>
         </tr>
@@ -203,9 +203,9 @@ A component that streams robot poses and I/O signal states in real time from a c
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **RobAx Angle** | String | Robot axis angles |
-| **ExtAx Angle** | String | External axis angles |
-| **TCP** | Plane | Current TCP plane |
+| **Robot Angle** | String | Robot axis angles |
+| **External Angle** | String | External axis angles |
+| **CurrentPos** | Plane | Current TCP plane |
 | **Signal Values** | Number | Scanned signal values |
 
 <p align="center"> 

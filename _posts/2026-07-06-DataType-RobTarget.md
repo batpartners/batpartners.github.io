@@ -162,7 +162,7 @@ RobTarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Target Planes** | Plane | RobTarget으로 변환할 대상 평면(Plane)을 입력한다. |
+| **Target Plane** | Plane | RobTarget으로 변환할 대상 평면(Plane)을 입력한다. |
 | **Z Rotation** | Number | RobTarget을 자체 Z축을 기준으로 회전시킨다(단위: 도). |
 | **WobjData** | WobjData | <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">ABB 작업 평면 좌표계</a>를 기준으로 Target Plane을 재정의할 때 입력한다(선택). |
 | **Chaining** | Boolean | <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">작업평면(WorkObj)</a>과 타겟(RobTarget)의 관계를 고정한다. 뷰포트 상에서 작업평면을 변경할 때 타겟의 위치와 방향도 함께 변경할 수 있다(선택). |
@@ -173,7 +173,7 @@ RobTarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Target Planes** | Plane | RobTarget으로 변환할 대상 평면(Plane)을 입력한다. |
+| **Target Plane** | Plane | RobTarget으로 변환할 대상 평면(Plane)을 입력한다. |
 | **Z Rotation** | Number | RobTarget을 자체 Z축을 기준으로 회전시킨다(단위: 도). |
 | **WobjData** | WobjData | <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">ABB 작업 평면 좌표계</a>를 기준으로 Target Plane을 재정의할 때 입력한다(선택). |
 | **Chaining** | Boolean | <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">작업평면(WorkObj)</a>과 타겟(RobTarget)의 관계를 고정한다. 뷰포트 상에서 작업평면을 변경할 때 타겟의 위치와 방향도 함께 변경할 수 있다(선택). |

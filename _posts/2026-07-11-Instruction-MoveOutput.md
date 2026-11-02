@@ -150,7 +150,7 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ABB MoveOutput</label></li>
+    <li><label for="tab1">ABB MoveXO</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -168,13 +168,13 @@ tags:
           <td>로봇의 모션 보간 방식(MoveJ/MoveL), 이동 속도(SpeedData), 경유 반경(ZoneData)을 지정한다.</td>
         </tr>
         <tr>
-          <td><strong>MoveJ Start End</strong></td>
+          <td><strong>MoveJ Start &amp; End</strong></td>
           <td>Toggle</td>
           <td>• <strong>TRUE:</strong> 첫 번째 및 마지막 타겟에 대해 관절 보간 모션(MoveJ)을 우선 적용한다.<br>
               • <strong>FALSE:</strong> 모든 타겟에 대해 설정된 모션 유형을 일괄 적용한다.</td>
         </tr>
         <tr>
-          <td><strong>Fine Start End</strong></td>
+          <td><strong>Fine Start &amp; End</strong></td>
           <td>Toggle</td>
           <td>• <strong>TRUE:</strong> 첫 번째 및 마지막 타겟의 경유 반경(Zone)을 정밀 정지 포인트(fine)로 적용한다.<br>
               • <strong>FALSE:</strong> 모든 타겟에 대해 설정된 Zone 값을 일괄 적용한다.</td>
@@ -189,7 +189,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB RAPID 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 전달한다. |
+| **Instructions** | Instruction | 생성된 ABB RAPID 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 전달한다. |
 
 <p align="center"> 
 <video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>

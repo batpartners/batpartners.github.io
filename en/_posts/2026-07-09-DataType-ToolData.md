@@ -160,17 +160,17 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Tool Geo** | Mesh | Shape geometry mesh of the tool (end-effector). |
-| **Base Plane** | Plane | Tool mounting reference plane relative to the ABB robot flange. Defines the orientation basis for TCP and geometry. |
-| **TCP** | Plane | Position and orientation of the TCP (Tool Center Point) at the end of the tool, defined relative to the tool base (Base Plane). |
-| **Tool Load** | ToolLoad | Tool load data (LoadData). If disconnected, it will be automatically estimated from the bounding box of the tool geometry. |
+| **ToolGeo** | Mesh | Shape geometry mesh of the tool (end-effector). |
+| **ToolBase** | Plane | Tool mounting reference plane relative to the ABB robot flange. Defines the orientation basis for TCP and geometry. |
+| **TCP** | Plane | Position and orientation of the TCP (Tool Center Point) at the end of the tool, defined relative to the tool base (ToolBase). |
+| **ToolLoad** | ToolLoad | Tool load data (LoadData). If disconnected, it will be automatically estimated from the bounding box of the tool geometry. |
 
 
 ## | Required Parameter
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ToolData</label></li>
+    <li><label for="tab1">Tool Data</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table" style="margin: 0;">
@@ -183,9 +183,14 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
       </thead>
       <tbody>
         <tr>
-          <td><strong>Tool Name</strong></td>
+          <td><strong>Name</strong></td>
           <td>String</td>
           <td>Defines the variable name for the generated `ToolData`.</td>
+        </tr>
+        <tr>
+          <td><strong>Colour</strong></td>
+          <td>Color</td>
+          <td>Visualization color.</td>
         </tr>
       </tbody>
     </table>
@@ -196,12 +201,10 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
   <input type="radio" id="tab3" name="gh-tabs-options">
-  <input type="radio" id="tab4" name="gh-tabs-options">
   
   <ul class="tab-buttons">
     <li><label for="tab2">LoadData</label></li>
-    <li><label for="tab3">Preview</label></li>
-    <li><label for="tab4">Export</label></li>
+    <li><label for="tab3">Export</label></li>
   </ul>
 
   <div class="tab-content" id="content2">
@@ -250,25 +253,6 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
       </thead>
       <tbody>
         <tr>
-          <td><strong>Color</strong></td>
-          <td>Color</td>
-          <td>Visualization color.</td>
-        </tr>
-      </tbody>
-    </table>
-<p align="center">  <img src="/assets/images/3_ToolData_12.png" align="center" width="32%"></p>
-  </div>
-  <div class="tab-content" id="content4">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
           <td><strong>Export</strong></td>
           <td>Button</td>
           <td>Saves the tool data as a file to a user-specified local directory.</td>
@@ -283,6 +267,6 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **ToolData** | ToolData | Outputs the configured ABB ToolData stream. |
+| **Tool Data** | ToolData | Outputs the configured ABB ToolData stream. |
 
 <p align="center">  <img src="/assets/images/ToolData_GIF_00-1.gif" align="center" width="100%"></p>

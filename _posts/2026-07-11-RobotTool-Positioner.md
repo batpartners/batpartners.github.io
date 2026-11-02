@@ -149,8 +149,8 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Mounting Plane** | Plane | 포지셔너의 플랜지 평면. <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a>가 장착되는 상단 기준면. 기본값: WorldXY. |
-| **Workbench** | Workbench | 포지셔너 플랜지에 장착되는 <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> 정의 (선택). |
+| **MountingPl** | Plane | 포지셔너의 플랜지 평면. <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a>가 장착되는 상단 기준면. 기본값: WorldXY. |
+| **WorkBench** | Workbench | 포지셔너 플랜지에 장착되는 <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> 정의 (선택). |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -170,19 +170,19 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>MechUnit Name</strong></td>
-          <td>String</td>
-          <td>포지셔너(MechUnit) 변수명</td>
-        </tr>
-        <tr>
-          <td><strong>Positioner Model</strong></td>
+          <td><strong>Models</strong></td>
           <td>String</td>
           <td>ABB 포지셔너 모델</td>
+        </tr>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td>String</td>
+          <td>포지셔너(MechUnit) 변수명</td>
         </tr>        
         <tr>
-          <td><strong>Spec</strong></td>
-          <td>String</td>
-          <td>선택한 ABB 포지셔너 모델 스펙 — 작업 직경(D) 및 플레이트 높이(H)</td>
+          <td><strong>Colour</strong></td>
+          <td>Color</td>
+          <td>시각화 색상</td>
         </tr>
       </tbody>
     </table>
@@ -193,12 +193,10 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
   <input type="radio" id="tab3" name="gh-tabs-options">
-  <input type="radio" id="tab4" name="gh-tabs-options">
   
   <ul class="tab-buttons">
-    <li><label for="tab2">Motion</label></li>
-    <li><label for="tab3">RAPID</label></li>
-    <li><label for="tab4">Preview</label></li>
+    <li><label for="tab2">Motion Settings</label></li>
+    <li><label for="tab3">RAPID Setting</label></li>
   </ul>
 
   <div class="tab-content" id="content2">
@@ -217,12 +215,12 @@ tags:
           <td>포지셔너의 암 동작 활성화</td>
         </tr>
         <tr>
-          <td><strong>Approach Direction</strong></td>
+          <td><strong>Approaching Dir.</strong></td>
           <td>Number</td>
           <td>포지셔너 기준 TCP의 접근 방향. 포지셔너가 이 방향으로의 접근을 기준으로 회전 자세 결정.</td>
         </tr>
         <tr>
-          <td><strong>TCP Dir</strong></td>
+          <td><strong>TCP Dir.</strong></td>
           <td>Number</td>
           <td>포지셔너가 최종적으로 정렬시킬 TCP의 방향</td>
         </tr>        
@@ -233,7 +231,7 @@ tags:
   </div>
 
   <div class="tab-content" id="content3">
-    <table class="spec-table">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>이름</th>
@@ -243,35 +241,18 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Mechanical Unit</strong></td>
+          <td><strong>Arm Joint Index</strong></td>
           <td>String</td>
-          <td>RAPID 구문 내 MechUnit 매핑 파라미터</td>
+          <td>포지셔너 암(Arm) 축 각도를 할당할, RobTarget 내부 ExtJoint 배열의 인덱스 (1~6). 다른 외부축 인덱스와 중복 불가.<br>"- 예: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]</td>
+        </tr>
+        <tr>
+          <td><strong>Plate Joint Index</strong></td>
+          <td>String</td>
+          <td>포지셔너 플레이트(Plate) 축 각도를 할당할 RobTarget ExtJoint 배열의 인덱스 (1~6). 다른 외부축 인덱스와 중복 불가.<br>- 예: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]</td>
         </tr>
       </tbody>
     </table>
-    <br>    
     <p align="center">  <img src="/assets/images/1_ABBPositioner_12.png" align="center" width="45%"></p>
-  </div>
-
-  <div class="tab-content" id="content4">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Color</strong></td>
-          <td>Color</td>
-          <td>시각화 색상</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_13.png" align="center" width="45%"></p>
   </div>
 </div>
 

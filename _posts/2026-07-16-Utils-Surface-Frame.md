@@ -170,7 +170,7 @@ tags:
   
   <ul class="tab-buttons">
     <li><label for="prm-tab5">UV Param</label></li>
-    <li><label for="prm-tab7">Preview</label></li>
+    <li><label for="prm-tab6">Preview</label></li>
   </ul>
 
   <div class="tab-content" id="prm-content5">
@@ -210,7 +210,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Plane</td>
           <td>프레임 크기</td>
         </tr>

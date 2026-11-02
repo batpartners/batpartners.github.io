@@ -153,7 +153,7 @@ WaitTime은 지정된 시간 (초) 동안 로봇 모션을 일시 정지시키�
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Time(s)** | Number | 프로그램 실행이 대기할 시간 (초). |
+| **Time(sec.)** | Number | 프로그램 실행이 대기할 시간 (초). |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -188,4 +188,4 @@ WaitTime은 지정된 시간 (초) 동안 로봇 모션을 일시 정지시키�
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |
+| **Instructions** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달. |

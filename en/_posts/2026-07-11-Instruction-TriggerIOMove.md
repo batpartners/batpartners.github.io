@@ -141,7 +141,7 @@ This is a component that configures ABB Trigger Move instructions (TriggLIOs, Tr
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **RobTargets** | RobTarget | Motion target position. Connects to the output of <a href="https://batpartners.github.io/en/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> or <a href="https://batpartners.github.io/en/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> component. |
+| **RobTarget** | RobTarget | Motion target position. Connects to the output of <a href="https://batpartners.github.io/en/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> or <a href="https://batpartners.github.io/en/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> component. |
 | **TriggIOs** | TriggIOs | ABB TriggIOs |
 
 ## | Required Parameter
@@ -149,7 +149,7 @@ This is a component that configures ABB Trigger Move instructions (TriggLIOs, Tr
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ABB MoveOutput</label></li>
+    <li><label for="tab1">TriggIOs Move</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -177,4 +177,4 @@ This is a component that configures ABB Trigger Move instructions (TriggLIOs, Tr
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Passes to the Instructions input of the Core component. |
+| **Instructions** | Instruction | Generated ABB instruction. Passes to the Instructions input of the Core component. |

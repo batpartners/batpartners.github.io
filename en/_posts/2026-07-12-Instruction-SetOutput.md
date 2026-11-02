@@ -142,7 +142,7 @@ SetOutput is a component that generates SetDO, SetGO, and SetAO instructions to 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">SetOutput</label></li>
+    <li><label for="tab1">SetXO</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -155,12 +155,12 @@ SetOutput is a component that generates SetDO, SetGO, and SetAO instructions to 
       </thead>
       <tbody>
         <tr>
-          <td><strong>Signal Typ</strong></td>
+          <td><strong>Signal Type</strong></td>
           <td>Toggle</td>
           <td>Output signal type (Digital / Group / Analog)</td>
         </tr>
         <tr>
-          <td><strong>Value</strong></td>
+          <td><strong>DO Value</strong></td>
           <td>Toggle</td>
           <td>Digital output value</td>
         </tr>
@@ -174,4 +174,4 @@ SetOutput is a component that generates SetDO, SetGO, and SetAO instructions to 
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Pass to the 'Instructions' input of the Core component. |
+| **Instructions** | Instruction | Generated ABB instruction. Pass to the 'Instructions' input of the Core component. |

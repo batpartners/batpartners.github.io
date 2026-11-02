@@ -32,7 +32,7 @@ tags:
 
 # Description
 
-Shell Profile를 기준으로, 외곽 내부를 패턴으로 채우는 적층 툴패스 컴포넌트이다. 채움 형상과 간격 등의 세부 사항을 결정할 수 있다.
+GERTYShellData를 기준으로, 외곽 내부를 패턴으로 채우는 적층 툴패스 컴포넌트이다. 채움 형상과 간격 등의 세부 사항을 결정할 수 있다.
 
 <p align="center">  <img src="/assets/images/10_SolidFill.png" align="center" width="32%"></p>
 
@@ -161,7 +161,7 @@ Shell Profile를 기준으로, 외곽 내부를 패턴으로 채우는 적층 �
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Shell Profile** | Shell Profile | 외곽 적층 경로의 기준 프로파일 정보. |
+| **GERTYShellData** | Shell Profile | 외곽 적층 경로의 기준 프로파일 정보. |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -190,12 +190,12 @@ Shell Profile를 기준으로, 외곽 내부를 패턴으로 채우는 적층 �
           <td>내부 채움 영역에 적용할 패턴.</td>
         </tr>
         <tr>
-          <td><strong>External Infill Type</strong></td>
+          <td><strong>Ext-Infill Type</strong></td>
           <td>String</td>
           <td>외부 채움 영역에 적용할 패턴.</td>
         </tr>
         <tr>
-          <td><strong>Rotation</strong></td>
+          <td><strong>Rotation(°)</strong></td>
           <td>Number</td>
           <td>채움 패턴에 적용할 회전 각도.</td>
         </tr>
@@ -225,7 +225,7 @@ Shell Profile를 기준으로, 외곽 내부를 패턴으로 채우는 적층 �
           <td>파트 하단에 생성할 솔리드 레이어 수.</td>
         </tr>
         <tr>
-          <td><strong>Fill Gap</strong></td>
+          <td><strong>Layer Gap(mm)</strong></td>
           <td>Number</td>
           <td>외곽과 채움, 내부 채움과 외부 채움 패턴 사이의 간격 (mm).</td>
         </tr>
@@ -245,5 +245,5 @@ Shell Profile를 기준으로, 외곽 내부를 패턴으로 채우는 적층 �
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Infill ToolPaths** | Infill ToolPaths Tree | 생성된 적층 경로 데이터. |
-| **Infill Pattern** | Curve | 생성된 채움 적층 경로를 연결하는 폴리라인 패턴. |
+| **Deposition ToolPaths** | Infill ToolPaths Tree | 생성된 적층 경로 데이터. |
+| **Infill Polylines** | Curve | 생성된 채움 적층 경로를 연결하는 폴리라인 패턴. |

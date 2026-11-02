@@ -156,7 +156,7 @@ AccSet은 로봇 가속도 및 램프 값을 감소시키는 AccSet 인스트럭
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">Arc Move</label></li>
+    <li><label for="tab1">Acceleration Params</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -199,4 +199,4 @@ AccSet은 로봇 가속도 및 램프 값을 감소시키는 AccSet 인스트럭
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달 |
+| **Instructions** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달 |

@@ -166,13 +166,13 @@ ABB Move 인스트럭션(MoveL, MoveJ)을 설정하는 컴포넌트이다.
           <td>모션 유형, 속도, 경유 반경을 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>MoveJ Start End</strong></td>
+          <td><strong>MoveJ Start &amp; End</strong></td>
           <td>Toggle</td>
           <td>• <code>TRUE</code>: 첫 번째 및 마지막 타겟에 대하여 MoveJ를 적용한다.<br>
               • <code>FALSE</code>: 모든 타겟에 대하여 설정된 모션 유형을 적용한다.</td>
         </tr>
         <tr>
-          <td><strong>Fine Start End</strong></td>
+          <td><strong>Fine Start &amp; End</strong></td>
           <td>Toggle</td>
           <td>• <code>TRUE</code>: 첫 번째 및 마지막 타겟의 Zone을 fine으로 적용한다.<br>
               • <code>FALSE</code>: 모든 타겟에 설정된 Zone 값을 적용한다.</td>
@@ -188,7 +188,7 @@ ABB Move 인스트럭션(MoveL, MoveJ)을 설정하는 컴포넌트이다.
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |
+| **Instructions** | Instruction | 생성된 ABB 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |
 
 <p align="center"> 
 <video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>

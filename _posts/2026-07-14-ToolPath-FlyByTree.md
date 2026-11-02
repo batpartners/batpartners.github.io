@@ -168,40 +168,13 @@ tags:
 ## | 필수 파라미터 (Required Parameter)
 
 <div class="tabs-container">
-  <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
-
-  <ul class="tab-buttons">
-    <li><label for="sm-tab1">Flyby Targets</label></li>
-  </ul>
-  <div class="tab-content" id="sm-content1">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>이름</th>
-          <th>타입</th>
-          <th>설명</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Target Count</strong></td>
-          <td>Number</td>
-          <td>전이 경로를 구성하는 타겟 평면의 개수.</td>
-        </tr>
-      </tbody>
-    </table>
-    <p align="center">  <img src="/assets/images/1_FlybyPlane_10.png" align="center" width="45%"></p>
-  </div>
-</div>
-
-<div class="tabs-container">
   <input type="radio" id="prm-tab5" name="gh-tabs-params" checked>
   <input type="radio" id="prm-tab6" name="gh-tabs-params">
   <input type="radio" id="prm-tab7" name="gh-tabs-params">
   
   <ul class="tab-buttons">
-    <li><label for="prm-tab5">Offset</label></li>
-    <li><label for="prm-tab6">Blend</label></li>
+    <li><label for="prm-tab5">Basic</label></li>
+    <li><label for="prm-tab6">Advanced</label></li>
     <li><label for="prm-tab7">Preview</label></li>
   </ul>
 
@@ -216,33 +189,33 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Link</strong></td>
-          <td>Toggle</td>
-          <td>Approach와 Departure 값을 연동. TRUE: 한쪽을 조절하면 다른 쪽도 같은 값으로 맞춰짐. FALSE: 각각 독립 조절 (기본값).</td>
-        </tr>
-        <tr>
-          <td><strong>Approach Dir</strong></td>
+          <td><strong>Approaching Dir.</strong></td>
           <td>String</td>
           <td>전이 경로의 진입 (Approach) 방향을 일괄 지정.<br>
               • Motion Dir: 각 브랜치 시작부 모션 벡터의 역방향.<br>
               • Z/Y/X Axis · Negative Z/Y/X Axis: 시작 타겟 평면의 해당 축 방향.</td>
         </tr>
         <tr>
-          <td><strong>Departure Dir</strong></td>
+          <td><strong>Leaving Dir.</strong></td>
           <td>String</td>
           <td>전이 경로의 진출 (Departure) 방향을 일괄 지정.<br>
               • Motion Dir: 각 브랜치 끝부 모션 벡터 방향.<br>
               • Z/Y/X Axis · Negative Z/Y/X Axis: 마지막 타겟 평면의 해당 축 방향.</td>
         </tr>
         <tr>
-          <td><strong>Approach(mm)</strong></td>
+          <td><strong>Approaching Dist.(mm)</strong></td>
           <td>Number</td>
           <td>전이 경로의 진입 지점을 첫 타겟 평면에서 이격할 거리 (mm).</td>
         </tr>
         <tr>
-          <td><strong>Departure(mm)</strong></td>
+          <td><strong>Leaving Dist.(mm)</strong></td>
           <td>Number</td>
           <td>전이 경로의 진출 지점을 마지막 타겟 평면에서 이격할 거리 (mm).</td>
+        </tr>
+        <tr>
+          <td><strong>Target Count</strong></td>
+          <td>Number</td>
+          <td>전이 경로를 구성하는 타겟 평면의 개수.</td>
         </tr>
       </tbody>
     </table>
@@ -261,17 +234,12 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Continuity</strong></td>
+          <td><strong>Continuity Type</strong></td>
           <td>String</td>
           <td>전이 경로 블렌드의 연속성 유형.<br>
               [Position]: 위치 연속 (G0).<br>
               [Tangency]: 접선 연속 (G1).<br>
               [Curvature]: 곡률 연속 (G2).</td>
-        </tr>
-        <tr>
-          <td><strong>Link</strong></td>
-          <td>Toggle</td>
-          <td>'Bulge Start'와 'Bulge End' 값을 연동. TRUE: 한쪽을 조절하면 다른 쪽도 같은 값으로 맞춰짐. FALSE: 각각 독립 조절 (기본값).</td>
         </tr>
         <tr>
           <td><strong>Bulge Start</strong></td>
@@ -300,7 +268,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>프레임 크기</td>
         </tr>
@@ -315,4 +283,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Target Planes** | Plane | 전이경로(Flyby) 타겟 평면 DataTree |
+| **Fly-by Targets** | Plane | 전이경로(Flyby) 타겟 평면 DataTree |

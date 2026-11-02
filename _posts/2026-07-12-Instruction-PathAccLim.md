@@ -156,7 +156,7 @@ PathAccLim은 이동 경로상의 TCP 가속도 및 감속도 제한을 설정�
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">Arc Move</label></li>
+    <li><label for="tab1">Acceleration Params</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -198,4 +198,4 @@ PathAccLim은 이동 경로상의 TCP 가속도 및 감속도 제한을 설정�
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달 |
+| **Instructions** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달 |

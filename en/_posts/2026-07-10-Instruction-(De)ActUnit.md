@@ -172,4 +172,4 @@ This is a component that generates ActUnit/DeactUnit instructions to activate or
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Pass to the 'Instructions' input of the Core component. |
+| **Instructions** | Instruction | Generated ABB instruction. Pass to the 'Instructions' input of the Core component. |

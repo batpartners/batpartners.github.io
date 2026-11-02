@@ -147,7 +147,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **RobTarget** | RobTarget | 논리 축 각도를 재정렬하기 위해 사용되는 참조 자세(Reference Position)를 연결한다. <code>Direction</code>이 <code>Short</code> / <code>Fwd</code> / <code>Bwd</code>일 때만 유효하며, <code>RefNum</code>과 병용할 수 없다. |
+| **RobTarget** | RobTarget | 논리 축 각도를 재정렬하기 위해 사용되는 참조 자세(Reference Position)를 연결한다. <code>Direction Policy</code>가 <code>Short</code> / <code>Fwd</code> / <code>Bwd</code>일 때만 유효하며, <code>RefNum</code>과 병용할 수 없다. |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -202,10 +202,10 @@ tags:
         <tr>
           <td><strong>RefNum(°)</strong></td>
           <td>Number</td>
-          <td>계측 기준 위치를 숫자(°)로 지정한다. <code>Direction</code>이 <code>Short</code> / <code>Fwd</code> / <code>Bwd</code>일 때만 유효하다.</td>
+          <td>계측 기준 위치를 숫자(°)로 지정한다. <code>Direction Policy</code>가 <code>Short</code> / <code>Fwd</code> / <code>Bwd</code>일 때만 유효하다.</td>
         </tr>
         <tr>
-          <td><strong>Direction</strong></td>
+          <td><strong>Direction Policy</strong></td>
           <td>String</td>
           <td>계측 시스템 조정 방식을 설정한다.<br>
               • <code>Short</code>: 기준 위치까지 최단 경로 (±180° 이내)<br>
@@ -224,4 +224,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |
+| **Instructions** | Instruction | 생성된 ABB 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 연결한다. |

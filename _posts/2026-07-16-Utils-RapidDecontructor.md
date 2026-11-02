@@ -167,5 +167,5 @@ ABB RAPID 객체 (ABB DataType, ABB Instruction) 디컨스트럭터 컴포넌트
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Data Str.** | String | 프로그램 데이터 소스 |
-| **Instruction Str.** | String | 명령 데이터 소스 |
+| **ProgramData** | String | 프로그램 데이터 소스 |
+| **Instructions** | String | 명령 데이터 소스 |

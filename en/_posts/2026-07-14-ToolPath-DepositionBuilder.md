@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-This is a component that receives, analyzes, and integrates deposition toolpaths generated from a slicer component. Among the received data, it can separate and output them by purpose, such as extrusion start (E-Start), move, and extrusion end (E-End). Users can preview the alignment and layers of the deposition path.
+This is a component that receives, analyzes, and integrates deposition toolpaths generated from a slicer component. Among the received data, it can separate and output them by purpose, such as extrusion start (E-Start), move, and extrusion end (E-Stop). Users can preview the alignment and layers of the deposition path.
 
 <p align="center">  <img src="/assets/images/9_DepositionBuilder.png" align="center" width="32%"></p>
 
@@ -161,9 +161,8 @@ This is a component that receives, analyzes, and integrates deposition toolpaths
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Deposition ToolPaths** | Data | Deposition toolpath data generated from the slicer component. |
-| **Reference Plane** | Plane | Reference plane for generating PreExtrusion paths. |
-| **PreExtrusion Curve** | Curve | Pre-extrusion path curve to prepare the nozzle prior to extrusion start. |
-| **First Part** | Boolean | Flag indicating whether the current Deposition ToolPath is the lowest (first) part. FALSE: Ignores PreExtrusion. |
+| **Pre-Extrusion Curve** | Curve | Pre-extrusion path curve to prepare the nozzle prior to extrusion start. |
+| **Is Bottommost** | Boolean | Flag indicating whether the current Deposition ToolPath is the lowest (first) part. FALSE: Ignores PreExtrusion. |
 
 ## | Required Parameter
 
@@ -187,7 +186,7 @@ This is a component that receives, analyzes, and integrates deposition toolpaths
       </thead>
       <tbody>
         <tr>
-          <td><strong>Infill First</strong></td>
+          <td><strong>Infill first</strong></td>
           <td>Toggle</td>
           <td>• TRUE: Applies deposition order in Infill → Shell sequence<br>
               • FALSE: Applies deposition order in Shell → Infill sequence</td>
@@ -215,17 +214,17 @@ This is a component that receives, analyzes, and integrates deposition toolpaths
       </thead>
       <tbody>
         <tr>
-          <td><strong>Preview Color</strong></td>
+          <td><strong>Preview Colour</strong></td>
           <td>Color</td>
           <td>Visualization color</td>
         </tr>
         <tr>
-          <td><strong>Layer Number</strong></td>
+          <td><strong>Layer Preview</strong></td>
           <td>Number</td>
           <td>Layer to preview</td>
         </tr>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>Frame size</td>
         </tr>
@@ -242,5 +241,5 @@ This is a component that receives, analyzes, and integrates deposition toolpaths
 | :--- | :--- | :--- |
 | **E-Start Planes** | Plane | Target planes at positions where the extrusion signal turns ON. |
 | **Movement Planes** | Plane | Motion target planes of the deposition path. |
-| **E-End Planes** | Plane | Target planes at positions where the extrusion signal turns OFF. |
-| **E-End idx** | Integer | Position index of the extrusion end (E-End) targets within the entire Deposition ToolPaths collection. Used for data merging before and after assigning instructions to each target. |
+| **E-Stop Planes** | Plane | Target planes at positions where the extrusion signal turns OFF. |
+| **E-Stop idx** | Integer | Position index of the extrusion end (E-Stop) targets within the entire Deposition ToolPaths collection. Used for data merging before and after assigning instructions to each target. |

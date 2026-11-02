@@ -159,9 +159,9 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Base Plane** | Plane | The tool mounting reference plane relative to the ABB robot flange. Defines the baseline for TCP and geometry (shape). |
-| **TCP** | Plane | The position of the TCP (Tool Center Point) at the end of the tool. Defines its position and orientation relative to the tool base (Base Plane). |
-| **Tool Load** | ToolLoad | The load data (LoadData) of the tool. If not connected, it is estimated and generated based on the bounding box of the tool geometry. |
+| **ToolBase** | Plane | The tool mounting reference plane relative to the ABB robot flange. Defines the baseline for TCP and geometry (shape). |
+| **TCP** | Plane | The position of the TCP (Tool Center Point) at the end of the tool. Defines its position and orientation relative to the tool base (ToolBase). |
+| **ToolLoad** | ToolLoad | The load data (LoadData) of the tool. If not connected, it is estimated and generated based on the bounding box of the tool geometry. |
 
 ## | Required Parameter
 
@@ -169,7 +169,7 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-tooldata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ToolData</label></li>
+    <li><label for="tab1">Tool Data</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table" style="margin: 0;">
@@ -182,15 +182,20 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
       </thead>
       <tbody>
         <tr>
-          <td><strong>Tool Name</strong></td>
+          <td><strong>Tool Presets</strong></td>
+          <td>Dropdown</td>
+          <td>List of previously saved ToolData presets.</td>
+        </tr>
+        <tr>
+          <td><strong>Name</strong></td>
           <td>String</td>
           <td>Defines the variable name for the generated `ToolData`.</td>
         </tr>
         <tr>
-          <td><strong>Preset</strong></td>
-          <td>Dropdown</td>
-          <td>List of previously saved ToolData presets.</td>
-        </tr>        
+          <td><strong>Colour</strong></td>
+          <td>Color</td>
+          <td>Visualization color</td>
+        </tr>
       </tbody>
     </table>
   </div>
@@ -199,12 +204,10 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
   <input type="radio" id="tab3" name="gh-tabs-options">
-  <input type="radio" id="tab4" name="gh-tabs-options">
   
   <ul class="tab-buttons">
     <li><label for="tab2">LoadData</label></li>
-    <li><label for="tab3">Preview</label></li>
-    <li><label for="tab4">Export</label></li>
+    <li><label for="tab3">Export</label></li>
   </ul>
 
   <div class="tab-content" id="content2">
@@ -249,26 +252,6 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
       </thead>
       <tbody>
         <tr>
-          <td><strong>Color</strong></td>
-          <td>Color</td>
-          <td>Visualization color</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>
-<p align="center">  <img src="/assets/images/3_ToolData_4.png" align="center" width="32%"></p>
-  </div>
-  <div class="tab-content" id="content4">
-    <table class="spec-table" style="margin: 0;">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
           <td><strong>Export</strong></td>
           <td>Button</td>
           <td>Saves the tool data as a file to a user-specified local directory.</td>
@@ -284,4 +267,4 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **ToolData** | ToolData | Outputs the configured ABB ToolData. |
+| **Tool Data** | ToolData | Outputs the configured ABB ToolData. |

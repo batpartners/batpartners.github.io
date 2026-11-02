@@ -160,7 +160,7 @@ SetOutput은 디지털, 그룹, 아날로그 출력 신호 값을 변경하는 S
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">SetOutput</label></li>
+    <li><label for="tab1">SetXO</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -173,12 +173,12 @@ SetOutput은 디지털, 그룹, 아날로그 출력 신호 값을 변경하는 S
       </thead>
       <tbody>
         <tr>
-          <td><strong>Signal Typ</strong></td>
+          <td><strong>Signal Type</strong></td>
           <td>Toggle</td>
           <td>출력 신호 유형 (디지털 / 그룹 / 아날로그)</td>
         </tr>
         <tr>
-          <td><strong>Value</strong></td>
+          <td><strong>DO Value</strong></td>
           <td>Toggle</td>
           <td>디지털 출력 값</td>
         </tr>
@@ -192,4 +192,4 @@ SetOutput은 디지털, 그룹, 아날로그 출력 신호 값을 변경하는 S
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달 |
+| **Instructions** | Instruction | 생성된 ABB 인스트럭션. Core 컴포넌트의 Instructions 입력으로 전달 |

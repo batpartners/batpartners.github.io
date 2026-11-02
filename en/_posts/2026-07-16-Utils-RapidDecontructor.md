@@ -167,5 +167,5 @@ This is a deconstructor component for ABB RAPID objects (ABB DataType, ABB Instr
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Data Str.** | String | Program data source |
-| **Instruction Str.** | String | Instruction data source |
+| **ProgramData** | String | Program data source |
+| **Instructions** | String | Instruction data source |

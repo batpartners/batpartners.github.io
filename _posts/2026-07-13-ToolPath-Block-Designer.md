@@ -161,9 +161,9 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
+| **Base Plane** | Plane | 벽체를 레이어로 슬라이싱하는 기준 평면. Z축 방향으로 레이어 생성. 기본값: WorldXY. |
 | **Unit Block** | Box | 적층할 단위 블록 형상. |
 | **Wall** | Brep | 블록을 배치할 대상 벽체 형상. |
-| **Wall Base** | Plane | 벽체를 레이어로 슬라이싱하는 기준 평면. Z축 방향으로 레이어 생성. 기본값: WorldXY. |
 
 
 ## | 필수 파라미터 (Required Parameter)
@@ -188,19 +188,19 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Divide Distance</strong></td>
+          <td><strong>Divide by Distance</strong></td>
           <td>Toggle</td>
           <td>블록 간격 산정 방식.<br>
               • TRUE: 고정 간격 분할 (유닛 너비 + 수평 간격).<br>
               • FALSE: 균등 개수 분할 (레이어 길이 ÷ (유닛 너비 + 간격)을 정수화) (기본값).</td>
         </tr>
         <tr>
-          <td><strong>Horizontal Spacing</strong></td>
+          <td><strong>Horizontal Spacing(mm)</strong></td>
           <td>Number</td>
           <td>블록 간의 수평 간격 (mm)</td>
         </tr>
         <tr>
-          <td><strong>Vertical Spacing</strong></td>
+          <td><strong>Vertical Spacing(mm)</strong></td>
           <td>Number</td>
           <td>블록 간의 수직 간격 (mm)</td>
         </tr>
@@ -221,7 +221,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>프레임 크기</td>
         </tr>
@@ -237,7 +237,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Place Targets** | Plane | 생성된 트레이싱 경로 타겟 평면 |
 | **Block Count** | Integer | 전체 블록 개수. |
-| **Layer Curves** | Curve | 각 레이어의 적층 외곽 커브. |
+| **Target Planes** | Plane | 생성된 트레이싱 경로 타겟 평면 |
 | **Block Wall** | Plane | 배치된 블록들로 구성된 결과 벽체 메시. |
+| **Layers** | Curve | 각 레이어의 적층 외곽 커브. |

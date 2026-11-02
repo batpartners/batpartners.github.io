@@ -154,19 +154,19 @@ GERTY Core is a component that computes robot motions based on defined robot set
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| Robot Setup | Robot Setup | Configured robot setup. Robot definition bundling base, tool, positioner, and surrounding models. |
+| GERTY Robot | Robot Setup | Configured robot setup. Robot definition bundling base, tool, positioner, and surrounding models. |
 | Instructions | Instructions | Collection of ABB instructions to execute. Since the list order directly corresponds to the robot execution sequence, ordering them to match the intended motion sequence is required. |
-| SubProc | SubProc | Called <a href="https://batpartners.github.io/en/instruction/Instruction-SubProc_Composition/" target="_blank">ABB Procedure</a> (Optional) |
+| SubProc. | SubProc | Called <a href="https://batpartners.github.io/en/instruction/Instruction-SubProc_Composition/" target="_blank">ABB Procedure</a> (Optional) |
 
 ## | Required Parameter
 
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-model" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">Simulation</label></li>
+    <li><label for="tab1">GERTY Core</label></li>
   </ul>
   <div class="tab-content" id="content1">
-    <table class="spec-table">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>Name</th>
@@ -176,9 +176,10 @@ GERTY Core is a component that computes robot motions based on defined robot set
       </thead>
       <tbody>
         <tr>
-          <td><strong>Simulation Window</strong></td>
+          <td><strong>Config Option (Cfx = 1)</strong></td>
           <td>Toggle</td>
-          <td>Open/Close simulation control window</td>
+          <td>• TRUE: cfx = 1. Inverts the configuration of robot axes 4 and 6<br>
+              • FALSE: cfx = 0 Default value</td>
         </tr>
       </tbody>
     </table>

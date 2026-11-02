@@ -161,7 +161,7 @@ This is a component that configures ABB Move instructions (MoveJDO, MoveLDO, Mov
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ABB MoveOutput</label></li>
+    <li><label for="tab1">ABB MoveXO</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -179,13 +179,13 @@ This is a component that configures ABB Move instructions (MoveJDO, MoveLDO, Mov
           <td>Motion type, speed, zone radius</td>
         </tr>
         <tr>
-          <td><strong>MoveJ Start End</strong></td>
+          <td><strong>MoveJ Start &amp; End</strong></td>
           <td>Toggle</td>
           <td>• TRUE: Apply MoveJ to the first and last targets<br>
               • FALSE: Apply the configured motion type to all targets</td>
         </tr>
         <tr>
-          <td><strong>Fine Start End</strong></td>
+          <td><strong>Fine Start &amp; End</strong></td>
           <td>Toggle</td>
           <td>• TRUE: Apply fine zone to the first and last targets<br>
               • FALSE: Apply the configured zone value to all targets </td>
@@ -201,7 +201,7 @@ This is a component that configures ABB Move instructions (MoveJDO, MoveLDO, Mov
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Passed to the Instructions input of the Core component. |
+| **Instructions** | Instruction | Generated ABB instruction. Passed to the Instructions input of the Core component. |
 
 <p align="center"> 
 <video src="/assets/images/Move_gif_confirm-min_SHL.mp4" width="576px" height="324px" autoplay=1 muted=1 loop=1 align="center"></video>

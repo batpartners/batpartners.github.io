@@ -168,7 +168,7 @@ tags:
   <input type="radio" id="sm-tab1" name="gh-tabs-seamdata" checked>
   
   <ul class="tab-buttons">
-    <li><label for="sm-tab1">Info</label></li>
+    <li><label for="sm-tab1">Gate IO Systems</label></li>
   </ul>
 
   <div class="tab-content" id="sm-content1">
@@ -187,12 +187,12 @@ tags:
           <td>IO 시스템 스캔을 위한 게이트 열기/닫기</td>
         </tr>
         <tr>
-          <td><strong>IO Unit</strong></td>
+          <td><strong>IO Units</strong></td>
           <td>String</td>
           <td>스캔할 IO 유닛</td>
         </tr>
         <tr>
-          <td><strong>Signal Type</strong></td>
+          <td><strong>Signal Types</strong></td>
           <td>String</td>
           <td>스캔할 신호 유형</td>
         </tr>
@@ -207,4 +207,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Signals** | String | 필터링된 신호 이름 |
+| **SignalsInUnit** | String | 필터링된 신호 이름 |

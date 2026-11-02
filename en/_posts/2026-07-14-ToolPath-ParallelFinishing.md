@@ -186,19 +186,19 @@ This is a component that generates a finishing toolpath along unidirectional par
       </thead>
       <tbody>
         <tr>
-          <td><strong>Contour Direction</strong></td>
+          <td><strong>Cutting Direction</strong></td>
           <td>Toggle</td>
           <td>Toggles parallel contour direction.<br>
               • TRUE: X direction (Rotated by 90°).<br>
               • FALSE: Reference Plane +Y direction (Default).</td>
         </tr>
         <tr>
-          <td><strong>Stepover</strong></td>
+          <td><strong>Stepover(mm)</strong></td>
           <td>Number</td>
           <td>Distance between adjacent cutting paths (mm).</td>
         </tr>
         <tr>
-          <td><strong>Tilt Weight</strong></td>
+          <td><strong>Tilting Weight</strong></td>
           <td>Number</td>
           <td>Controls the degree to which the TCP tilts along the geometry surface normal, making the endmill perpendicular to the surface (0.0 = Reference Plane Z, 1.0 = Surface Normal).</td>
         </tr>
@@ -223,7 +223,7 @@ This is a component that generates a finishing toolpath along unidirectional par
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>Frame size.</td>
         </tr>
@@ -239,4 +239,4 @@ This is a component that generates a finishing toolpath along unidirectional par
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | **Target Planes** | Plane | Target planes of the generated hot-wire cutting path. |
-| **Contour** | Curve | Polyline pattern connecting the generated finishing paths. |
+| **Curve** | Curve | Polyline pattern connecting the generated finishing paths. |

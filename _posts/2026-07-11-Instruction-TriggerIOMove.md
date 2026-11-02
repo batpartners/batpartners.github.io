@@ -142,7 +142,7 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **RobTargets** | RobTarget | 로봇의 목표 이동 위치를 지정한다. <a href="https://batpartners.github.io/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> 또는 <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> 컴포넌트의 출력을 연결한다. |
+| **RobTarget** | RobTarget | 로봇의 목표 이동 위치를 지정한다. <a href="https://batpartners.github.io/datatype/DataType-RobTarget/" target="_blank">RobTarget</a> 또는 <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">Positioner RobTarget</a> 컴포넌트의 출력을 연결한다. |
 | **TriggIOs** | TriggIOs | 경로 이동 중 트리거할 I/O 신호 설정 데이터인 <a href="https://batpartners.github.io/datatype/DataType-TriggIOs/" target="_blank">TriggIOs</a>를 연결한다. |
 
 ## | 필수 파라미터 (Required Parameter)
@@ -150,7 +150,7 @@ tags:
 <div class="tabs-container">
   <input type="radio" id="tab1" name="gh-tabs-welddata" checked>
   <ul class="tab-buttons">
-    <li><label for="tab1">ABB TriggerIOMove</label></li>
+    <li><label for="tab1">TriggIOs Move</label></li>
   </ul>
   <div class="tab-content" id="content1">
     <table class="spec-table">
@@ -177,4 +177,4 @@ tags:
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | 생성된 ABB RAPID 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 전달한다. |
+| **Instructions** | Instruction | 생성된 ABB RAPID 인스트럭션 데이터를 출력한다. Core 컴포넌트의 Instructions 입력으로 전달한다. |

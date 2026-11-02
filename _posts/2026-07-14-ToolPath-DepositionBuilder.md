@@ -31,7 +31,7 @@ tags:
 
 # Description
 
-슬라이서 컴포넌트에서 생성된 적층 툴패스(Deposition ToolPaths)를 입력받아 해석 및 통합하는 컴포넌트이다. 입력 받은 데이터 중, 압출 시작(E-Start), 이동(Move), 압출 종료(E-End) 등 목적별로 분리하여 출력할 수 있다. 사용자는 적층 경로의 정렬 및 레이어를 프리뷰로 확인이 가능하다.
+슬라이서 컴포넌트에서 생성된 적층 툴패스(Deposition ToolPaths)를 입력받아 해석 및 통합하는 컴포넌트이다. 입력 받은 데이터 중, 압출 시작(E-Start), 이동(Move), 압출 종료(E-Stop) 등 목적별로 분리하여 출력할 수 있다. 사용자는 적층 경로의 정렬 및 레이어를 프리뷰로 확인이 가능하다.
 
 <p align="center">  <img src="/assets/images/9_DepositionBuilder.png" align="center" width="32%"></p>
 
@@ -161,9 +161,8 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Deposition ToolPaths** | Data | 슬라이서 컴포넌트에서 생성된 적층 툴패스 데이터. |
-| **Reference Plane** | Plane | PreExtrusion 경로 생성 기준 평면. |
-| **PreExtrusion Curve** | Curve | 압출 시작 전 노즐을 준비하는 사전 압출(Pre-extrusion) 경로 커브. |
-| **First Part** | Boolean | 현재 Deposition ToolPath가 최하단(첫 번째) 파트인지 여부를 나타내는 플래그. FALSE: PreExtrusion 무시. |
+| **Pre-Extrusion Curve** | Curve | 압출 시작 전 노즐을 준비하는 사전 압출(Pre-extrusion) 경로 커브. |
+| **Is Bottommost** | Boolean | 현재 Deposition ToolPath가 최하단(첫 번째) 파트인지 여부를 나타내는 플래그. FALSE: PreExtrusion 무시. |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -187,7 +186,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Infill First</strong></td>
+          <td><strong>Infill first</strong></td>
           <td>Toggle</td>
           <td>• TRUE: 적층 순서를 채움(Infill) → 외곽(Shell) 순으로 적용<br>
               • FALSE: 적층 순서를 외곽(Shell) → 채움(Infill) 순으로 적용</td>
@@ -215,17 +214,17 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Preview Color</strong></td>
+          <td><strong>Preview Colour</strong></td>
           <td>Color</td>
           <td>시각화 색상</td>
         </tr>
         <tr>
-          <td><strong>Layer Number</strong></td>
+          <td><strong>Layer Preview</strong></td>
           <td>Number</td>
           <td>프리뷰할 레이어</td>
         </tr>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>프레임 크기</td>
         </tr>
@@ -242,5 +241,5 @@ tags:
 | :--- | :--- | :--- |
 | **E-Start Planes** | Plane | 압출 신호가 켜지는(ON) 위치의 타겟 평면. |
 | **Movement Planes** | Plane | 적층 경로의 모션 타겟 평면. |
-| **E-End Planes** | Plane | 압출 신호가 꺼지는(OFF) 위치의 타겟 평면. |
-| **E-End idx** | Integer | Deposition ToolPaths 전체 콜렉션에서 압출 종료 (E-End) 타겟의 위치 인덱스. 각 타겟별 인스트럭션 할당 전후 데이터 병합(Merge)에 활용. |
+| **E-Stop Planes** | Plane | 압출 신호가 꺼지는(OFF) 위치의 타겟 평면. |
+| **E-Stop idx** | Integer | Deposition ToolPaths 전체 콜렉션에서 압출 종료 (E-Stop) 타겟의 위치 인덱스. 각 타겟별 인스트럭션 할당 전후 데이터 병합(Merge)에 활용. |

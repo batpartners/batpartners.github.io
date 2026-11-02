@@ -148,10 +148,10 @@ This is a component that allows you to customize the ABB positioner robot to be 
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Positioner Geo** | Mesh | Geometry mesh for each link of the positioner. |
-| **Joint Planes** | Plane | A list of planes sequentially defining the kinematic chain of the positioner from the fixed base to the flange.<br>Set in order: Fixed reference coordinate system (Base) - Each rotation axis coordinate system (J1, J2, ...) - Workbench/Workpiece attachment surface (Flange). (That is, for an N-axis positioner, a total of N+2 planes must be input.) |
-| **Mounting Plane** | Plane | The flange plane of the positioner. The top reference surface where the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> is mounted. Default value: WorldXY. |
-| **Workbench** | Workbench | Defines the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> mounted on the positioner flange (Optional). |
+| **PositionerGeo** | Mesh | Geometry mesh for each link of the positioner. |
+| **Joints** | Plane | A list of planes sequentially defining the kinematic chain of the positioner from the fixed base to the flange.<br>Set in order: Fixed reference coordinate system (Base) - Each rotation axis coordinate system (J1, J2, ...) - Workbench/Workpiece attachment surface (Flange). (That is, for an N-axis positioner, a total of N+2 planes must be input.) |
+| **MountingPl** | Plane | The flange plane of the positioner. The top reference surface where the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> is mounted. Default value: WorldXY. |
+| **WorkBench** | Workbench | Defines the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> mounted on the positioner flange (Optional). |
 
 ## | Required Parameter
 
@@ -171,14 +171,19 @@ This is a component that allows you to customize the ABB positioner robot to be 
       </thead>
       <tbody>
         <tr>
-          <td><strong>MechUnit Name</strong></td>
+          <td><strong>Axis Type</strong></td>
+          <td>String</td>
+          <td>ABB positioner model</td>
+        </tr>
+        <tr>
+          <td><strong>Name</strong></td>
           <td>String</td>
           <td>Positioner (MechUnit) variable name</td>
         </tr>
         <tr>
-          <td><strong>Axis Type</strong></td>
-          <td>String</td>
-          <td>ABB positioner model</td>
+          <td><strong>Colour</strong></td>
+          <td>Color</td>
+          <td>Visualization color</td>
         </tr>        
       </tbody>
     </table>
@@ -189,12 +194,10 @@ This is a component that allows you to customize the ABB positioner robot to be 
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
   <input type="radio" id="tab3" name="gh-tabs-options">
-  <input type="radio" id="tab4" name="gh-tabs-options">
   
   <ul class="tab-buttons">
-    <li><label for="tab2">Motion</label></li>
-    <li><label for="tab3">RAPID</label></li>
-    <li><label for="tab4">Preview</label></li>
+    <li><label for="tab2">Motion Settings</label></li>
+    <li><label for="tab3">RAPID Setting</label></li>
   </ul>
 
   <div class="tab-content" id="content2">
@@ -213,12 +216,12 @@ This is a component that allows you to customize the ABB positioner robot to be 
           <td>Enable positioner arm motion</td>
         </tr>
         <tr>
-          <td><strong>Approach Dir</strong></td>
+          <td><strong>Approaching Dir.</strong></td>
           <td>Number</td>
           <td>TCP approach direction relative to the positioner. The positioner determines the rotational posture based on the approach in this direction.</td>
         </tr>
         <tr>
-          <td><strong>TCP Dir</strong></td>
+          <td><strong>TCP Dir.</strong></td>
           <td>Number</td>
           <td>Direction of the TCP that the positioner will ultimately align</td>
         </tr>        
@@ -252,27 +255,6 @@ This is a component that allows you to customize the ABB positioner robot to be 
     </table>
     <br>    
     <p align="center">  <img src="/assets/images/1_ABBPositioner_32.png" align="center" width="45%"></p>
-  </div>
-
-  <div class="tab-content" id="content4">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Color</strong></td>
-          <td>Color</td>
-          <td>Visualization color</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_33.png" align="center" width="45%"></p>
   </div>
 </div>
 

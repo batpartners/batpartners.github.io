@@ -149,8 +149,8 @@ You can configure detailed tasks and simulations for the specified model.
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Mounting Plane** | Plane | Flange plane of the positioner. The upper reference plane where the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> is mounted. Default: WorldXY. |
-| **Workbench** | Workbench | Defines the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> mounted on the positioner flange (Optional). |
+| **MountingPl** | Plane | Flange plane of the positioner. The upper reference plane where the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> is mounted. Default: WorldXY. |
+| **WorkBench** | Workbench | Defines the <a href="https://batpartners.github.io/en/robottool/RobotTool-CreateWorkbench/" target="_blank">WorkBench</a> mounted on the positioner flange (Optional). |
 
 ## | Required Parameter
 
@@ -170,19 +170,19 @@ You can configure detailed tasks and simulations for the specified model.
       </thead>
       <tbody>
         <tr>
-          <td><strong>MechUnit Name</strong></td>
-          <td>String</td>
-          <td>Positioner (MechUnit) variable name</td>
-        </tr>
-        <tr>
-          <td><strong>Positioner Model</strong></td>
+          <td><strong>Models</strong></td>
           <td>String</td>
           <td>ABB positioner model</td>
+        </tr>
+        <tr>
+          <td><strong>Name</strong></td>
+          <td>String</td>
+          <td>Positioner (MechUnit) variable name</td>
         </tr>        
         <tr>
-          <td><strong>Spec</strong></td>
-          <td>String</td>
-          <td>Selected ABB positioner model specifications — Working diameter (D) and plate height (H)</td>
+          <td><strong>Colour</strong></td>
+          <td>Color</td>
+          <td>Visualization color</td>
         </tr>
       </tbody>
     </table>
@@ -193,12 +193,10 @@ You can configure detailed tasks and simulations for the specified model.
 <div class="tabs-container">
   <input type="radio" id="tab2" name="gh-tabs-options" checked>
   <input type="radio" id="tab3" name="gh-tabs-options">
-  <input type="radio" id="tab4" name="gh-tabs-options">
   
   <ul class="tab-buttons">
-    <li><label for="tab2">Motion</label></li>
-    <li><label for="tab3">RAPID</label></li>
-    <li><label for="tab4">Preview</label></li>
+    <li><label for="tab2">Motion Settings</label></li>
+    <li><label for="tab3">RAPID Setting</label></li>
   </ul>
 
   <div class="tab-content" id="content2">
@@ -217,12 +215,12 @@ You can configure detailed tasks and simulations for the specified model.
           <td>Enables the arm motion of the positioner</td>
         </tr>
         <tr>
-          <td><strong>Approach Direction</strong></td>
+          <td><strong>Approaching Dir.</strong></td>
           <td>Number</td>
           <td>Approach direction of the TCP relative to the positioner. Determines the rotation posture based on approach in this direction.</td>
         </tr>
         <tr>
-          <td><strong>TCP Dir</strong></td>
+          <td><strong>TCP Dir.</strong></td>
           <td>Number</td>
           <td>Direction of the TCP that the positioner ultimately aligns with</td>
         </tr>        
@@ -233,7 +231,7 @@ You can configure detailed tasks and simulations for the specified model.
   </div>
 
   <div class="tab-content" id="content3">
-    <table class="spec-table">
+    <table class="spec-table" style="margin: 0;">
       <thead>
         <tr>
           <th>Name</th>
@@ -243,35 +241,18 @@ You can configure detailed tasks and simulations for the specified model.
       </thead>
       <tbody>
         <tr>
-          <td><strong>Mechanical Unit</strong></td>
+          <td><strong>Arm Joint Index</strong></td>
           <td>String</td>
-          <td>MechUnit mapping parameter in RAPID statements</td>
+          <td>Index (1~6) of the ExtJoint array inside RobTarget to assign the positioner arm joint angle. Cannot overlap with other external axis indices.<br>- Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]</td>
+        </tr>
+        <tr>
+          <td><strong>Plate Joint Index</strong></td>
+          <td>String</td>
+          <td>Index (1~6) of the ExtJoint array inside RobTarget to assign the positioner plate joint angle. Cannot overlap with other external axis indices.<br>- Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]</td>
         </tr>
       </tbody>
     </table>
-    <br>    
     <p align="center">  <img src="/assets/images/1_ABBPositioner_12.png" align="center" width="45%"></p>
-  </div>
-
-  <div class="tab-content" id="content4">
-    <table class="spec-table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Color</strong></td>
-          <td>Color</td>
-          <td>Visualization color</td>
-        </tr>
-      </tbody>
-    </table>
-    <br>    
-    <p align="center">  <img src="/assets/images/1_ABBPositioner_13.png" align="center" width="45%"></p>
   </div>
 </div>
 

@@ -159,4 +159,4 @@ This is a component that generates a WaitDI instruction to pause robot motion un
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | Generated ABB instruction. Connect to the Instructions input of the Core component. |
+| **Instructions** | Instruction | Generated ABB instruction. Connect to the Instructions input of the Core component. |

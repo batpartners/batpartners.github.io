@@ -162,9 +162,9 @@ Positioner Robtarget defines a RobTarget including the rotation angle of the pos
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | Positioner | Positioner | <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">ABB Positioner</a> |
-| Target Planes | Plane | Planes to convert into RobTargets |
+| Target Plane | Plane | Planes to convert into RobTargets |
 | Z Rotation | Angle | Rotates the RobTarget around its own Z-axis (Unit: degrees) |
-| Target Base | Plane | Reference plane where the input Target Plane is defined. The input Target Plane defines the RobTarget oriented to the Positioner's Mounting Plane based on this plane. |
+| Base Plane | Plane | Reference plane where the input Target Plane is defined. The input Target Plane defines the RobTarget oriented to the Positioner's Mounting Plane based on this plane. |
 | WobjData | WobjData | Redefines the Target Plane based on the <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">ABB work object coordinate system</a>. (Optional) |
 
 <p align="center"> 

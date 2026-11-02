@@ -132,4 +132,4 @@ This is a component that generates a RAPID sub-procedure block from an instructi
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **SubProc** | SubProc | Generated procedure. Connect to the Instructions input of the Core component. |
+| **Sub Proc.** | SubProc | Generated procedure. Connect to the Instructions input of the Core component. |

@@ -162,7 +162,7 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Weld Sched** | Weld Sched | 사용할 용접 프로그램 번호(스케줄) 및 용접 모드를 설정한다. |
-| **Weight** | Number | Wirefeed1에 적용할 가중치 값을 지정한다. |
+| **Weighting** | Number | Wirefeed1에 적용할 가중치 값을 지정한다. |
 
 
 ## | 필수 파라미터 (Required Parameter)
@@ -186,11 +186,6 @@ tags:
           <td><strong>Name</strong></td>
           <td>String</td>
           <td>컴포넌트의 변수명을 지정한다.</td>
-        </tr>
-        <tr>
-          <td><strong>Link ArcData</strong></td>
-          <td>Boolean</td>
-          <td>모든 단계(Ignition, Heat, End)의 ArcData 값을 연동할지 여부를 설정한다.<br><ul><li><strong>TRUE:</strong> 한 단계의 값을 조절하면 나머지 단계도 동일한 값으로 동기화된다.(기본값)</li><li><strong>FALSE:</strong> 각 단계를 독립적으로 조절할 수 있다.</li></ul></td>
         </tr>
       </tbody>
     </table>
@@ -225,7 +220,7 @@ tags:
           <td>용접 전압을 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 아크 길이를 조정하는 데 사용된다.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
+          <td><strong>WireFeed(m/min)<br>WireFeed(mm/s)</strong></td>
           <td>Number</td>
           <td>와이어 송급 속도를 설정한다(기본 단위: m/min).<br>※ 컴포넌트 아이콘을 우클릭하여 단위를 mm/s로 변경할 수 있다(ABB 및 Fronius 공통).</td>
         </tr>
@@ -263,7 +258,7 @@ tags:
           <td>용접 전압을 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 아크 길이를 조정하는 데 사용된다.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
+          <td><strong>WireFeed(m/min)<br>WireFeed(mm/s)</strong></td>
           <td>Number</td>
           <td>와이어 송급 속도를 설정한다(기본 단위: m/min).<br>※ 컴포넌트 아이콘을 우클릭하여 단위를 mm/s로 변경할 수 있다(ABB 및 Fronius 공통).</td>
         </tr>
@@ -301,7 +296,7 @@ tags:
           <td>용접 전압을 설정한다(ABB 로봇 기준).<br>※ Fronius TPS/TPS-i 시스템에서는 아크 길이를 조정하는 데 사용된다.</td>
         </tr>
         <tr>
-          <td><strong>Wirefeed(m/min)<br>Wirefeed(mm/s)</strong></td>
+          <td><strong>WireFeed(m/min)<br>WireFeed(mm/s)</strong></td>
           <td>Number</td>
           <td>와이어 송급 속도를 설정한다(기본 단위: m/min).<br>※ 컴포넌트 아이콘을 우클릭하여 단위를 mm/s로 변경할 수 있다(ABB 및 Fronius 공통).</td>
         </tr>
@@ -351,7 +346,7 @@ tags:
           <td>보호 가스가 가스 라인과 용접 토치를 완전히 채우는 데 필요한 시간(초)을 설정한다.<br>※ 로봇이 용접 시작 위치로 이동하는 시간이 설정된 퍼지 시간보다 짧을 경우, 도착 후 남은 퍼지 시간이 만료될 때까지 대기한다.</td>
         </tr>
         <tr>
-          <td><strong>Purgeflow Time(s)</strong></td>
+          <td><strong>Preflow Time(s)</strong></td>
           <td>Number</td>
           <td>용접 대상물에 보호 가스를 사전에 공급하는 시간(초)을 설정한다.<br>※ 이 시간 동안 로봇은 아크가 점화되기 전까지 해당 위치에서 정지 상태를 유지한다.</td>
         </tr>
@@ -418,12 +413,12 @@ tags:
           <td>용접 종료 단계(End Phase)에서 크레이터(Crater)를 채우는 데 소요되는 시간(초)을 설정한다.</td>
         </tr>
         <tr>
-          <td><strong>Burn-Back Time(s)</strong></td>
+          <td><strong>Burn-back Time(s)</strong></td>
           <td>Number</td>
           <td>와이어 송급이 정지된 후, 남은 용접 와이어를 태워 없애는(Burn-back) 시간(초)을 설정한다.<br>※ MIG/MAG 공정 종료 시 와이어가 응고 중인 용접부에 달라붙는 것을 방지한다. 일반적으로 용접 단계 종료 시점과 크레이터 충전 종료 시점에 각각 적용된다.</td>
         </tr>
         <tr>
-          <td><strong>Rollback Time(s)</strong></td>
+          <td><strong>Roll-back Time(s)</strong></td>
           <td>Number</td>
           <td>용접 전원이 차단된 후, 콜드 와이어(Cold Wire)를 되감는 시간(초)을 설정한다.<br>※ TIG 공정 종료 시 와이어가 응고 중인 용접부에 달라붙는 것을 방지한다.</td>
         </tr>

@@ -210,7 +210,7 @@ This is a component that sets a reference plane from a planar surface.
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Plane</td>
           <td>Frame size</td>
         </tr>

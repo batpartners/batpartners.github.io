@@ -174,7 +174,7 @@ Display Solver는 사용자가 정의한 로봇 모션을 Rhino 뷰포트에서 
       </thead>
       <tbody>
         <tr>
-          <td style="white-space: nowrap;"><strong>Simulation Window</strong></td>
+          <td style="white-space: nowrap;"><strong>Simulation Pop-up</strong></td>
           <td>Toggle</td>
           <td>시뮬레이션 컨트롤 창 열기/닫기</td>
         </tr>
@@ -188,4 +188,4 @@ Display Solver는 사용자가 정의한 로봇 모션을 Rhino 뷰포트에서 
 
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
-| Current TCP | Plane | 현재 TCP 평면 |
+| Tool Center Plane | Plane | 현재 TCP 평면 |

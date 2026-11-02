@@ -164,7 +164,7 @@ tags:
 | **Surface* | Surface | 룰드 서피스 |
 | **Target Count** | Number | 절단 경로를 구성할 타겟 평면의 개수. |
 | **Parameter** | Number | 타겟 평면의 원점으로 사용되는 Span상의 파라미터 (0.0 ~ 1.0). |
-| **Attractor** | Geometry | 각 타겟 평면의 Z를 지향시킬 어트랙터 객체 (Point 또는 Curve). |
+| **Wrist Object** | Geometry | 각 타겟 평면의 Z를 지향시킬 어트랙터 객체 (Point 또는 Curve). |
 
 ## | 필수 파라미터 (Required Parameter)
 
@@ -188,7 +188,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Dir Flip</strong></td>
+          <td><strong>Cutting Dir. Flip</strong></td>
           <td>Toggle</td>
           <td>절단 방향 반전.</td>
         </tr>
@@ -204,7 +204,7 @@ tags:
               • TRUE: V 방향. / • FALSE: U 방향 (기본값).</td>
         </tr>
         <tr>
-          <td><strong>Extension</strong></td>
+          <td><strong>Extension(mm)</strong></td>
           <td>Number</td>
           <td>경로의 시작과 끝을 진행 방향으로 연장하는 거리 (mm).</td>
         </tr>        
@@ -224,7 +224,7 @@ tags:
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>프레임 크기</td>
         </tr>
@@ -240,4 +240,4 @@ tags:
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Target Planes** | Plane | 생성된 열선 절단 경로의 타겟 평면. |
-| **Spans** | Curve | 두 레일 커브를 연결하여 ruled surface를 구성하는 직선 세그먼트. |
+| **RibCurves** | Curve | 두 레일 커브를 연결하여 ruled surface를 구성하는 직선 세그먼트. |

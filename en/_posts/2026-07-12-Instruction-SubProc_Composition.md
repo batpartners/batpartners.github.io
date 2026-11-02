@@ -125,7 +125,7 @@ This is a component that generates a RAPID sub-procedure block from an instructi
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Instruction** | Instruction | ABB instruction. |
+| **Instructions** | Instruction | ABB instruction. |
 
 ## Required Parameter
 
@@ -145,7 +145,7 @@ This is a component that generates a RAPID sub-procedure block from an instructi
       </thead>
       <tbody>
         <tr>
-          <td><strong>Name</strong></td>
+          <td><strong>Procdure Name</strong></td>
           <td>String</td>
           <td>Procedure variable name.</td>
         </tr>
@@ -159,4 +159,4 @@ This is a component that generates a RAPID sub-procedure block from an instructi
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **SubProc** | SubProc | Generated procedure. Connect to the Inputs of the Core component. |
+| **Sub Proc.** | SubProc | Generated procedure. Connect to the Inputs of the Core component. |

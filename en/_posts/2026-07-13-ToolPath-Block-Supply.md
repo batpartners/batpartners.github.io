@@ -161,9 +161,9 @@ This is a component that generates Pick targets to place blocks at the supply ar
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
+| **Base Plane** | Plane | Reference plane for the block supply section. |
 | **Unit Block** | Box | Unit block geometry to be stacked. |
 | **Block Count** | Integer | Total number of blocks to supply. If it exceeds the available layout capacity (X × Y × Z), blocks are repeatedly placed overlapping in the same arrangement. |
-| **Supply Base** | Plane | Reference plane for the block supply section. |
 
 
 ## | Required Parameter
@@ -200,7 +200,7 @@ This is a component that generates Pick targets to place blocks at the supply ar
           <td>Block spacing along the Y-axis in the supply section (mm).</td>
         </tr>
         <tr>
-          <td><strong>Z Spacing(mm)</strong></td>
+          <td><strong>Z Spacing</strong></td>
           <td>Number</td>
           <td>Block spacing along the Z-axis in the supply section (mm).</td>
         </tr>
@@ -252,7 +252,7 @@ This is a component that generates Pick targets to place blocks at the supply ar
       </thead>
       <tbody>
         <tr>
-          <td><strong>Frame Size</strong></td>
+          <td><strong>FrameSize</strong></td>
           <td>Number</td>
           <td>Frame size.</td>
         </tr>
@@ -267,5 +267,5 @@ This is a component that generates Pick targets to place blocks at the supply ar
 
 | Name | Type | Description |
 | :--- | :--- | :--- |
-| **Pick Targets** | Plane | Pick target plane for each supplied block. |
-| **Supply Blocks** | Mesh | Block meshes placed in the supply section. |
+| **Blocks** | Mesh | Block meshes placed in the supply section. |
+| **Target Planes** | Plane | Pick target plane for each supplied block. |

@@ -162,9 +162,9 @@ Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget
 | 이름 | 타입 | 설명 |
 | :--- | :--- | :--- |
 | **Positioner** | Positioner | <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">ABB Positioner</a> 컴포넌트 데이터를 입력한다. |
-| **Target Planes** | Plane | RobTarget으로 변환할 대상 평면(Plane)을 입력한다. |
+| **Target Plane** | Plane | RobTarget으로 변환할 대상 평면(Plane)을 입력한다. |
 | **Z Rotation** | Angle | RobTarget을 자체 Z축을 기준으로 회전시킨다(단위: 도). |
-| **Target Base** | Plane | 입력된 Target Plane이 정의된 기준 평면(Plane)을 설정한다. 입력된 Target Plane은 이 평면을 기준으로 Positioner의 장착 평면(Mounting Plane)에 정렬된 RobTarget을 정의한다. |
+| **Base Plane** | Plane | 입력된 Target Plane이 정의된 기준 평면(Plane)을 설정한다. 입력된 Target Plane은 이 평면을 기준으로 Positioner의 장착 평면(Mounting Plane)에 정렬된 RobTarget을 정의한다. |
 | **WobjData** | WobjData | <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">ABB 작업 평면 좌표계</a>를 기준으로 Target Plane을 재정의할 때 입력한다(선택). |
 
 <p align="center"> 
