@@ -379,7 +379,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_20.png" align="center" width="32%"></p>
   </div>
 
   <div class="tab-content" id="content7">
@@ -410,7 +410,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_21.png" align="center" width="32%"></p>
   </div>
 </div>
 
