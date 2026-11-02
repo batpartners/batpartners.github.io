@@ -144,7 +144,7 @@ tags:
 GERTY 컴포넌트는 Rhino Grasshopper 인터페이스를 따른다. 컴포넌트 내, GERTY UI를 통해 입력 값을 설정할 수 있으며, 기본적인 컴포넌트 인터페이스로는 입력과 필수 파라미터 값이 정의되면 출력 값으로 전달된다.
 GERTY UI는 [Tab]으로 기능을 구별하며, 사용자는 설정값을 변경할 수 있다.
 
-<p align="center"><img src="/assets/images/Component_00.png" align="center" width="60%"></p>
+<p align="center"><img src="/assets/images/Component_2026.png" align="center" width="60%"></p>
 
 ## | 입력 (Input)
 
@@ -159,7 +159,7 @@ Rhino/GERTY 컴포넌트를 연결받거나, 사용자가 값을 입력하는 �
 
 ### (2) 모드 전환 (Mode Option)
 
-<p align="center"><img src="/assets/images/ContextMenu_00.png" align="center" width="60%"></p>
+<p align="center"><img src="/assets/images/ContextMenu_2026.png" align="center" width="45%"></p>
 
 일부 컴포넌트에 한하여 컴포넌트 모드를 전환/기능 추가가 가능하다. 컴포넌트 아이콘을 우클릭하여 컨텍스트 메뉴(Context Menu)를 확인할 수 있으며, 컴포넌트 종류는 다음과 같다.
 

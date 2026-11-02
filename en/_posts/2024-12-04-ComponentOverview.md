@@ -152,7 +152,7 @@ tags:
 
 The basic structure of GERTY components follows the Rhino Grasshopper structure. GERTY has unique functions, and you can set values corresponding to essential parameters. The GERTY UI is broadly divided into 7 types, and once the input and essential parameter values are defined, they are delivered as output values.
 
-<p align="center">  <img src="/assets/images/Component_00.png" align="center" width="60%"></p>
+<p align="center">  <img src="/assets/images/Component_2026.png" align="center" width="60%"></p>
 
 # | Input
 
@@ -168,7 +168,7 @@ The method is the same as connecting basic Grasshopper component values.
 
 For certain components, you can switch component modes or add functions. You can check the Context Menu by right-clicking the component icon, and the types of components are as follows.
 
-<p align="center">  <img src="/assets/images/ContextMenu_00.png" align="center" width="60%"></p>
+<p align="center">  <img src="/assets/images/ContextMenu_2026.png" align="center" width="45%"></p>
 
 > <a href="https://batpartners.github.io/datatype/DataType-ToolData/" target="_blank">`ToolData`</a>, <a href="https://batpartners.github.io/datatype/DataType-WobjData/" target="_blank">`WobjData`</a>, <a href="https://batpartners.github.io/datatype/DataType-Positioner_RobTarget/" target="_blank">`Positioner RobTarget`</a>, <a href="https://batpartners.github.io/datatype/DataType-SeamData/" target="_blank">`SeamData`</a>, <a href="https://batpartners.github.io/datatype/DataType-WeldData/" target="_blank">`WeldData`</a>, `TPSiSynergic`, `TPSSynergic`, <a href="https://batpartners.github.io/robottool/RobotTool-Positioner/" target="_blank">`ABB Positioner`</a>, <a href="https://batpartners.github.io/robottool/RobotTool-ABBRobot/" target="_blank">`ABB Robot`</a>, <a href="https://batpartners.github.io/robottool/RobotTool-CreateWorkbench/" target="_blank">`WorkBench`</a>, <a href="https://batpartners.github.io/core/Core-Code-Solver/" target="_blank">`Code Solver`</a>, <a href="https://batpartners.github.io/toolpath/ToolPath-SolidShell/" target="_blank">`Solid Shell`</a>, <a href="https://batpartners.github.io/toolpath/ToolPath-SurfaceShell/" target="_blank">`Surface Shell`</a>, <a href="https://batpartners.github.io/utils/Utils-RepathTree/" target="_blank">`RePath Tree`</a>
 
