@@ -144,7 +144,7 @@ tags:
 GERTY 컴포넌트는 Rhino Grasshopper 인터페이스를 따른다. 컴포넌트 내, GERTY UI를 통해 입력 값을 설정할 수 있으며, 기본적인 컴포넌트 인터페이스로는 입력과 필수 파라미터 값이 정의되면 출력 값으로 전달된다.
 GERTY UI는 [Tab]으로 기능을 구별하며, 사용자는 설정값을 변경할 수 있다.
 
-<p align="center"><img src="/assets/images/Component_00.png" align="center" width="40%"></p>
+<p align="center"><img src="/assets/images/Component_00.png" align="center" width="60%"></p>
 
 ## | 입력 (Input)
 
