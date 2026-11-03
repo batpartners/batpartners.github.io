@@ -1,0 +1,68 @@
+---
+title: "ABB Positioner (Extra Option)"
+description: "사용할 ABB 포지셔너 로봇을 사용자 정의할 수 있는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/positioner-option.mjs";
+
+사용할 ABB 포지셔너 로봇을 사용자 정의할 수 있는 컴포넌트이다. 사용자가 소유하고 있는 포지셔너 세부 설정을 완료 후, 시뮬레이션 작업이 가능하다. 컴포넌트 아이콘 우클릭 후, [Define Positioner]를 선택하여 설정할 수 있다.
+
+<DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Define Positioner" }, { text: "기본 → ABB Positioner", href: "/robot-tool/positioner/" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/1_ABBPositioner_3_1.png" alt="ABB Positioner (Extra Option)" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **PositionerGeo** 에 포지셔너 링크 형상 메시를, **Joints** 에 베이스부터 플랜지까지의 기구학 평면 리스트를 연결하고 **Axis Type** 을 고른다.
+2. 포지셔너 플랜지 평면이 WorldXY 가 아니면 **MountingPl** 을, 워크벤치를 달려면 **WorkBench** 에 [CreateWorkBench](/robot-tool/createworkbench/) 출력을 연결한다.
+3. **Motion Settings** 탭에서 암 동작(**Enable Arm**)과 TCP 접근·정렬 방향을, **RAPID Setting** 탭에서 RobTarget 의 외부축 배열에 쓸 **Arm / Plate Joint Index** 를 정한다.
+4. **Positioner** 출력을 [ABB Robots](/robot-tool/abbrobot/) 와 [Positioner RobTarget](/datatype/positioner-robtarget/) 의 **Positioner** 입력에 연결한다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="caution">
+  **Arm Joint Index** 와 **Plate Joint Index** 는 다른 외부축 인덱스와 겹치면 안 된다. 예: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9].
+</Aside>
+
+<Aside type="note">
+  **Joints** 는 고정 베이스(Base) - 각 회전축(J1, J2, …) - 플랜지(Flange) 순서로 넣는다. N축 포지셔너는 평면 N+2 개가 필요하다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="ABB Robots" description="Positioner 를 받는 로봇" href="/robot-tool/abbrobot/" />
+  <LinkCard title="Positioner RobTarget" description="포지셔너 회전각을 포함한 타겟" href="/datatype/positioner-robtarget/" />
+  <LinkCard title="CreateWorkBench" description="포지셔너에 다는 워크벤치" href="/robot-tool/createworkbench/" />
+</CardGrid>

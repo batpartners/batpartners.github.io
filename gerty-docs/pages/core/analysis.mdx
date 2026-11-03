@@ -1,0 +1,44 @@
+---
+title: "Analysis Deconstructor"
+description: "Core 컴포넌트가 산출한 코드 정보를 로봇 축 각도 값, 에러가 발생한 인덱스, 에러 사유로 텍스트 로그로 출력하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/analysis.mjs";
+
+Core 컴포넌트가 산출한 코드 정보를 로봇 축 각도 값, 에러가 발생한 인덱스, 에러 사유로 텍스트 로그로 출력하는 컴포넌트이다.
+
+<DocTags tags={[{ text: "Core", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/3_AnalysisDeconstructor.png" alt="Analysis Deconstructor" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **GERTY Solver** 에 [GERTY Core](/core/gerty-core/) 의 **GERTY Solver** 출력을 연결한다.
+2. **RobAx Angles** 로 로봇 축 각도를, **Error Idx** 와 **Error Report** 로 오류가 난 인덱스와 행별 오류 유형을 확인한다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="GERTY Core" description="로봇 동작 계산" href="/core/gerty-core/" />
+  <LinkCard title="Display Solver" description="뷰포트 시뮬레이션" href="/core/display-solver/" />
+  <LinkCard title="Code Solver" description="RAPID 코드 생성" href="/core/code-solver/" />
+</CardGrid>

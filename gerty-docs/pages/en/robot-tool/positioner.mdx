@@ -1,0 +1,66 @@
+---
+title: "ABB Positioner"
+description: "This is a component that imports and defines the ABB positioner robot to be used."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/positioner.mjs";
+
+This is a component that imports and defines the ABB positioner robot to be used. It supports and allows you to select ABB IRBP series positioners owned by the user.
+You can configure detailed tasks and simulations for the specified model.
+
+<DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Extra Option → Define Positioner", href: "/en/robot-tool/positioner-option/" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/1_ABBPositioner.png" alt="ABB Positioner" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Pick the ABB IRBP positioner model in **Models** (ABB Positioner tab).
+2. If the flange plane is not WorldXY, connect **MountingPl**; to mount a workbench, connect the [CreateWorkBench](/en/robot-tool/createworkbench/) output to **WorkBench**.
+3. Set the arm motion (**Enable Arm**) and the TCP approach and alignment directions in **Motion Settings**, and the **Arm / Plate Joint Index** used in the RobTarget external-axis array in **RAPID Setting**.
+4. Connect the **Positioner** output to the **Positioner** input of [ABB Robots](/en/robot-tool/abbrobot/) and [Positioner RobTarget](/en/datatype/positioner-robtarget/).
+
+</Steps>
+
+## Notes
+
+<Aside type="caution">
+  **Arm Joint Index** and **Plate Joint Index** must not overlap other external-axis indices. Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9].
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="ABB Robots" description="Robot that takes the Positioner" href="/en/robot-tool/abbrobot/" />
+  <LinkCard title="Positioner RobTarget" description="Targets with positioner angles" href="/en/datatype/positioner-robtarget/" />
+  <LinkCard title="CreateWorkBench" description="Workbench on the positioner" href="/en/robot-tool/createworkbench/" />
+  <LinkCard title="ABB Positioner (Extra Option)" description="Define your own positioner" href="/en/robot-tool/positioner-option/" />
+</CardGrid>

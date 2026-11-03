@@ -34,7 +34,7 @@ function sections(text) {
 const mdRows = (s) => [...s.matchAll(/^\|\s*\*{0,2}([^*|]+?)\*{0,2}\s*\|\s*([^|]*?)\s*\|\s*(.*?)\s*\|\s*$/gm)]
   .filter((m) => !/^(이름|name|:?-+)$/i.test(m[1].trim()))
   .map((m) => ({ name: m[1].trim(), type: m[2].trim(), desc: md2html(m[3]) }));
-const htmlRows = (s) => [...s.matchAll(/<td>\s*<strong>([\s\S]*?)<\/strong>\s*<\/td>\s*<td>([\s\S]*?)<\/td>\s*<td>([\s\S]*?)<\/td>/g)].map((m) => ({ name: clean(m[1]), type: clean(m[2]), desc: md2html(clean(m[3])) }));
+const htmlRows = (s) => [...s.matchAll(/<td[^>]*>\s*<strong>([\s\S]*?)<\/strong>\s*<\/td>\s*<td[^>]*>([\s\S]*?)<\/td>\s*<td[^>]*>([\s\S]*?)<\/td>/g)].map((m) => ({ name: clean(m[1]), type: clean(m[2]), desc: md2html(clean(m[3])) }));
 
 function parse(text) {
   const out = { inputs: [], groups: [], outputs: [], main: null };

@@ -1,0 +1,70 @@
+---
+title: "ABB Robots (Extra Option)"
+description: "This is a component that imports the ABB robot to be used."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/abbrobot-option.mjs";
+
+This is a component that imports the ABB robot to be used. You can select the robot you own and then configure options. Robot models can be selected from predefined specifications in the ABB IRB series catalog. By right-clicking the component icon and selecting [Show Joint Jog Params], you can configure simulations by additionally operating each axis of the selected robot.
+
+This page also covers the joint jog settings shown with <strong>[Show joint Jog Params]</strong>.
+
+<DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Extra Option" }, { text: "Basic → ABB Robots", href: "/en/robot-tool/abbrobot/" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/0_ABBRobot_2.png" alt="ABB Robots (Extra Option)" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Pick the ABB robot model in **Models** (ABB Robots tab).
+2. Connect [ToolData](/en/datatype/tooldata/) to **Tool Data**. If the robot base is not WorldXY, connect **Robot Base**; with a positioner, connect [ABB Positioner](/en/robot-tool/positioner/) to **Positioner**; connect surrounding geometry such as a pedestal to **Pedestal**.
+3. Move each robot axis and external axis directly in the **Robot Joint Jog / External Joint Jog** tabs to check the pose.
+4. Connect the **GERTY Robot** output to the **GERTY Robot** input of [GERTY Core](/en/core/gerty-core/).
+
+</Steps>
+
+## Notes
+
+<Aside type="note">
+  With **Config Option** on, cfx = 1: the configuration of robot axes 4 and 6 is inverted. Off means cfx = 0 (default configuration).
+</Aside>
+
+<Aside type="tip">
+  **Align Gumball** aligns the TCP with the World axis (±X, ±Y, ±Z) closest to its current direction, like Align in ABB FlexPendant jogging.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="GERTY Core" description="Takes the GERTY Robot" href="/en/core/gerty-core/" />
+  <LinkCard title="ToolData" description="The tool on the robot" href="/en/datatype/tooldata/" />
+  <LinkCard title="ABB Positioner" description="Positioner linked to the robot" href="/en/robot-tool/positioner/" />
+</CardGrid>

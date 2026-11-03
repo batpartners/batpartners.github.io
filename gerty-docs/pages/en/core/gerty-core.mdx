@@ -1,0 +1,63 @@
+---
+title: "GERTY Core"
+description: "GERTY Core is a component that computes robot motions based on defined robot setups and instructions."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/gerty-core.mjs";
+
+GERTY Core is a component that computes robot motions based on defined robot setups and instructions. It generates the basic data required to run the Display Solver and CodeSolver.
+
+<DocTags tags={[{ text: "Core", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/2_GERTYCore.png" alt="GERTY Core" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the **GERTY Robot** output of [ABB Robots](/en/robot-tool/abbrobot/) to **GERTY Robot**.
+2. Connect the instruction list to **Instructions**; the list order is the robot execution order. Connect **SubProc.** if you use sub-procedures.
+3. Connect the **GERTY Solver** output to [Display Solver](/en/core/display-solver/) and [Analysis Deconstructor](/en/core/analysis/), and the **GERTY Code** output to [Code Solver](/en/core/code-solver/).
+
+</Steps>
+
+## Notes
+
+<Aside type="caution">
+  The order of the **Instructions** list maps directly to the execution order, so sort it in the intended motion order.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Display Solver" description="Viewport simulation" href="/en/core/display-solver/" />
+  <LinkCard title="Code Solver" description="RAPID code export" href="/en/core/code-solver/" />
+  <LinkCard title="Analysis Deconstructor" description="Axis angles and error log" href="/en/core/analysis/" />
+</CardGrid>

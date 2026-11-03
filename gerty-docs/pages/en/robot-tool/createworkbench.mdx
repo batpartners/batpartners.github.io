@@ -1,0 +1,64 @@
+---
+title: "CreateWorkBench"
+description: "This is a component that can be customized as a workbench for positioners."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/createworkbench.mjs";
+
+This is a component that can be customized as a workbench for positioners. By applying the modeling of the workbench in use to the simulation, the positioner working process can be checked smoothly. In addition, it enables work with complete simulations using the modeling of workpieces on the workbench.
+
+<DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Define" }, { text: "Extra Option → Import", href: "/en/robot-tool/createworkbench-option/" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/2_Workbench_2.png" alt="CreateWorkBench" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the workbench mesh to **BenchGeo**.
+2. Connect the bottom plane of the workbench (on the positioner flange) to **BenchBase** and the top plane the workpiece sits on to **BenchTop**. Connect **WorkPieces** if there is a workpiece.
+3. Type the **Name** and, if you like, set the workbench and workpiece colours.
+4. Connect the **WorkBench** output to the **WorkBench** input of [ABB Positioner](/en/robot-tool/positioner/).
+5. To reuse the workbench in another file, save it with **Export**.
+
+</Steps>
+
+## Notes
+
+<Aside type="tip">
+  With the real workbench and workpiece shapes in place, collisions while the positioner moves show up in the simulation.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="ABB Positioner" description="Positioner that takes the WorkBench" href="/en/robot-tool/positioner/" />
+  <LinkCard title="CreateWorkBench (Extra Option)" description="Load a saved workbench" href="/en/robot-tool/createworkbench-option/" />
+</CardGrid>

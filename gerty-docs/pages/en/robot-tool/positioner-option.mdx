@@ -1,0 +1,68 @@
+---
+title: "ABB Positioner (Extra Option)"
+description: "This is a component that allows you to customize the ABB positioner robot to be used."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/positioner-option.mjs";
+
+This is a component that allows you to customize the ABB positioner robot to be used. After completing the detailed settings of the positioner you own, simulation work is available. You can configure it by right-clicking the component icon and selecting [Define Positioner].
+
+<DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Define Positioner" }, { text: "Basic → ABB Positioner", href: "/en/robot-tool/positioner/" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/1_ABBPositioner_3_1.png" alt="ABB Positioner (Extra Option)" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the link meshes to **PositionerGeo** and the kinematic plane list from base to flange to **Joints**, then pick the **Axis Type**.
+2. If the flange plane is not WorldXY, connect **MountingPl**; to mount a workbench, connect the [CreateWorkBench](/en/robot-tool/createworkbench/) output to **WorkBench**.
+3. Set the arm motion (**Enable Arm**) and the TCP approach and alignment directions in **Motion Settings**, and the **Arm / Plate Joint Index** used in the RobTarget external-axis array in **RAPID Setting**.
+4. Connect the **Positioner** output to the **Positioner** input of [ABB Robots](/en/robot-tool/abbrobot/) and [Positioner RobTarget](/en/datatype/positioner-robtarget/).
+
+</Steps>
+
+## Notes
+
+<Aside type="caution">
+  **Arm Joint Index** and **Plate Joint Index** must not overlap other external-axis indices. Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9].
+</Aside>
+
+<Aside type="note">
+  Give **Joints** in order: fixed base, each rotation axis (J1, J2, …), then the flange. An N-axis positioner needs N+2 planes.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="ABB Robots" description="Robot that takes the Positioner" href="/en/robot-tool/abbrobot/" />
+  <LinkCard title="Positioner RobTarget" description="Targets with positioner angles" href="/en/datatype/positioner-robtarget/" />
+  <LinkCard title="CreateWorkBench" description="Workbench on the positioner" href="/en/robot-tool/createworkbench/" />
+</CardGrid>

@@ -1,0 +1,70 @@
+---
+title: "ABB Robots (Extra Option)"
+description: "사용할 ABB 로봇 모델을 라이브러리에서 불러오고 관련 옵션을 설정하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/abbrobot-option.mjs";
+
+사용할 ABB 로봇 모델을 라이브러리에서 불러오고 관련 옵션을 설정하는 컴포넌트이다. ABB IRB 시리즈 카탈로그의 사전 정의된 제원에서 로봇 모델을 선택할 수 있으며, 컴포넌트 아이콘을 우클릭하여 <strong>[Show joint Jog Params]</strong>를 선택하면 로봇의 각 관절축 및 부가축을 직접 조작하며 시뮬레이션을 설정할 수 있다.
+
+이 페이지는 <strong>[Show joint Jog Params]</strong> 를 켰을 때 나타나는 관절 조그 설정까지 설명한다.
+
+<DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Extra Option" }, { text: "기본 → ABB Robots", href: "/robot-tool/abbrobot/" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/0_ABBRobot_2.png" alt="ABB Robots (Extra Option)" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **ABB Robots** 탭의 **Models** 에서 사용할 ABB 로봇 모델을 고른다.
+2. **Tool Data** 에 [ToolData](/datatype/tooldata/) 를 연결한다. 로봇 베이스가 WorldXY 가 아니면 **Robot Base** 도, 포지셔너를 쓰면 **Positioner** 에 [ABB Positioner](/robot-tool/positioner/) 를, 받침대 등 주변 형상이 있으면 **Pedestal** 도 연결한다.
+3. **Robot Joint Jog / External Joint Jog** 탭에서 각 관절축과 부가축을 직접 움직여 자세를 확인한다.
+4. **GERTY Robot** 출력을 [GERTY Core](/core/gerty-core/) 의 **GERTY Robot** 입력에 연결한다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="note">
+  **Config Option** 을 켜면 cfx = 1 로, 로봇 축 4·6 의 구성(Configuration) 반전 모드를 적용한다. 끄면 cfx = 0(기본 구성)이다.
+</Aside>
+
+<Aside type="tip">
+  **Align Gumball** 은 TCP 를 현재 방향에 가장 가까운 World 좌표축(±X, ±Y, ±Z)과 평행하게 정렬한다. ABB FlexPendant 조그의 Align 기능과 같다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="GERTY Core" description="GERTY Robot 을 받는 컴포넌트" href="/core/gerty-core/" />
+  <LinkCard title="ToolData" description="로봇에 다는 툴" href="/datatype/tooldata/" />
+  <LinkCard title="ABB Positioner" description="로봇과 연동할 포지셔너" href="/robot-tool/positioner/" />
+</CardGrid>
