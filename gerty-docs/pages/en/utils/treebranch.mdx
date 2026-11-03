@@ -1,0 +1,43 @@
+---
+title: "Tree Branch"
+description: "This is a component that extracts a specific branch from a DataTree based on the input index."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/treebranch.mjs";
+
+This is a component that extracts a specific branch from a DataTree based on the input index.
+
+<DocTags tags={[{ text: "Utils", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/5_TreeBranch.png" alt="Tree Branch" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the DataTree to **Tree** and the number of the branch to take to **Index**.
+2. Take that branch's data from the **Branch** output.
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Split Branch" description="Split branches at a number" href="/en/utils/splitbranch/" />
+  <LinkCard title="Dispatch Branch" description="Split branches by a pattern" href="/en/utils/dispatch-branch/" />
+</CardGrid>

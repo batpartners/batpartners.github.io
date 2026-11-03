@@ -1,0 +1,43 @@
+---
+title: "RAPID Deconstructor"
+description: "ABB RAPID 객체 (ABB DataType, ABB Instruction) 디컨스트럭터 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/rapiddecontructor.mjs";
+
+ABB RAPID 객체 (ABB DataType, ABB Instruction) 디컨스트럭터 컴포넌트이다.
+
+<DocTags tags={[{ text: "Utils", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/10_RapidDecontructor.png" alt="RAPID Deconstructor" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **ProgramData** 에 ABB 데이터 타입 객체(RobTarget, ToolData 등)를, **Instructions** 에 ABB 인스트럭션을 연결한다.
+2. 각 출력에서 RAPID 코드 문자열을 확인한다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="RobTarget" description="타겟 평면을 로봇 타겟으로 변환" href="/datatype/robtarget/" />
+  <LinkCard title="Move" description="ABB 이동 인스트럭션" href="/instruction/move/" />
+</CardGrid>

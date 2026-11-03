@@ -1,0 +1,51 @@
+---
+title: "Dispatch Branch"
+description: "DataTree의 Branch들을 입력받은 패턴에 따라 두 개의 대상 DataTree로 분해하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/dispatch-branch.mjs";
+
+DataTree의 Branch들을 입력받은 패턴에 따라 두 개의 대상 DataTree로 분해하는 컴포넌트이다.
+
+<DocTags tags={[{ text: "Utils", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/0_DispatchBranch.png" alt="Dispatch Branch" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 동작 예시
+
+<figure class="doc-media">
+  <img src="/assets/images/DispatchBranch_exam-768x376.png" alt="Pattern {true, false} 로 Branch 를 번갈아 Tree A / Tree B 에 나눈 예" loading="lazy" class="wpx-576" />
+  <figcaption>Pattern {'{'}true, false{'}'} 로 Branch 를 번갈아 Tree A / Tree B 에 나눈 예</figcaption>
+</figure>
+
+## 사용 순서
+
+<Steps>
+
+1. **Tree** 에 나눌 DataTree 를 연결한다.
+2. **Pattern** 에 True / False 패턴을 연결한다. 패턴은 Branch 순서대로 적용된다.
+3. **Tree A**(True) 와 **Tree B**(False) 를 각각 다음 작업에 쓴다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="Split Branch" description="순번으로 Branch 나누기" href="/utils/splitbranch/" />
+  <LinkCard title="Tree Branch" description="Branch 하나 꺼내기" href="/utils/treebranch/" />
+</CardGrid>

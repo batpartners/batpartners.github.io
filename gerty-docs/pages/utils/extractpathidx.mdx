@@ -1,0 +1,44 @@
+---
+title: "Extract PathIdx"
+description: "Data의 Branch Path에서 특정 인덱스를 추출할 수 있는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/extractpathidx.mjs";
+
+Data의 Branch Path에서 특정 인덱스를 추출할 수 있는 컴포넌트이다.
+
+<DocTags tags={[{ text: "Utils", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/1_ExtractPathIdx.png" alt="Extract PathIdx" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **Tree** 에 DataTree 를 연결한다.
+2. **Position** 에 Branch Path 에서 꺼낼 인덱스의 위치를 연결한다.
+3. **Index** 출력으로 각 Branch 의 인덱스를 받는다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="Tree Branch" description="Branch 하나 꺼내기" href="/utils/treebranch/" />
+  <LinkCard title="Repath Tree" description="Branch Path 다시 매기기" href="/utils/repathtree/" />
+</CardGrid>

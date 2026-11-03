@@ -1,0 +1,44 @@
+---
+title: "Split Branch"
+description: "This is a component that splits a DataTree into two DataTrees based on the input branch index."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/splitbranch.mjs";
+
+This is a component that splits a DataTree into two DataTrees based on the input branch index.
+
+<DocTags tags={[{ text: "Utils", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/4_SplitBranch.png" alt="Split Branch" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the DataTree to split to **Tree**.
+2. Connect the branch number to split at to **Index**.
+3. Use **Tree A** (before Index) and **Tree B** (from Index on) separately downstream.
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Dispatch Branch" description="Split branches by a pattern" href="/en/utils/dispatch-branch/" />
+  <LinkCard title="Tree Branch" description="Take one branch" href="/en/utils/treebranch/" />
+</CardGrid>

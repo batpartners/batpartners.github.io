@@ -1,0 +1,44 @@
+---
+title: "Extract PathIdx"
+description: "This is a component that can extract a specific index from the branch path of a DataTree."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/extractpathidx.mjs";
+
+This is a component that can extract a specific index from the branch path of a DataTree.
+
+<DocTags tags={[{ text: "Utils", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/1_ExtractPathIdx.png" alt="Extract PathIdx" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the DataTree to **Tree**.
+2. Connect the position of the index to read in the branch path to **Position**.
+3. Read each branch's index from the **Index** output.
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Tree Branch" description="Take one branch" href="/en/utils/treebranch/" />
+  <LinkCard title="Repath Tree" description="Renumber branch paths" href="/en/utils/repathtree/" />
+</CardGrid>

@@ -1,0 +1,51 @@
+---
+title: "Insert"
+description: "데이터 콜렉션을 특정 DataTree 인덱스에 삽입할 수 있는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/insert.mjs";
+
+데이터 콜렉션을 특정 DataTree 인덱스에 삽입할 수 있는 컴포넌트이다.
+
+<DocTags tags={[{ text: "Utils", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/2_Insert.png" alt="Insert" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 동작 예시
+
+<figure class="doc-media">
+  <img src="/assets/images/Insert_Items_Exam-768x587.png" alt="DataTree 의 각 Branch 에 항목 {A, B} 를 넣은 예" loading="lazy" class="wpx-576" />
+  <figcaption>DataTree 의 각 Branch 에 항목 {'{'}A, B{'}'} 를 넣은 예</figcaption>
+</figure>
+
+## 사용 순서
+
+<Steps>
+
+1. **Tree** 에 데이터를 넣을 DataTree 를, **Items** 에 넣을 항목을 연결한다.
+2. **indices** 에 항목을 넣을 인덱스를 연결한다.
+3. **Tree** 출력으로 항목이 들어간 DataTree 를 받는다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="Dispatch Branch" description="패턴으로 Branch 나누기" href="/utils/dispatch-branch/" />
+  <LinkCard title="Split Branch" description="순번으로 Branch 나누기" href="/utils/splitbranch/" />
+</CardGrid>

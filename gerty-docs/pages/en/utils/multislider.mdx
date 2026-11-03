@@ -1,0 +1,49 @@
+---
+title: "Multi-Slider"
+description: "This is a component that can output one or more numeric values simultaneously."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/multislider.mjs";
+
+This is a component that can output one or more numeric values simultaneously.
+
+<DocTags tags={[{ text: "Utils", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/6_MultiSlider.png" alt="Multi-Slider" />
+
+## Inputs
+
+This component has no inputs; everything is set in the settings below.
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Set **Value01** in the **Multi Sliders** tab.
+2. Add sliders with **ADD** if you need more values.
+3. Take all values, in order, from the **Values** output.
+
+</Steps>

@@ -1,0 +1,56 @@
+---
+title: "Overhang Mapper"
+description: "This is a component that visualizes overhangs of an input mesh geometry by applying a color map."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/overhangmapper.mjs";
+
+This is a component that visualizes overhangs of an input mesh geometry by applying a color map.
+
+<DocTags tags={[{ text: "Utils", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/7_OverhangMapper.png" alt="Overhang Mapper" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## Examples
+
+<figure class="doc-media">
+  <img src="/assets/images/overhagerangecolor_01-768x310.png" alt="Mesh coloured by overhang angle, with AngleData" loading="lazy" class="wpx-576" />
+  <figcaption>Mesh coloured by overhang angle, with AngleData</figcaption>
+</figure>
+
+<figure class="doc-media">
+  <img src="/assets/images/overhagerangecolor_02-768x284.png" alt="Measured from a tilted reference plane (Surface Frame)" loading="lazy" class="wpx-576" />
+  <figcaption>Measured from a tilted reference plane (Surface Frame)</figcaption>
+</figure>
+
+## How to use
+
+<Steps>
+
+1. Connect the mesh to check to **Mesh**.
+2. Connect a reference plane in the build plate direction to **BasePlane**; for a tilted plate, use a plane from [Surface Frame](/en/utils/surface-frame/).
+3. See the overhang areas from the colours of the **Mesh** output, and the angle values in **AngleData**.
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Surface Frame" description="Reference plane from a surface" href="/en/utils/surface-frame/" />
+  <LinkCard title="Solid Shell" description="Shell deposition paths" href="/en/toolpath/solidshell/" />
+</CardGrid>
