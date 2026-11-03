@@ -1,0 +1,14 @@
+---
+// The page's main component image — small, fixed width, with tight spacing to the headings around it.
+interface Props { src: string; alt: string; width?: number }
+const { src, alt, width = 230 } = Astro.props;
+---
+<div class="shot">
+  <img src={src} alt={alt} loading="lazy" style={`width:${width}px`} />
+</div>
+<style>
+  .shot { margin: 0.5rem 0 0; }
+  .shot img { display: block; margin-inline: auto; max-width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--sl-color-hairline); }
+  /* the next section heading sits closer than the default 52px */
+  .shot + :global(.sl-heading-wrapper) { margin-top: 1.75rem; }
+</style>

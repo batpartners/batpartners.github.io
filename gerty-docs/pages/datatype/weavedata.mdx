@@ -1,0 +1,66 @@
+---
+title: "WeaveData"
+description: "아크 용접 중 수행되는 위빙(Weaving) 모션을 정의하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/weavedata.mjs";
+
+아크 용접 중 수행되는 위빙(Weaving) 모션을 정의하는 컴포넌트이다. 위빙 형상, 진폭, 주파수 파라미터를 지정한다.
+
+<DocTags tags={[{ text: "DataType", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/9_WeaveData.png" alt="WeaveData" />
+
+## 입력
+
+입력 단자가 없다. 모든 값은 아래 설정에서 정한다.
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **Weaving Shape** 로 위빙 패턴(지그재그, V형, 삼각형, 원형)을, **Weaving Type** 으로 축 제어 방식을 고른다.
+2. **Length(mm) / Width(mm) / Height(mm)** 로 패턴의 크기를 정한다.
+3. **WeaveData** 출력을 [WeldData](/datatype/welddata/) 의 **WeaveData** 입력에 연결한다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="note">
+  **Height(mm)** 는 V형과 삼각형 패턴에서만 쓰이고, 지그재그와 원형에서는 무시된다.
+</Aside>
+
+<Aside type="note">
+  **Length(mm)** 의 의미는 Weaving Type 에 따라 다르다. Rapid1/Rapid2 에서는 위빙 주파수(Hz), 원형 패턴에서는 패턴 간격이다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="WeldData" description="WeaveData 를 받는 용접 데이터" href="/datatype/welddata/" />
+  <LinkCard title="SeamData" description="용접 시작·종료 데이터" href="/datatype/seamdata/" />
+</CardGrid>

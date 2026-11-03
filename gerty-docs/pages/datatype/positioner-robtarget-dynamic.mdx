@@ -1,0 +1,75 @@
+---
+title: "Positioner RobTarget (Dynamic)"
+description: "Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget을 생성하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/positioner-robtarget-dynamic.mjs";
+
+Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget을 생성하는 컴포넌트이다. 컴포넌트 아이콘을 우클릭하여 Dynamic 및 Static 모드로 전환할 수 있다.
+
+<DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Dynamic 모드" }, { text: "Static 모드 → Positioner RobTarget (Static)", href: "/datatype/positioner-robtarget-static/" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/1_Positioner Robtarget.png" alt="Positioner RobTarget (Dynamic)" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 동작 예시
+
+<figure class="doc-media">
+  <video src="/assets/media/RobtargetPosition_Dynamic__Top.mp4" autoplay muted loop playsinline preload="metadata" class="wpx-576"></video>
+  <figcaption>Top View</figcaption>
+</figure>
+
+<figure class="doc-media">
+  <video src="/assets/media/Dynamic_RobPosition_gif.mp4" autoplay muted loop playsinline preload="metadata" class="wpx-576"></video>
+</figure>
+
+## 사용 순서
+
+<Steps>
+
+1. **Positioner** 에 [ABB Positioner](/robot-tool/positioner/) 컴포넌트 데이터를 연결한다.
+2. **Target Plane** 에 타겟 평면을, **Base Plane** 에 그 평면이 정의된 기준 평면을 연결한다. 타겟은 이 기준 평면을 기준으로 포지셔너의 장착 평면(Mounting Plane)에 정렬된다.
+3. 필요하면 **Z Rotation** 으로 타겟을 자체 Z축 기준으로 회전하고, 작업물 좌표계를 기준으로 하려면 **WobjData** 를 연결한다.
+4. **RobTargets** 출력을 이동 명령에 연결한다. 각 경로의 시작·끝 타겟을 따로 쓰려면 **Output** 탭의 **Split Start / Split End** 를 켠다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="tip">
+  **Split Start / Split End** 는 Target Plane 의 브랜치(Branch)마다 첫 번째·마지막 인덱스를 분리해 **Start Targets / End Targets** 로 출력한다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="ABB Positioner" description="포지셔너 컴포넌트" href="/robot-tool/positioner/" />
+  <LinkCard title="RobTarget" description="포지셔너 없는 로봇 타겟" href="/datatype/robtarget/" />
+  <LinkCard title="WobjData" description="작업물 좌표계" href="/datatype/wobjdata/" />
+</CardGrid>

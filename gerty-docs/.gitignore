@@ -14,3 +14,6 @@ redirects.generated.json
 # legacy redirect pages; public/assets (converted images and videos) and assets-manifest.json are committed
 /public/*/
 !/public/assets/
+
+# Made by `npm run convert`: which pages come from pages/ (hand-written) instead of a post
+src/handwritten.generated.json

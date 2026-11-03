@@ -1,0 +1,56 @@
+---
+// One settings tab: a small screenshot beside its table. Each row gets a number that also sits on the screenshot
+// next to that control; hovering a row or a number highlights both (CSS :has()). Rows without `y` get no marker.
+import type { Lang, Row } from "../../data/components/types";
+interface Props { img: string; alt: string; rows: Row[]; lang: Lang }
+const { img, alt, rows, lang } = Astro.props;
+const T = { ko: { name: "이름", type: "타입", desc: "설명", opt: "옵션" }, en: { name: "Name", type: "Type", desc: "Description", opt: "Optional" } }[lang];
+const marked = rows.some((r) => r.y);
+const css = rows.map((_, i) => {
+  const k = i + 1;
+  return `.sp:has([data-k="${k}"]:hover) .spot[data-k="${k}"]{opacity:1}
+.sp:has([data-k="${k}"]:hover) .mark[data-k="${k}"]{transform:translateY(-50%) scale(1.18);background:var(--sl-color-accent);color:var(--sl-color-black)}
+.sp:has([data-k="${k}"]:hover) tr[data-k="${k}"]{background:var(--sl-color-accent-low)}`;
+}).join("\n");
+---
+<div class="sp">
+  <figure class="sp-shot">
+    <img src={`/assets/images/${img}`} alt={alt} loading="lazy" />
+    {rows.map((r, i) => r.y && (
+      <>
+        <span class="spot" data-k={i + 1} style={`top:${r.y[0]}%;height:${r.y[1]}%`}></span>
+        <span class="mark" data-k={i + 1} style={`top:${r.y[0] + r.y[1] / 2}%`}>{i + 1}</span>
+      </>
+    ))}
+  </figure>
+  <div class="sp-table">
+    <table>
+      <thead><tr><th>{T.name}</th><th>{T.type}</th><th>{T.desc}</th></tr></thead>
+      <tbody>
+        {rows.map((r, i) => (
+          <tr data-k={i + 1}>
+            <td>{marked && <span class="num">{i + 1}</span>}<strong>{r.name}</strong></td>
+            <td><code>{r.type}</code></td>
+            <td>{r.optional && <span class="opt-pill">{T.opt}</span>}<Fragment set:html={r[lang]} /></td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</div>
+<style set:html={css}></style>
+<style>
+  .sp { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 1.25rem; align-items: center; margin-top: 1rem; }
+  @media (max-width: 50rem) { .sp { grid-template-columns: 1fr; } .sp-shot { max-width: 300px; margin-inline: auto; } }
+  .sp-shot { position: relative; margin: 0; }
+  .sp-shot img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--sl-color-hairline); }
+  .spot { position: absolute; left: 1.5%; right: 1.5%; border-radius: 4px; background: color-mix(in srgb, var(--sl-color-accent) 22%, transparent); outline: 2px solid var(--sl-color-accent); opacity: 0; transition: opacity 0.15s; pointer-events: none; }
+  .mark, .num { display: inline-grid; place-items: center; width: 1.35rem; height: 1.35rem; border-radius: 50%; font-size: 0.72rem; font-weight: 700; background: var(--sl-color-accent-low); color: var(--sl-color-accent-high); border: 1px solid var(--sl-color-accent); }
+  .mark { position: absolute; left: -0.55rem; transform: translateY(-50%); cursor: default; transition: transform 0.15s, background 0.15s; }
+  .num { margin-right: 0.5rem; vertical-align: text-bottom; }
+  .sp-table { overflow-x: auto; }
+  .sp-table table { width: 100%; margin: 0; }
+  .sp-table td { vertical-align: top; }
+  .sp-table td:first-child { white-space: nowrap; }
+  .sp-table tr { transition: background 0.15s; cursor: default; }
+</style>

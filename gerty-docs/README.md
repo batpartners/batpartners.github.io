@@ -5,6 +5,14 @@ The renewed GERTY documentation, published by GitHub Pages at **https://docs.b-a
 same Jekyll posts as before: edit `_posts/*.md` / `en/_posts/*.md` (and `_data/navigation.yml` for the sidebar), push
 to `main`, and the workflow `.github/workflows/docs.yml` converts, builds, checks and publishes the site.
 
+**Pages rewritten in the new template are no longer built from their post.** Their source is `pages/` (one MDX file
+per language, same path as in `src/content/docs`) plus a data file per component in `src/data/components/`, which
+holds the input / settings / output tables for both languages. Edit those, not the post. So far: all DataType pages
+(`pages/datatype/`, `pages/en/datatype/`). The page parts are in `src/components/doc/`: `DocTags` (category / mode
+tags), `ComponentShot` (main component image), `ParamTable` (Name | Type | Description; `optional: true` rows get an
+"옵션 / Optional" pill) and `SettingsPanel` (a settings tab: screenshot beside its table, numbered markers placed by
+each row's `y: [top%, height%]`). `node scripts/extract-component.mjs <post file>` drafts a data file from a post.
+
 ## Commands (in this folder)
 
 ```bash
@@ -19,7 +27,8 @@ node scripts/check.mjs   # after a build: text parity with the posts + every int
 
 | Path | What it is |
 | --- | --- |
-| `scripts/convert.mjs` | Converts the Jekyll posts to MDX. Re-runnable: run it again whenever the posts change. |
+| `scripts/convert.mjs` | Converts the Jekyll posts to MDX. Re-runnable: run it again whenever the posts change. Pages in `pages/` replace the converted page of the same path (list in `src/handwritten.generated.json`). |
+| `pages/`, `src/data/components/`, `src/components/doc/` | New-template pages, their table data, and the page parts (see above). |
 | `scripts/slug.mjs` | New page URL from the post file name (`2026-07-11-Instruction-Move.md` → `/instruction/move/`). |
 | `scripts/posts.mjs` | Reads the posts and fixes known source problems (English SurfaceShell pair, English WobjData Fixed/Movable copies, English WaitDI title, Korean Tree Branch table row, Korean TriggIOs link typo). Used by convert and check. Still open in the source: the English IODEvent page shows SeamData content (needs an English translation). |
 | `scripts/check.mjs` | Post-build checks; the GitHub workflow stops before publishing if it finds a problem. |

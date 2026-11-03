@@ -1,0 +1,73 @@
+---
+title: "SeamData"
+description: "Defines the start and end phase data of a welding seam."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/seamdata.mjs";
+
+Defines the start and end phase data of a welding seam. Allows detailed specification of timing and arc conditions across three phases: Ignition, Heat, and End. Typically, the same values are maintained for an entire seam or across multiple seams.
+
+<DocTags tags={[{ text: "DataType", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/7_SeamData.png" alt="SeamData" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the weld program number (schedule) and mode to **Weld Sched**, and the Wirefeed1 weighting to **Weighting**.
+2. Type the variable name in **Name** (SeamData tab).
+3. Set the arc conditions per phase (Voltage, WireFeed, Control, Current) in the **Ignition / Heat / End ArcData** tabs.
+4. Set the timing per phase (gas, heat, crater fill, burn-back and so on) in the **Ignition / Heat / End Params** tabs.
+5. Connect the **SeamData** output to the **SeamData** input of [ArcMove](/en/instruction/arcmove/).
+
+</Steps>
+
+## Notes
+
+<Aside type="tip">
+  Right-click the component icon to switch the WireFeed unit between m/min and mm/s (ABB and Fronius).
+</Aside>
+
+<Aside type="note">
+  With Fronius TPS/TPS-i, **Voltage** sets the arc length, **Control** the dynamics, and **Current** is not used.
+</Aside>
+
+<Aside type="note">
+  **Heat Time(s)** applies only when Heat Distance or Heat Speed is 0.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="WeldData" description="Weld-phase parameters" href="/en/datatype/welddata/" />
+  <LinkCard title="WeaveData" description="Weaving motion" href="/en/datatype/weavedata/" />
+  <LinkCard title="ArcMove" description="Arc welding move" href="/en/instruction/arcmove/" />
+</CardGrid>

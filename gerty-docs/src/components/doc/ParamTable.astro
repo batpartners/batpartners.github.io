@@ -1,0 +1,28 @@
+---
+// Name | Type | Description table for a component's inputs or outputs, from its data file (src/data/components).
+// Descriptions may hold inline HTML (<code>, <br>); rows marked `optional: true` get an "옵션 / Optional" pill.
+import type { Lang, Row } from "../../data/components/types";
+interface Props { rows: Row[]; lang: Lang }
+const { rows, lang } = Astro.props;
+const T = { ko: { name: "이름", type: "타입", desc: "설명", opt: "옵션" }, en: { name: "Name", type: "Type", desc: "Description", opt: "Optional" } }[lang];
+---
+<div class="param-table">
+  <table>
+    <thead><tr><th>{T.name}</th><th>{T.type}</th><th>{T.desc}</th></tr></thead>
+    <tbody>
+      {rows.map((r) => (
+        <tr>
+          <td><strong>{r.name}</strong></td>
+          <td><code>{r.type}</code></td>
+          <td>{r.optional && <span class="opt-pill">{T.opt}</span>}<Fragment set:html={r[lang]} /></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+<style>
+  .param-table { overflow-x: auto; }
+  .param-table table { width: 100%; }
+  .param-table td { vertical-align: top; }
+  .param-table td:first-child { white-space: nowrap; }
+</style>

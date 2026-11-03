@@ -1,0 +1,18 @@
+---
+// Quiet page tags (category, mode, sibling mode page) under the description; colours follow the light/dark theme.
+interface Tag { text: string; href?: string; tone?: "accent" | "gray" }
+interface Props { tags: Tag[] }
+const { tags } = Astro.props;
+---
+<p class="doc-tags">
+  {tags.map((t) => (t.href
+    ? <a class:list={["doc-tag", t.tone ?? "gray"]} href={t.href}>{t.text}</a>
+    : <span class:list={["doc-tag", t.tone ?? "gray"]}>{t.text}</span>))}
+</p>
+<style>
+  .doc-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+  .doc-tag { display: inline-block; padding: 0.1rem 0.6rem; border-radius: 999px; border: 1px solid var(--sl-color-hairline); font-size: var(--sl-text-xs); line-height: 1.6; text-decoration: none; }
+  .doc-tag.accent { background: var(--sl-color-accent-low); color: var(--sl-color-accent-high); border-color: transparent; }
+  .doc-tag.gray { background: var(--sl-color-gray-6); color: var(--sl-color-gray-2); }
+  a.doc-tag:hover { border-color: var(--sl-color-accent); }
+</style>

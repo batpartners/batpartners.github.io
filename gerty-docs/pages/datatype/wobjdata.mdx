@@ -1,0 +1,68 @@
+---
+title: "WobjData"
+description: "WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/wobjdata.mjs";
+
+WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로봇이 작업하는 대상(작업물)의 고유 좌표계를 정의하며, 도면 기반의 직관적인 프로그래밍을 돕고 설치 환경 변화 시 좌표계 수정만으로 프로그램의 재사용을 가능하게 한다. 컴포넌트 아이콘을 우클릭하여 Movable(외부축에 의해 움직이는 워크오브젝트) 및 Fixed(고정된 일반 워크오브젝트) 두 가지 모드로 전환할 수 있다.
+
+이 페이지는 **Fixed 모드**로, Target Plane 을 고정된 위치의 기준 평면으로 재정의한다.
+
+<DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Fixed 모드" }, { text: "Movable 모드 → WobjData(Movable)", href: "/datatype/wobjdata-movable/" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/2_WobjData.png" alt="WobjData" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **User Frame** 에 사용자 프레임(uframe)으로 쓸 평면, **Object Frame** 에 객체 프레임(oframe)으로 쓸 평면을 연결한다.
+2. **WobjData** 탭의 **Name** 에 RAPID 변수명을 쓴다.
+3. **WobjData** 출력을 [RobTarget](/datatype/robtarget/) 의 **WobjData** 입력에 연결해, 타겟을 작업물 좌표계 기준으로 정의한다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="tip">
+  **Override Wobj** 를 연결하면 다른 입력과 관계없이 그 워크오브젝트 데이터가 출력된다.
+</Aside>
+
+<Aside type="note">
+  설치 위치가 바뀌어도 WobjData 의 프레임만 고치면 같은 로봇 프로그램을 다시 쓸 수 있다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="RobTarget" description="WobjData 를 받는 타겟" href="/datatype/robtarget/" />
+  <LinkCard title="Get WobjData" description="컨트롤러에 있는 WobjData 가져오기" href="/controller-utils/getwobjdata/" />
+</CardGrid>

@@ -36,9 +36,12 @@ function pageText(html) {
 }
 
 // ---- 1. text parity ----
-// Against the posts as the converter reads them (with the known source fixes applied).
+// Against the posts as the converter reads them (with the known source fixes applied). Pages rewritten by hand in
+// pages/ (new template) no longer follow their post, so they are skipped here; links and media are still checked.
+const handWritten = new Set(JSON.parse(fs.readFileSync(path.join(ROOT, "src/handwritten.generated.json"), "utf8")));
 let chunks = 0;
 for (const { file: f, locale, slug, body: source } of loadPosts(SRC)) {
+  if (handWritten.has(`${locale === "en" ? "en/" : ""}${slug}.mdx`)) continue;
   const dir = locale === "en" ? "en/_posts" : "_posts";
   const body = source
     .replace(/<style[\s\S]*?<\/style>/gi, "")

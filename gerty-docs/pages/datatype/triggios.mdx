@@ -1,0 +1,56 @@
+---
+title: "TriggIOs"
+description: "이동 경로상의 지정 위치에서 하나 이상의 IO Event를 발생시키는 위치 트리거 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/triggios.mjs";
+
+이동 경로상의 지정 위치에서 하나 이상의 IO Event를 발생시키는 위치 트리거 컴포넌트이다. 사용자는 신호의 변수 이름을 정의한다. ABB Trigger Move 인스트럭션 (TriggLIOs, TriggJIOs)과 함께 사용된다.
+
+<DocTags tags={[{ text: "DataType", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/5_TriggIOs.png" alt="TriggIOs" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. 여러 [IOEvent](/datatype/iodevent/) 의 **IO Data** 출력을 **IOs** 입력에 묶어 연결한다.
+2. **TriggIOs** 탭의 **Name** 에 변수명을 쓴다.
+3. **TriggIOs** 출력을 [TriggerIOMove](/instruction/triggeriomove/) 에 연결한다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="IOEvent" description="트리거 하나를 정의" href="/datatype/iodevent/" />
+  <LinkCard title="TriggerIOMove" description="트리거와 함께 쓰는 이동 명령" href="/instruction/triggeriomove/" />
+</CardGrid>

@@ -2,6 +2,8 @@
 //
 //   npm run convert            (source: the repo this project sits in, or D:/batpartners.github.io, or DOCS_SRC)
 //
+// Pages that have a hand-written version in pages/ (new template: MDX + src/data) use that instead of the post.
+//
 // Re-runnable: it rewrites src/content/docs (except files listed in KEEP), src/sidebar.generated.json,
 // src/styles/media-widths.css, public/assets and the legacy redirect pages, from the current working tree of the
 // source repo (uncommitted edits included). The posts are only read, never written. public/assets and
@@ -778,6 +780,30 @@ for (const post of posts) {
   count++;
 }
 
+// Hand-written pages (pages/<same path as in src/content/docs>) replace the converted page of the same path. They
+// are the source for those pages from now on; their images (named in the page or in src/data) are kept in public/.
+const PAGES = path.join(ROOT, "pages");
+const handWritten = [];
+const listFiles = (dir) => (fs.existsSync(dir) ? fs.readdirSync(dir, { withFileTypes: true, recursive: true }).filter((e) => e.isFile()).map((e) => path.join(e.parentPath, e.name)) : []);
+for (const file of listFiles(PAGES).filter((f) => f.endsWith(".mdx"))) {
+  const rel = path.relative(PAGES, file);
+  fs.mkdirSync(path.dirname(path.join(DOCS, rel)), { recursive: true });
+  fs.copyFileSync(file, path.join(DOCS, rel));
+  handWritten.push(rel.split(path.sep).join("/"));
+}
+const IMAGES = path.join(SRC, "assets/images");
+for (const file of [...listFiles(PAGES), ...listFiles(path.join(ROOT, "src/data"))]) {
+  for (const m of fs.readFileSync(file, "utf8").matchAll(/([\w()\- ]+\.(?:png|jpe?g|gif))/gi)) {
+    const from = path.join(IMAGES, m[1]);
+    if (!fs.existsSync(from)) continue;
+    const out = path.join(PUBLIC, "assets/images", m[1]);
+    if (!fs.existsSync(out) || fs.statSync(out).mtimeMs < fs.statSync(from).mtimeMs) fs.copyFileSync(from, out);
+    keptAssets.add(out);
+    manifest[`assets/images/${m[1]}`] = crypto.createHash("sha1").update(fs.readFileSync(from)).digest("hex");
+  }
+}
+fs.writeFileSync(path.join(ROOT, "src/handwritten.generated.json"), JSON.stringify(handWritten.sort(), null, 2) + "\n");
+
 // Remove assets no page uses any more (e.g. the raw copy of a video that is now re-encoded).
 let pruned = 0;
 const prune = (dir) => {
@@ -812,5 +838,5 @@ fs.writeFileSync(
 const redirects = writeRedirects();
 fs.writeFileSync(path.join(ROOT, "redirects.generated.json"), JSON.stringify(Object.fromEntries(redirects), null, 2) + "\n");
 
-console.log(`Converted ${count} pages (${posts.filter((p) => p.locale === "ko").length} KO + ${posts.filter((p) => p.locale === "en").length} EN), ${redirects.size} redirect pages, ${mediaCache.size} media references, ${pruned} unused asset(s) removed.`);
+console.log(`Converted ${count} pages (${posts.filter((p) => p.locale === "ko").length} KO + ${posts.filter((p) => p.locale === "en").length} EN), ${handWritten.length} replaced by hand-written pages/, ${redirects.size} redirect pages, ${mediaCache.size} media references, ${pruned} unused asset(s) removed.`);
 if (warnings.length) console.log(`\n${warnings.length} warning(s):\n- ` + [...new Set(warnings)].join("\n- "));

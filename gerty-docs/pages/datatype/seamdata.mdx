@@ -1,0 +1,73 @@
+---
+title: "SeamData"
+description: "용접 심(Seam)의 시작 및 종료 단계 데이터를 정의하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/seamdata.mjs";
+
+용접 심(Seam)의 시작 및 종료 단계 데이터를 정의하는 컴포넌트이다. 점화(Ignition), 가열(Heat), 종료(End) 세 구간의 타이밍과 아크 조건을 세부적으로 지정할 수 있으며, 일반적으로 하나의 심(Seam) 전체 또는 여러 심에 걸쳐 동일한 설정값을 유지할 때 사용한다.
+
+<DocTags tags={[{ text: "DataType", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/7_SeamData.png" alt="SeamData" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **Weld Sched** 에 용접 프로그램 번호(스케줄)와 용접 모드를, **Weighting** 에 Wirefeed1 가중치를 연결한다.
+2. **SeamData** 탭의 **Name** 에 변수명을 쓴다.
+3. **Ignition / Heat / End ArcData** 탭에서 구간별 아크 조건(Voltage, WireFeed, Control, Current)을 정한다.
+4. **Ignition / Heat / End Params** 탭에서 구간별 시간 조건(가스 공급, 가열, 크레이터 채움, 번백 등)을 정한다.
+5. **SeamData** 출력을 [ArcMove](/instruction/arcmove/) 의 **SeamData** 입력에 연결한다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="tip">
+  WireFeed 단위는 컴포넌트 아이콘을 우클릭해 m/min 과 mm/s 사이에서 바꿀 수 있다(ABB, Fronius 공통).
+</Aside>
+
+<Aside type="note">
+  Fronius TPS/TPS-i 에서는 **Voltage** 가 아크 길이, **Control** 이 다이내믹 특성 조정에 쓰이고, **Current** 는 쓰이지 않는다.
+</Aside>
+
+<Aside type="note">
+  **Heat Time(s)** 은 Heat Distance 또는 Heat Speed 가 0 일 때만 적용된다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="WeldData" description="용접 구간 파라미터" href="/datatype/welddata/" />
+  <LinkCard title="WeaveData" description="위빙 모션" href="/datatype/weavedata/" />
+  <LinkCard title="ArcMove" description="용접 이동 명령" href="/instruction/arcmove/" />
+</CardGrid>

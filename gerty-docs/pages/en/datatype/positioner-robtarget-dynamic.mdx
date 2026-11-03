@@ -1,0 +1,75 @@
+---
+title: "Positioner RobTarget (Dynamic)"
+description: "Positioner Robtarget defines a RobTarget including the rotation angle of the positioner (external axis)."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/positioner-robtarget-dynamic.mjs";
+
+Positioner Robtarget defines a RobTarget including the rotation angle of the positioner (external axis). You can switch between Dynamic and Static modes by right-clicking the component icon.
+
+<DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Dynamic mode" }, { text: "Static mode → Positioner RobTarget (Static)", href: "/en/datatype/positioner-robtarget-static/" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/1_Positioner Robtarget.png" alt="Positioner RobTarget (Dynamic)" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## Examples
+
+<figure class="doc-media">
+  <video src="/assets/media/RobtargetPosition_Dynamic__Top.mp4" autoplay muted loop playsinline preload="metadata" class="wpx-576"></video>
+  <figcaption>Top view</figcaption>
+</figure>
+
+<figure class="doc-media">
+  <video src="/assets/media/Dynamic_RobPosition_gif.mp4" autoplay muted loop playsinline preload="metadata" class="wpx-576"></video>
+</figure>
+
+## How to use
+
+<Steps>
+
+1. Connect the [ABB Positioner](/en/robot-tool/positioner/) component data to **Positioner**.
+2. Connect the target planes to **Target Plane** and the plane they are defined in to **Base Plane**. The targets are aligned from this plane to the positioner mounting plane.
+3. If needed, rotate the targets about their own Z axis with **Z Rotation**, and connect **WobjData** to work in a work-object frame.
+4. Connect the **RobTargets** output to a move instruction. To use the start and end targets of each path separately, turn on **Split Start / Split End** in the **Output** tab.
+
+</Steps>
+
+## Notes
+
+<Aside type="tip">
+  **Split Start / Split End** take the first and last index of each Target Plane branch out into **Start Targets / End Targets**.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="ABB Positioner" description="The positioner component" href="/en/robot-tool/positioner/" />
+  <LinkCard title="RobTarget" description="Robot targets without a positioner" href="/en/datatype/robtarget/" />
+  <LinkCard title="WobjData" description="Work-object frame" href="/en/datatype/wobjdata/" />
+</CardGrid>

@@ -233,3 +233,17 @@ header.header {
 .hero > img {
   max-width: min(22rem, 70vw);
 }
+
+/* "옵션 / Optional" pill in component parameter tables (src/components/doc) */
+.opt-pill {
+  display: inline-block;
+  margin-right: 0.4rem;
+  padding: 0 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--sl-color-hairline);
+  background: var(--sl-color-gray-6);
+  color: var(--sl-color-gray-2);
+  font-size: var(--sl-text-xs);
+  line-height: 1.6;
+  white-space: nowrap;
+}
