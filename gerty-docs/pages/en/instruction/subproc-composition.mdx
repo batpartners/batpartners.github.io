@@ -1,0 +1,56 @@
+---
+title: "Sub Procedure"
+description: "This is a component that generates a RAPID sub-procedure block from an instruction list."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/subproc-composition.mjs";
+
+This is a component that generates a RAPID sub-procedure block from an instruction list. The code is output as a named PROC, allowing it to be called when the main routine is executed.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }, { text: "Composition" }, { text: "Script → Sub Procedure (Script)", href: "/en/instruction/subproc-script/" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/8_SubProcedure.png" alt="Sub Procedure" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the instruction list the procedure contains to **Instructions**.
+2. Type the procedure name in **Procdure Name** (SubProcedure tab).
+3. Put the **Sub Proc.** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="GERTY Core" description="Takes the instruction list" href="/en/core/gerty-core/" />
+  <LinkCard title="Sub Procedure (Script)" description="Write the procedure as RAPID code" href="/en/instruction/subproc-script/" />
+</CardGrid>

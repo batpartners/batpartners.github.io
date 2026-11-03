@@ -1,0 +1,56 @@
+---
+title: "WaitDI"
+description: "This is a component that generates a WaitDI instruction to pause robot motion until a specified digital input (DI) signal reaches the target value."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/waitdi.mjs";
+
+This is a component that generates a WaitDI instruction to pause robot motion until a specified digital input (DI) signal reaches the target value.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/9_WaitDI.png" alt="WaitDI" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the name of the digital input signal to wait for to **Signal**.
+2. Set the value to wait for with **Value** (WaitDI tab).
+3. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Wait Time" description="Waits for a set time" href="/en/instruction/wait-time/" />
+  <LinkCard title="SetOutput" description="Sets an output signal" href="/en/instruction/setoutput/" />
+</CardGrid>

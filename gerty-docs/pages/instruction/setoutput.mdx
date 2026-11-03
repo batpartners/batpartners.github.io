@@ -1,0 +1,57 @@
+---
+title: "SetOutput"
+description: "SetOutput 은 디지털, 그룹, 아날로그 출력 신호 값을 바꾸는 SetDO / SetGO / SetAO 인스트럭션을 만드는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/setoutput.mjs";
+
+SetOutput 은 디지털, 그룹, 아날로그 출력 신호 값을 바꾸는 `SetDO` / `SetGO` / `SetAO` 인스트럭션을 만드는 컴포넌트이다. 신호 유형은 <strong>Signal Type</strong> 에서 고른다. DO 는 Digital Output, GO 는 Group Output, AO 는 Analog Output 이다.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/7_SetOutput.png" alt="SetOutput" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **Signal** 에 출력 신호 이름을 연결한다.
+2. **SetXO** 탭에서 **Signal Type** 을 고르고, 디지털 출력이면 **DO Value** 로 값을 정한다.
+3. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="MoveOutput" description="출력 신호를 동반하는 이동 명령" href="/instruction/moveoutput/" />
+  <LinkCard title="WaitDI" description="디지털 입력 신호 대기" href="/instruction/waitdi/" />
+  <LinkCard title="IOEvent" description="경로 위 I/O 트리거" href="/datatype/iodevent/" />
+</CardGrid>

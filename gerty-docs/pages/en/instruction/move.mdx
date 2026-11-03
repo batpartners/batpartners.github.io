@@ -1,0 +1,59 @@
+---
+title: "Move"
+description: "A component that configures ABB Move instructions (MoveL, MoveJ)."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/move.mjs";
+
+A component that configures ABB Move instructions (MoveL, MoveJ).
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/0_Move.png" alt="Move" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the output of [RobTarget](/en/datatype/robtarget/) or [Positioner RobTarget](/en/datatype/positioner-robtarget/) to **RobTargets**.
+2. Pick the motion type, speed and zone in the **Move** tab.
+3. Turn on **MoveJ Start & End** for MoveJ on the first and last targets only, and **Fine Start & End** to stop exactly at them.
+4. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="RobTarget" description="Motion targets" href="/en/datatype/robtarget/" />
+  <LinkCard title="Positioner RobTarget" description="Targets with positioner angles" href="/en/datatype/positioner-robtarget/" />
+  <LinkCard title="MoveOutput" description="Move with an output signal" href="/en/instruction/moveoutput/" />
+  <LinkCard title="TriggerIOMove" description="Move with I/O triggers on the path" href="/en/instruction/triggeriomove/" />
+</CardGrid>

@@ -1,0 +1,64 @@
+---
+title: "MoveOutput"
+description: "This is a component that configures ABB Move instructions (MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO) accompanied by digital, group, and analog output signals."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/moveoutput.mjs";
+
+This is a component that configures ABB Move instructions (MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO) accompanied by digital, group, and analog output signals.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/1_MoveOutput.png" alt="MoveOutput" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the output of [RobTarget](/en/datatype/robtarget/) or [Positioner RobTarget](/en/datatype/positioner-robtarget/) to **RobTargets**.
+2. Connect the output signal name to **Signal** and the value to write to **DO Value**.
+3. Set the motion type, speed, zone and **MoveJ Start & End** / **Fine Start & End** in the **ABB MoveXO** tab.
+4. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+
+</Steps>
+
+## Notes
+
+<Aside type="note">
+  Depending on the signal type, the instruction is `MoveJDO` / `MoveLDO` (digital), `MoveJGO` / `MoveLGO` (group) or `MoveJAO` / `MoveLAO` (analog).
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Move" description="MoveL / MoveJ move" href="/en/instruction/move/" />
+  <LinkCard title="SetOutput" description="Sets an output signal" href="/en/instruction/setoutput/" />
+  <LinkCard title="TriggerIOMove" description="Move with I/O triggers on the path" href="/en/instruction/triggeriomove/" />
+</CardGrid>

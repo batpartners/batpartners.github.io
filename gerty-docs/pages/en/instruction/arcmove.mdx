@@ -1,0 +1,59 @@
+---
+title: "ArcMove"
+description: "A component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for welding."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/arcmove.mjs";
+
+A component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for welding.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/3_ArcMove.png" alt="ArcMove" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the [RobTarget](/en/datatype/robtarget/) or [Positioner RobTarget](/en/datatype/positioner-robtarget/) output of the weld path to **RobTargets**.
+2. Connect [SeamData](/en/datatype/seamdata/) to **SeamData** and [WeldData](/en/datatype/welddata/) to **WeldData**.
+3. Pick the motion type, speed and zone in the **Arc Move** tab, and choose whether the first target starts with `ArcLStart` (**ArcLStart**) and the last ends with `ArcLEnd` (**ArcLEnd**).
+4. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="SeamData" description="Seam start and end data" href="/en/datatype/seamdata/" />
+  <LinkCard title="WeldData" description="Weld conditions" href="/en/datatype/welddata/" />
+  <LinkCard title="WeaveData" description="Weaving motion" href="/en/datatype/weavedata/" />
+  <LinkCard title="Move" description="MoveL / MoveJ move" href="/en/instruction/move/" />
+</CardGrid>

@@ -1,0 +1,64 @@
+---
+title: "TriggerIOMove"
+description: "경로상의 지정 위치에서 하나 이상의 I/O 신호를 발생시키며 이동을 수행하는 ABB Trigger Move 인스트럭션(TriggLIOs, TriggJIOs)을 생성 및 설정하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/triggeriomove.mjs";
+
+경로상의 지정 위치에서 하나 이상의 I/O 신호를 발생시키며 이동을 수행하는 ABB Trigger Move 인스트럭션(`TriggLIOs`, `TriggJIOs`)을 생성 및 설정하는 컴포넌트이다.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/2_TriggerMove.png" alt="TriggerIOMove" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **RobTarget** 에 [RobTarget](/datatype/robtarget/) 또는 [Positioner RobTarget](/datatype/positioner-robtarget/) 출력을 연결한다.
+2. **TriggIOs** 에 [TriggIOs](/datatype/triggios/) 출력을 연결한다. 트리거 하나하나는 [IOEvent](/datatype/iodevent/) 로 정의한다.
+3. **TriggIOs Move** 탭에서 모션 유형·속도·Zone 을 고른다.
+4. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="note">
+  MoveL 이면 `TriggLIOs`, MoveJ 이면 `TriggJIOs` 인스트럭션이 만들어진다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="TriggIOs" description="I/O 트리거 묶음" href="/datatype/triggios/" />
+  <LinkCard title="IOEvent" description="트리거 하나를 정의" href="/datatype/iodevent/" />
+  <LinkCard title="Move" description="MoveL / MoveJ 이동 명령" href="/instruction/move/" />
+</CardGrid>

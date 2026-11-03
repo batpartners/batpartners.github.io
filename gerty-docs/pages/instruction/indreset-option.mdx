@@ -1,0 +1,70 @@
+---
+title: "IndReset (Positional Reference)"
+description: "부가 축의 위치와 회전값을 초기화(<code>IndReset</code>)하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/indreset-option.mjs";
+
+부가 축의 위치와 회전값을 초기화(<code>IndReset</code>)하는 컴포넌트이다. 모션 인스트럭션 실행 전 누적된 외부축 각도값 초기화에 주로 사용한다.
+
+이 페이지는 기준 위치를 <strong>RobTarget</strong> 입력으로 받는 Positional Reference 형태를 설명한다.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }, { text: "Positional Reference" }, { text: "Numeric Reference → IndReset", href: "/instruction/indreset/" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/12_IndReset_1.png" alt="IndReset (Positional Reference)" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **RobTarget** 에 기준 자세를 담은 [RobTarget](/datatype/robtarget/) 을 연결한다.
+2. **MechUnit** 에 메카니컬 유닛 이름(예: STN1)을 쓰고, **Target Axis** 에서 대상 축을 고른다.
+3. **Settings** 탭에서 **Direction Policy** 를 `Short` / `Fwd` / `Bwd` 중에서 고른다.
+4. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="tip">
+  [IndRMove](/instruction/indrmove/) 로 독립 모드에 둔 축을 일반 모드로 되돌릴 때, 또는 모션 전에 누적된 외부축 각도를 초기화할 때 쓴다.
+</Aside>
+
+<Aside type="caution">
+  **RobTarget** 과 **RefNum(°)** 은 함께 쓸 수 없다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="IndRMove" description="외부축 독립 모드 이동" href="/instruction/indrmove/" />
+  <LinkCard title="IndReset" description="숫자로 기준 위치 지정" href="/instruction/indreset/" />
+  <LinkCard title="RobTarget" description="모션 목표 위치" href="/datatype/robtarget/" />
+</CardGrid>

@@ -1,0 +1,59 @@
+---
+title: "ArcMove"
+description: "용접용 ABB 아크 인스트럭션(<code>ArcLStart</code>, <code>ArcL</code>, <code>ArcLEnd</code>)을 설정하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/arcmove.mjs";
+
+용접용 ABB 아크 인스트럭션(<code>ArcLStart</code>, <code>ArcL</code>, <code>ArcLEnd</code>)을 설정하는 컴포넌트이다.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/3_ArcMove.png" alt="ArcMove" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **RobTargets** 에 용접 경로의 [RobTarget](/datatype/robtarget/) 또는 [Positioner RobTarget](/datatype/positioner-robtarget/) 출력을 연결한다.
+2. **SeamData** 에 [SeamData](/datatype/seamdata/) 를, **WeldData** 에 [WeldData](/datatype/welddata/) 를 연결한다.
+3. **Arc Move** 탭에서 모션 유형·속도·Zone 을 고르고, 첫 타겟을 `ArcLStart` 로 시작할지(**ArcLStart**), 마지막 타겟을 `ArcLEnd` 로 끝낼지(**ArcLEnd**) 정한다.
+4. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="SeamData" description="용접 시작·종료 데이터" href="/datatype/seamdata/" />
+  <LinkCard title="WeldData" description="용접 조건" href="/datatype/welddata/" />
+  <LinkCard title="WeaveData" description="위빙 모션" href="/datatype/weavedata/" />
+  <LinkCard title="Move" description="MoveL / MoveJ 이동 명령" href="/instruction/move/" />
+</CardGrid>

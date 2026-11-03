@@ -1,0 +1,50 @@
+---
+title: "Sub Procedure (Script)"
+description: "This component builds a RAPID sub-procedure and its call instructions from procedure code you write yourself."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/subproc-script.mjs";
+
+This component builds a RAPID sub-procedure and its call instructions from procedure code you write yourself. Use it to put PROC code in directly instead of an instruction list.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }, { text: "Script" }, { text: "Composition → Sub Procedure", href: "/en/instruction/subproc-composition/" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/8_SubProcedure_1.png" alt="Sub Procedure (Script)" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the RAPID code from PROC to ENDPROC to **Proc Code**.
+2. Connect a call string (e.g. `CustomProc 5, target1;`) to **Call**, one per call site.
+3. Put the **Sub Proc.** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+
+</Steps>
+
+## Notes
+
+<Aside type="caution">
+  The procedure name and arguments in **Call** must match the PROC declaration in **Proc Code**.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="GERTY Core" description="Takes the instruction list" href="/en/core/gerty-core/" />
+  <LinkCard title="Sub Procedure" description="Build the procedure from an instruction list" href="/en/instruction/subproc-composition/" />
+</CardGrid>

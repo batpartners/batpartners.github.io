@@ -1,0 +1,57 @@
+---
+title: "(De)ActUnit"
+description: "메카니컬 유닛(Mechanical Unit)을 활성화 또는 비활성화하는 ActUnit/DeactUnit 인스트럭션을 생성하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/deactunit.mjs";
+
+메카니컬 유닛(Mechanical Unit)을 활성화 또는 비활성화하는 ActUnit/DeactUnit 인스트럭션을 생성하는 컴포넌트이다. RAPID 프로그램 실행 중 외부축 장비(포지셔너, 트랙 등)의 활성/비활성 전환에 사용된다.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/4_DeActUnit.png" alt="(De)ActUnit" />
+
+## 입력
+
+입력 단자가 없다. 모든 값은 아래 설정에서 정한다.
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **(De)ActUnit** 탭의 **MechUnit** 에 메카니컬 유닛 이름(예: STN1)을 쓴다.
+2. **Activate** 를 켜면 `ActUnit`(활성화), 끄면 `DeactUnit`(비활성화) 인스트럭션이 만들어진다.
+3. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="ABB Positioner" description="외부축 포지셔너" href="/robot-tool/positioner/" />
+  <LinkCard title="IndRMove" description="외부축 독립 모드 이동" href="/instruction/indrmove/" />
+  <LinkCard title="GERTY Core" description="인스트럭션 리스트를 받는 컴포넌트" href="/core/gerty-core/" />
+</CardGrid>

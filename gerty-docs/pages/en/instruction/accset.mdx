@@ -1,0 +1,69 @@
+---
+title: "AccSet"
+description: "AccSet is an AccSet instruction component that reduces robot acceleration and ramp values."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/accset.mjs";
+
+AccSet is an AccSet instruction component that reduces robot acceleration and ramp values. At the start or end of an operation, it allows you to set the acceleration value before reaching the specified speed value. This component lowers dynamic loads during handling or near workspace boundaries.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/5_AccSet.png" alt="AccSet" />
+
+## Inputs
+
+This component has no inputs; everything is set in the settings below.
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## Examples
+
+<figure class="doc-media">
+  <img src="/assets/images/external/AccSet_1-1.png" alt="Acceleration over time for different AccSet values (Acceleration, Ramp)" loading="lazy" class="wpx-576" />
+  <figcaption>Acceleration over time for different AccSet values (Acceleration, Ramp)</figcaption>
+</figure>
+
+## How to use
+
+<Steps>
+
+1. Set **Acceleration(%)** and **Ramp(%)** in the **Acceleration Params** tab.
+2. To soften the deceleration into fine targets separately, set **FinePointRamp(%)** too.
+3. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+
+</Steps>
+
+## Notes
+
+<Aside type="tip">
+  Use it where dynamic loads must be lower, such as in handling or near the workspace boundary.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="PathAccLim" description="Limits TCP acceleration" href="/en/instruction/pathacclim/" />
+  <LinkCard title="Move" description="MoveL / MoveJ move" href="/en/instruction/move/" />
+</CardGrid>

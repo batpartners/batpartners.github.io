@@ -1,0 +1,56 @@
+---
+title: "PathAccLim"
+description: "PathAccLim은 이동 경로상의 TCP 가속도 및 감속도 제한을 설정하거나 해제하는 PathAccLim 인스트럭션 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/pathacclim.mjs";
+
+PathAccLim은 이동 경로상의 TCP 가속도 및 감속도 제한을 설정하거나 해제하는 PathAccLim 인스트럭션 컴포넌트이다.
+
+<DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/6_PathAccLim.png" alt="PathAccLim" />
+
+## 입력
+
+입력 단자가 없다. 모든 값은 아래 설정에서 정한다.
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **Acceleration Params** 탭의 **AccLim** / **DecelLim** 로 TCP 가속·감속 제한을 켠다.
+2. 켠 항목의 최대값을 **AccMax(m/s²)** / **DecelMax(m/s²)** 에 정한다.
+3. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="AccSet" description="가속도·램프 감소" href="/instruction/accset/" />
+  <LinkCard title="Move" description="MoveL / MoveJ 이동 명령" href="/instruction/move/" />
+</CardGrid>
