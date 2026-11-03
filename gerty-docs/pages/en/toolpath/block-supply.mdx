@@ -1,0 +1,62 @@
+---
+title: "Block Supply"
+description: "This is a component that generates Pick targets to place blocks at the supply area based on the total number of blocks and unit geometry."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/block-supply.mjs";
+
+This is a component that generates Pick targets to place blocks at the supply area based on the total number of blocks and unit geometry.
+
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/16_BlockSupply.png" alt="Block Supply" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the supply base plane to **Base Plane**, the unit block to **Unit Block** and the **Block Count** output of [Block Designer](/en/toolpath/block-designer/) to **Block Count**.
+2. Set the X, Y and Z spacing in the **Spacing** tab and the number of blocks per direction in the **Count** tab.
+3. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+
+</Steps>
+
+## Notes
+
+<Aside type="caution">
+  If **Block Count** exceeds the layout capacity (X × Y × Z), blocks repeat on top of the same layout, so set the **Count** tab large enough.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Block Designer" description="Places blocks on a wall (Place)" href="/en/toolpath/block-designer/" />
+  <LinkCard title="RobTarget" description="Turns target planes into robot targets" href="/en/datatype/robtarget/" />
+</CardGrid>

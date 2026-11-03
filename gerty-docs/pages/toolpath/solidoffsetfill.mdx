@@ -1,0 +1,45 @@
+---
+title: "Solid Offset Fill"
+description: "GShell을 기준으로, 외곽(shell)을 안 또는 밖으로 오프셋한 패턴의 내부를 채움 적층 툴패스를 생성하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/solidoffsetfill.mjs";
+
+GShell을 기준으로, 외곽(shell)을 안 또는 밖으로 오프셋한 패턴의 내부를 채움 적층 툴패스를 생성하는 컴포넌트이다.
+
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/11_SolidOffsetFill.png" alt="Solid Offset Fill" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **GShell** 에 [Solid Shell](/toolpath/solidshell/) 의 **GERTYShellData** 출력을 연결한다.
+2. 채움 진행 방향을 반대로 하려면 **Direction** 에 TRUE 를 연결한다.
+3. **Infill ToolPaths** 출력을 [Deposition Builder](/toolpath/depositionbuilder/) 또는 [WAAM Builder](/toolpath/waambuilder/) 에 연결한다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="Solid Fill" description="패턴으로 내부 채움" href="/toolpath/solidfill/" />
+  <LinkCard title="Solid Shell" description="닫힌 솔리드의 외곽 적층 경로" href="/toolpath/solidshell/" />
+  <LinkCard title="Deposition Builder" description="적층 경로를 압출 시작·이동·종료로 분리" href="/toolpath/depositionbuilder/" />
+</CardGrid>

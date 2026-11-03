@@ -1,0 +1,57 @@
+---
+title: "Block Designer"
+description: "This is a component that generates Place targets to arrange blocks in a standard stacking pattern based on block units and wall geometry."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/block-designer.mjs";
+
+This is a component that generates Place targets to arrange blocks in a standard stacking pattern based on block units and wall geometry.
+
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/15_BlockDesign.png" alt="Block Designer" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the unit block (Box) to **Unit Block** and the wall to build (Brep) to **Wall**. If the slicing base is not WorldXY, connect **Base Plane** too.
+2. Set the spacing method (**Divide by Distance**) and the horizontal and vertical spacing in the **Settings** tab.
+3. Connect the **Block Count** output to the **Block Count** input of [Block Supply](/en/toolpath/block-supply/).
+4. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Block Supply" description="Lays out the block supply (Pick)" href="/en/toolpath/block-supply/" />
+  <LinkCard title="RobTarget" description="Turns target planes into robot targets" href="/en/datatype/robtarget/" />
+</CardGrid>

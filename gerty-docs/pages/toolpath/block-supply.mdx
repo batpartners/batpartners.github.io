@@ -1,0 +1,62 @@
+---
+title: "Block Supply"
+description: "전체 블록 개수와 유닛 형상을 기반으로, 공급부에 블록을 배치하는 Pick 타겟을 생성하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/block-supply.mjs";
+
+전체 블록 개수와 유닛 형상을 기반으로, 공급부에 블록을 배치하는 Pick 타겟을 생성하는 컴포넌트이다.
+
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/16_BlockSupply.png" alt="Block Supply" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **Base Plane** 에 공급부 기준 평면을, **Unit Block** 에 단위 블록을, **Block Count** 에 [Block Designer](/toolpath/block-designer/) 의 **Block Count** 출력을 연결한다.
+2. **Spacing** 탭에서 X·Y·Z 간격을, **Count** 탭에서 X·Y·Z 방향 개수를 정한다.
+3. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="caution">
+  **Block Count** 가 배치 가능 개수(X×Y×Z)보다 많으면 같은 배열에 겹쳐 반복 배치된다. **Count** 탭의 개수를 충분히 잡는다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="Block Designer" description="벽체에 블록 배치(Place)" href="/toolpath/block-designer/" />
+  <LinkCard title="RobTarget" description="타겟 평면을 로봇 타겟으로 변환" href="/datatype/robtarget/" />
+</CardGrid>

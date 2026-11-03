@@ -1,0 +1,45 @@
+---
+title: "Solid Offset Fill"
+description: "This is a component that generates a deposition toolpath to fill the inside of a pattern created by offsetting the outer boundary (shell) inward or outward, based on the GShell."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/solidoffsetfill.mjs";
+
+This is a component that generates a deposition toolpath to fill the inside of a pattern created by offsetting the outer boundary (shell) inward or outward, based on the GShell.
+
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/11_SolidOffsetFill.png" alt="Solid Offset Fill" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the **GERTYShellData** output of [Solid Shell](/en/toolpath/solidshell/) to **GShell**.
+2. To reverse the infill direction, connect TRUE to **Direction**.
+3. Connect the **Infill ToolPaths** output to [Deposition Builder](/en/toolpath/depositionbuilder/) or [WAAM Builder](/en/toolpath/waambuilder/).
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Solid Fill" description="Pattern infill" href="/en/toolpath/solidfill/" />
+  <LinkCard title="Solid Shell" description="Shell paths of a closed solid" href="/en/toolpath/solidshell/" />
+  <LinkCard title="Deposition Builder" description="Splits deposition paths into extrusion start, move and stop" href="/en/toolpath/depositionbuilder/" />
+</CardGrid>

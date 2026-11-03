@@ -1,0 +1,57 @@
+---
+title: "ParallelFinishing"
+description: "This is a component that generates a finishing toolpath along unidirectional parallel contour curves."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/parallelfinishing.mjs";
+
+This is a component that generates a finishing toolpath along unidirectional parallel contour curves. Users can configure detailed settings such as the distance between target planes, layer-to-layer spacing, and tilting to suit the workpiece geometry.
+
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/6_ParallelFinishing.png" alt="ParallelFinishing" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the shape to finish (Brep or Mesh) to **Geometry** and the path reference plane to **Reference Plane**.
+2. Set the path direction (**Cutting Direction**), path spacing (**Stepover(mm)**), tilt toward the surface normal (**Tilting Weight**) and **Tolerance** in the **Settings** tab.
+3. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Roughing" description="Stepped roughing" href="/en/toolpath/roughing/" />
+  <LinkCard title="UVFinishing" description="UV-direction finishing" href="/en/toolpath/uv-finishing/" />
+  <LinkCard title="RobTarget" description="Turns target planes into robot targets" href="/en/datatype/robtarget/" />
+</CardGrid>

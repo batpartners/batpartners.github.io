@@ -1,0 +1,65 @@
+---
+title: "FlyByBranch"
+description: "This is a component that generates a transition path (Flyby) target plane connecting each branch of a target plane data tree."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/flybybranch.mjs";
+
+This is a component that generates a transition path (Flyby) target plane connecting each branch of a target plane data tree. When moving between path segments, it reconstructs the path of the section that departs from the workpiece and determines the target plane according to the value set by the user.
+
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/1_FlybyPlane.png" alt="FlyByBranch" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the target plane DataTree, one branch per path segment, to **Target Planes**.
+2. Pick the approach and departure directions (motion direction or an axis of the target plane) in **Approaching Dir. / Leaving Dir.** (Basic tab).
+3. Set the approach and departure distances (**Approaching / Leaving Dist.(mm)**) and the number of targets on each fly-by path (**Target Count**) in the **Basic** tab.
+4. Adjust the blend continuity (**Continuity Type**) and the bulge at the start and end (**Bulge Start / Bulge End**) in the **Advanced** tab.
+5. Connect the **Fly-by Targets** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+
+</Steps>
+
+## Notes
+
+<Aside type="note">
+  Give **Target Planes** as a DataTree with one branch per path segment; the fly-by paths are built between the branches.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="FlyByCustom" description="Fly-by paths from your own vectors" href="/en/toolpath/flybycustom/" />
+  <LinkCard title="FlyByTree" description="Fly-by paths for several path trees" href="/en/toolpath/flybytree/" />
+  <LinkCard title="RobTarget" description="Turns target planes into robot targets" href="/en/datatype/robtarget/" />
+</CardGrid>

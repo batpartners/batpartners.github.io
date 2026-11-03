@@ -1,0 +1,63 @@
+---
+title: "Curve Tracing"
+description: "CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로봇 툴패스 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/curvetracing.mjs";
+
+CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로봇 툴패스 컴포넌트이다. 작업 평면의 정확도, 틸팅 정도를 설정할 수 있다.
+
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/0_Drawing.png" alt="Curve Tracing" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **Curves** 에 따라갈 커브를, **Reference Plane** 에 툴패스 기준 평면을 연결한다. TCP 를 표면 법선 쪽으로 기울이려면 **Geometry** 도 연결한다.
+2. **Settings** 탭에서 **Tolerance**, 세그먼트 길이(**MinEdge / MaxEdge(mm)**), 기울기(**Tilting Weight**)를 정한다.
+3. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="note">
+  **Tilting Weight** 가 0.0 이면 TCP 는 **Reference Plane** 의 Z 방향을, 1.0 이면 Geometry 표면 법선(또는 커브 접선) 방향을 따른다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="RobTarget" description="타겟 평면을 로봇 타겟으로 변환" href="/datatype/robtarget/" />
+  <LinkCard title="FlyByBranch" description="경로 사이 전이 경로" href="/toolpath/flybybranch/" />
+  <LinkCard title="Roughing" description="계단식 황삭" href="/toolpath/roughing/" />
+</CardGrid>

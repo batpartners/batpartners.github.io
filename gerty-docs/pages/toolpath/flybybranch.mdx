@@ -1,0 +1,65 @@
+---
+title: "FlyByBranch"
+description: "Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) 타겟 평면 생성하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/flybybranch.mjs";
+
+Target Plane DataTree의 각 Branch 사이를 연결하는 전이경로(Flyby) 타겟 평면 생성하는 컴포넌트이다. 경로 Segment 간 이동 시 작업물에서 이탈하는 구간의 경로를 재구성하여 사용자가 설정한 값에 따라 타겟평면을 결정한다.
+
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/1_FlybyPlane.png" alt="FlyByBranch" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **Target Planes** 에 경로 Segment 별로 Branch 가 나뉜 타겟 평면 DataTree 를 연결한다.
+2. **Basic** 탭의 **Approaching Dir. / Leaving Dir.** 에서 진입·진출 방향(모션 방향 또는 타겟 평면의 축)을 고른다.
+3. **Basic** 탭에서 진입·진출 거리(**Approaching / Leaving Dist.(mm)**)와 전이 경로의 타겟 개수(**Target Count**)를 정한다.
+4. **Advanced** 탭에서 블렌드 연속성(**Continuity Type**)과 시작·끝의 불룩함(**Bulge Start / Bulge End**)을 조정한다.
+5. **Fly-by Targets** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="note">
+  **Target Planes** 는 경로 Segment 하나가 Branch 하나가 되도록 DataTree 로 넣는다. 전이 경로는 Branch 와 Branch 사이에 만들어진다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="FlyByCustom" description="벡터로 정한 전이 경로" href="/toolpath/flybycustom/" />
+  <LinkCard title="FlyByTree" description="여러 경로 묶음의 전이 경로" href="/toolpath/flybytree/" />
+  <LinkCard title="RobTarget" description="타겟 평면을 로봇 타겟으로 변환" href="/datatype/robtarget/" />
+</CardGrid>

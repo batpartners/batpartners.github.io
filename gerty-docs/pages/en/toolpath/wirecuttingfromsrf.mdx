@@ -1,0 +1,63 @@
+---
+title: "WireCuttingFromSrf"
+description: "This is a component that generates a hot-wire cutting path from a ruled surface."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/wirecuttingfromsrf.mjs";
+
+This is a component that generates a hot-wire cutting path from a ruled surface. Users can set the number of points to generate target planes, the internal parameter value of the ruled surface (default: 0.5), and optionally, an attractor value to smoothly adjust the hot-wire tool. In addition, detailed configurations for the hot-wire path direction, tool orientation, and entry intervals are available.
+
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/5_WireCuttingFromSrf.png" alt="WireCuttingFromSrf" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the ruled surface to **Surface**.
+2. Set the number of targets with **Target Count**. Optionally, set where the target origins lie with **Parameter** (default 0.5) and add an attractor with **Wrist Object** to steer the tool direction smoothly.
+3. Set the cutting direction (**Cutting Dir. Flip**), tool direction (**Tool Flip**), UV direction (**UV Flip**) and the start/end extension (**Extension(mm)**) in the **Settings** tab.
+4. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+
+</Steps>
+
+## Notes
+
+<Aside type="note">
+  **UV Flip** only works on ruled surfaces that are degree 1 in both U and V.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="WireCuttingFromCrvs" description="Hot-wire cutting from two curves" href="/en/toolpath/wirecuttingfromcrvs/" />
+  <LinkCard title="RobTarget" description="Turns target planes into robot targets" href="/en/datatype/robtarget/" />
+</CardGrid>

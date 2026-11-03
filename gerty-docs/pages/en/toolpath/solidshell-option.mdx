@@ -1,0 +1,69 @@
+---
+title: "Solid Shell (Extra Option)"
+description: "This is a component that generates shell deposition toolpaths from a closed solid geometry."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/solidshell-option.mjs";
+
+This is a component that generates shell deposition toolpaths from a closed solid geometry. It allows you to configure detailed settings such as the starting position, spacing, height, and tilting degree of the target planes. If the geometry is large, it can export the operation data by dividing it into partitions.
+
+This page covers the form with the added <strong>Angle Ranges</strong> and <strong>Multiple</strong> inputs (Extra Option).
+
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }, { text: "Extra Option" }, { text: "Basic → Solid Shell", href: "/en/toolpath/solidshell/" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/12_SolidShell_3.png" alt="Solid Shell (Extra Option)" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Connect the closed solid (Brep or Mesh) to **Geometry**. To place the seam, connect **Seam Crvs**.
+2. Align **Reference Plane** with the build plate (default WorldXY). To tilt targets around edges, connect **Edge Crvs**.
+3. Connect the added **Angle Ranges** and **Multiple** inputs.
+4. In the **Slicing** tab, set the outline offset (**Setback(mm)**), the number of shells (**Outline Shells**), bead width, layer heights and **Tolerance**.
+5. Use the **Tilting** tab to tilt for overhangs or edges, and the **Seam** tab to spread or shift the start points (seam).
+6. Connect the **Deposition ToolPaths** and **Is Bottommost** outputs to [Deposition Builder](/en/toolpath/depositionbuilder/) or [WAAM Builder](/en/toolpath/waambuilder/), and, for infill, **GERTYShellData** to [Solid Fill](/en/toolpath/solidfill/) or [Solid Offset Fill](/en/toolpath/solidoffsetfill/).
+
+</Steps>
+
+## Notes
+
+<Aside type="tip">
+  For a large part, split the model into N parts with **Partition** and pick the part to slice (1–N) with **Order**, then export part by part.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Solid Shell" description="Shell paths of a closed solid" href="/en/toolpath/solidshell/" />
+  <LinkCard title="Solid Fill" description="Pattern infill" href="/en/toolpath/solidfill/" />
+  <LinkCard title="Deposition Builder" description="Splits deposition paths into extrusion start, move and stop" href="/en/toolpath/depositionbuilder/" />
+  <LinkCard title="WAAM Builder" description="Splits WAAM paths by layer kind" href="/en/toolpath/waambuilder/" />
+</CardGrid>
