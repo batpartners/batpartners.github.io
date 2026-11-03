@@ -1,0 +1,58 @@
+---
+title: "ScanABBController"
+description: "로컬 네트워크에서 사용 가능한 ABB 로봇 컨트롤러를 검색하고 연결하는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/scanabbcontroller.mjs";
+
+로컬 네트워크에서 사용 가능한 ABB 로봇 컨트롤러를 검색하고 연결하는 컴포넌트이다.
+
+<DocTags tags={[{ text: "Controller Utils", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/1_ScanController.png" alt="ScanABBController" />
+
+## 입력
+
+입력 단자가 없다. 모든 값은 아래 설정에서 정한다.
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **ABB Controller** 탭에서 **Controller Type** 을 고르고 **Scan** 을 눌러 컨트롤러를 검색한다.
+2. **Connect** 탭의 **Controller** 에서 연결할 컨트롤러를 고르고 **Connect** 를 켠다.
+3. **Info** 탭에서 연결된 컨트롤러 정보를 확인한다.
+4. **ABB Controller** 출력을 Controller 컴포넌트와 [Code Solver](/core/code-solver/) 의 **ABB Controller** 입력에 연결한다.
+
+</Steps>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="Code Solver" description="RAPID 코드 생성·컨트롤러 업로드" href="/core/code-solver/" />
+  <LinkCard title="RealTime Display" description="로봇 자세·신호 실시간 표시" href="/controller-utils/realtimedisplay/" />
+  <LinkCard title="Socket Sender" description="인스트럭션 소켓 스트리밍" href="/controller-utils/socketsender/" />
+</CardGrid>

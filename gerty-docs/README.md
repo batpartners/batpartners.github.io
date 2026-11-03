@@ -7,8 +7,8 @@ to `main`, and the workflow `.github/workflows/docs.yml` converts, builds, check
 
 **Pages rewritten in the new template are no longer built from their post.** Their source is `pages/` (one MDX file
 per language, same path as in `src/content/docs`) plus a data file per component in `src/data/components/`, which
-holds the input / settings / output tables for both languages. Edit those, not the post. So far: all DataType, Robot/Tool, Core,
-Instruction, ToolPath and Utils pages (`pages/{datatype,robot-tool,core,instruction,toolpath,utils}/` and the same under `pages/en/`). The page parts are in `src/components/doc/`: `DocTags` (category / mode
+holds the input / settings / output tables for both languages. Edit those, not the post. All component pages are
+hand-written (every category folder under `pages/` and `pages/en/`); only the `about/` pages are still built from their posts. The page parts are in `src/components/doc/`: `DocTags` (category / mode
 tags), `ComponentShot` (main component image), `ParamTable` (Name | Type | Description; `optional: true` rows get an
 "옵션 / Optional" pill) and `SettingsPanel` (a settings tab: screenshot beside its table, numbered markers placed by
 each row's `y: [top%, height%]`). `node scripts/extract-component.mjs <post file>` drafts a data file from a post.

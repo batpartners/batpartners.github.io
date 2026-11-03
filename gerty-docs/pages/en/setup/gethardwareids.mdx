@@ -1,0 +1,60 @@
+---
+title: "Get HardwareIDs"
+description: "Hardware-based identifiers (such as MAC address, disk serial number, BIOS/UUID, and USB ID) are collected from the local machine for device identification."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/gethardwareids.mjs";
+
+Hardware-based identifiers (such as MAC address, disk serial number, BIOS/UUID, and USB ID) are collected from the local machine for device identification. The device identifiers are processed locally, and the hardware IDs are neither transmitted externally nor stored.
+
+<DocTags tags={[{ text: "Setup", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/0_GetHardwareIDs.png" alt="Get HardwareIDs" />
+
+## Inputs
+
+This component has no inputs; everything is set in the settings below.
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Place the component on the canvas; this PC's hardware IDs appear in **MachineIDs**, **USBInfos** and **USBIDs**. Press **Refresh** (Actions tab) to read them again.
+2. To request a licence, press **Contact Support** to open the request page.
+
+</Steps>
+
+## Notes
+
+<Aside type="note">
+  The hardware IDs are processed locally only; they are not sent anywhere or stored.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Installation" description="Installation and licence" href="/en/about/installation/" />
+</CardGrid>

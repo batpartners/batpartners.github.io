@@ -1,0 +1,63 @@
+---
+title: "Scan IOSystems"
+description: "연결된 로컬 컨트롤러에서 정의된 모든 I/O 신호명을 가져올 수 있다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/scaniosystems.mjs";
+
+연결된 로컬 컨트롤러에서 정의된 모든 I/O 신호명을 가져올 수 있다.
+
+<DocTags tags={[{ text: "Controller Utils", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/6_ScanIOSystems.png" alt="Scan IOSystems" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **ABB Controller** 에 [Scan ABB Controller](/controller-utils/scanabbcontroller/) 의 출력을 연결한다.
+2. **Gate IO Systems** 탭에서 **Gate** 를 켜고, **IO Units** 와 **Signal Types** 를 고른다.
+3. **SignalsInUnit** 출력의 신호 이름을 [SetOutput](/instruction/setoutput/), [WaitDI](/instruction/waitdi/) 등의 **Signal** 입력에 쓴다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="note">
+  먼저 [ScanABBController](/controller-utils/scanabbcontroller/) 로 컨트롤러에 연결해 두어야 값을 가져온다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="SetOutput" description="출력 신호 값 변경" href="/instruction/setoutput/" />
+  <LinkCard title="WaitDI" description="디지털 입력 신호 대기" href="/instruction/waitdi/" />
+  <LinkCard title="ScanABBController" description="컨트롤러 검색·연결" href="/controller-utils/scanabbcontroller/" />
+</CardGrid>

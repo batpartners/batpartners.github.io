@@ -1,0 +1,64 @@
+---
+title: "Socket Sender"
+description: "It streams and exports the finalized code as motion instruction packets to a local ABB IRC5 controller via a TCP socket."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/socketsender.mjs";
+
+It streams and exports the finalized code as motion instruction packets to a local ABB IRC5 controller via a TCP socket.
+
+<DocTags tags={[{ text: "Controller Utils", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/2_SocketSender.png" alt="Socket Sender" />
+
+## Inputs
+
+<ParamTable rows={d.inputs} lang="en" />
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## How to use
+
+<Steps>
+
+1. Connect the **SocketBundle** output of [Code Solver (Option)](/en/core/code-solver-option/) to **SocketBundle**.
+2. Turn on **Connect** in the **Connect** tab to open the socket to the controller.
+3. If needed, adjust the queue limit, packets per tick, bundle size and interval in the **Queue/Timing** tab.
+4. Turning on **Send** (Contorol tab) starts streaming; turning it off stops sending and pauses the robot. Press **Reset** to send again from the first packet.
+5. Check the communication status and log in the **Log/Status** tab.
+
+</Steps>
+
+## Notes
+
+<Aside type="caution">
+  After **Reset**, the robot stops and then moves again from the start position when it receives the first packet.
+</Aside>
+
+<Aside type="tip">
+  Keep **Bundle Size** at the default 5, at most 8. A shorter **Interval(ms)** responds faster; a longer one lowers the load.
+</Aside>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Code Solver (Option)" description="Builds the SocketBundle (Multi Task)" href="/en/core/code-solver-option/" />
+  <LinkCard title="ScanABBController" description="Find and connect a controller" href="/en/controller-utils/scanabbcontroller/" />
+</CardGrid>

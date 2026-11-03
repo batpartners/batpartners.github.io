@@ -1,0 +1,62 @@
+---
+title: "Get MechUnits"
+description: "연결된 ABB 컨트롤러에서 캘리브레이션된 외부 메커니컬 유닛의 축 좌표계 평면 데이터를 가져오는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/getmechunits.mjs";
+
+연결된 ABB 컨트롤러에서 캘리브레이션된 외부 메커니컬 유닛의 축 좌표계 평면 데이터를 가져오는 컴포넌트이다.
+
+<DocTags tags={[{ text: "Controller Utils", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/0_GetMechUnits.png" alt="Get MechUnits" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 설정 (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} 탭`} rows={t.rows} lang="ko" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **ABB Controller** 에 [Scan ABB Controller](/controller-utils/scanabbcontroller/) 의 출력을 연결한다.
+2. **Mechanical Unit** 탭에서 **Update** 를 눌러 유닛 목록을 갱신하고, **Mechanical Unit** 에서 외부 메커니컬 유닛을 고른다.
+3. **Joint Planes** 와 **Axis Name** 으로 캘리브레이션된 축 좌표계를 받는다. **Info** 와 **Warnings** 로 축 구성과 경고(미캘리브레이션·잠금 축 등)를 확인한다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="note">
+  먼저 [ScanABBController](/controller-utils/scanabbcontroller/) 로 컨트롤러에 연결해 두어야 값을 가져온다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="ScanABBController" description="컨트롤러 검색·연결" href="/controller-utils/scanabbcontroller/" />
+  <LinkCard title="ABB Positioner" description="외부축 포지셔너" href="/robot-tool/positioner/" />
+</CardGrid>

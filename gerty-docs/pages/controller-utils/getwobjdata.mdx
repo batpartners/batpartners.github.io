@@ -1,0 +1,50 @@
+---
+title: "Get WobjData"
+description: "현재 연결된 오프라인 컨트롤러상에서 활성화된 워크오브젝트 데이터를 가져오는 컴포넌트이다."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../components/doc/DocTags.astro";
+import * as d from "../../../data/components/getwobjdata.mjs";
+
+현재 연결된 오프라인 컨트롤러상에서 활성화된 워크오브젝트 데이터를 가져오는 컴포넌트이다.
+
+<DocTags tags={[{ text: "Controller Utils", tone: "accent" }]} />
+
+## 컴포넌트
+
+<ComponentShot src="/assets/images/4_GetWobjData.png" alt="Get WobjData" />
+
+## 입력
+
+<ParamTable rows={d.inputs} lang="ko" />
+
+## 출력
+
+<ParamTable rows={d.outputs} lang="ko" />
+
+## 사용 순서
+
+<Steps>
+
+1. **ABB Controller** 에 [Scan ABB Controller](/controller-utils/scanabbcontroller/) 의 출력을 연결한다.
+2. **UserFrame**(uFrame), **ObjFrame**(oFrame) 평면과 **WobjData** 를 받아 타겟의 작업 좌표계로 쓴다.
+
+</Steps>
+
+## 주의 사항
+
+<Aside type="note">
+  먼저 [ScanABBController](/controller-utils/scanabbcontroller/) 로 컨트롤러에 연결해 두어야 값을 가져온다.
+</Aside>
+
+## 관련 항목
+
+<CardGrid>
+  <LinkCard title="WobjData" description="작업 좌표계" href="/datatype/wobjdata/" />
+  <LinkCard title="ScanABBController" description="컨트롤러 검색·연결" href="/controller-utils/scanabbcontroller/" />
+  <LinkCard title="ToolData" description="툴 데이터 정의" href="/datatype/tooldata/" />
+</CardGrid>

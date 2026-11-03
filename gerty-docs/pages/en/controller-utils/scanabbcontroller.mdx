@@ -1,0 +1,58 @@
+---
+title: "ScanABBController"
+description: "This component finds the ABB robot controllers available on the local network and connects to one."
+---
+
+import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import ParamTable from "../../../../components/doc/ParamTable.astro";
+import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
+import ComponentShot from "../../../../components/doc/ComponentShot.astro";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import * as d from "../../../../data/components/scanabbcontroller.mjs";
+
+This component finds the ABB robot controllers available on the local network and connects to one.
+
+<DocTags tags={[{ text: "Controller Utils", tone: "accent" }]} />
+
+## Component
+
+<ComponentShot src="/assets/images/1_ScanController.png" alt="ScanABBController" />
+
+## Inputs
+
+This component has no inputs; everything is set in the settings below.
+
+## Settings (GERTY UI)
+
+{d.groups.map((g) => (
+  <Tabs>
+    {g.map((t) => (
+      <TabItem label={t.label}>
+        <SettingsPanel img={t.img} alt={`${t.label} tab`} rows={t.rows} lang="en" />
+      </TabItem>
+    ))}
+  </Tabs>
+))}
+
+## Outputs
+
+<ParamTable rows={d.outputs} lang="en" />
+
+## How to use
+
+<Steps>
+
+1. Pick the **Controller Type** in the **ABB Controller** tab and press **Scan** to search.
+2. Pick the controller in **Controller** (Connect tab) and turn on **Connect**.
+3. Check the connected controller in the **Info** tab.
+4. Connect the **ABB Controller** output to the **ABB Controller** input of the Controller components and [Code Solver](/en/core/code-solver/).
+
+</Steps>
+
+## Related
+
+<CardGrid>
+  <LinkCard title="Code Solver" description="RAPID export and upload" href="/en/core/code-solver/" />
+  <LinkCard title="RealTime Display" description="Live robot pose and signals" href="/en/controller-utils/realtimedisplay/" />
+  <LinkCard title="Socket Sender" description="Streams instructions over a socket" href="/en/controller-utils/socketsender/" />
+</CardGrid>
