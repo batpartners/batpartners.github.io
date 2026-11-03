@@ -198,6 +198,7 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
         </tr>
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/3_ToolData_20.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -238,7 +239,7 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
       </tbody>
     </table>
     <br>    
-<p align="center">  <img src="/assets/images/3_ToolData_3.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/3_ToolData_21.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -259,7 +260,7 @@ Redefines user-defined tool (end-effector) data. The default is tool0, which cor
       </tbody>
     </table>
     <br>
-<p align="center">  <img src="/assets/images/3_ToolData_5.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/3_ToolData_23.png" align="center" width="45%"></p>
   </div>  
 </div>
 

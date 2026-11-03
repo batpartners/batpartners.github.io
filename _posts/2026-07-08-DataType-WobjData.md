@@ -199,6 +199,7 @@ WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
         </tr>
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/2_WobjData_4.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content2">
@@ -218,6 +219,7 @@ WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
         </tr>
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/2_WobjData_5.png" align="center" width="45%"></p>
   </div>
 </div>
 

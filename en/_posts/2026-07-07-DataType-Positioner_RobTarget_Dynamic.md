@@ -194,6 +194,7 @@ Positioner Robtarget defines a RobTarget including the rotation angle of the pos
         </tr>
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/1_Positioner_Robtarget_10.png" align="center" width="45%"></p>
   </div>
 </div>
 <div class="tabs-container">

@@ -181,6 +181,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
         </tr>
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/7_SeamData_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
@@ -228,7 +229,9 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
+    <p align="center">
+  <img src="/assets/images/7_SeamData_11.png" style="display: inline-block; width: 45%; margin-right: 5px;">
+</p>
   </div>
 
   <div class="tab-content" id="content3">
@@ -264,7 +267,9 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_1.png" align="center" width="32%"></p>
+    <p align="center">
+  <img src="/assets/images/7_SeamData_12.png" style="display: inline-block; width: 45%; margin-right: 5px;">
+</p>
   </div>
 
   <div class="tab-content" id="content4">
@@ -300,7 +305,9 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_2.png" align="center" width="32%"></p>
+    <p align="center">
+  <img src="/assets/images/7_SeamData_13.png" style="display: inline-block; width: 45%; margin-right: 5px;">
+</p>
   </div>
 </div>
 
@@ -343,7 +350,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_13_1.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content6">
@@ -374,7 +381,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_20.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_14.png" align="center" width="45%"></p>
   </div>
 
   <div class="tab-content" id="content7">
@@ -415,7 +422,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
       </tbody>
     </table>
     <br>
-    <p align="center">  <img src="/assets/images/7_SeamData_21.png" align="center" width="32%"></p>
+    <p align="center">  <img src="/assets/images/7_SeamData_15.png" align="center" width="45%"></p>
   </div>
 </div>
 

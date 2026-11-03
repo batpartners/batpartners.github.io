@@ -1,5 +1,5 @@
 ---
-title: "WobjData"
+title: "WobjData(Movable)"
 layout: single
 header:
   teaser: "/assets/images/04_WobjData.png"
@@ -35,7 +35,7 @@ wobjdata is a data type that defines the unique coordinate system of the workpie
 
 It can be defined by the user from the world coordinate system to the local coordinate system of the workbench. The user frame (uframe) and object frame (oframe) redefine the target plane coordinates relative to the workobject. Additionally, by right-clicking the component icon, users can choose between two modes: Movable (a workobject driven by external axes) and Fixed (a fixed, standard workobject).
 
-<p align="center">  <img src="/assets/images/2_WobjData.png" align="center" width="32%"></p>
+<p align="center">  <img src="/assets/images/2_WobjData_2.png" align="center" width="32%"></p>
 
 
 # | Inputs
@@ -43,7 +43,6 @@ It can be defined by the user from the world coordinate system to the local coor
 | Name | Type | Description |
 | :--- | :--- | :--- |
 | *User Frame* | Plane | The plane used as the User Frame (`uframe`) for the `WobjData`. |
-| *Object Frame* | Plane | The plane used as the Object Frame (`oframe`) for the `WobjData`. |
 | *Override Wobj* | Plane | Overrides the component's output with the provided Work Object data (Optional). When connected, this data takes priority regardless of other inputs. |
 
 ## | Flexible Options
@@ -174,6 +173,7 @@ It can be defined by the user from the world coordinate system to the local coor
         </tr>
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/2_WobjData_6.png" align="center" width="45%"></p>
   </div>
   <div class="tab-content" id="content2">
     <table class="spec-table" style="margin: 0 0 20px 0;">
@@ -192,6 +192,7 @@ It can be defined by the user from the world coordinate system to the local coor
         </tr>
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/2_WobjData_7.png" align="center" width="45%"></p>
   </div>
 </div>
 

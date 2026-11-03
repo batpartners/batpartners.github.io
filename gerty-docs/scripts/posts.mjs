@@ -108,6 +108,7 @@ function applySourceFixes(posts) {
   const enWobj = post("en", "2026-07-08-DataType-WobjData.md");
   const shot = (file, br) => `${br ? "    <br>\n" : ""}  <p align="center">  <img src="/assets/images/${file}" align="center" width="45%"></p>\n`;
   const addShots = (body, shots) => {
+    if (shots.every((s) => body.includes(s.match(/images\/([^"]+)"/)[1]))) return body; // already in the source
     const ends = body.match(/<\/table>\r?\n {2}<\/div>/g) ?? [];
     if (ends.length !== shots.length) throw new Error(`Source fix: WobjData has ${ends.length} tab tables, expected ${shots.length}`);
     let i = 0;

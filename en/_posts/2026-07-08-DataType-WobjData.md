@@ -174,6 +174,7 @@ It can be defined by the user from the world coordinate system to the local coor
         </tr>
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/2_WobjData_4.png" align="center" width="45%"></p>
   </div>
   <div class="tab-content" id="content2">
     <table class="spec-table" style="margin: 0 0 20px 0;">
@@ -192,6 +193,7 @@ It can be defined by the user from the world coordinate system to the local coor
         </tr>
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/2_WobjData_5.png" align="center" width="45%"></p>
   </div>
 </div>
 

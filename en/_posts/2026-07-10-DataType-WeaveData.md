@@ -188,6 +188,7 @@ This is a component that defines the weaving motion performed during arc welding
         </tr>
       </tbody>
     </table>
+    <p align="center">  <img src="/assets/images/9_WeaveData_10.png" align="center" width="45%"></p>
   </div>
 </div>
 
