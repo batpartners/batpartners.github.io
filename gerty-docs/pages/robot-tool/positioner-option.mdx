@@ -3,11 +3,12 @@ title: "ABB Positioner (Extra Option)"
 description: "사용할 ABB 포지셔너 로봇을 사용자 정의할 수 있는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/positioner-option.mjs";
 
 사용할 ABB 포지셔너 로봇을 사용자 정의할 수 있는 컴포넌트이다. 사용자가 소유하고 있는 포지셔너 세부 설정을 완료 후, 시뮬레이션 작업이 가능하다. 컴포넌트 아이콘 우클릭 후, [Define Positioner]를 선택하여 설정할 수 있다.
@@ -61,8 +62,8 @@ import * as d from "../../../data/components/positioner-option.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="ABB Robots" description="Positioner 를 받는 로봇" href="/robot-tool/abbrobot/" />
-  <LinkCard title="Positioner RobTarget" description="포지셔너 회전각을 포함한 타겟" href="/datatype/positioner-robtarget/" />
-  <LinkCard title="CreateWorkBench" description="포지셔너에 다는 워크벤치" href="/robot-tool/createworkbench/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ABB Robots", description: "Positioner 를 받는 로봇", href: "/robot-tool/abbrobot/" },
+  { title: "Positioner RobTarget", description: "포지셔너 회전각을 포함한 타겟", href: "/datatype/positioner-robtarget/" },
+  { title: "CreateWorkBench", description: "포지셔너에 다는 워크벤치", href: "/robot-tool/createworkbench/" },
+]} />

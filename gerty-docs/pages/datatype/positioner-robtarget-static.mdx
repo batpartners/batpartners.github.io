@@ -3,11 +3,12 @@ title: "Positioner RobTarget (Static)"
 description: "Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget을 생성하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/positioner-robtarget-static.mjs";
 
 Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget을 생성하는 컴포넌트이다. 컴포넌트 아이콘을 우클릭하여 Dynamic 및 Static 모드로 전환할 수 있다.
@@ -68,8 +69,8 @@ Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="ABB Positioner" description="포지셔너 컴포넌트" href="/robot-tool/positioner/" />
-  <LinkCard title="RobTarget" description="포지셔너 없는 로봇 타겟" href="/datatype/robtarget/" />
-  <LinkCard title="WobjData" description="작업물 좌표계" href="/datatype/wobjdata/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ABB Positioner", description: "포지셔너 컴포넌트", href: "/robot-tool/positioner/" },
+  { title: "RobTarget", description: "포지셔너 없는 로봇 타겟", href: "/datatype/robtarget/" },
+  { title: "WobjData", description: "작업물 좌표계", href: "/datatype/wobjdata/" },
+]} />

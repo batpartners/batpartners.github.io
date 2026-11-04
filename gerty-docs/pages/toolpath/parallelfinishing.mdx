@@ -3,11 +3,12 @@ title: "ParallelFinishing"
 description: "일방향으로 평행한 Contour 커브를 따라 정삭(Finishing) 툴패스를 생성하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/parallelfinishing.mjs";
 
 일방향으로 평행한 Contour 커브를 따라 정삭(Finishing) 툴패스를 생성하는 컴포넌트이다. 사용자는 작업물 형상에 맞게 타켓 평면 사이의 거리와, 레이어간 간격, 틸팅 등의 세부 설정을 할 수 있다.
@@ -50,8 +51,8 @@ import * as d from "../../../data/components/parallelfinishing.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Roughing" description="계단식 황삭" href="/toolpath/roughing/" />
-  <LinkCard title="UVFinishing" description="UV 방향 정삭" href="/toolpath/uv-finishing/" />
-  <LinkCard title="RobTarget" description="타겟 평면을 로봇 타겟으로 변환" href="/datatype/robtarget/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Roughing", description: "계단식 황삭", href: "/toolpath/roughing/" },
+  { title: "UVFinishing", description: "UV 방향 정삭", href: "/toolpath/uv-finishing/" },
+  { title: "RobTarget", description: "타겟 평면을 로봇 타겟으로 변환", href: "/datatype/robtarget/" },
+]} />

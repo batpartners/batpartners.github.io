@@ -3,11 +3,12 @@ title: "Surface Shell (Extra Option)"
 description: "This is a component that generates a shell (or perimeter) deposition toolpath for open surface geometries."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/surfaceshell-option.mjs";
 
 This is a component that generates a shell (or perimeter) deposition toolpath for open surface geometries. It allows for detailed configurations such as target plane spacing, height, working direction (zigzag, one-way), and tilting angle. For large geometries, the working data can be exported by dividing it into partitions. Right-clicking the icon allows you to switch to the Use AntiOverhang mode, which enables detailed settings for workpieces with overhangs.
@@ -61,8 +62,8 @@ This page covers the form with the added <strong>Angle Ranges</strong> and <stro
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Surface Shell" description="Shell paths of an open surface" href="/en/toolpath/surfaceshell/" />
-  <LinkCard title="Deposition Builder" description="Splits deposition paths into extrusion start, move and stop" href="/en/toolpath/depositionbuilder/" />
-  <LinkCard title="WAAM Builder" description="Splits WAAM paths by layer kind" href="/en/toolpath/waambuilder/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Surface Shell", description: "Shell paths of an open surface", href: "/en/toolpath/surfaceshell/" },
+  { title: "Deposition Builder", description: "Splits deposition paths into extrusion start, move and stop", href: "/en/toolpath/depositionbuilder/" },
+  { title: "WAAM Builder", description: "Splits WAAM paths by layer kind", href: "/en/toolpath/waambuilder/" },
+]} />

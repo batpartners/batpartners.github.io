@@ -3,11 +3,12 @@ title: "Solid Fill"
 description: "This is a deposition toolpath component that fills the inside of the outer boundary based on the GERTYShellData."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/solidfill.mjs";
 
 This is a deposition toolpath component that fills the inside of the outer boundary based on the GERTYShellData. It allows you to determine detailed settings such as the fill shape and spacing.
@@ -51,8 +52,8 @@ This is a deposition toolpath component that fills the inside of the outer bound
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Solid Offset Fill" description="Offset infill" href="/en/toolpath/solidoffsetfill/" />
-  <LinkCard title="Solid Shell" description="Shell paths of a closed solid" href="/en/toolpath/solidshell/" />
-  <LinkCard title="Deposition Builder" description="Splits deposition paths into extrusion start, move and stop" href="/en/toolpath/depositionbuilder/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Solid Offset Fill", description: "Offset infill", href: "/en/toolpath/solidoffsetfill/" },
+  { title: "Solid Shell", description: "Shell paths of a closed solid", href: "/en/toolpath/solidshell/" },
+  { title: "Deposition Builder", description: "Splits deposition paths into extrusion start, move and stop", href: "/en/toolpath/depositionbuilder/" },
+]} />

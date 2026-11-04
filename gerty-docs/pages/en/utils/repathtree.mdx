@@ -3,11 +3,12 @@ title: "Repath Tree"
 description: "This component renumbers the branch paths of a DataTree while keeping the branch contents."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/repathtree.mjs";
 
 This component renumbers the branch paths of a DataTree while keeping the branch contents. Right-click the icon and pick one of three patterns from the context menu.
@@ -51,7 +52,7 @@ This component renumbers the branch paths of a DataTree while keeping the branch
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Extract PathIdx" description="Read an index from branch paths" href="/en/utils/extractpathidx/" />
-  <LinkCard title="Tree Branch" description="Take one branch" href="/en/utils/treebranch/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Extract PathIdx", description: "Read an index from branch paths", href: "/en/utils/extractpathidx/" },
+  { title: "Tree Branch", description: "Take one branch", href: "/en/utils/treebranch/" },
+]} />

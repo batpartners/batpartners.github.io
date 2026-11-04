@@ -3,11 +3,12 @@ title: "Wait Time"
 description: "WaitTime은 지정된 시간 (초) 동안 로봇 모션을 일시 정지시키는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/wait-time.mjs";
 
 WaitTime은 지정된 시간 (초) 동안 로봇 모션을 일시 정지시키는 컴포넌트이다.
@@ -50,6 +51,6 @@ WaitTime은 지정된 시간 (초) 동안 로봇 모션을 일시 정지시키�
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="WaitDI" description="디지털 입력 신호 대기" href="/instruction/waitdi/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "WaitDI", description: "디지털 입력 신호 대기", href: "/instruction/waitdi/" },
+]} />

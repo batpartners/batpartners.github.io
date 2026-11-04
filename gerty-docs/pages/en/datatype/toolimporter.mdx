@@ -3,11 +3,12 @@ title: "Tool Importer"
 description: "Tool Importer is the Import mode of ToolData."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/toolimporter.mjs";
 
 Tool Importer is the Import mode of ToolData. It loads tool data saved with <strong>Export</strong> in [ToolData](/en/datatype/tooldata/) and builds an ABB `tooldata`.
@@ -56,7 +57,7 @@ Tool Importer is the Import mode of ToolData. It loads tool data saved with <str
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="ToolData" description="Define tool data (Define mode)" href="/en/datatype/tooldata/" />
-  <LinkCard title="ABB Robots" description="Robot component that takes the Tool Data" href="/en/robot-tool/abbrobot/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ToolData", description: "Define tool data (Define mode)", href: "/en/datatype/tooldata/" },
+  { title: "ABB Robots", description: "Robot component that takes the Tool Data", href: "/en/robot-tool/abbrobot/" },
+]} />

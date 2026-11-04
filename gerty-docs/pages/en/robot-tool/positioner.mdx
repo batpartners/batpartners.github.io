@@ -3,11 +3,12 @@ title: "ABB Positioner"
 description: "This is a component that imports and defines the ABB positioner robot to be used."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/positioner.mjs";
 
 This is a component that imports and defines the ABB positioner robot to be used. It supports and allows you to select ABB IRBP series positioners owned by the user.
@@ -58,9 +59,9 @@ You can configure detailed tasks and simulations for the specified model.
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="ABB Robots" description="Robot that takes the Positioner" href="/en/robot-tool/abbrobot/" />
-  <LinkCard title="Positioner RobTarget" description="Targets with positioner angles" href="/en/datatype/positioner-robtarget/" />
-  <LinkCard title="CreateWorkBench" description="Workbench on the positioner" href="/en/robot-tool/createworkbench/" />
-  <LinkCard title="ABB Positioner (Extra Option)" description="Define your own positioner" href="/en/robot-tool/positioner-option/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ABB Robots", description: "Robot that takes the Positioner", href: "/en/robot-tool/abbrobot/" },
+  { title: "Positioner RobTarget", description: "Targets with positioner angles", href: "/en/datatype/positioner-robtarget/" },
+  { title: "CreateWorkBench", description: "Workbench on the positioner", href: "/en/robot-tool/createworkbench/" },
+  { title: "ABB Positioner (Extra Option)", description: "Define your own positioner", href: "/en/robot-tool/positioner-option/" },
+]} />

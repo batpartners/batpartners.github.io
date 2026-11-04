@@ -3,11 +3,12 @@ title: "Solid Shell"
 description: "닫힌 솔리드 형상에서 외곽(Shell) 적층 툴패스를 생성하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/solidshell.mjs";
 
 닫힌 솔리드 형상에서 외곽(Shell) 적층 툴패스를 생성하는 컴포넌트이다. 타겟평면의 시작 위치, 간격, 높이, 틸딩 정도 등의 세부 설정이 가능하며, 형상이 큰 경우, 파티션으로 나누어 작업 데이터를 내보낼 수 있다. 아이콘 우클릭 시, `Use AntiOverhang` 모드로 전환이 가능하며, 해당 모드의 경우 오버행이 들어간 작업물의 세부 설정이 가능하다.
@@ -58,10 +59,10 @@ import * as d from "../../../data/components/solidshell.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Solid Fill" description="패턴으로 내부 채움" href="/toolpath/solidfill/" />
-  <LinkCard title="Solid Offset Fill" description="외곽 오프셋으로 내부 채움" href="/toolpath/solidoffsetfill/" />
-  <LinkCard title="Deposition Builder" description="적층 경로를 압출 시작·이동·종료로 분리" href="/toolpath/depositionbuilder/" />
-  <LinkCard title="WAAM Builder" description="WAAM 적층 경로를 레이어 종류별로 분리" href="/toolpath/waambuilder/" />
-  <LinkCard title="Solid Shell (Extra Option)" description="Angle Ranges / Multiple 입력 추가" href="/toolpath/solidshell-option/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Solid Fill", description: "패턴으로 내부 채움", href: "/toolpath/solidfill/" },
+  { title: "Solid Offset Fill", description: "외곽 오프셋으로 내부 채움", href: "/toolpath/solidoffsetfill/" },
+  { title: "Deposition Builder", description: "적층 경로를 압출 시작·이동·종료로 분리", href: "/toolpath/depositionbuilder/" },
+  { title: "WAAM Builder", description: "WAAM 적층 경로를 레이어 종류별로 분리", href: "/toolpath/waambuilder/" },
+  { title: "Solid Shell (Extra Option)", description: "Angle Ranges / Multiple 입력 추가", href: "/toolpath/solidshell-option/" },
+]} />

@@ -3,11 +3,12 @@ title: "ToolData"
 description: "툴(엔드 이펙터)의 형상, 장착 기준면, TCP, 부하 데이터를 받아 ABB tooldata 를 만든다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/tooldata.mjs";
 
 툴(엔드 이펙터)의 형상, 장착 기준면, TCP, 부하 데이터를 받아 ABB `tooldata` 를 만든다. 만든 툴 데이터는 ABB Robots 컴포넌트에 연결해 로봇 프로그램 전체에서 쓴다. 저장해 둔 툴을 불러오려면 [Tool Importer](/datatype/toolimporter/) 를 쓴다.
@@ -61,8 +62,8 @@ import * as d from "../../../data/components/tooldata.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Tool Importer" description="저장해 둔 툴 데이터 불러오기 (Import 모드)" href="/datatype/toolimporter/" />
-  <LinkCard title="ABB Robots" description="Tool Data 를 받는 로봇 컴포넌트" href="/robot-tool/abbrobot/" />
-  <LinkCard title="Get ToolData" description="컨트롤러에 있는 툴 데이터 가져오기" href="/controller-utils/gettooldata/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Tool Importer", description: "저장해 둔 툴 데이터 불러오기 (Import 모드)", href: "/datatype/toolimporter/" },
+  { title: "ABB Robots", description: "Tool Data 를 받는 로봇 컴포넌트", href: "/robot-tool/abbrobot/" },
+  { title: "Get ToolData", description: "컨트롤러에 있는 툴 데이터 가져오기", href: "/controller-utils/gettooldata/" },
+]} />

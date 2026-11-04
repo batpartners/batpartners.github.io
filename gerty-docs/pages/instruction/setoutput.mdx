@@ -3,11 +3,12 @@ title: "SetOutput"
 description: "SetOutput 은 디지털, 그룹, 아날로그 출력 신호 값을 바꾸는 SetDO / SetGO / SetAO 인스트럭션을 만드는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/setoutput.mjs";
 
 SetOutput 은 디지털, 그룹, 아날로그 출력 신호 값을 바꾸는 `SetDO` / `SetGO` / `SetAO` 인스트럭션을 만드는 컴포넌트이다. 신호 유형은 <strong>Signal Type</strong> 에서 고른다. DO 는 Digital Output, GO 는 Group Output, AO 는 Analog Output 이다.
@@ -50,8 +51,8 @@ SetOutput 은 디지털, 그룹, 아날로그 출력 신호 값을 바꾸는 `Se
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="MoveOutput" description="출력 신호를 동반하는 이동 명령" href="/instruction/moveoutput/" />
-  <LinkCard title="WaitDI" description="디지털 입력 신호 대기" href="/instruction/waitdi/" />
-  <LinkCard title="IOEvent" description="경로 위 I/O 트리거" href="/datatype/iodevent/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "MoveOutput", description: "출력 신호를 동반하는 이동 명령", href: "/instruction/moveoutput/" },
+  { title: "WaitDI", description: "디지털 입력 신호 대기", href: "/instruction/waitdi/" },
+  { title: "IOEvent", description: "경로 위 I/O 트리거", href: "/datatype/iodevent/" },
+]} />

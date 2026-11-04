@@ -3,11 +3,12 @@ title: "Code Solver (Option)"
 description: "정의된 RAPID 로봇 모션으로부터 프로그램 파일을 생성하며, 네트워크에 연결된 ABB 컨트롤러로 코드 파일 로드 및 업로드 작업을 하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/code-solver-option.mjs";
 
 정의된 RAPID 로봇 모션으로부터 프로그램 파일을 생성하며, 네트워크에 연결된 ABB 컨트롤러로 코드 파일 로드 및 업로드 작업을 하는 컴포넌트이다.
@@ -60,9 +61,9 @@ import * as d from "../../../data/components/code-solver-option.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="GERTY Core" description="로봇 동작 계산" href="/core/gerty-core/" />
-  <LinkCard title="Display Solver" description="뷰포트 시뮬레이션" href="/core/display-solver/" />
-  <LinkCard title="Analysis Deconstructor" description="축 각도와 오류 로그" href="/core/analysis/" />
-  <LinkCard title="Socket Sender" description="SocketBundle 전송" href="/controller-utils/socketsender/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "GERTY Core", description: "로봇 동작 계산", href: "/core/gerty-core/" },
+  { title: "Display Solver", description: "뷰포트 시뮬레이션", href: "/core/display-solver/" },
+  { title: "Analysis Deconstructor", description: "축 각도와 오류 로그", href: "/core/analysis/" },
+  { title: "Socket Sender", description: "SocketBundle 전송", href: "/controller-utils/socketsender/" },
+]} />

@@ -3,11 +3,12 @@ title: "ToolData"
 description: "Takes the tool (end-effector) shape, mounting plane, TCP and load data, and builds an ABB tooldata."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/tooldata.mjs";
 
 Takes the tool (end-effector) shape, mounting plane, TCP and load data, and builds an ABB `tooldata`. Connect it to the ABB Robots component to use it across the whole robot program. To load a saved tool, use [Tool Importer](/en/datatype/toolimporter/).
@@ -61,8 +62,8 @@ Takes the tool (end-effector) shape, mounting plane, TCP and load data, and buil
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Tool Importer" description="Load saved tool data (Import mode)" href="/en/datatype/toolimporter/" />
-  <LinkCard title="ABB Robots" description="Robot component that takes the Tool Data" href="/en/robot-tool/abbrobot/" />
-  <LinkCard title="Get ToolData" description="Read tool data from the controller" href="/en/controller-utils/gettooldata/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Tool Importer", description: "Load saved tool data (Import mode)", href: "/en/datatype/toolimporter/" },
+  { title: "ABB Robots", description: "Robot component that takes the Tool Data", href: "/en/robot-tool/abbrobot/" },
+  { title: "Get ToolData", description: "Read tool data from the controller", href: "/en/controller-utils/gettooldata/" },
+]} />

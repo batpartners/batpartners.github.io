@@ -3,11 +3,12 @@ title: "WeaveData"
 description: "This is a component that defines the weaving motion performed during arc welding."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/weavedata.mjs";
 
 This is a component that defines the weaving motion performed during arc welding. It specifies the weaving pattern, amplitude, and frequency parameters.
@@ -60,7 +61,7 @@ This component has no inputs; everything is set in the settings below.
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="WeldData" description="Weld data that takes the WeaveData" href="/en/datatype/welddata/" />
-  <LinkCard title="SeamData" description="Seam start and end data" href="/en/datatype/seamdata/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "WeldData", description: "Weld data that takes the WeaveData", href: "/en/datatype/welddata/" },
+  { title: "SeamData", description: "Seam start and end data", href: "/en/datatype/seamdata/" },
+]} />

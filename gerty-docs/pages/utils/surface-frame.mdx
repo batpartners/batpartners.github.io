@@ -3,11 +3,12 @@ title: "Surface Frame"
 description: "평면 서피스로부터 기준 평면을 설정하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/surface-frame.mjs";
 
 평면 서피스로부터 기준 평면을 설정하는 컴포넌트이다.
@@ -50,7 +51,7 @@ import * as d from "../../../data/components/surface-frame.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Overhang Mapper" description="오버행 색상 표시" href="/utils/overhangmapper/" />
-  <LinkCard title="Solid Shell" description="외곽 적층 경로 생성" href="/toolpath/solidshell/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Overhang Mapper", description: "오버행 색상 표시", href: "/utils/overhangmapper/" },
+  { title: "Solid Shell", description: "외곽 적층 경로 생성", href: "/toolpath/solidshell/" },
+]} />

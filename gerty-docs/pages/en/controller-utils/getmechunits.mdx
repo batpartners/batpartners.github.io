@@ -3,11 +3,12 @@ title: "Get MechUnits"
 description: "A component that retrieves the axis coordinate system plane data of calibrated external mechanical units from the connected ABB controller."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/getmechunits.mjs";
 
 A component that retrieves the axis coordinate system plane data of calibrated external mechanical units from the connected ABB controller.
@@ -56,7 +57,7 @@ A component that retrieves the axis coordinate system plane data of calibrated e
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="ScanABBController" description="Find and connect a controller" href="/en/controller-utils/scanabbcontroller/" />
-  <LinkCard title="ABB Positioner" description="External-axis positioner" href="/en/robot-tool/positioner/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ScanABBController", description: "Find and connect a controller", href: "/en/controller-utils/scanabbcontroller/" },
+  { title: "ABB Positioner", description: "External-axis positioner", href: "/en/robot-tool/positioner/" },
+]} />

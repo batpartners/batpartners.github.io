@@ -3,11 +3,12 @@ title: "FlyByTree"
 description: "두개 이상의 Target Plane 경로를 설정할 수 있는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/flybytree.mjs";
 
 두개 이상의 Target Plane 경로를 설정할 수 있는 컴포넌트이다. 각 Branch 사이를 연결하는 전이경로(Flyby) 타겟 평면 생성하며, 경로 Segment 간 이동 시 작업물에서 이탈하는 구간의 경로를 재구성하여 사용자가 설정한 값에 따라 타겟평면을 결정한다.
@@ -52,8 +53,8 @@ import * as d from "../../../data/components/flybytree.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="FlyByBranch" description="경로 사이 전이 경로" href="/toolpath/flybybranch/" />
-  <LinkCard title="FlyByCustom" description="벡터로 정한 전이 경로" href="/toolpath/flybycustom/" />
-  <LinkCard title="RobTarget" description="타겟 평면을 로봇 타겟으로 변환" href="/datatype/robtarget/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "FlyByBranch", description: "경로 사이 전이 경로", href: "/toolpath/flybybranch/" },
+  { title: "FlyByCustom", description: "벡터로 정한 전이 경로", href: "/toolpath/flybycustom/" },
+  { title: "RobTarget", description: "타겟 평면을 로봇 타겟으로 변환", href: "/datatype/robtarget/" },
+]} />

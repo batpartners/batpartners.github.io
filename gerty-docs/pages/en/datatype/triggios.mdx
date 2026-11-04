@@ -3,11 +3,12 @@ title: "TriggIOs"
 description: "Defines a position trigger that generates one or more I/O events at specified locations along the motion path, allowing the user to define the variable name of the signal."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/triggios.mjs";
 
 Defines a position trigger that generates one or more I/O events at specified locations along the motion path, allowing the user to define the variable name of the signal. Used in conjunction with ABB Trigger Move instructions (TriggLIOs, TriggJIOs).
@@ -50,7 +51,7 @@ Defines a position trigger that generates one or more I/O events at specified lo
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="IOEvent" description="Defines one trigger event" href="/en/datatype/iodevent/" />
-  <LinkCard title="TriggerIOMove" description="Move instruction used with triggers" href="/en/instruction/triggeriomove/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "IOEvent", description: "Defines one trigger event", href: "/en/datatype/iodevent/" },
+  { title: "TriggerIOMove", description: "Move instruction used with triggers", href: "/en/instruction/triggeriomove/" },
+]} />

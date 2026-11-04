@@ -3,11 +3,12 @@ title: "WeldData"
 description: "This is a component that defines parameters for the actual welding section where the arc is stably maintained."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/welddata.mjs";
 
 This is a component that defines parameters for the actual welding section where the arc is stably maintained. It allows you to specify welding speed, voltage, wire feed conditions, and other parameters applied along the seam.
@@ -51,8 +52,8 @@ This is a component that defines parameters for the actual welding section where
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="SeamData" description="Seam start and end data" href="/en/datatype/seamdata/" />
-  <LinkCard title="WeaveData" description="Weaving motion" href="/en/datatype/weavedata/" />
-  <LinkCard title="ArcMove" description="Arc welding move" href="/en/instruction/arcmove/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "SeamData", description: "Seam start and end data", href: "/en/datatype/seamdata/" },
+  { title: "WeaveData", description: "Weaving motion", href: "/en/datatype/weavedata/" },
+  { title: "ArcMove", description: "Arc welding move", href: "/en/instruction/arcmove/" },
+]} />

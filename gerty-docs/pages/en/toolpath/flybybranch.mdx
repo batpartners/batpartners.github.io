@@ -3,11 +3,12 @@ title: "FlyByBranch"
 description: "This is a component that generates a transition path (Flyby) target plane connecting each branch of a target plane data tree."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/flybybranch.mjs";
 
 This is a component that generates a transition path (Flyby) target plane connecting each branch of a target plane data tree. When moving between path segments, it reconstructs the path of the section that departs from the workpiece and determines the target plane according to the value set by the user.
@@ -58,8 +59,8 @@ This is a component that generates a transition path (Flyby) target plane connec
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="FlyByCustom" description="Fly-by paths from your own vectors" href="/en/toolpath/flybycustom/" />
-  <LinkCard title="FlyByTree" description="Fly-by paths for several path trees" href="/en/toolpath/flybytree/" />
-  <LinkCard title="RobTarget" description="Turns target planes into robot targets" href="/en/datatype/robtarget/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "FlyByCustom", description: "Fly-by paths from your own vectors", href: "/en/toolpath/flybycustom/" },
+  { title: "FlyByTree", description: "Fly-by paths for several path trees", href: "/en/toolpath/flybytree/" },
+  { title: "RobTarget", description: "Turns target planes into robot targets", href: "/en/datatype/robtarget/" },
+]} />

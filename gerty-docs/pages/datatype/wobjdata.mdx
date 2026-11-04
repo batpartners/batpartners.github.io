@@ -3,11 +3,12 @@ title: "WobjData"
 description: "WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/wobjdata.mjs";
 
 WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로봇이 작업하는 대상(작업물)의 고유 좌표계를 정의하며, 도면 기반의 직관적인 프로그래밍을 돕고 설치 환경 변화 시 좌표계 수정만으로 프로그램의 재사용을 가능하게 한다. 컴포넌트 아이콘을 우클릭하여 Movable(외부축에 의해 움직이는 워크오브젝트) 및 Fixed(고정된 일반 워크오브젝트) 두 가지 모드로 전환할 수 있다.
@@ -62,7 +63,7 @@ WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="RobTarget" description="WobjData 를 받는 타겟" href="/datatype/robtarget/" />
-  <LinkCard title="Get WobjData" description="컨트롤러에 있는 WobjData 가져오기" href="/controller-utils/getwobjdata/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "RobTarget", description: "WobjData 를 받는 타겟", href: "/datatype/robtarget/" },
+  { title: "Get WobjData", description: "컨트롤러에 있는 WobjData 가져오기", href: "/controller-utils/getwobjdata/" },
+]} />

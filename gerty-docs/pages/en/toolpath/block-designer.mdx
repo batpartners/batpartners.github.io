@@ -3,11 +3,12 @@ title: "Block Designer"
 description: "This is a component that generates Place targets to arrange blocks in a standard stacking pattern based on block units and wall geometry."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/block-designer.mjs";
 
 This is a component that generates Place targets to arrange blocks in a standard stacking pattern based on block units and wall geometry.
@@ -51,7 +52,7 @@ This is a component that generates Place targets to arrange blocks in a standard
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Block Supply" description="Lays out the block supply (Pick)" href="/en/toolpath/block-supply/" />
-  <LinkCard title="RobTarget" description="Turns target planes into robot targets" href="/en/datatype/robtarget/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Block Supply", description: "Lays out the block supply (Pick)", href: "/en/toolpath/block-supply/" },
+  { title: "RobTarget", description: "Turns target planes into robot targets", href: "/en/datatype/robtarget/" },
+]} />

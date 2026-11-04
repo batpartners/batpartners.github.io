@@ -3,11 +3,12 @@ title: "Scan IOSystems"
 description: "연결된 로컬 컨트롤러에서 정의된 모든 I/O 신호명을 가져올 수 있다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/scaniosystems.mjs";
 
 연결된 로컬 컨트롤러에서 정의된 모든 I/O 신호명을 가져올 수 있다.
@@ -56,8 +57,8 @@ import * as d from "../../../data/components/scaniosystems.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="SetOutput" description="출력 신호 값 변경" href="/instruction/setoutput/" />
-  <LinkCard title="WaitDI" description="디지털 입력 신호 대기" href="/instruction/waitdi/" />
-  <LinkCard title="ScanABBController" description="컨트롤러 검색·연결" href="/controller-utils/scanabbcontroller/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "SetOutput", description: "출력 신호 값 변경", href: "/instruction/setoutput/" },
+  { title: "WaitDI", description: "디지털 입력 신호 대기", href: "/instruction/waitdi/" },
+  { title: "ScanABBController", description: "컨트롤러 검색·연결", href: "/controller-utils/scanabbcontroller/" },
+]} />

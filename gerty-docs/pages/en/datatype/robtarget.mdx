@@ -3,11 +3,12 @@ title: "RobTarget"
 description: "robtarget is a data type that defines the target position, tool orientation, and axis configuration for the robot and auxiliary axes to move to."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/robtarget.mjs";
 
 `robtarget` is a data type that defines the target position, tool orientation, and axis configuration for the robot and auxiliary axes to move to. It defines a `RobTarget` for robot-only motion without external axes. The external axis values are automatically set to `9E9` (unused). For targets that also drive a positioner, use [Positioner RobTarget](/en/datatype/positioner-robtarget/).
@@ -61,9 +62,9 @@ import * as d from "../../../../data/components/robtarget.mjs";
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Positioner RobTarget" description="Targets with positioner angles" href="/en/datatype/positioner-robtarget/" />
-  <LinkCard title="WobjData" description="Work-object frame" href="/en/datatype/wobjdata/" />
-  <LinkCard title="Move" description="Move instruction" href="/en/instruction/move/" />
-  <LinkCard title="ArcMove" description="Arc welding move" href="/en/instruction/arcmove/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Positioner RobTarget", description: "Targets with positioner angles", href: "/en/datatype/positioner-robtarget/" },
+  { title: "WobjData", description: "Work-object frame", href: "/en/datatype/wobjdata/" },
+  { title: "Move", description: "Move instruction", href: "/en/instruction/move/" },
+  { title: "ArcMove", description: "Arc welding move", href: "/en/instruction/arcmove/" },
+]} />

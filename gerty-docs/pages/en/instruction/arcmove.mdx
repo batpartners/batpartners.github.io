@@ -3,11 +3,12 @@ title: "ArcMove"
 description: "A component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for welding."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/arcmove.mjs";
 
 A component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for welding.
@@ -51,9 +52,9 @@ A component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for 
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="SeamData" description="Seam start and end data" href="/en/datatype/seamdata/" />
-  <LinkCard title="WeldData" description="Weld conditions" href="/en/datatype/welddata/" />
-  <LinkCard title="WeaveData" description="Weaving motion" href="/en/datatype/weavedata/" />
-  <LinkCard title="Move" description="MoveL / MoveJ move" href="/en/instruction/move/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "SeamData", description: "Seam start and end data", href: "/en/datatype/seamdata/" },
+  { title: "WeldData", description: "Weld conditions", href: "/en/datatype/welddata/" },
+  { title: "WeaveData", description: "Weaving motion", href: "/en/datatype/weavedata/" },
+  { title: "Move", description: "MoveL / MoveJ move", href: "/en/instruction/move/" },
+]} />

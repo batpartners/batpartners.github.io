@@ -3,11 +3,12 @@ title: "ABB Robots (Extra Option)"
 description: "사용할 ABB 로봇 모델을 라이브러리에서 불러오고 관련 옵션을 설정하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/abbrobot-option.mjs";
 
 사용할 ABB 로봇 모델을 라이브러리에서 불러오고 관련 옵션을 설정하는 컴포넌트이다. ABB IRB 시리즈 카탈로그의 사전 정의된 제원에서 로봇 모델을 선택할 수 있으며, 컴포넌트 아이콘을 우클릭하여 <strong>[Show joint Jog Params]</strong>를 선택하면 로봇의 각 관절축 및 부가축을 직접 조작하며 시뮬레이션을 설정할 수 있다.
@@ -63,8 +64,8 @@ import * as d from "../../../data/components/abbrobot-option.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="GERTY Core" description="GERTY Robot 을 받는 컴포넌트" href="/core/gerty-core/" />
-  <LinkCard title="ToolData" description="로봇에 다는 툴" href="/datatype/tooldata/" />
-  <LinkCard title="ABB Positioner" description="로봇과 연동할 포지셔너" href="/robot-tool/positioner/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "GERTY Core", description: "GERTY Robot 을 받는 컴포넌트", href: "/core/gerty-core/" },
+  { title: "ToolData", description: "로봇에 다는 툴", href: "/datatype/tooldata/" },
+  { title: "ABB Positioner", description: "로봇과 연동할 포지셔너", href: "/robot-tool/positioner/" },
+]} />

@@ -3,11 +3,12 @@ title: "ToolpathPartition"
 description: "This is a component that splits a list (branch) of target planes into sub-lists (branches) based on length values."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/toolpathpartition.mjs";
 
 This is a component that splits a list (branch) of target planes into sub-lists (branches) based on length values.
@@ -50,7 +51,7 @@ This is a component that splits a list (branch) of target planes into sub-lists 
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="RobTarget" description="Turns target planes into robot targets" href="/en/datatype/robtarget/" />
-  <LinkCard title="Split Branch" description="Split branches at a number" href="/en/utils/splitbranch/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "RobTarget", description: "Turns target planes into robot targets", href: "/en/datatype/robtarget/" },
+  { title: "Split Branch", description: "Split branches at a number", href: "/en/utils/splitbranch/" },
+]} />

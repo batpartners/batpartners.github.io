@@ -3,11 +3,12 @@ title: "Block Designer"
 description: "블록 유닛과 벽체 형상을 기반으로, 표준 적층 패턴으로 블록을 배치하는 Place 타겟을 생성하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/block-designer.mjs";
 
 블록 유닛과 벽체 형상을 기반으로, 표준 적층 패턴으로 블록을 배치하는 Place 타겟을 생성하는 컴포넌트이다.
@@ -51,7 +52,7 @@ import * as d from "../../../data/components/block-designer.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Block Supply" description="공급부 블록 배치(Pick)" href="/toolpath/block-supply/" />
-  <LinkCard title="RobTarget" description="타겟 평면을 로봇 타겟으로 변환" href="/datatype/robtarget/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Block Supply", description: "공급부 블록 배치(Pick)", href: "/toolpath/block-supply/" },
+  { title: "RobTarget", description: "타겟 평면을 로봇 타겟으로 변환", href: "/datatype/robtarget/" },
+]} />

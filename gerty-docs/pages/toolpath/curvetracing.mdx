@@ -3,11 +3,12 @@ title: "Curve Tracing"
 description: "CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로봇 툴패스 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/curvetracing.mjs";
 
 CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로봇 툴패스 컴포넌트이다. 작업 평면의 정확도, 틸팅 정도를 설정할 수 있다.
@@ -56,8 +57,8 @@ CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로�
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="RobTarget" description="타겟 평면을 로봇 타겟으로 변환" href="/datatype/robtarget/" />
-  <LinkCard title="FlyByBranch" description="경로 사이 전이 경로" href="/toolpath/flybybranch/" />
-  <LinkCard title="Roughing" description="계단식 황삭" href="/toolpath/roughing/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "RobTarget", description: "타겟 평면을 로봇 타겟으로 변환", href: "/datatype/robtarget/" },
+  { title: "FlyByBranch", description: "경로 사이 전이 경로", href: "/toolpath/flybybranch/" },
+  { title: "Roughing", description: "계단식 황삭", href: "/toolpath/roughing/" },
+]} />

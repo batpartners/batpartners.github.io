@@ -3,11 +3,12 @@ title: "ScanABBController"
 description: "로컬 네트워크에서 사용 가능한 ABB 로봇 컨트롤러를 검색하고 연결하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/scanabbcontroller.mjs";
 
 로컬 네트워크에서 사용 가능한 ABB 로봇 컨트롤러를 검색하고 연결하는 컴포넌트이다.
@@ -51,8 +52,8 @@ import * as d from "../../../data/components/scanabbcontroller.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Code Solver" description="RAPID 코드 생성·컨트롤러 업로드" href="/core/code-solver/" />
-  <LinkCard title="RealTime Display" description="로봇 자세·신호 실시간 표시" href="/controller-utils/realtimedisplay/" />
-  <LinkCard title="Socket Sender" description="인스트럭션 소켓 스트리밍" href="/controller-utils/socketsender/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Code Solver", description: "RAPID 코드 생성·컨트롤러 업로드", href: "/core/code-solver/" },
+  { title: "RealTime Display", description: "로봇 자세·신호 실시간 표시", href: "/controller-utils/realtimedisplay/" },
+  { title: "Socket Sender", description: "인스트럭션 소켓 스트리밍", href: "/controller-utils/socketsender/" },
+]} />

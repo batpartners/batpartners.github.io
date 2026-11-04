@@ -3,11 +3,12 @@ title: "Deposition Builder"
 description: "This is a component that receives, analyzes, and integrates deposition toolpaths generated from a slicer component."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/depositionbuilder.mjs";
 
 This is a component that receives, analyzes, and integrates deposition toolpaths generated from a slicer component. Among the received data, it can separate and output them by purpose, such as extrusion start (E-Start), move, and extrusion end (E-Stop). Users can preview the alignment and layers of the deposition path.
@@ -57,9 +58,9 @@ This is a component that receives, analyzes, and integrates deposition toolpaths
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="WAAM Builder" description="Splits WAAM paths by layer kind" href="/en/toolpath/waambuilder/" />
-  <LinkCard title="Solid Shell" description="Shell paths of a closed solid" href="/en/toolpath/solidshell/" />
-  <LinkCard title="Solid Fill" description="Pattern infill" href="/en/toolpath/solidfill/" />
-  <LinkCard title="RobTarget" description="Turns target planes into robot targets" href="/en/datatype/robtarget/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "WAAM Builder", description: "Splits WAAM paths by layer kind", href: "/en/toolpath/waambuilder/" },
+  { title: "Solid Shell", description: "Shell paths of a closed solid", href: "/en/toolpath/solidshell/" },
+  { title: "Solid Fill", description: "Pattern infill", href: "/en/toolpath/solidfill/" },
+  { title: "RobTarget", description: "Turns target planes into robot targets", href: "/en/datatype/robtarget/" },
+]} />

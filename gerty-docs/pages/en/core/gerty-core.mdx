@@ -3,11 +3,12 @@ title: "GERTY Core"
 description: "GERTY Core is a component that computes robot motions based on defined robot setups and instructions."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/gerty-core.mjs";
 
 GERTY Core is a component that computes robot motions based on defined robot setups and instructions. It generates the basic data required to run the Display Solver and CodeSolver.
@@ -56,8 +57,8 @@ GERTY Core is a component that computes robot motions based on defined robot set
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Display Solver" description="Viewport simulation" href="/en/core/display-solver/" />
-  <LinkCard title="Code Solver" description="RAPID code export" href="/en/core/code-solver/" />
-  <LinkCard title="Analysis Deconstructor" description="Axis angles and error log" href="/en/core/analysis/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Display Solver", description: "Viewport simulation", href: "/en/core/display-solver/" },
+  { title: "Code Solver", description: "RAPID code export", href: "/en/core/code-solver/" },
+  { title: "Analysis Deconstructor", description: "Axis angles and error log", href: "/en/core/analysis/" },
+]} />

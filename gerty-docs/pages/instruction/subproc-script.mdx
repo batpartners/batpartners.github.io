@@ -3,11 +3,12 @@ title: "Sub Procedure (Script)"
 description: "RAPID 프로시저 코드를 직접 써서 서브 프로시저(SubProcedure)와 그 호출 인스트럭션을 만드는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/subproc-script.mjs";
 
 RAPID 프로시저 코드를 직접 써서 서브 프로시저(SubProcedure)와 그 호출 인스트럭션을 만드는 컴포넌트이다. 인스트럭션 리스트 대신 PROC 코드를 그대로 넣을 때 쓴다.
@@ -44,7 +45,7 @@ RAPID 프로시저 코드를 직접 써서 서브 프로시저(SubProcedure)와 
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="GERTY Core" description="인스트럭션 리스트를 받는 컴포넌트" href="/core/gerty-core/" />
-  <LinkCard title="Sub Procedure" description="인스트럭션 리스트로 프로시저 구성" href="/instruction/subproc-composition/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "GERTY Core", description: "인스트럭션 리스트를 받는 컴포넌트", href: "/core/gerty-core/" },
+  { title: "Sub Procedure", description: "인스트럭션 리스트로 프로시저 구성", href: "/instruction/subproc-composition/" },
+]} />

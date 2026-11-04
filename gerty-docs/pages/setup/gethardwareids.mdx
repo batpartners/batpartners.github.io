@@ -3,11 +3,12 @@ title: "Get HardwareIDs"
 description: "기기 식별을 위해 로컬 머신에서 하드웨어 기반의 식별자(MAC 주소, 디스크 시리얼, BIOS/UUID 및 USB ID)를 수집한다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/gethardwareids.mjs";
 
 기기 식별을 위해 로컬 머신에서 하드웨어 기반의 식별자(MAC 주소, 디스크 시리얼, BIOS/UUID 및 USB ID)를 수집한다. 기기 식별자는 로컬에서 처리되며, 하드웨어 ID는 외부로 전송되거나 저장되지 않는다.
@@ -55,6 +56,6 @@ import * as d from "../../../data/components/gethardwareids.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Installation" description="설치와 라이선스" href="/about/installation/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Installation", description: "설치와 라이선스", href: "/about/installation/" },
+]} />

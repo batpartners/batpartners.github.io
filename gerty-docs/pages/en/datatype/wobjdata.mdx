@@ -3,11 +3,12 @@ title: "WobjData"
 description: "wobjdata is a data type that defines the unique coordinate system of the workpiece, facilitating intuitive programming based on drawings and enabling program reuse through simple coordinate adjustments when the installation environment changes."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/wobjdata.mjs";
 
 wobjdata is a data type that defines the unique coordinate system of the workpiece, facilitating intuitive programming based on drawings and enabling program reuse through simple coordinate adjustments when the installation environment changes.
@@ -64,7 +65,7 @@ This page covers <strong>Fixed mode</strong>, which redefines the target plane a
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="RobTarget" description="Targets that take the WobjData" href="/en/datatype/robtarget/" />
-  <LinkCard title="Get WobjData" description="Read WobjData from the controller" href="/en/controller-utils/getwobjdata/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "RobTarget", description: "Targets that take the WobjData", href: "/en/datatype/robtarget/" },
+  { title: "Get WobjData", description: "Read WobjData from the controller", href: "/en/controller-utils/getwobjdata/" },
+]} />

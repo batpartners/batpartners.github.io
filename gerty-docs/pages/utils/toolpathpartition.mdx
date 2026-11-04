@@ -3,11 +3,12 @@ title: "ToolpathPartition"
 description: "길이 값을 기준으로 대상 평면 리스트(브랜치)를 하위 리스트(브랜치)로 분할하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/toolpathpartition.mjs";
 
 길이 값을 기준으로 대상 평면 리스트(브랜치)를 하위 리스트(브랜치)로 분할하는 컴포넌트이다.
@@ -50,7 +51,7 @@ import * as d from "../../../data/components/toolpathpartition.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="RobTarget" description="타겟 평면을 로봇 타겟으로 변환" href="/datatype/robtarget/" />
-  <LinkCard title="Split Branch" description="순번으로 Branch 나누기" href="/utils/splitbranch/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "RobTarget", description: "타겟 평면을 로봇 타겟으로 변환", href: "/datatype/robtarget/" },
+  { title: "Split Branch", description: "순번으로 Branch 나누기", href: "/utils/splitbranch/" },
+]} />

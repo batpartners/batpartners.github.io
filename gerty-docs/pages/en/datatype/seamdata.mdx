@@ -3,11 +3,12 @@ title: "SeamData"
 description: "Defines the start and end phase data of a welding seam."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/seamdata.mjs";
 
 Defines the start and end phase data of a welding seam. Allows detailed specification of timing and arc conditions across three phases: Ignition, Heat, and End. Typically, the same values are maintained for an entire seam or across multiple seams.
@@ -66,8 +67,8 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="WeldData" description="Weld-phase parameters" href="/en/datatype/welddata/" />
-  <LinkCard title="WeaveData" description="Weaving motion" href="/en/datatype/weavedata/" />
-  <LinkCard title="ArcMove" description="Arc welding move" href="/en/instruction/arcmove/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "WeldData", description: "Weld-phase parameters", href: "/en/datatype/welddata/" },
+  { title: "WeaveData", description: "Weaving motion", href: "/en/datatype/weavedata/" },
+  { title: "ArcMove", description: "Arc welding move", href: "/en/instruction/arcmove/" },
+]} />

@@ -3,11 +3,12 @@ title: "AccSet"
 description: "AccSet은 로봇 가속도 및 램프 값을 감소시키는 AccSet 인스트럭션 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/accset.mjs";
 
 AccSet은 로봇 가속도 및 램프 값을 감소시키는 AccSet 인스트럭션 컴포넌트이다. 작업 시작 또는 마무리시, 설정된 속도값으로 도달하기 전 가속도 값을 설정할 수 있다. 이 컴포넌트는 핸들링이나 작업 영역 경계 근처에서 동적 부하를 낮춘다.
@@ -63,7 +64,7 @@ AccSet은 로봇 가속도 및 램프 값을 감소시키는 AccSet 인스트럭
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="PathAccLim" description="TCP 가감속 제한" href="/instruction/pathacclim/" />
-  <LinkCard title="Move" description="MoveL / MoveJ 이동 명령" href="/instruction/move/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "PathAccLim", description: "TCP 가감속 제한", href: "/instruction/pathacclim/" },
+  { title: "Move", description: "MoveL / MoveJ 이동 명령", href: "/instruction/move/" },
+]} />

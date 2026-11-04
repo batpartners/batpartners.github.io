@@ -3,11 +3,12 @@ title: "IndReset"
 description: "부가 축의 위치와 회전값을 초기화(<code>IndReset</code>)하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/indreset.mjs";
 
 부가 축의 위치와 회전값을 초기화(<code>IndReset</code>)하는 컴포넌트이다. 모션 인스트럭션 실행 전 누적된 외부축 각도값 초기화에 주로 사용한다.
@@ -56,8 +57,8 @@ import * as d from "../../../data/components/indreset.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="IndRMove" description="외부축 독립 모드 이동" href="/instruction/indrmove/" />
-  <LinkCard title="IndReset (Positional Reference)" description="RobTarget 으로 기준 위치 지정" href="/instruction/indreset-option/" />
-  <LinkCard title="GERTY Core" description="인스트럭션 리스트를 받는 컴포넌트" href="/core/gerty-core/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "IndRMove", description: "외부축 독립 모드 이동", href: "/instruction/indrmove/" },
+  { title: "IndReset (Positional Reference)", description: "RobTarget 으로 기준 위치 지정", href: "/instruction/indreset-option/" },
+  { title: "GERTY Core", description: "인스트럭션 리스트를 받는 컴포넌트", href: "/core/gerty-core/" },
+]} />

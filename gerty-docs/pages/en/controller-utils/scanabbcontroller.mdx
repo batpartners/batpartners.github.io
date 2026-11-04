@@ -3,11 +3,12 @@ title: "ScanABBController"
 description: "This component finds the ABB robot controllers available on the local network and connects to one."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/scanabbcontroller.mjs";
 
 This component finds the ABB robot controllers available on the local network and connects to one.
@@ -51,8 +52,8 @@ This component has no inputs; everything is set in the settings below.
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Code Solver" description="RAPID export and upload" href="/en/core/code-solver/" />
-  <LinkCard title="RealTime Display" description="Live robot pose and signals" href="/en/controller-utils/realtimedisplay/" />
-  <LinkCard title="Socket Sender" description="Streams instructions over a socket" href="/en/controller-utils/socketsender/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Code Solver", description: "RAPID export and upload", href: "/en/core/code-solver/" },
+  { title: "RealTime Display", description: "Live robot pose and signals", href: "/en/controller-utils/realtimedisplay/" },
+  { title: "Socket Sender", description: "Streams instructions over a socket", href: "/en/controller-utils/socketsender/" },
+]} />

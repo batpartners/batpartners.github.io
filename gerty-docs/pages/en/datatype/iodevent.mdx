@@ -3,11 +3,12 @@ title: "IOEvent"
 description: "Defines a single I/O trigger event for a TriggIOs array."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/iodevent.mjs";
 
 Defines a single I/O trigger event for a TriggIOs array. Specifies the target output signal, trigger position along the path, and configuration values. Multiple IOEvents can be grouped into the TriggIOs component to construct TriggIOs data.
@@ -57,7 +58,7 @@ Defines a single I/O trigger event for a TriggIOs array. Specifies the target ou
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="TriggIOs" description="Groups the IOEvents" href="/en/datatype/triggios/" />
-  <LinkCard title="TriggerIOMove" description="Move instruction used with triggers" href="/en/instruction/triggeriomove/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "TriggIOs", description: "Groups the IOEvents", href: "/en/datatype/triggios/" },
+  { title: "TriggerIOMove", description: "Move instruction used with triggers", href: "/en/instruction/triggeriomove/" },
+]} />

@@ -3,11 +3,12 @@ title: "AccSet"
 description: "AccSet is an AccSet instruction component that reduces robot acceleration and ramp values."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/accset.mjs";
 
 AccSet is an AccSet instruction component that reduces robot acceleration and ramp values. At the start or end of an operation, it allows you to set the acceleration value before reaching the specified speed value. This component lowers dynamic loads during handling or near workspace boundaries.
@@ -63,7 +64,7 @@ This component has no inputs; everything is set in the settings below.
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="PathAccLim" description="Limits TCP acceleration" href="/en/instruction/pathacclim/" />
-  <LinkCard title="Move" description="MoveL / MoveJ move" href="/en/instruction/move/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "PathAccLim", description: "Limits TCP acceleration", href: "/en/instruction/pathacclim/" },
+  { title: "Move", description: "MoveL / MoveJ move", href: "/en/instruction/move/" },
+]} />

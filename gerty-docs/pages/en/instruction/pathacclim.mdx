@@ -3,11 +3,12 @@ title: "PathAccLim"
 description: "PathAccLim is a PathAccLim instruction component that sets or disables the TCP acceleration and deceleration limits along the motion path."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/pathacclim.mjs";
 
 PathAccLim is a PathAccLim instruction component that sets or disables the TCP acceleration and deceleration limits along the motion path.
@@ -50,7 +51,7 @@ This component has no inputs; everything is set in the settings below.
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="AccSet" description="Reduces acceleration and ramp" href="/en/instruction/accset/" />
-  <LinkCard title="Move" description="MoveL / MoveJ move" href="/en/instruction/move/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "AccSet", description: "Reduces acceleration and ramp", href: "/en/instruction/accset/" },
+  { title: "Move", description: "MoveL / MoveJ move", href: "/en/instruction/move/" },
+]} />

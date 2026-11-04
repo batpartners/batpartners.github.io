@@ -3,11 +3,12 @@ title: "Solid Shell (Extra Option)"
 description: "닫힌 솔리드 형상에서 외곽(Shell) 적층 툴패스를 생성하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/solidshell-option.mjs";
 
 닫힌 솔리드 형상에서 외곽(Shell) 적층 툴패스를 생성하는 컴포넌트이다. 타겟평면의 시작 위치, 간격, 높이, 틸딩 정도 등의 세부 설정이 가능하며, 형상이 큰 경우, 파티션으로 나누어 작업 데이터를 내보낼 수 있다.
@@ -61,9 +62,9 @@ import * as d from "../../../data/components/solidshell-option.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Solid Shell" description="닫힌 솔리드의 외곽 적층 경로" href="/toolpath/solidshell/" />
-  <LinkCard title="Solid Fill" description="패턴으로 내부 채움" href="/toolpath/solidfill/" />
-  <LinkCard title="Deposition Builder" description="적층 경로를 압출 시작·이동·종료로 분리" href="/toolpath/depositionbuilder/" />
-  <LinkCard title="WAAM Builder" description="WAAM 적층 경로를 레이어 종류별로 분리" href="/toolpath/waambuilder/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Solid Shell", description: "닫힌 솔리드의 외곽 적층 경로", href: "/toolpath/solidshell/" },
+  { title: "Solid Fill", description: "패턴으로 내부 채움", href: "/toolpath/solidfill/" },
+  { title: "Deposition Builder", description: "적층 경로를 압출 시작·이동·종료로 분리", href: "/toolpath/depositionbuilder/" },
+  { title: "WAAM Builder", description: "WAAM 적층 경로를 레이어 종류별로 분리", href: "/toolpath/waambuilder/" },
+]} />

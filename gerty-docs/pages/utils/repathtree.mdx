@@ -3,11 +3,12 @@ title: "Repath Tree"
 description: "DataTree 의 Branch 내용은 그대로 두고 Branch Path 만 다시 매기는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/repathtree.mjs";
 
 DataTree 의 Branch 내용은 그대로 두고 Branch Path 만 다시 매기는 컴포넌트이다. 아이콘을 우클릭해 컨텍스트 메뉴에서 세 가지 패턴 중 하나를 고른다.
@@ -51,7 +52,7 @@ DataTree 의 Branch 내용은 그대로 두고 Branch Path 만 다시 매기는 
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Extract PathIdx" description="Branch Path 의 인덱스 꺼내기" href="/utils/extractpathidx/" />
-  <LinkCard title="Tree Branch" description="Branch 하나 꺼내기" href="/utils/treebranch/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Extract PathIdx", description: "Branch Path 의 인덱스 꺼내기", href: "/utils/extractpathidx/" },
+  { title: "Tree Branch", description: "Branch 하나 꺼내기", href: "/utils/treebranch/" },
+]} />

@@ -3,11 +3,12 @@ title: "Positioner RobTarget (Dynamic)"
 description: "Positioner Robtarget defines a RobTarget including the rotation angle of the positioner (external axis)."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/positioner-robtarget-dynamic.mjs";
 
 Positioner Robtarget defines a RobTarget including the rotation angle of the positioner (external axis). You can switch between Dynamic and Static modes by right-clicking the component icon.
@@ -68,8 +69,8 @@ Positioner Robtarget defines a RobTarget including the rotation angle of the pos
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="ABB Positioner" description="The positioner component" href="/en/robot-tool/positioner/" />
-  <LinkCard title="RobTarget" description="Robot targets without a positioner" href="/en/datatype/robtarget/" />
-  <LinkCard title="WobjData" description="Work-object frame" href="/en/datatype/wobjdata/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ABB Positioner", description: "The positioner component", href: "/en/robot-tool/positioner/" },
+  { title: "RobTarget", description: "Robot targets without a positioner", href: "/en/datatype/robtarget/" },
+  { title: "WobjData", description: "Work-object frame", href: "/en/datatype/wobjdata/" },
+]} />

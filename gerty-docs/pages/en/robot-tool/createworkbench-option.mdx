@@ -3,11 +3,12 @@ title: "CreateWorkBench (Extra Option)"
 description: "A component that allows users to define a custom workbench for a positioner."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/createworkbench-option.mjs";
 
 A component that allows users to define a custom workbench for a positioner. By applying the modeling of the currently used workbench to the simulation, you can smoothly monitor the positioner working process. In addition, you can work with a complete simulation including the modeling of workpieces on the workbench.
@@ -59,7 +60,7 @@ This page covers loading a workbench saved with <strong>Export</strong> from <st
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="ABB Positioner" description="Positioner that takes the WorkBench" href="/en/robot-tool/positioner/" />
-  <LinkCard title="CreateWorkBench" description="Define a workbench" href="/en/robot-tool/createworkbench/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ABB Positioner", description: "Positioner that takes the WorkBench", href: "/en/robot-tool/positioner/" },
+  { title: "CreateWorkBench", description: "Define a workbench", href: "/en/robot-tool/createworkbench/" },
+]} />

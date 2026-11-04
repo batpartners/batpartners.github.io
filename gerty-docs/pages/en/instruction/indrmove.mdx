@@ -3,11 +3,12 @@ title: "IndRMove"
 description: "This is a component that switches an auxiliary axis to independent mode and moves it to a specified position within one revolution."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/indrmove.mjs";
 
 This is a component that switches an auxiliary axis to independent mode and moves it to a specified position within one revolution. It is generated using the IndRMove instruction, and after performing the task, it is necessary to initialize it back to normal mode using IndReset.
@@ -56,8 +57,8 @@ This component has no inputs; everything is set in the settings below.
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="IndReset" description="Resets independent mode" href="/en/instruction/indreset/" />
-  <LinkCard title="IndRMove (Positional Reference)" description="Target position from a RobTarget" href="/en/instruction/indrmove-option/" />
-  <LinkCard title="GERTY Core" description="Takes the instruction list" href="/en/core/gerty-core/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "IndReset", description: "Resets independent mode", href: "/en/instruction/indreset/" },
+  { title: "IndRMove (Positional Reference)", description: "Target position from a RobTarget", href: "/en/instruction/indrmove-option/" },
+  { title: "GERTY Core", description: "Takes the instruction list", href: "/en/core/gerty-core/" },
+]} />

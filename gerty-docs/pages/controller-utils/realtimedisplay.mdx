@@ -3,11 +3,12 @@ title: "RealTime Display"
 description: "연결된 컨트롤러에서 로봇 자세와 I/O 신호 상태를 실시간으로 받아 GERTY 시뮬레이션으로 보여 주는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/realtimedisplay.mjs";
 
 연결된 컨트롤러에서 로봇 자세와 I/O 신호 상태를 실시간으로 받아 GERTY 시뮬레이션으로 보여 주는 컴포넌트이다.
@@ -57,7 +58,7 @@ import * as d from "../../../data/components/realtimedisplay.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="ABB Robots" description="GERTY Robot 출력" href="/robot-tool/abbrobot/" />
-  <LinkCard title="ScanABBController" description="컨트롤러 검색·연결" href="/controller-utils/scanabbcontroller/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ABB Robots", description: "GERTY Robot 출력", href: "/robot-tool/abbrobot/" },
+  { title: "ScanABBController", description: "컨트롤러 검색·연결", href: "/controller-utils/scanabbcontroller/" },
+]} />

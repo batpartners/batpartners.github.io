@@ -3,11 +3,12 @@ title: "(De)ActUnit"
 description: "This is a component that generates ActUnit/DeactUnit instructions to activate or deactivate a mechanical unit."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/deactunit.mjs";
 
 This is a component that generates ActUnit/DeactUnit instructions to activate or deactivate a mechanical unit. It is used to switch the activation state of external axis equipment (such as positioners or tracks) during RAPID program execution.
@@ -50,8 +51,8 @@ This component has no inputs; everything is set in the settings below.
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="ABB Positioner" description="External-axis positioner" href="/en/robot-tool/positioner/" />
-  <LinkCard title="IndRMove" description="Independent-mode axis move" href="/en/instruction/indrmove/" />
-  <LinkCard title="GERTY Core" description="Takes the instruction list" href="/en/core/gerty-core/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ABB Positioner", description: "External-axis positioner", href: "/en/robot-tool/positioner/" },
+  { title: "IndRMove", description: "Independent-mode axis move", href: "/en/instruction/indrmove/" },
+  { title: "GERTY Core", description: "Takes the instruction list", href: "/en/core/gerty-core/" },
+]} />

@@ -3,11 +3,12 @@ title: "RealTime Display"
 description: "This component streams the robot pose and I/O signal states from the connected controller in real time and shows them in the GERTY simulation."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/realtimedisplay.mjs";
 
 This component streams the robot pose and I/O signal states from the connected controller in real time and shows them in the GERTY simulation.
@@ -57,7 +58,7 @@ This component streams the robot pose and I/O signal states from the connected c
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="ABB Robots" description="GERTY Robot output" href="/en/robot-tool/abbrobot/" />
-  <LinkCard title="ScanABBController" description="Find and connect a controller" href="/en/controller-utils/scanabbcontroller/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ABB Robots", description: "GERTY Robot output", href: "/en/robot-tool/abbrobot/" },
+  { title: "ScanABBController", description: "Find and connect a controller", href: "/en/controller-utils/scanabbcontroller/" },
+]} />

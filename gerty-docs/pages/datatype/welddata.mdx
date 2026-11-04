@@ -3,11 +3,12 @@ title: "WeldData"
 description: "아크가 안정적으로 유지되는 실제 용접 구간의 파라미터를 정의하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/welddata.mjs";
 
 아크가 안정적으로 유지되는 실제 용접 구간의 파라미터를 정의하는 컴포넌트이다. 심을 따라 적용되는 용접 속도, 전압, 와이어 송급 조건 등을 지정할 수 있다.
@@ -51,8 +52,8 @@ import * as d from "../../../data/components/welddata.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="SeamData" description="용접 시작·종료 데이터" href="/datatype/seamdata/" />
-  <LinkCard title="WeaveData" description="위빙 모션" href="/datatype/weavedata/" />
-  <LinkCard title="ArcMove" description="용접 이동 명령" href="/instruction/arcmove/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "SeamData", description: "용접 시작·종료 데이터", href: "/datatype/seamdata/" },
+  { title: "WeaveData", description: "위빙 모션", href: "/datatype/weavedata/" },
+  { title: "ArcMove", description: "용접 이동 명령", href: "/instruction/arcmove/" },
+]} />

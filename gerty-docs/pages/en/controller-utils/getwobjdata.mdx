@@ -3,11 +3,12 @@ title: "Get WobjData"
 description: "A component that retrieves the activated work object data from the currently connected offline controller."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/getwobjdata.mjs";
 
 A component that retrieves the activated work object data from the currently connected offline controller.
@@ -43,8 +44,8 @@ A component that retrieves the activated work object data from the currently con
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="WobjData" description="Work object" href="/en/datatype/wobjdata/" />
-  <LinkCard title="ScanABBController" description="Find and connect a controller" href="/en/controller-utils/scanabbcontroller/" />
-  <LinkCard title="ToolData" description="Tool definition" href="/en/datatype/tooldata/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "WobjData", description: "Work object", href: "/en/datatype/wobjdata/" },
+  { title: "ScanABBController", description: "Find and connect a controller", href: "/en/controller-utils/scanabbcontroller/" },
+  { title: "ToolData", description: "Tool definition", href: "/en/datatype/tooldata/" },
+]} />

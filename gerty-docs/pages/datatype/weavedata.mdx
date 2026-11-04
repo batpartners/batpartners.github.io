@@ -3,11 +3,12 @@ title: "WeaveData"
 description: "아크 용접 중 수행되는 위빙(Weaving) 모션을 정의하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/weavedata.mjs";
 
 아크 용접 중 수행되는 위빙(Weaving) 모션을 정의하는 컴포넌트이다. 위빙 형상, 진폭, 주파수 파라미터를 지정한다.
@@ -60,7 +61,7 @@ import * as d from "../../../data/components/weavedata.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="WeldData" description="WeaveData 를 받는 용접 데이터" href="/datatype/welddata/" />
-  <LinkCard title="SeamData" description="용접 시작·종료 데이터" href="/datatype/seamdata/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "WeldData", description: "WeaveData 를 받는 용접 데이터", href: "/datatype/welddata/" },
+  { title: "SeamData", description: "용접 시작·종료 데이터", href: "/datatype/seamdata/" },
+]} />

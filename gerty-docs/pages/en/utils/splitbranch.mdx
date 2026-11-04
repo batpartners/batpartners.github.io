@@ -3,11 +3,12 @@ title: "Split Branch"
 description: "This is a component that splits a DataTree into two DataTrees based on the input branch index."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/splitbranch.mjs";
 
 This is a component that splits a DataTree into two DataTrees based on the input branch index.
@@ -38,7 +39,7 @@ This is a component that splits a DataTree into two DataTrees based on the input
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Dispatch Branch" description="Split branches by a pattern" href="/en/utils/dispatch-branch/" />
-  <LinkCard title="Tree Branch" description="Take one branch" href="/en/utils/treebranch/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Dispatch Branch", description: "Split branches by a pattern", href: "/en/utils/dispatch-branch/" },
+  { title: "Tree Branch", description: "Take one branch", href: "/en/utils/treebranch/" },
+]} />

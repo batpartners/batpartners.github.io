@@ -3,11 +3,12 @@ title: "Display Solver"
 description: "This is a component that simulates and visualizes the user-defined robot motion in the Rhino viewport, allowing you to review the entire process."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/display-solver.mjs";
 
 This is a component that simulates and visualizes the user-defined robot motion in the Rhino viewport, allowing you to review the entire process.
@@ -50,8 +51,8 @@ This is a component that simulates and visualizes the user-defined robot motion 
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="GERTY Core" description="Computes the robot motion" href="/en/core/gerty-core/" />
-  <LinkCard title="Code Solver" description="RAPID code export" href="/en/core/code-solver/" />
-  <LinkCard title="Analysis Deconstructor" description="Axis angles and error log" href="/en/core/analysis/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "GERTY Core", description: "Computes the robot motion", href: "/en/core/gerty-core/" },
+  { title: "Code Solver", description: "RAPID code export", href: "/en/core/code-solver/" },
+  { title: "Analysis Deconstructor", description: "Axis angles and error log", href: "/en/core/analysis/" },
+]} />

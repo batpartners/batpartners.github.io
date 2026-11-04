@@ -3,11 +3,12 @@ title: "Socket Sender"
 description: "It streams and exports the finalized code as motion instruction packets to a local ABB IRC5 controller via a TCP socket."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/socketsender.mjs";
 
 It streams and exports the finalized code as motion instruction packets to a local ABB IRC5 controller via a TCP socket.
@@ -58,7 +59,7 @@ It streams and exports the finalized code as motion instruction packets to a loc
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Code Solver (Option)" description="Builds the SocketBundle (Multi Task)" href="/en/core/code-solver-option/" />
-  <LinkCard title="ScanABBController" description="Find and connect a controller" href="/en/controller-utils/scanabbcontroller/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Code Solver (Option)", description: "Builds the SocketBundle (Multi Task)", href: "/en/core/code-solver-option/" },
+  { title: "ScanABBController", description: "Find and connect a controller", href: "/en/controller-utils/scanabbcontroller/" },
+]} />

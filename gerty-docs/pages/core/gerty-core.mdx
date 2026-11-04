@@ -3,11 +3,12 @@ title: "GERTY Core"
 description: "GERTY Core는 정의된 로봇 셋업과 인스트럭션으로부터 로봇 동작을 연산하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/gerty-core.mjs";
 
 GERTY Core는 정의된 로봇 셋업과 인스트럭션으로부터 로봇 동작을 연산하는 컴포넌트이다. Display Solver 및 CodeSolver 실행에 필요한 기초 데이터 생성한다.
@@ -56,8 +57,8 @@ GERTY Core는 정의된 로봇 셋업과 인스트럭션으로부터 로봇 동�
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Display Solver" description="뷰포트 시뮬레이션" href="/core/display-solver/" />
-  <LinkCard title="Code Solver" description="RAPID 코드 생성" href="/core/code-solver/" />
-  <LinkCard title="Analysis Deconstructor" description="축 각도와 오류 로그" href="/core/analysis/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Display Solver", description: "뷰포트 시뮬레이션", href: "/core/display-solver/" },
+  { title: "Code Solver", description: "RAPID 코드 생성", href: "/core/code-solver/" },
+  { title: "Analysis Deconstructor", description: "축 각도와 오류 로그", href: "/core/analysis/" },
+]} />

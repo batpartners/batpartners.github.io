@@ -3,11 +3,12 @@ title: "Insert"
 description: "This is a component that can insert a data collection into a specific DataTree index."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/insert.mjs";
 
 This is a component that can insert a data collection into a specific DataTree index.
@@ -45,7 +46,7 @@ This is a component that can insert a data collection into a specific DataTree i
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Dispatch Branch" description="Split branches by a pattern" href="/en/utils/dispatch-branch/" />
-  <LinkCard title="Split Branch" description="Split branches at a number" href="/en/utils/splitbranch/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Dispatch Branch", description: "Split branches by a pattern", href: "/en/utils/dispatch-branch/" },
+  { title: "Split Branch", description: "Split branches at a number", href: "/en/utils/splitbranch/" },
+]} />

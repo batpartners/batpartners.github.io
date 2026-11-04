@@ -3,11 +3,12 @@ title: "Solid Shell"
 description: "This is a component that generates shell deposition toolpaths from a closed solid geometry."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/solidshell.mjs";
 
 This is a component that generates shell deposition toolpaths from a closed solid geometry. It allows you to configure detailed settings such as the starting position, spacing, height, and tilting degree of the target planes. If the geometry is large, it can export the operation data by dividing it into partitions.
@@ -58,10 +59,10 @@ This is a component that generates shell deposition toolpaths from a closed soli
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Solid Fill" description="Pattern infill" href="/en/toolpath/solidfill/" />
-  <LinkCard title="Solid Offset Fill" description="Offset infill" href="/en/toolpath/solidoffsetfill/" />
-  <LinkCard title="Deposition Builder" description="Splits deposition paths into extrusion start, move and stop" href="/en/toolpath/depositionbuilder/" />
-  <LinkCard title="WAAM Builder" description="Splits WAAM paths by layer kind" href="/en/toolpath/waambuilder/" />
-  <LinkCard title="Solid Shell (Extra Option)" description="Adds Angle Ranges / Multiple inputs" href="/en/toolpath/solidshell-option/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Solid Fill", description: "Pattern infill", href: "/en/toolpath/solidfill/" },
+  { title: "Solid Offset Fill", description: "Offset infill", href: "/en/toolpath/solidoffsetfill/" },
+  { title: "Deposition Builder", description: "Splits deposition paths into extrusion start, move and stop", href: "/en/toolpath/depositionbuilder/" },
+  { title: "WAAM Builder", description: "Splits WAAM paths by layer kind", href: "/en/toolpath/waambuilder/" },
+  { title: "Solid Shell (Extra Option)", description: "Adds Angle Ranges / Multiple inputs", href: "/en/toolpath/solidshell-option/" },
+]} />

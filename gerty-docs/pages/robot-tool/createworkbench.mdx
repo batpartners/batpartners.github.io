@@ -3,11 +3,12 @@ title: "CreateWorkBench"
 description: "포지셔너에 장착할 워크벤치(Workbench) 및 작업물(Workpiece)의 3D 모델링을 사용자 정의하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/createworkbench.mjs";
 
 포지셔너에 장착할 워크벤치(Workbench) 및 작업물(Workpiece)의 3D 모델링을 사용자 정의하는 컴포넌트이다. 실제 사용 환경의 작업대 및 작업물 형상을 시뮬레이션에 반영하여 포지셔너 구동 중 발생할 수 있는 간섭을 검증하고 경로 시뮬레이션을 정밀하게 수행할 수 있다.
@@ -58,7 +59,7 @@ import * as d from "../../../data/components/createworkbench.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="ABB Positioner" description="WorkBench 를 받는 포지셔너" href="/robot-tool/positioner/" />
-  <LinkCard title="CreateWorkBench (Extra Option)" description="저장해 둔 워크벤치 불러오기" href="/robot-tool/createworkbench-option/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ABB Positioner", description: "WorkBench 를 받는 포지셔너", href: "/robot-tool/positioner/" },
+  { title: "CreateWorkBench (Extra Option)", description: "저장해 둔 워크벤치 불러오기", href: "/robot-tool/createworkbench-option/" },
+]} />

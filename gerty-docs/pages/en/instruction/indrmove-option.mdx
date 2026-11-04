@@ -3,11 +3,12 @@ title: "IndRMove (Positional Reference)"
 description: "This is a component that switches an auxiliary axis to independent mode and moves it to a specified position within one revolution."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/indrmove-option.mjs";
 
 This is a component that switches an auxiliary axis to independent mode and moves it to a specified position within one revolution. It is generated using the IndRMove instruction, and after performing the task, it is necessary to initialize it back to normal mode using IndReset.
@@ -63,8 +64,8 @@ This page covers the Positional Reference form, which takes the target position 
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="IndReset" description="Resets independent mode" href="/en/instruction/indreset/" />
-  <LinkCard title="IndRMove" description="Target position as a number" href="/en/instruction/indrmove/" />
-  <LinkCard title="RobTarget" description="Motion targets" href="/en/datatype/robtarget/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "IndReset", description: "Resets independent mode", href: "/en/instruction/indreset/" },
+  { title: "IndRMove", description: "Target position as a number", href: "/en/instruction/indrmove/" },
+  { title: "RobTarget", description: "Motion targets", href: "/en/datatype/robtarget/" },
+]} />

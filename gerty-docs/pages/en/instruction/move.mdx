@@ -3,11 +3,12 @@ title: "Move"
 description: "A component that configures ABB Move instructions (MoveL, MoveJ)."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/move.mjs";
 
 A component that configures ABB Move instructions (MoveL, MoveJ).
@@ -51,9 +52,9 @@ A component that configures ABB Move instructions (MoveL, MoveJ).
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="RobTarget" description="Motion targets" href="/en/datatype/robtarget/" />
-  <LinkCard title="Positioner RobTarget" description="Targets with positioner angles" href="/en/datatype/positioner-robtarget/" />
-  <LinkCard title="MoveOutput" description="Move with an output signal" href="/en/instruction/moveoutput/" />
-  <LinkCard title="TriggerIOMove" description="Move with I/O triggers on the path" href="/en/instruction/triggeriomove/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "RobTarget", description: "Motion targets", href: "/en/datatype/robtarget/" },
+  { title: "Positioner RobTarget", description: "Targets with positioner angles", href: "/en/datatype/positioner-robtarget/" },
+  { title: "MoveOutput", description: "Move with an output signal", href: "/en/instruction/moveoutput/" },
+  { title: "TriggerIOMove", description: "Move with I/O triggers on the path", href: "/en/instruction/triggeriomove/" },
+]} />

@@ -3,11 +3,12 @@ title: "WaitDI"
 description: "지정된 디지털 입력(DI) 신호가 목표 값에 도달할 때까지 로봇 모션을 대기시키는 WaitDI 인스트럭션을 생성하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/waitdi.mjs";
 
 지정된 디지털 입력(DI) 신호가 목표 값에 도달할 때까지 로봇 모션을 대기시키는 WaitDI 인스트럭션을 생성하는 컴포넌트이다.
@@ -50,7 +51,7 @@ import * as d from "../../../data/components/waitdi.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Wait Time" description="지정 시간 대기" href="/instruction/wait-time/" />
-  <LinkCard title="SetOutput" description="출력 신호 값 변경" href="/instruction/setoutput/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Wait Time", description: "지정 시간 대기", href: "/instruction/wait-time/" },
+  { title: "SetOutput", description: "출력 신호 값 변경", href: "/instruction/setoutput/" },
+]} />

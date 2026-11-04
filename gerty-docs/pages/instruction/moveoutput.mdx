@@ -3,11 +3,12 @@ title: "MoveOutput"
 description: "디지털(DO), 그룹(GO), 아날로그(AO) 출력 신호를 동반하는 ABB RAPID Move 인스트럭션(MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO)을 생성 및 설정하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/moveoutput.mjs";
 
 디지털(DO), 그룹(GO), 아날로그(AO) 출력 신호를 동반하는 ABB RAPID Move 인스트럭션(`MoveJDO`, `MoveLDO`, `MoveJGO`, `MoveLGO`, `MoveJAO`, `MoveLAO`)을 생성 및 설정하는 컴포넌트이다.
@@ -57,8 +58,8 @@ import * as d from "../../../data/components/moveoutput.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Move" description="MoveL / MoveJ 이동 명령" href="/instruction/move/" />
-  <LinkCard title="SetOutput" description="출력 신호 값 변경" href="/instruction/setoutput/" />
-  <LinkCard title="TriggerIOMove" description="경로 위 I/O 트리거 이동 명령" href="/instruction/triggeriomove/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Move", description: "MoveL / MoveJ 이동 명령", href: "/instruction/move/" },
+  { title: "SetOutput", description: "출력 신호 값 변경", href: "/instruction/setoutput/" },
+  { title: "TriggerIOMove", description: "경로 위 I/O 트리거 이동 명령", href: "/instruction/triggeriomove/" },
+]} />

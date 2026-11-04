@@ -3,11 +3,12 @@ title: "Split Branch"
 description: "DataTree를 입력한 Branch 순번 인덱스를 기준으로 두 개의 DataTree로 분할하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/splitbranch.mjs";
 
 DataTree를 입력한 Branch 순번 인덱스를 기준으로 두 개의 DataTree로 분할하는 컴포넌트이다.
@@ -38,7 +39,7 @@ DataTree를 입력한 Branch 순번 인덱스를 기준으로 두 개의 DataTre
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Dispatch Branch" description="패턴으로 Branch 나누기" href="/utils/dispatch-branch/" />
-  <LinkCard title="Tree Branch" description="Branch 하나 꺼내기" href="/utils/treebranch/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Dispatch Branch", description: "패턴으로 Branch 나누기", href: "/utils/dispatch-branch/" },
+  { title: "Tree Branch", description: "Branch 하나 꺼내기", href: "/utils/treebranch/" },
+]} />

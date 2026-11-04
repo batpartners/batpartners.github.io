@@ -3,11 +3,12 @@ title: "ArcMove"
 description: "용접용 ABB 아크 인스트럭션(<code>ArcLStart</code>, <code>ArcL</code>, <code>ArcLEnd</code>)을 설정하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/arcmove.mjs";
 
 용접용 ABB 아크 인스트럭션(<code>ArcLStart</code>, <code>ArcL</code>, <code>ArcLEnd</code>)을 설정하는 컴포넌트이다.
@@ -51,9 +52,9 @@ import * as d from "../../../data/components/arcmove.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="SeamData" description="용접 시작·종료 데이터" href="/datatype/seamdata/" />
-  <LinkCard title="WeldData" description="용접 조건" href="/datatype/welddata/" />
-  <LinkCard title="WeaveData" description="위빙 모션" href="/datatype/weavedata/" />
-  <LinkCard title="Move" description="MoveL / MoveJ 이동 명령" href="/instruction/move/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "SeamData", description: "용접 시작·종료 데이터", href: "/datatype/seamdata/" },
+  { title: "WeldData", description: "용접 조건", href: "/datatype/welddata/" },
+  { title: "WeaveData", description: "위빙 모션", href: "/datatype/weavedata/" },
+  { title: "Move", description: "MoveL / MoveJ 이동 명령", href: "/instruction/move/" },
+]} />

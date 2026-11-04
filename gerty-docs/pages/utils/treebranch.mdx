@@ -3,11 +3,12 @@ title: "Tree Branch"
 description: "DataTree에서 입력한 순번의 인덱스를 특정 Branch로 추출하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/treebranch.mjs";
 
 DataTree에서 입력한 순번의 인덱스를 특정 Branch로 추출하는 컴포넌트이다.
@@ -37,7 +38,7 @@ DataTree에서 입력한 순번의 인덱스를 특정 Branch로 추출하는 �
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Split Branch" description="순번으로 Branch 나누기" href="/utils/splitbranch/" />
-  <LinkCard title="Dispatch Branch" description="패턴으로 Branch 나누기" href="/utils/dispatch-branch/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Split Branch", description: "순번으로 Branch 나누기", href: "/utils/splitbranch/" },
+  { title: "Dispatch Branch", description: "패턴으로 Branch 나누기", href: "/utils/dispatch-branch/" },
+]} />

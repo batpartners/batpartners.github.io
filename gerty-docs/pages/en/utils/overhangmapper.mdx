@@ -3,11 +3,12 @@ title: "Overhang Mapper"
 description: "This is a component that visualizes overhangs of an input mesh geometry by applying a color map."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/overhangmapper.mjs";
 
 This is a component that visualizes overhangs of an input mesh geometry by applying a color map.
@@ -50,7 +51,7 @@ This is a component that visualizes overhangs of an input mesh geometry by apply
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Surface Frame" description="Reference plane from a surface" href="/en/utils/surface-frame/" />
-  <LinkCard title="Solid Shell" description="Shell deposition paths" href="/en/toolpath/solidshell/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Surface Frame", description: "Reference plane from a surface", href: "/en/utils/surface-frame/" },
+  { title: "Solid Shell", description: "Shell deposition paths", href: "/en/toolpath/solidshell/" },
+]} />

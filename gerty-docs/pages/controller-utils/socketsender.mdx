@@ -3,11 +3,12 @@ title: "Socket Sender"
 description: "최종 결정된 코드를 로컬 ABB IRC5 컨트롤러로 모션 인스트럭션 패킷을 TCP 소켓으로 스트리밍하여 내보낸다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/socketsender.mjs";
 
 최종 결정된 코드를 로컬 ABB IRC5 컨트롤러로 모션 인스트럭션 패킷을 TCP 소켓으로 스트리밍하여 내보낸다.
@@ -58,7 +59,7 @@ import * as d from "../../../data/components/socketsender.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Code Solver (Option)" description="SocketBundle 만들기 (Multi Task)" href="/core/code-solver-option/" />
-  <LinkCard title="ScanABBController" description="컨트롤러 검색·연결" href="/controller-utils/scanabbcontroller/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Code Solver (Option)", description: "SocketBundle 만들기 (Multi Task)", href: "/core/code-solver-option/" },
+  { title: "ScanABBController", description: "컨트롤러 검색·연결", href: "/controller-utils/scanabbcontroller/" },
+]} />

@@ -3,11 +3,12 @@ title: "Get MechUnits"
 description: "연결된 ABB 컨트롤러에서 캘리브레이션된 외부 메커니컬 유닛의 축 좌표계 평면 데이터를 가져오는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/getmechunits.mjs";
 
 연결된 ABB 컨트롤러에서 캘리브레이션된 외부 메커니컬 유닛의 축 좌표계 평면 데이터를 가져오는 컴포넌트이다.
@@ -56,7 +57,7 @@ import * as d from "../../../data/components/getmechunits.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="ScanABBController" description="컨트롤러 검색·연결" href="/controller-utils/scanabbcontroller/" />
-  <LinkCard title="ABB Positioner" description="외부축 포지셔너" href="/robot-tool/positioner/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ScanABBController", description: "컨트롤러 검색·연결", href: "/controller-utils/scanabbcontroller/" },
+  { title: "ABB Positioner", description: "외부축 포지셔너", href: "/robot-tool/positioner/" },
+]} />

@@ -3,11 +3,12 @@ title: "ABB Positioner (Extra Option)"
 description: "This is a component that allows you to customize the ABB positioner robot to be used."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/positioner-option.mjs";
 
 This is a component that allows you to customize the ABB positioner robot to be used. After completing the detailed settings of the positioner you own, simulation work is available. You can configure it by right-clicking the component icon and selecting [Define Positioner].
@@ -61,8 +62,8 @@ This is a component that allows you to customize the ABB positioner robot to be 
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="ABB Robots" description="Robot that takes the Positioner" href="/en/robot-tool/abbrobot/" />
-  <LinkCard title="Positioner RobTarget" description="Targets with positioner angles" href="/en/datatype/positioner-robtarget/" />
-  <LinkCard title="CreateWorkBench" description="Workbench on the positioner" href="/en/robot-tool/createworkbench/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "ABB Robots", description: "Robot that takes the Positioner", href: "/en/robot-tool/abbrobot/" },
+  { title: "Positioner RobTarget", description: "Targets with positioner angles", href: "/en/datatype/positioner-robtarget/" },
+  { title: "CreateWorkBench", description: "Workbench on the positioner", href: "/en/robot-tool/createworkbench/" },
+]} />

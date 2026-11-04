@@ -1,0 +1,24 @@
+---
+// The "Related" section: a plain list of links (arrow, title, short description) instead of Starlight link cards.
+import { Icon } from "@astrojs/starlight/components";
+interface Link { title: string; description?: string; href: string }
+interface Props { links: Link[] }
+const { links } = Astro.props;
+---
+<ul class="related">
+  {links.map((l) => (
+    <li>
+      <Icon name="right-arrow" class="arrow rtl:flip" />
+      <a href={l.href}>{l.title}</a>
+      {l.description && <span class="desc">{l.description}</span>}
+    </li>
+  ))}
+</ul>
+<style>
+  .related { list-style: none; padding: 0; margin: 0.75rem 0 0; }
+  .related li { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0 0.5rem; margin: 0.35rem 0; font-size: 0.95rem; }
+  .related :global(.arrow) { flex: none; align-self: center; color: var(--sl-color-text-accent); font-size: 1em; }
+  .related a { color: var(--sl-color-text-accent); font-weight: 600; text-decoration: none; }
+  .related a:hover { text-decoration: underline; }
+  .related .desc { color: var(--sl-color-gray-3); font-size: 0.85rem; }
+</style>

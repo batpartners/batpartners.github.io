@@ -3,11 +3,12 @@ title: "TriggIOs"
 description: "이동 경로상의 지정 위치에서 하나 이상의 IO Event를 발생시키는 위치 트리거 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/triggios.mjs";
 
 이동 경로상의 지정 위치에서 하나 이상의 IO Event를 발생시키는 위치 트리거 컴포넌트이다. 사용자는 신호의 변수 이름을 정의한다. ABB Trigger Move 인스트럭션 (TriggLIOs, TriggJIOs)과 함께 사용된다.
@@ -50,7 +51,7 @@ import * as d from "../../../data/components/triggios.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="IOEvent" description="트리거 하나를 정의" href="/datatype/iodevent/" />
-  <LinkCard title="TriggerIOMove" description="트리거와 함께 쓰는 이동 명령" href="/instruction/triggeriomove/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "IOEvent", description: "트리거 하나를 정의", href: "/datatype/iodevent/" },
+  { title: "TriggerIOMove", description: "트리거와 함께 쓰는 이동 명령", href: "/instruction/triggeriomove/" },
+]} />

@@ -3,11 +3,12 @@ title: "MoveOutput"
 description: "This is a component that configures ABB Move instructions (MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO) accompanied by digital, group, and analog output signals."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/moveoutput.mjs";
 
 This is a component that configures ABB Move instructions (MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO) accompanied by digital, group, and analog output signals.
@@ -57,8 +58,8 @@ This is a component that configures ABB Move instructions (MoveJDO, MoveLDO, Mov
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Move" description="MoveL / MoveJ move" href="/en/instruction/move/" />
-  <LinkCard title="SetOutput" description="Sets an output signal" href="/en/instruction/setoutput/" />
-  <LinkCard title="TriggerIOMove" description="Move with I/O triggers on the path" href="/en/instruction/triggeriomove/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Move", description: "MoveL / MoveJ move", href: "/en/instruction/move/" },
+  { title: "SetOutput", description: "Sets an output signal", href: "/en/instruction/setoutput/" },
+  { title: "TriggerIOMove", description: "Move with I/O triggers on the path", href: "/en/instruction/triggeriomove/" },
+]} />

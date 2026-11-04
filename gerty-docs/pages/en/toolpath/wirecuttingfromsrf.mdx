@@ -3,11 +3,12 @@ title: "WireCuttingFromSrf"
 description: "This is a component that generates a hot-wire cutting path from a ruled surface."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/wirecuttingfromsrf.mjs";
 
 This is a component that generates a hot-wire cutting path from a ruled surface. Users can set the number of points to generate target planes, the internal parameter value of the ruled surface (default: 0.5), and optionally, an attractor value to smoothly adjust the hot-wire tool. In addition, detailed configurations for the hot-wire path direction, tool orientation, and entry intervals are available.
@@ -57,7 +58,7 @@ This is a component that generates a hot-wire cutting path from a ruled surface.
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="WireCuttingFromCrvs" description="Hot-wire cutting from two curves" href="/en/toolpath/wirecuttingfromcrvs/" />
-  <LinkCard title="RobTarget" description="Turns target planes into robot targets" href="/en/datatype/robtarget/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "WireCuttingFromCrvs", description: "Hot-wire cutting from two curves", href: "/en/toolpath/wirecuttingfromcrvs/" },
+  { title: "RobTarget", description: "Turns target planes into robot targets", href: "/en/datatype/robtarget/" },
+]} />

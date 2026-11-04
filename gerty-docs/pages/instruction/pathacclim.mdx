@@ -3,11 +3,12 @@ title: "PathAccLim"
 description: "PathAccLim은 이동 경로상의 TCP 가속도 및 감속도 제한을 설정하거나 해제하는 PathAccLim 인스트럭션 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/pathacclim.mjs";
 
 PathAccLim은 이동 경로상의 TCP 가속도 및 감속도 제한을 설정하거나 해제하는 PathAccLim 인스트럭션 컴포넌트이다.
@@ -50,7 +51,7 @@ PathAccLim은 이동 경로상의 TCP 가속도 및 감속도 제한을 설정�
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="AccSet" description="가속도·램프 감소" href="/instruction/accset/" />
-  <LinkCard title="Move" description="MoveL / MoveJ 이동 명령" href="/instruction/move/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "AccSet", description: "가속도·램프 감소", href: "/instruction/accset/" },
+  { title: "Move", description: "MoveL / MoveJ 이동 명령", href: "/instruction/move/" },
+]} />

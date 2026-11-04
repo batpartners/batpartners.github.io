@@ -3,11 +3,12 @@ title: "Wait Time"
 description: "This is a component that temporarily pauses robot motion for a specified time (in seconds)."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/wait-time.mjs";
 
 This is a component that temporarily pauses robot motion for a specified time (in seconds).
@@ -50,6 +51,6 @@ This is a component that temporarily pauses robot motion for a specified time (i
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="WaitDI" description="Waits for a digital input" href="/en/instruction/waitdi/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "WaitDI", description: "Waits for a digital input", href: "/en/instruction/waitdi/" },
+]} />

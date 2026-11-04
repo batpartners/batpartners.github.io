@@ -3,11 +3,12 @@ title: "Code Solver (Option)"
 description: "This is a component that generates program files from defined RAPID robot motions and performs tasks to load and upload code files to an ABB controller connected via a network."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/code-solver-option.mjs";
 
 This is a component that generates program files from defined RAPID robot motions and performs tasks to load and upload code files to an ABB controller connected via a network.
@@ -60,9 +61,9 @@ This page covers the <strong>Multi Task</strong> form, which exports with a sock
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="GERTY Core" description="Computes the robot motion" href="/en/core/gerty-core/" />
-  <LinkCard title="Display Solver" description="Viewport simulation" href="/en/core/display-solver/" />
-  <LinkCard title="Analysis Deconstructor" description="Axis angles and error log" href="/en/core/analysis/" />
-  <LinkCard title="Socket Sender" description="Sends the SocketBundle" href="/en/controller-utils/socketsender/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "GERTY Core", description: "Computes the robot motion", href: "/en/core/gerty-core/" },
+  { title: "Display Solver", description: "Viewport simulation", href: "/en/core/display-solver/" },
+  { title: "Analysis Deconstructor", description: "Axis angles and error log", href: "/en/core/analysis/" },
+  { title: "Socket Sender", description: "Sends the SocketBundle", href: "/en/controller-utils/socketsender/" },
+]} />

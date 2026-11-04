@@ -3,11 +3,12 @@ title: "WaitDI"
 description: "This is a component that generates a WaitDI instruction to pause robot motion until a specified digital input (DI) signal reaches the target value."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/waitdi.mjs";
 
 This is a component that generates a WaitDI instruction to pause robot motion until a specified digital input (DI) signal reaches the target value.
@@ -50,7 +51,7 @@ This is a component that generates a WaitDI instruction to pause robot motion un
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Wait Time" description="Waits for a set time" href="/en/instruction/wait-time/" />
-  <LinkCard title="SetOutput" description="Sets an output signal" href="/en/instruction/setoutput/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Wait Time", description: "Waits for a set time", href: "/en/instruction/wait-time/" },
+  { title: "SetOutput", description: "Sets an output signal", href: "/en/instruction/setoutput/" },
+]} />

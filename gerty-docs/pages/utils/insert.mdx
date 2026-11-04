@@ -3,11 +3,12 @@ title: "Insert"
 description: "데이터 콜렉션을 특정 DataTree 인덱스에 삽입할 수 있는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/insert.mjs";
 
 데이터 콜렉션을 특정 DataTree 인덱스에 삽입할 수 있는 컴포넌트이다.
@@ -45,7 +46,7 @@ import * as d from "../../../data/components/insert.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="Dispatch Branch" description="패턴으로 Branch 나누기" href="/utils/dispatch-branch/" />
-  <LinkCard title="Split Branch" description="순번으로 Branch 나누기" href="/utils/splitbranch/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Dispatch Branch", description: "패턴으로 Branch 나누기", href: "/utils/dispatch-branch/" },
+  { title: "Split Branch", description: "순번으로 Branch 나누기", href: "/utils/splitbranch/" },
+]} />

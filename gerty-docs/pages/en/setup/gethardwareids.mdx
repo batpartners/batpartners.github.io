@@ -3,11 +3,12 @@ title: "Get HardwareIDs"
 description: "Hardware-based identifiers (such as MAC address, disk serial number, BIOS/UUID, and USB ID) are collected from the local machine for device identification."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/gethardwareids.mjs";
 
 Hardware-based identifiers (such as MAC address, disk serial number, BIOS/UUID, and USB ID) are collected from the local machine for device identification. The device identifiers are processed locally, and the hardware IDs are neither transmitted externally nor stored.
@@ -55,6 +56,6 @@ This component has no inputs; everything is set in the settings below.
 
 ## Related
 
-<CardGrid>
-  <LinkCard title="Installation" description="Installation and licence" href="/en/about/installation/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "Installation", description: "Installation and licence", href: "/en/about/installation/" },
+]} />

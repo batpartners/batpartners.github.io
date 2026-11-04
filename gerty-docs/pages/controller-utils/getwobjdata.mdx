@@ -3,11 +3,12 @@ title: "Get WobjData"
 description: "현재 연결된 오프라인 컨트롤러상에서 활성화된 워크오브젝트 데이터를 가져오는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/getwobjdata.mjs";
 
 현재 연결된 오프라인 컨트롤러상에서 활성화된 워크오브젝트 데이터를 가져오는 컴포넌트이다.
@@ -43,8 +44,8 @@ import * as d from "../../../data/components/getwobjdata.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="WobjData" description="작업 좌표계" href="/datatype/wobjdata/" />
-  <LinkCard title="ScanABBController" description="컨트롤러 검색·연결" href="/controller-utils/scanabbcontroller/" />
-  <LinkCard title="ToolData" description="툴 데이터 정의" href="/datatype/tooldata/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "WobjData", description: "작업 좌표계", href: "/datatype/wobjdata/" },
+  { title: "ScanABBController", description: "컨트롤러 검색·연결", href: "/controller-utils/scanabbcontroller/" },
+  { title: "ToolData", description: "툴 데이터 정의", href: "/datatype/tooldata/" },
+]} />

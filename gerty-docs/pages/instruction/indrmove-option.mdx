@@ -3,11 +3,12 @@ title: "IndRMove (Positional Reference)"
 description: "부가 축을 독립 모드로 전환하며 1회전 이내의 지정 위치로 이동시키는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/indrmove-option.mjs";
 
 부가 축을 독립 모드로 전환하며 1회전 이내의 지정 위치로 이동시키는 컴포넌트이다. <code>IndRMove</code> 인스트럭션으로 작성되며, 작업 수행 후 <code>IndReset</code>으로 일반 모드 초기화가 필요하다.
@@ -63,8 +64,8 @@ import * as d from "../../../data/components/indrmove-option.mjs";
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="IndReset" description="독립 모드 해제·각도 초기화" href="/instruction/indreset/" />
-  <LinkCard title="IndRMove" description="숫자로 목표 위치 지정" href="/instruction/indrmove/" />
-  <LinkCard title="RobTarget" description="모션 목표 위치" href="/datatype/robtarget/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "IndReset", description: "독립 모드 해제·각도 초기화", href: "/instruction/indreset/" },
+  { title: "IndRMove", description: "숫자로 목표 위치 지정", href: "/instruction/indrmove/" },
+  { title: "RobTarget", description: "모션 목표 위치", href: "/datatype/robtarget/" },
+]} />

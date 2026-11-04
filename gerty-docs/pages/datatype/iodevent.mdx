@@ -3,11 +3,12 @@ title: "IOEvent"
 description: "TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트이다."
 ---
 
-import { Tabs, TabItem, Aside, Steps, LinkCard, CardGrid } from "@astrojs/starlight/components";
+import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
 import ParamTable from "../../../components/doc/ParamTable.astro";
 import SettingsPanel from "../../../components/doc/SettingsPanel.astro";
 import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/iodevent.mjs";
 
 TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트이다. 대상 출력 신호, 경로상 트리거 위치, 설정값을 지정한다. 여러 IOEvent를 TriggIOs 컴포넌트에 묶어 전체 TriggIOs 데이터를 구성한다.
@@ -57,7 +58,7 @@ TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트�
 
 ## 관련 항목
 
-<CardGrid>
-  <LinkCard title="TriggIOs" description="IOEvent 를 묶는 트리거" href="/datatype/triggios/" />
-  <LinkCard title="TriggerIOMove" description="트리거와 함께 쓰는 이동 명령" href="/instruction/triggeriomove/" />
-</CardGrid>
+<RelatedLinks links={[
+  { title: "TriggIOs", description: "IOEvent 를 묶는 트리거", href: "/datatype/triggios/" },
+  { title: "TriggerIOMove", description: "트리거와 함께 쓰는 이동 명령", href: "/instruction/triggeriomove/" },
+]} />
