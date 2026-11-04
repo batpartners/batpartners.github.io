@@ -11,7 +11,7 @@ holds the input / settings / output tables for both languages. Edit those, not t
 hand-written (every category folder under `pages/` and `pages/en/`); only the `about/` pages are still built from their posts. The page parts are in `src/components/doc/`: `DocTags` (category / mode
 tags), `ComponentShot` (main component image), `ParamTable` (Name | Type | Description; `optional: true` rows get an
 "옵션 / Optional" pill) and `SettingsPanel` (a settings tab: screenshot beside its table, numbered markers placed by
-each row's `y: [top%, height%]`). `node scripts/extract-component.mjs <post file>` drafts a data file from a post.
+each row's `y: [top%, height%]`) and `RelatedLinks` (the Related list: arrow, link, short description). `node scripts/extract-component.mjs <post file>` drafts a data file from a post.
 
 ## Commands (in this folder)
 
