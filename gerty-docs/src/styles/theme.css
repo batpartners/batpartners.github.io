@@ -82,6 +82,12 @@ header.header {
   letter-spacing: 0.01em;
   color: var(--sl-color-white);
 }
+/* A group inside a category (e.g. WobjData, ToolData) looks like the page links next to it */
+.sidebar-content details details .large {
+  font-weight: 400;
+  letter-spacing: normal;
+  color: var(--sl-color-gray-2);
+}
 
 /* ---------- Content ---------- */
 .sl-markdown-content h2 {
