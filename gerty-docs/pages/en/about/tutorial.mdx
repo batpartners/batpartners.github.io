@@ -1,0 +1,113 @@
+---
+title: "Tutorial"
+description: "Learn the GERTY work flow from a video and a diagram, then open a template from the Grasshopper menu and apply it to your own work."
+---
+
+import { Steps } from "@astrojs/starlight/components";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import GertyFlow from "../../../../components/doc/GertyFlow.astro";
+import YouTube from "../../../../components/YouTube.astro";
+import NumberedShot from "../../../../components/doc/NumberedShot.astro";
+import MarkedSteps from "../../../../components/doc/MarkedSteps.astro";
+import TemplateGallery from "../../../../components/doc/TemplateGallery.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
+
+The quickest way to learn GERTY is through the templates you can open straight from the Grasshopper menu. See the work flow at a glance first, then open a template, look around, and adapt it to your own robot and geometry.
+
+<DocTags tags={[{ text: "About GERTY", tone: "accent" }, { text: "Tutorial" }, { text: "Templates" }]} />
+
+## 1. The GERTY work flow
+
+Every template follows the same five stages. Click a component under a stage to open its page.
+
+<GertyFlow label="GERTY work flow" stages={[
+  { title: "Robot setup", text: "Choose the robot, the tool and the work object frame.", links: [
+    { title: "ABB Robots", href: "/en/robot-tool/abbrobot/" },
+    { title: "ToolData", href: "/en/datatype/tooldata/" },
+    { title: "WobjData", href: "/en/datatype/wobjdata/" },
+  ] },
+  { title: "Toolpath", text: "Make a drawing, cutting or deposition path from the geometry.", links: [
+    { title: "Curve Tracing", href: "/en/toolpath/curvetracing/" },
+    { title: "Solid Shell", href: "/en/toolpath/solidshell/" },
+  ] },
+  { title: "Targets and instructions", text: "Turn the path into robot targets and add motion instructions.", links: [
+    { title: "RobTarget", href: "/en/datatype/robtarget/" },
+    { title: "Move", href: "/en/instruction/move/" },
+  ] },
+  { title: "Solve", text: "Compute the robot motion from the setup and the instructions.", links: [
+    { title: "GERTY Core", href: "/en/core/gerty-core/" },
+  ] },
+  { title: "Check and export", text: "Check it in the simulation and write the robot code (RAPID).", links: [
+    { title: "Display Solver", href: "/en/core/display-solver/" },
+    { title: "Code Solver", href: "/en/core/code-solver/" },
+  ] },
+]} />
+
+### Watch it
+
+The video below walks through these five stages from start to finish with the **Basic** template. If you are new to GERTY, watch it first, then open the templates below.
+
+<YouTube id="y1yWQu1PcPM" title="GERTY 01_ GERTY Basic" />
+
+## 2. Open a template
+
+<NumberedShot src="/assets/images/Tutorial_Menu.png" alt="The GERTY Ver.2 menu in Grasshopper with its Templates submenu" width={560} marks={[[48, 4.3], [33.5, 59.1], [89, 76], [33.5, 66.3]]} />
+
+<MarkedSteps>
+
+1. Open **GERTY Ver.2** in the Grasshopper menu bar.
+2. Point to **Templates**.
+3. Pick a type in the submenu (Basic, Drawing, Hot-wire Cutting, Milling, 3D Printing, Block Laying, WAAM) to open its example definition on the canvas.
+4. **Video Tutorials** opens the tutorial videos and **Documents** opens these docs.
+
+</MarkedSteps>
+
+## 3. The templates
+
+Each template holds one way of working as an example. Start with the one closest to your own work.
+
+<TemplateGallery linksLabel="Main components" items={[
+  { img: "/assets/images/Tutorial_T0_Basic.jpg", name: "Basic", text: "The basic GERTY flow, from robot and tool setup to the simulation and RAPID code", links: [
+    { title: "ABB Robots", href: "/en/robot-tool/abbrobot/" }, { title: "Move", href: "/en/instruction/move/" }, { title: "GERTY Core", href: "/en/core/gerty-core/" },
+  ] },
+  { img: "/assets/images/Tutorial_T1_Drawing.jpg", name: "Drawing", text: "A pen path that follows curves", links: [
+    { title: "Curve Tracing", href: "/en/toolpath/curvetracing/" },
+  ] },
+  { img: "/assets/images/Tutorial_T2_HotwireCutting.jpg", name: "Hot-wire Cutting", text: "A hot-wire path that cuts foam blocks", links: [
+    { title: "WireCuttingFromSrf", href: "/en/toolpath/wirecuttingfromsrf/" }, { title: "WireCuttingFromCrvs", href: "/en/toolpath/wirecuttingfromcrvs/" },
+  ] },
+  { img: "/assets/images/Tutorial_T3_Milling.jpg", name: "Milling", text: "Roughing and finishing paths that carve a block", links: [
+    { title: "Roughing", href: "/en/toolpath/roughing/" }, { title: "ParallelFinishing", href: "/en/toolpath/parallelfinishing/" }, { title: "UVFinishing", href: "/en/toolpath/uv-finishing/" },
+  ] },
+  { img: "/assets/images/Tutorial_T4_3DPrinting.jpg", name: "3D Printing", text: "A deposition path that slices a shape into layers and builds it up", links: [
+    { title: "Solid Shell", href: "/en/toolpath/solidshell/" }, { title: "Surface Shell", href: "/en/toolpath/surfaceshell/" }, { title: "Deposition Builder", href: "/en/toolpath/depositionbuilder/" },
+  ] },
+  { img: "/assets/images/Tutorial_T5_BlockLaying.jpg", name: "Block Laying", text: "Picking blocks and laying them in a set pattern", links: [
+    { title: "Block Designer", href: "/en/toolpath/block-designer/" }, { title: "Block Supply", href: "/en/toolpath/block-supply/" },
+  ] },
+  { img: "/assets/images/Tutorial_T6_WAAM.jpg", name: "WAAM", text: "Building up metal with welding wire", links: [
+    { title: "WAAM Builder", href: "/en/toolpath/waambuilder/" }, { title: "SeamData", href: "/en/datatype/seamdata/" }, { title: "WeldData", href: "/en/datatype/welddata/" },
+  ] },
+  { img: "/assets/images/Tutorial_T7_Positioner.jpg", name: "Positioner", text: "A positioner turning the work piece while the robot moves with it", links: [
+    { title: "ABB Positioner", href: "/en/robot-tool/positioner/" }, { title: "Positioner RobTarget", href: "/en/datatype/positioner-robtarget/" },
+  ] },
+]} />
+
+## 4. Apply it to your work
+
+<Steps>
+
+1. Open the template closest to your work and run the simulation once to see the whole motion.
+2. In the **Robot setup** stage, change the robot, tool and work object frame to match your cell ([ABB Robots](/en/robot-tool/abbrobot/), [ToolData](/en/datatype/tooldata/), [WobjData](/en/datatype/wobjdata/)).
+3. Replace the template's example geometry with yours and adjust the **Toolpath** settings (spacing, layer height and so on).
+4. Check reach and collisions with [Display Solver](/en/core/display-solver/), then write the RAPID code with [Code Solver](/en/core/code-solver/).
+
+</Steps>
+
+## Related
+
+<RelatedLinks links={[
+  { title: "Installation", description: "Installing GERTY and activating the licence", href: "/en/about/installation/" },
+  { title: "GERTY Component", description: "Component layout and controls", href: "/en/about/component-overview/" },
+  { title: "GERTY Core", description: "The core component that solves the robot motion", href: "/en/core/gerty-core/" },
+]} />

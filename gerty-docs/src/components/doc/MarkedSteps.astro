@@ -1,0 +1,10 @@
+---
+// An ordered list whose numbers are drawn as the same badges as the markers on the NumberedShot above it:
+// step n of the list is marker n on the picture.
+---
+<div class="marked-steps"><slot /></div>
+<style>
+  .marked-steps :global(ol) { list-style: none; counter-reset: mark; padding-inline-start: 0; }
+  .marked-steps :global(ol > li) { counter-increment: mark; position: relative; padding-inline-start: 2rem; margin-top: 0.6rem; }
+  .marked-steps :global(ol > li::before) { content: counter(mark); position: absolute; inset-inline-start: 0; top: 0.15em; display: grid; place-items: center; width: 1.35rem; height: 1.35rem; border-radius: 50%; font-size: 0.72rem; font-weight: 700; background: var(--sl-color-accent); color: var(--sl-color-black); }
+</style>

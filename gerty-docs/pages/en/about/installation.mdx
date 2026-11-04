@@ -1,0 +1,71 @@
+---
+title: "Installation"
+description: "How to install GERTY, use the trial, and request and activate a full licence."
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import NumberedShot from "../../../../components/doc/NumberedShot.astro";
+import MarkedSteps from "../../../../components/doc/MarkedSteps.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
+
+How to install GERTY, use the trial, and request and activate a full licence. Each step's number points to the same number on the picture just above it.
+
+<DocTags tags={[{ text: "About GERTY", tone: "accent" }, { text: "Installation" }, { text: "Licence" }]} />
+
+## 1. Installation and trial
+
+<NumberedShot src="/assets/images/external/Package-Manager.png" alt="Rhino Package Manager" marks={[[2.5, 17.5], [84, 81.5], [2.5, 87.5]]} />
+
+<MarkedSteps>
+
+1. Open **PackageManager** in Rhino and type `GERTY` in the search box.
+2. Pick the latest version, press **Install**, then restart Rhino.
+3. With **Automatically update packages when Rhino starts** on, GERTY updates itself to the latest version every time Rhino starts.
+
+</MarkedSteps>
+
+<Aside type="note">
+  On the first launch after installing, a trial licence is applied automatically and gives full access to every feature for 30 days.
+</Aside>
+
+## 2. Hardware IDs (Get HardwareIDs)
+
+When the trial ends, a paid subscription keeps the full version running. To request a licence you first need this PC's hardware IDs (MAC address and others).
+
+<NumberedShot src="/assets/images/external/Machine-ID.png" alt="Get HardwareIDs and its output panels" marks={[[12, 16.2], [38.5, 5], [30, 46.2]]} />
+
+<MarkedSteps>
+
+1. Place the [Get HardwareIDs](/en/setup/gethardwareids/) component on the Grasshopper canvas and connect a Panel to its **MachineIDs** output.
+2. Right-click the panel and choose **Copy Data Only** to copy the IDs.
+3. Press **Contact Support** and paste the IDs into the licence request form that opens, then submit it.
+
+</MarkedSteps>
+
+<Aside type="note">
+  If the form does not open or display correctly, send the IDs to our support team at contact@b-at.kr.
+</Aside>
+
+## 3. Activate the licence
+
+A full licence is purchased through contact@b-at.kr. Register the licence key you receive as follows.
+
+<NumberedShot src="/assets/images/external/License-Active.png" alt="The GERTY Ver.2 menu in Grasshopper" marks={[[45, 4.5], [68, 19.4], [65.5, 53.6], [57.5, 74]]} />
+
+<MarkedSteps>
+
+1. Open the **GERTY Ver.2** menu in the Grasshopper ribbon.
+2. Enter the licence key in **Activate GERTY License**, then close Rhino completely and start it again.
+3. Check the licence state (User / Trial) and the remaining period in the same menu at any time.
+4. Open a GERTY template from **Templates** to start a project straight away.
+
+</MarkedSteps>
+
+## Related
+
+<RelatedLinks links={[
+  { title: "Get HardwareIDs", description: "Hardware ID component", href: "/en/setup/gethardwareids/" },
+  { title: "Tutorial", description: "Learn GERTY with the templates", href: "/en/about/tutorial/" },
+  { title: "GERTY Component", description: "Component layout and controls", href: "/en/about/component-overview/" },
+]} />

@@ -1,0 +1,18 @@
+---
+// A screenshot shown small, with numbered markers on it; a <MarkedSteps> list below it uses the same numbers.
+// marks: [x%, y%] of each marker's centre on the image, in number order (1, 2, …).
+interface Props { src: string; alt: string; width?: number; marks: [number, number][] }
+const { src, alt, width = 480, marks } = Astro.props;
+---
+<figure class="nshot" style={`max-width:${width}px`}>
+  <div class="frame">
+    <img src={src} alt={alt} loading="lazy" />
+    {marks.map(([x, y], i) => <span class="mark" style={`left:${x}%;top:${y}%`}>{i + 1}</span>)}
+  </div>
+</figure>
+<style>
+  .nshot { margin: 1rem auto 0; }
+  .frame { position: relative; }
+  .frame img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--sl-color-hairline); }
+  .mark { position: absolute; transform: translate(-50%, -50%); display: grid; place-items: center; width: 1.35rem; height: 1.35rem; border-radius: 50%; font-size: 0.72rem; font-weight: 700; background: var(--sl-color-accent); color: var(--sl-color-black); box-shadow: 0 0 0 2px var(--sl-color-bg); }
+</style>
