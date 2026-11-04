@@ -1,0 +1,93 @@
+---
+title: "GERTY Overview"
+description: "What GERTY is, and the layout, inputs, mode options and GERTY UI that all components share."
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import DocTags from "../../../../components/doc/DocTags.astro";
+import NumberedShot from "../../../../components/doc/NumberedShot.astro";
+import ShotCards from "../../../../components/doc/ShotCards.astro";
+import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
+
+GERTY is CAM software that helps you program custom fabrication with robotic arms. This page introduces GERTY and explains the layout and controls that all its components share.
+
+<DocTags tags={[{ text: "About GERTY", tone: "accent" }, { text: "Overview" }, { text: "Using components" }]} />
+
+## 1. What is GERTY?
+
+<NumberedShot src="/assets/images/30.jpg" alt="GERTY" width={440} marks={[]} />
+
+GERTY is a software framework that runs in Rhino–Grasshopper. It plans and generates additive and subtractive toolpaths that fit the robot arm and its external axes, simulates the motion in 3D, and writes the robot control program: an offline programming (OLP) solution for the robotic custom-manufacturing systems from BAT Partners.
+
+Robot machining motions can be optimised intuitively from CAD data. Because it uses Grasshopper's visual programming interface, you can build custom toolpaths without writing code.
+
+GERTY fully supports ABB multi-axis robot arms and external axes today, and support for other industrial and collaborative robot makers such as Kuka, Fanuc, Hyundai, Universal Robots and Yaskawa is being built.
+
+## 2. Component layout
+
+GERTY components follow the structure of Grasshopper components. Connect the inputs, choose the settings in the GERTY UI, and the result goes out through the outputs.
+
+<NumberedShot src="/assets/images/Component_2026.png" alt="A GERTY component: INPUT, ICON, OUTPUT and GERTY UI" width={420} marks={[]} />
+
+| Part | What it does |
+| --- | --- |
+| **INPUT** | Connect Rhino or GERTY components, or type values in. |
+| **ICON** | Right-click it to open the context menu (mode options and more). |
+| **OUTPUT** | Passes the result on to the next component. |
+| **GERTY UI** | The settings area at the bottom of the component, split into tabs. |
+
+## 3. Inputs
+
+Some inputs are required; optional ones can be left empty.
+
+<Aside type="note">
+  Optional inputs can stay empty. When every required value is in place the component turns grey, which is the normal state.
+</Aside>
+
+### Connect Node
+
+Connect nodes the same way as in Grasshopper to build up the result.
+
+<NumberedShot src="/assets/images/Asset_1.png" alt="Connecting nodes" width={520} marks={[]} />
+
+### Mode Option
+
+Some components can switch mode or add features from the context menu you open by right-clicking the icon.
+
+<NumberedShot src="/assets/images/ContextMenu_2026.png" alt="The context menu opened by right-clicking the icon (Dynamic / Static Mode of Positioner RobTarget)" width={366} marks={[]} />
+
+For example, Positioner RobTarget switched to **Dynamic Mode** looks like this.
+
+<NumberedShot src="/assets/images/1_Positioner_Robtarget_Dynamic.png" alt="Positioner RobTarget in Dynamic Mode" width={320} marks={[]} />
+
+Components with mode options: [ToolData](/en/datatype/tooldata/) · [WobjData](/en/datatype/wobjdata/) · [Positioner RobTarget](/en/datatype/positioner-robtarget/) · [SeamData](/en/datatype/seamdata/) · [WeldData](/en/datatype/welddata/) · TPSiSynergic · TPSSynergic · [ABB Positioner](/en/robot-tool/positioner/) · [ABB Robots](/en/robot-tool/abbrobot/) · [WorkBench](/en/robot-tool/createworkbench/) · [Code Solver](/en/core/code-solver/) · [Solid Shell](/en/toolpath/solidshell/) · [Surface Shell](/en/toolpath/surfaceshell/) · [RePath Tree](/en/utils/repathtree/)
+
+## 4. GERTY UI
+
+The settings area at the bottom of a component. Every setting has a GERTY default that you can change. It uses the same kinds of elements as Grasshopper (Text, Slider, Button, Toggle, DropDown, Panel, Color), grouped by function into tabs.
+
+### Tab
+
+Settings are grouped into tabs by function. The selected tab turns dark and its settings can be changed; required values you leave alone keep the GERTY default. Main functions use vertical tabs and their details horizontal tabs; move between tabs to set the values.
+
+<NumberedShot src="/assets/images/Overview_Tabs.gif" alt="Switching between the Orientation and Output tabs" width={389} marks={[]} />
+
+### UI elements
+
+<ShotCards items={[
+  { name: "Text Field", text: "Double-click to type. Letters and digits only by default; each component's page gives the rules for its values.", shots: [{ src: "/assets/images/0_RobTarget_4.png" }] },
+  { name: "Slider", text: "Double-click the number next to it to type a value, or drag the pointer left or right. Double takes decimals, Integer only positive whole numbers.", shots: [{ src: "/assets/images/2_FlybyCustom_22.png", caption: "Double" }, { src: "/assets/images/1_FlybyPlane_10.png", caption: "Integer" }] },
+  { name: "DropDown", text: "Choose a model or option that GERTY provides. For tools and workbenches, models you Export can be saved and loaded too.", shots: [{ src: "/assets/images/DropDown_02.png" }] },
+  { name: "Button / Toggle", text: "A Button briefly reactivates the component; a Toggle switches its state. In some components the value (True/False) adds or removes inputs and settings.", shots: [{ src: "/assets/images/0_ABBRobot_11.png" }] },
+  { name: "Color Swatch", text: "Sets the colour of the active model or path in the simulation.", shots: [{ src: "/assets/images/Color_00.png" }] },
+  { name: "Panel", text: "Shows the component's result values in a panel once it runs.", shots: [{ src: "/assets/images/1_ScanController_11.png" }] },
+  { name: "Process Gauge", text: "Components that take a while show their progress in percent (%).", shots: [{ src: "/assets/images/2_SocketSender_12.png" }] },
+]} />
+
+## Related
+
+<RelatedLinks links={[
+  { title: "Installation", description: "Installing GERTY and activating the licence", href: "/en/about/installation/" },
+  { title: "Tutorial", description: "The GERTY work flow with templates and a video", href: "/en/about/tutorial/" },
+  { title: "GERTY Core", description: "The core component that solves the robot motion", href: "/en/core/gerty-core/" },
+]} />

@@ -37,6 +37,9 @@ export default defineConfig({
       components: {
         SocialIcons: "./src/components/HeaderLinks.astro",
         Sidebar: "./src/components/Sidebar.astro",
+        // Light is the default theme (Starlight: auto); "auto" and "dark" stay selectable.
+        ThemeProvider: "./src/components/ThemeProvider.astro",
+        ThemeSelect: "./src/components/ThemeSelect.astro",
       },
       customCss: [
         "pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css",

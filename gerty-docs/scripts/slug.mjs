@@ -10,7 +10,13 @@ const SECTION = {
   ControllerUtils: "controller-utils",
   Setup: "setup",
 };
-const ABOUT = { "About-GERTY": "what-is-gerty", ComponentOverview: "component-overview", installation: "installation", Tutorial: "tutorial" };
+// "What is GERTY?" and "Component Overview" are one page now (GERTY Overview, hand-written in pages/about/overview.mdx):
+// both posts map to it, so their old URLs and links to them lead there.
+const ABOUT = { "About-GERTY": "overview", ComponentOverview: "overview", installation: "installation", Tutorial: "tutorial" };
+/** Pages that several posts were merged into (a hand-written page in pages/ must exist for each). */
+export const MERGED = new Set(["about/overview"]);
+/** Addresses these docs used before the merge -> the page that holds them now. */
+export const MOVED = { "about/what-is-gerty": "about/overview", "about/component-overview": "about/overview" };
 
 /** "2026-07-11-Instruction-Move.md" -> "instruction/move" */
 export function slugFromFile(file) {

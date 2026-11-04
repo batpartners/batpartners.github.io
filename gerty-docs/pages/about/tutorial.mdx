@@ -9,7 +9,6 @@ import GertyFlow from "../../../components/doc/GertyFlow.astro";
 import YouTube from "../../../components/YouTube.astro";
 import NumberedShot from "../../../components/doc/NumberedShot.astro";
 import MarkedSteps from "../../../components/doc/MarkedSteps.astro";
-import TemplateGallery from "../../../components/doc/TemplateGallery.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 
 GERTY 는 Grasshopper 메뉴에서 바로 여는 템플릿으로 익히는 것이 가장 빠르다. 먼저 작업 흐름을 한눈에 보고, 템플릿을 열어 살펴본 뒤, 내 로봇과 형상에 맞게 바꿔 적용해 본다.
@@ -45,7 +44,7 @@ GERTY 는 Grasshopper 메뉴에서 바로 여는 템플릿으로 익히는 것�
 
 ### 영상으로 보기
 
-아래 영상은 **Basic** 템플릿으로 이 다섯 단계를 처음부터 끝까지 따라간다. 처음이라면 영상을 먼저 보고 아래 템플릿을 열어 보는 것을 권한다.
+아래 영상은 **Basic** 템플릿으로 이 다섯 단계를 처음부터 끝까지 따라간다. 처음이라면 영상을 먼저 보고, 아래 순서로 템플릿을 열어 따라 해 보는 것을 권한다.
 
 <YouTube id="y1yWQu1PcPM" title="GERTY 01_ GERTY Basic" />
 
@@ -62,38 +61,7 @@ GERTY 는 Grasshopper 메뉴에서 바로 여는 템플릿으로 익히는 것�
 
 </MarkedSteps>
 
-## 3. 템플릿 둘러보기
-
-템플릿마다 하나의 가공 방식을 예제로 담고 있다. 내 작업과 가장 비슷한 것부터 열어 본다.
-
-<TemplateGallery items={[
-  { img: "/assets/images/Tutorial_T0_Basic.jpg", name: "Basic", text: "로봇·툴 셋업부터 시뮬레이션과 RAPID 코드까지, GERTY 의 기본 흐름", links: [
-    { title: "ABB Robots", href: "/robot-tool/abbrobot/" }, { title: "Move", href: "/instruction/move/" }, { title: "GERTY Core", href: "/core/gerty-core/" },
-  ] },
-  { img: "/assets/images/Tutorial_T1_Drawing.jpg", name: "Drawing", text: "커브를 따라 펜으로 그리는 경로", links: [
-    { title: "Curve Tracing", href: "/toolpath/curvetracing/" },
-  ] },
-  { img: "/assets/images/Tutorial_T2_HotwireCutting.jpg", name: "Hot-wire Cutting", text: "열선으로 폼 블록을 자르는 경로", links: [
-    { title: "WireCuttingFromSrf", href: "/toolpath/wirecuttingfromsrf/" }, { title: "WireCuttingFromCrvs", href: "/toolpath/wirecuttingfromcrvs/" },
-  ] },
-  { img: "/assets/images/Tutorial_T3_Milling.jpg", name: "Milling", text: "황삭과 정삭으로 블록을 깎는 경로", links: [
-    { title: "Roughing", href: "/toolpath/roughing/" }, { title: "ParallelFinishing", href: "/toolpath/parallelfinishing/" }, { title: "UVFinishing", href: "/toolpath/uv-finishing/" },
-  ] },
-  { img: "/assets/images/Tutorial_T4_3DPrinting.jpg", name: "3D Printing", text: "형상을 레이어로 나눠 쌓아 올리는 적층 경로", links: [
-    { title: "Solid Shell", href: "/toolpath/solidshell/" }, { title: "Surface Shell", href: "/toolpath/surfaceshell/" }, { title: "Deposition Builder", href: "/toolpath/depositionbuilder/" },
-  ] },
-  { img: "/assets/images/Tutorial_T5_BlockLaying.jpg", name: "Block Laying", text: "블록을 집어 정해진 패턴으로 쌓는 경로", links: [
-    { title: "Block Designer", href: "/toolpath/block-designer/" }, { title: "Block Supply", href: "/toolpath/block-supply/" },
-  ] },
-  { img: "/assets/images/Tutorial_T6_WAAM.jpg", name: "WAAM", text: "용접 와이어로 금속을 쌓아 올리는 경로", links: [
-    { title: "WAAM Builder", href: "/toolpath/waambuilder/" }, { title: "SeamData", href: "/datatype/seamdata/" }, { title: "WeldData", href: "/datatype/welddata/" },
-  ] },
-  { img: "/assets/images/Tutorial_T7_Positioner.jpg", name: "Positioner", text: "포지셔너가 작업물을 돌리며 로봇과 함께 움직이는 경로", links: [
-    { title: "ABB Positioner", href: "/robot-tool/positioner/" }, { title: "Positioner RobTarget", href: "/datatype/positioner-robtarget/" },
-  ] },
-]} />
-
-## 4. 내 작업에 적용하기
+## 3. 내 작업에 적용하기
 
 <Steps>
 
@@ -108,6 +76,6 @@ GERTY 는 Grasshopper 메뉴에서 바로 여는 템플릿으로 익히는 것�
 
 <RelatedLinks links={[
   { title: "Installation", description: "GERTY 설치와 라이선스 등록", href: "/about/installation/" },
-  { title: "GERTY Component", description: "컴포넌트 화면 구성과 조작", href: "/about/component-overview/" },
+  { title: "GERTY Overview", description: "GERTY 소개와 컴포넌트 공통 사용법", href: "/about/overview/" },
   { title: "GERTY Core", description: "로봇 동작을 연산하는 핵심 컴포넌트", href: "/core/gerty-core/" },
 ]} />

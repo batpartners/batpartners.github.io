@@ -8,10 +8,17 @@ to `main`, and the workflow `.github/workflows/docs.yml` converts, builds, check
 **Pages rewritten in the new template are no longer built from their post.** Their source is `pages/` (one MDX file
 per language, same path as in `src/content/docs`) plus a data file per component in `src/data/components/`, which
 holds the input / settings / output tables for both languages. Edit those, not the post. All component pages are
-hand-written (every category folder under `pages/` and `pages/en/`); only the `about/` pages are still built from their posts. The page parts are in `src/components/doc/`: `DocTags` (category / mode
+hand-written (every category folder under `pages/` and `pages/en/`), and so are the `about/` pages: GERTY Overview
+(`about/overview`, the old "What is GERTY?" and "Component Overview" posts merged; both posts map to it in
+`scripts/slug.mjs`, and the old `/about/what-is-gerty/` and `/about/component-overview/` addresses redirect to it),
+Installation and Tutorial. The page parts are in `src/components/doc/`: `DocTags` (category / mode
 tags), `ComponentShot` (main component image), `ParamTable` (Name | Type | Description; `optional: true` rows get an
 "옵션 / Optional" pill) and `SettingsPanel` (a settings tab: screenshot beside its table, numbered markers placed by
-each row's `y: [top%, height%]`) and `RelatedLinks` (the Related list: arrow, link, short description). `node scripts/extract-component.mjs <post file>` drafts a data file from a post.
+each row's `y: [top%, height%]`) and `RelatedLinks` (the Related list: arrow, link, short description). Guide pages
+also use `NumberedShot` + `MarkedSteps` (a small screenshot with numbered markers, and steps with the same numbers),
+`GertyFlow` (the work-flow stages) and `ShotCards` (small screenshot cards). New
+images for them go in the source repo's `assets/images/` and are named in the MDX, so convert copies them.
+`node scripts/extract-component.mjs <post file>` drafts a data file from a post.
 
 ## Commands (in this folder)
 

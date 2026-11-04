@@ -1,0 +1,93 @@
+---
+title: "GERTY Overview"
+description: "GERTY 가 무엇인지, 그리고 모든 컴포넌트에 공통인 화면 구성과 입력, 모드 전환, GERTY UI 사용법을 설명한다."
+---
+
+import { Aside } from "@astrojs/starlight/components";
+import DocTags from "../../../components/doc/DocTags.astro";
+import NumberedShot from "../../../components/doc/NumberedShot.astro";
+import ShotCards from "../../../components/doc/ShotCards.astro";
+import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
+
+GERTY 는 로봇암 기반 맞춤형 가공의 프로그래밍을 돕는 CAM 소프트웨어다. 이 페이지는 GERTY 소개와 함께, 모든 컴포넌트에 공통인 화면 구성과 조작 방법을 다룬다.
+
+<DocTags tags={[{ text: "GERTY 소개", tone: "accent" }, { text: "개요" }, { text: "컴포넌트 사용법" }]} />
+
+## 1. GERTY 란?
+
+<NumberedShot src="/assets/images/30.jpg" alt="GERTY" width={440} marks={[]} />
+
+GERTY 는 Rhino–Grasshopper 환경에서 작동하는 소프트웨어 프레임워크다. 로봇암과 부가축 제원에 맞는 적층·절삭 가공 경로의 계획과 생성, 3차원 동작 시뮬레이션, 로봇 제어 프로그램 작성까지 다루는, 비에이티 파트너스의 로봇 기반 맞춤형 제조 하드웨어 시스템을 위한 오프라인 프로그래밍(OLP) 솔루션이다.
+
+CAD 데이터를 바탕으로 로봇 가공 동작을 직관적으로 최적화할 수 있다. Grasshopper 의 비주얼 프로그래밍 인터페이스를 쓰므로, 코딩 없이도 맞춤형 가공 경로를 쉽게 만들 수 있다.
+
+현재 ABB 다축 로봇암과 부가축을 모두 지원하며, Kuka, Fanuc, Hyundai, Universal Robots, Yaskawa 등 여러 산업용·협동 로봇 제조사 제품으로 호환 범위를 넓히고 있다.
+
+## 2. 컴포넌트 구성
+
+GERTY 컴포넌트는 Grasshopper 컴포넌트와 같은 구조를 따른다. 입력을 연결하고 GERTY UI 에서 설정을 고르면, 결과가 출력으로 전달된다.
+
+<NumberedShot src="/assets/images/Component_2026.png" alt="GERTY 컴포넌트의 INPUT, ICON, OUTPUT, GERTY UI" width={420} marks={[]} />
+
+| 부분 | 하는 일 |
+| --- | --- |
+| **INPUT** | Rhino·GERTY 컴포넌트를 연결하거나 값을 직접 넣는다. |
+| **ICON** | 오른쪽 클릭하면 컨텍스트 메뉴가 열린다(모드 전환 등). |
+| **OUTPUT** | 계산 결과를 다음 컴포넌트로 넘긴다. |
+| **GERTY UI** | 컴포넌트 아래쪽의 설정 영역. 탭으로 나뉘어 있다. |
+
+## 3. 입력 (Input)
+
+반드시 넣어야 하는 값과, 비워 둘 수 있는 선택 값(Optional)이 있다.
+
+<Aside type="note">
+  선택 값은 비워 두어도 됩니다. 필요한 값이 모두 들어가면 컴포넌트가 회색으로 표시되며, 이것이 정상 상태입니다.
+</Aside>
+
+### 노드 연결 (Connect Node)
+
+Grasshopper 와 같은 방법으로 노드를 연결해 결과를 쌓아 간다.
+
+<NumberedShot src="/assets/images/Asset_1.png" alt="노드 연결" width={520} marks={[]} />
+
+### 모드 전환 (Mode Option)
+
+일부 컴포넌트는 아이콘을 오른쪽 클릭해 여는 컨텍스트 메뉴(Context Menu)에서 모드를 바꾸거나 기능을 더할 수 있다.
+
+<NumberedShot src="/assets/images/ContextMenu_2026.png" alt="아이콘을 오른쪽 클릭해 연 컨텍스트 메뉴(Positioner RobTarget 의 Dynamic / Static Mode)" width={366} marks={[]} />
+
+예를 들어 Positioner RobTarget 을 **Dynamic Mode** 로 바꾸면 아래와 같이 표시된다.
+
+<NumberedShot src="/assets/images/1_Positioner_Robtarget_Dynamic.png" alt="Dynamic Mode 로 바꾼 Positioner RobTarget" width={320} marks={[]} />
+
+모드 전환을 지원하는 컴포넌트: [ToolData](/datatype/tooldata/) · [WobjData](/datatype/wobjdata/) · [Positioner RobTarget](/datatype/positioner-robtarget/) · [SeamData](/datatype/seamdata/) · [WeldData](/datatype/welddata/) · TPSiSynergic · TPSSynergic · [ABB Positioner](/robot-tool/positioner/) · [ABB Robots](/robot-tool/abbrobot/) · [WorkBench](/robot-tool/createworkbench/) · [Code Solver](/core/code-solver/) · [Solid Shell](/toolpath/solidshell/) · [Surface Shell](/toolpath/surfaceshell/) · [RePath Tree](/utils/repathtree/)
+
+## 4. GERTY UI
+
+컴포넌트 아래쪽의 설정 영역이다. 항목마다 GERTY 기본값이 있고, 사용자가 바꿀 수 있다. Grasshopper 의 Text, Slider, Button, Toggle, DropDown, Panel, Color 와 같은 요소를 기능별 탭(Tab)으로 묶어 보여 준다.
+
+### 탭 (Tab)
+
+기능별 설정을 탭으로 묶었다. 고른 탭은 어둡게 활성화되고, 그 안의 설정을 바꿀 수 있다. 바꾸지 않은 필수 값은 GERTY 기본값을 따른다. 큰 기능은 세로 탭, 세부 기능은 가로 탭으로 나뉘며, 탭을 오가며 값을 설정한다.
+
+<NumberedShot src="/assets/images/Overview_Tabs.gif" alt="Orientation 탭과 Output 탭을 번갈아 누르는 모습" width={389} marks={[]} />
+
+### UI 요소
+
+<ShotCards items={[
+  { name: "Text Field", text: "더블 클릭해 입력한다. 기본적으로 영문과 숫자만 쓸 수 있으며, 값의 조건은 각 컴포넌트 문서를 따른다.", shots: [{ src: "/assets/images/0_RobTarget_4.png" }] },
+  { name: "Slider", text: "옆의 숫자를 더블 클릭해 입력하거나, 포인터를 좌우로 끌어 바꾼다. Double 은 소수를 포함한 값, Integer 는 양의 정수만 받는다.", shots: [{ src: "/assets/images/2_FlybyCustom_22.png", caption: "Double" }, { src: "/assets/images/1_FlybyPlane_10.png", caption: "Integer" }] },
+  { name: "DropDown", text: "GERTY 가 제공하는 모델이나 옵션을 고른다. Tool·WorkBench 는 사용자가 Export 한 모델도 저장해 불러올 수 있다.", shots: [{ src: "/assets/images/DropDown_02.png" }] },
+  { name: "Button / Toggle", text: "Button 은 컴포넌트를 잠시 다시 활성화하고, Toggle 은 상태를 완전히 바꾼다. 일부 컴포넌트는 값(True/False)에 따라 입력과 설정 항목이 늘거나 줄어든다.", shots: [{ src: "/assets/images/0_ABBRobot_11.png" }] },
+  { name: "Color Swatch", text: "시뮬레이션에서 활성 상태인 모델·경로의 색을 바꾼다.", shots: [{ src: "/assets/images/Color_00.png" }] },
+  { name: "Panel", text: "컴포넌트가 실행되면 결과 값을 패널로 보여 준다.", shots: [{ src: "/assets/images/1_ScanController_11.png" }] },
+  { name: "Process Gauge", text: "처리에 시간이 걸리는 컴포넌트는 진행 정도를 퍼센트(%)로 보여 준다.", shots: [{ src: "/assets/images/2_SocketSender_12.png" }] },
+]} />
+
+## 관련 항목
+
+<RelatedLinks links={[
+  { title: "Installation", description: "GERTY 설치와 라이선스 등록", href: "/about/installation/" },
+  { title: "Tutorial", description: "템플릿과 영상으로 익히는 GERTY 작업 흐름", href: "/about/tutorial/" },
+  { title: "GERTY Core", description: "로봇 동작을 연산하는 핵심 컴포넌트", href: "/core/gerty-core/" },
+]} />

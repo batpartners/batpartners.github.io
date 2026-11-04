@@ -35,6 +35,7 @@ import { toMdast } from "hast-util-to-mdast";
 import remarkMdx from "remark-mdx";
 import remarkStringify from "remark-stringify";
 import { docsSource, loadPosts, parseOld } from "./posts.mjs";
+import { MERGED, MOVED } from "./slug.mjs";
 import { HOMEPAGE } from "../src/homepage.mjs";
 
 const ROOT = path.resolve(import.meta.dirname, "..");
@@ -69,7 +70,7 @@ const findSlug = (key) => slugByKey.get(key) ?? slugByKey.get([...slugByKey.keys
   for (const locale of ["ko", "en"]) {
     const seen = new Map();
     for (const p of posts.filter((x) => x.locale === locale)) {
-      if (seen.has(p.slug)) throw new Error(`Slug clash (${locale}): ${p.slug} <- ${seen.get(p.slug)} and ${p.file}`);
+      if (seen.has(p.slug) && !MERGED.has(p.slug)) throw new Error(`Slug clash (${locale}): ${p.slug} <- ${seen.get(p.slug)} and ${p.file}`);
       seen.set(p.slug, p.file);
     }
   }
@@ -561,6 +562,9 @@ const GROUP_LABELS = {
   "7. Constroller Utils": { label: "Controller Utils" },
 };
 
+/** Sidebar labels that differ from the old sidebar's titles (e.g. a merged page). */
+const PAGE_LABELS = { "about/overview": "GERTY Overview" };
+
 const deadNavKeys = new Map(); // dead old sidebar URL -> slug (filled by buildSidebar)
 
 function buildSidebar() {
@@ -581,20 +585,24 @@ function buildSidebar() {
       warn(`Sidebar: dead old link ${n.url} for "${n.title}" — matched by title to ${slug} (redirect added)`);
     }
     used.add(slug);
-    if (n.children?.length) {
+    const label = PAGE_LABELS[slug] ?? n.title;
+    // A group whose children were all merged into its own page is a plain item now.
+    // (Only for merged pages: elsewhere a child may link the group's page on purpose, e.g. IndReset.)
+    const children = (n.children ?? []).filter((c) => !MERGED.has(slug) || findSlug(parseOld(c.url).key) !== slug);
+    if (children.length) {
       // The group's own page comes first, unless a child already links it (e.g. IndReset → "Numeric Reference");
       // listing it twice would make the "next page" link point back to the same page.
       // The own page is marked data-group-page: src/components/SidebarSublist.astro makes the group's title link to
       // it instead of repeating the same title as the first child. (It stays in the list for prev/next and "open".)
-      const kids = n.children.map(toItem).filter(Boolean);
-      const own = { slug, label: n.title, attrs: { "data-group-page": "" } };
+      const kids = children.map(toItem).filter(Boolean);
+      const own = { slug, label, attrs: { "data-group-page": "" } };
       return {
-        label: n.title,
+        label,
         collapsed: true,
         items: kids.some((k) => k.slug === slug) ? kids : [own, ...kids],
       };
     }
-    return { slug, label: n.title };
+    return { slug, label };
   };
   const groups = nav.sidebar.map((g) => {
     const named = GROUP_LABELS[g.title] ?? { label: g.title.replace(/^\d+\.\s*/, "") };
@@ -625,8 +633,7 @@ const SECTION_TEXT = {
   setup: ["라이선스 발급용 하드웨어 정보 확인", "Hardware information for licensing"],
 };
 const ABOUT_TEXT = {
-  "about/what-is-gerty": ["GERTY란?", "What is GERTY?", "Rhino–Grasshopper 기반 로봇 가공 CAM 소프트웨어 GERTY 소개", "An introduction to GERTY, CAM software for robotic fabrication in Rhino–Grasshopper"],
-  "about/component-overview": ["컴포넌트 사용법", "Using components", "입력, 모드 전환, GERTY UI 등 컴포넌트 공통 사용법", "Inputs, mode options and the GERTY UI shared by all components"],
+  "about/overview": ["GERTY Overview", "GERTY Overview", "GERTY 소개와 컴포넌트 공통 사용법(입력, 모드 전환, GERTY UI)", "What GERTY is, and how all components work: inputs, mode options and the GERTY UI"],
   "about/installation": ["설치 및 라이선스", "Installation & license", "패키지 설치, 체험판, 하드웨어 ID 확인과 라이선스 등록", "Package install, trial, hardware IDs and license activation"],
   "about/tutorial": ["튜토리얼", "Tutorial", "GERTY 템플릿과 영상으로 시작하기", "Get started with the GERTY templates and video"],
 };
@@ -656,7 +663,7 @@ hero:
     alt: GERTY
   actions:
     - text: ${JSON.stringify(t.a1)}
-      link: ${pre}/about/what-is-gerty/
+      link: ${pre}/about/overview/
       icon: right-arrow
     - text: ${JSON.stringify(t.a2)}
       link: ${pre}/about/installation/
@@ -746,6 +753,11 @@ function writeRedirects() {
     add(key, `/${slug}/`);
     add("/en" + key, `/en/${slug}/`);
   }
+  // Pages of these docs that were merged into another page.
+  for (const [from, to] of Object.entries(MOVED)) {
+    add(`/${from}/`, `/${to}/`);
+    add(`/en/${from}/`, `/en/${to}/`);
+  }
   for (const [oldPath, to] of targets) {
     const file = path.join(PUBLIC, ...oldPath.split("/").filter(Boolean), "index.html");
     fs.mkdirSync(path.dirname(file), { recursive: true });
@@ -767,7 +779,7 @@ for (const sub of ["", "en"]) {
     else if (entry.isFile() && !KEEP.has(rel)) fs.rmSync(path.join(base, entry.name));
   }
 }
-for (const legacy of ["about gerty", "datatype", "robottool", "instruction", "core", "toolpath", "utils", "controllerutils", "setup", "en"]) {
+for (const legacy of ["about", "about gerty", "datatype", "robottool", "instruction", "core", "toolpath", "utils", "controllerutils", "setup", "en"]) {
   fs.rmSync(path.join(PUBLIC, legacy), { recursive: true, force: true });
 }
 

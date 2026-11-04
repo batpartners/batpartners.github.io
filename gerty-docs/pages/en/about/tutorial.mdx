@@ -9,7 +9,6 @@ import GertyFlow from "../../../../components/doc/GertyFlow.astro";
 import YouTube from "../../../../components/YouTube.astro";
 import NumberedShot from "../../../../components/doc/NumberedShot.astro";
 import MarkedSteps from "../../../../components/doc/MarkedSteps.astro";
-import TemplateGallery from "../../../../components/doc/TemplateGallery.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 
 The quickest way to learn GERTY is through the templates you can open straight from the Grasshopper menu. See the work flow at a glance first, then open a template, look around, and adapt it to your own robot and geometry.
@@ -45,7 +44,7 @@ Every template follows the same five stages. Click a component under a stage to 
 
 ### Watch it
 
-The video below walks through these five stages from start to finish with the **Basic** template. If you are new to GERTY, watch it first, then open the templates below.
+The video below walks through these five stages from start to finish with the **Basic** template. If you are new to GERTY, watch it first, then open a template as shown below and follow along.
 
 <YouTube id="y1yWQu1PcPM" title="GERTY 01_ GERTY Basic" />
 
@@ -62,38 +61,7 @@ The video below walks through these five stages from start to finish with the **
 
 </MarkedSteps>
 
-## 3. The templates
-
-Each template holds one way of working as an example. Start with the one closest to your own work.
-
-<TemplateGallery linksLabel="Main components" items={[
-  { img: "/assets/images/Tutorial_T0_Basic.jpg", name: "Basic", text: "The basic GERTY flow, from robot and tool setup to the simulation and RAPID code", links: [
-    { title: "ABB Robots", href: "/en/robot-tool/abbrobot/" }, { title: "Move", href: "/en/instruction/move/" }, { title: "GERTY Core", href: "/en/core/gerty-core/" },
-  ] },
-  { img: "/assets/images/Tutorial_T1_Drawing.jpg", name: "Drawing", text: "A pen path that follows curves", links: [
-    { title: "Curve Tracing", href: "/en/toolpath/curvetracing/" },
-  ] },
-  { img: "/assets/images/Tutorial_T2_HotwireCutting.jpg", name: "Hot-wire Cutting", text: "A hot-wire path that cuts foam blocks", links: [
-    { title: "WireCuttingFromSrf", href: "/en/toolpath/wirecuttingfromsrf/" }, { title: "WireCuttingFromCrvs", href: "/en/toolpath/wirecuttingfromcrvs/" },
-  ] },
-  { img: "/assets/images/Tutorial_T3_Milling.jpg", name: "Milling", text: "Roughing and finishing paths that carve a block", links: [
-    { title: "Roughing", href: "/en/toolpath/roughing/" }, { title: "ParallelFinishing", href: "/en/toolpath/parallelfinishing/" }, { title: "UVFinishing", href: "/en/toolpath/uv-finishing/" },
-  ] },
-  { img: "/assets/images/Tutorial_T4_3DPrinting.jpg", name: "3D Printing", text: "A deposition path that slices a shape into layers and builds it up", links: [
-    { title: "Solid Shell", href: "/en/toolpath/solidshell/" }, { title: "Surface Shell", href: "/en/toolpath/surfaceshell/" }, { title: "Deposition Builder", href: "/en/toolpath/depositionbuilder/" },
-  ] },
-  { img: "/assets/images/Tutorial_T5_BlockLaying.jpg", name: "Block Laying", text: "Picking blocks and laying them in a set pattern", links: [
-    { title: "Block Designer", href: "/en/toolpath/block-designer/" }, { title: "Block Supply", href: "/en/toolpath/block-supply/" },
-  ] },
-  { img: "/assets/images/Tutorial_T6_WAAM.jpg", name: "WAAM", text: "Building up metal with welding wire", links: [
-    { title: "WAAM Builder", href: "/en/toolpath/waambuilder/" }, { title: "SeamData", href: "/en/datatype/seamdata/" }, { title: "WeldData", href: "/en/datatype/welddata/" },
-  ] },
-  { img: "/assets/images/Tutorial_T7_Positioner.jpg", name: "Positioner", text: "A positioner turning the work piece while the robot moves with it", links: [
-    { title: "ABB Positioner", href: "/en/robot-tool/positioner/" }, { title: "Positioner RobTarget", href: "/en/datatype/positioner-robtarget/" },
-  ] },
-]} />
-
-## 4. Apply it to your work
+## 3. Apply it to your work
 
 <Steps>
 
@@ -108,6 +76,6 @@ Each template holds one way of working as an example. Start with the one closest
 
 <RelatedLinks links={[
   { title: "Installation", description: "Installing GERTY and activating the licence", href: "/en/about/installation/" },
-  { title: "GERTY Component", description: "Component layout and controls", href: "/en/about/component-overview/" },
+  { title: "GERTY Overview", description: "What GERTY is and how components work", href: "/en/about/overview/" },
   { title: "GERTY Core", description: "The core component that solves the robot motion", href: "/en/core/gerty-core/" },
 ]} />
