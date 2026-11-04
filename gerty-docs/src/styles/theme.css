@@ -164,8 +164,18 @@ header.header {
   margin: 0;
   border-radius: var(--radius);
   border: 1px solid var(--sl-color-hairline);
-  /* Light in both themes: many screenshots are transparent PNGs with black wires and labels drawn for white. */
+  /* Transparent PNGs: light box in the light theme; in the dark theme no box (images with black wires or labels
+     have a "-dark" copy, shown with .dark-only below). */
   background: #f5f8fb;
+}
+:root[data-theme="dark"] .sl-markdown-content .doc-media :is(img, video) {
+  background: transparent;
+}
+
+/* An image with a dark-theme copy: <img class="light-only"> + <img class="dark-only"> */
+:root[data-theme="dark"] .light-only,
+:root:not([data-theme="dark"]) .dark-only {
+  display: none !important;
 }
 .sl-markdown-content .doc-media img {
   cursor: zoom-in;
@@ -212,6 +222,9 @@ header.header {
   border-radius: var(--radius);
   background: #fff;
   cursor: zoom-out;
+}
+:root[data-theme="dark"] .zoom-dialog img {
+  background: var(--sl-color-bg);
 }
 /* Inside the image's top-right corner, so it stays on screen however tall the image is. */
 .zoom-close {

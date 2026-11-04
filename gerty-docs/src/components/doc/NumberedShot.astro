@@ -1,12 +1,14 @@
 ---
 // A screenshot shown small, with numbered markers on it; a <MarkedSteps> list below it uses the same numbers.
 // marks: [x%, y%] of each marker's centre on the image, in number order (1, 2, …).
-interface Props { src: string; alt: string; width?: number; marks: [number, number][] }
-const { src, alt, width = 480, marks } = Astro.props;
+// dark: optional copy of the image for the dark theme (labels and wires drawn white), same size as src.
+interface Props { src: string; alt: string; width?: number; marks: [number, number][]; dark?: string }
+const { src, alt, width = 480, marks, dark } = Astro.props;
 ---
 <figure class="nshot" style={`max-width:${width}px`}>
   <div class="frame">
-    <img src={src} alt={alt} loading="lazy" />
+    <img src={src} alt={alt} loading="lazy" class={dark ? "light-only" : undefined} />
+    {dark && <img src={dark} alt={alt} loading="lazy" class="dark-only" />}
     {marks.map(([x, y], i) => <span class="mark" style={`left:${x}%;top:${y}%`}>{i + 1}</span>)}
   </div>
 </figure>
