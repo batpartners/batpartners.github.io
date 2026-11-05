@@ -82,15 +82,15 @@ export const inputs = [
   {
     "name": "WobjData",
     "type": "WobjData",
-    "ko": "<a href=\"/datatype/wobjdata/\">ABB 작업 평면 좌표계</a>를 기준으로 Target Plane을 재정의할 때 입력한다.",
-    "en": "Redefines the Target Plane based on the <a href=\"/en/datatype/wobjdata/\">ABB Work Coordinate System</a>.",
+    "ko": "<a href=\"/datatype/wobjdata-fixed/\">ABB 작업 평면 좌표계</a>를 기준으로 Target Plane을 재정의할 때 입력한다.",
+    "en": "Redefines the Target Plane based on the <a href=\"/en/datatype/wobjdata-fixed/\">ABB Work Coordinate System</a>.",
     "optional": true
   },
   {
     "name": "Chaining",
     "type": "Boolean",
-    "ko": "<a href=\"/datatype/wobjdata/\">작업평면(WorkObj)</a>과 타겟(RobTarget)의 관계를 고정한다. 뷰포트 상에서 작업평면을 변경할 때 타겟의 위치와 방향도 함께 변경할 수 있다.",
-    "en": "Locks the relationship between the <a href=\"/en/datatype/wobjdata/\">Work Object (WorkObj)</a> and the target (<code>RobTarget</code>). Allows target position and orientation to change when the work object is modified in the viewport.",
+    "ko": "<a href=\"/datatype/wobjdata-fixed/\">작업평면(WorkObj)</a>과 타겟(RobTarget)의 관계를 고정한다. 뷰포트 상에서 작업평면을 변경할 때 타겟의 위치와 방향도 함께 변경할 수 있다.",
+    "en": "Locks the relationship between the <a href=\"/en/datatype/wobjdata-fixed/\">Work Object (WorkObj)</a> and the target (<code>RobTarget</code>). Allows target position and orientation to change when the work object is modified in the viewport.",
     "optional": true
   },
   {

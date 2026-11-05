@@ -46,7 +46,7 @@ import * as d from "../../../data/components/positioner-option.mjs";
 1. **PositionerGeo** 에 포지셔너 링크 형상 메시를, **Joints** 에 베이스부터 플랜지까지의 기구학 평면 리스트를 연결하고 **Axis Type** 을 고른다.
 2. 포지셔너 플랜지 평면이 WorldXY 가 아니면 **MountingPl** 을, 워크벤치를 달려면 **WorkBench** 에 [CreateWorkBench](/robot-tool/createworkbench/) 출력을 연결한다.
 3. **Motion Settings** 탭에서 암 동작(**Enable Arm**)과 TCP 접근·정렬 방향을, **RAPID Setting** 탭에서 RobTarget 의 외부축 배열에 쓸 **Arm / Plate Joint Index** 를 정한다.
-4. **Positioner** 출력을 [ABB Robots](/robot-tool/abbrobot/) 와 [Positioner RobTarget](/datatype/positioner-robtarget/) 의 **Positioner** 입력에 연결한다.
+4. **Positioner** 출력을 [ABB Robots](/robot-tool/abbrobot/) 와 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 의 **Positioner** 입력에 연결한다.
 
 </Steps>
 
@@ -64,6 +64,6 @@ import * as d from "../../../data/components/positioner-option.mjs";
 
 <RelatedLinks links={[
   { title: "ABB Robots", description: "Positioner 를 받는 로봇", href: "/robot-tool/abbrobot/" },
-  { title: "Positioner RobTarget", description: "포지셔너 회전각을 포함한 타겟", href: "/datatype/positioner-robtarget/" },
+  { title: "Positioner RobTarget", description: "포지셔너 회전각을 포함한 타겟", href: "/datatype/positioner-robtarget-dynamic/" },
   { title: "CreateWorkBench", description: "포지셔너에 다는 워크벤치", href: "/robot-tool/createworkbench/" },
 ]} />

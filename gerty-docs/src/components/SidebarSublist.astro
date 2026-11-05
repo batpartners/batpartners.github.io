@@ -1,8 +1,8 @@
 ---
-// Copy of Starlight's SidebarSublist.astro (0.42) with one change: when a group's first entry is its own page
-// (marked data-group-page by scripts/convert.mjs), the group title links to that page and the entry is not listed
-// again. Clicking the title opens the page (the group then opens because it holds the current page); the caret
-// still just opens/closes the group.
+// Copy of Starlight's SidebarSublist.astro (0.42) with one change: the title of a group inside a category (e.g.
+// WobjData, ToolData) links to the group's first page (Fixed, Tool Define, ...), so clicking it opens that page and
+// the group (it then holds the current page). The caret still just opens/closes the group. Top-level categories
+// (DataType, Robot/Tool, ...) stay plain titles.
 import type { StarlightRouteData } from "@astrojs/starlight/route-data";
 import { Badge, Icon } from "@astrojs/starlight/components";
 import SidebarRestorePoint from "@astrojs/starlight/components/SidebarRestorePoint.astro";
@@ -20,12 +20,11 @@ const { sublist, nested } = Astro.props;
 const hasCurrent = (entries: SidebarEntry[]): boolean =>
   entries.some((e) => (e.type === "link" ? e.isCurrent : hasCurrent(e.entries)));
 
-/** The group's own page, if its first entry is one. */
-const groupPage = (entries: SidebarEntry[]): SidebarLink | undefined => {
+/** The first page of a group (looking into a nested group if the group starts with one). */
+const firstPage = (entries: SidebarEntry[]): SidebarLink | undefined => {
   const first = entries[0];
-  return first?.type === "link" && "data-group-page" in first.attrs ? first : undefined;
+  return !first ? undefined : first.type === "link" ? first : firstPage(first.entries);
 };
-const linkAttrs = ({ "data-group-page": _, ...attrs }: SidebarLink["attrs"]) => attrs;
 ---
 
 <ul class:list={{ "top-level": !nested }}>
@@ -46,7 +45,7 @@ const linkAttrs = ({ "data-group-page": _, ...attrs }: SidebarLink["attrs"]) => 
           </li>
         );
       }
-      const page = groupPage(entry.entries);
+      const page = nested ? firstPage(entry.entries) : undefined;
       const label = (
         <>
           <span class="large">{entry.label}</span>
@@ -56,14 +55,9 @@ const linkAttrs = ({ "data-group-page": _, ...attrs }: SidebarLink["attrs"]) => 
       return (
         <li>
           <details open={hasCurrent(entry.entries) || !entry.collapsed}>
-            <summary class:list={{ "has-page": page }}>
+            <summary class:list={{ "has-page": page, "has-current": hasCurrent(entry.entries) }}>
               {page ? (
-                <a
-                  href={page.href}
-                  aria-current={page.isCurrent ? "page" : undefined}
-                  class:list={["group-label", page.attrs.class]}
-                  {...linkAttrs(page.attrs)}
-                >
+                <a href={page.href} class="group-label">
                   {label}
                 </a>
               ) : (
@@ -72,7 +66,7 @@ const linkAttrs = ({ "data-group-page": _, ...attrs }: SidebarLink["attrs"]) => 
               <Icon name="right-caret" class="caret" size="1.25rem" />
             </summary>
             <SidebarRestorePoint />
-            <Astro.self sublist={page ? entry.entries.slice(1) : entry.entries} nested />
+            <Astro.self sublist={entry.entries} nested />
           </details>
         </li>
       );

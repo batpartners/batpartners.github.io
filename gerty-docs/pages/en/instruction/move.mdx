@@ -43,7 +43,7 @@ A component that configures ABB Move instructions (MoveL, MoveJ).
 
 <Steps>
 
-1. Connect the output of [RobTarget](/en/datatype/robtarget/) or [Positioner RobTarget](/en/datatype/positioner-robtarget/) to **RobTargets**.
+1. Connect the output of [RobTarget](/en/datatype/robtarget/) or [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/) to **RobTargets**.
 2. Pick the motion type, speed and zone in the **Move** tab.
 3. Turn on **MoveJ Start & End** for MoveJ on the first and last targets only, and **Fine Start & End** to stop exactly at them.
 4. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
@@ -54,7 +54,7 @@ A component that configures ABB Move instructions (MoveL, MoveJ).
 
 <RelatedLinks links={[
   { title: "RobTarget", description: "Motion targets", href: "/en/datatype/robtarget/" },
-  { title: "Positioner RobTarget", description: "Targets with positioner angles", href: "/en/datatype/positioner-robtarget/" },
+  { title: "Positioner RobTarget", description: "Targets with positioner angles", href: "/en/datatype/positioner-robtarget-dynamic/" },
   { title: "MoveOutput", description: "Move with an output signal", href: "/en/instruction/moveoutput/" },
   { title: "TriggerIOMove", description: "Move with I/O triggers on the path", href: "/en/instruction/triggeriomove/" },
 ]} />

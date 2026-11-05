@@ -11,7 +11,11 @@ holds the input / settings / output tables for both languages. Edit those, not t
 hand-written (every category folder under `pages/` and `pages/en/`), and so are the `about/` pages: GERTY Overview
 (`about/overview`, the old "What is GERTY?" and "Component Overview" posts merged; both posts map to it in
 `scripts/slug.mjs`, and the old `/about/what-is-gerty/` and `/about/component-overview/` addresses redirect to it),
-Installation and Tutorial. The page parts are in `src/components/doc/`: `DocTags` (category / mode
+Installation and Tutorial. In the sidebar, a group inside a category opens its first page when its title is clicked
+(`src/components/SidebarSublist.astro`); a group's own page is listed first under a label from `OWN_LABELS` in
+`scripts/convert.mjs` (ToolData → "Tool Define", ABBRobot … → "Basic"). The WobjData and Positioner RobTarget group
+pages were copies of their Fixed / Dynamic pages: both posts map there (`scripts/slug.mjs`) and the old
+`/datatype/wobjdata/` and `/datatype/positioner-robtarget/` addresses redirect. The page parts are in `src/components/doc/`: `DocTags` (category / mode
 tags), `ComponentShot` (main component image), `ParamTable` (Name | Type | Description; `optional: true` rows get an
 "옵션 / Optional" pill) and `SettingsPanel` (a settings tab: screenshot beside its table, numbered markers placed by
 each row's `y: [top%, height%]`) and `RelatedLinks` (the Related list: arrow, link, short description). Guide pages

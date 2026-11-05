@@ -43,7 +43,7 @@ ABB Move 인스트럭션(MoveL, MoveJ)을 설정하는 컴포넌트이다.
 
 <Steps>
 
-1. **RobTargets** 에 [RobTarget](/datatype/robtarget/) 또는 [Positioner RobTarget](/datatype/positioner-robtarget/) 출력을 연결한다.
+1. **RobTargets** 에 [RobTarget](/datatype/robtarget/) 또는 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 출력을 연결한다.
 2. **Move** 탭에서 모션 유형·속도·Zone 을 고른다.
 3. 첫·마지막 타겟만 MoveJ 로 하려면 **MoveJ Start & End** 를, 첫·마지막 타겟에서 정확히 멈추려면 **Fine Start & End** 를 켠다.
 4. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
@@ -54,7 +54,7 @@ ABB Move 인스트럭션(MoveL, MoveJ)을 설정하는 컴포넌트이다.
 
 <RelatedLinks links={[
   { title: "RobTarget", description: "모션 목표 위치", href: "/datatype/robtarget/" },
-  { title: "Positioner RobTarget", description: "포지셔너 회전각을 포함한 타겟", href: "/datatype/positioner-robtarget/" },
+  { title: "Positioner RobTarget", description: "포지셔너 회전각을 포함한 타겟", href: "/datatype/positioner-robtarget-dynamic/" },
   { title: "MoveOutput", description: "출력 신호를 동반하는 이동 명령", href: "/instruction/moveoutput/" },
   { title: "TriggerIOMove", description: "경로 위 I/O 트리거 이동 명령", href: "/instruction/triggeriomove/" },
 ]} />

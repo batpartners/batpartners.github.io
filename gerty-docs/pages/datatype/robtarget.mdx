@@ -11,7 +11,7 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/robtarget.mjs";
 
-RobTarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그리고 축의 구성 상태를 정의하는 컴포넌트이다. 외부축(Positioner)을 제외한 로봇의 모션을 제어하는 데 사용한다. 포지셔너를 함께 움직이는 타겟은 [Positioner RobTarget](/datatype/positioner-robtarget/) 을 쓴다.
+RobTarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그리고 축의 구성 상태를 정의하는 컴포넌트이다. 외부축(Positioner)을 제외한 로봇의 모션을 제어하는 데 사용한다. 포지셔너를 함께 움직이는 타겟은 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 을 쓴다.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
@@ -63,8 +63,8 @@ RobTarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "Positioner RobTarget", description: "포지셔너 회전각을 포함한 타겟", href: "/datatype/positioner-robtarget/" },
-  { title: "WobjData", description: "작업물 좌표계", href: "/datatype/wobjdata/" },
+  { title: "Positioner RobTarget", description: "포지셔너 회전각을 포함한 타겟", href: "/datatype/positioner-robtarget-dynamic/" },
+  { title: "WobjData", description: "작업물 좌표계", href: "/datatype/wobjdata-fixed/" },
   { title: "Move", description: "이동 명령", href: "/instruction/move/" },
   { title: "ArcMove", description: "용접 이동 명령", href: "/instruction/arcmove/" },
 ]} />

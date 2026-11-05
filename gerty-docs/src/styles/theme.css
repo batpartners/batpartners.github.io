@@ -88,6 +88,10 @@ header.header {
   letter-spacing: normal;
   color: var(--sl-color-gray-2);
 }
+/* ...and is bold (only) while one of its pages is open */
+.sidebar-content details details summary.has-current .large {
+  font-weight: 600;
+}
 
 /* ---------- Content ---------- */
 .sl-markdown-content h2 {

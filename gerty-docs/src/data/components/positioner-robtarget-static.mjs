@@ -84,8 +84,8 @@ export const inputs = [
   {
     "name": "WobjData",
     "type": "WobjData",
-    "ko": "<a href=\"/datatype/wobjdata/\">ABB 작업 평면 좌표계</a>를 기준으로 Target Plane을 재정의할 때 입력한다.",
-    "en": "Redefines the Target Plane based on the <a href=\"/en/datatype/wobjdata/\">ABB work object coordinate system</a>.",
+    "ko": "<a href=\"/datatype/wobjdata-fixed/\">ABB 작업 평면 좌표계</a>를 기준으로 Target Plane을 재정의할 때 입력한다.",
+    "en": "Redefines the Target Plane based on the <a href=\"/en/datatype/wobjdata-fixed/\">ABB work object coordinate system</a>.",
     "optional": true
   }
 ];

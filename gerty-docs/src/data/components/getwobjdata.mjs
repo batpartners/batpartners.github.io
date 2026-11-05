@@ -24,13 +24,13 @@ export const outputs = [
   {
     "name": "ObjFrame",
     "type": "Plane",
-    "ko": "<a href=\"/datatype/wobjdata/\">Wobjdata</a>의 오브젝트 프레임(oFrame)으로 정의된 평면.",
-    "en": "Plane defined as the object frame (oFrame) of <a href=\"/en/datatype/wobjdata/\">Wobjdata</a>"
+    "ko": "<a href=\"/datatype/wobjdata-fixed/\">Wobjdata</a>의 오브젝트 프레임(oFrame)으로 정의된 평면.",
+    "en": "Plane defined as the object frame (oFrame) of <a href=\"/en/datatype/wobjdata-fixed/\">Wobjdata</a>"
   },
   {
     "name": "WobjData",
     "type": "WobjData",
-    "ko": "스캔된 <a href=\"/datatype/wobjdata/\">Wobjdata</a>",
-    "en": "Scanned <a href=\"/en/datatype/wobjdata/\">Wobjdata</a>"
+    "ko": "스캔된 <a href=\"/datatype/wobjdata-fixed/\">Wobjdata</a>",
+    "en": "Scanned <a href=\"/en/datatype/wobjdata-fixed/\">Wobjdata</a>"
   }
 ];

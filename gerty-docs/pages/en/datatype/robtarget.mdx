@@ -11,7 +11,7 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/robtarget.mjs";
 
-`robtarget` is a data type that defines the target position, tool orientation, and axis configuration for the robot and auxiliary axes to move to. It defines a `RobTarget` for robot-only motion without external axes. The external axis values are automatically set to `9E9` (unused). For targets that also drive a positioner, use [Positioner RobTarget](/en/datatype/positioner-robtarget/).
+`robtarget` is a data type that defines the target position, tool orientation, and axis configuration for the robot and auxiliary axes to move to. It defines a `RobTarget` for robot-only motion without external axes. The external axis values are automatically set to `9E9` (unused). For targets that also drive a positioner, use [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/).
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
@@ -63,8 +63,8 @@ import * as d from "../../../../data/components/robtarget.mjs";
 ## Related
 
 <RelatedLinks links={[
-  { title: "Positioner RobTarget", description: "Targets with positioner angles", href: "/en/datatype/positioner-robtarget/" },
-  { title: "WobjData", description: "Work-object frame", href: "/en/datatype/wobjdata/" },
+  { title: "Positioner RobTarget", description: "Targets with positioner angles", href: "/en/datatype/positioner-robtarget-dynamic/" },
+  { title: "WobjData", description: "Work-object frame", href: "/en/datatype/wobjdata-fixed/" },
   { title: "Move", description: "Move instruction", href: "/en/instruction/move/" },
   { title: "ArcMove", description: "Arc welding move", href: "/en/instruction/arcmove/" },
 ]} />

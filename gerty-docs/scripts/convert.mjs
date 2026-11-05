@@ -564,6 +564,18 @@ const GROUP_LABELS = {
 
 /** Sidebar labels that differ from the old sidebar's titles (e.g. a merged page). */
 const PAGE_LABELS = { "about/overview": "GERTY Overview" };
+/** Label of a group's own page when it is listed as the group's first entry (the group title shows the group name). */
+const OWN_LABELS = {
+  "datatype/tooldata": "Tool Define",
+  "robot-tool/abbrobot": "Basic",
+  "robot-tool/positioner": "Basic",
+  "robot-tool/createworkbench": "Basic",
+  "core/code-solver": "Basic",
+  "toolpath/solidshell": "Basic",
+  "toolpath/surfaceshell": "Basic",
+};
+/** Merged pages whose old sidebar children were folded into the page itself (shown as a plain item). */
+const FLAT = new Set(["about/overview"]);
 
 const deadNavKeys = new Map(); // dead old sidebar URL -> slug (filled by buildSidebar)
 
@@ -588,14 +600,15 @@ function buildSidebar() {
     const label = PAGE_LABELS[slug] ?? n.title;
     // A group whose children were all merged into its own page is a plain item now.
     // (Only for merged pages: elsewhere a child may link the group's page on purpose, e.g. IndReset.)
-    const children = (n.children ?? []).filter((c) => !MERGED.has(slug) || findSlug(parseOld(c.url).key) !== slug);
+    const children = (n.children ?? []).filter((c) => !FLAT.has(slug) || findSlug(parseOld(c.url).key) !== slug);
     if (children.length) {
-      // The group's own page comes first, unless a child already links it (e.g. IndReset → "Numeric Reference");
-      // listing it twice would make the "next page" link point back to the same page.
-      // The own page is marked data-group-page: src/components/SidebarSublist.astro makes the group's title link to
-      // it instead of repeating the same title as the first child. (It stays in the list for prev/next and "open".)
+      // The group's own page comes first (as "Basic", "Tool Define", ... from OWN_LABELS), unless a child already
+      // links it (e.g. IndReset → "Numeric Reference", WobjData → "Fixed"); listing it twice would make the "next
+      // page" link point back to the same page. src/components/SidebarSublist.astro makes the group title open the
+      // group's first entry.
       const kids = children.map(toItem).filter(Boolean);
-      const own = { slug, label, attrs: { "data-group-page": "" } };
+      if (!kids.some((k) => k.slug === slug) && !OWN_LABELS[slug]) warn(`Sidebar: group "${label}" lists its own page as "${label}" (add a label to OWN_LABELS)`);
+      const own = { slug, label: OWN_LABELS[slug] ?? label };
       return {
         label,
         collapsed: true,

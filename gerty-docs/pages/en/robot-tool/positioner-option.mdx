@@ -46,7 +46,7 @@ This is a component that allows you to customize the ABB positioner robot to be 
 1. Connect the link meshes to **PositionerGeo** and the kinematic plane list from base to flange to **Joints**, then pick the **Axis Type**.
 2. If the flange plane is not WorldXY, connect **MountingPl**; to mount a workbench, connect the [CreateWorkBench](/en/robot-tool/createworkbench/) output to **WorkBench**.
 3. Set the arm motion (**Enable Arm**) and the TCP approach and alignment directions in **Motion Settings**, and the **Arm / Plate Joint Index** used in the RobTarget external-axis array in **RAPID Setting**.
-4. Connect the **Positioner** output to the **Positioner** input of [ABB Robots](/en/robot-tool/abbrobot/) and [Positioner RobTarget](/en/datatype/positioner-robtarget/).
+4. Connect the **Positioner** output to the **Positioner** input of [ABB Robots](/en/robot-tool/abbrobot/) and [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/).
 
 </Steps>
 
@@ -64,6 +64,6 @@ This is a component that allows you to customize the ABB positioner robot to be 
 
 <RelatedLinks links={[
   { title: "ABB Robots", description: "Robot that takes the Positioner", href: "/en/robot-tool/abbrobot/" },
-  { title: "Positioner RobTarget", description: "Targets with positioner angles", href: "/en/datatype/positioner-robtarget/" },
+  { title: "Positioner RobTarget", description: "Targets with positioner angles", href: "/en/datatype/positioner-robtarget-dynamic/" },
   { title: "CreateWorkBench", description: "Workbench on the positioner", href: "/en/robot-tool/createworkbench/" },
 ]} />

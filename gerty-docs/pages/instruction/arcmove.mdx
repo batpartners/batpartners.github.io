@@ -43,7 +43,7 @@ import * as d from "../../../data/components/arcmove.mjs";
 
 <Steps>
 
-1. **RobTargets** 에 용접 경로의 [RobTarget](/datatype/robtarget/) 또는 [Positioner RobTarget](/datatype/positioner-robtarget/) 출력을 연결한다.
+1. **RobTargets** 에 용접 경로의 [RobTarget](/datatype/robtarget/) 또는 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 출력을 연결한다.
 2. **SeamData** 에 [SeamData](/datatype/seamdata/) 를, **WeldData** 에 [WeldData](/datatype/welddata/) 를 연결한다.
 3. **Arc Move** 탭에서 모션 유형·속도·Zone 을 고르고, 첫 타겟을 `ArcLStart` 로 시작할지(**ArcLStart**), 마지막 타겟을 `ArcLEnd` 로 끝낼지(**ArcLEnd**) 정한다.
 4. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
