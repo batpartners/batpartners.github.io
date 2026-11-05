@@ -1,6 +1,8 @@
 ---
-// Starlight's sidebar with our own sublist (see SidebarSublist.astro): a group whose own page has the same title is
-// shown once — the group title links to that page — instead of the title repeated as its first child.
+// Starlight's sidebar with our own sublist (see SidebarSublist.astro): the title of a group inside a category opens
+// the group's first page. Groups inside a category open one at a time: only the group holding the current page stays
+// open (Starlight would restore every group opened before), and opening a group closes the others. Closing slides
+// shut after a short pause, opening slides open with a slight overshoot (no motion with prefers-reduced-motion).
 import MobileMenuFooter from "virtual:starlight/components/MobileMenuFooter";
 import SidebarPersister from "@astrojs/starlight/components/SidebarPersister.astro";
 import SidebarSublist from "./SidebarSublist.astro";
@@ -11,6 +13,134 @@ const { sidebar } = Astro.locals.starlightRoute;
 <SidebarPersister>
   <SidebarSublist sublist={sidebar} />
 </SidebarPersister>
+
+{/* Inline, right after the restored tree, so the groups are set before the sidebar is first painted. */}
+<script is:inline aria-hidden="true">
+  (() => {
+    const SEL = "sl-sidebar-state-persist details details";
+    const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const body = (d) => d.querySelector(":scope > ul");
+    const stop = (d) => { if (d._anim) { d._anim.cancel(); d._anim = null; } const ul = body(d); if (ul) ul.style.overflow = ""; };
+    const close = (d) => {
+      stop(d);
+      d._closing = true;
+      const ul = body(d);
+      if (still || !ul) { d._closing = false; d.open = false; return; }
+      ul.style.overflow = "hidden";
+      // a short pause, a slight lift, then shut
+      const a = ul.animate([{ height: ul.scrollHeight + "px", opacity: 1 }, { height: "0px", opacity: 0 }], { duration: 320, delay: 90, easing: "cubic-bezier(0.6, -0.3, 0.4, 1)" });
+      d._anim = a;
+      setTimeout(() => { if (d._anim === a) a.finish(); }, 900); // in case the page is not being drawn (background tab)
+      a.finished.then(() => { if (d._anim !== a) return; d._anim = null; d._closing = false; d.open = false; ul.style.overflow = ""; fix(); }, () => {});
+    };
+    const open = (d) => {
+      stop(d);
+      d._closing = false;
+      d.open = true;
+      const ul = body(d);
+      if (still || !ul) return;
+      ul.style.overflow = "hidden";
+      const a = ul.animate([{ height: "0px", opacity: 0 }, { height: ul.scrollHeight + "px", opacity: 1 }], { duration: 360, easing: "cubic-bezier(0.34, 1.4, 0.64, 1)" });
+      d._anim = a;
+      setTimeout(() => { if (d._anim === a) a.finish(); }, 900); // in case the page is not being drawn (background tab)
+      a.finished.then(() => { if (d._anim !== a) return; d._anim = null; ul.style.overflow = ""; fix(); }, () => {});
+    };
+    const others = (keep) => { for (const d of document.querySelectorAll(SEL)) if (d !== keep && !d.contains(keep) && d.open && !d._closing) close(d); };
+
+    // Keep one row (the title the visitor clicked) still on screen while groups above it open or close: the sidebar
+    // scroll is corrected every frame, only while the animations run, and the visitor's own scrolling ends it at once.
+    const scroller = document.getElementById("starlight__sidebar");
+    let pinned = null; // { el, y0 }
+    const busy = () => [...document.querySelectorAll(SEL)].some((d) => d._anim);
+    const fix = () => {
+      if (!pinned) return;
+      const dy = pinned.el.getBoundingClientRect().top - pinned.y0;
+      if (Math.abs(dy) >= 0.5) scroller.scrollTop += dy;
+    };
+    const pin = (el) => {
+      if (!scroller || !el) return;
+      const p = (pinned = { el, y0: el.getBoundingClientRect().top });
+      const step = () => {
+        if (pinned !== p) return;
+        fix();
+        if (busy()) requestAnimationFrame(step);
+        else pinned = null;
+      };
+      requestAnimationFrame(step);
+    };
+    const unpin = () => { pinned = null; };
+    if (scroller) for (const ev of ["wheel", "touchstart", "pointerdown", "keydown"]) scroller.addEventListener(ev, unpin, { passive: true });
+    const KEY = "gerty-sidebar-click";
+    const sidebarLink = (href, group) => [...document.querySelectorAll("sl-sidebar-state-persist a")].find((a) => a.getAttribute("href") === href && a.classList.contains("group-label") === group);
+
+    // On load: the group holding the current page is open. The one group that was open on the previous page slides
+    // shut; any other group Starlight restored as open (e.g. one left mid-close) shuts at once, without motion.
+    const OPEN_KEY = "gerty-sidebar-open";
+    const label = (d) => d.querySelector(":scope > summary").textContent.trim();
+    const shownOpen = () => { const d = [...document.querySelectorAll(SEL)].find((g) => g.open && !g._closing); return d ? label(d) : ""; };
+    let wasOpen = "";
+    try { wasOpen = sessionStorage.getItem(OPEN_KEY) || ""; } catch {}
+    let current = null;
+    for (const d of document.querySelectorAll(SEL)) if (d.querySelector('[aria-current="page"]')) current = d;
+    for (const d of document.querySelectorAll(SEL)) {
+      if (d === current || (current && d.contains(current)) || !d.open) continue;
+      if (label(d) === wasOpen) close(d);
+      else d.open = false;
+    }
+    if (current && !current.open) open(current);
+    // Starlight stores a group's open state only when its summary is clicked (a click on a group title link counts as
+    // opening it), so groups this script opens or closes would come back wrong on the next page. On leaving, store
+    // what is really shown: groups sliding shut count as closed.
+    const saveOpen = () => {
+      try {
+        sessionStorage.setItem(OPEN_KEY, shownOpen());
+        const target = document.querySelector("sl-sidebar-state-persist");
+        const state = JSON.parse(sessionStorage.getItem("sl-sidebar-state") || "null") || {};
+        if (!target || (state.hash && state.hash !== target.dataset.hash)) return;
+        const openList = [];
+        for (const r of target.querySelectorAll("sl-sidebar-restore")) {
+          const d = r.closest("details");
+          const i = parseInt(r.dataset.index || "");
+          if (d && !isNaN(i)) openList[i] = d.open && !d._closing;
+        }
+        sessionStorage.setItem("sl-sidebar-state", JSON.stringify({ hash: target.dataset.hash, open: openList, scroll: scroller ? scroller.scrollTop : 0 }));
+      } catch {}
+    };
+    addEventListener("pagehide", saveOpen);
+    // The link clicked on the previous page goes back to the height it was clicked at, and stays there.
+    try {
+      const clicked = JSON.parse(sessionStorage.getItem(KEY) || "null");
+      sessionStorage.removeItem(KEY);
+      const el = clicked && clicked.href === location.pathname && sidebarLink(clicked.href, clicked.group);
+      if (el && scroller) {
+        scroller.scrollTop += el.getBoundingClientRect().top - clicked.top;
+        pin(el);
+      }
+    } catch {}
+    document.addEventListener("click", (e) => {
+      const a = e.target instanceof Element && e.target.closest("sl-sidebar-state-persist a");
+      if (!a) return;
+      try { sessionStorage.setItem(KEY, JSON.stringify({ href: a.getAttribute("href"), group: a.classList.contains("group-label"), top: a.getBoundingClientRect().top })); } catch {}
+      saveOpen();
+    }, true);
+
+    // The caret of a group: on a closed group it does what the title does (opens the group's first page), so the whole
+    // row selects the group; on an open group it slides the group shut. Handled on click so the native instant
+    // toggle never shows.
+    document.addEventListener("click", (e) => {
+      const summary = e.target instanceof Element && e.target.closest(SEL + " > summary");
+      if (!summary || e.target.closest("a")) return;
+      const d = summary.parentElement;
+      e.preventDefault();
+      if (d.open && !d._closing) { close(d); pin(summary); return; }
+      const link = summary.querySelector(":scope > a.group-label");
+      if (link) { link.click(); return; }
+      open(d);
+      others(d);
+      pin(summary);
+    });
+  })();
+</script>
 
 <div class="md:sl-hidden">
   <MobileMenuFooter />
