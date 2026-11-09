@@ -1,6 +1,6 @@
 ---
 title: "Socket Sender"
-description: "최종 결정된 코드를 로컬 ABB IRC5 컨트롤러로 모션 인스트럭션 패킷을 TCP 소켓으로 스트리밍하여 내보낸다."
+description: "Code Solver (Option) 에서 만든 모션 인스트럭션 패킷을 TCP 소켓으로 ABB IRC5 컨트롤러에 스트리밍하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/socketsender.mjs";
 
-최종 결정된 코드를 로컬 ABB IRC5 컨트롤러로 모션 인스트럭션 패킷을 TCP 소켓으로 스트리밍하여 내보낸다.
+Code Solver (Option) 에서 만든 모션 인스트럭션 패킷을 TCP 소켓으로 ABB IRC5 컨트롤러에 스트리밍하는 컴포넌트이다.
 
 <DocTags tags={[{ text: "Controller Utils", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/2_SocketSender.png" alt="Socket Sender" />
+<ComponentShot src="/assets/images/socketsender_main.png" alt="Socket Sender" />
 
 ## 입력
 
@@ -54,7 +54,7 @@ import * as d from "../../../data/components/socketsender.mjs";
 </Aside>
 
 <Aside type="tip">
-  **Bundle Size** 는 기본 5, 최대 8 이하를 권장합니다. **Interval(ms)** 을 줄이면 반응이 빨라지고, 늘리면 부하가 줄어듭니다.
+  **Bundle Size** 는 기본 5 이며 1 ~ 8 범위에서 정합니다(최대 권장값 8). **Interval(ms)** 을 줄이면 반응이 빨라지고, 늘리면 부하가 줄어듭니다.
 </Aside>
 
 ## 관련 항목

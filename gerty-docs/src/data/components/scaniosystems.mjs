@@ -5,36 +5,36 @@ export const groups = [
   [
     {
       "label": "Gate IO Systems",
-      "img": "6_ScanIOSystems_10.png",
+      "img": "scaniosystems_tab1.png",
       "rows": [
         {
           "name": "Gate",
           "type": "Toggle",
-          "ko": "I/O 시스템 검색 게이트를 열거나 닫는다.",
-          "en": "Opens or closes the gate for scanning the I/O systems.",
+          "ko": "I/O 시스템 스캔 게이트를 열거나 닫는다. 기본값은 꺼짐(False).",
+          "en": "Opens or closes the gate for scanning the I/O system. Default: off (False).",
           "y": [
-            24.6,
-            15.6
+            29.2,
+            17.5
           ]
         },
         {
           "name": "IO Units",
           "type": "Dropdown",
-          "ko": "검색할 I/O 유닛을 고른다.",
-          "en": "The I/O unit to scan.",
+          "ko": "신호를 스캔할 I/O 유닛을 고른다. 목록은 연결된 컨트롤러에서 읽어 온다.",
+          "en": "Selects the I/O unit to scan. The list is read from the connected controller.",
           "y": [
-            43.2,
-            16.1
+            51.5,
+            17.5
           ]
         },
         {
           "name": "Signal Types",
           "type": "Dropdown",
-          "ko": "검색할 신호 유형을 고른다.",
-          "en": "The signal type to scan.",
+          "ko": "스캔할 신호 유형을 고른다: AnalogInput, AnalogOutput, DigitalInput, DigitalOutput, GroupInput, GroupOutput, Unknown.",
+          "en": "Selects the signal type to scan: AnalogInput, AnalogOutput, DigitalInput, DigitalOutput, GroupInput, GroupOutput, Unknown.",
           "y": [
-            62.3,
-            18.1
+            73.7,
+            17.5
           ]
         }
       ]
@@ -46,18 +46,18 @@ export const inputs = [
   {
     "name": "ABB Controller",
     "type": "ABB Controller",
-    "ko": "PC 에 연결된 ABB 컨트롤러. <a href=\"/controller-utils/scanabbcontroller/\">Scan ABB Controller</a> 의 출력을 연결한다.",
-    "en": "The ABB controller connected to this PC. Connect the output of <a href=\"/en/controller-utils/scanabbcontroller/\">Scan ABB Controller</a>."
+    "ko": "PC 에 연결된 ABB 컨트롤러이다. <a href=\"/controller-utils/scanabbcontroller/\">Scan ABB Controller</a> 의 <strong>ABB Controller</strong> 출력을 연결한다.",
+    "en": "The ABB controller connected to this PC. Connect the <strong>ABB Controller</strong> output of <a href=\"/en/controller-utils/scanabbcontroller/\">Scan ABB Controller</a>."
   }
 ];
 
-export const main = "6_ScanIOSystems.png";
+export const main = "scaniosystems_main.png";
 
 export const outputs = [
   {
-    "name": "SignalsInUnit",
+    "name": "Signals",
     "type": "String",
-    "ko": "선택한 유닛과 신호 유형으로 걸러낸 신호 이름.",
-    "en": "Signal names filtered by the selected unit and signal type."
+    "ko": "선택한 <strong>IO Units</strong> 와 <strong>Signal Types</strong> 로 걸러 낸 신호 이름이다.",
+    "en": "Signal names filtered by the selected <strong>IO Units</strong> and <strong>Signal Types</strong>."
   }
 ];

@@ -1,6 +1,6 @@
 ---
 title: "Tree Branch"
-description: "This is a component that extracts a specific branch from a DataTree based on the input index."
+description: "This component extracts one branch from a DataTree by its sequence index."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/treebranch.mjs";
 
-This is a component that extracts a specific branch from a DataTree based on the input index.
+This component extracts one branch from a DataTree by its sequence index.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/5_TreeBranch.png" alt="Tree Branch" />
+<ComponentShot src="/assets/images/treebranch_main.png" alt="Tree Branch" />
 
 ## Inputs
 
@@ -31,7 +31,7 @@ This is a component that extracts a specific branch from a DataTree based on the
 
 <Steps>
 
-1. Connect the DataTree to **Tree** and the number of the branch to take to **Index**.
+1. Connect the DataTree to **Tree** and the sequence index of the branch to extract to **Index**. The index counts branches in order, not by path value.
 2. Take that branch's data from the **Branch** output.
 
 </Steps>

@@ -5,23 +5,17 @@ export const groups = [
   [
     {
       "label": "Multi Sliders",
-      "img": "6_MultiSlider_10.png",
+      "img": "multislider_tab1.png",
       "rows": [
         {
           "name": "Value01",
           "type": "Number",
-          "ko": "첫 번째 슬라이더 값.",
-          "en": "Value of the first slider.",
+          "ko": "첫 번째 슬라이더 값이다. 기본값은 50 (범위 0 ~ 100).",
+          "en": "Value of the first slider. Default: 50 (range 0–100).",
           "y": [
-            48.5,
-            32.3
+            52.6,
+            31.6
           ]
-        },
-        {
-          "name": "ADD",
-          "type": "Number",
-          "ko": "슬라이더를 추가한다. 추가한 슬라이더 값은 Value02, Value03 … 순서로 이어진다.",
-          "en": "Adds a slider; the added values follow as Value02, Value03, …."
         }
       ]
     }
@@ -30,13 +24,13 @@ export const groups = [
 
 export const inputs = [];
 
-export const main = "6_MultiSlider.png";
+export const main = "multislider_main.png";
 
 export const outputs = [
   {
     "name": "Values",
     "type": "Number",
-    "ko": "모든 슬라이더 값을 순서대로 담은 리스트.",
-    "en": "List of all slider values, in order."
+    "ko": "모든 슬라이더 값을 순서대로(Value01, Value02 …) 담은 리스트이다.",
+    "en": "List of all slider values in order (Value01, Value02, …)."
   }
 ];

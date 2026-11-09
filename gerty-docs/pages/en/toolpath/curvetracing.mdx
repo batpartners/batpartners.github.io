@@ -1,6 +1,6 @@
 ---
 title: "Curve Tracing"
-description: "CurveTracing is a robot toolpath component that can trace user-defined curves."
+description: "Curve Tracing generates a robot toolpath that traces the input curves."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/curvetracing.mjs";
 
-CurveTracing is a robot toolpath component that can trace user-defined curves. It allows you to set the working plane accuracy and tilting degree.
+Curve Tracing generates a robot toolpath that traces the input curves. The **Resolution** tab sets the path precision, and the **Tilting** tab sets the direction and amount of TCP tilt.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/0_Drawing.png" alt="Curve Tracing" />
+<ComponentShot src="/assets/images/curvetracing_main.png" alt="Curve Tracing" />
 
 ## Inputs
 
@@ -43,22 +43,23 @@ CurveTracing is a robot toolpath component that can trace user-defined curves. I
 
 <Steps>
 
-1. Connect the curves to follow to **Curves** and the toolpath reference plane to **Reference Plane**. To tilt the TCP toward the surface normal, connect **Geometry** too.
-2. Set **Tolerance**, the segment lengths (**MinEdge / MaxEdge(mm)**) and the tilt (**Tilting Weight**) in the **Settings** tab.
-3. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+1. Connect the curves to follow to **Curves** and the toolpath reference plane to **Reference Plane**.
+2. Set **Tolerance** and the segment lengths (**Min Edge** / **Max Edge**) in the **Resolution** tab.
+3. Set the tilt direction (**Tilt Target**) and amount (**Tilt Weight**) in the **Tilting** tab.
+4. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
 
 </Steps>
 
 ## Notes
 
 <Aside type="note">
-  With **Tilting Weight** 0.0 the TCP follows the Z direction of **Reference Plane**; with 1.0 it follows the Geometry surface normal (or the curve tangent).
+  With **Tilt Weight** 0.0 the TCP follows the Z direction of **Reference Plane**; with 1.0 it follows the direction set by **Tilt Target** (surface normal or curve tangent).
 </Aside>
 
 ## Related
 
 <RelatedLinks links={[
   { title: "RobTarget", description: "Turns target planes into robot targets", href: "/en/datatype/robtarget/" },
-  { title: "FlyByBranch", description: "Fly-by paths between segments", href: "/en/toolpath/flybybranch/" },
+  { title: "FlyByBranch", description: "Flyby paths between segments", href: "/en/toolpath/flybybranch/" },
   { title: "Roughing", description: "Stepped roughing", href: "/en/toolpath/roughing/" },
 ]} />

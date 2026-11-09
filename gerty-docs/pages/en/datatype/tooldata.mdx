@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/tooldata.mjs";
 
-Takes the tool (end-effector) shape, mounting plane, TCP and load data, and builds an ABB `tooldata`. Connect it to the ABB Robots component to use it across the whole robot program. To load a saved tool, use [Tool Importer](/en/datatype/toolimporter/).
+Takes the tool (end-effector) shape, mounting plane, TCP and load data, and builds an ABB `tooldata`. Connect it to the ABB Robots component to use it across the whole robot program. Right-click the component to switch between **Define ToolData** (configure manually) and **Import ToolData** (load saved tool data); this page describes **Define ToolData**, the default. To load a saved tool, use [Import ToolData](/en/datatype/toolimporter/) mode.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Define mode" }, { text: "Import mode → Tool Importer", href: "/en/datatype/toolimporter/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/3_ToolData.png" alt="ToolData" />
+<ComponentShot src="/assets/images/tooldata_main.png" alt="ToolData" />
 
 ## Inputs
 
@@ -43,17 +43,17 @@ Takes the tool (end-effector) shape, mounting plane, TCP and load data, and buil
 
 <Steps>
 
-1. Connect the tool mesh to **ToolGeo** and the tool-tip plane to **TCP**. If the mounting plane is not WorldXY, connect it to **ToolBase** too.
-2. Type the RAPID variable name in **Name**, and the mass, centre of gravity and inertia in **LoadData** if you know them.
-3. Connect the **Tool Data** output to the **Tool Data** input of the [ABB Robots](/en/robot-tool/abbrobot/) component.
-4. To reuse the tool in another file, save it with **Export** and pick it from **Tool Presets** in [Tool Importer](/en/datatype/toolimporter/) there.
+1. Connect the tool mesh to **Tool Geo** and the tool-tip plane to **TCP**. If the mounting plane is not WorldXY, connect it to **Base Plane** too.
+2. Type the RAPID variable name in **Name** (Tool Data tab). If you know the load, enter **Mass(kg)**, **Centroid** and **Inertia** in the **LoadData** tab; press **Reset** to calculate it.
+3. Connect the **ToolData** output to the **ToolData** input of the [ABB Robots](/en/robot-tool/abbrobot/) component.
+4. To reuse the tool in another file, save it in the **Export** tab and pick it from **Presets** in [Import ToolData](/en/datatype/toolimporter/) mode there. The save folder opens from **Open ToolData Folder** in the right-click menu.
 
 </Steps>
 
 ## Notes
 
 <Aside type="caution">
-  With LoadData empty, the load is estimated from the bounding box of the tool shape. It can differ from the real tool, so enter known values.
+  With **Tool Load** not connected, the load is estimated from the bounding box of the tool shape. It can differ from the real tool, so enter known values.
 </Aside>
 
 <Aside type="tip">
@@ -63,7 +63,7 @@ Takes the tool (end-effector) shape, mounting plane, TCP and load data, and buil
 ## Related
 
 <RelatedLinks links={[
-  { title: "Tool Importer", description: "Load saved tool data (Import mode)", href: "/en/datatype/toolimporter/" },
-  { title: "ABB Robots", description: "Robot component that takes the Tool Data", href: "/en/robot-tool/abbrobot/" },
+  { title: "Tool Importer", description: "Load saved tool data (Import ToolData mode)", href: "/en/datatype/toolimporter/" },
+  { title: "ABB Robots", description: "Robot component that takes the ToolData", href: "/en/robot-tool/abbrobot/" },
   { title: "Get ToolData", description: "Read tool data from the controller", href: "/en/controller-utils/gettooldata/" },
 ]} />

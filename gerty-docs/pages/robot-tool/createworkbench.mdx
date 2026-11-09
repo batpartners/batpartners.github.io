@@ -1,6 +1,6 @@
 ---
 title: "CreateWorkBench"
-description: "포지셔너에 장착할 워크벤치(Workbench) 및 작업물(Workpiece)의 3D 모델링을 사용자 정의하는 컴포넌트이다."
+description: "포지셔너 플랜지에 장착할 워크벤치(Workbench)와 작업물(Workpiece)을 메시와 기준 평면으로 정의하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,15 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/createworkbench.mjs";
 
-포지셔너에 장착할 워크벤치(Workbench) 및 작업물(Workpiece)의 3D 모델링을 사용자 정의하는 컴포넌트이다. 실제 사용 환경의 작업대 및 작업물 형상을 시뮬레이션에 반영하여 포지셔너 구동 중 발생할 수 있는 간섭을 검증하고 경로 시뮬레이션을 정밀하게 수행할 수 있다.
+포지셔너 플랜지에 장착할 워크벤치(Workbench)와 작업물(Workpiece)을 정의하는 컴포넌트이다. 실제 작업대와 작업물 형상을 시뮬레이션에 반영하여 포지셔너 구동 중 발생할 수 있는 간섭을 검증하고 경로 시뮬레이션을 정밀하게 수행할 수 있다.
+
+이 페이지는 우클릭 메뉴의 기본 모드인 <strong>[Define Workbench]</strong> 를 설명한다. 워크벤치 형상 메시와 기준 평면을 직접 연결하여 정의한다.
 
 <DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Define" }, { text: "Extra Option → Import", href: "/robot-tool/createworkbench-option/" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/2_Workbench_2.png" alt="CreateWorkBench" />
+<ComponentShot src="/assets/images/createworkbench_main.png" alt="CreateWorkBench" />
 
 ## 입력
 
@@ -43,11 +45,11 @@ import * as d from "../../../data/components/createworkbench.mjs";
 
 <Steps>
 
-1. **BenchGeo** 에 워크벤치 형상 메시를 연결한다.
-2. **BenchBase** 에 포지셔너 플랜지에 닿는 워크벤치 하단 기준면을, **BenchTop** 에 작업물이 놓이는 상단 기준면을 연결한다. 작업물이 있으면 **WorkPieces** 도 연결한다.
-3. **Name** 을 쓰고, 필요하면 워크벤치·작업물 색을 정한다.
-4. **WorkBench** 출력을 [ABB Positioner](/robot-tool/positioner/) 의 **WorkBench** 입력에 연결한다.
-5. 다른 파일에서 같은 워크벤치를 쓰려면 **Export** 로 저장한다.
+1. **Workbench Geo** 에 워크벤치 형상 메시를 연결한다.
+2. **Base Plane** 에 포지셔너 플랜지에 닿는 워크벤치 하단 기준면을, **Top Plane** 에 작업물이 놓이는 상단 기준면을 연결한다. 작업물이 있으면 **Workpieces** 도 연결한다.
+3. **WorkBench** 탭에서 **Name** 을 입력하고, 필요하면 **Preview** 탭에서 워크벤치·작업물 색상을 정한다.
+4. **Workbench** 출력을 [ABB Positioner](/robot-tool/positioner/) 의 **Workbench** 입력에 연결한다.
+5. 다른 파일에서 같은 워크벤치를 쓰려면 **Export** 탭의 **Export** 로 저장한다. 저장한 워크벤치는 [Import Workbench](/robot-tool/createworkbench-option/) 모드의 **Presets** 에서 불러온다.
 
 </Steps>
 
@@ -57,9 +59,13 @@ import * as d from "../../../data/components/createworkbench.mjs";
   실제 작업대와 작업물 형상을 넣으면 포지셔너가 움직일 때 생기는 간섭을 시뮬레이션에서 미리 확인할 수 있습니다.
 </Aside>
 
+<Aside type="note">
+  우클릭 메뉴의 **Open Workbench Folder** 로 워크벤치 저장 폴더(`Documents\GERTY\UserAssets\WorkBench`)를 열 수 있습니다.
+</Aside>
+
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "ABB Positioner", description: "WorkBench 를 받는 포지셔너", href: "/robot-tool/positioner/" },
-  { title: "CreateWorkBench (Extra Option)", description: "저장해 둔 워크벤치 불러오기", href: "/robot-tool/createworkbench-option/" },
+  { title: "ABB Positioner", description: "Workbench 를 받는 포지셔너", href: "/robot-tool/positioner/" },
+  { title: "CreateWorkBench (Extra Option)", description: "Import Workbench: 저장해 둔 워크벤치 불러오기", href: "/robot-tool/createworkbench-option/" },
 ]} />

@@ -1,6 +1,6 @@
 ---
 title: "TriggerIOMove"
-description: "경로상의 지정 위치에서 하나 이상의 I/O 신호를 발생시키며 이동을 수행하는 ABB Trigger Move 인스트럭션(TriggLIOs, TriggJIOs)을 생성 및 설정하는 컴포넌트이다."
+description: "경로상의 지정 위치에서 하나 이상의 I/O 신호를 발생시키며 이동을 수행하는 ABB Trigger Move 인스트럭션(TriggLIOs, TriggJIOs)을 만드는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/triggeriomove.mjs";
 
-경로상의 지정 위치에서 하나 이상의 I/O 신호를 발생시키며 이동을 수행하는 ABB Trigger Move 인스트럭션(`TriggLIOs`, `TriggJIOs`)을 생성 및 설정하는 컴포넌트이다.
+경로상의 지정 위치에서 하나 이상의 I/O 신호를 발생시키며 이동을 수행하는 ABB Trigger Move 인스트럭션(`TriggLIOs`, `TriggJIOs`)을 만드는 컴포넌트이다. 입력한 RobTarget 마다 트리거 이동 명령을 만들고, [TriggIOs](/datatype/triggios/) 로 묶은 I/O 이벤트를 경로 위의 지정 위치에서 발생시킨다.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/2_TriggerMove.png" alt="TriggerIOMove" />
+<ComponentShot src="/assets/images/triggeriomove_main.png" alt="TriggerIOMove" />
 
 ## 입력
 
@@ -43,17 +43,17 @@ import * as d from "../../../data/components/triggeriomove.mjs";
 
 <Steps>
 
-1. **RobTarget** 에 [RobTarget](/datatype/robtarget/) 또는 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 출력을 연결한다.
+1. **RobTargets** 에 [RobTarget](/datatype/robtarget/) 또는 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 출력을 연결한다.
 2. **TriggIOs** 에 [TriggIOs](/datatype/triggios/) 출력을 연결한다. 트리거 하나하나는 [IOEvent](/datatype/iodevent/) 로 정의한다.
-3. **TriggIOs Move** 탭에서 모션 유형·속도·Zone 을 고른다.
-4. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+3. **Trigger Move** 탭의 **Trigger Move** 에서 모션 유형·속도·Zone 을 고른다.
+4. **Instruction** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="note">
-  MoveL 이면 `TriggLIOs`, MoveJ 이면 `TriggJIOs` 인스트럭션이 만들어집니다.
+  모션 유형으로 `TriggLIOs` 를 고르면 직선 이동, `TriggJIOs` 를 고르면 관절 이동 인스트럭션이 만들어집니다.
 </Aside>
 
 ## 관련 항목

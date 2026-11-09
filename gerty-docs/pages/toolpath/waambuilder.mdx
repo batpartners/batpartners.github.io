@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/waambuilder.mjs";
 
-슬라이서에서 생성된 WAAM 적층 툴패스(Deposition ToolPaths)를 입력받아 해석 및 통합하는 컴포넌트이다. 입력 받은 데이터를 각 타겟을 첫 번째 레이어(Shell / Infill), 이후 레이어(Shell / Infill), Tween Shell 다섯 가지로 분리하여 출력할 수 있다. 사용자는 적층 경로의 정렬 및 레이어를 프리뷰로 확인이 가능하다.
+슬라이서에서 생성된 WAAM 적층 툴패스(Deposition ToolPaths)를 입력받아 해석 및 통합하는 컴포넌트이다. 각 타겟을 첫 번째 레이어(Shell / Infill), 이후 레이어(Shell / Infill), Tween Shell 의 다섯 가지로 분류해 출력한다. 적층 순서 정렬과 레이어별 프리뷰 기능을 포함한다.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/14_WAAMBuilder.png" alt="WAAM Builder" />
+<ComponentShot src="/assets/images/waambuilder_main.png" alt="WAAM Builder" />
 
 ## 입력
 
@@ -43,23 +43,23 @@ import * as d from "../../../data/components/waambuilder.mjs";
 
 <Steps>
 
-1. **Deposition ToolPaths** 에 슬라이서([Solid Shell](/toolpath/solidshell/), [Surface Shell](/toolpath/surfaceshell/), [Solid Fill](/toolpath/solidfill/) 등)의 출력을, **Is Bottommost** 에 Solid Shell / Surface Shell 의 **Is Bottommost** 출력을 연결한다.
-2. **Settings** 탭에서 채움을 먼저 쌓을지(**Infill first**), 여러 오브젝트를 레이어 단위로 쌓을지(**Layer by Layer**) 정한다.
+1. **Deposition ToolPaths** 에 슬라이서([Solid Shell](/toolpath/solidshell/), [Surface Shell](/toolpath/surfaceshell/), [Solid Fill](/toolpath/solidfill/) 등)의 출력을 연결한다. 첫 파트(최하단 파티션) 여부는 슬라이서가 경로에 담아 보내므로 따로 연결할 필요가 없다.
+2. **Settings** 탭에서 채움을 먼저 쌓을지(**Infill first**), 여러 오브젝트를 레이어 단위로 쌓을지 오브젝트 단위로 쌓을지(**Layer by Layer**), 첫 파트 구분을 무시할지(**Ignore First Part**) 정한다.
 3. **Preview** 탭의 **Layer Preview** 로 레이어별 적층 순서를 확인한다.
-4. 레이어 종류별 출력(첫 레이어 Shell / Infill, 이후 레이어 Shell / Infill, Tween Shell)을 각각 [RobTarget](/datatype/robtarget/) 으로 만들어 인스트럭션에 연결한다.
+4. 레이어 종류별 출력(**First Shells** / **First Infills**, **Upper Shells** / **Upper Infills**, **Tween Shells**)을 각각 [RobTarget](/datatype/robtarget/) 으로 만들어 인스트럭션에 연결한다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="note">
-  **Is Bottommost** 가 FALSE 이면 **1st Shell Layers**, **1st Infill Layers** 는 출력되지 않습니다.
+  입력 경로가 첫 파트가 아니거나 **Ignore First Part** 가 TRUE 이면 **First Shells**, **First Infills** 는 출력되지 않습니다.
 </Aside>
 
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "Deposition Builder", description: "적층 경로를 압출 시작·이동·종료로 분리", href: "/toolpath/depositionbuilder/" },
+  { title: "Deposition Builder", description: "적층 경로를 압출 시작·이동·종료·와이프로 분리", href: "/toolpath/depositionbuilder/" },
   { title: "Solid Shell", description: "닫힌 솔리드의 외곽 적층 경로", href: "/toolpath/solidshell/" },
   { title: "Solid Fill", description: "패턴으로 내부 채움", href: "/toolpath/solidfill/" },
   { title: "RobTarget", description: "타겟 평면을 로봇 타겟으로 변환", href: "/datatype/robtarget/" },

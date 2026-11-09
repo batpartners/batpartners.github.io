@@ -7,30 +7,31 @@ export const inputs = [
   {
     "name": "Mesh",
     "type": "Mesh",
-    "ko": "오버행을 확인할 메시 형상.",
-    "en": "The mesh to check for overhangs."
+    "ko": "오버행을 확인할 Mesh 형상이다.",
+    "en": "The mesh geometry to check for overhangs."
   },
   {
     "name": "BasePlane",
     "type": "Plane",
-    "ko": "오버행 각도를 잴 기준 평면(빌드 플레이트 방향).",
-    "en": "Reference plane the overhang angle is measured from (build plate direction)."
+    "optional": true,
+    "ko": "오버행 각도를 재는 기준 평면(빌드 플레이트 방향)이다. 기울어진 판이면 <a href=\"/utils/surface-frame/\">Surface Frame</a> 으로 만든 평면을 연결한다.",
+    "en": "Reference plane the overhang angle is measured from (build plate direction). For a tilted plate, connect a plane made with <a href=\"/en/utils/surface-frame/\">Surface Frame</a>."
   }
 ];
 
-export const main = "7_OverhangMapper.png";
+export const main = "overhangmapper_main.png";
 
 export const outputs = [
   {
     "name": "Mesh",
     "type": "Mesh",
-    "ko": "오버행 각도에 따라 색을 입힌 메시.",
-    "en": "The mesh coloured by overhang angle."
+    "ko": "오버행 각도에 따라 색상을 매핑한 Mesh 이다.",
+    "en": "The mesh colour-mapped by overhang angle."
   },
   {
     "name": "AngleData",
     "type": "String",
-    "ko": "오버행 각도(°) 값 리스트.",
-    "en": "List of overhang angles (°)."
+    "ko": "오버행 각도(°) 데이터이다.",
+    "en": "Overhang angle data (°)."
   }
 ];

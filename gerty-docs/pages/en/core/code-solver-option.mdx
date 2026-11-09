@@ -1,6 +1,6 @@
 ---
 title: "Code Solver (Option)"
-description: "This is a component that generates program files from defined RAPID robot motions and performs tasks to load and upload code files to an ABB controller connected via a network."
+description: "A component that generates a RAPID program from the defined robot motions and transfers and uploads it to an ABB controller. Covers Multi-Task (Option 623-1) mode."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,15 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/code-solver-option.mjs";
 
-This is a component that generates program files from defined RAPID robot motions and performs tasks to load and upload code files to an ABB controller connected via a network.
+A component that generates a RAPID program from the defined robot motions and transfers and uploads it to a networked ABB controller.
 
-This page covers the <strong>Multi Task</strong> form, which exports with a socket communication module.
+This page covers the component with <strong>[Multi-Task (Option 623-1)]</strong> selected in the right-click menu. The controller needs the RobotWare Multitasking option (623-1). With <strong>Enable Socket</strong> on, the program is exported with a socket communication module, and the controller IP address and port are set in the <strong>Socket Settings</strong> tab.
 
 <DocTags tags={[{ text: "Core", tone: "accent" }, { text: "Multi Task" }, { text: "Single Task → Code Solver", href: "/en/core/code-solver/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/0_CodeSolver_1.png" alt="Code Solver (Option)" />
+<ComponentShot src="/assets/images/code-solver-option_main.png" alt="Code Solver (Option)" />
 
 ## Inputs
 
@@ -46,17 +46,21 @@ This page covers the <strong>Multi Task</strong> form, which exports with a sock
 <Steps>
 
 1. Connect the **GERTY Code** output of [GERTY Core](/en/core/gerty-core/) to **GERTY Code**. To load straight to a controller, connect the [Scan ABB Controller](/en/controller-utils/scanabbcontroller/) output to **ABB Controller**.
-2. Set **Program Folder** and **Program Name** in the **Program Settings** tab. Turn on **Enable Socket** for socket communication.
-3. Press **Export** to generate the RAPID code. With **Auto Load** on, it is loaded to the connected controller afterwards.
+2. Set **Program Folder** and **Program Name** in the **Program Settings** tab. For socket communication, turn on **Enable Socket** and set **IP Address** (real robot 192.168.125.1 / RobotStudio 127.0.0.1) and **Port** in the **Socket Settings** tab that appears.
+3. Press **Export** in the **Export** tab to generate the RAPID code. With **Auto Load** on, the program is loaded to the connected controller afterwards. The result appears in **Export Log**.
 4. Open the generated code with **Open in Editor** to check it.
-5. Connect the **SocketBundle** output (socket client and instruction packet list) to [Socket Sender](/en/controller-utils/socketsender/).
+5. Connect the **SocketBundle** output (socket client and instruction packet list) to the **SocketBundle** input of [Socket Sender](/en/controller-utils/socketsender/).
 
 </Steps>
 
 ## Notes
 
 <Aside type="tip">
-  **Open in Editor** opens VSCode, or Notepad when VSCode is not installed.
+  **Open in Editor** opens the generated code in VSCode, or in Notepad if VSCode is not installed.
+</Aside>
+
+<Aside type="note">
+  Change the save location with **Select a Local directory…** in the right-click menu and open it with **Open Local directory**. The default location is `Documents\GERTY\RobotPrograms`.
 </Aside>
 
 ## Related

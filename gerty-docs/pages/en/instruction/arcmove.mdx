@@ -1,6 +1,6 @@
 ---
 title: "ArcMove"
-description: "A component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for welding."
+description: "Creates ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for welding."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/arcmove.mjs";
 
-A component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for welding.
+A component that creates ABB arc instructions (`ArcLStart`, `ArcL`, `ArcLEnd`) for welding. It makes an arc move for each input RobTarget and takes the weld start / end conditions and weld conditions from [SeamData](/en/datatype/seamdata/) and [WeldData](/en/datatype/welddata/). Whether the first and last targets use `ArcLStart` and `ArcLEnd` is set in the settings.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/3_ArcMove.png" alt="ArcMove" />
+<ComponentShot src="/assets/images/arcmove_main.png" alt="ArcMove" />
 
 ## Inputs
 
@@ -45,8 +45,8 @@ A component that configures ABB arc instructions (ArcLStart, ArcL, ArcLEnd) for 
 
 1. Connect the [RobTarget](/en/datatype/robtarget/) or [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/) output of the weld path to **RobTargets**.
 2. Connect [SeamData](/en/datatype/seamdata/) to **SeamData** and [WeldData](/en/datatype/welddata/) to **WeldData**.
-3. Pick the motion type, speed and zone in the **Arc Move** tab, and choose whether the first target starts with `ArcLStart` (**ArcLStart**) and the last ends with `ArcLEnd` (**ArcLEnd**).
-4. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+3. In the **Arc Move** tab, pick the motion type, speed and zone with **Arc**, and choose whether the first target starts with `ArcLStart` (**Arc Start**) and the last ends with `ArcLEnd` (**Arc End**).
+4. Put the **Instruction** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
 
 </Steps>
 

@@ -1,6 +1,6 @@
 ---
 title: "ParallelFinishing"
-description: "This is a component that generates a finishing toolpath along unidirectional parallel contour curves."
+description: "This component generates a finishing toolpath along parallel contour curves in a single direction."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/parallelfinishing.mjs";
 
-This is a component that generates a finishing toolpath along unidirectional parallel contour curves. Users can configure detailed settings such as the distance between target planes, layer-to-layer spacing, and tilting to suit the workpiece geometry.
+This component generates a finishing toolpath along parallel contour curves in a single direction. The contour direction, pass spacing (Stepover), TCP tilt and approximation tolerance can be set to suit the workpiece, and the result is output as target planes and contour polylines.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/6_ParallelFinishing.png" alt="ParallelFinishing" />
+<ComponentShot src="/assets/images/parallelfinishing_main.png" alt="ParallelFinishing" />
 
 ## Inputs
 
@@ -44,7 +44,7 @@ This is a component that generates a finishing toolpath along unidirectional par
 <Steps>
 
 1. Connect the shape to finish (Brep or Mesh) to **Geometry** and the path reference plane to **Reference Plane**.
-2. Set the path direction (**Cutting Direction**), path spacing (**Stepover(mm)**), tilt toward the surface normal (**Tilting Weight**) and **Tolerance** in the **Settings** tab.
+2. Set the contour direction (**Contour Dir**), pass spacing (**Stepover**, mm), tilt toward the surface normal (**Tilt Weight**) and **Tolerance** in the **Settings** tab.
 3. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
 
 </Steps>

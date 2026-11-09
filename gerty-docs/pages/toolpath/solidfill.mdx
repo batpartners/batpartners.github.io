@@ -1,6 +1,6 @@
 ---
 title: "Solid Fill"
-description: "GERTYShellData를 기준으로, 외곽 내부를 패턴으로 채우는 적층 툴패스 컴포넌트이다."
+description: "Shell Profile 을 기준으로 외곽 내부를 Linear 또는 Concentric 패턴으로 채우는 적층 툴패스 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/solidfill.mjs";
 
-GERTYShellData를 기준으로, 외곽 내부를 패턴으로 채우는 적층 툴패스 컴포넌트이다. 채움 형상과 간격 등의 세부 사항을 결정할 수 있다.
+Shell Profile 을 기준으로 외곽(Shell) 내부를 Linear(평행선) 또는 Concentric(동심 링) 패턴으로 채우는 적층 툴패스 컴포넌트이다. 패턴 각도와 위상, 상·하단 솔리드 레이어 수, 채움 밀도와 간격, 벽 근처 틸팅, 와이핑과 Seam 배치를 설정할 수 있다. 아이콘 우클릭 메뉴에는 `Use Exclusion` 옵션도 있다.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/10_SolidFill.png" alt="Solid Fill" />
+<ComponentShot src="/assets/images/solidfill_main.png" alt="Solid Fill" />
 
 ## 입력
 
@@ -43,17 +43,28 @@ GERTYShellData를 기준으로, 외곽 내부를 패턴으로 채우는 적층 �
 
 <Steps>
 
-1. **GERTYShellData** 에 [Solid Shell](/toolpath/solidshell/) 의 **GERTYShellData** 출력을 연결한다.
-2. **Pattern** 탭에서 내부·외부 채움 패턴(**Int-Infill / Ext-Infill Type**)과 회전 각도(**Rotation(°)**)를 고른다.
-3. **Infill** 탭에서 상·하단 솔리드 레이어 수, 외곽과 채움 사이 간격(**Layer Gap(mm)**), 내부 채움 밀도(**Int-Infill Amount**)를 정한다.
-4. **Deposition ToolPaths** 출력을 [Deposition Builder](/toolpath/depositionbuilder/) 또는 [WAAM Builder](/toolpath/waambuilder/) 에 연결한다.
+1. **Shell Profile** 에 [Solid Shell](/toolpath/solidshell/) 의 **Shell Profile** 출력을 연결한다. 벽 근처 채움을 기울이려면 슬라이싱한 형상을 **Model** 에 연결한다.
+2. **Pattern** 탭에서 **Pattern** 을 고른다. Linear 는 **Type**, **Rotation(°)**, **Phase Shift** 등으로 선 패턴을 정하고(Type 이 Custom 이면 **Pattern Angles** 입력 사용), Concentric 은 **Path Order** 로 링 순서를 정한다.
+3. **Infill** 탭에서 상·하단 솔리드 레이어 수(**Top Layers**, **Bottom Layers**), 외곽·스킨과의 간격(**Fill Gap**), 내부 채움 밀도(**Infill Density**)를 정한다.
+4. 필요하면 **Tilt** 탭에서 **Wall Tilt Weight** 와 **Tilt Ramp** 를, **Seam** 탭에서 **Wipe Dist** 와 (Concentric 일 때) Seam 배치를 조정한다.
+5. **Infill ToolPaths** 출력을 [Deposition Builder](/toolpath/depositionbuilder/) 또는 [WAAM Builder](/toolpath/waambuilder/) 에 연결한다.
 
 </Steps>
+
+## 주의 사항
+
+<Aside type="note">
+  **Pattern** 을 Concentric 으로 바꾸면 **Type**, **Rotation(°)**, **Phase Shift**, **Alt Connect**, **Raster** 가 숨겨지고, **Path Order** 와 **Seam** 탭의 Seam 배치 설정(**Seam**, **Seam Spread**, **Ring Spread**, **Seam Offset**)이 나타납니다.
+</Aside>
+
+<Aside type="note">
+  아이콘 우클릭 메뉴의 `Use Exclusion` 옵션은 아직 이 문서에서 다루지 않습니다.
+</Aside>
 
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "Solid Offset Fill", description: "외곽 오프셋으로 내부 채움", href: "/toolpath/solidoffsetfill/" },
   { title: "Solid Shell", description: "닫힌 솔리드의 외곽 적층 경로", href: "/toolpath/solidshell/" },
-  { title: "Deposition Builder", description: "적층 경로를 압출 시작·이동·종료로 분리", href: "/toolpath/depositionbuilder/" },
+  { title: "Deposition Builder", description: "적층 경로를 압출 시작·이동·종료·와이프로 분리", href: "/toolpath/depositionbuilder/" },
+  { title: "WAAM Builder", description: "WAAM 적층 경로를 레이어 종류별로 분리", href: "/toolpath/waambuilder/" },
 ]} />

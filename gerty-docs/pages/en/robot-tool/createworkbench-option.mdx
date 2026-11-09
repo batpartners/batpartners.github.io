@@ -1,6 +1,6 @@
 ---
 title: "CreateWorkBench (Extra Option)"
-description: "A component that allows users to define a custom workbench for a positioner."
+description: "A component that defines the workbench mounted on the positioner flange. Covers Import Workbench mode, which loads a workbench saved with Export."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,15 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/createworkbench-option.mjs";
 
-A component that allows users to define a custom workbench for a positioner. By applying the modeling of the currently used workbench to the simulation, you can smoothly monitor the positioner working process. In addition, you can work with a complete simulation including the modeling of workpieces on the workbench.
+A component that defines the workbench and workpieces mounted on the positioner flange. With the real workbench and workpiece shapes in the simulation, you can check for collisions while the positioner moves and simulate paths accurately.
 
-This page covers loading a workbench saved with <strong>Export</strong> from <strong>Bench Presets</strong>.
+This page covers the component with <strong>[Import Workbench]</strong> selected in the right-click menu. The workbench saved with <strong>Export</strong> is loaded from <strong>Presets</strong> in the <strong>WorkBench</strong> tab, so there is no geometry mesh input.
 
 <DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Import" }, { text: "Define → CreateWorkBench", href: "/en/robot-tool/createworkbench/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/2_Workbench.png" alt="CreateWorkBench (Extra Option)" />
+<ComponentShot src="/assets/images/createworkbench-option_main.png" alt="CreateWorkBench (Extra Option)" />
 
 ## Inputs
 
@@ -45,10 +45,11 @@ This page covers loading a workbench saved with <strong>Export</strong> from <st
 
 <Steps>
 
-1. Pick a saved workbench in **Bench Presets** (WorkBench tab).
-2. Connect the bottom plane of the workbench (on the positioner flange) to **BenchBase** and the top plane the workpiece sits on to **BenchTop**. Connect **WorkPieces** if there is a workpiece.
-3. Type the **Name** and, if you like, set the workbench and workpiece colours.
-4. Connect the **WorkBench** output to the **WorkBench** input of [ABB Positioner](/en/robot-tool/positioner/).
+1. Right-click the component and select **Import Workbench**.
+2. Pick a saved workbench in **Presets** (WorkBench tab).
+3. Connect the bottom plane of the workbench (on the positioner flange) to **Base Plane**. To change the top reference plane, connect **Top Plane** (when not connected, the saved Top Plane is used); connect **Workpieces** if there is a workpiece.
+4. If needed, set the **Name** and the workbench and workpiece colors in the **Preview** tab.
+5. Connect the **Workbench** output to the **Workbench** input of [ABB Positioner](/en/robot-tool/positioner/).
 
 </Steps>
 
@@ -58,9 +59,13 @@ This page covers loading a workbench saved with <strong>Export</strong> from <st
   With the real workbench and workpiece shapes in place, collisions while the positioner moves show up in the simulation.
 </Aside>
 
+<Aside type="note">
+  The **Presets** list shows workbenches saved with Export. **Open Workbench Folder** in the right-click menu opens the save folder (`Documents\GERTY\UserAssets\WorkBench`).
+</Aside>
+
 ## Related
 
 <RelatedLinks links={[
-  { title: "ABB Positioner", description: "Positioner that takes the WorkBench", href: "/en/robot-tool/positioner/" },
-  { title: "CreateWorkBench", description: "Define a workbench", href: "/en/robot-tool/createworkbench/" },
+  { title: "ABB Positioner", description: "Positioner that takes the Workbench", href: "/en/robot-tool/positioner/" },
+  { title: "CreateWorkBench", description: "Define Workbench: define and export a workbench", href: "/en/robot-tool/createworkbench/" },
 ]} />

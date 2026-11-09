@@ -1,6 +1,6 @@
 ---
 title: "Code Solver (Option)"
-description: "정의된 RAPID 로봇 모션으로부터 프로그램 파일을 생성하며, 네트워크에 연결된 ABB 컨트롤러로 코드 파일 로드 및 업로드 작업을 하는 컴포넌트이다."
+description: "정의된 로봇 모션으로부터 RAPID 프로그램을 생성하고 ABB 컨트롤러로 전송·업로드하는 컴포넌트이다. Multi-Task (Option 623-1) 모드를 설명한다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,15 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/code-solver-option.mjs";
 
-정의된 RAPID 로봇 모션으로부터 프로그램 파일을 생성하며, 네트워크에 연결된 ABB 컨트롤러로 코드 파일 로드 및 업로드 작업을 하는 컴포넌트이다.
+정의된 로봇 모션으로부터 RAPID 프로그램을 생성하고, 네트워크에 연결된 ABB 컨트롤러로 전송·업로드하는 컴포넌트이다.
 
-이 페이지는 소켓 통신용 모듈로 내보내는 <strong>Multi Task</strong> 형태를 설명한다.
+이 페이지는 컴포넌트를 우클릭하여 <strong>[Multi-Task (Option 623-1)]</strong> 를 선택했을 때를 설명한다. 컨트롤러에 RobotWare Multitasking 옵션(623-1)이 필요하다. <strong>Enable Socket</strong> 을 켜면 소켓 통신용 모듈을 포함해 내보내며, <strong>Socket Settings</strong> 탭에서 컨트롤러의 IP 주소와 포트를 정한다.
 
 <DocTags tags={[{ text: "Core", tone: "accent" }, { text: "Multi Task" }, { text: "Single Task → Code Solver", href: "/core/code-solver/" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/0_CodeSolver_1.png" alt="Code Solver (Option)" />
+<ComponentShot src="/assets/images/code-solver-option_main.png" alt="Code Solver (Option)" />
 
 ## 입력
 
@@ -46,17 +46,21 @@ import * as d from "../../../data/components/code-solver-option.mjs";
 <Steps>
 
 1. **GERTY Code** 에 [GERTY Core](/core/gerty-core/) 의 **GERTY Code** 출력을 연결한다. 컨트롤러에 바로 올리려면 **ABB Controller** 에 [Scan ABB Controller](/controller-utils/scanabbcontroller/) 출력을 연결한다.
-2. **Program Settings** 탭에서 **Program Folder** 와 **Program Name** 을 정한다. 소켓 통신을 쓰려면 **Enable Socket** 을 켠다.
-3. **Export** 를 눌러 RAPID 코드를 만든다. **Auto Load** 를 켜 두면 만든 뒤 연결된 컨트롤러에 자동으로 올린다.
-4. **Open in Editor** 로 만든 코드를 열어 확인한다.
-5. **SocketBundle** 출력(소켓 클라이언트와 인스트럭션 패킷 리스트)을 [Socket Sender](/controller-utils/socketsender/) 에 연결한다.
+2. **Program Settings** 탭에서 **Program Folder** 와 **Program Name** 을 정한다. 소켓 통신을 쓰려면 **Enable Socket** 을 켜고, 새로 나타나는 **Socket Settings** 탭에서 **IP Address** (실제 로봇 192.168.125.1 / RobotStudio 127.0.0.1)와 **Port** 를 정한다.
+3. **Export** 탭에서 **Export** 를 눌러 RAPID 코드를 생성한다. **Auto Load** 를 켜 두면 생성 후 연결된 컨트롤러에 자동으로 로드한다. 결과는 **Export Log** 에 표시된다.
+4. **Open in Editor** 로 생성된 코드를 열어 확인한다.
+5. **SocketBundle** 출력(소켓 클라이언트와 인스트럭션 패킷 리스트)을 [Socket Sender](/controller-utils/socketsender/) 의 **SocketBundle** 입력에 연결한다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="tip">
-  **Open in Editor** 는 VSCode 로 엽니다. VSCode 가 없으면 메모장으로 엽니다.
+  **Open in Editor** 는 생성된 코드를 VSCode 로 엽니다. VSCode 가 설치되어 있지 않으면 메모장으로 엽니다.
+</Aside>
+
+<Aside type="note">
+  저장 위치는 우클릭 메뉴의 **Select a Local directory…** 로 바꾸고, **Open Local directory** 로 열 수 있습니다. 기본 위치는 `Documents\GERTY\RobotPrograms` 입니다.
 </Aside>
 
 ## 관련 항목

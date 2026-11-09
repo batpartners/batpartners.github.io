@@ -1,6 +1,6 @@
 ---
 title: "ABB Positioner"
-description: "사용할 ABB 포지셔너 로봇을 임포트하는 컴포넌트이다."
+description: "ABB IRBP 시리즈 카탈로그에서 포지셔너 모델과 사양을 골라 외부축 포지셔너를 정의하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,14 +11,15 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/positioner.mjs";
 
-사용할 ABB 포지셔너 로봇을 임포트하는 컴포넌트이다. 사용자가 소유하고 있는 ABB IRBP 시리즈 포지셔너를 지원하며, 선택할 수 있다.
-지정한 모델의 세부 작업 및 시뮬레이션을 설정할 수 있다.
+로봇과 연동할 외부축 포지셔너의 기구학 구성을 정의하는 컴포넌트이다. 정의한 포지셔너는 로봇 셋업과 Positioner RobTarget 에서 사용한다.
+
+이 페이지는 우클릭 메뉴의 기본 모드인 <strong>[Import Positioner]</strong> 를 설명한다. ABB IRBP 시리즈 카탈로그에서 모델과 사양을 골라 포지셔너를 불러온다. 축 형상을 직접 지정하려면 <strong>[Define Positioner]</strong> 를 선택한다.
 
 <DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Extra Option → Define Positioner", href: "/robot-tool/positioner-option/" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/1_ABBPositioner.png" alt="ABB Positioner" />
+<ComponentShot src="/assets/images/positioner_main.png" alt="ABB Positioner" />
 
 ## 입력
 
@@ -44,9 +45,9 @@ import * as d from "../../../data/components/positioner.mjs";
 
 <Steps>
 
-1. **ABB Positioner** 탭의 **Models** 에서 ABB IRBP 포지셔너 모델을 고른다.
-2. 포지셔너 플랜지 평면이 WorldXY 가 아니면 **MountingPl** 을, 워크벤치를 달려면 **WorkBench** 에 [CreateWorkBench](/robot-tool/createworkbench/) 출력을 연결한다.
-3. **Motion Settings** 탭에서 암 동작(**Enable Arm**)과 TCP 접근·정렬 방향을, **RAPID Setting** 탭에서 RobTarget 의 외부축 배열에 쓸 **Arm / Plate Joint Index** 를 정한다.
+1. **ABB Positioner** 탭의 **Positioner Model** 에서 ABB IRBP 포지셔너 모델을, **Spec** 에서 작업 직경(D)·플레이트 높이(H) 사양을 고르고, 필요하면 **MechUnit Name** 을 정한다.
+2. 포지셔너 플랜지 평면이 WorldXY 가 아니면 **Mounting Plane** 을, 워크벤치를 달려면 **Workbench** 에 [CreateWorkBench](/robot-tool/createworkbench/) 출력을 연결한다.
+3. **Motion** 탭에서 암 동작(**Enable Arm**)과 TCP 접근·정렬 방향(**Approach Dir**, **TCP Dir**)을, **RAPID** 탭에서 RobTarget 의 외부축 배열에 쓸 **Arm / Plate Joint Index** 를 정한다.
 4. **Positioner** 출력을 [ABB Robots](/robot-tool/abbrobot/) 와 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 의 **Positioner** 입력에 연결한다.
 
 </Steps>
@@ -62,6 +63,6 @@ import * as d from "../../../data/components/positioner.mjs";
 <RelatedLinks links={[
   { title: "ABB Robots", description: "Positioner 를 받는 로봇", href: "/robot-tool/abbrobot/" },
   { title: "Positioner RobTarget", description: "포지셔너 회전각을 포함한 타겟", href: "/datatype/positioner-robtarget-dynamic/" },
-  { title: "CreateWorkBench", description: "포지셔너에 다는 워크벤치", href: "/robot-tool/createworkbench/" },
-  { title: "ABB Positioner (Extra Option)", description: "포지셔너 직접 정의", href: "/robot-tool/positioner-option/" },
+  { title: "CreateWorkBench", description: "포지셔너 플랜지에 장착하는 워크벤치", href: "/robot-tool/createworkbench/" },
+  { title: "ABB Positioner (Extra Option)", description: "Define Positioner: 축 형상을 직접 지정해 정의", href: "/robot-tool/positioner-option/" },
 ]} />

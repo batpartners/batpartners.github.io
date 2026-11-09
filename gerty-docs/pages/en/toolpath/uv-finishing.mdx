@@ -1,6 +1,6 @@
 ---
 title: "UVFinishing"
-description: "This is a component that generates a finishing toolpath along the UV isoparametric curves of a surface."
+description: "This component generates a finishing toolpath that follows the UV isoparametric curves of a surface."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/uv-finishing.mjs";
 
-This is a component that generates a finishing toolpath along the UV isoparametric curves of a surface. Users can configure detailed settings according to their working preferences, such as the distance between target planes, the interval between layers, and the UV direction.
+This component generates a finishing toolpath that follows the UV isoparametric curves of a surface. The UV direction, pass spacing (Stepover), TCP tilt and approximation tolerance can be set to suit the job, and the result is output as target planes and contour polylines.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/8_UVFinishing.png" alt="UVFinishing" />
+<ComponentShot src="/assets/images/uv-finishing_main.png" alt="UVFinishing" />
 
 ## Inputs
 
@@ -43,8 +43,8 @@ This is a component that generates a finishing toolpath along the UV isoparametr
 
 <Steps>
 
-1. Connect the surface to finish (Brep or Surface) to **Brep** and the path reference plane to **Reference Plane**.
-2. Set the UV direction (**UV Direction**), path spacing (**Stepover(mm)**), tilt toward the surface normal (**Tilting Weight**) and **Tolerance** in the **Settings** tab.
+1. Connect the surface to finish (Brep or Surface) to **Geometry** and the path reference plane to **Reference Plane**.
+2. Choose the U or V direction (**UV Flip**), pass spacing (**Stepover**, mm), tilt toward the surface normal (**Tilt Weight**) and **Tolerance** in the **Settings** tab.
 3. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
 
 </Steps>

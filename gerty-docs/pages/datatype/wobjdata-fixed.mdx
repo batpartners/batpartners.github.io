@@ -1,6 +1,6 @@
 ---
 title: "WobjData(Fixed)"
-description: "WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다."
+description: "고정된 작업물의 좌표계(uframe / oframe)를 ABB WobjData 로 정의하는 컴포넌트의 Fixed 모드이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,15 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/wobjdata-fixed.mjs";
 
-WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로봇이 작업하는 대상(작업물)의 고유 좌표계를 정의하며, 도면 기반의 직관적인 프로그래밍을 돕고 설치 환경 변화 시 좌표계 수정만으로 프로그램의 재사용을 가능하게 한다. 컴포넌트 아이콘을 우클릭하여 Movable(외부축에 의해 움직이는 워크오브젝트) 및 Fixed(고정된 일반 워크오브젝트) 두 가지 모드로 전환할 수 있다.
+WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로봇이 작업하는 대상(작업물)의 고유 좌표계를 정의하며, 도면 기반의 직관적인 프로그래밍을 돕고 설치 환경 변화 시 좌표계 수정만으로 프로그램의 재사용을 가능하게 한다. 월드 좌표계에서 작업대의 로컬 좌표계를 정의하는 사용자 프레임(uframe)과, 그 안의 객체 프레임(oframe)을 지정한다. 컴포넌트를 우클릭해 **Fixed WobjData**(고정된 일반 워크오브젝트)와 **Movable WobjData**(외부축에 의해 움직이는 워크오브젝트)를 전환할 수 있다.
 
-이 페이지는 <strong>Fixed 모드</strong>로, Target Plane 을 고정된 위치의 기준 평면으로 재정의한다.
+이 페이지는 기본 모드인 <strong>Fixed WobjData</strong> 를 설명한다. 워크오브젝트는 고정된 위치에 있다.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Fixed 모드" }, { text: "Movable 모드 → WobjData(Movable)", href: "/datatype/wobjdata-movable/" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/2_WobjData.png" alt="WobjData(Fixed)" />
+<ComponentShot src="/assets/images/wobjdata-fixed_main.png" alt="WobjData(Fixed)" />
 
 ## 입력
 
@@ -46,7 +46,7 @@ WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
 <Steps>
 
 1. **User Frame** 에 사용자 프레임(uframe)으로 쓸 평면, **Object Frame** 에 객체 프레임(oframe)으로 쓸 평면을 연결한다.
-2. **WobjData** 탭의 **Name** 에 RAPID 변수명을 쓴다.
+2. **WobjData** 탭의 **Name** 에 RAPID 변수명을 쓴다. 뷰포트의 프레임 표시 크기는 **Preview** 탭의 **Frame Size** 로 조절한다.
 3. **WobjData** 출력을 [RobTarget](/datatype/robtarget/) 의 **WobjData** 입력에 연결해, 타겟을 작업물 좌표계 기준으로 정의한다.
 
 </Steps>
@@ -65,5 +65,6 @@ WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
 
 <RelatedLinks links={[
   { title: "RobTarget", description: "WobjData 를 받는 타겟", href: "/datatype/robtarget/" },
+  { title: "WobjData(Movable)", description: "외부축이 움직이는 워크오브젝트", href: "/datatype/wobjdata-movable/" },
   { title: "Get WobjData", description: "컨트롤러에 있는 WobjData 가져오기", href: "/controller-utils/getwobjdata/" },
 ]} />

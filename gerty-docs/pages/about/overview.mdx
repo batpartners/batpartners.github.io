@@ -56,11 +56,10 @@ Grasshopper 와 같은 방법으로 노드를 연결해 결과를 쌓아 간다.
 
 <NumberedShot src="/assets/images/ContextMenu_2026.png" dark="/assets/images/ContextMenu_2026_dark.png" alt="아이콘을 오른쪽 클릭해 연 컨텍스트 메뉴(Positioner RobTarget 의 Dynamic / Static Mode)" width={366} marks={[]} />
 
-예를 들어 Positioner RobTarget 을 **Dynamic Mode** 로 바꾸면 아래와 같이 표시된다.
+예를 들어 Positioner RobTarget 은 기본이 **Dynamic Mode** 이며, **Static Mode** 로 바꾸면 **Reference Plane** 입력이 추가된다.
 
-<NumberedShot src="/assets/images/1_Positioner_Robtarget_Dynamic.png" alt="Dynamic Mode 로 바꾼 Positioner RobTarget" width={320} marks={[]} />
 
-모드 전환을 지원하는 컴포넌트: [ToolData](/datatype/tooldata/) · [WobjData](/datatype/wobjdata-fixed/) · [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) · [SeamData](/datatype/seamdata/) · [WeldData](/datatype/welddata/) · TPSiSynergic · TPSSynergic · [ABB Positioner](/robot-tool/positioner/) · [ABB Robots](/robot-tool/abbrobot/) · [WorkBench](/robot-tool/createworkbench/) · [Code Solver](/core/code-solver/) · [Solid Shell](/toolpath/solidshell/) · [Surface Shell](/toolpath/surfaceshell/) · [RePath Tree](/utils/repathtree/)
+모드 전환·기능 추가를 지원하는 컴포넌트: [ToolData](/datatype/tooldata/) · [WobjData](/datatype/wobjdata-fixed/) · [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) · [SeamData](/datatype/seamdata/) · [WeldData](/datatype/welddata/) · TPSiSynergic · [ABB Positioner](/robot-tool/positioner/) · [ABB Robots](/robot-tool/abbrobot/) · [WorkBench](/robot-tool/createworkbench/) · [IndRMove](/instruction/indrmove/) · [IndReset](/instruction/indreset/) · [SubProc](/instruction/subproc-composition/) · [Code Solver](/core/code-solver/) · [Solid Fill](/toolpath/solidfill/) · [Solid Shell](/toolpath/solidshell/) · [Surface Shell](/toolpath/surfaceshell/) · [Repath Tree](/utils/repathtree/)
 
 ## 4. GERTY UI
 
@@ -75,12 +74,12 @@ Grasshopper 와 같은 방법으로 노드를 연결해 결과를 쌓아 간다.
 ### UI 요소
 
 <ShotCards items={[
-  { name: "Text Field", text: "더블 클릭해 입력한다. 기본적으로 영문과 숫자만 쓸 수 있으며, 값의 조건은 각 컴포넌트 문서를 따른다.", shots: [{ src: "/assets/images/0_RobTarget_4.png" }] },
-  { name: "Slider", text: "옆의 숫자를 더블 클릭해 입력하거나, 포인터를 좌우로 끌어 바꾼다. Double 은 소수를 포함한 값, Integer 는 양의 정수만 받는다.", shots: [{ src: "/assets/images/2_FlybyCustom_22.png", caption: "Double" }, { src: "/assets/images/1_FlybyPlane_10.png", caption: "Integer" }] },
+  { name: "Text Field", text: "더블 클릭해 입력한다. 기본적으로 영문과 숫자만 쓸 수 있으며, 값의 조건은 각 컴포넌트 문서를 따른다.", shots: [{ src: "/assets/images/robtarget_tab1.png" }] },
+  { name: "Slider", text: "옆의 숫자를 더블 클릭해 입력하거나, 포인터를 좌우로 끌어 바꾼다. Double 은 소수를 포함한 값, Integer 는 양의 정수만 받는다.", shots: [{ src: "/assets/images/flybycustom_tab4.png", caption: "Double" }, { src: "/assets/images/flybybranch_tab1.png", caption: "Integer" }] },
   { name: "DropDown", text: "GERTY 가 제공하는 모델이나 옵션을 고른다. Tool·WorkBench 는 사용자가 Export 한 모델도 저장해 불러올 수 있다.", shots: [{ src: "/assets/images/DropDown_Open.png" }], big: true },
-  { name: "Button / Toggle", text: "Button 은 컴포넌트를 잠시 다시 활성화하고, Toggle 은 상태를 완전히 바꾼다. 일부 컴포넌트는 값(True/False)에 따라 입력과 설정 항목이 늘거나 줄어든다.", shots: [{ src: "/assets/images/0_ABBRobot_11.png" }] },
-  { name: "Panel", text: "컴포넌트가 실행되면 결과 값을 패널로 보여 준다.", shots: [{ src: "/assets/images/1_ScanController_11.png" }] },
-  { name: "Process Gauge", text: "처리에 시간이 걸리는 컴포넌트는 진행 정도를 퍼센트(%)로 보여 준다.", shots: [{ src: "/assets/images/2_SocketSender_12.png" }] },
+  { name: "Button / Toggle", text: "Button 은 컴포넌트를 잠시 다시 활성화하고, Toggle 은 상태를 완전히 바꾼다. 일부 컴포넌트는 값(True/False)에 따라 입력과 설정 항목이 늘거나 줄어든다.", shots: [{ src: "/assets/images/abbrobot_tab2.png" }] },
+  { name: "Panel", text: "컴포넌트가 실행되면 결과 값을 패널로 보여 준다.", shots: [{ src: "/assets/images/scanabbcontroller_tab3.png" }] },
+  { name: "Process Gauge", text: "처리에 시간이 걸리는 컴포넌트는 진행 정도를 퍼센트(%)로 보여 준다(예: Code Solver 의 Export).", shots: [{ src: "/assets/images/code-solver_tab2.png" }] },
   { name: "Color Swatch", text: "시뮬레이션에서 활성 상태인 모델·경로의 색을 바꾼다.", shots: [{ src: "/assets/images/Color_Swatch.png" }], big: true },
 ]} />
 

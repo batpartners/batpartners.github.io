@@ -1,6 +1,6 @@
 ---
 title: "WireCuttingFromCrvs"
-description: "This is a component that generates a hot-wire cutting toolpath from two curves."
+description: "This component generates a hot-wire cutting toolpath from two curves."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/wirecuttingfromcrvs.mjs";
 
-This is a component that generates a hot-wire cutting toolpath from two curves. Users can set the number of points to generate target planes, the parameter value between the two curves (default: 0.5), and optionally, an attractor value to smoothly adjust the hot-wire tool. In addition, detailed configurations for the hot-wire path direction, tool orientation, and entry intervals are available.
+This component generates a hot-wire cutting toolpath from two curves. It builds target planes along the spans of the ruled surface defined by the two rail curves (**Rail A**, **Rail B**); the number of targets, the origin parameter on each span (default 0.5) and an optional attractor that steers the tool direction are set by the inputs. The **Settings** tab sets the cutting direction, tool orientation and start/end extension.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/4_WireCuttingFromCurvs.png" alt="WireCuttingFromCrvs" />
+<ComponentShot src="/assets/images/wirecuttingfromcrvs_main.png" alt="WireCuttingFromCrvs" />
 
 ## Inputs
 
@@ -43,9 +43,9 @@ This is a component that generates a hot-wire cutting toolpath from two curves. 
 
 <Steps>
 
-1. Connect the two rail curves that define the ruled surface to **Curve A** and **Curve B**.
-2. Set the number of targets with **Target Count**. Optionally, set where the target origins lie with **Parameter** (default 0.5) and add an attractor with **Wrist Object** to steer the tool direction smoothly.
-3. Set the cutting direction (**Cutting Dir. Flip**), tool direction (**Tool Flip**) and the start/end extension (**Extension(mm)**) in the **Settings** tab.
+1. Connect the two rail curves that define the ruled surface to **Rail A** and **Rail B**.
+2. Set the number of targets with **Target Count**. Optionally, set where the target origins lie with **Parameter** (default 0.5) and connect a Point or Curve to **Attractor** to steer the tool direction (target Z).
+3. Set the cutting direction (**Dir Flip**), tool direction (**Tool Flip**) and the start/end extension (**Extension**, mm) in the **Settings** tab.
 4. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
 
 </Steps>

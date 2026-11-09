@@ -1,6 +1,6 @@
 ---
 title: "WobjData(Movable)"
-description: "WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다."
+description: "포지셔너(외부축)가 움직이는 작업물의 좌표계를 ABB WobjData 로 정의하는 컴포넌트의 Movable 모드이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,15 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/wobjdata-movable.mjs";
 
-WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로봇이 작업하는 대상(작업물)의 고유 좌표계를 정의하며, 도면 기반의 직관적인 프로그래밍을 돕고 설치 환경 변화 시 좌표계 수정만으로 프로그램의 재사용을 가능하게 한다. 컴포넌트 아이콘을 우클릭하여 Movable(외부축에 의해 움직이는 워크오브젝트) 및 Fixed(고정된 일반 워크오브젝트) 두 가지 모드로 전환할 수 있다.
+WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로봇이 작업하는 대상(작업물)의 고유 좌표계를 정의하며, 도면 기반의 직관적인 프로그래밍을 돕고 설치 환경 변화 시 좌표계 수정만으로 프로그램의 재사용을 가능하게 한다. 컴포넌트를 우클릭해 **Fixed WobjData**(고정된 일반 워크오브젝트)와 **Movable WobjData**(외부축에 의해 움직이는 워크오브젝트)를 전환할 수 있다.
 
-이 페이지는 <strong>Movable 모드</strong>로, Target Plane 을 이동 가능한 위치의 기준 평면으로 재정의한다.
+이 페이지는 우클릭 메뉴에서 고르는 <strong>Movable WobjData</strong> 를 설명한다. 이 모드에서는 프레임 평면 대신 포지셔너를 입력받아, 포지셔너(외부축)가 움직이는 워크오브젝트를 정의한다.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Movable 모드" }, { text: "Fixed 모드 → WobjData(Fixed)", href: "/datatype/wobjdata-fixed/" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/2_WobjData_2.png" alt="WobjData(Movable)" />
+<ComponentShot src="/assets/images/wobjdata-movable_main.png" alt="WobjData(Movable)" />
 
 ## 입력
 
@@ -45,9 +45,9 @@ WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
 
 <Steps>
 
-1. **User Frame** 에 사용자 프레임(uframe)으로 쓸 평면을 연결한다.
-2. **WobjData** 탭의 **Name** 에 RAPID 변수명을 쓴다.
-3. **WobjData** 출력을 [RobTarget](/datatype/robtarget/) 의 **WobjData** 입력에 연결해, 타겟을 작업물 좌표계 기준으로 정의한다.
+1. **Positioner** 에 [ABB Positioner](/robot-tool/positioner/) 출력을 연결한다.
+2. **WobjData** 탭의 **Name** 에 RAPID 변수명을 쓴다. 뷰포트의 프레임 표시 크기는 **Preview** 탭의 **Frame Size** 로 조절한다.
+3. **WobjData** 출력을 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 등 타겟 컴포넌트의 **WobjData** 입력에 연결해, 타겟을 작업물 좌표계 기준으로 정의한다.
 
 </Steps>
 
@@ -64,6 +64,8 @@ WobjData는 사용자가 정의하는 로봇 좌표계 컴포넌트이다. 로�
 ## 관련 항목
 
 <RelatedLinks links={[
+  { title: "Positioner RobTarget", description: "포지셔너 회전각을 포함한 타겟", href: "/datatype/positioner-robtarget-dynamic/" },
+  { title: "WobjData(Fixed)", description: "고정된 일반 워크오브젝트", href: "/datatype/wobjdata-fixed/" },
   { title: "RobTarget", description: "WobjData 를 받는 타겟", href: "/datatype/robtarget/" },
   { title: "Get WobjData", description: "컨트롤러에 있는 WobjData 가져오기", href: "/controller-utils/getwobjdata/" },
 ]} />

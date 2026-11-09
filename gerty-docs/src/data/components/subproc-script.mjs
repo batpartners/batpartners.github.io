@@ -18,13 +18,13 @@ export const inputs = [
   }
 ];
 
-export const main = "8_SubProcedure_1.png";
+export const main = "subproc-script_main.png";
 
 export const outputs = [
   {
-    "name": "Sub Proc.",
+    "name": "SubProc",
     "type": "SubProc",
-    "ko": "생성된 서브 프로시저를 출력한다. <a href=\"/core/gerty-core/\">GERTY Core</a>의 <strong>Instructions</strong> 입력에 연결한다.",
-    "en": "The generated sub-procedure. Connect it to the <strong>Instructions</strong> input of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
+    "ko": "생성된 서브 프로시저와 호출 인스트럭션을 출력한다. <a href=\"/core/gerty-core/\">GERTY Core</a> 의 <strong>Instructions</strong> 입력에 연결한다.",
+    "en": "The generated sub-procedure and its call instructions. Connect it to the <strong>Instructions</strong> input of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
   }
 ];

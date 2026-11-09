@@ -1,6 +1,6 @@
 ---
 title: "Analysis Deconstructor"
-description: "Core 컴포넌트가 산출한 코드 정보를 로봇 축 각도 값, 에러가 발생한 인덱스, 에러 사유로 텍스트 로그로 출력하는 컴포넌트이다."
+description: "GERTY Core 가 산출한 분석 데이터를 로봇 축 각도, 오류 인덱스, 오류 유형의 텍스트 로그로 출력하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/analysis.mjs";
 
-Core 컴포넌트가 산출한 코드 정보를 로봇 축 각도 값, 에러가 발생한 인덱스, 에러 사유로 텍스트 로그로 출력하는 컴포넌트이다.
+GERTY Core 가 산출한 분석(Analysis) 데이터를 텍스트 로그로 풀어 출력하는 컴포넌트이다. 타겟별 로봇 축 각도와 함께, 로봇 자세 오류와 도달 가능성 문제가 생긴 인덱스와 오류 유형을 보고한다.
 
 <DocTags tags={[{ text: "Core", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/3_AnalysisDeconstructor.png" alt="Analysis Deconstructor" />
+<ComponentShot src="/assets/images/analysis_main.png" alt="Analysis Deconstructor" />
 
 ## 입력
 
@@ -39,7 +39,7 @@ Core 컴포넌트가 산출한 코드 정보를 로봇 축 각도 값, 에러가
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "GERTY Core", description: "로봇 동작 계산", href: "/core/gerty-core/" },
+  { title: "GERTY Core", description: "GERTY Solver 를 출력하는 로봇 동작 연산", href: "/core/gerty-core/" },
   { title: "Display Solver", description: "뷰포트 시뮬레이션", href: "/core/display-solver/" },
   { title: "Code Solver", description: "RAPID 코드 생성", href: "/core/code-solver/" },
 ]} />

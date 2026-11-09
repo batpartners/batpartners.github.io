@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/tooldata.mjs";
 
-툴(엔드 이펙터)의 형상, 장착 기준면, TCP, 부하 데이터를 받아 ABB `tooldata` 를 만든다. 만든 툴 데이터는 ABB Robots 컴포넌트에 연결해 로봇 프로그램 전체에서 쓴다. 저장해 둔 툴을 불러오려면 [Tool Importer](/datatype/toolimporter/) 를 쓴다.
+툴(엔드 이펙터)의 형상, 장착 기준면, TCP, 부하 데이터를 받아 ABB `tooldata` 를 만든다. 만든 툴 데이터는 ABB Robots 컴포넌트에 연결해 로봇 프로그램 전체에서 쓴다. 컴포넌트를 우클릭해 **Define ToolData**(직접 설정)와 **Import ToolData**(저장해 둔 툴 데이터 불러오기)를 전환할 수 있으며, 이 페이지는 기본값인 **Define ToolData** 를 설명한다. 저장해 둔 툴을 불러오려면 [Import ToolData](/datatype/toolimporter/) 모드를 쓴다.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Define 모드" }, { text: "Import 모드 → Tool Importer", href: "/datatype/toolimporter/" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/3_ToolData.png" alt="ToolData" />
+<ComponentShot src="/assets/images/tooldata_main.png" alt="ToolData" />
 
 ## 입력
 
@@ -43,17 +43,17 @@ import * as d from "../../../data/components/tooldata.mjs";
 
 <Steps>
 
-1. **ToolGeo** 에 툴 메시, **TCP** 에 툴 끝 평면을 연결한다. 장착 기준면이 WorldXY 가 아니면 **ToolBase** 도 연결한다.
-2. **Name** 에 RAPID 변수명을 쓰고, 알고 있으면 **LoadData** 탭에 무게·무게 중심·관성을 넣는다.
-3. **Tool Data** 출력을 [ABB Robots](/robot-tool/abbrobot/) 컴포넌트의 **Tool Data** 입력에 연결한다.
-4. 다른 파일에서 같은 툴을 쓰려면 **Export** 로 저장하고, 그 파일에서 [Tool Importer](/datatype/toolimporter/) 의 **Tool Presets** 로 고른다.
+1. **Tool Geo** 에 툴 메시, **TCP** 에 툴 끝 평면을 연결한다. 장착 기준면이 WorldXY 가 아니면 **Base Plane** 도 연결한다.
+2. **Tool Data** 탭의 **Name** 에 RAPID 변수명을 쓴다. 부하 값을 알고 있으면 **LoadData** 탭에 **Mass(kg)**·**Centroid**·**Inertia** 를 넣고, 계산이 필요하면 **Reset** 을 누른다.
+3. **ToolData** 출력을 [ABB Robots](/robot-tool/abbrobot/) 컴포넌트의 **ToolData** 입력에 연결한다.
+4. 다른 파일에서 같은 툴을 쓰려면 **Export** 탭에서 저장하고, 그 파일에서 [Import ToolData](/datatype/toolimporter/) 모드의 **Presets** 로 고른다. 저장 폴더는 우클릭 메뉴의 **Open ToolData Folder** 로 열 수 있다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="caution">
-  LoadData 를 비우면 툴 형상의 경계 상자로 부하를 추정합니다. 실제 툴 무게와 다를 수 있으므로, 알고 있는 값이 있으면 직접 넣는 것이 안전합니다.
+  **Tool Load** 를 연결하지 않으면 툴 형상의 경계 상자로 부하를 추정합니다. 실제 툴 무게와 다를 수 있으므로, 알고 있는 값이 있으면 직접 넣는 것이 안전합니다.
 </Aside>
 
 <Aside type="tip">
@@ -63,7 +63,7 @@ import * as d from "../../../data/components/tooldata.mjs";
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "Tool Importer", description: "저장해 둔 툴 데이터 불러오기 (Import 모드)", href: "/datatype/toolimporter/" },
-  { title: "ABB Robots", description: "Tool Data 를 받는 로봇 컴포넌트", href: "/robot-tool/abbrobot/" },
+  { title: "Tool Importer", description: "저장해 둔 툴 데이터 불러오기 (Import ToolData 모드)", href: "/datatype/toolimporter/" },
+  { title: "ABB Robots", description: "ToolData 를 받는 로봇 컴포넌트", href: "/robot-tool/abbrobot/" },
   { title: "Get ToolData", description: "컨트롤러에 있는 툴 데이터 가져오기", href: "/controller-utils/gettooldata/" },
 ]} />

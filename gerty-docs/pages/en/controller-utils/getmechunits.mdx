@@ -1,6 +1,6 @@
 ---
 title: "Get MechUnits"
-description: "A component that retrieves the axis coordinate system plane data of calibrated external mechanical units from the connected ABB controller."
+description: "This component imports the calibrated axis frames of external mechanical units from the connected ABB controller as planes."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/getmechunits.mjs";
 
-A component that retrieves the axis coordinate system plane data of calibrated external mechanical units from the connected ABB controller.
+This component imports the calibrated axis frames of external mechanical units from the connected ABB controller as planes.
 
 <DocTags tags={[{ text: "Controller Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/0_GetMechUnits.png" alt="Get MechUnits" />
+<ComponentShot src="/assets/images/getmechunits_main.png" alt="Get MechUnits" />
 
 ## Inputs
 
@@ -44,8 +44,8 @@ A component that retrieves the axis coordinate system plane data of calibrated e
 <Steps>
 
 1. Connect the output of [Scan ABB Controller](/en/controller-utils/scanabbcontroller/) to **ABB Controller**.
-2. Press **Update** in the **Mechanical Unit** tab to refresh the list, then pick the external mechanical unit in **Mechanical Unit**.
-3. Take the calibrated axis frames from **Joint Planes** and **Axis Name**. Check the axis setup and warnings (uncalibrated or locked axes, …) in **Info** and **Warnings**.
+2. Press **Update** in the **Mechanical Unit** tab to refresh the list, then pick the external mechanical unit in **MechUnit**.
+3. Take the calibrated axis frames from **Joint Planes** and **Axis Names**. Check the axis setup and warnings (uncalibrated or locked axes, …) in **Info** and **Warnings**.
 
 </Steps>
 

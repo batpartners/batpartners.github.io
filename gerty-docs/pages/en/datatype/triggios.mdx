@@ -1,6 +1,6 @@
 ---
 title: "TriggIOs"
-description: "Defines a position trigger that generates one or more I/O events at specified locations along the motion path, allowing the user to define the variable name of the signal."
+description: "Defines a positioning trigger that fires one or more IO Events at a specified point along the motion path."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/triggios.mjs";
 
-Defines a position trigger that generates one or more I/O events at specified locations along the motion path, allowing the user to define the variable name of the signal. Used in conjunction with ABB Trigger Move instructions (TriggLIOs, TriggJIOs).
+Defines a positioning trigger that fires one or more IO Events when the robot reaches a specified point along its path. It bundles several [IOEvents](/en/datatype/iodevent/) under one variable name. Used by the ABB Trigger Move instructions (TriggLIOs, TriggJIOs).
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/5_TriggIOs.png" alt="TriggIOs" />
+<ComponentShot src="/assets/images/triggios_main.png" alt="TriggIOs" />
 
 ## Inputs
 
@@ -43,7 +43,7 @@ Defines a position trigger that generates one or more I/O events at specified lo
 
 <Steps>
 
-1. Collect the **IO Data** outputs of several [IOEvents](/en/datatype/iodevent/) into the **IOs** input.
+1. Collect the **IOEvent** outputs of several [IOEvents](/en/datatype/iodevent/) into the **IOEvent** input.
 2. Type the variable name in **Name** (TriggIOs tab).
 3. Connect the **TriggIOs** output to [TriggerIOMove](/en/instruction/triggeriomove/).
 

@@ -1,6 +1,6 @@
 ---
 title: "FlyByTree"
-description: "This is a component that allows you to set two or more Target Plane paths."
+description: "This component generates flyby transition target planes that connect two or more Target Plane DataTrees."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/flybytree.mjs";
 
-This is a component that allows you to set two or more Target Plane paths. It generates flyby target planes connecting between each branch, and reconstructs the path in sections where it leaves the workpiece when moving between path segments to determine the target planes according to user-defined values.
+This component generates flyby transition target planes that connect two or more Target Plane DataTrees. It routes the tool away from the workpiece when moving between toolpath DataTrees; the approach and departure directions and distances and the blend shape follow the settings.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/3_FlybyTree.png" alt="FlyByTree" />
+<ComponentShot src="/assets/images/flybytree_main.png" alt="FlyByTree" />
 
 ## Inputs
 
@@ -43,18 +43,18 @@ This is a component that allows you to set two or more Target Plane paths. It ge
 
 <Steps>
 
-1. Connect one target plane DataTree each to **Target Planes0** and **Target Planes1**; add inputs with **+ ADD** for more path trees.
-2. Pick the approach and departure directions (motion direction or an axis of the target plane) in **Approaching Dir. / Leaving Dir.** (Basic tab).
-3. Set the approach and departure distances (**Approaching / Leaving Dist.(mm)**) and the number of targets on each fly-by path (**Target Count**) in the **Basic** tab.
-4. Adjust the blend continuity (**Continuity Type**) and the bulge at the start and end (**Bulge Start / Bulge End**) in the **Advanced** tab.
-5. Connect the **Fly-by Targets** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+1. Connect one target plane DataTree each to **Target Planes0** and **Target Planes1**.
+2. Pick the approach and departure directions (motion direction or an axis of the target plane) in **Approach Dir** / **Departure Dir** (Offset tab).
+3. Set the approach and departure distances (**Approach (mm)** / **Departure (mm)**) in the **Offset** tab and the number of targets on each flyby path (**Target Count**) in the **Flyby Targets** tab. Turn on **Link** to keep both distances equal.
+4. Adjust the blend continuity (**Continuity Type**) and the bulge at the start and end (**Bulge Start** / **Bulge End**) in the **Blend** tab.
+5. Connect the **Flyby Targets** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
 
 </Steps>
 
 ## Related
 
 <RelatedLinks links={[
-  { title: "FlyByBranch", description: "Fly-by paths between segments", href: "/en/toolpath/flybybranch/" },
-  { title: "FlyByCustom", description: "Fly-by paths from your own vectors", href: "/en/toolpath/flybycustom/" },
+  { title: "FlyByBranch", description: "Flyby paths between segments", href: "/en/toolpath/flybybranch/" },
+  { title: "FlyByCustom", description: "Flyby paths from your own vectors", href: "/en/toolpath/flybycustom/" },
   { title: "RobTarget", description: "Turns target planes into robot targets", href: "/en/datatype/robtarget/" },
 ]} />

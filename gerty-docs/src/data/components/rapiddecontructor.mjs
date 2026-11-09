@@ -7,30 +7,32 @@ export const inputs = [
   {
     "name": "ProgramData",
     "type": "Data",
-    "ko": "풀어 볼 ABB 데이터 타입 객체(RobTarget, ToolData 등).",
-    "en": "The ABB data type object to break down (RobTarget, ToolData, …)."
+    "optional": true,
+    "ko": "RAPID 코드로 풀어 볼 ABB 프로그램 데이터(RobTarget, ToolData 등 ABB 데이터 타입 객체)이다. <strong>Instructions</strong> 만 풀어 볼 때는 연결하지 않아도 된다.",
+    "en": "ABB program data to break down into RAPID code (ABB data type objects such as RobTarget or ToolData). Leave it unconnected when only <strong>Instructions</strong> are deconstructed."
   },
   {
     "name": "Instructions",
     "type": "Instructions",
-    "ko": "풀어 볼 ABB 인스트럭션 객체.",
-    "en": "The ABB instruction object to break down."
+    "optional": true,
+    "ko": "RAPID 코드로 풀어 볼 ABB 인스트럭션 객체이다. <strong>ProgramData</strong> 만 풀어 볼 때는 연결하지 않아도 된다.",
+    "en": "ABB instruction objects to break down into RAPID code. Leave it unconnected when only <strong>ProgramData</strong> is deconstructed."
   }
 ];
 
-export const main = "10_RapidDecontructor.png";
+export const main = "rapiddecontructor_main.png";
 
 export const outputs = [
   {
-    "name": "ProgramData",
+    "name": "Data Str.",
     "type": "String",
-    "ko": "데이터 객체의 RAPID 코드(문자열).",
-    "en": "RAPID code of the data object (string)."
+    "ko": "<strong>ProgramData</strong> 의 RAPID 코드 문자열(프로그램 데이터 소스)이다.",
+    "en": "RAPID code string of the <strong>ProgramData</strong> (program data source)."
   },
   {
-    "name": "Instructions",
+    "name": "Instruction Str.",
     "type": "String",
-    "ko": "인스트럭션의 RAPID 코드(문자열).",
-    "en": "RAPID code of the instruction (string)."
+    "ko": "<strong>Instructions</strong> 의 RAPID 코드 문자열(인스트럭션 소스)이다.",
+    "en": "RAPID code string of the <strong>Instructions</strong> (instruction source)."
   }
 ];

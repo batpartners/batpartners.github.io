@@ -56,11 +56,10 @@ Some components can switch mode or add features from the context menu you open b
 
 <NumberedShot src="/assets/images/ContextMenu_2026.png" dark="/assets/images/ContextMenu_2026_dark.png" alt="The context menu opened by right-clicking the icon (Dynamic / Static Mode of Positioner RobTarget)" width={366} marks={[]} />
 
-For example, Positioner RobTarget switched to **Dynamic Mode** looks like this.
+For example, Positioner RobTarget starts in **Dynamic Mode**; switched to **Static Mode** it gains a **Reference Plane** input.
 
-<NumberedShot src="/assets/images/1_Positioner_Robtarget_Dynamic.png" alt="Positioner RobTarget in Dynamic Mode" width={320} marks={[]} />
 
-Components with mode options: [ToolData](/en/datatype/tooldata/) · [WobjData](/en/datatype/wobjdata-fixed/) · [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/) · [SeamData](/en/datatype/seamdata/) · [WeldData](/en/datatype/welddata/) · TPSiSynergic · TPSSynergic · [ABB Positioner](/en/robot-tool/positioner/) · [ABB Robots](/en/robot-tool/abbrobot/) · [WorkBench](/en/robot-tool/createworkbench/) · [Code Solver](/en/core/code-solver/) · [Solid Shell](/en/toolpath/solidshell/) · [Surface Shell](/en/toolpath/surfaceshell/) · [RePath Tree](/en/utils/repathtree/)
+Components with mode or feature options: [ToolData](/en/datatype/tooldata/) · [WobjData](/en/datatype/wobjdata-fixed/) · [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/) · [SeamData](/en/datatype/seamdata/) · [WeldData](/en/datatype/welddata/) · TPSiSynergic · [ABB Positioner](/en/robot-tool/positioner/) · [ABB Robots](/en/robot-tool/abbrobot/) · [WorkBench](/en/robot-tool/createworkbench/) · [IndRMove](/en/instruction/indrmove/) · [IndReset](/en/instruction/indreset/) · [SubProc](/en/instruction/subproc-composition/) · [Code Solver](/en/core/code-solver/) · [Solid Fill](/en/toolpath/solidfill/) · [Solid Shell](/en/toolpath/solidshell/) · [Surface Shell](/en/toolpath/surfaceshell/) · [Repath Tree](/en/utils/repathtree/)
 
 ## 4. GERTY UI
 
@@ -75,12 +74,12 @@ Settings are grouped into tabs by function. The selected tab turns dark and its 
 ### UI elements
 
 <ShotCards items={[
-  { name: "Text Field", text: "Double-click to type. Letters and digits only by default; each component's page gives the rules for its values.", shots: [{ src: "/assets/images/0_RobTarget_4.png" }] },
-  { name: "Slider", text: "Double-click the number next to it to type a value, or drag the pointer left or right. Double takes decimals, Integer only positive whole numbers.", shots: [{ src: "/assets/images/2_FlybyCustom_22.png", caption: "Double" }, { src: "/assets/images/1_FlybyPlane_10.png", caption: "Integer" }] },
+  { name: "Text Field", text: "Double-click to type. Letters and digits only by default; each component's page gives the rules for its values.", shots: [{ src: "/assets/images/robtarget_tab1.png" }] },
+  { name: "Slider", text: "Double-click the number next to it to type a value, or drag the pointer left or right. Double takes decimals, Integer only positive whole numbers.", shots: [{ src: "/assets/images/flybycustom_tab4.png", caption: "Double" }, { src: "/assets/images/flybybranch_tab1.png", caption: "Integer" }] },
   { name: "DropDown", text: "Choose a model or option that GERTY provides. For tools and workbenches, models you Export can be saved and loaded too.", shots: [{ src: "/assets/images/DropDown_Open.png" }], big: true },
-  { name: "Button / Toggle", text: "A Button briefly reactivates the component; a Toggle switches its state. In some components the value (True/False) adds or removes inputs and settings.", shots: [{ src: "/assets/images/0_ABBRobot_11.png" }] },
-  { name: "Panel", text: "Shows the component's result values in a panel once it runs.", shots: [{ src: "/assets/images/1_ScanController_11.png" }] },
-  { name: "Process Gauge", text: "Components that take a while show their progress in percent (%).", shots: [{ src: "/assets/images/2_SocketSender_12.png" }] },
+  { name: "Button / Toggle", text: "A Button briefly reactivates the component; a Toggle switches its state. In some components the value (True/False) adds or removes inputs and settings.", shots: [{ src: "/assets/images/abbrobot_tab2.png" }] },
+  { name: "Panel", text: "Shows the component's result values in a panel once it runs.", shots: [{ src: "/assets/images/scanabbcontroller_tab3.png" }] },
+  { name: "Process Gauge", text: "Components that take a while show their progress in percent (%), e.g. Code Solver's Export.", shots: [{ src: "/assets/images/code-solver_tab2.png" }] },
   { name: "Color Swatch", text: "Sets the colour of the active model or path in the simulation.", shots: [{ src: "/assets/images/Color_Swatch.png" }], big: true },
 ]} />
 

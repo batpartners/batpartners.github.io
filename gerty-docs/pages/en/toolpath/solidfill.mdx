@@ -1,6 +1,6 @@
 ---
 title: "Solid Fill"
-description: "This is a deposition toolpath component that fills the inside of the outer boundary based on the GERTYShellData."
+description: "This is a deposition toolpath component that fills the inside of the shell with a Linear or Concentric pattern, based on the Shell Profile."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/solidfill.mjs";
 
-This is a deposition toolpath component that fills the inside of the outer boundary based on the GERTYShellData. It allows you to determine detailed settings such as the fill shape and spacing.
+This is a deposition toolpath component that fills the inside of the shell with a Linear (parallel-line) or Concentric (offset-ring) pattern, based on the Shell Profile. You can set the pattern angles and phase, the number of top and bottom solid layers, the infill density and gaps, tilting near walls, and wiping and seam placement. The icon's right-click menu also has a `Use Exclusion` option.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/10_SolidFill.png" alt="Solid Fill" />
+<ComponentShot src="/assets/images/solidfill_main.png" alt="Solid Fill" />
 
 ## Inputs
 
@@ -43,17 +43,28 @@ This is a deposition toolpath component that fills the inside of the outer bound
 
 <Steps>
 
-1. Connect the **GERTYShellData** output of [Solid Shell](/en/toolpath/solidshell/) to **GERTYShellData**.
-2. Pick the internal and external infill patterns (**Int-Infill / Ext-Infill Type**) and the rotation (**Rotation(°)**) in the **Pattern** tab.
-3. Set the number of top and bottom solid layers, the gap between shell and infill (**Layer Gap(mm)**) and the internal infill density (**Int-Infill Amount**) in the **Infill** tab.
-4. Connect the **Deposition ToolPaths** output to [Deposition Builder](/en/toolpath/depositionbuilder/) or [WAAM Builder](/en/toolpath/waambuilder/).
+1. Connect the **Shell Profile** output of [Solid Shell](/en/toolpath/solidshell/) to **Shell Profile**. To tilt the infill near walls, connect the sliced geometry to **Model**.
+2. Choose the **Pattern** in the **Pattern** tab. For Linear, set the line pattern with **Type**, **Rotation(°)**, **Phase Shift** and so on (with Type set to Custom, use the **Pattern Angles** input); for Concentric, set the ring order with **Path Order**.
+3. In the **Infill** tab, set the number of top and bottom solid layers (**Top Layers**, **Bottom Layers**), the gap to the shell and skin (**Fill Gap**) and the interior density (**Infill Density**).
+4. If needed, adjust **Wall Tilt Weight** and **Tilt Ramp** in the **Tilt** tab, and **Wipe Dist** and (for Concentric) the seam placement in the **Seam** tab.
+5. Connect the **Infill ToolPaths** output to [Deposition Builder](/en/toolpath/depositionbuilder/) or [WAAM Builder](/en/toolpath/waambuilder/).
 
 </Steps>
+
+## Notes
+
+<Aside type="note">
+  Setting **Pattern** to Concentric hides **Type**, **Rotation(°)**, **Phase Shift**, **Alt Connect** and **Raster**, and shows **Path Order** and the seam placement settings in the **Seam** tab (**Seam**, **Seam Spread**, **Ring Spread**, **Seam Offset**).
+</Aside>
+
+<Aside type="note">
+  The `Use Exclusion` option in the icon's right-click menu is not covered in these docs yet.
+</Aside>
 
 ## Related
 
 <RelatedLinks links={[
-  { title: "Solid Offset Fill", description: "Offset infill", href: "/en/toolpath/solidoffsetfill/" },
   { title: "Solid Shell", description: "Shell paths of a closed solid", href: "/en/toolpath/solidshell/" },
-  { title: "Deposition Builder", description: "Splits deposition paths into extrusion start, move and stop", href: "/en/toolpath/depositionbuilder/" },
+  { title: "Deposition Builder", description: "Splits deposition paths into extrusion start, move, end and wipe", href: "/en/toolpath/depositionbuilder/" },
+  { title: "WAAM Builder", description: "Splits WAAM paths by layer kind", href: "/en/toolpath/waambuilder/" },
 ]} />

@@ -1,6 +1,6 @@
 ---
 title: "WireCuttingFromSrf"
-description: "This is a component that generates a hot-wire cutting path from a ruled surface."
+description: "This component generates a hot-wire cutting toolpath from a ruled surface."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/wirecuttingfromsrf.mjs";
 
-This is a component that generates a hot-wire cutting path from a ruled surface. Users can set the number of points to generate target planes, the internal parameter value of the ruled surface (default: 0.5), and optionally, an attractor value to smoothly adjust the hot-wire tool. In addition, detailed configurations for the hot-wire path direction, tool orientation, and entry intervals are available.
+This component generates a hot-wire cutting toolpath from a ruled surface. It builds target planes along the spans of the surface; the number of targets, the origin parameter on each span (default 0.5) and an optional attractor that steers the tool direction are set by the inputs. The **Settings** tab sets the cutting direction, tool orientation, UV direction and start/end extension.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/5_WireCuttingFromSrf.png" alt="WireCuttingFromSrf" />
+<ComponentShot src="/assets/images/wirecuttingfromsrf_main.png" alt="WireCuttingFromSrf" />
 
 ## Inputs
 
@@ -44,8 +44,8 @@ This is a component that generates a hot-wire cutting path from a ruled surface.
 <Steps>
 
 1. Connect the ruled surface to **Surface**.
-2. Set the number of targets with **Target Count**. Optionally, set where the target origins lie with **Parameter** (default 0.5) and add an attractor with **Wrist Object** to steer the tool direction smoothly.
-3. Set the cutting direction (**Cutting Dir. Flip**), tool direction (**Tool Flip**), UV direction (**UV Flip**) and the start/end extension (**Extension(mm)**) in the **Settings** tab.
+2. Set the number of targets with **Target Count**. Optionally, set where the target origins lie with **Parameter** (default 0.5) and connect a Point or Curve to **Attractor** to steer the tool direction (target Z).
+3. Set the cutting direction (**Dir Flip**), tool direction (**Tool Flip**), UV direction (**UV Flip**) and the start/end extension (**Extension**, mm) in the **Settings** tab.
 4. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
 
 </Steps>

@@ -1,6 +1,6 @@
 ---
 title: "ABB Robots (Extra Option)"
-description: "This is a component that imports the ABB robot to be used."
+description: "A component that defines the robot setup (Robot Setup) by selecting a robot model and variant from the ABB IRB series catalog. Covers the state with Show Joint Jog Params turned on."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,15 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/abbrobot-option.mjs";
 
-This is a component that imports the ABB robot to be used. You can select the robot you own and then configure options. Robot models can be selected from predefined specifications in the ABB IRB series catalog. By right-clicking the component icon and selecting [Show Joint Jog Params], you can configure simulations by additionally operating each axis of the selected robot.
+A component that defines the ABB robot to use. You select the robot model and variant from the predefined specifications of the ABB IRB series catalog, and the component bundles the base plane, tool, positioner, and surrounding meshes into a single robot setup (Robot Setup).
 
-This page also covers the joint jog settings shown with <strong>[Show joint Jog Params]</strong>.
+This page covers the component with <strong>[Show Joint Jog Params]</strong> turned on from the right-click menu. This adds the <strong>Robot Joint Jog</strong> tab (robot axes 1–6) and the <strong>External Joint Jog</strong> tab (external axes 1–6), where you move each axis directly to check the pose.
 
 <DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Extra Option" }, { text: "Basic → ABB Robots", href: "/en/robot-tool/abbrobot/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/0_ABBRobot_2.png" alt="ABB Robots (Extra Option)" />
+<ComponentShot src="/assets/images/abbrobot-option_main.png" alt="ABB Robots (Extra Option)" />
 
 ## Inputs
 
@@ -45,17 +45,18 @@ This page also covers the joint jog settings shown with <strong>[Show joint Jog 
 
 <Steps>
 
-1. Pick the ABB robot model in **Models** (ABB Robots tab).
-2. Connect [ToolData](/en/datatype/tooldata/) to **Tool Data**. If the robot base is not WorldXY, connect **Robot Base**; with a positioner, connect [ABB Positioner](/en/robot-tool/positioner/) to **Positioner**; connect surrounding geometry such as a pedestal to **Pedestal**.
-3. Move each robot axis and external axis directly in the **Robot Joint Jog / External Joint Jog** tabs to check the pose.
-4. Connect the **GERTY Robot** output to the **GERTY Robot** input of [GERTY Core](/en/core/gerty-core/).
+1. Right-click the component and turn on **Show Joint Jog Params**.
+2. In the **ABB Robots** tab, pick the ABB robot model in **Robot Model** and the payload / reach variant in **Spec**.
+3. Connect [ToolData](/en/datatype/tooldata/) to **ToolData**. If the robot base is not WorldXY, connect **Base Plane**; with a positioner, connect [ABB Positioner](/en/robot-tool/positioner/) to **Positioner**; connect surrounding geometry such as a pedestal to **Pedestal**.
+4. Move the robot axes (**RobAx 1–6**) in the **Robot Joint Jog** tab and the external axes (**ExtAx 1–6**) in the **External Joint Jog** tab to check the pose. The **Current TCP** output gives the current TCP plane.
+5. Connect the **Robot Setup** output to the **Robot Setup** input of [GERTY Core](/en/core/gerty-core/).
 
 </Steps>
 
 ## Notes
 
 <Aside type="note">
-  With **Config Option** on, cfx = 1: the configuration of robot axes 4 and 6 is inverted. Off means cfx = 0 (default configuration).
+  With **Config Option** (Robot Linear Jog tab) on, cfx = 1: the configuration of robot axes 4 and 6 is inverted. Off means cfx = 0 (default configuration); it is off by default.
 </Aside>
 
 <Aside type="tip">
@@ -65,7 +66,7 @@ This page also covers the joint jog settings shown with <strong>[Show joint Jog 
 ## Related
 
 <RelatedLinks links={[
-  { title: "GERTY Core", description: "Takes the GERTY Robot", href: "/en/core/gerty-core/" },
-  { title: "ToolData", description: "The tool on the robot", href: "/en/datatype/tooldata/" },
+  { title: "GERTY Core", description: "Takes the Robot Setup and computes robot motion", href: "/en/core/gerty-core/" },
+  { title: "ToolData", description: "The tool mounted on the robot", href: "/en/datatype/tooldata/" },
   { title: "ABB Positioner", description: "Positioner linked to the robot", href: "/en/robot-tool/positioner/" },
 ]} />
