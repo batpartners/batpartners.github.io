@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/setoutput.mjs";
 
-SetOutput 은 디지털, 그룹, 아날로그 출력 신호 값을 바꾸는 `SetDO` / `SetGO` / `SetAO` 인스트럭션을 만드는 컴포넌트이다. 신호 유형은 설정의 <strong>Signal Type</strong> 에서 고르며, 유형에 따라 값을 넣는 칸(<strong>DO Value</strong> / <strong>GO Value</strong> / <strong>AO Value</strong>)이 바뀐다. DO 는 Digital Output, GO 는 Group Output, AO 는 Analog Output 이다.
+SetOutput 은 디지털, 그룹, 아날로그 출력 신호 값을 바꾸는 `SetDO` / `SetGO` / `SetAO` 인스트럭션을 만드는 컴포넌트이다. 신호 유형은 <strong>Signal Type</strong> 에서 고른다. DO 는 Digital Output, GO 는 Group Output, AO 는 Analog Output 이다.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/setoutput_main.png" alt="SetOutput" />
+<ComponentShot src="/assets/images/7_SetOutput.png" alt="SetOutput" />
 
 ## 입력
 
@@ -44,8 +44,8 @@ SetOutput 은 디지털, 그룹, 아날로그 출력 신호 값을 바꾸는 `Se
 <Steps>
 
 1. **Signal** 에 출력 신호 이름을 연결한다.
-2. **SetOutput** 탭에서 **Signal Type** 을 고르고, 나타난 값 칸에 값을 정한다. 디지털 출력은 **DO Value**, 그룹 출력은 **GO Value**, 아날로그 출력은 **AO Value** 를 쓴다.
-3. **Instruction** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+2. **SetXO** 탭에서 **Signal Type** 을 고르고, 디지털 출력이면 **DO Value** 로 값을 정한다.
+3. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
 
 </Steps>
 

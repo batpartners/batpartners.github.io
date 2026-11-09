@@ -1,6 +1,6 @@
 ---
 title: "Sub Procedure"
-description: "Creates a RAPID sub-procedure block from an instruction list."
+description: "This is a component that generates a RAPID sub-procedure block from an instruction list."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/subproc-composition.mjs";
 
-A component that creates a RAPID sub-procedure block from an instruction list. The block is output as a PROC with the name set in **Name**, and the main routine can call it by that name.
-
-This page covers the default **Composition Mode** from the right-click menu. For **Script Mode**, where you write the RAPID code yourself, see [Sub Procedure (Script)](/en/instruction/subproc-script/).
+This is a component that generates a RAPID sub-procedure block from an instruction list. The code is output as a named PROC, allowing it to be called when the main routine is executed.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }, { text: "Composition" }, { text: "Script → Sub Procedure (Script)", href: "/en/instruction/subproc-script/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/subproc-composition_main.png" alt="Sub Procedure" />
+<ComponentShot src="/assets/images/8_SubProcedure.png" alt="Sub Procedure" />
 
 ## Inputs
 
@@ -46,8 +44,8 @@ This page covers the default **Composition Mode** from the right-click menu. For
 <Steps>
 
 1. Connect the instruction list the procedure contains to **Instructions**.
-2. Type the procedure name in **Name** (SubProcedure tab).
-3. Put the **SubProc** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+2. Type the procedure name in **Procdure Name** (SubProcedure tab).
+3. Put the **Sub Proc.** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
 
 </Steps>
 

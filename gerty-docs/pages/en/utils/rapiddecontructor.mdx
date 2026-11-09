@@ -1,6 +1,6 @@
 ---
 title: "RAPID Deconstructor"
-description: "This deconstructor component turns ABB RAPID objects (ABB DataType, ABB Instruction) into RAPID code strings."
+description: "This is a deconstructor component for ABB RAPID objects (ABB DataType, ABB Instruction)."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/rapiddecontructor.mjs";
 
-This deconstructor component turns ABB RAPID objects (ABB DataType, ABB Instruction) into RAPID code strings.
+This is a deconstructor component for ABB RAPID objects (ABB DataType, ABB Instruction).
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/rapiddecontructor_main.png" alt="RAPID Deconstructor" />
+<ComponentShot src="/assets/images/10_RapidDecontructor.png" alt="RAPID Deconstructor" />
 
 ## Inputs
 
@@ -31,8 +31,8 @@ This deconstructor component turns ABB RAPID objects (ABB DataType, ABB Instruct
 
 <Steps>
 
-1. Connect an ABB data type object (RobTarget, ToolData, …) to **ProgramData** and an ABB instruction to **Instructions**. Either one alone is enough.
-2. Read the RAPID code strings from the **Data Str.** and **Instruction Str.** outputs.
+1. Connect an ABB data type object (RobTarget, ToolData, …) to **ProgramData** and an ABB instruction to **Instructions**.
+2. Read the RAPID code strings from the outputs.
 
 </Steps>
 

@@ -1,6 +1,6 @@
 ---
 title: "Positioner RobTarget (Static)"
-description: "포지셔너(외부축) 회전각을 포함한 RobTarget 을 생성하는 컴포넌트의 Static 모드로, 포지셔너 자세를 고정한다."
+description: "Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget을 생성하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/positioner-robtarget-static.mjs";
 
-Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget을 생성하는 컴포넌트이다. 컴포넌트를 우클릭해 **Dynamic Mode** 와 **Static Mode** 를 전환할 수 있으며, 이 페이지는 우클릭 메뉴에서 **Static Mode** 를 고른 경우를 설명한다. Static 모드에서는 포지셔너가 **Reference Plane** 으로 정의된 고정 자세를 유지한다. 타겟마다 포지셔너를 회전시키려면 [Dynamic Mode](/datatype/positioner-robtarget-dynamic/) 를 쓴다.
+Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget을 생성하는 컴포넌트이다. 컴포넌트 아이콘을 우클릭하여 Dynamic 및 Static 모드로 전환할 수 있다.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Static 모드" }, { text: "Dynamic 모드 → Positioner RobTarget", href: "/datatype/positioner-robtarget-dynamic/" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/positioner-robtarget-static_main.png" alt="Positioner RobTarget (Static)" />
+<ComponentShot src="/assets/images/1_Positioner Robtarget_1.png" alt="Positioner RobTarget (Static)" />
 
 ## 입력
 
@@ -55,8 +55,8 @@ Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget
 <Steps>
 
 1. **Positioner** 에 [ABB Positioner](/robot-tool/positioner/) 컴포넌트 데이터를 연결한다.
-2. **Target Planes** 에 타겟 평면을, **Target Base** 에 그 평면이 정의된 기준 평면을 연결한다. 필요하면 **Z Rotation** 으로 타겟을 자체 Z축 기준으로 회전하고, 작업물 좌표계를 기준으로 하려면 **WobjData** 를 연결한다.
-3. **Reference Plane** 에 Static 모드에서 포지셔너의 고정 자세(Orientation)를 정하는 기준 평면을 연결한다.
+2. **Target Planes** 에 타겟 평면을, **Target Base** 에 그 평면이 정의된 기준 평면을 연결한다.
+3. **Reference Plane** 에 Static 모드에서 포지셔너 방향(Orientation)의 기준이 되는 평면을 연결한다.
 4. **RobTargets** 출력을 이동 명령에 연결한다. 시작·끝 타겟을 따로 쓰려면 **Output** 탭의 **Split Start / Split End** 를 켠다.
 
 </Steps>
@@ -64,14 +64,13 @@ Positioner RobTarget은 포지셔너(외부축) 회전각을 포함한 RobTarget
 ## 주의 사항
 
 <Aside type="tip">
-  **Split Start / Split End** 는 Target Planes 의 브랜치(Branch)마다 첫 번째·마지막 RobTarget 을 분리해 별도의 시작·끝 타겟 출력(**Start Target / End Target**)으로 내보냅니다.
+  **Split Start / Split End** 는 Target Plane 의 브랜치(Branch)마다 첫 번째·마지막 인덱스를 분리해 **Start Targets / End Targets** 로 출력합니다.
 </Aside>
 
 ## 관련 항목
 
 <RelatedLinks links={[
   { title: "ABB Positioner", description: "포지셔너 컴포넌트", href: "/robot-tool/positioner/" },
-  { title: "Positioner RobTarget (Dynamic)", description: "타겟마다 포지셔너를 회전하는 모드", href: "/datatype/positioner-robtarget-dynamic/" },
   { title: "RobTarget", description: "포지셔너 없는 로봇 타겟", href: "/datatype/robtarget/" },
   { title: "WobjData", description: "작업물 좌표계", href: "/datatype/wobjdata-fixed/" },
 ]} />

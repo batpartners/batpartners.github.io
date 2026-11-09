@@ -7,30 +7,30 @@ export const inputs = [
   {
     "name": "Tree",
     "type": "Tree",
-    "ko": "항목을 삽입할 DataTree 이다.",
-    "en": "The DataTree to insert the items into."
+    "ko": "데이터를 넣을 DataTree.",
+    "en": "The DataTree to insert into."
   },
   {
     "name": "Items",
     "type": "Tree",
-    "ko": "삽입할 데이터 항목이다.",
-    "en": "The data items to insert."
+    "ko": "넣을 항목.",
+    "en": "The items to insert."
   },
   {
     "name": "indices",
     "type": "Integer",
-    "ko": "항목을 삽입할 인덱스이다. <strong>Items</strong> 는 각 Branch 의 이 위치에 들어간다.",
-    "en": "Index at which the items are inserted. <strong>Items</strong> are placed at this position in each branch."
+    "ko": "항목을 넣을 인덱스.",
+    "en": "The index at which the items are inserted."
   }
 ];
 
-export const main = "insert_main.png";
+export const main = "2_Insert.png";
 
 export const outputs = [
   {
     "name": "Tree",
     "type": "Tree",
-    "ko": "항목이 삽입된 DataTree 이다.",
+    "ko": "항목이 들어간 DataTree.",
     "en": "The DataTree with the items inserted."
   }
 ];

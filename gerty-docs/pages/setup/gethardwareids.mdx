@@ -1,6 +1,6 @@
 ---
 title: "Get HardwareIDs"
-description: "기기 식별을 위해 로컬 머신의 하드웨어 기반 식별자(MAC 주소, 디스크 시리얼, BIOS/UUID, USB ID)를 수집하는 컴포넌트이다."
+description: "기기 식별을 위해 로컬 머신에서 하드웨어 기반의 식별자(MAC 주소, 디스크 시리얼, BIOS/UUID 및 USB ID)를 수집한다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/gethardwareids.mjs";
 
-기기 식별을 위해 로컬 머신의 하드웨어 기반 식별자(MAC 주소, 디스크 시리얼, BIOS/UUID, USB ID)를 수집하는 컴포넌트이다. 라이선스 신청에 필요한 기기 정보를 확인할 때 쓴다. 기기 식별자는 로컬에서 처리되며, 하드웨어 ID는 외부로 전송되거나 저장되지 않는다.
+기기 식별을 위해 로컬 머신에서 하드웨어 기반의 식별자(MAC 주소, 디스크 시리얼, BIOS/UUID 및 USB ID)를 수집한다. 기기 식별자는 로컬에서 처리되며, 하드웨어 ID는 외부로 전송되거나 저장되지 않는다.
 
 <DocTags tags={[{ text: "Setup", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/gethardwareids_main.png" alt="Get HardwareIDs" />
+<ComponentShot src="/assets/images/0_GetHardwareIDs.png" alt="Get HardwareIDs" />
 
 ## 입력
 

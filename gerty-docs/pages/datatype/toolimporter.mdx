@@ -1,6 +1,6 @@
 ---
 title: "Tool Importer"
-description: "저장해 둔 툴 데이터를 불러와 ABB tooldata 를 만드는 ToolData 컴포넌트의 Import 모드이다."
+description: "Tool Importer 는 ToolData 의 Import 모드이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/toolimporter.mjs";
 
-Tool Importer 는 ToolData 컴포넌트의 Import 모드이다. 컴포넌트를 우클릭해 **Define ToolData** 와 **Import ToolData** 를 전환할 수 있으며, 이 페이지는 우클릭 메뉴에서 **Import ToolData** 를 고른 경우를 설명한다. [Define ToolData](/datatype/tooldata/) 모드에서 <strong>Export</strong> 로 저장해 둔 툴 데이터를 불러와 ABB `tooldata` 를 만든다.
+Tool Importer 는 ToolData 의 Import 모드이다. [ToolData](/datatype/tooldata/) 에서 <strong>Export</strong> 로 저장해 둔 툴 데이터를 불러와 ABB `tooldata` 를 만든다.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Import 모드" }, { text: "Define 모드 → ToolData", href: "/datatype/tooldata/" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/toolimporter_main.png" alt="Tool Importer" />
+<ComponentShot src="/assets/images/3_ToolData_3.png" alt="Tool Importer" />
 
 ## 입력
 
@@ -43,21 +43,21 @@ Tool Importer 는 ToolData 컴포넌트의 Import 모드이다. 컴포넌트를 
 
 <Steps>
 
-1. **Tool Data** 탭의 **Presets** 에서 저장해 둔 툴을 고른다.
-2. **Name** 에 RAPID 변수명을 쓴다. 장착 기준면이 WorldXY 가 아니면 **Base Plane** 을 연결하고, TCP 를 바꾸려면 **TCP** 를 연결한다(연결하지 않으면 불러온 툴의 TCP 를 쓴다).
-3. **ToolData** 출력을 [ABB Robots](/robot-tool/abbrobot/) 컴포넌트의 **ToolData** 입력에 연결한다.
+1. **Tool Data** 탭의 **Tool Presets** 에서 저장해 둔 툴을 고른다.
+2. **Name** 에 RAPID 변수명을 쓴다.
+3. **Tool Data** 출력을 [ABB Robots](/robot-tool/abbrobot/) 컴포넌트의 **Tool Data** 입력에 연결한다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="tip">
-  **Presets** 목록이 비어 있으면 먼저 [Define ToolData](/datatype/tooldata/) 모드의 **Export** 로 툴을 저장합니다. 저장 폴더는 우클릭 메뉴의 **Open ToolData Folder** 로 열 수 있습니다.
+  **Tool Presets** 목록이 비어 있으면 먼저 [ToolData](/datatype/tooldata/) 의 **Export** 로 툴을 저장합니다.
 </Aside>
 
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "ToolData", description: "툴 데이터 직접 설정 (Define ToolData 모드)", href: "/datatype/tooldata/" },
-  { title: "ABB Robots", description: "ToolData 를 받는 로봇 컴포넌트", href: "/robot-tool/abbrobot/" },
+  { title: "ToolData", description: "툴 데이터 직접 설정 (Define 모드)", href: "/datatype/tooldata/" },
+  { title: "ABB Robots", description: "Tool Data 를 받는 로봇 컴포넌트", href: "/robot-tool/abbrobot/" },
 ]} />

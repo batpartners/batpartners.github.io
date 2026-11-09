@@ -1,6 +1,6 @@
 ---
 title: "ABB Positioner"
-description: "A component that defines an external-axis positioner by selecting a model and variant from the ABB IRBP series catalog."
+description: "This is a component that imports and defines the ABB positioner robot to be used."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,14 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/positioner.mjs";
 
-A component that defines the kinematic configuration of an external-axis positioner used with the robot. The positioner is then used in the robot setup and in Positioner RobTarget.
-
-This page covers <strong>[Import Positioner]</strong>, the default mode in the right-click menu: you pick a model and variant from the ABB IRBP series catalog. To specify the axis geometry yourself, select <strong>[Define Positioner]</strong>.
+This is a component that imports and defines the ABB positioner robot to be used. It supports and allows you to select ABB IRBP series positioners owned by the user.
+You can configure detailed tasks and simulations for the specified model.
 
 <DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Extra Option → Define Positioner", href: "/en/robot-tool/positioner-option/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/positioner_main.png" alt="ABB Positioner" />
+<ComponentShot src="/assets/images/1_ABBPositioner.png" alt="ABB Positioner" />
 
 ## Inputs
 
@@ -45,9 +44,9 @@ This page covers <strong>[Import Positioner]</strong>, the default mode in the r
 
 <Steps>
 
-1. In the **ABB Positioner** tab, pick the ABB IRBP positioner model in **Positioner Model** and the working diameter (D) / plate height (H) variant in **Spec**; set **MechUnit Name** if needed.
-2. If the flange plane is not WorldXY, connect **Mounting Plane**; to mount a workbench, connect the [CreateWorkBench](/en/robot-tool/createworkbench/) output to **Workbench**.
-3. Set the arm motion (**Enable Arm**) and the TCP approach and alignment directions (**Approach Dir**, **TCP Dir**) in the **Motion** tab, and the **Arm / Plate Joint Index** used in the RobTarget external-axis array in the **RAPID** tab.
+1. Pick the ABB IRBP positioner model in **Models** (ABB Positioner tab).
+2. If the flange plane is not WorldXY, connect **MountingPl**; to mount a workbench, connect the [CreateWorkBench](/en/robot-tool/createworkbench/) output to **WorkBench**.
+3. Set the arm motion (**Enable Arm**) and the TCP approach and alignment directions in **Motion Settings**, and the **Arm / Plate Joint Index** used in the RobTarget external-axis array in **RAPID Setting**.
 4. Connect the **Positioner** output to the **Positioner** input of [ABB Robots](/en/robot-tool/abbrobot/) and [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/).
 
 </Steps>
@@ -63,6 +62,6 @@ This page covers <strong>[Import Positioner]</strong>, the default mode in the r
 <RelatedLinks links={[
   { title: "ABB Robots", description: "Robot that takes the Positioner", href: "/en/robot-tool/abbrobot/" },
   { title: "Positioner RobTarget", description: "Targets with positioner angles", href: "/en/datatype/positioner-robtarget-dynamic/" },
-  { title: "CreateWorkBench", description: "Workbench mounted on the positioner flange", href: "/en/robot-tool/createworkbench/" },
-  { title: "ABB Positioner (Extra Option)", description: "Define Positioner: specify the axis geometry yourself", href: "/en/robot-tool/positioner-option/" },
+  { title: "CreateWorkBench", description: "Workbench on the positioner", href: "/en/robot-tool/createworkbench/" },
+  { title: "ABB Positioner (Extra Option)", description: "Define your own positioner", href: "/en/robot-tool/positioner-option/" },
 ]} />

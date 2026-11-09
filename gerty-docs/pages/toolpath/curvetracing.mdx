@@ -1,6 +1,6 @@
 ---
 title: "Curve Tracing"
-description: "Curve Tracing 은 입력 커브를 따라가는(트레이싱하는) 로봇 툴패스를 생성하는 컴포넌트이다."
+description: "CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로봇 툴패스 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/curvetracing.mjs";
 
-Curve Tracing 은 입력 커브를 따라가는(트레이싱하는) 로봇 툴패스를 생성하는 컴포넌트이다. **Resolution** 탭에서 경로의 정밀도를, **Tilting** 탭에서 TCP 를 기울이는 방향과 정도를 설정한다.
+CurveTracing은 사용자가 정의한 커브를 트레이싱할 수 있는 로봇 툴패스 컴포넌트이다. 작업 평면의 정확도, 틸팅 정도를 설정할 수 있다.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/curvetracing_main.png" alt="Curve Tracing" />
+<ComponentShot src="/assets/images/0_Drawing.png" alt="Curve Tracing" />
 
 ## 입력
 
@@ -43,17 +43,16 @@ Curve Tracing 은 입력 커브를 따라가는(트레이싱하는) 로봇 툴�
 
 <Steps>
 
-1. **Curves** 에 따라갈 커브를, **Reference Plane** 에 툴패스 기준 평면을 연결한다.
-2. **Resolution** 탭에서 **Tolerance** 와 세그먼트 길이(**Min Edge** / **Max Edge**)를 정한다.
-3. **Tilting** 탭에서 기울일 방향(**Tilt Target**)과 정도(**Tilt Weight**)를 정한다.
-4. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
+1. **Curves** 에 따라갈 커브를, **Reference Plane** 에 툴패스 기준 평면을 연결한다. TCP 를 표면 법선 쪽으로 기울이려면 **Geometry** 도 연결한다.
+2. **Settings** 탭에서 **Tolerance**, 세그먼트 길이(**MinEdge / MaxEdge(mm)**), 기울기(**Tilting Weight**)를 정한다.
+3. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="note">
-  **Tilt Weight** 가 0.0 이면 TCP 는 **Reference Plane** 의 Z 방향을, 1.0 이면 **Tilt Target** 이 정한 방향(표면 법선 또는 커브 접선)을 따릅니다.
+  **Tilting Weight** 가 0.0 이면 TCP 는 **Reference Plane** 의 Z 방향을, 1.0 이면 Geometry 표면 법선(또는 커브 접선) 방향을 따릅니다.
 </Aside>
 
 ## 관련 항목

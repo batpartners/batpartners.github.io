@@ -1,6 +1,6 @@
 ---
 title: "WeldData"
-description: "Defines the parameters of the active weld phase, while the arc is established."
+description: "This is a component that defines parameters for the actual welding section where the arc is stably maintained."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/welddata.mjs";
 
-Defines the parameters of the active weld phase, while the arc is established. It specifies the welding speed, voltage, wire-feed conditions and other parameters applied along the seam. Right-click the component to choose the wire-feed unit, **WireFeed(m/min)** or **WireFeed(mm/s)**; this page is based on **WireFeed(m/min)**, the default.
+This is a component that defines parameters for the actual welding section where the arc is stably maintained. It allows you to specify welding speed, voltage, wire feed conditions, and other parameters applied along the seam.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/welddata_main.png" alt="WeldData" />
+<ComponentShot src="/assets/images/8_WeldData.png" alt="WeldData" />
 
 ## Inputs
 
@@ -43,9 +43,9 @@ Defines the parameters of the active weld phase, while the arc is established. I
 
 <Steps>
 
-1. Connect the weld program number (schedule) and weld mode to **Weld Sched**. If needed, connect the wirefeed1 weighting to **Weight**, and for weaving connect a [WeaveData](/en/datatype/weavedata/) to **WeaveData**.
+1. Connect the weld program number (schedule) and mode to **Weld Sched** and the wirefeed1 weighting to **Weighting**. For weaving, connect [WeaveData](/en/datatype/weavedata/) too.
 2. Type the variable name in **Name** (WeldData tab).
-3. Set **Voltage**, **WireFeed(m/min)**, **Control** and **Current** in the **Weld ArcData** tab, and **Weld Speed(mm/s)** in the **Weld Param** tab. To enter the wire feed in mm/s, pick **WireFeed(mm/s)** from the right-click menu.
+3. Set voltage, wire feed, control and current in the **Weld ArcData** tab, and **Weld Speed(mm/s)** in the **Weld Param** tab.
 4. Connect the **WeldData** output to the **WeldData** input of [ArcMove](/en/instruction/arcmove/).
 
 </Steps>

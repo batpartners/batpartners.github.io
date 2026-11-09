@@ -1,6 +1,6 @@
 ---
 title: "WeaveData"
-description: "Defines the weaving motion performed during arc welding: shape, amplitude, frequency, dwell, orientation and bias."
+description: "This is a component that defines the weaving motion performed during arc welding."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,17 +11,17 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/weavedata.mjs";
 
-This component defines the weaving motion performed during arc welding. It specifies the weave shape, amplitude, frequency (cycle length) and dwell parameters, and adjusts the pattern orientation and bias relative to the seam. The pattern can be previewed in the viewport and through the **Pattern** output.
+This is a component that defines the weaving motion performed during arc welding. It specifies the weaving pattern, amplitude, and frequency parameters.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/weavedata_main.png" alt="WeaveData" />
+<ComponentShot src="/assets/images/9_WeaveData.png" alt="WeaveData" />
 
 ## Inputs
 
-<ParamTable rows={d.inputs} lang="en" />
+This component has no inputs; everything is set in the settings below.
 
 ## Settings (GERTY UI)
 
@@ -43,22 +43,20 @@ This component defines the weaving motion performed during arc welding. It speci
 
 <Steps>
 
-1. In the first tab, type the **Name**, pick the weaving pattern (zigzag, V, triangle, circle) with **Weave Shape** and the axis control with **Weave Type**.
-2. Set the pattern size with **Length / Width / Height** in the **Dimension** tab.
-3. If needed, set the dwell lengths at the turning points and centre in the **Dwell** tab, the pattern direction and tilt angles in the **Orient** tab, and the centreline offset (zigzag only) in the **Bias** tab.
-4. To check the pattern, connect a reference plane to **Base Plane** and set the number of cycles to draw with **Preview Cycles** (Preview tab). The **Pattern** output gives the pattern curve.
-5. Connect the **WeaveData** output to the **WeaveData** input of [WeldData](/en/datatype/welddata/).
+1. Pick the weaving pattern (zigzag, V, triangle, circle) with **Weaving Shape** and the axis control with **Weaving Type**.
+2. Set the pattern size with **Length(mm) / Width(mm) / Height(mm)**.
+3. Connect the **WeaveData** output to the **WeaveData** input of [WeldData](/en/datatype/welddata/).
 
 </Steps>
 
 ## Notes
 
 <Aside type="note">
-  **Height** is used only by the V and triangle patterns; zigzag and circle ignore it. **Weave Bias** applies to the zigzag pattern only.
+  **Height(mm)** is used only by the V and triangle patterns; zigzag and circle ignore it.
 </Aside>
 
 <Aside type="note">
-  What **Length** means depends on the settings: the weaving frequency (Hz) when Weave Type is Rapid_1/Rapid_2, and the distance between circles when Weave Shape is Circular.
+  What **Length(mm)** means depends on Weaving Type: the weaving frequency (Hz) for Rapid1/Rapid2, and the pattern spacing for the circle pattern.
 </Aside>
 
 ## Related

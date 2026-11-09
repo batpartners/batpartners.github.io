@@ -1,6 +1,6 @@
 ---
 title: "WobjData(Fixed)"
-description: "Fixed mode of the component that defines an ABB WobjData (uframe / oframe) for a stationary workpiece."
+description: "wobjdata is a data type that defines the unique coordinate system of the workpiece, facilitating intuitive programming based on drawings and enabling program reuse through simple coordinate adjustments when the installation environment changes."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,17 +11,17 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/wobjdata-fixed.mjs";
 
-WobjData defines the coordinate system of the workpiece (work object). It supports intuitive programming based on drawings, and when the installation changes, the program can be reused by correcting only the coordinate system.
+wobjdata is a data type that defines the unique coordinate system of the workpiece, facilitating intuitive programming based on drawings and enabling program reuse through simple coordinate adjustments when the installation environment changes.
 
-It specifies the user frame (uframe), which defines the local coordinate system of the work surface within the world frame, and the object frame (oframe) relative to it; target planes can then be defined relative to the work object. Right-click the component to switch between two modes: **Fixed WobjData** (stationary work object, the default) and **Movable WobjData** (work object moved by an external axis).
+It can be defined by the user from the world coordinate system to the local coordinate system of the workbench. The user frame (uframe) and object frame (oframe) redefine the target plane coordinates relative to the workobject. Additionally, by right-clicking the component icon, users can choose between two modes: Movable (a workobject driven by external axes) and Fixed (a fixed, standard workobject).
 
-This page covers <strong>Fixed WobjData</strong>, the default mode, in which the work object stays at a fixed position.
+This page covers <strong>Fixed mode</strong>, which redefines the target plane as a reference plane at a fixed position.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Fixed mode" }, { text: "Movable mode → WobjData(Movable)", href: "/en/datatype/wobjdata-movable/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/wobjdata-fixed_main.png" alt="WobjData(Fixed)" />
+<ComponentShot src="/assets/images/2_WobjData.png" alt="WobjData(Fixed)" />
 
 ## Inputs
 
@@ -48,7 +48,7 @@ This page covers <strong>Fixed WobjData</strong>, the default mode, in which the
 <Steps>
 
 1. Connect the plane for the user frame (uframe) to **User Frame**, and the plane for the object frame (oframe) to **Object Frame**.
-2. Type the RAPID variable name in **Name** (WobjData tab). Adjust the size of the frame shown in the viewport with **Frame Size** (Preview tab).
+2. Type the RAPID variable name in **Name** (WobjData tab).
 3. Connect the **WobjData** output to the **WobjData** input of [RobTarget](/en/datatype/robtarget/) to define targets in the work-object frame.
 
 </Steps>
@@ -67,6 +67,5 @@ This page covers <strong>Fixed WobjData</strong>, the default mode, in which the
 
 <RelatedLinks links={[
   { title: "RobTarget", description: "Targets that take the WobjData", href: "/en/datatype/robtarget/" },
-  { title: "WobjData(Movable)", description: "Work object moved by an external axis", href: "/en/datatype/wobjdata-movable/" },
   { title: "Get WobjData", description: "Read WobjData from the controller", href: "/en/controller-utils/getwobjdata/" },
 ]} />

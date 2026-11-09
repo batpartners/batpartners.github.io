@@ -1,6 +1,6 @@
 ---
 title: "IndReset (Positional Reference)"
-description: "외부축의 논리 위치를 초기화하는 IndReset 인스트럭션을 만드는 컴포넌트이다."
+description: "부가 축의 위치와 회전값을 초기화(<code>IndReset</code>)하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,15 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/indreset-option.mjs";
 
-외부축의 논리 위치를 초기화하는 <code>IndReset</code> 인스트럭션을 만드는 컴포넌트이다. 독립 모드에 있는 축은 일반 모드로 되돌리는 것까지 함께 한다. 모션 인스트럭션 실행 전 누적된 외부축 각도값을 초기화할 때 주로 쓴다.
+부가 축의 위치와 회전값을 초기화(<code>IndReset</code>)하는 컴포넌트이다. 모션 인스트럭션 실행 전 누적된 외부축 각도값 초기화에 주로 사용한다.
 
-이 페이지는 우클릭 메뉴에서 <strong>Use Positional Reference</strong> 를 고른 형태를 설명한다. 기준 위치를 <strong>RobTarget</strong> 입력으로 받는다.
+이 페이지는 기준 위치를 <strong>RobTarget</strong> 입력으로 받는 Positional Reference 형태를 설명한다.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }, { text: "Positional Reference" }, { text: "Numeric Reference → IndReset", href: "/instruction/indreset/" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/indreset-option_main.png" alt="IndReset (Positional Reference)" />
+<ComponentShot src="/assets/images/12_IndReset_1.png" alt="IndReset (Positional Reference)" />
 
 ## 입력
 
@@ -47,8 +47,8 @@ import * as d from "../../../data/components/indreset-option.mjs";
 
 1. **RobTarget** 에 기준 자세를 담은 [RobTarget](/datatype/robtarget/) 을 연결한다.
 2. **MechUnit** 에 메카니컬 유닛 이름(예: STN1)을 쓰고, **Target Axis** 에서 대상 축을 고른다.
-3. **Settings** 탭에서 **Direction** 을 `Short (±180°)` / `Forward (+direction)` / `Backward (-direction)` 중에서 고른다.
-4. **Instruction** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+3. **Settings** 탭에서 **Direction Policy** 를 `Short` / `Fwd` / `Bwd` 중에서 고른다.
+4. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
 
 </Steps>
 
@@ -59,7 +59,7 @@ import * as d from "../../../data/components/indreset-option.mjs";
 </Aside>
 
 <Aside type="caution">
-  **RobTarget** 과 **RefNum(°)** 은 함께 쓸 수 없습니다. 또 이 인스트럭션을 실행하기 전에 모든 축이 정지해 있어야 합니다.
+  **RobTarget** 과 **RefNum(°)** 은 함께 쓸 수 없습니다.
 </Aside>
 
 ## 관련 항목

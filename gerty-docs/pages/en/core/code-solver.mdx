@@ -1,6 +1,6 @@
 ---
 title: "Code Solver"
-description: "A component that generates a RAPID program from the defined robot motions and transfers and uploads it to an ABB controller. Covers Single-Task (Standard) mode."
+description: "This is a component that generates program files from defined RAPID robot motions and performs tasks to load and upload code files to an ABB controller connected via a network."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/code-solver.mjs";
 
-A component that generates a RAPID program from the defined robot motions and transfers and uploads it to a networked ABB controller.
-
-This page covers <strong>[Single-Task (Standard)]</strong>, the default mode in the right-click menu, which exports the program as a single RAPID task. Multitasking programs with socket communication are made in <strong>[Multi-Task (Option 623-1)]</strong> mode.
+This is a component that generates program files from defined RAPID robot motions and performs tasks to load and upload code files to an ABB controller connected via a network.
 
 <DocTags tags={[{ text: "Core", tone: "accent" }, { text: "Single Task" }, { text: "Multi Task → Code Solver (Option)", href: "/en/core/code-solver-option/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/code-solver_main.png" alt="Code Solver" />
+<ComponentShot src="/assets/images/0_CodeSolver.png" alt="Code Solver" />
 
 ## Inputs
 
@@ -43,7 +41,7 @@ This page covers <strong>[Single-Task (Standard)]</strong>, the default mode in 
 
 1. Connect the **GERTY Code** output of [GERTY Core](/en/core/gerty-core/) to **GERTY Code**. To load straight to a controller, connect the [Scan ABB Controller](/en/controller-utils/scanabbcontroller/) output to **ABB Controller**.
 2. Set **Program Folder** and **Program Name** in the **Program Settings** tab.
-3. Press **Export** in the **Export** tab to generate the RAPID code. With **Auto Load** on, the program is loaded to the connected controller afterwards. The result appears in **Export Log**.
+3. Press **Export** to generate the RAPID code. With **Auto Load** on, it is loaded to the connected controller afterwards.
 4. Open the generated code with **Open in Editor** to check it.
 
 </Steps>
@@ -51,11 +49,7 @@ This page covers <strong>[Single-Task (Standard)]</strong>, the default mode in 
 ## Notes
 
 <Aside type="tip">
-  **Open in Editor** opens the generated code in VSCode, or in Notepad if VSCode is not installed.
-</Aside>
-
-<Aside type="note">
-  Change the save location with **Select a Local directory…** in the right-click menu and open it with **Open Local directory**. The default location is `Documents\GERTY\RobotPrograms`.
+  **Open in Editor** opens VSCode, or Notepad when VSCode is not installed.
 </Aside>
 
 ## Related
@@ -64,5 +58,5 @@ This page covers <strong>[Single-Task (Standard)]</strong>, the default mode in 
   { title: "GERTY Core", description: "Computes the robot motion", href: "/en/core/gerty-core/" },
   { title: "Display Solver", description: "Viewport simulation", href: "/en/core/display-solver/" },
   { title: "Analysis Deconstructor", description: "Axis angles and error log", href: "/en/core/analysis/" },
-  { title: "Code Solver (Option)", description: "Multi-Task (Option 623-1) with a socket module", href: "/en/core/code-solver-option/" },
+  { title: "Code Solver (Option)", description: "Multi Task with sockets", href: "/en/core/code-solver-option/" },
 ]} />

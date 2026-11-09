@@ -7,30 +7,30 @@ export const inputs = [
   {
     "name": "GERTY Solver",
     "type": "GERTY Solver",
-    "ko": "<a href=\"/core/gerty-core/\">GERTY Core</a> 의 GERTY Solver 출력을 연결한다.",
-    "en": "Connect the GERTY Solver output of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
+    "ko": "<a href=\"/core/display-solver/\">GERTY Solver</a> 연결",
+    "en": "Connect to <a href=\"/en/core/display-solver/\">GERTY Solver</a>"
   }
 ];
 
-export const main = "analysis_main.png";
+export const main = "3_AnalysisDeconstructor.png";
 
 export const outputs = [
   {
     "name": "RobAx Angles",
     "type": "String",
-    "ko": "타겟별 로봇 축 각도.",
-    "en": "Robot axis angles per target."
+    "ko": "로봇 축 각도",
+    "en": "Robot axis angles"
   },
   {
     "name": "Error Idx",
     "type": "String",
-    "ko": "오류가 검출된 타겟의 인덱스.",
-    "en": "Indices of the targets where errors were detected."
+    "ko": "오류 인덱스",
+    "en": "Error index"
   },
   {
     "name": "Error Report",
     "type": "String",
-    "ko": "행별 오류 유형. 타겟별 로봇 자세 오류와 도달 가능성 문제를 보고한다.",
-    "en": "Error type per row. Reports robot-pose errors and reach issues per target."
+    "ko": "행별 오류 유형 분석",
+    "en": "Error type analysis by row"
   }
 ];

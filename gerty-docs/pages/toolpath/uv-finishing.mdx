@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/uv-finishing.mjs";
 
-서피스의 UV 아이소파라메트릭 커브를 따라, 정삭 (Finishing) 툴패스를 생성하는 컴포넌트이다. 작업 방식에 맞게 UV 진행 방향, 경로 간격(Stepover), TCP 틸팅, 근사 허용 오차를 설정할 수 있으며, 결과 경로는 타겟 평면과 Contour 폴리라인으로 출력된다.
+서피스의 UV 아이소파라메트릭 커브를 따라, 정삭 (Finishing) 툴패스를 생성하는 컴포넌트이다. 사용자는 타겟 평면사이의 거리와, 레이어간 간격, UV 방향 등의 작업 방식에 맞게 세부 설정이 가능하다.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/uv-finishing_main.png" alt="UVFinishing" />
+<ComponentShot src="/assets/images/8_UVFinishing.png" alt="UVFinishing" />
 
 ## 입력
 
@@ -43,8 +43,8 @@ import * as d from "../../../data/components/uv-finishing.mjs";
 
 <Steps>
 
-1. **Geometry** 에 정삭할 서피스(Brep 또는 Surface)를, **Reference Plane** 에 경로 기준 평면을 연결한다.
-2. **Settings** 탭에서 진행 방향 U / V(**UV Flip**), 경로 간격(**Stepover**, mm), 표면 법선 쪽 기울기(**Tilt Weight**), **Tolerance** 를 정한다.
+1. **Brep** 에 정삭할 서피스(Brep 또는 Surface)를, **Reference Plane** 에 경로 기준 평면을 연결한다.
+2. **Settings** 탭에서 UV 진행 방향(**UV Direction**), 경로 간격(**Stepover(mm)**), 표면 법선 쪽 기울기(**Tilting Weight**), **Tolerance** 를 정한다.
 3. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
 
 </Steps>

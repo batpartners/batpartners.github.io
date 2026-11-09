@@ -1,6 +1,6 @@
 ---
 title: "Insert"
-description: "This component inserts a collection of data into a DataTree at a given index."
+description: "This is a component that can insert a data collection into a specific DataTree index."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/insert.mjs";
 
-This component inserts a collection of data into a DataTree at a given index.
+This is a component that can insert a data collection into a specific DataTree index.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/insert_main.png" alt="Insert" />
+<ComponentShot src="/assets/images/2_Insert.png" alt="Insert" />
 
 ## Inputs
 
@@ -40,8 +40,8 @@ This component inserts a collection of data into a DataTree at a given index.
 <Steps>
 
 1. Connect the DataTree to **Tree** and the items to insert to **Items**.
-2. Connect the insertion index to **indices**; the items are placed at this position in each branch.
-3. Take the DataTree with the items inserted from the **Tree** output.
+2. Connect the insertion index to **indices**.
+3. Take the DataTree with the items from the **Tree** output.
 
 </Steps>
 

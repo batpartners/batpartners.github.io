@@ -1,6 +1,6 @@
 ---
 title: "IndReset (Positional Reference)"
-description: "Creates an IndReset instruction that resets the logical position of an external axis."
+description: "This is a component that initializes the position and rotation values of an auxiliary axis (IndReset)."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,15 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/indreset-option.mjs";
 
-A component that creates an <code>IndReset</code> instruction, which resets the logical position of an external axis. An axis in independent mode is also returned to normal mode. It is mainly used to clear accumulated external-axis angles before motion instructions run.
+This is a component that initializes the position and rotation values of an auxiliary axis (IndReset). It is primarily used to initialize accumulated external axis angle values before executing motion instructions.
 
-This page covers the form selected with <strong>Use Positional Reference</strong> in the right-click menu, which takes the reference position from the <strong>RobTarget</strong> input.
+This page covers the Positional Reference form, which takes the reference position from the <strong>RobTarget</strong> input.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }, { text: "Positional Reference" }, { text: "Numeric Reference → IndReset", href: "/en/instruction/indreset/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/indreset-option_main.png" alt="IndReset (Positional Reference)" />
+<ComponentShot src="/assets/images/12_IndReset_1.png" alt="IndReset (Positional Reference)" />
 
 ## Inputs
 
@@ -47,8 +47,8 @@ This page covers the form selected with <strong>Use Positional Reference</strong
 
 1. Connect a [RobTarget](/en/datatype/robtarget/) holding the reference pose to **RobTarget**.
 2. Type the mechanical unit name (e.g. STN1) in **MechUnit** and pick the axis in **Target Axis**.
-3. In the **Settings** tab, pick `Short (±180°)`, `Forward (+direction)` or `Backward (-direction)` in **Direction**.
-4. Put the **Instruction** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+3. Pick `Short`, `Fwd` or `Bwd` as the **Direction Policy** in the **Settings** tab.
+4. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
 
 </Steps>
 
@@ -59,7 +59,7 @@ This page covers the form selected with <strong>Use Positional Reference</strong
 </Aside>
 
 <Aside type="caution">
-  **RobTarget** and **RefNum(°)** cannot be used together. All axes must also be stationary before this instruction runs.
+  **RobTarget** and **RefNum(°)** cannot be used together.
 </Aside>
 
 ## Related

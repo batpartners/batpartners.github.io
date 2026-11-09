@@ -5,36 +5,36 @@ export const groups = [
   [
     {
       "label": "Partition Settings",
-      "img": "toolpathpartition_tab1.png",
+      "img": "9_ToolPathpartition_10.png",
       "rows": [
         {
           "name": "Start(mm)",
           "type": "Number",
-          "ko": "분할에 쓰는 시작 길이 (mm)이다. 기본값은 20 (범위 0 ~ 100).",
-          "en": "Start length used for the partition (mm). Default: 20 (range 0–100).",
+          "ko": "시작 길이 (mm).",
+          "en": "Start length (mm).",
           "y": [
-            29,
-            17.8
+            27.6,
+            17.2
           ]
         },
         {
           "name": "End(mm)",
           "type": "Number",
-          "ko": "분할에 쓰는 끝 길이 (mm)이다. 기본값은 20 (범위 0 ~ 100).",
-          "en": "End length used for the partition (mm). Default: 20 (range 0–100).",
+          "ko": "끝 길이 (mm).",
+          "en": "End length (mm).",
           "y": [
-            51.5,
-            17.8
+            49.4,
+            17.2
           ]
         },
         {
           "name": "Substitution(%)",
           "type": "Number",
-          "ko": "대체 비율이다. 기본값은 0.2 (범위 0 ~ 0.5).",
-          "en": "Substitution (replacement) ratio. Default: 0.2 (range 0–0.5).",
+          "ko": "대체 비율 (%).",
+          "en": "Substitution ratio (%).",
           "y": [
-            74,
-            17.8
+            71.3,
+            17.2
           ]
         }
       ]
@@ -46,30 +46,30 @@ export const inputs = [
   {
     "name": "Targets",
     "type": "Plane",
-    "ko": "나눌 타겟 평면 리스트(Branch)이다.",
-    "en": "The list (branch) of target planes to partition."
+    "ko": "나눌 타겟 평면 리스트(Branch).",
+    "en": "The target plane list (branch) to split."
   }
 ];
 
-export const main = "toolpathpartition_main.png";
+export const main = "9_ToolPathpartition.png";
 
 export const outputs = [
   {
     "name": "Targets",
     "type": "Plane",
-    "ko": "길이 값에 따라 하위 리스트(Branch)로 나뉜 타겟 평면이다.",
-    "en": "The target planes partitioned into sub-lists (branches) by the length values."
+    "ko": "하위 리스트(Branch)로 나뉜 타겟 평면.",
+    "en": "The target planes split into sub-lists (branches)."
   },
   {
     "name": "Index",
     "type": "Integer",
-    "ko": "인스트럭션을 나누기 위해 삽입한 타겟 평면의 인덱스이다.",
+    "ko": "인스트럭션을 나누려고 삽입한 타겟 평면의 인덱스.",
     "en": "Indices of the target planes inserted to split the instructions."
   },
   {
     "name": "Domain",
-    "type": "Domain",
-    "ko": "<strong>Index</strong> 의 도메인(구간)이다.",
-    "en": "Domain (interval) of the indices."
+    "type": "Integer",
+    "ko": "인덱스의 도메인.",
+    "en": "Domain of the indices."
   }
 ];

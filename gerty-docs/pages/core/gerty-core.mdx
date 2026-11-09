@@ -1,6 +1,6 @@
 ---
 title: "GERTY Core"
-description: "정의된 로봇 셋업과 인스트럭션으로부터 로봇 동작을 연산하여 Display Solver·Code Solver 에 필요한 데이터를 만드는 컴포넌트이다."
+description: "GERTY Core는 정의된 로봇 셋업과 인스트럭션으로부터 로봇 동작을 연산하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/gerty-core.mjs";
 
-GERTY Core 는 정의된 로봇 셋업(Robot Setup)과 인스트럭션으로부터 로봇 동작을 연산하는 컴포넌트이다. 시뮬레이션과 분석에 쓰는 **GERTY Solver** 와 RAPID 코드 생성에 쓰는 **GERTY Code** 를 출력하며, 이는 Display Solver 와 Code Solver 실행에 필요한 기초 데이터이다.
+GERTY Core는 정의된 로봇 셋업과 인스트럭션으로부터 로봇 동작을 연산하는 컴포넌트이다. Display Solver 및 CodeSolver 실행에 필요한 기초 데이터 생성한다.
 
 <DocTags tags={[{ text: "Core", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/gerty-core_main.png" alt="GERTY Core" />
+<ComponentShot src="/assets/images/2_GERTYCore.png" alt="GERTY Core" />
 
 ## 입력
 
@@ -43,10 +43,9 @@ GERTY Core 는 정의된 로봇 셋업(Robot Setup)과 인스트럭션으로부�
 
 <Steps>
 
-1. **Robot Setup** 에 [ABB Robots](/robot-tool/abbrobot/) 의 **Robot Setup** 출력을 연결한다.
-2. **Instructions** 에 인스트럭션 리스트를 연결한다. 리스트 순서가 그대로 로봇 실행 순서가 된다. 서브 프로시저를 쓰면 **SubProc** 도 연결한다.
-3. 필요하면 **GERTY Core** 탭에서 **Config Option (Cfx = 1)** 과 **Ignore Errors** 를 정한다.
-4. **GERTY Solver** 출력을 [Display Solver](/core/display-solver/)·[Analysis Deconstructor](/core/analysis/) 에, **GERTY Code** 출력을 [Code Solver](/core/code-solver/) 에 연결한다.
+1. **GERTY Robot** 에 [ABB Robots](/robot-tool/abbrobot/) 의 **GERTY Robot** 출력을 연결한다.
+2. **Instructions** 에 인스트럭션 리스트를 연결한다. 리스트 순서가 그대로 로봇 실행 순서가 된다. 서브 프로시저를 쓰면 **SubProc.** 도 연결한다.
+3. **GERTY Solver** 출력을 [Display Solver](/core/display-solver/)·[Analysis Deconstructor](/core/analysis/) 에, **GERTY Code** 출력을 [Code Solver](/core/code-solver/) 에 연결한다.
 
 </Steps>
 
@@ -56,14 +55,10 @@ GERTY Core 는 정의된 로봇 셋업(Robot Setup)과 인스트럭션으로부�
   **Instructions** 의 리스트 순서가 로봇 실행 순서와 직접 대응하므로, 의도한 모션 순서대로 정렬해야 합니다.
 </Aside>
 
-<Aside type="caution">
-  **Ignore Errors** 를 켜면 동작 오류가 검출되어도 코드를 출력합니다. 로봇에서 실행하기 전에 RAPID 코드와 운용 절차를 반드시 확인하십시오. 기본값(꺼짐)에서는 오류가 검출되면 코드 생성을 중단합니다.
-</Aside>
-
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "Display Solver", description: "GERTY Solver 를 받아 뷰포트에서 시뮬레이션", href: "/core/display-solver/" },
-  { title: "Code Solver", description: "GERTY Code 를 받아 RAPID 코드 생성", href: "/core/code-solver/" },
-  { title: "Analysis Deconstructor", description: "GERTY Solver 의 축 각도와 오류 로그", href: "/core/analysis/" },
+  { title: "Display Solver", description: "뷰포트 시뮬레이션", href: "/core/display-solver/" },
+  { title: "Code Solver", description: "RAPID 코드 생성", href: "/core/code-solver/" },
+  { title: "Analysis Deconstructor", description: "축 각도와 오류 로그", href: "/core/analysis/" },
 ]} />

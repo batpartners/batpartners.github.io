@@ -1,6 +1,6 @@
 ---
 title: "AccSet"
-description: "로봇의 가감속과 램프 값을 줄이는 AccSet 인스트럭션을 만드는 컴포넌트이다."
+description: "AccSet은 로봇 가속도 및 램프 값을 감소시키는 AccSet 인스트럭션 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/accset.mjs";
 
-AccSet 은 로봇의 가감속(Acceleration)과 램프(Ramp) 값을 줄이는 ABB `AccSet` 인스트럭션을 만드는 컴포넌트이다. 로봇이 설정된 속도에 이르기까지의 가속과 멈출 때의 감속을 완만하게 만들어, 취약한 부품을 핸들링하거나 작업 영역 경계 근처에서 움직일 때 동적 부하를 낮춘다. 설정은 리스트에서 이 인스트럭션 뒤에 오는 이동 명령에 적용된다.
+AccSet은 로봇 가속도 및 램프 값을 감소시키는 AccSet 인스트럭션 컴포넌트이다. 작업 시작 또는 마무리시, 설정된 속도값으로 도달하기 전 가속도 값을 설정할 수 있다. 이 컴포넌트는 핸들링이나 작업 영역 경계 근처에서 동적 부하를 낮춘다.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/accset_main.png" alt="AccSet" />
+<ComponentShot src="/assets/images/5_AccSet.png" alt="AccSet" />
 
 ## 입력
 
@@ -53,14 +53,14 @@ AccSet 은 로봇의 가감속(Acceleration)과 램프(Ramp) 값을 줄이는 AB
 
 1. **Acceleration Params** 탭에서 **Acceleration(%)** 와 **Ramp(%)** 를 정한다.
 2. fine 타겟에 들어갈 때의 감속을 따로 줄이려면 **FinePointRamp(%)** 도 정한다.
-3. **Instruction** 출력을 인스트럭션 리스트의 적용을 시작할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+3. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="tip">
-  취약한 부품의 핸들링이나 작업 영역 경계 근처처럼 동적 부하를 낮춰야 할 때 씁니다. Acceleration(%) 은 20% 미만, Ramp(%) 는 10% 미만으로 낮출 수 없습니다.
+  핸들링 작업이나 작업 영역 경계 근처처럼 동적 부하를 낮춰야 할 때 씁니다.
 </Aside>
 
 ## 관련 항목

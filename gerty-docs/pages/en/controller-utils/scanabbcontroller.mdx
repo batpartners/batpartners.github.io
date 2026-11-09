@@ -1,6 +1,6 @@
 ---
 title: "ScanABBController"
-description: "This component searches the local network for available ABB robot controllers (real or virtual) and connects to one."
+description: "This component finds the ABB robot controllers available on the local network and connects to one."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/scanabbcontroller.mjs";
 
-This component searches the local network for available ABB robot controllers (real or virtual) and connects to one.
+This component finds the ABB robot controllers available on the local network and connects to one.
 
 <DocTags tags={[{ text: "Controller Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/scanabbcontroller_main.png" alt="ScanABBController" />
+<ComponentShot src="/assets/images/1_ScanController.png" alt="ScanABBController" />
 
 ## Inputs
 
@@ -43,10 +43,10 @@ This component has no inputs; everything is set in the settings below.
 
 <Steps>
 
-1. In the **ABB Controller** tab, pick **Real** (physical controller) or **Virtual** (virtual controller) in **Controller Type** and press **Scan** to search.
+1. Pick the **Controller Type** in the **ABB Controller** tab and press **Scan** to search.
 2. Pick the controller in **Controller** (Connect tab) and turn on **Connect**.
 3. Check the connected controller in the **Info** tab.
-4. Connect the **ABB Controller** output to the **ABB Controller** input of the Controller Utils components and [Code Solver](/en/core/code-solver/).
+4. Connect the **ABB Controller** output to the **ABB Controller** input of the Controller components and [Code Solver](/en/core/code-solver/).
 
 </Steps>
 

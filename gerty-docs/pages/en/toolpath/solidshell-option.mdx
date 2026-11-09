@@ -11,15 +11,15 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/solidshell-option.mjs";
 
-This is a component that generates shell deposition toolpaths from a closed solid geometry (Brep or Mesh). You can set the layer height and bead width, the shell method (Contour or Zigzag weaving), target plane tilting, and the seam (start point) and wiping. For a large geometry, the work data can be exported in parts. Enabling `Use AntiOverhang` from the icon's right-click menu adds inputs for overhang reinforcement. The right-click menu also has a `Use Exclusion` option.
+This is a component that generates shell deposition toolpaths from a closed solid geometry. It allows you to configure detailed settings such as the starting position, spacing, height, and tilting degree of the target planes. If the geometry is large, it can export the operation data by dividing it into partitions.
 
-This page covers the form with <strong>Use AntiOverhang</strong> enabled from the icon's right-click menu, which adds the <strong>Overhang Density</strong> and <strong>Max Overhang Angle</strong> inputs.
+This page covers the form with the added <strong>Angle Ranges</strong> and <strong>Multiple</strong> inputs (Extra Option).
 
-<DocTags tags={[{ text: "ToolPath", tone: "accent" }, { text: "AntiOverhang" }, { text: "Basic → Solid Shell", href: "/en/toolpath/solidshell/" }]} />
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }, { text: "Extra Option" }, { text: "Basic → Solid Shell", href: "/en/toolpath/solidshell/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/solidshell-option_main.png" alt="Solid Shell (Extra Option)" />
+<ComponentShot src="/assets/images/12_SolidShell_3.png" alt="Solid Shell (Extra Option)" />
 
 ## Inputs
 
@@ -45,35 +45,26 @@ This page covers the form with <strong>Use AntiOverhang</strong> enabled from th
 
 <Steps>
 
-1. Connect the closed solid (Brep or Mesh) to **Model**. To place the seam with a curve, connect **Seams**.
-2. Align **Reference Plane** with the build plate (default WorldXY). To tilt targets around edges, connect **Edges**.
-3. To control the overhang reinforcement, connect a density curve (Graph Mapper output) to **Overhang Density** and, if needed, **Max Overhang Angle** (default 90°).
-4. In the **Slicing** tab, set the layer heights, **Tolerance** and the section method (**Section Proxy**).
-5. In the **Shell** tab, choose the **Shell Type** and bead width (**Layer Width**). For Contour, use **Setback**, **Outline Shells** and **Path Order**; for Zigzag, use **Shell Thickness** and the **Zigzag** and **Relief** tabs to shape the weave.
-6. Use the **Tilt** tab to tilt for overhangs or edges, and the **Seam** tab to adjust the start points (seam) and wiping.
-7. Connect the **Shell ToolPaths** output to [Deposition Builder](/en/toolpath/depositionbuilder/) or [WAAM Builder](/en/toolpath/waambuilder/), and, for infill, **Shell Profile** to the **Shell Profile** input of [Solid Fill](/en/toolpath/solidfill/).
+1. Connect the closed solid (Brep or Mesh) to **Geometry**. To place the seam, connect **Seam Crvs**.
+2. Align **Reference Plane** with the build plate (default WorldXY). To tilt targets around edges, connect **Edge Crvs**.
+3. Connect the added **Angle Ranges** and **Multiple** inputs.
+4. In the **Slicing** tab, set the outline offset (**Setback(mm)**), the number of shells (**Outline Shells**), bead width, layer heights and **Tolerance**.
+5. Use the **Tilting** tab to tilt for overhangs or edges, and the **Seam** tab to spread or shift the start points (seam).
+6. Connect the **Deposition ToolPaths** and **Is Bottommost** outputs to [Deposition Builder](/en/toolpath/depositionbuilder/) or [WAAM Builder](/en/toolpath/waambuilder/), and, for infill, **GERTYShellData** to [Solid Fill](/en/toolpath/solidfill/) or [Solid Offset Fill](/en/toolpath/solidoffsetfill/).
 
 </Steps>
 
 ## Notes
 
 <Aside type="tip">
-  For a large part, split the model into N parts with **Part Count** in the **Partition** tab and pick the part to slice (1–N) with **Part Number**, then export part by part.
-</Aside>
-
-<Aside type="note">
-  Setting **Shell Type** to Zigzag shows the **Zigzag** and **Relief** tabs and the **Phase Pattern** input on the component, and hides **Setback** and **Outline Shells**.
-</Aside>
-
-<Aside type="note">
-  The `Use Exclusion` option in the icon's right-click menu is not covered in these docs yet.
+  For a large part, split the model into N parts with **Partition** and pick the part to slice (1–N) with **Order**, then export part by part.
 </Aside>
 
 ## Related
 
 <RelatedLinks links={[
-  { title: "Solid Shell", description: "Shell paths of a closed solid (basic)", href: "/en/toolpath/solidshell/" },
-  { title: "Solid Fill", description: "Infill based on the Shell Profile", href: "/en/toolpath/solidfill/" },
-  { title: "Deposition Builder", description: "Splits deposition paths into extrusion start, move, end and wipe", href: "/en/toolpath/depositionbuilder/" },
+  { title: "Solid Shell", description: "Shell paths of a closed solid", href: "/en/toolpath/solidshell/" },
+  { title: "Solid Fill", description: "Pattern infill", href: "/en/toolpath/solidfill/" },
+  { title: "Deposition Builder", description: "Splits deposition paths into extrusion start, move and stop", href: "/en/toolpath/depositionbuilder/" },
   { title: "WAAM Builder", description: "Splits WAAM paths by layer kind", href: "/en/toolpath/waambuilder/" },
 ]} />

@@ -5,16 +5,16 @@ export const groups = [
   [
     {
       "label": "Connect",
-      "img": "socketsender_tab1.png",
+      "img": "2_SocketSender_10.png",
       "rows": [
         {
           "name": "Connect",
           "type": "Toggle",
-          "ko": "TCP 소켓으로 ABB 컨트롤러에 연결하거나 연결을 끊는다. 기본값은 꺼짐(False).",
-          "en": "Connects to or disconnects from the ABB controller over the TCP socket. Default: off (False).",
+          "ko": "소켓으로 ABB 컨트롤러에 연결하거나 연결을 끊는다.",
+          "en": "Connects to or disconnects from the ABB controller over the socket.",
           "y": [
-            52.6,
-            31.6
+            51.6,
+            32.6
           ]
         }
       ]
@@ -23,72 +23,72 @@ export const groups = [
   [
     {
       "label": "Queue/Timing",
-      "img": "socketsender_tab2.png",
+      "img": "2_SocketSender_11.png",
       "rows": [
         {
           "name": "Max Queue",
-          "type": "Integer",
-          "ko": "로봇 큐의 목표 상한이다. 기본값은 350 (범위 100 ~ 499).",
-          "en": "Target upper limit of the robot queue. Default: 350 (range 100–499).",
+          "type": "Number",
+          "ko": "로봇 큐 목표 상한. (기본: 350)",
+          "en": "Target upper limit for the robot queue. (Default: 350)",
           "y": [
-            25,
-            14.2
+            24.1,
+            15.1
           ]
         },
         {
           "name": "Max Tick",
-          "type": "Integer",
-          "ko": "타이머 콜백 1회당 보내는 최대 패킷 수이다. 기본값은 35 (범위 10 ~ 100).",
-          "en": "Maximum number of packets sent per timer callback. Default: 35 (range 10–100).",
+          "type": "Number",
+          "ko": "타이머 1회 콜백당 최대 전송 패킷 수 (기본: 35)",
+          "en": "Maximum packets sent per timer callback. (Default: 35)",
           "y": [
-            42.9,
-            14.2
+            42,
+            15.1
           ]
         },
         {
           "name": "Bundle Size",
-          "type": "Integer",
-          "ko": "1회 전송에 묶어 보내는 인스트럭션 수이다. 기본값은 5 (범위 1 ~ 8, 최대 권장값 8).",
-          "en": "Number of instructions bundled into one transmission. Default: 5 (range 1–8; 8 is the recommended maximum).",
+          "type": "Number",
+          "ko": "번들 크기: 1회 전송당 묶어 보낼 인스트럭션 수 (기본: 5, 최대 권장: 8)",
+          "en": "Bundle size: Number of instructions grouped per transmission. (Default: 5, Max recommended: 8)",
           "y": [
-            60.8,
-            14.2
+            59.9,
+            15.1
           ]
         },
         {
           "name": "Interval(ms)",
-          "type": "Integer",
-          "ko": "전송 타이머 주기 (ms)이다. 줄이면 반응성이 좋아지고, 늘리면 부하가 줄어든다. 기본값은 100 (10 Hz, 범위 20 ~ 150).",
-          "en": "Transmission timer interval (ms). A shorter interval improves responsiveness; a longer one reduces the load. Default: 100 (10 Hz, range 20–150).",
+          "type": "Number",
+          "ko": "타이머 주기 (ms). 기본 100ms = 10Hz. 줄이면 반응성 향상, 늘리면 부하 감소.",
+          "en": "Timer interval (ms). Default 100ms = 10Hz. Decreasing improves responsiveness, increasing reduces load.",
           "y": [
-            78.8,
-            14.2
+            78.3,
+            14.6
           ]
         }
       ]
     },
     {
       "label": "Contorol",
-      "img": "socketsender_tab3.png",
+      "img": "2_SocketSender_13.png",
       "rows": [
         {
           "name": "Send",
           "type": "Toggle",
-          "ko": "연결된 상태에서 패킷 전송을 허용하는 토글이다.<br> • TRUE: 패킷 스트리밍을 시작한다.<br> • FALSE: 전송을 멈추고 로봇을 일시 정지한다. 기본값이다.",
-          "en": "Toggle that allows packet streaming while connected.<br> • TRUE: starts packet streaming.<br> • FALSE: stops transmission and pauses the robot (default).",
+          "ko": "연결된 상태에서 패킷 전송을 인가하는 토글.<br> • TRUE: 패킷 스트리밍 시작.<br> • FALSE: 전송 중지 및 로봇 일시 정지 (기본값).",
+          "en": "Toggle to authorize packet transmission while connected.<br> • TRUE: Start packet streaming.<br> • FALSE: Stop transmission and pause the robot (Default).",
           "y": [
-            39,
-            22.1
+            40.4,
+            20.6
           ]
         },
         {
           "name": "Reset",
           "type": "Button",
-          "ko": "전송 상태를 초기화한다. 전송을 잠시 멈추고 인덱스를 처음으로 되돌려 첫 패킷부터 다시 보낸다.<br> 로봇은 정지한 뒤 첫 패킷을 받으면 시작 위치부터 다시 움직인다.",
-          "en": "Resets the transmission state. Briefly pauses streaming, returns the index to the start and resends from the first packet.<br> The robot stops, then moves again from the start position when it receives the first packet.",
+          "ko": "전송 상태 초기화. 전송을 잠시 멈추고 인덱스를 처음으로 되돌려 첫 패킷부터 재전송.<br> 로봇은 정지 후 첫 패킷 수신 시 시작 위치부터 다시 동작.",
+          "en": "Reset transmission state. Temporarily pauses transmission, resets index to the beginning, and retransmits from the first packet.<br> The robot stops and resumes operation from the initial position upon receiving the first packet.",
           "y": [
-            66.9,
-            22.1
+            65.4,
+            23.5
           ]
         }
       ]
@@ -97,16 +97,16 @@ export const groups = [
   [
     {
       "label": "Log/Status",
-      "img": "socketsender_tab4.png",
+      "img": "2_SocketSender_12.png",
       "rows": [
         {
-          "name": "Log & Status",
+          "name": "Panel",
           "type": "Panel",
-          "ko": "소켓 통신 상태와 로그를 보여 준다.",
-          "en": "Shows the socket communication status and log.",
+          "ko": "소켓 통신 상태와 로그.",
+          "en": "Socket communication status and log.",
           "y": [
-            41.9,
-            46.5
+            33.1,
+            42.7
           ]
         }
       ]
@@ -118,11 +118,11 @@ export const inputs = [
   {
     "name": "SocketBundle",
     "type": "SocketBundle",
-    "ko": "소켓 클라이언트와 인스트럭션 패킷 리스트를 묶은 데이터 번들이다. <a href=\"/core/code-solver-option/\">Code Solver (Option)</a> 의 <strong>SocketBundle</strong> 출력을 연결한다.",
-    "en": "Data bundle of a socket client and an instruction packet list. Connect the <strong>SocketBundle</strong> output of <a href=\"/en/core/code-solver-option/\">Code Solver (Option)</a>."
+    "ko": "<a href=\"/core/code-solver-option/\">Code Solver (Option)</a> 의 SocketBundle 출력(소켓 클라이언트와 인스트럭션 패킷 리스트).",
+    "en": "The SocketBundle output of <a href=\"/en/core/code-solver-option/\">Code Solver (Option)</a> (socket client and instruction packet list)."
   }
 ];
 
-export const main = "socketsender_main.png";
+export const main = "2_SocketSender.png";
 
 export const outputs = [];

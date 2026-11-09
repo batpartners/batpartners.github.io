@@ -1,6 +1,6 @@
 ---
 title: "Block Designer"
-description: "This component generates Place targets that arrange blocks in a standard stacking pattern, based on the unit block and the wall geometry."
+description: "This is a component that generates Place targets to arrange blocks in a standard stacking pattern based on block units and wall geometry."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/block-designer.mjs";
 
-This component generates Place targets that arrange blocks in a standard stacking pattern, based on the unit block and the wall geometry.
+This is a component that generates Place targets to arrange blocks in a standard stacking pattern based on block units and wall geometry.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/block-designer_main.png" alt="Block Designer" />
+<ComponentShot src="/assets/images/15_BlockDesign.png" alt="Block Designer" />
 
 ## Inputs
 
@@ -43,10 +43,10 @@ This component generates Place targets that arrange blocks in a standard stackin
 
 <Steps>
 
-1. Connect the unit block (Box) to **Unit Block** and the wall to build (Brep) to **Wall**. If the slicing base is not WorldXY, connect **Wall Base** too.
+1. Connect the unit block (Box) to **Unit Block** and the wall to build (Brep) to **Wall**. If the slicing base is not WorldXY, connect **Base Plane** too.
 2. Set the spacing method (**Divide by Distance**) and the horizontal and vertical spacing in the **Settings** tab.
 3. Connect the **Block Count** output to the **Block Count** input of [Block Supply](/en/toolpath/block-supply/).
-4. Connect the **Place Targets** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+4. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
 
 </Steps>
 

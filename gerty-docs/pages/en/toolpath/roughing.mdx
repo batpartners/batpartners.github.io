@@ -1,6 +1,6 @@
 ---
 title: "Roughing"
-description: "This component generates a stepped roughing toolpath from the stock (Stock) and the final shape (Part)."
+description: "This is a component that generates a stepped roughing toolpath."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/roughing.mjs";
 
-This component generates a stepped roughing toolpath from the stock (Stock) and the final shape (Part). Each layer is cut with concentric rings, and undercuts are protected for 3-axis machining (the tool comes from above). The **Tool** tab sets the tool diameter, cut spacing and allowances; the **Path** tab sets the milling mode, ring order, start point and retract height.
+This is a component that generates a stepped roughing toolpath. Users can configure detailed settings according to their working methods, such as the distance between target planes, layer-to-layer spacing, and starting direction.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/roughing_main.png" alt="Roughing" />
+<ComponentShot src="/assets/images/7_Roughing.png" alt="Roughing" />
 
 ## Inputs
 
@@ -43,21 +43,16 @@ This component generates a stepped roughing toolpath from the stock (Stock) and 
 
 <Steps>
 
-1. Connect the final shape to keep (closed Brep or Mesh) to **Part**. If you have a separate stock shape, connect it to **Stock**; if the reference plane is not WorldXY, connect **Reference Plane** too.
-2. In the **Tool** tab, set the tool diameter (**Tool Diameter**), pass spacing (**Stepover**), layer depth (**Stepdown**), wall and floor allowances (**Stock to Leave** / **Floor Stock**) and **Tolerance**.
-3. In the **Path** tab, set the milling mode (**Climb**), ring order (**Path Order**), start point (**Seam**) and retract height (**Clearance**).
-4. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+1. Connect the volume to cut (Brep or Mesh) to **Geometry**. If the reference plane is not WorldXY, connect **Reference Planes** too.
+2. Set the cutting direction (**Cutting Direction**), outline offset (**Setback(mm)**), path spacing (**Stepover(mm)**), layer depth (**Stepdown(mm)**) and **Tolerance** in the **Settings** tab.
+3. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
 
 </Steps>
 
 ## Notes
 
 <Aside type="note">
-  **Climb** selects climb or conventional milling for a clockwise (CW · M3) spindle. The direction of each ring is then chosen from the side the uncut material is on, which depends on **Path Order**.
-</Aside>
-
-<Aside type="caution">
-  A **Stepover** larger than **Tool Diameter** leaves material between the rings.
+  **Cutting Direction** flips the direction within each layer (clockwise / counter-clockwise); together with the end mill rotation it decides climb or conventional cutting.
 </Aside>
 
 ## Related

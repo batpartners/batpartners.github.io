@@ -7,18 +7,18 @@ export const inputs = [
   {
     "name": "Tree",
     "type": "Tree",
-    "ko": "Branch Path 를 다시 할당할 DataTree 이다. Branch 안의 데이터는 바뀌지 않는다.",
-    "en": "The DataTree whose branch paths are reassigned. The data inside the branches does not change."
+    "ko": "Branch Path 를 다시 매길 DataTree. Branch 안의 데이터는 바뀌지 않는다.",
+    "en": "The DataTree whose branch paths are renumbered. The data inside the branches does not change."
   }
 ];
 
-export const main = "repathtree_main.png";
+export const main = "3_RepathTree.png";
 
 export const outputs = [
   {
     "name": "Tree",
     "type": "Tree",
-    "ko": "우클릭 메뉴에서 고른 패턴(Sequential / Odd Numbered / Even Numbered Path)에 따라 Branch Path 를 다시 할당한 DataTree 이다.",
-    "en": "The DataTree with branch paths reassigned by the pattern picked in the right-click menu (Sequential / Odd Numbered / Even Numbered Path)."
+    "ko": "선택한 패턴으로 Branch Path 를 다시 매긴 DataTree.",
+    "en": "The DataTree with branch paths renumbered by the selected pattern."
   }
 ];

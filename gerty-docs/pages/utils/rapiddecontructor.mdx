@@ -1,6 +1,6 @@
 ---
 title: "RAPID Deconstructor"
-description: "ABB RAPID 객체(ABB DataType, ABB Instruction)를 RAPID 코드 문자열로 풀어 보는 디컨스트럭터 컴포넌트이다."
+description: "ABB RAPID 객체 (ABB DataType, ABB Instruction) 디컨스트럭터 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/rapiddecontructor.mjs";
 
-ABB RAPID 객체(ABB DataType, ABB Instruction)를 RAPID 코드 문자열로 풀어 보는 디컨스트럭터 컴포넌트이다.
+ABB RAPID 객체 (ABB DataType, ABB Instruction) 디컨스트럭터 컴포넌트이다.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/rapiddecontructor_main.png" alt="RAPID Deconstructor" />
+<ComponentShot src="/assets/images/10_RapidDecontructor.png" alt="RAPID Deconstructor" />
 
 ## 입력
 
@@ -31,8 +31,8 @@ ABB RAPID 객체(ABB DataType, ABB Instruction)를 RAPID 코드 문자열로 풀
 
 <Steps>
 
-1. **ProgramData** 에 ABB 데이터 타입 객체(RobTarget, ToolData 등)를, **Instructions** 에 ABB 인스트럭션을 연결한다. 둘 중 하나만 연결해도 된다.
-2. **Data Str.** 와 **Instruction Str.** 출력에서 각각의 RAPID 코드 문자열을 확인한다.
+1. **ProgramData** 에 ABB 데이터 타입 객체(RobTarget, ToolData 등)를, **Instructions** 에 ABB 인스트럭션을 연결한다.
+2. 각 출력에서 RAPID 코드 문자열을 확인한다.
 
 </Steps>
 

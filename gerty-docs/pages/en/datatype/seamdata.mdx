@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/seamdata.mjs";
 
-Defines the start and end phase data of a welding seam. Allows detailed specification of timing and arc conditions across three phases: Ignition, Heat, and End. Typically, the same values are maintained for an entire seam or across multiple seams. Right-click the component to choose the wire-feed unit, **WireFeed(m/min)** or **WireFeed(mm/s)**; this page is based on **WireFeed(m/min)**, the default.
+Defines the start and end phase data of a welding seam. Allows detailed specification of timing and arc conditions across three phases: Ignition, Heat, and End. Typically, the same values are maintained for an entire seam or across multiple seams.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/seamdata_main.png" alt="SeamData" />
+<ComponentShot src="/assets/images/7_SeamData.png" alt="SeamData" />
 
 ## Inputs
 
@@ -43,9 +43,9 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
 
 <Steps>
 
-1. Connect the weld program number (schedule) and weld mode to **Weld Sched**. If needed, connect the wirefeed1 weighting to **Weight**.
-2. Type the variable name in **Name** (SeamData tab). Turn on **Link ArcData** to keep the arc conditions of all three phases at the same values, or turn it off to set each phase separately.
-3. Set the arc conditions per phase (Voltage, WireFeed(m/min), Control, Current) in the **Ignition / Heat / End ArcData** tabs.
+1. Connect the weld program number (schedule) and mode to **Weld Sched**, and the Wirefeed1 weighting to **Weighting**.
+2. Type the variable name in **Name** (SeamData tab).
+3. Set the arc conditions per phase (Voltage, WireFeed, Control, Current) in the **Ignition / Heat / End ArcData** tabs.
 4. Set the timing per phase (gas, heat, crater fill, burn-back and so on) in the **Ignition / Heat / End Params** tabs.
 5. Connect the **SeamData** output to the **SeamData** input of [ArcMove](/en/instruction/arcmove/).
 
@@ -54,7 +54,7 @@ Defines the start and end phase data of a welding seam. Allows detailed specific
 ## Notes
 
 <Aside type="tip">
-  Right-click the component to switch the WireFeed unit between **WireFeed(m/min)** and **WireFeed(mm/s)** (ABB and Fronius).
+  Right-click the component icon to switch the WireFeed unit between m/min and mm/s (ABB and Fronius).
 </Aside>
 
 <Aside type="note">

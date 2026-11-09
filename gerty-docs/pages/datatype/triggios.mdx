@@ -1,6 +1,6 @@
 ---
 title: "TriggIOs"
-description: "이동 경로상의 지정 위치에서 하나 이상의 IO Event 를 발생시키는 위치 트리거 컴포넌트이다."
+description: "이동 경로상의 지정 위치에서 하나 이상의 IO Event를 발생시키는 위치 트리거 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/triggios.mjs";
 
-로봇이 이동 경로상의 지정 위치에 도달했을 때 하나 이상의 IO Event 를 발생시키는 위치 트리거를 정의하는 컴포넌트이다. 여러 [IOEvent](/datatype/iodevent/) 를 묶고 변수명을 정한다. ABB Trigger Move 인스트럭션 (TriggLIOs, TriggJIOs) 에서 사용한다.
+이동 경로상의 지정 위치에서 하나 이상의 IO Event를 발생시키는 위치 트리거 컴포넌트이다. 사용자는 신호의 변수 이름을 정의한다. ABB Trigger Move 인스트럭션 (TriggLIOs, TriggJIOs)과 함께 사용된다.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/triggios_main.png" alt="TriggIOs" />
+<ComponentShot src="/assets/images/5_TriggIOs.png" alt="TriggIOs" />
 
 ## 입력
 
@@ -43,7 +43,7 @@ import * as d from "../../../data/components/triggios.mjs";
 
 <Steps>
 
-1. 여러 [IOEvent](/datatype/iodevent/) 의 **IOEvent** 출력을 **IOEvent** 입력에 묶어 연결한다.
+1. 여러 [IOEvent](/datatype/iodevent/) 의 **IO Data** 출력을 **IOs** 입력에 묶어 연결한다.
 2. **TriggIOs** 탭의 **Name** 에 변수명을 쓴다.
 3. **TriggIOs** 출력을 [TriggerIOMove](/instruction/triggeriomove/) 에 연결한다.
 

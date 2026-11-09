@@ -5,36 +5,36 @@ export const groups = [
   [
     {
       "label": "ABB Positioner",
-      "img": "positioner_tab1.png",
+      "img": "1_ABBPositioner_10.png",
       "rows": [
         {
-          "name": "MechUnit Name",
+          "name": "Models",
+          "type": "Dropdown",
+          "ko": "ABB 포지셔너 모델",
+          "en": "ABB positioner model",
+          "y": [
+            27.8,
+            18.3
+          ]
+        },
+        {
+          "name": "Name",
           "type": "String",
-          "ko": "포지셔너의 Mechanical Unit(MechUnit) 변수명. 기본값은 STN1.",
-          "en": "Variable name of the positioner's mechanical unit (MechUnit). Default: STN1.",
+          "ko": "포지셔너(MechUnit) 변수명",
+          "en": "Positioner (MechUnit) variable name",
           "y": [
-            29,
+            50.9,
             17.8
           ]
         },
         {
-          "name": "Positioner Model",
-          "type": "Dropdown",
-          "ko": "사용할 ABB IRBP 포지셔너 모델을 고른다. 목록: IRBPA250, IRBPA500, IRBPA750. 기본값은 IRBPA500.",
-          "en": "Selects the ABB IRBP positioner model to use. Options: IRBPA250, IRBPA500, IRBPA750. Default: IRBPA500.",
+          "name": "Colour",
+          "type": "Color",
+          "ko": "시각화 색상",
+          "en": "Visualization color",
           "y": [
-            51.5,
-            17.8
-          ]
-        },
-        {
-          "name": "Spec",
-          "type": "Dropdown",
-          "ko": "선택한 포지셔너 모델의 사양을 작업 직경(D) - 플레이트 높이(H) 형식으로 고른다. 기본값은 D1450 - H900.",
-          "en": "Selects the variant of the chosen positioner model, listed as working diameter (D) - plate height (H). Default: D1450 - H900.",
-          "y": [
-            74,
-            17.8
+            75.7,
+            15.4
           ]
         }
       ]
@@ -42,79 +42,63 @@ export const groups = [
   ],
   [
     {
-      "label": "Motion",
-      "img": "positioner_tab2.png",
+      "label": "Motion Settings",
+      "img": "1_ABBPositioner_11.png",
       "rows": [
         {
           "name": "Enable Arm",
           "type": "Toggle",
-          "ko": "포지셔너 암(Arm) 축의 동작을 활성화한다. 기본값은 TRUE.",
-          "en": "Enables motion of the positioner arm axis. Default: TRUE.",
+          "ko": "포지셔너의 암 동작 활성화",
+          "en": "Enables the arm motion of the positioner",
           "y": [
-            30.6,
-            17.3
+            29.2,
+            16.9
           ]
         },
         {
-          "name": "Approach Dir",
+          "name": "Approaching Dir.",
           "type": "Number",
-          "ko": "포지셔너 기준 TCP 의 접근 방향. 포지셔너는 이 방향으로의 접근을 기준으로 회전 자세를 결정한다. 범위는 -180 ~ 180, 기본값은 0.",
-          "en": "Approach direction of the TCP relative to the positioner. The positioner determines its rotational posture based on an approach from this direction. Range: -180 to 180. Default: 0.",
+          "ko": "포지셔너 기준 TCP의 접근 방향. 포지셔너가 이 방향으로의 접근을 기준으로 회전 자세 결정.",
+          "en": "Approach direction of the TCP relative to the positioner. Determines the rotation posture based on approach in this direction.",
           "y": [
-            52.6,
-            17.3
+            50.6,
+            16.9
           ]
         },
         {
-          "name": "TCP Dir",
+          "name": "TCP Dir.",
           "type": "Number",
-          "ko": "포지셔너가 최종적으로 정렬시킬 TCP 의 방향. TCP 법선이 이 방향과 평행하도록 정렬한다. 범위는 -90 ~ 90, 기본값은 0.",
-          "en": "Direction to which the positioner finally aligns the TCP; the TCP normal is aligned parallel to it. Range: -90 to 90. Default: 0.",
+          "ko": "포지셔너가 최종적으로 정렬시킬 TCP의 방향",
+          "en": "Direction of the TCP that the positioner ultimately aligns with",
           "y": [
-            74.6,
-            17.3
+            71.9,
+            16.9
           ]
         }
       ]
     },
     {
-      "label": "RAPID",
-      "img": "positioner_tab3.png",
+      "label": "RAPID Setting",
+      "img": "1_ABBPositioner_12.png",
       "rows": [
         {
           "name": "Arm Joint Index",
-          "type": "Dropdown",
-          "ko": "RobTarget 의 ExtJoint 배열에서 포지셔너 암(Arm) 축 각도를 넣을 인덱스(1~6)를 고른다. 다른 외부축 인덱스와 겹치면 안 된다. 기본값은 2.<br>- 예: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]",
-          "en": "Selects the index (1–6) in the RobTarget ExtJoint array that receives the positioner arm joint angle. It must not overlap with other external-axis indices. Default: 2.<br>- Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]",
+          "type": "String",
+          "ko": "포지셔너 암(Arm) 축 각도를 할당할, RobTarget 내부 ExtJoint 배열의 인덱스 (1~6). 다른 외부축 인덱스와 중복 불가.<br>- 예: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]",
+          "en": "Index (1~6) of the ExtJoint array inside RobTarget to assign the positioner arm joint angle. Cannot overlap with other external axis indices.<br>- Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]",
           "y": [
-            39.3,
-            22.2
+            37.1,
+            21.4
           ]
         },
         {
           "name": "Plate Joint Index",
-          "type": "Dropdown",
-          "ko": "RobTarget 의 ExtJoint 배열에서 포지셔너 플레이트(Plate) 축 각도를 넣을 인덱스(1~6)를 고른다. 다른 외부축 인덱스와 겹치면 안 된다. 기본값은 3.<br>- 예: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]",
-          "en": "Selects the index (1–6) in the RobTarget ExtJoint array that receives the positioner plate joint angle. It must not overlap with other external-axis indices. Default: 3.<br>- Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]",
+          "type": "String",
+          "ko": "포지셔너 플레이트(Plate) 축 각도를 할당할 RobTarget ExtJoint 배열의 인덱스 (1~6). 다른 외부축 인덱스와 중복 불가.<br>- 예: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]",
+          "en": "Index (1~6) of the ExtJoint array inside RobTarget to assign the positioner plate joint angle. Cannot overlap with other external axis indices.<br>- Example: Arm = 2, Plate = 3 → ExtJoint [9E9, arm, plate, 9E9, 9E9, 9E9]",
           "y": [
-            67.4,
-            22.2
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Preview",
-      "img": "positioner_tab4.png",
-      "rows": [
-        {
-          "name": "Color",
-          "type": "Color",
-          "ko": "뷰포트와 시뮬레이션에서 포지셔너 메시의 시각화 색상을 지정한다.",
-          "en": "Sets the display color of the positioner mesh in the viewport and simulation.",
-          "y": [
-            54.6,
-            30.9
+            63.6,
+            22.1
           ]
         }
       ]
@@ -124,28 +108,28 @@ export const groups = [
 
 export const inputs = [
   {
-    "name": "Mounting Plane",
+    "name": "MountingPl",
     "type": "Plane",
-    "optional": true,
-    "ko": "포지셔너의 플랜지 평면. <a href=\"/robot-tool/createworkbench/\">WorkBench</a> 가 장착되는 상단 기준면이다. 연결하지 않으면 WorldXY 를 사용한다.",
-    "en": "Flange plane of the positioner: the top reference plane where the <a href=\"/en/robot-tool/createworkbench/\">WorkBench</a> is mounted. Uses WorldXY when not connected."
+    "ko": "포지셔너의 플랜지 평면. <a href=\"/robot-tool/createworkbench/\">WorkBench</a>가 장착되는 상단 기준면. 기본값: WorldXY.",
+    "en": "Flange plane of the positioner. The upper reference plane where the <a href=\"/en/robot-tool/createworkbench/\">WorkBench</a> is mounted. Default: WorldXY.",
+    "optional": true
   },
   {
-    "name": "Workbench",
+    "name": "WorkBench",
     "type": "Workbench",
-    "optional": true,
-    "ko": "포지셔너 플랜지에 장착할 워크벤치 정의. <a href=\"/robot-tool/createworkbench/\">WorkBench</a> 컴포넌트의 출력을 연결한다. 연결하지 않으면 워크벤치 없이 포지셔너만 정의한다.",
-    "en": "Workbench definition mounted on the positioner flange. Connect the output of the <a href=\"/en/robot-tool/createworkbench/\">WorkBench</a> component. When not connected, the positioner is defined without a workbench."
+    "ko": "포지셔너 플랜지에 장착되는 <a href=\"/robot-tool/createworkbench/\">WorkBench</a> 정의.",
+    "en": "Defines the <a href=\"/en/robot-tool/createworkbench/\">WorkBench</a> mounted on the positioner flange.",
+    "optional": true
   }
 ];
 
-export const main = "positioner_main.png";
+export const main = "1_ABBPositioner.png";
 
 export const outputs = [
   {
     "name": "Positioner",
     "type": "Positioner",
-    "ko": "로봇과 연동할 외부축 포지셔너. <a href=\"/robot-tool/abbrobot/\">ABB Robots</a> 와 <a href=\"/datatype/positioner-robtarget-dynamic/\">Positioner RobTarget</a> 의 Positioner 입력에 연결한다.",
-    "en": "External-axis positioner used with the robot. Connect it to the Positioner input of <a href=\"/en/robot-tool/abbrobot/\">ABB Robots</a> and <a href=\"/en/datatype/positioner-robtarget-dynamic/\">Positioner RobTarget</a>."
+    "ko": "로봇과 연동할 외부축 포지셔너 (Positioner).",
+    "en": "External axis positioner to be linked with the robot."
   }
 ];

@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/depositionbuilder.mjs";
 
-슬라이서 컴포넌트에서 생성된 적층 툴패스(Deposition ToolPaths)를 입력받아 해석 및 통합하는 컴포넌트이다. 각 타겟을 진행 순서에 따라 압출 시작(E-Start), 압출 이동(E-Move), 압출 종료(E-End), 와이프(E-Wipe)로 분류해 출력하며, 네 출력에 모션별 인스트럭션을 할당한 뒤 순서대로 Merge 하면 전체 경로가 완성된다. 적층 순서 정렬과 레이어별 프리뷰 기능을 포함한다.
+슬라이서 컴포넌트에서 생성된 적층 툴패스(Deposition ToolPaths)를 입력받아 해석 및 통합하는 컴포넌트이다. 입력 받은 데이터 중, 압출 시작(E-Start), 이동(Move), 압출 종료(E-Stop) 등 목적별로 분리하여 출력할 수 있다. 사용자는 적층 경로의 정렬 및 레이어를 프리뷰로 확인이 가능하다.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/depositionbuilder_main.png" alt="Deposition Builder" />
+<ComponentShot src="/assets/images/9_DepositionBuilder.png" alt="Deposition Builder" />
 
 ## 입력
 
@@ -43,17 +43,17 @@ import * as d from "../../../data/components/depositionbuilder.mjs";
 
 <Steps>
 
-1. **Deposition ToolPaths** 에 슬라이서([Solid Shell](/toolpath/solidshell/), [Surface Shell](/toolpath/surfaceshell/), [Solid Fill](/toolpath/solidfill/) 등)의 출력을, **Reference Plane** 에 기준 평면을 연결한다. 압출 전에 노즐을 준비하려면 **PreExtrusion Curve** 도 연결한다.
-2. **Settings** 탭에서 채움을 먼저 쌓을지(**Infill first**), 여러 오브젝트를 레이어 단위로 쌓을지 오브젝트 단위로 쌓을지(**Layer by Layer**), 첫 파트 구분을 무시할지(**Ignore First Part**) 정한다.
+1. **Deposition ToolPaths** 에 슬라이서([Solid Shell](/toolpath/solidshell/), [Surface Shell](/toolpath/surfaceshell/), [Solid Fill](/toolpath/solidfill/) 등)의 출력을, **Is Bottommost** 에 Solid Shell / Surface Shell 의 **Is Bottommost** 출력을 연결한다. 압출 전에 노즐을 준비하려면 **Pre-Extrusion Curve** 도 연결한다.
+2. **Settings** 탭에서 채움을 먼저 쌓을지(**Infill first**), 여러 오브젝트를 레이어 단위로 쌓을지(**Layer by Layer**) 정한다.
 3. **Preview** 탭의 **Layer Preview** 로 레이어별 적층 순서를 확인한다.
-4. **E-Start Planes**, **E-Move Planes**, **E-End Planes**, **E-Wipe Planes** 를 각각 [RobTarget](/datatype/robtarget/) 으로 만들어 모션별 인스트럭션에 연결한 뒤, 이 순서대로 Merge 한다.
+4. **E-Start Planes**, **Movement Planes**, **E-Stop Planes** 를 각각 [RobTarget](/datatype/robtarget/) 으로 만들어 인스트럭션에 연결한다. 타겟별 인스트럭션을 합칠 때는 **E-Stop idx** 를 쓴다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="note">
-  **PreExtrusion Curve** 는 입력 경로가 첫 파트(최하단 파티션)일 때만 붙습니다. 첫 파트 여부는 슬라이서가 경로에 담아 보내며, **Ignore First Part** 가 TRUE 이면 사전 압출 경로를 생략합니다.
+  **Is Bottommost** 가 FALSE 이면(최하단 파트가 아니면) **Pre-Extrusion Curve** 는 무시됩니다.
 </Aside>
 
 ## 관련 항목

@@ -5,42 +5,42 @@ export const groups = [
   [
     {
       "label": "UV Param",
-      "img": "surface-frame_tab1.png",
+      "img": "8_SurfaceFrame_10.png",
       "rows": [
         {
           "name": "U Param",
           "type": "Number",
-          "ko": "평면 원점의 U 파라미터이다 (0 ~ 1). 기본값은 0.5.",
-          "en": "U parameter of the plane origin (0–1). Default: 0.5.",
+          "ko": "평면 원점의 U 파라미터 (0.0 ~ 1.0).",
+          "en": "U parameter of the plane origin (0.0 ~ 1.0).",
           "y": [
-            37.4,
-            22.9
+            35.3,
+            22.1
           ]
         },
         {
           "name": "V Param",
           "type": "Number",
-          "ko": "평면 원점의 V 파라미터이다 (0 ~ 1). 기본값은 0.5.",
-          "en": "V parameter of the plane origin (0–1). Default: 0.5.",
+          "ko": "평면 원점의 V 파라미터 (0.0 ~ 1.0).",
+          "en": "V parameter of the plane origin (0.0 ~ 1.0).",
           "y": [
-            66.4,
-            22.9
+            63.2,
+            22.1
           ]
         }
       ]
     },
     {
       "label": "Preview",
-      "img": "surface-frame_tab2.png",
+      "img": "8_SurfaceFrame_11.png",
       "rows": [
         {
-          "name": "Frame Size",
+          "name": "FrameSize",
           "type": "Number",
-          "ko": "프리뷰에 표시할 평면 프레임의 크기이다. 출력 평면에는 영향을 주지 않는다. 기본값은 3 (범위 3 ~ 10).",
-          "en": "Size of the plane frame shown in the preview. It does not affect the output plane. Default: 3 (range 3–10).",
+          "ko": "프리뷰에 표시할 평면 프레임의 크기.",
+          "en": "Size of the plane frame shown in the preview.",
           "y": [
-            52.7,
-            32.3
+            49,
+            32.7
           ]
         }
       ]
@@ -52,18 +52,18 @@ export const inputs = [
   {
     "name": "Surface",
     "type": "Surface",
-    "ko": "기준 평면을 만들 평면 서피스이다.",
-    "en": "The flat surface to create the reference plane from."
+    "ko": "기준 평면을 만들 평면 서피스.",
+    "en": "The planar surface to take the reference plane from."
   }
 ];
 
-export const main = "surface-frame_main.png";
+export const main = "8_SurfaceFrame.png";
 
 export const outputs = [
   {
     "name": "Base Plane",
     "type": "Plane",
-    "ko": "서피스의 (U, V) 위치에 놓인 기준 평면이다.",
+    "ko": "서피스의 (U, V) 위치에 놓인 기준 평면.",
     "en": "The reference plane at (U, V) on the surface."
   }
 ];

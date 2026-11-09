@@ -5,15 +5,15 @@ export const groups = [
   [
     {
       "label": "RobTarget",
-      "img": "positioner-robtarget-dynamic_tab1.png",
+      "img": "1_Positioner_Robtarget_10.png",
       "rows": [
         {
           "name": "Name",
           "type": "String",
-          "ko": "생성할 <code>RobTarget</code> 의 변수명을 정의한다. 이 변수는 로봇의 목표 위치와 자세를 저장하는 고유 식별자로 쓰인다. 기본값은 EP.",
-          "en": "Defines the variable name of the <code>RobTarget</code> to create. The variable is the unique identifier that stores the robot's target position and orientation. Default: EP.",
+          "ko": "생성할 <code>RobTarget</code>의 변수명을 정의한다. 해당 변수는 로봇의 목표 위치 및 자세를 저장하는 고유 식별자로 사용된다.",
+          "en": "Defines the name of the <code>RobTarget</code> variable to be created. This variable is used as a unique identifier storing the robot's target position and orientation.",
           "y": [
-            52.7,
+            51.6,
             32.3
           ]
         }
@@ -23,26 +23,26 @@ export const groups = [
   [
     {
       "label": "Output",
-      "img": "positioner-robtarget-dynamic_tab2.png",
+      "img": "1_Positioner_Robtarget_11.png",
       "rows": [
         {
           "name": "Split Start",
           "type": "Toggle",
-          "ko": "<code>Target Planes</code> 의 각 브랜치(콜렉션)에서 첫 번째 RobTarget 을 분리해 별도의 <strong>Start Target</strong> 출력으로 내보낸다. 기본값은 FALSE.",
-          "en": "Separates the first RobTarget of each <code>Target Planes</code> branch (collection) into a dedicated <strong>Start Target</strong> output. Default: FALSE.",
+          "ko": "입력 데이터 <code>TargetPlane</code>의 각 브랜치(Branch) 내에서 첫 번째 인덱스(First Index)에 해당하는 데이터를 분리하여 출력하도록 설정한다.",
+          "en": "Extracts and outputs the data corresponding to the first index within each branch of the input data <code>TargetPlane</code>.",
           "y": [
-            39.3,
-            22.2
+            37.1,
+            21.4
           ]
         },
         {
           "name": "Split End",
           "type": "Toggle",
-          "ko": "<code>Target Planes</code> 의 각 브랜치(콜렉션)에서 마지막 RobTarget 을 분리해 별도의 <strong>End Target</strong> 출력으로 내보낸다. 기본값은 FALSE.",
-          "en": "Separates the last RobTarget of each <code>Target Planes</code> branch (collection) into a dedicated <strong>End Target</strong> output. Default: FALSE.",
+          "ko": "입력 데이터 <code>TargetPlane</code>의 각 브랜치(Branch) 내에서 마지막 인덱스(Last Index)에 해당하는 데이터를 분리하여 출력하도록 설정한다.",
+          "en": "Extracts and outputs the data corresponding to the last index within each branch of the input data <code>TargetPlane</code>.",
           "y": [
-            67.4,
-            22.2
+            64.3,
+            21.4
           ]
         }
       ]
@@ -55,42 +55,54 @@ export const inputs = [
     "name": "Positioner",
     "type": "Positioner",
     "ko": "<a href=\"/robot-tool/positioner/\">ABB Positioner</a> 컴포넌트 데이터를 입력한다.",
-    "en": "<a href=\"/en/robot-tool/positioner/\">ABB Positioner</a> component data."
+    "en": "<a href=\"/en/robot-tool/positioner/\">ABB Positioner</a>"
   },
   {
-    "name": "Target Planes",
+    "name": "Target Plane",
     "type": "Plane",
-    "ko": "RobTarget 으로 변환할 대상 평면(Plane)을 입력한다.",
-    "en": "Planes to convert into <code>RobTarget</code>s."
+    "ko": "RobTarget으로 변환할 대상 평면(Plane)을 입력한다.",
+    "en": "Planes to convert into RobTargets"
   },
   {
     "name": "Z Rotation",
     "type": "Angle",
-    "ko": "각 RobTarget 을 자체 Z축을 기준으로 회전시킨다 (°).",
-    "en": "Rotates each <code>RobTarget</code> around its own Z axis (°)."
+    "ko": "RobTarget을 자체 Z축을 기준으로 회전시킨다(단위: 도).",
+    "en": "Rotates the RobTarget around its own Z-axis (Unit: degrees)"
   },
   {
-    "name": "Target Base",
+    "name": "Base Plane",
     "type": "Plane",
-    "ko": "입력된 Target Planes 가 정의된 기준 평면(Plane)을 설정한다. Target Planes 는 이 평면의 좌표계를 기준으로 해석되어, 포지셔너의 장착 평면(Mounting Plane)에 맞춘 RobTarget 으로 변환된다.",
-    "en": "Reference plane in which the input Target Planes are defined. The Target Planes are interpreted in this plane's coordinate system and converted into RobTargets oriented to the positioner's Mounting Plane."
+    "ko": "입력된 Target Plane이 정의된 기준 평면(Plane)을 설정한다. 입력된 Target Plane은 이 평면을 기준으로 Positioner의 장착 평면(Mounting Plane)에 정렬된 RobTarget을 정의한다.",
+    "en": "Reference plane where the input Target Plane is defined. The input Target Plane defines the RobTarget oriented to the Positioner's Mounting Plane based on this plane."
   },
   {
     "name": "WobjData",
     "type": "WobjData",
-    "optional": true,
-    "ko": "<a href=\"/datatype/wobjdata-fixed/\">ABB 작업 평면 좌표계</a>를 기준으로 Target Planes 를 재정의할 때 연결한다.",
-    "en": "Connect to redefine the Target Planes relative to the <a href=\"/en/datatype/wobjdata-fixed/\">ABB work object coordinate system</a>."
+    "ko": "<a href=\"/datatype/wobjdata-fixed/\">ABB 작업 평면 좌표계</a>를 기준으로 Target Plane을 재정의할 때 입력한다.",
+    "en": "Redefines the Target Plane based on the <a href=\"/en/datatype/wobjdata-fixed/\">ABB work object coordinate system</a>.",
+    "optional": true
   }
 ];
 
-export const main = "positioner-robtarget-dynamic_main.png";
+export const main = "1_Positioner Robtarget.png";
 
 export const outputs = [
   {
+    "name": "Start Targets",
+    "type": "RobTarget",
+    "ko": "Output 탭의 Split Start 를 켜면 나타난다. 분리된 ABB Rapid RobTargets의 첫 번째 인덱스 데이터를 출력한다.",
+    "en": "Appears when Split Start (Output tab) is on. Outputs the first branch data of ABB RAPID RobTargets"
+  },
+  {
     "name": "RobTargets",
     "type": "RobTarget",
-    "ko": "포지셔너 회전각을 포함해 변환된 전체 ABB RAPID RobTarget 데이터를 출력한다.",
-    "en": "Outputs the converted ABB RAPID <code>RobTarget</code> data, including the positioner joint angles."
+    "ko": "변환된 전체 ABB Rapid RobTargets 데이터를 출력한다.",
+    "en": "Outputs ABB RAPID RobTargets data"
+  },
+  {
+    "name": "End Targets",
+    "type": "RobTarget",
+    "ko": "Output 탭의 Split End 를 켜면 나타난다. 분리된 ABB Rapid RobTargets의 마지막 인덱스 데이터를 출력한다.",
+    "en": "Appears when Split End (Output tab) is on. Outputs the last branch data of ABB RAPID RobTargets"
   }
 ];

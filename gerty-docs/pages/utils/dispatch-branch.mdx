@@ -1,6 +1,6 @@
 ---
 title: "Dispatch Branch"
-description: "DataTree 의 Branch 들을 True / False 패턴에 따라 두 개의 DataTree 로 분배하는 컴포넌트이다."
+description: "DataTree의 Branch들을 입력받은 패턴에 따라 두 개의 대상 DataTree로 분해하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/dispatch-branch.mjs";
 
-DataTree 의 Branch 들을 True / False 패턴에 따라 두 개의 DataTree 로 분배하는 컴포넌트이다.
+DataTree의 Branch들을 입력받은 패턴에 따라 두 개의 대상 DataTree로 분해하는 컴포넌트이다.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/dispatch-branch_main.png" alt="Dispatch Branch" />
+<ComponentShot src="/assets/images/0_DispatchBranch.png" alt="Dispatch Branch" />
 
 ## 입력
 
@@ -39,7 +39,7 @@ DataTree 의 Branch 들을 True / False 패턴에 따라 두 개의 DataTree 로
 
 <Steps>
 
-1. **Tree** 에 Branch 를 분배할 DataTree 를 연결한다.
+1. **Tree** 에 나눌 DataTree 를 연결한다.
 2. **Pattern** 에 True / False 패턴을 연결한다. 패턴은 Branch 순서대로 적용된다.
 3. **Tree A**(True) 와 **Tree B**(False) 를 각각 다음 작업에 쓴다.
 

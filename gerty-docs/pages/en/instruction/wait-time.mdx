@@ -1,6 +1,6 @@
 ---
 title: "Wait Time"
-description: "Creates a WaitTime instruction that pauses robot motion for a set time (s)."
+description: "This is a component that temporarily pauses robot motion for a specified time (in seconds)."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/wait-time.mjs";
 
-A component that creates an ABB `WaitTime` instruction, which pauses robot motion for a set time (s). The wait time comes from the **Time(s)** input, and **In Position** decides whether counting starts only after the robot has stopped completely.
+This is a component that temporarily pauses robot motion for a specified time (in seconds).
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/wait-time_main.png" alt="Wait Time" />
+<ComponentShot src="/assets/images/10_WaitTIme.png" alt="Wait Time" />
 
 ## Inputs
 
@@ -43,9 +43,9 @@ A component that creates an ABB `WaitTime` instruction, which pauses robot motio
 
 <Steps>
 
-1. Connect the wait time (seconds) to **Time(s)**.
-2. Leave **In Position** on (default) to start counting only after the robot has stopped; turn it off to start as soon as the program pointer reaches the instruction.
-3. Put the **Instruction** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+1. Connect the wait time (seconds) to **Time(sec.)**.
+2. Turn on **In Position** to start counting only after the robot has stopped.
+3. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
 
 </Steps>
 

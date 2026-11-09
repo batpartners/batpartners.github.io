@@ -1,6 +1,6 @@
 ---
 title: "Tool Importer"
-description: "Import mode of the ToolData component: loads saved tool data and builds an ABB tooldata."
+description: "Tool Importer is the Import mode of ToolData."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/toolimporter.mjs";
 
-Tool Importer is the Import mode of the ToolData component. Right-click the component to switch between **Define ToolData** and **Import ToolData**; this page describes **Import ToolData**, selected from the right-click menu. It loads tool data saved with <strong>Export</strong> in [Define ToolData](/en/datatype/tooldata/) mode and builds an ABB `tooldata`.
+Tool Importer is the Import mode of ToolData. It loads tool data saved with <strong>Export</strong> in [ToolData](/en/datatype/tooldata/) and builds an ABB `tooldata`.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Import mode" }, { text: "Define mode → ToolData", href: "/en/datatype/tooldata/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/toolimporter_main.png" alt="Tool Importer" />
+<ComponentShot src="/assets/images/3_ToolData_3.png" alt="Tool Importer" />
 
 ## Inputs
 
@@ -43,21 +43,21 @@ Tool Importer is the Import mode of the ToolData component. Right-click the comp
 
 <Steps>
 
-1. Pick a saved tool from **Presets** in the **Tool Data** tab.
-2. Type the RAPID variable name in **Name**. If the mounting plane is not WorldXY, connect **Base Plane**; to change the TCP, connect **TCP** (if not connected, the TCP of the imported tool is used).
-3. Connect the **ToolData** output to the **ToolData** input of the [ABB Robots](/en/robot-tool/abbrobot/) component.
+1. Pick a saved tool from **Tool Presets** in the **Tool Data** tab.
+2. Type the RAPID variable name in **Name**.
+3. Connect the **Tool Data** output to the **Tool Data** input of the [ABB Robots](/en/robot-tool/abbrobot/) component.
 
 </Steps>
 
 ## Notes
 
 <Aside type="tip">
-  If **Presets** is empty, first save a tool with **Export** in [Define ToolData](/en/datatype/tooldata/) mode. The save folder opens from **Open ToolData Folder** in the right-click menu.
+  If **Tool Presets** is empty, first save a tool with **Export** in [ToolData](/en/datatype/tooldata/).
 </Aside>
 
 ## Related
 
 <RelatedLinks links={[
-  { title: "ToolData", description: "Define tool data (Define ToolData mode)", href: "/en/datatype/tooldata/" },
-  { title: "ABB Robots", description: "Robot component that takes the ToolData", href: "/en/robot-tool/abbrobot/" },
+  { title: "ToolData", description: "Define tool data (Define mode)", href: "/en/datatype/tooldata/" },
+  { title: "ABB Robots", description: "Robot component that takes the Tool Data", href: "/en/robot-tool/abbrobot/" },
 ]} />

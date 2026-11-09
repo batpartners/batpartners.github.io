@@ -14,17 +14,15 @@ const css = rows.map((_, i) => {
 }).join("\n");
 ---
 <div class="sp">
-  <div class="sp-side">
   <figure class="sp-shot">
     <img src={`/assets/images/${img}`} alt={alt} loading="lazy" />
     {rows.map((r, i) => r.y && (
       <>
         <span class="spot" data-k={i + 1} style={`top:${r.y[0]}%;height:${r.y[1]}%`}></span>
-        <span class="mark" data-k={i + 1} style={`top:${r.y[0] + r.y[1] / 2}%`} role="button" tabindex="0" aria-label={`${i + 1}. ${r.name}`}>{i + 1}</span>
+        <span class="mark" data-k={i + 1} style={`top:${r.y[0] + r.y[1] / 2}%`}>{i + 1}</span>
       </>
     ))}
   </figure>
-  </div>
   <div class="sp-table">
     <table>
       <thead><tr><th>{T.name}</th><th>{T.type}</th><th>{T.desc}</th></tr></thead>
@@ -41,74 +39,16 @@ const css = rows.map((_, i) => {
   </div>
 </div>
 <style set:html={css}></style>
-<script>
-  // Tell each settings shot its own height so the CSS can keep it in the middle of the screen, with a buffer of its
-  // own height to the table's top and bottom. A table too short for that (< 3 × the shot) keeps the shot still, centred.
-  const fit = (sp: HTMLElement) => {
-    // the <table> itself: its grid cell stretches to the shot column, padding included
-    const shot = sp.querySelector<HTMLElement>(".sp-shot"), table = sp.querySelector<HTMLElement>(".sp-table table");
-    if (!shot || !table) return;
-    const h = shot.getBoundingClientRect().height, t = table.getBoundingClientRect().height;
-    const roomy = h > 0 && t >= 3 * h;
-    sp.style.setProperty("--sp-h", `${h}px`);
-    sp.style.setProperty("--sp-pad", roomy ? `${h}px` : "0px");
-    sp.classList.toggle("sp-fixed", !roomy);
-  };
-  const ro = new ResizeObserver((entries) => entries.forEach((e) => { const sp = (e.target as HTMLElement).closest<HTMLElement>(".sp"); if (sp) fit(sp); }));
-  document.querySelectorAll<HTMLElement>(".sp").forEach((sp) => {
-    fit(sp);
-    sp.querySelector("img")?.addEventListener("load", () => fit(sp));
-    sp.querySelectorAll(".sp-shot, .sp-table table").forEach((el) => ro.observe(el));
-  });
-  // also on window resize and after a tab switch (a hidden tab panel has no size until it is shown)
-  const fitAll = () => document.querySelectorAll<HTMLElement>(".sp").forEach(fit);
-  window.addEventListener("resize", fitAll);
-  document.addEventListener("click", (e) => { if ((e.target as Element).closest?.('[role="tab"]')) setTimeout(fitAll, 0); });
-
-  // Clicking a number (or its control) on the shot scrolls its table row level with that number and flashes the row.
-  const align = (sp: Element, k: string, again: boolean) => {
-    const mark = sp.querySelector(`.mark[data-k="${k}"]`), row = sp.querySelector(`tr[data-k="${k}"]`);
-    const name = row?.querySelector("strong") ?? row;
-    if (!mark || !name) return;
-    const m = mark.getBoundingClientRect(), n = name.getBoundingClientRect();
-    const dy = (n.top + n.height / 2) - (m.top + m.height / 2);
-    if (Math.abs(dy) < 6) return;
-    window.scrollBy({ top: dy, behavior: "smooth" });
-    // the shot is sticky, so it may move with the page near the table's ends: measure once more when scrolling stops
-    if (again) window.addEventListener("scrollend", () => align(sp, k, false), { once: true });
-  };
-  const go = (target: Element | null) => {
-    const hit = target?.closest(".sp .mark, .sp .spot");
-    const sp = hit?.closest(".sp"), k = hit?.getAttribute("data-k");
-    if (!sp || !k) return;
-    align(sp, k, true);
-    const row = sp.querySelector(`tr[data-k="${k}"]`);
-    row?.classList.remove("sp-flash"); void (row as HTMLElement | null)?.offsetWidth; row?.classList.add("sp-flash");
-  };
-  document.addEventListener("click", (e) => go(e.target as Element));
-  document.addEventListener("keydown", (e) => { if ((e.key === "Enter" || e.key === " ") && (e.target as Element).matches?.(".sp .mark")) { e.preventDefault(); go(e.target as Element); } });
-</script>
 <style>
-  /* The shot sits beside the table, centred on it; along a long table it stays in the middle of the screen while
-     the table scrolls (sticky with equal room above and below; --sp-h = the shot's height, set by the script). */
-  .sp { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 1.25rem; margin-top: 1rem; }
-  .sp-side { display: flex; flex-direction: column; justify-content: center; padding-block: var(--sp-pad, 0px); }
-  .sp.sp-fixed .sp-shot { position: relative; top: auto; bottom: auto; }
-  .sp-shot {
-    --sp-free: max(1rem, calc((100vh - var(--sl-nav-height, 3.5rem) - var(--sp-h, 0px)) / 2));
-    position: sticky; top: calc(var(--sl-nav-height, 3.5rem) + var(--sp-free)); bottom: var(--sp-free); margin: 0;
-  }
-  @media (max-width: 50rem) { .sp { grid-template-columns: 1fr; } .sp-shot { position: relative; top: auto; bottom: auto; max-width: 300px; margin-inline: auto; } }
+  .sp { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 1.25rem; align-items: center; margin-top: 1rem; }
+  @media (max-width: 50rem) { .sp { grid-template-columns: 1fr; } .sp-shot { max-width: 300px; margin-inline: auto; } }
+  .sp-shot { position: relative; margin: 0; }
   .sp-shot img { display: block; width: 100%; height: auto; border-radius: 6px; border: 1px solid var(--sl-color-hairline); }
-  .spot { position: absolute; left: 1.5%; right: 1.5%; border-radius: 4px; background: color-mix(in srgb, var(--sl-color-accent) 22%, transparent); outline: 2px solid var(--sl-color-accent); opacity: 0; transition: opacity 0.15s; cursor: pointer; }
+  .spot { position: absolute; left: 1.5%; right: 1.5%; border-radius: 4px; background: color-mix(in srgb, var(--sl-color-accent) 22%, transparent); outline: 2px solid var(--sl-color-accent); opacity: 0; transition: opacity 0.15s; pointer-events: none; }
   .mark, .num { display: inline-grid; place-items: center; width: 1.35rem; height: 1.35rem; border-radius: 50%; font-size: 0.72rem; font-weight: 700; background: var(--sl-color-accent-low); color: var(--sl-color-accent-high); border: 1px solid var(--sl-color-accent); }
-  .mark { position: absolute; left: -0.55rem; transform: translateY(-50%); cursor: pointer; transition: transform 0.15s, background 0.15s; }
-  .mark:focus-visible { outline: 2px solid var(--sl-color-accent); outline-offset: 2px; }
-  .sp-table tr.sp-flash { animation: sp-flash 1.6s ease-out; }
-  @keyframes sp-flash { 0%, 35% { background: var(--sl-color-accent-low); } 100% { background: transparent; } }
+  .mark { position: absolute; left: -0.55rem; transform: translateY(-50%); cursor: default; transition: transform 0.15s, background 0.15s; }
   .num { margin-right: 0.5rem; vertical-align: text-bottom; }
-  /* no theme top margin on the table column: the shot's buffer is measured from the table's top edge */
-  .sp-table { overflow-x: auto; margin-top: 0 !important; }
+  .sp-table { overflow-x: auto; }
   .sp-table table { width: 100%; margin: 0; }
   .sp-table td { vertical-align: top; }
   .sp-table td:first-child { white-space: nowrap; }

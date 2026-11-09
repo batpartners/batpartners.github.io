@@ -1,6 +1,6 @@
 ---
 title: "Positioner RobTarget (Dynamic)"
-description: "Dynamic mode of the component that defines RobTargets with positioner (external axis) joint angles; the positioner rotates per target."
+description: "Positioner Robtarget defines a RobTarget including the rotation angle of the positioner (external axis)."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/positioner-robtarget-dynamic.mjs";
 
-Positioner RobTarget defines a RobTarget that includes the positioner (external axis) joint angles. Right-click the component to switch between **Dynamic Mode** and **Static Mode**; this page describes **Dynamic Mode**, the default. In Dynamic mode the positioner rotates per target so that each target's projected Z axis aligns with the approaching direction. To keep the positioner in a fixed orientation, use [Static Mode](/en/datatype/positioner-robtarget-static/).
+Positioner Robtarget defines a RobTarget including the rotation angle of the positioner (external axis). You can switch between Dynamic and Static modes by right-clicking the component icon.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }, { text: "Dynamic mode" }, { text: "Static mode → Positioner RobTarget (Static)", href: "/en/datatype/positioner-robtarget-static/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/positioner-robtarget-dynamic_main.png" alt="Positioner RobTarget (Dynamic)" />
+<ComponentShot src="/assets/images/1_Positioner Robtarget.png" alt="Positioner RobTarget (Dynamic)" />
 
 ## Inputs
 
@@ -55,7 +55,7 @@ Positioner RobTarget defines a RobTarget that includes the positioner (external 
 <Steps>
 
 1. Connect the [ABB Positioner](/en/robot-tool/positioner/) component data to **Positioner**.
-2. Connect the target planes to **Target Planes** and the plane they are defined in to **Target Base**. The targets are aligned from this plane to the positioner mounting plane.
+2. Connect the target planes to **Target Plane** and the plane they are defined in to **Base Plane**. The targets are aligned from this plane to the positioner mounting plane.
 3. If needed, rotate the targets about their own Z axis with **Z Rotation**, and connect **WobjData** to work in a work-object frame.
 4. Connect the **RobTargets** output to a move instruction. To use the start and end targets of each path separately, turn on **Split Start / Split End** in the **Output** tab.
 
@@ -64,14 +64,13 @@ Positioner RobTarget defines a RobTarget that includes the positioner (external 
 ## Notes
 
 <Aside type="tip">
-  **Split Start / Split End** take the first and last RobTarget of each Target Planes branch out into dedicated start and end outputs (**Start Target / End Target**).
+  **Split Start / Split End** take the first and last index of each Target Plane branch out into **Start Targets / End Targets**.
 </Aside>
 
 ## Related
 
 <RelatedLinks links={[
   { title: "ABB Positioner", description: "The positioner component", href: "/en/robot-tool/positioner/" },
-  { title: "Positioner RobTarget (Static)", description: "Mode with a fixed positioner orientation", href: "/en/datatype/positioner-robtarget-static/" },
   { title: "RobTarget", description: "Robot targets without a positioner", href: "/en/datatype/robtarget/" },
   { title: "WobjData", description: "Work-object frame", href: "/en/datatype/wobjdata-fixed/" },
 ]} />

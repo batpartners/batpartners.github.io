@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/parallelfinishing.mjs";
 
-일방향으로 평행한 Contour 커브를 따라 정삭(Finishing) 툴패스를 생성하는 컴포넌트이다. 작업물 형상에 맞게 Contour 방향, 경로 간격(Stepover), TCP 틸팅, 근사 허용 오차를 설정할 수 있으며, 결과 경로는 타겟 평면과 Contour 폴리라인으로 출력된다.
+일방향으로 평행한 Contour 커브를 따라 정삭(Finishing) 툴패스를 생성하는 컴포넌트이다. 사용자는 작업물 형상에 맞게 타켓 평면 사이의 거리와, 레이어간 간격, 틸팅 등의 세부 설정을 할 수 있다.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/parallelfinishing_main.png" alt="ParallelFinishing" />
+<ComponentShot src="/assets/images/6_ParallelFinishing.png" alt="ParallelFinishing" />
 
 ## 입력
 
@@ -44,7 +44,7 @@ import * as d from "../../../data/components/parallelfinishing.mjs";
 <Steps>
 
 1. **Geometry** 에 정삭할 형상(Brep 또는 Mesh)을, **Reference Plane** 에 경로 기준 평면을 연결한다.
-2. **Settings** 탭에서 Contour 방향(**Contour Dir**), 경로 간격(**Stepover**, mm), 표면 법선 쪽 기울기(**Tilt Weight**), **Tolerance** 를 정한다.
+2. **Settings** 탭에서 경로 방향(**Cutting Direction**), 경로 간격(**Stepover(mm)**), 표면 법선 쪽 기울기(**Tilting Weight**), **Tolerance** 를 정한다.
 3. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
 
 </Steps>

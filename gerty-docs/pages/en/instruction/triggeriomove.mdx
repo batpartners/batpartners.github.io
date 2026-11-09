@@ -1,6 +1,6 @@
 ---
 title: "TriggerIOMove"
-description: "Creates ABB Trigger Move instructions (TriggLIOs, TriggJIOs) that fire one or more I/O signals at set positions along the path while moving."
+description: "This is a component that configures ABB Trigger Move instructions (TriggLIOs, TriggJIOs) to generate one or more I/O signals at specified positions along the path while performing movement."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/triggeriomove.mjs";
 
-A component that creates ABB Trigger Move instructions (`TriggLIOs`, `TriggJIOs`), which fire one or more I/O signals at set positions along the path while moving. It makes a trigger move for each input RobTarget and fires the I/O events bundled in [TriggIOs](/en/datatype/triggios/).
+This is a component that configures ABB Trigger Move instructions (TriggLIOs, TriggJIOs) to generate one or more I/O signals at specified positions along the path while performing movement.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/triggeriomove_main.png" alt="TriggerIOMove" />
+<ComponentShot src="/assets/images/2_TriggerMove.png" alt="TriggerIOMove" />
 
 ## Inputs
 
@@ -43,17 +43,17 @@ A component that creates ABB Trigger Move instructions (`TriggLIOs`, `TriggJIOs`
 
 <Steps>
 
-1. Connect the output of [RobTarget](/en/datatype/robtarget/) or [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/) to **RobTargets**.
+1. Connect the output of [RobTarget](/en/datatype/robtarget/) or [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/) to **RobTarget**.
 2. Connect the [TriggIOs](/en/datatype/triggios/) output to **TriggIOs**; each trigger is defined with [IOEvent](/en/datatype/iodevent/).
-3. In the **Trigger Move** tab, pick the motion type, speed and zone with **Trigger Move**.
-4. Put the **Instruction** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+3. Pick the motion type, speed and zone in the **TriggIOs Move** tab.
+4. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
 
 </Steps>
 
 ## Notes
 
 <Aside type="note">
-  Picking `TriggLIOs` as the motion type gives a linear move, and `TriggJIOs` a joint move.
+  MoveL gives a `TriggLIOs` instruction, MoveJ a `TriggJIOs` instruction.
 </Aside>
 
 ## Related

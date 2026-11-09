@@ -1,6 +1,6 @@
 ---
 title: "Extract PathIdx"
-description: "This component extracts the index at a given position from each branch path (GH_Path) of a DataTree."
+description: "This is a component that can extract a specific index from the branch path of a DataTree."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/extractpathidx.mjs";
 
-This component extracts the index at a given position from each branch path (GH_Path) of a DataTree.
+This is a component that can extract a specific index from the branch path of a DataTree.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/extractpathidx_main.png" alt="Extract PathIdx" />
+<ComponentShot src="/assets/images/1_ExtractPathIdx.png" alt="Extract PathIdx" />
 
 ## Inputs
 
@@ -32,8 +32,8 @@ This component extracts the index at a given position from each branch path (GH_
 <Steps>
 
 1. Connect the DataTree to **Tree**.
-2. Connect the position of the index to extract within the branch path to **Position**.
-3. Take the index extracted from each branch path from the **Index** output.
+2. Connect the position of the index to read in the branch path to **Position**.
+3. Read each branch's index from the **Index** output.
 
 </Steps>
 

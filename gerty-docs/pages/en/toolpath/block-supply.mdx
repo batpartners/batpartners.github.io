@@ -1,6 +1,6 @@
 ---
 title: "Block Supply"
-description: "This component generates Pick targets that arrange blocks at the supply station, based on the total block count and the unit block geometry."
+description: "This is a component that generates Pick targets to place blocks at the supply area based on the total number of blocks and unit geometry."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/block-supply.mjs";
 
-This component generates Pick targets that arrange blocks at the supply station, based on the total block count and the unit block geometry.
+This is a component that generates Pick targets to place blocks at the supply area based on the total number of blocks and unit geometry.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/block-supply_main.png" alt="Block Supply" />
+<ComponentShot src="/assets/images/16_BlockSupply.png" alt="Block Supply" />
 
 ## Inputs
 
@@ -43,9 +43,9 @@ This component generates Pick targets that arrange blocks at the supply station,
 
 <Steps>
 
-1. Connect the supply base plane to **Supply Base**, the unit block to **Unit Block** and the **Block Count** output of [Block Designer](/en/toolpath/block-designer/) to **Block Count**.
+1. Connect the supply base plane to **Base Plane**, the unit block to **Unit Block** and the **Block Count** output of [Block Designer](/en/toolpath/block-designer/) to **Block Count**.
 2. Set the X, Y and Z spacing in the **Spacing** tab and the number of blocks per direction in the **Count** tab.
-3. Connect the **Pick Targets** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+3. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
 
 </Steps>
 

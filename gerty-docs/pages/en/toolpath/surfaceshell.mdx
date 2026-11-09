@@ -1,6 +1,6 @@
 ---
 title: "Surface Shell"
-description: "This is a component that generates shell deposition toolpaths from a surface geometry."
+description: "This is a component that generates a shell (or perimeter) deposition toolpath for open surface geometries."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/surfaceshell.mjs";
 
-This is a component that generates shell deposition toolpaths from a surface geometry (Brep or Mesh). You can set the layer height and bead width, the shell method (Contour or Zigzag weaving), target plane tilting, the per-layer direction, and the seam (start point) and wiping. For a large geometry, the work data can be exported in parts. Enabling `Use AntiOverhang` from the icon's right-click menu adds inputs for overhang reinforcement.
+This is a component that generates a shell (or perimeter) deposition toolpath for open surface geometries. It allows for detailed configurations such as target plane spacing, height, working direction (zigzag, one-way), and tilting angle. For large geometries, the working data can be exported by dividing it into partitions. Right-clicking the icon allows you to switch to the Use AntiOverhang mode, which enables detailed settings for workpieces with overhangs.
 
-<DocTags tags={[{ text: "ToolPath", tone: "accent" }, { text: "Extra Option → AntiOverhang", href: "/en/toolpath/surfaceshell-option/" }]} />
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }, { text: "Extra Option → Angle Ranges / Multiple", href: "/en/toolpath/surfaceshell-option/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/surfaceshell_main.png" alt="Surface Shell" />
+<ComponentShot src="/assets/images/13_SurfaceShell.png" alt="Surface Shell" />
 
 ## Inputs
 
@@ -43,30 +43,25 @@ This is a component that generates shell deposition toolpaths from a surface geo
 
 <Steps>
 
-1. Connect the surface (Brep or Mesh) to **Model**. To reverse the direction per layer, connect a boolean pattern to **Dir Pattern**; to align the seams along a curve, connect **Seams**.
-2. Align **Reference Plane** with the build plate (default WorldXY). To tilt targets around edges, connect **Edges**.
-3. In the **Slicing** tab, set the layer heights, **Tolerance** and the section method (**Section Proxy**).
-4. In the **Shell** tab, choose the **Shell Type** and bead width (**Layer Width**). For Contour, use **Outline Shells**, **End Fillet Type** and **Path Order**; for Zigzag, use **Shell Thickness** and the **Zigzag** and **Relief** tabs to shape the weave.
-5. Use the **Tilt** tab to tilt for overhangs or edges, and the **Seam** tab to adjust the start points (seam) and wiping.
-6. Connect the **Shell ToolPaths** output to [Deposition Builder](/en/toolpath/depositionbuilder/) or [WAAM Builder](/en/toolpath/waambuilder/).
+1. Connect the open surface (Brep or Mesh) to **Geometry**. To change the direction per layer, connect a boolean pattern to **Direction Change**.
+2. Align **Reference Plane** with the build plate (default WorldXY). To tilt targets around edges, connect **Edge Crvs**.
+3. In the **Slicing** tab, set the end finish (**End Fillet Type**), the number of shells (**Outline Shells**), bead width, layer heights and **Tolerance**.
+4. Use the **Tilting** tab to tilt for overhangs or edges, and the **Seam** tab to spread or shift the start points (seam).
+5. Connect the **Deposition ToolPaths** and **Is Bottommost** outputs to [Deposition Builder](/en/toolpath/depositionbuilder/) or [WAAM Builder](/en/toolpath/waambuilder/).
 
 </Steps>
 
 ## Notes
 
 <Aside type="tip">
-  For a large part, split the model into N parts with **Part Count** in the **Partition** tab and pick the part to slice (1–N) with **Part Number**, then export part by part.
-</Aside>
-
-<Aside type="note">
-  Setting **Shell Type** to Zigzag shows the **Zigzag** and **Relief** tabs and the **Phase Pattern** input on the component, and hides **End Fillet Type** and **Outline Shells**.
+  For a large part, split the model into N parts with **Partition** and pick the part to slice (1–N) with **Order**, then export part by part.
 </Aside>
 
 ## Related
 
 <RelatedLinks links={[
   { title: "Solid Shell", description: "Shell paths of a closed solid", href: "/en/toolpath/solidshell/" },
-  { title: "Deposition Builder", description: "Splits deposition paths into extrusion start, move, end and wipe", href: "/en/toolpath/depositionbuilder/" },
+  { title: "Deposition Builder", description: "Splits deposition paths into extrusion start, move and stop", href: "/en/toolpath/depositionbuilder/" },
   { title: "WAAM Builder", description: "Splits WAAM paths by layer kind", href: "/en/toolpath/waambuilder/" },
-  { title: "Surface Shell (Extra Option)", description: "Use AntiOverhang: adds Overhang Density / Max Overhang Angle inputs", href: "/en/toolpath/surfaceshell-option/" },
+  { title: "Surface Shell (Extra Option)", description: "Adds Angle Ranges / Multiple inputs", href: "/en/toolpath/surfaceshell-option/" },
 ]} />

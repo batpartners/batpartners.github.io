@@ -5,16 +5,16 @@ export const groups = [
   [
     {
       "label": "In Position",
-      "img": "wait-time_tab1.png",
+      "img": "10_WaitTIme_1.png",
       "rows": [
         {
           "name": "In Position",
           "type": "Toggle",
-          "ko": "<code>InPos</code> 옵션. 대기 시간을 세기 시작하는 시점을 정한다.<br> • <code>TRUE</code>: 로봇이 완전히 정지(Standstill)한 뒤 대기 시간을 센다.<br> • <code>FALSE</code>: 프로그램 포인터(PP)가 인스트럭션에 닿는 즉시 센다.<br>기본값은 <code>TRUE</code>.",
-          "en": "The <code>InPos</code> option; sets when the wait starts counting.<br> • <code>TRUE</code>: the wait starts after the robot comes to a complete standstill.<br> • <code>FALSE</code>: the wait starts as soon as the program pointer (PP) reaches the instruction.<br>Default: <code>TRUE</code>.",
+          "ko": "• <code>TRUE</code>: 로봇이 완전히 정지(Standstill)한 뒤 대기 시간을 센다.<br> • <code>FALSE</code>: 프로그램 포인터(PP)가 인스트럭션에 닿는 즉시 센다.",
+          "en": "• <code>TRUE</code>: the wait starts after the robot comes to a standstill.<br> • <code>FALSE</code>: the wait starts as soon as the program pointer (PP) reaches the instruction.",
           "y": [
-            52.6,
-            31.6
+            48.5,
+            32.3
           ]
         }
       ]
@@ -24,20 +24,20 @@ export const groups = [
 
 export const inputs = [
   {
-    "name": "Time(s)",
+    "name": "Time(sec.)",
     "type": "Number",
-    "ko": "프로그램 실행이 대기할 시간(초).",
-    "en": "How long program execution waits (s)."
+    "ko": "프로그램 실행을 멈출 시간(초).",
+    "en": "How long program execution waits (seconds)."
   }
 ];
 
-export const main = "wait-time_main.png";
+export const main = "10_WaitTIme.png";
 
 export const outputs = [
   {
-    "name": "Instruction",
+    "name": "Instructions",
     "type": "Instruction",
-    "ko": "생성된 <code>WaitTime</code> 인스트럭션을 출력한다. <a href=\"/core/gerty-core/\">GERTY Core</a> 의 <strong>Instructions</strong> 입력에 연결한다.",
-    "en": "The generated <code>WaitTime</code> instruction. Connect it to the <strong>Instructions</strong> input of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
+    "ko": "생성된 ABB 인스트럭션을 출력한다. <a href=\"/core/gerty-core/\">GERTY Core</a>의 <strong>Instructions</strong> 입력에 연결한다.",
+    "en": "The generated ABB instruction. Connect it to the <strong>Instructions</strong> input of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
   }
 ];

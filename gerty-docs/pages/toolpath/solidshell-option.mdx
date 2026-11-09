@@ -11,15 +11,15 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/solidshell-option.mjs";
 
-닫힌 솔리드 형상(Brep 또는 Mesh)에서 외곽(Shell) 적층 툴패스를 생성하는 컴포넌트이다. 레이어 높이와 비드 폭, 외곽 경로 방식(Contour 또는 Zigzag 위빙), 타겟 평면의 틸팅, Seam(시작점)과 와이핑을 설정할 수 있으며, 형상이 큰 경우 파트로 나누어 작업 데이터를 내보낼 수 있다. 아이콘 우클릭 메뉴에서 `Use AntiOverhang` 을 켜면 오버행 보강용 입력이 추가된다. 우클릭 메뉴에는 `Use Exclusion` 옵션도 있다.
+닫힌 솔리드 형상에서 외곽(Shell) 적층 툴패스를 생성하는 컴포넌트이다. 타겟평면의 시작 위치, 간격, 높이, 틸딩 정도 등의 세부 설정이 가능하며, 형상이 큰 경우, 파티션으로 나누어 작업 데이터를 내보낼 수 있다.
 
-이 페이지는 아이콘 우클릭 메뉴에서 <strong>Use AntiOverhang</strong> 을 켠 형태를 설명한다. 이 형태에는 <strong>Overhang Density</strong>, <strong>Max Overhang Angle</strong> 입력이 추가된다.
+이 페이지는 <strong>Angle Ranges</strong>, <strong>Multiple</strong> 입력이 추가된 형태(Extra Option)를 설명한다.
 
-<DocTags tags={[{ text: "ToolPath", tone: "accent" }, { text: "AntiOverhang" }, { text: "기본 → Solid Shell", href: "/toolpath/solidshell/" }]} />
+<DocTags tags={[{ text: "ToolPath", tone: "accent" }, { text: "Extra Option" }, { text: "기본 → Solid Shell", href: "/toolpath/solidshell/" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/solidshell-option_main.png" alt="Solid Shell (Extra Option)" />
+<ComponentShot src="/assets/images/12_SolidShell_3.png" alt="Solid Shell (Extra Option)" />
 
 ## 입력
 
@@ -45,35 +45,26 @@ import * as d from "../../../data/components/solidshell-option.mjs";
 
 <Steps>
 
-1. **Model** 에 닫힌 솔리드 형상(Brep 또는 Mesh)을 연결한다. Seam 위치를 커브로 정하려면 **Seams** 를 연결한다.
-2. **Reference Plane** 은 빌드 플레이트 방향에 맞춘다(기본값 WorldXY). 엣지 주변 타겟을 기울이려면 **Edges** 를 연결한다.
-3. 오버행 보강 정도를 정하려면 **Overhang Density** 에 밀도 곡선(Graph Mapper 출력)을, 필요하면 **Max Overhang Angle** 을 연결한다(기본값 90°).
-4. **Slicing** 탭에서 레이어 높이·첫 레이어 높이, **Tolerance**, 단면 계산 방식(**Section Proxy**)을 정한다.
-5. **Shell** 탭에서 **Shell Type** 과 비드 폭(**Layer Width**)을 정한다. Contour 는 **Setback**, **Outline Shells**, **Path Order** 로, Zigzag 는 **Shell Thickness** 와 **Zigzag** · **Relief** 탭으로 위빙 패턴을 조정한다.
-6. 오버행이나 엣지에 맞춰 기울여야 하면 **Tilt** 탭을, 시작점(Seam)과 와이핑을 조정하려면 **Seam** 탭을 쓴다.
-7. **Shell ToolPaths** 출력을 [Deposition Builder](/toolpath/depositionbuilder/) 또는 [WAAM Builder](/toolpath/waambuilder/) 에, 내부를 채우려면 **Shell Profile** 을 [Solid Fill](/toolpath/solidfill/) 의 **Shell Profile** 입력에 연결한다.
+1. **Geometry** 에 닫힌 솔리드 형상(Brep 또는 Mesh)을 연결한다. Seam 위치를 정하려면 **Seam Crvs** 를 연결한다.
+2. **Reference Plane** 은 빌드 플레이트 방향에 맞춘다(기본값 WorldXY). 엣지 주변 타겟을 기울이려면 **Edge Crvs** 를 연결한다.
+3. 추가된 **Angle Ranges**, **Multiple** 입력을 연결한다.
+4. **Slicing** 탭에서 외곽 이격(**Setback(mm)**), 외곽 개수(**Outline Shells**), 비드 폭·레이어 높이·첫 레이어 높이, **Tolerance** 를 정한다.
+5. 오버행이나 엣지에 맞춰 기울여야 하면 **Tilting** 탭을, 시작점(Seam)을 분산·이동하려면 **Seam** 탭을 조정한다.
+6. **Deposition ToolPaths** 와 **Is Bottommost** 출력을 [Deposition Builder](/toolpath/depositionbuilder/) 또는 [WAAM Builder](/toolpath/waambuilder/) 에, 내부를 채우려면 **GERTYShellData** 를 [Solid Fill](/toolpath/solidfill/) 또는 [Solid Offset Fill](/toolpath/solidoffsetfill/) 에 연결한다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="tip">
-  형상이 크면 **Partition** 탭의 **Part Count** 로 모델을 N 등분하고 **Part Number** 로 슬라이싱할 파트(1~N)를 골라 나누어 내보냅니다.
-</Aside>
-
-<Aside type="note">
-  **Shell Type** 을 Zigzag 로 바꾸면 **Zigzag** · **Relief** 탭과 컴포넌트의 **Phase Pattern** 입력이 나타나고, **Setback** 과 **Outline Shells** 는 숨겨집니다.
-</Aside>
-
-<Aside type="note">
-  아이콘 우클릭 메뉴의 `Use Exclusion` 옵션은 아직 이 문서에서 다루지 않습니다.
+  형상이 크면 **Partition** 으로 모델을 N 등분하고 **Order** 로 슬라이싱할 파트(1~N)를 골라 나누어 내보냅니다.
 </Aside>
 
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "Solid Shell", description: "닫힌 솔리드 형상의 외곽 적층 경로 (기본)", href: "/toolpath/solidshell/" },
-  { title: "Solid Fill", description: "Shell Profile 을 기준으로 내부 채움", href: "/toolpath/solidfill/" },
-  { title: "Deposition Builder", description: "적층 경로를 압출 시작·이동·종료·와이프로 분리", href: "/toolpath/depositionbuilder/" },
+  { title: "Solid Shell", description: "닫힌 솔리드의 외곽 적층 경로", href: "/toolpath/solidshell/" },
+  { title: "Solid Fill", description: "패턴으로 내부 채움", href: "/toolpath/solidfill/" },
+  { title: "Deposition Builder", description: "적층 경로를 압출 시작·이동·종료로 분리", href: "/toolpath/depositionbuilder/" },
   { title: "WAAM Builder", description: "WAAM 적층 경로를 레이어 종류별로 분리", href: "/toolpath/waambuilder/" },
 ]} />

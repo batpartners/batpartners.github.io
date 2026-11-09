@@ -4,17 +4,17 @@
 export const groups = [
   [
     {
-      "label": "Trigger Move",
-      "img": "triggeriomove_tab1.png",
+      "label": "TriggIOs Move",
+      "img": "2_TriggerMove_1.png",
       "rows": [
         {
-          "name": "Trigger Move",
+          "name": "Type/Speed/Zone",
           "type": "Dropdown",
-          "ko": "모션 유형, 이동 속도(SpeedData), 경유 반경(ZoneData)을 차례로 고른다. 모션 유형은 <code>TriggJIOs</code>(관절 보간) / <code>TriggLIOs</code>(직선 보간) 중에서 고르고, 속도와 Zone 은 사전 정의 값(<code>v5</code> ~ <code>v7000</code>, <code>fine</code> / <code>z0</code> ~ <code>z200</code>) 중에서 고른다.",
-          "en": "Selects the motion type, speed (SpeedData) and zone (ZoneData) in turn. The motion type is one of <code>TriggJIOs</code> (joint interpolation) / <code>TriggLIOs</code> (linear); speed and zone are chosen from the predefined values (<code>v5</code>–<code>v7000</code>, <code>fine</code> / <code>z0</code>–<code>z200</code>).",
+          "ko": "모션 유형(MoveJ / MoveL), 이동 속도(SpeedData), 경유 반경(ZoneData)을 고른다.",
+          "en": "Motion type (MoveJ / MoveL), speed (SpeedData) and zone (ZoneData).",
           "y": [
-            52.6,
-            31.6
+            46.5,
+            44.4
           ]
         }
       ]
@@ -24,7 +24,7 @@ export const groups = [
 
 export const inputs = [
   {
-    "name": "RobTargets",
+    "name": "RobTarget",
     "type": "RobTarget",
     "ko": "모션 목표 위치. <a href=\"/datatype/robtarget/\">RobTarget</a> 또는 <a href=\"/datatype/positioner-robtarget-dynamic/\">Positioner RobTarget</a> 의 출력을 연결한다.",
     "en": "Motion targets. Connect the output of <a href=\"/en/datatype/robtarget/\">RobTarget</a> or <a href=\"/en/datatype/positioner-robtarget-dynamic/\">Positioner RobTarget</a>."
@@ -37,13 +37,13 @@ export const inputs = [
   }
 ];
 
-export const main = "triggeriomove_main.png";
+export const main = "2_TriggerMove.png";
 
 export const outputs = [
   {
-    "name": "Instruction",
+    "name": "Instructions",
     "type": "Instruction",
-    "ko": "생성된 트리거 이동 인스트럭션을 출력한다. <a href=\"/core/gerty-core/\">GERTY Core</a> 의 <strong>Instructions</strong> 입력에 연결한다.",
-    "en": "The generated trigger move instructions. Connect it to the <strong>Instructions</strong> input of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
+    "ko": "생성된 ABB 인스트럭션을 출력한다. <a href=\"/core/gerty-core/\">GERTY Core</a>의 <strong>Instructions</strong> 입력에 연결한다.",
+    "en": "The generated ABB instruction. Connect it to the <strong>Instructions</strong> input of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
   }
 ];

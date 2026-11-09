@@ -1,6 +1,6 @@
 ---
 title: "WeaveData"
-description: "아크 용접 중 수행되는 위빙(Weaving) 모션(형상, 진폭, 주파수, Dwell, 방향, 편향)을 정의하는 컴포넌트이다."
+description: "아크 용접 중 수행되는 위빙(Weaving) 모션을 정의하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,17 +11,17 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/weavedata.mjs";
 
-아크 용접 중 수행되는 위빙(Weaving) 모션을 정의하는 컴포넌트이다. 위빙 형상, 진폭, 주파수(사이클 길이), Dwell 파라미터를 지정하고, 심(Seam) 기준의 패턴 방향과 편향을 조절한다. 설정한 패턴은 뷰포트와 **Pattern** 출력으로 미리 볼 수 있다.
+아크 용접 중 수행되는 위빙(Weaving) 모션을 정의하는 컴포넌트이다. 위빙 형상, 진폭, 주파수 파라미터를 지정한다.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/weavedata_main.png" alt="WeaveData" />
+<ComponentShot src="/assets/images/9_WeaveData.png" alt="WeaveData" />
 
 ## 입력
 
-<ParamTable rows={d.inputs} lang="ko" />
+입력 단자가 없다. 모든 값은 아래 설정에서 정한다.
 
 ## 설정 (GERTY UI)
 
@@ -43,22 +43,20 @@ import * as d from "../../../data/components/weavedata.mjs";
 
 <Steps>
 
-1. 첫 번째 탭에서 **Name** 을 쓰고, **Weave Shape** 로 위빙 패턴(지그재그, V형, 삼각형, 원형)을, **Weave Type** 으로 축 제어 방식을 고른다.
-2. **Dimension** 탭의 **Length / Width / Height** 로 패턴의 크기를 정한다.
-3. 필요하면 **Dwell** 탭에서 반환점·중앙의 Dwell 길이를, **Orient** 탭에서 패턴의 방향·기울기 각도를, **Bias** 탭에서 중심선 편향(Zigzag 전용)을 정한다.
-4. 패턴을 확인하려면 **Base Plane** 에 기준 평면을 연결하고 **Preview** 탭의 **Preview Cycles** 로 그릴 사이클 수를 정한다. **Pattern** 출력으로 패턴 곡선을 받을 수 있다.
-5. **WeaveData** 출력을 [WeldData](/datatype/welddata/) 의 **WeaveData** 입력에 연결한다.
+1. **Weaving Shape** 로 위빙 패턴(지그재그, V형, 삼각형, 원형)을, **Weaving Type** 으로 축 제어 방식을 고른다.
+2. **Length(mm) / Width(mm) / Height(mm)** 로 패턴의 크기를 정한다.
+3. **WeaveData** 출력을 [WeldData](/datatype/welddata/) 의 **WeaveData** 입력에 연결한다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="note">
-  **Height** 는 V형과 삼각형 패턴에서만 쓰이고, 지그재그와 원형에서는 무시됩니다. **Weave Bias** 는 Zigzag 패턴에서만 쓰입니다.
+  **Height(mm)** 는 V형과 삼각형 패턴에서만 쓰이고, 지그재그와 원형에서는 무시됩니다.
 </Aside>
 
 <Aside type="note">
-  **Length** 의 의미는 설정에 따라 다릅니다. Weave Type 이 Rapid_1/Rapid_2 이면 위빙 주파수(Hz), Weave Shape 이 Circular 이면 원형 패턴 사이 간격입니다.
+  **Length(mm)** 의 의미는 Weaving Type 에 따라 다릅니다. Rapid1/Rapid2 에서는 위빙 주파수(Hz), 원형 패턴에서는 패턴 간격입니다.
 </Aside>
 
 ## 관련 항목

@@ -13,13 +13,11 @@ import * as d from "../../../../data/components/subproc-script.mjs";
 
 This component builds a RAPID sub-procedure and its call instructions from procedure code you write yourself. Use it to put PROC code in directly instead of an instruction list.
 
-This page covers the form selected with **Script Mode** in the right-click menu. This form has no settings tab; the procedure name comes from the PROC declaration in **Proc Code**.
-
 <DocTags tags={[{ text: "Instruction", tone: "accent" }, { text: "Script" }, { text: "Composition → Sub Procedure", href: "/en/instruction/subproc-composition/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/subproc-script_main.png" alt="Sub Procedure (Script)" />
+<ComponentShot src="/assets/images/8_SubProcedure_1.png" alt="Sub Procedure (Script)" />
 
 ## Inputs
 
@@ -35,7 +33,7 @@ This page covers the form selected with **Script Mode** in the right-click menu.
 
 1. Connect the RAPID code from PROC to ENDPROC to **Proc Code**.
 2. Connect a call string (e.g. `CustomProc 5, target1;`) to **Call**, one per call site.
-3. Put the **SubProc** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+3. Put the **Sub Proc.** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
 
 </Steps>
 

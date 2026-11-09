@@ -1,6 +1,6 @@
 ---
 title: "Move"
-description: "Creates ABB move instructions (MoveL, MoveJ)."
+description: "A component that configures ABB Move instructions (MoveL, MoveJ)."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/move.mjs";
 
-A component that creates ABB move instructions (`MoveL`, `MoveJ`). It makes a move for each input RobTarget, with the motion type, speed and zone set once in the settings. Options can switch only the first and last targets to `MoveJ` or to zone `fine`.
+A component that configures ABB Move instructions (MoveL, MoveJ).
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/move_main.png" alt="Move" />
+<ComponentShot src="/assets/images/0_Move.png" alt="Move" />
 
 ## Inputs
 
@@ -44,9 +44,9 @@ A component that creates ABB move instructions (`MoveL`, `MoveJ`). It makes a mo
 <Steps>
 
 1. Connect the output of [RobTarget](/en/datatype/robtarget/) or [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/) to **RobTargets**.
-2. In the **Move** tab, pick the motion type, speed and zone with **Move**.
-3. Turn on **MoveJ Start End** for `MoveJ` on the first and last targets only, and **Fine Start End** to stop exactly at them.
-4. Put the **Instruction** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+2. Pick the motion type, speed and zone in the **Move** tab.
+3. Turn on **MoveJ Start & End** for MoveJ on the first and last targets only, and **Fine Start & End** to stop exactly at them.
+4. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
 
 </Steps>
 

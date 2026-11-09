@@ -5,36 +5,36 @@ export const groups = [
   [
     {
       "label": "Arc Move",
-      "img": "arcmove_tab1.png",
+      "img": "3_ArcMove_1.png",
       "rows": [
         {
-          "name": "Arc",
+          "name": "Type/Speed/Zone",
           "type": "Dropdown",
-          "ko": "모션 유형, 이동 속도(SpeedData), 경유 반경(ZoneData)을 차례로 고른다. 모션 유형은 <code>ArcL</code>(직선) 또는 <code>ArcC</code>(원호)이고, 속도는 <code>v5</code> ~ <code>v7000</code>, Zone 은 <code>fine</code>, <code>z0</code> ~ <code>z200</code> 의 사전 정의 값 중에서 고른다.",
-          "en": "Selects the motion type, speed (SpeedData) and zone (ZoneData) in turn. The motion type is <code>ArcL</code> (linear) or <code>ArcC</code> (circular); speed and zone are chosen from the predefined values <code>v5</code>–<code>v7000</code> and <code>fine</code>, <code>z0</code>–<code>z200</code>.",
+          "ko": "모션 유형, 이동 속도(SpeedData), 경유 반경(ZoneData)을 고른다.",
+          "en": "Motion type, speed (SpeedData) and zone (ZoneData).",
           "y": [
-            29.2,
-            17.5
+            28,
+            18.9
           ]
         },
         {
-          "name": "Arc Start",
+          "name": "ArcLStart",
           "type": "Toggle",
-          "ko": "• <code>TRUE</code>: 첫 번째 타겟에 <code>ArcLStart</code> 를 적용한다.<br> • <code>FALSE</code>: 첫 번째 타겟에 <code>ArcL</code> 을 적용한다.<br>기본값은 <code>TRUE</code>.",
-          "en": "• <code>TRUE</code>: applies <code>ArcLStart</code> to the first target.<br> • <code>FALSE</code>: applies <code>ArcL</code> to the first target.<br>Default: <code>TRUE</code>.",
+          "ko": "• <code>TRUE</code>: 첫 번째 타겟에 <code>ArcLStart</code> 를 적용한다.<br> • <code>FALSE</code>: 첫 번째 타겟에 <code>ArcL</code> 을 적용한다.",
+          "en": "• <code>TRUE</code>: <code>ArcLStart</code> for the first target.<br> • <code>FALSE</code>: <code>ArcL</code> for the first target.",
           "y": [
-            51.5,
-            17.5
+            49.1,
+            18.3
           ]
         },
         {
-          "name": "Arc End",
+          "name": "ArcLEnd",
           "type": "Toggle",
-          "ko": "• <code>TRUE</code>: 마지막 타겟에 <code>ArcLEnd</code> 를 적용한다.<br> • <code>FALSE</code>: 마지막 타겟에 <code>ArcL</code> 을 적용한다.<br>기본값은 <code>TRUE</code>.",
-          "en": "• <code>TRUE</code>: applies <code>ArcLEnd</code> to the last target.<br> • <code>FALSE</code>: applies <code>ArcL</code> to the last target.<br>Default: <code>TRUE</code>.",
+          "ko": "• <code>TRUE</code>: 마지막 타겟에 <code>ArcLEnd</code> 를 적용한다.<br> • <code>FALSE</code>: 마지막 타겟에 <code>ArcL</code> 을 적용한다.",
+          "en": "• <code>TRUE</code>: <code>ArcLEnd</code> for the last target.<br> • <code>FALSE</code>: <code>ArcL</code> for the last target.",
           "y": [
-            73.7,
-            17.5
+            70.9,
+            18.3
           ]
         }
       ]
@@ -63,13 +63,13 @@ export const inputs = [
   }
 ];
 
-export const main = "arcmove_main.png";
+export const main = "3_ArcMove.png";
 
 export const outputs = [
   {
-    "name": "Instruction",
+    "name": "Instructions",
     "type": "Instruction",
-    "ko": "생성된 아크 인스트럭션을 출력한다. <a href=\"/core/gerty-core/\">GERTY Core</a> 의 <strong>Instructions</strong> 입력에 연결한다.",
-    "en": "The generated arc instructions. Connect it to the <strong>Instructions</strong> input of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
+    "ko": "생성된 ABB 인스트럭션을 출력한다. <a href=\"/core/gerty-core/\">GERTY Core</a>의 <strong>Instructions</strong> 입력에 연결한다.",
+    "en": "The generated ABB instruction. Connect it to the <strong>Instructions</strong> input of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
   }
 ];

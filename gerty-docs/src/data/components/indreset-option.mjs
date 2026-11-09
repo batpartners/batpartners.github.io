@@ -4,27 +4,27 @@
 export const groups = [
   [
     {
-      "label": "IndRset",
-      "img": "indreset-option_tab1.png",
+      "label": "IndReset",
+      "img": "12_IndReset_20.png",
       "rows": [
         {
           "name": "MechUnit",
           "type": "String",
-          "ko": "대상 축이 속한 메카니컬 유닛(Mechanical Unit)의 이름. 로봇 컨트롤러에 정의된 이름과 같아야 한다. 기본값은 <code>STN1</code>.",
-          "en": "Name of the mechanical unit that owns the target axis. It must match the name defined in the robot controller. Default: <code>STN1</code>.",
+          "ko": "제어할 메카니컬 유닛(Mechanical Unit)의 이름. 예: STN1",
+          "en": "Name of the mechanical unit to control, e.g. STN1.",
           "y": [
-            37.6,
-            22.6
+            36.1,
+            24.1
           ]
         },
         {
           "name": "Target Axis",
           "type": "Dropdown",
-          "ko": "논리 위치를 초기화할 대상 축(Axis 1–6)을 고른다. 독립 모드에 있는 축이면 일반 모드로도 되돌린다. 기본값은 <code>Axis 2</code>.",
-          "en": "Selects the axis (Axis 1–6) whose logical position is reset. If the axis is in independent mode, it is also returned to normal mode. Default: <code>Axis 2</code>.",
+          "ko": "대상 축(Axis 1–6)을 고른다. 독립 모드로 움직이거나 논리 위치를 다시 정할 축이다.",
+          "en": "The target axis (Axis 1–6): the axis moved in independent mode or whose logical position is redefined.",
           "y": [
-            66.2,
-            22.6
+            64.7,
+            27.1
           ]
         }
       ]
@@ -33,26 +33,26 @@ export const groups = [
   [
     {
       "label": "Settings",
-      "img": "indreset-option_tab2.png",
+      "img": "12_IndReset_21.png",
       "rows": [
         {
           "name": "RefNum(°)",
           "type": "Number",
-          "ko": "계측 기준 위치를 숫자(°)로 지정한다. 범위는 0 ~ 360°, 기본값은 0. <strong>RobTarget</strong> 입력의 기준 자세와 함께 쓸 수 없다.",
-          "en": "Reference position of the measurement system as a number (°). Range: 0 to 360°; default: 0. Cannot be combined with the reference pose from the <strong>RobTarget</strong> input.",
+          "ko": "계측 기준 위치(°). <code>Direction Policy</code> 가 <code>Short</code> / <code>Fwd</code> / <code>Bwd</code> 일 때만 쓰인다.",
+          "en": "Measurement reference position (°). Used only when <code>Direction Policy</code> is <code>Short</code>, <code>Fwd</code> or <code>Bwd</code>.",
           "y": [
-            39,
-            22.1
+            30,
+            20
           ]
         },
         {
-          "name": "Direction",
+          "name": "Direction Policy",
           "type": "Dropdown",
-          "ko": "계측 시스템을 기준 위치에 맞추는 방식.<br> • <code>Short (±180°)</code>: 기준 위치까지 최단 경로(±180° 이내)로 맞춘다.<br> • <code>Forward (+direction)</code>: 기준 위치를 양의 방향 쪽에 둔다.<br> • <code>Backward (-direction)</code>: 기준 위치를 음의 방향 쪽에 둔다.<br>기본값은 <code>Short (±180°)</code>.",
-          "en": "How the measurement system is aligned to the reference position.<br> • <code>Short (±180°)</code>: the fewest revolutions to the reference position (within ±180°).<br> • <code>Forward (+direction)</code>: the reference position on the positive side.<br> • <code>Backward (-direction)</code>: the reference position on the negative side.<br>Default: <code>Short (±180°)</code>.",
+          "ko": "계측 시스템을 맞추는 방식.<br> • <code>Short</code>: 기준 위치까지 최단 경로 (±180° 이내)<br> • <code>Fwd</code>: 기준 위치의 양의 방향으로 조정<br> • <code>Bwd</code>: 기준 위치의 음의 방향으로 조정<br> • <code>Old</code>: 현재 논리 위치 유지 (기본값)",
+          "en": "How the measurement system is adjusted.<br> • <code>Short</code>: shortest path to the reference position (within ±180°)<br> • <code>Fwd</code>: towards the reference position in the positive direction<br> • <code>Bwd</code>: towards the reference position in the negative direction<br> • <code>Old</code>: keep the current logical position (default)",
           "y": [
-            66.9,
-            22.1
+            52.4,
+            21.2
           ]
         }
       ]
@@ -64,18 +64,18 @@ export const inputs = [
   {
     "name": "RobTarget",
     "type": "RobTarget",
-    "ko": "논리 축 각도를 다시 맞출 기준 자세(Reference Position). <a href=\"/datatype/robtarget/\">RobTarget</a> 출력을 연결한다. <strong>RefNum(°)</strong> 과 함께 쓸 수 없다.",
-    "en": "Reference position used to realign the logical axis angle. Connect a <a href=\"/en/datatype/robtarget/\">RobTarget</a> output. Cannot be combined with <strong>RefNum(°)</strong>."
+    "ko": "논리 축 각도를 다시 맞출 기준 자세(Reference Position). <code>Direction Policy</code> 가 <code>Short</code> / <code>Fwd</code> / <code>Bwd</code> 일 때만 쓰이며, <code>RefNum</code> 과 함께 쓸 수 없다.",
+    "en": "Reference position used to realign the logical axis angle. Used only when <code>Direction Policy</code> is <code>Short</code>, <code>Fwd</code> or <code>Bwd</code>; cannot be combined with <code>RefNum</code>."
   }
 ];
 
-export const main = "indreset-option_main.png";
+export const main = "12_IndReset_1.png";
 
 export const outputs = [
   {
-    "name": "Instruction",
+    "name": "Instructions",
     "type": "Instruction",
-    "ko": "생성된 <code>IndReset</code> 인스트럭션을 출력한다. <a href=\"/core/gerty-core/\">GERTY Core</a> 의 <strong>Instructions</strong> 입력에 연결한다.",
-    "en": "The generated <code>IndReset</code> instruction. Connect it to the <strong>Instructions</strong> input of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
+    "ko": "생성된 ABB 인스트럭션을 출력한다. <a href=\"/core/gerty-core/\">GERTY Core</a>의 <strong>Instructions</strong> 입력에 연결한다.",
+    "en": "The generated ABB instruction. Connect it to the <strong>Instructions</strong> input of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
   }
 ];

@@ -4,79 +4,63 @@
 export const groups = [
   [
     {
-      "label": "Resolution",
-      "img": "curvetracing_tab1.png",
+      "label": "Settings",
+      "img": "0_Drawing_10.png",
       "rows": [
         {
           "name": "Tolerance",
           "type": "Number",
-          "ko": "커브를 경로로 근사할 때의 허용 오차. 기본값은 0.2, 범위는 0.1–0.5.",
-          "en": "Tolerance for approximating the curves as a toolpath. Default: 0.2, range 0.1–0.5.",
+          "ko": "경로의 근사 허용 오차.",
+          "en": "Approximation tolerance for the path.",
           "y": [
-            29,
-            17.8
+            24.5,
+            12.3
           ]
         },
         {
-          "name": "Min Edge",
+          "name": "MinEdge(mm)",
           "type": "Number",
-          "ko": "경로 세그먼트의 최소 길이 (mm). 기본값은 0.",
-          "en": "Minimum length of a toolpath segment (mm). Default: 0.",
+          "ko": "경로 세그먼트의 최소 길이 (mm)",
+          "en": "Minimum length of path segments (mm).",
           "y": [
-            51.5,
-            17.8
+            40.6,
+            16
           ]
         },
         {
-          "name": "Max Edge",
+          "name": "MaxEdge(mm)",
           "type": "Number",
-          "ko": "경로 세그먼트의 최대 길이 (mm). 기본값은 100.",
-          "en": "Maximum length of a toolpath segment (mm). Default: 100.",
+          "ko": "경로 세그먼트의 최대 길이 (mm)",
+          "en": "Maximum length of path segments (mm).",
           "y": [
-            74,
-            17.8
-          ]
-        }
-      ]
-    },
-    {
-      "label": "Tilting",
-      "img": "curvetracing_tab2.png",
-      "rows": [
-        {
-          "name": "Tilt Target",
-          "type": "Toggle",
-          "ko": "<strong>Tilt Weight</strong> 가 TCP 를 기울이는 방향을 정한다.<br> • TRUE: 형상 표면 법선 방향.<br> • FALSE: 커브 접선 방향.<br>기본값은 FALSE.",
-          "en": "Sets the direction <strong>Tilt Weight</strong> tilts the TCP toward.<br> • TRUE: The geometry surface normal.<br> • FALSE: The curve tangent.<br>Default: FALSE.",
-          "y": [
-            37.4,
-            22.9
+            58.5,
+            14.2
           ]
         },
         {
-          "name": "Tilt Weight",
+          "name": "Tilting Weight",
           "type": "Number",
-          "ko": "TCP 를 <strong>Tilt Target</strong> 이 정한 방향으로 기울이는 정도. 0.0 은 <strong>Reference Plane</strong> 의 Z 방향, 1.0 은 <strong>Tilt Target</strong> 이 정한 방향이다. 기본값은 0.",
-          "en": "How far the TCP tilts toward the direction set by <strong>Tilt Target</strong>. 0.0 = Z direction of <strong>Reference Plane</strong>, 1.0 = the direction set by <strong>Tilt Target</strong>. Default: 0.",
+          "ko": "Geometry 표면 법선 또는 Curve 접선 방향으로 TCP를 기울이는 정도 (0.0 = Reference Plane Z, 1.0 = Geometry 표면 법선 또는 Curve 접선 방향).",
+          "en": "Degree of tilting the TCP toward the geometry surface normal or curve tangent direction (0.0 = Reference Plane Z, 1.0 = Geometry surface normal or curve tangent direction).",
           "y": [
-            66.4,
-            22.9
+            76.4,
+            16
           ]
         }
       ]
     },
     {
       "label": "Preview",
-      "img": "curvetracing_tab3.png",
+      "img": "0_Drawing_12.png",
       "rows": [
         {
-          "name": "Frame Size",
+          "name": "FrameSize",
           "type": "Number",
-          "ko": "프리뷰에 표시할 타겟 평면 프레임의 크기. 기본값은 1.5.",
-          "en": "Size of the target plane frames shown in the preview. Default: 1.5.",
+          "ko": "프리뷰에 표시할 타겟 평면 프레임의 크기.",
+          "en": "Size of the target plane frames shown in the preview.",
           "y": [
-            52.7,
-            32.3
+            49,
+            32.7
           ]
         }
       ]
@@ -88,24 +72,30 @@ export const inputs = [
   {
     "name": "Curves",
     "type": "Curve",
-    "ko": "따라갈(트레이싱할) 커브.",
-    "en": "Curves to trace."
+    "ko": "트레이싱할 커브를 입력한다.",
+    "en": "The curves to trace."
   },
   {
     "name": "Reference Plane",
     "type": "Plane",
-    "ko": "툴패스 타겟 평면의 방향을 정하는 기준 평면. <strong>Tilt Weight</strong> 가 0.0 이면 TCP 는 이 평면의 Z 방향을 따른다. 기본값은 WorldXY.",
-    "en": "Reference plane that orients the toolpath target planes. With <strong>Tilt Weight</strong> 0.0 the TCP follows its Z direction. Default: WorldXY."
+    "ko": "툴패스의 기준 평면을 입력한다. Tilting Weight가 0.0일 때 TCP는 이 평면의 Z 방향을 따른다.",
+    "en": "The reference plane of the toolpath. With Tilting Weight 0.0 the TCP follows this plane's Z direction."
+  },
+  {
+    "name": "Geometry",
+    "type": "Geometry",
+    "ko": "TCP를 표면 법선 방향으로 기울일 때 기준이 되는 형상을 입력한다.",
+    "en": "The geometry whose surface normal the TCP tilts toward."
   }
 ];
 
-export const main = "curvetracing_main.png";
+export const main = "0_Drawing.png";
 
 export const outputs = [
   {
     "name": "Target Planes",
     "type": "Plane",
-    "ko": "생성된 트레이싱 경로의 타겟 평면.",
-    "en": "Target planes of the generated tracing toolpath."
+    "ko": "생성된 트레이싱 경로 타겟 평면.",
+    "en": "Generated tracing path target planes."
   }
 ];

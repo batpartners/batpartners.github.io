@@ -1,6 +1,6 @@
 ---
 title: "CreateWorkBench"
-description: "A component that defines the workbench and workpieces mounted on the positioner flange from meshes and reference planes."
+description: "This is a component that can be customized as a workbench for positioners."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,15 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/createworkbench.mjs";
 
-A component that defines the workbench and workpieces mounted on the positioner flange. With the real workbench and workpiece shapes in the simulation, you can check for collisions while the positioner moves and simulate paths accurately.
-
-This page covers <strong>[Define Workbench]</strong>, the default mode in the right-click menu. You define the workbench by connecting its mesh and reference planes directly.
+This is a component that can be customized as a workbench for positioners. By applying the modeling of the workbench in use to the simulation, the positioner working process can be checked smoothly. In addition, it enables work with complete simulations using the modeling of workpieces on the workbench.
 
 <DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Define" }, { text: "Extra Option → Import", href: "/en/robot-tool/createworkbench-option/" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/createworkbench_main.png" alt="CreateWorkBench" />
+<ComponentShot src="/assets/images/2_Workbench_2.png" alt="CreateWorkBench" />
 
 ## Inputs
 
@@ -45,11 +43,11 @@ This page covers <strong>[Define Workbench]</strong>, the default mode in the ri
 
 <Steps>
 
-1. Connect the workbench mesh to **Workbench Geo**.
-2. Connect the bottom plane of the workbench (on the positioner flange) to **Base Plane** and the top plane the workpiece sits on to **Top Plane**. Connect **Workpieces** if there is a workpiece.
-3. Enter the **Name** in the **WorkBench** tab and, if needed, set the workbench and workpiece colors in the **Preview** tab.
-4. Connect the **Workbench** output to the **Workbench** input of [ABB Positioner](/en/robot-tool/positioner/).
-5. To reuse the workbench in another file, save it with **Export** in the **Export** tab. Saved workbenches are loaded from **Presets** in [Import Workbench](/en/robot-tool/createworkbench-option/) mode.
+1. Connect the workbench mesh to **BenchGeo**.
+2. Connect the bottom plane of the workbench (on the positioner flange) to **BenchBase** and the top plane the workpiece sits on to **BenchTop**. Connect **WorkPieces** if there is a workpiece.
+3. Type the **Name** and, if you like, set the workbench and workpiece colours.
+4. Connect the **WorkBench** output to the **WorkBench** input of [ABB Positioner](/en/robot-tool/positioner/).
+5. To reuse the workbench in another file, save it with **Export**.
 
 </Steps>
 
@@ -59,13 +57,9 @@ This page covers <strong>[Define Workbench]</strong>, the default mode in the ri
   With the real workbench and workpiece shapes in place, collisions while the positioner moves show up in the simulation.
 </Aside>
 
-<Aside type="note">
-  **Open Workbench Folder** in the right-click menu opens the folder where workbenches are saved (`Documents\GERTY\UserAssets\WorkBench`).
-</Aside>
-
 ## Related
 
 <RelatedLinks links={[
-  { title: "ABB Positioner", description: "Positioner that takes the Workbench", href: "/en/robot-tool/positioner/" },
-  { title: "CreateWorkBench (Extra Option)", description: "Import Workbench: load a saved workbench", href: "/en/robot-tool/createworkbench-option/" },
+  { title: "ABB Positioner", description: "Positioner that takes the WorkBench", href: "/en/robot-tool/positioner/" },
+  { title: "CreateWorkBench (Extra Option)", description: "Load a saved workbench", href: "/en/robot-tool/createworkbench-option/" },
 ]} />

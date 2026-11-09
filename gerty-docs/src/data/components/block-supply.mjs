@@ -5,88 +5,88 @@ export const groups = [
   [
     {
       "label": "Spacing",
-      "img": "block-supply_tab1.png",
+      "img": "16_BlockSupply_10.png",
       "rows": [
         {
           "name": "X Spacing",
           "type": "Number",
-          "ko": "공급부 X축 방향의 블록 간격 (mm). 기본값은 25, 범위는 0–50.",
-          "en": "Block spacing along the X axis of the supply station (mm). Default: 25, range 0–50.",
+          "ko": "공급부 X축 방향 블록 간격 (mm)",
+          "en": "Block spacing along the X-axis in the supply section (mm).",
           "y": [
-            29,
-            17.8
+            29.3,
+            15.5
           ]
         },
         {
           "name": "Y Spacing",
           "type": "Number",
-          "ko": "공급부 Y축 방향의 블록 간격 (mm). 기본값은 25, 범위는 0–50.",
-          "en": "Block spacing along the Y axis of the supply station (mm). Default: 25, range 0–50.",
+          "ko": "공급부 Y축 방향 블록 간격 (mm)",
+          "en": "Block spacing along the Y-axis in the supply section (mm).",
           "y": [
-            51.5,
-            17.8
+            49.4,
+            17.2
           ]
         },
         {
           "name": "Z Spacing",
           "type": "Number",
-          "ko": "공급부 Z축 방향의 블록 간격 (mm). 기본값은 25, 범위는 0–50.",
-          "en": "Block spacing along the Z axis of the supply station (mm). Default: 25, range 0–50.",
+          "ko": "공급부 Z축 방향 블록 간격 (mm)",
+          "en": "Block spacing along the Z-axis in the supply section (mm).",
           "y": [
-            74,
-            17.8
+            73.6,
+            17.2
           ]
         }
       ]
     },
     {
       "label": "Count",
-      "img": "block-supply_tab2.png",
+      "img": "16_BlockSupply_11.png",
       "rows": [
         {
           "name": "X Count",
           "type": "Integer",
-          "ko": "공급부 X축 방향의 블록 개수. 기본값은 1, 범위는 1–20.",
-          "en": "Number of blocks along the X axis of the supply station. Default: 1, range 1–20.",
+          "ko": "공급부 X축 방향 블록 개수.",
+          "en": "Number of blocks along the X-axis in the supply section.",
           "y": [
-            29,
-            17.8
+            27.6,
+            18.4
           ]
         },
         {
           "name": "Y Count",
           "type": "Integer",
-          "ko": "공급부 Y축 방향의 블록 개수. 기본값은 1, 범위는 1–20.",
-          "en": "Number of blocks along the Y axis of the supply station. Default: 1, range 1–20.",
+          "ko": "공급부 Y축 방향 블록 개수.",
+          "en": "Number of blocks along the Y-axis in the supply section.",
           "y": [
-            51.5,
-            17.8
+            49.4,
+            18.4
           ]
         },
         {
           "name": "Z Count",
           "type": "Integer",
-          "ko": "공급부 Z축 방향의 블록 개수. 기본값은 1, 범위는 1–20.",
-          "en": "Number of blocks along the Z axis of the supply station. Default: 1, range 1–20.",
+          "ko": "공급부 Z축 방향 블록 개수.",
+          "en": "Number of blocks along the Z-axis in the supply section.",
           "y": [
-            74,
-            17.8
+            71.3,
+            18.4
           ]
         }
       ]
     },
     {
       "label": "Preview",
-      "img": "block-supply_tab3.png",
+      "img": "16_BlockSupply_12.png",
       "rows": [
         {
-          "name": "Frame Size",
+          "name": "FrameSize",
           "type": "Number",
-          "ko": "프리뷰에 표시할 타겟 평면 프레임의 크기. 기본값은 1.5.",
-          "en": "Size of the target plane frames shown in the preview. Default: 1.5.",
+          "ko": "프리뷰에 표시할 타겟 평면 프레임의 크기.",
+          "en": "Size of the target plane frames shown in the preview.",
           "y": [
-            52.7,
-            32.3
+            49,
+            32.7
           ]
         }
       ]
@@ -96,38 +96,38 @@ export const groups = [
 
 export const inputs = [
   {
+    "name": "Base Plane",
+    "type": "Plane",
+    "ko": "블록 공급부의 기준 평면.",
+    "en": "Reference plane for the block supply section."
+  },
+  {
     "name": "Unit Block",
     "type": "Box",
-    "ko": "공급할 단위 블록 형상.",
-    "en": "Unit block geometry to supply."
+    "ko": "적층할 단위 블록 형상.",
+    "en": "Unit block geometry to be stacked."
   },
   {
     "name": "Block Count",
     "type": "Integer",
-    "ko": "공급할 블록의 총 개수. 배치 가능 개수(X×Y×Z)를 넘으면 같은 배열 위치에 겹쳐 반복 배치한다.",
-    "en": "Total number of blocks to supply. When it exceeds the layout capacity (X × Y × Z), the blocks repeat on the same layout positions."
-  },
-  {
-    "name": "Supply Base",
-    "type": "Plane",
-    "ko": "블록 공급부의 기준 평면. 블록 배열은 이 평면의 X·Y·Z 방향으로 놓인다.",
-    "en": "Reference plane of the block supply station. The block array is laid out along its X, Y and Z axes."
+    "ko": "공급할 블록의 총 개수. 배치 가능 개수(X×Y×Z) 초과 시 동일 배열로 겹쳐 반복 배치.",
+    "en": "Total number of blocks to supply. If it exceeds the available layout capacity (X × Y × Z), blocks are repeatedly placed overlapping in the same arrangement."
   }
 ];
 
-export const main = "block-supply_main.png";
+export const main = "16_BlockSupply.png";
 
 export const outputs = [
   {
-    "name": "Pick Targets",
-    "type": "Plane",
-    "ko": "공급된 각 블록의 Pick 타겟 평면.",
-    "en": "Pick target plane for each supplied block."
-  },
-  {
-    "name": "Supply Blocks",
+    "name": "Blocks",
     "type": "Mesh",
     "ko": "공급부에 배치된 블록 메시.",
-    "en": "Block meshes placed at the supply station."
+    "en": "Block meshes placed in the supply section."
+  },
+  {
+    "name": "Target Planes",
+    "type": "Plane",
+    "ko": "각 공급 블록의 Pick 타겟 평면.",
+    "en": "Pick target plane for each supplied block."
   }
 ];

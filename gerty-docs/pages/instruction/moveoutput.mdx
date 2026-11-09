@@ -1,6 +1,6 @@
 ---
 title: "MoveOutput"
-description: "디지털(DO), 그룹(GO), 아날로그(AO) 출력 신호를 동반하는 ABB 이동 인스트럭션(MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO)을 만드는 컴포넌트이다."
+description: "디지털(DO), 그룹(GO), 아날로그(AO) 출력 신호를 동반하는 ABB RAPID Move 인스트럭션(MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO)을 생성 및 설정하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/moveoutput.mjs";
 
-디지털(DO), 그룹(GO), 아날로그(AO) 출력 신호를 동반하는 ABB RAPID Move 인스트럭션(`MoveJDO`, `MoveLDO`, `MoveJGO`, `MoveLGO`, `MoveJAO`, `MoveLAO`)을 만드는 컴포넌트이다. 각 타겟으로 이동하면서 **Signal** 에 지정한 출력 신호의 값을 바꾼다. 어떤 인스트럭션을 쓸지는 설정의 **MoveOutput** 에서 모션 유형으로 고른다.
+디지털(DO), 그룹(GO), 아날로그(AO) 출력 신호를 동반하는 ABB RAPID Move 인스트럭션(`MoveJDO`, `MoveLDO`, `MoveJGO`, `MoveLGO`, `MoveJAO`, `MoveLAO`)을 생성 및 설정하는 컴포넌트이다.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/moveoutput_main.png" alt="MoveOutput" />
+<ComponentShot src="/assets/images/1_MoveOutput.png" alt="MoveOutput" />
 
 ## 입력
 
@@ -45,15 +45,15 @@ import * as d from "../../../data/components/moveoutput.mjs";
 
 1. **RobTargets** 에 [RobTarget](/datatype/robtarget/) 또는 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 출력을 연결한다.
 2. **Signal** 에 출력 신호 이름을, **DO Value** 에 쓸 값을 연결한다.
-3. **ABB MoveOutput** 탭의 **MoveOutput** 에서 모션 유형·속도·Zone 을 고르고, **MoveJ Start End** / **Fine Start End** 를 정한다.
-4. **Instruction** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+3. **ABB MoveXO** 탭에서 모션 유형·속도·Zone 과 **MoveJ Start & End** / **Fine Start & End** 를 정한다.
+4. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="note">
-  **MoveOutput** 에서 고른 모션 유형에 따라 `MoveJDO` / `MoveLDO`(디지털), `MoveJGO` / `MoveLGO`(그룹), `MoveJAO` / `MoveLAO`(아날로그) 인스트럭션이 만들어집니다. **Signal** 에 연결한 신호가 고른 유형과 같은 종류인지 확인하세요.
+  신호 유형에 따라 `MoveJDO` / `MoveLDO`(디지털), `MoveJGO` / `MoveLGO`(그룹), `MoveJAO` / `MoveLAO`(아날로그) 인스트럭션이 만들어집니다.
 </Aside>
 
 ## 관련 항목

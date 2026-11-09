@@ -5,16 +5,16 @@ export const groups = [
   [
     {
       "label": "TriggIOs",
-      "img": "triggios_tab1.png",
+      "img": "5_TriggIOs_1.png",
       "rows": [
         {
           "name": "Name",
           "type": "String",
-          "ko": "생성할 <code>TriggIOs</code> 의 변수명을 정의한다. 기본값은 trigg0.",
-          "en": "Defines the variable name of the <code>TriggIOs</code> to create. Default: trigg0.",
+          "ko": "생성할 <code>TriggIOs</code>의 변수명을 정의한다.",
+          "en": "Variable name",
           "y": [
-            52.6,
-            31.6
+            49.5,
+            31.3
           ]
         }
       ]
@@ -24,20 +24,20 @@ export const groups = [
 
 export const inputs = [
   {
-    "name": "IOEvent",
+    "name": "IOs",
     "type": "IOEvent",
-    "ko": "ABB TriggIOs 에 담을 <a href=\"/datatype/iodevent/\">IOEvent</a> 콜렉션. 여러 IOEvent 를 묶어 연결한다.",
-    "en": "Collection of <a href=\"/en/datatype/iodevent/\">IOEvents</a> for the ABB TriggIOs. Connect several IOEvents together."
+    "ko": "ABB TriggIOs를 위한 <a href=\"/datatype/iodevent/\">IOEvents</a> 콜렉션",
+    "en": "IOEvents collection for ABB TriggIOs"
   }
 ];
 
-export const main = "triggios_main.png";
+export const main = "5_TriggIOs.png";
 
 export const outputs = [
   {
     "name": "TriggIOs",
     "type": "TriggIOs",
-    "ko": "정의된 ABB TriggIOs 를 출력한다.",
-    "en": "Outputs the defined ABB TriggIOs."
+    "ko": "정의된 ABB TriggIOs를 출력한다.",
+    "en": "ABB TriggIOs"
   }
 ];

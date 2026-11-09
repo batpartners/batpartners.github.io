@@ -1,6 +1,6 @@
 ---
 title: "Repath Tree"
-description: "This component reassigns the branch paths of a DataTree while keeping the branch contents."
+description: "This component renumbers the branch paths of a DataTree while keeping the branch contents."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/repathtree.mjs";
 
-This component reassigns the branch paths of a DataTree while keeping the branch contents. Right-click the component and pick one of three patterns from the context menu (**Sequential Path** / **Odd Numbered Path** / **Even Numbered Path**). The default is **Sequential Path**.
+This component renumbers the branch paths of a DataTree while keeping the branch contents. Right-click the icon and pick one of three patterns from the context menu.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/repathtree_main.png" alt="Repath Tree" />
+<ComponentShot src="/assets/images/3_RepathTree.png" alt="Repath Tree" />
 
 ## Inputs
 
@@ -40,15 +40,15 @@ This component reassigns the branch paths of a DataTree while keeping the branch
 <Steps>
 
 1. Connect the DataTree to **Tree**.
-2. Right-click the component and pick the pattern (**Sequential Path** / **Odd Numbered Path** / **Even Numbered Path**).
-3. Take the DataTree with reassigned branch paths from the **Tree** output.
+2. Right-click the icon and pick the pattern (**Sequential** / **Odd Numbered** / **Even Numbered**).
+3. Take the renumbered DataTree from the **Tree** output.
 
 </Steps>
 
 ## Notes
 
 <Aside type="note">
-  **Sequential Path**: assigns the branches {'{'}0{'}'}, {'{'}1{'}'}, {'{'}2{'}'}…. **Odd Numbered Path**: {'{'}1{'}'}, {'{'}3{'}'}, {'{'}5{'}'}…. **Even Numbered Path**: {'{'}0{'}'}, {'{'}2{'}'}, {'{'}4{'}'}….
+  **Sequential**: numbers the branches {'{'}0{'}'}, {'{'}1{'}'}, {'{'}2{'}'}…. **Odd Numbered**: {'{'}1{'}'}, {'{'}3{'}'}, {'{'}5{'}'}…. **Even Numbered**: {'{'}0{'}'}, {'{'}2{'}'}, {'{'}4{'}'}….
 </Aside>
 
 ## Related
