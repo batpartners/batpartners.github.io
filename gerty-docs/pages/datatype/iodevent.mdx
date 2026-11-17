@@ -1,6 +1,6 @@
 ---
 title: "IOEvent"
-description: "TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트이다."
+description: "TriggIOs 배열의 단일 I/O 트리거 이벤트(신호, 트리거 위치, 값)를 정의하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/iodevent.mjs";
 
-TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트이다. 대상 출력 신호, 경로상 트리거 위치, 설정값을 지정한다. 여러 IOEvent를 TriggIOs 컴포넌트에 묶어 전체 TriggIOs 데이터를 구성한다.
+TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트이다. 대상 출력 신호, 이동 경로상의 트리거 위치, 신호에 쓸 값을 지정한다. 여러 IOEvent 를 [TriggIOs](/datatype/triggios/) 컴포넌트에 묶어 전체 TriggIOs 데이터를 구성한다.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/4_IOEvent.png" alt="IOEvent" />
+<ComponentShot src="/assets/images/iodevent_main.png" alt="IOEvent" />
 
 ## 입력
 
@@ -43,17 +43,17 @@ TriggIOs 배열의 단일 I/O 트리거 이벤트를 정의하는 컴포넌트�
 
 <Steps>
 
-1. **Signal** 에 신호 데이터를 연결한다.
-2. **IOData Signal** 탭에서 **Signal Type**(디지털 / 그룹 / 아날로그)과 **DO Value** 를 정한다.
-3. **Settings** 탭에서 트리거 위치를 정한다. **Start** 로 거리의 기준점(이동 시작점 / 종료점)을, **Distance(mm)** 로 그 기준점에서의 거리를, **EquipLag(sec.)** 로 외부 장비의 응답 지연 보상값을 넣는다.
-4. 여러 IOEvent 의 **IO Data** 출력을 [TriggIOs](/datatype/triggios/) 의 **IOs** 입력에 묶어 연결한다.
+1. **Signal** 에 출력 신호의 이름을 연결한다.
+2. **IO Event** 탭에서 **Signal Type**(Digital / Group / Analog Output)을 고르고, 그에 맞게 바뀌는 값 입력 칸(**DO Value** / **GO Value** / **AO Value**)에 출력할 값을 정한다.
+3. **Settings** 탭에서 트리거 위치를 정한다. **Start** 로 거리의 기준점(이동 시작점 / 종료점)을, **Distance** 로 그 기준점에서의 거리(mm)를, **EquipLag(s)** 로 외부 장비의 응답 지연 보상값을 넣는다. 이벤트를 잠시 끄려면 **Used** 를 해제한다.
+4. 여러 IOEvent 의 **IOEvent** 출력을 [TriggIOs](/datatype/triggios/) 의 **IOEvent** 입력에 묶어 연결한다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="tip">
-  **EquipLag(sec.)** 가 양수(+)이면 지정 위치에 닿기 전에 신호를 미리 내보내고, 음수(-)이면 지정 위치를 지난 뒤에 내보냅니다.
+  **EquipLag(s)** 가 양수(+)이면 지정 위치에 닿기 전에 신호를 미리 내보내고, 음수(-)이면 지정 위치를 지난 뒤에 내보냅니다.
 </Aside>
 
 ## 관련 항목

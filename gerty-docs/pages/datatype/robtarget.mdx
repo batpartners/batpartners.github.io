@@ -1,6 +1,6 @@
 ---
 title: "RobTarget"
-description: "RobTarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그리고 축의 구성 상태를 정의하는 컴포넌트이다."
+description: "외부축 없이 로봇 단독 모션을 위한 목표 위치, 툴 방향, 축 구성 상태를 RobTarget 으로 정의하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/robtarget.mjs";
 
-RobTarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그리고 축의 구성 상태를 정의하는 컴포넌트이다. 외부축(Positioner)을 제외한 로봇의 모션을 제어하는 데 사용한다. 포지셔너를 함께 움직이는 타겟은 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 을 쓴다.
+RobTarget은 로봇이 이동할 목표 위치, 툴의 방향, 그리고 축의 구성 상태를 정의하는 컴포넌트이다. 외부축(Positioner) 없이 로봇 단독 모션에 사용하며, 외부축 값은 9E9(미사용)로 자동 설정된다. 포지셔너를 함께 움직이는 타겟은 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 을 쓴다.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/0_RobTarget.png" alt="RobTarget" />
+<ComponentShot src="/assets/images/robtarget_main.png" alt="RobTarget" />
 
 ## 입력
 
@@ -43,7 +43,7 @@ RobTarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그
 
 <Steps>
 
-1. **Target Plane** 에 RobTarget 으로 만들 평면을 연결한다. 필요하면 **Z Rotation** 으로 타겟을 자체 Z축 기준으로 회전한다(단위: 도).
+1. **Target Planes** 에 RobTarget 으로 만들 평면을 연결한다. 필요하면 **Z Rotation** 으로 타겟을 자체 Z축 기준으로 회전한다(단위: 도).
 2. 작업물 좌표계를 기준으로 하려면 **WobjData** 를 연결한다. **Chaining** 을 켜면 뷰포트에서 작업평면을 옮길 때 타겟도 함께 움직인다.
 3. 툴의 +X축을 로봇 쪽으로 정렬하려면 **Orientation** 탭의 **Align X** 를 켜고 **Robot Base** 와 **Align Weight** 를 지정한다.
 4. **RobTargets** 출력을 이동 명령([Move](/instruction/move/), [ArcMove](/instruction/arcmove/))에 연결한다. 각 경로의 시작·끝 타겟을 따로 쓰려면 **Output** 탭의 **Split Start / Split End** 를 켠다.
@@ -53,7 +53,7 @@ RobTarget은 로봇과 추가 축이 이동할 목표 위치, 툴의 방향, 그
 ## 주의 사항
 
 <Aside type="tip">
-  **Split Start / Split End** 는 Target Plane 의 브랜치(Branch)마다 첫 번째·마지막 인덱스를 분리해 **Start Targets / End Targets** 로 출력합니다.
+  **Split Start / Split End** 는 Target Planes 의 브랜치(Branch)마다 첫 번째·마지막 RobTarget 을 분리해 별도의 시작·끝 타겟 출력(**Start Target / End Target**)으로 내보냅니다.
 </Aside>
 
 <Aside type="note">

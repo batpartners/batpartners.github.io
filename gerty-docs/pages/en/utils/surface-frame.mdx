@@ -1,6 +1,6 @@
 ---
 title: "Surface Frame"
-description: "This is a component that sets a reference plane from a planar surface."
+description: "This component creates a reference plane at a (U, V) position on a flat surface."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/surface-frame.mjs";
 
-This is a component that sets a reference plane from a planar surface.
+This component creates a reference plane at a (U, V) position on a flat surface.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/8_SurfaceFrame.png" alt="Surface Frame" />
+<ComponentShot src="/assets/images/surface-frame_main.png" alt="Surface Frame" />
 
 ## Inputs
 
@@ -45,7 +45,8 @@ This is a component that sets a reference plane from a planar surface.
 
 1. Connect a planar surface to **Surface**.
 2. Set **U Param** and **V Param** of the plane origin in the **UV Param** tab.
-3. Connect the **Base Plane** output wherever a reference plane is needed (e.g. **BasePlane** of [Overhang Mapper](/en/utils/overhangmapper/)).
+3. If needed, change the size of the preview frame with **Frame Size** in the **Preview** tab.
+4. Connect the **Base Plane** output wherever a reference plane is needed (e.g. **BasePlane** of [Overhang Mapper](/en/utils/overhangmapper/)).
 
 </Steps>
 

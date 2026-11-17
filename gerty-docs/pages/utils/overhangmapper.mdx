@@ -1,6 +1,6 @@
 ---
 title: "Overhang Mapper"
-description: "입력된 Mesh 형상의 오버행에 대하여 색상 매핑으로 시각화하여 제공하는 컴포넌트이다."
+description: "입력한 Mesh 형상의 오버행 각도를 색상으로 매핑해 시각화하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/overhangmapper.mjs";
 
-입력된 Mesh 형상의 오버행에 대하여 색상 매핑으로 시각화하여 제공하는 컴포넌트이다.
+입력한 Mesh 형상의 오버행 각도를 색상으로 매핑해 시각화하는 컴포넌트이다.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/7_OverhangMapper.png" alt="Overhang Mapper" />
+<ComponentShot src="/assets/images/overhangmapper_main.png" alt="Overhang Mapper" />
 
 ## 입력
 
@@ -44,7 +44,7 @@ import * as d from "../../../data/components/overhangmapper.mjs";
 <Steps>
 
 1. **Mesh** 에 오버행을 확인할 메시를 연결한다.
-2. **BasePlane** 에 빌드 플레이트 방향의 기준 평면을 연결한다. 기울어진 판이면 [Surface Frame](/utils/surface-frame/) 으로 만든 평면을 쓴다.
+2. 필요하면 **BasePlane**(옵션)에 빌드 플레이트 방향의 기준 평면을 연결한다. 기울어진 판이면 [Surface Frame](/utils/surface-frame/) 으로 만든 평면을 쓴다.
 3. **Mesh** 출력의 색으로 오버행 구간을 보고, **AngleData** 로 각도 값을 확인한다.
 
 </Steps>

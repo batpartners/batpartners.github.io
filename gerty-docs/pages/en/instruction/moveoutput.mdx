@@ -1,6 +1,6 @@
 ---
 title: "MoveOutput"
-description: "This is a component that configures ABB Move instructions (MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO) accompanied by digital, group, and analog output signals."
+description: "Creates ABB move instructions (MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO) combined with a digital, group or analog output signal."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/moveoutput.mjs";
 
-This is a component that configures ABB Move instructions (MoveJDO, MoveLDO, MoveJGO, MoveLGO, MoveJAO, MoveLAO) accompanied by digital, group, and analog output signals.
+A component that creates ABB move instructions (`MoveJDO`, `MoveLDO`, `MoveJGO`, `MoveLGO`, `MoveJAO`, `MoveLAO`) combined with a digital (DO), group (GO) or analog (AO) output signal. While moving to each target, it sets the value of the output signal named in **Signal**. The instruction is chosen as the motion type in **MoveOutput** in the settings.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/1_MoveOutput.png" alt="MoveOutput" />
+<ComponentShot src="/assets/images/moveoutput_main.png" alt="MoveOutput" />
 
 ## Inputs
 
@@ -45,15 +45,15 @@ This is a component that configures ABB Move instructions (MoveJDO, MoveLDO, Mov
 
 1. Connect the output of [RobTarget](/en/datatype/robtarget/) or [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/) to **RobTargets**.
 2. Connect the output signal name to **Signal** and the value to write to **DO Value**.
-3. Set the motion type, speed, zone and **MoveJ Start & End** / **Fine Start & End** in the **ABB MoveXO** tab.
-4. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+3. In the **ABB MoveOutput** tab, pick the motion type, speed and zone with **MoveOutput**, and set **MoveJ Start End** / **Fine Start End**.
+4. Put the **Instruction** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
 
 </Steps>
 
 ## Notes
 
 <Aside type="note">
-  Depending on the signal type, the instruction is `MoveJDO` / `MoveLDO` (digital), `MoveJGO` / `MoveLGO` (group) or `MoveJAO` / `MoveLAO` (analog).
+  The motion type picked in **MoveOutput** decides whether the instruction is `MoveJDO` / `MoveLDO` (digital), `MoveJGO` / `MoveLGO` (group) or `MoveJAO` / `MoveLAO` (analog). Make sure the signal connected to **Signal** is of the matching kind.
 </Aside>
 
 ## Related

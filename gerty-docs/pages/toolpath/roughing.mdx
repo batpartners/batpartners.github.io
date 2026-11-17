@@ -1,6 +1,6 @@
 ---
 title: "Roughing"
-description: "계단식 황삭(Roughing) 툴패스를 생성하는 컴포넌트이다."
+description: "소재(Stock)와 최종 형상(Model)으로 계단식 황삭(Roughing) 툴패스를 생성하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/roughing.mjs";
 
-계단식 황삭(Roughing) 툴패스를 생성하는 컴포넌트이다. 사용자는 타겟 평면사이의 거리와, 레이어간 간격, 시작 방향 등의 작업 방식에 맞게 세부 설정이 가능하다.
+소재(Stock)와 최종 형상(Model)으로 계단식 황삭(Roughing) 툴패스를 생성하는 컴포넌트이다. 각 레이어는 동심 링 경로로 깎이며, 3축 가공 기준(공구가 위에서 내려옴)으로 언더컷 부분을 보호한다. **Cutting** 탭에서 공구 지름과 경로·레이어 간격, 허용 오차를, **Allowance** 탭에서 옆면(**Radial**)과 위쪽(**Axial**)으로 남길 정삭 여유를, **Path** 탭에서 절삭 방식과 링 순서, 시작점, 리트랙트 여유, 깊이를 유지한 링 사이 이동(**Stay Down**)을 설정한다.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/7_Roughing.png" alt="Roughing" />
+<ComponentShot src="/assets/images/roughing_main.png" alt="Roughing" />
 
 ## 입력
 
@@ -43,22 +43,31 @@ import * as d from "../../../data/components/roughing.mjs";
 
 <Steps>
 
-1. **Geometry** 에 깎아낼 볼륨(Brep 또는 Mesh)을 연결한다. 기준 평면이 WorldXY 가 아니면 **Reference Planes** 도 연결한다.
-2. **Settings** 탭에서 절삭 방향(**Cutting Direction**), 외곽 이격(**Setback(mm)**), 경로 간격(**Stepover(mm)**), 레이어 깊이(**Stepdown(mm)**), **Tolerance** 를 정한다.
-3. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
+1. **Model** 에 남길 최종 형상을, **Stock** 에 깎기 전의 소재 형상을 연결한다(둘 다 닫힌 Brep 또는 Mesh). 기준 평면이 WorldXY 가 아니면 **Reference Plane** 에도 연결한다.
+2. **Cutting** 탭에서 공구 지름(**Tool Diameter**), 경로 간격(**Stepover**), 레이어 깊이(**Stepdown**), **Tolerance** 를 정한다.
+3. **Allowance** 탭에서 옆면 여유(**Radial**)와 위쪽 여유(**Axial**)를 정한다.
+4. **Path** 탭에서 절삭 방식(**Climb**), 링 순서(**Path Order**), 시작점(**Seam**), 리트랙트 여유(**Clearance**), 깊이를 유지하는 이동의 최대 길이(**Stay Down**)를 정한다.
+5. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="note">
-  **Cutting Direction** 은 레이어 안의 진행 방향(시계/반시계)을 바꿉니다. 엔드밀 회전 방향과 맞물려 Climb / Conventional 절삭이 정해집니다.
+  **Climb** 은 스핀들 시계 방향(CW · M3) 회전을 기준으로 하향(Climb) / 상향(Conventional) 절삭을 고릅니다. 링마다의 진행 방향은 **Path Order** 에 따라 깎지 않은 재료가 있는 쪽을 보고 정해집니다.
+</Aside>
+
+<Aside type="caution">
+  **Stepover** 가 **Tool Diameter** 보다 크면 링 사이에 재료가 남습니다.
+</Aside>
+
+<Aside type="caution">
+  **Stock** 은 옵션 입력으로 표시되지만, 연결하지 않으면 경로가 만들어지지 않습니다.
 </Aside>
 
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "ParallelFinishing", description: "평행 Contour 정삭", href: "/toolpath/parallelfinishing/" },
-  { title: "UVFinishing", description: "UV 방향 정삭", href: "/toolpath/uv-finishing/" },
+  { title: "Finishing", description: "평행 Contour · UV 정삭", href: "/toolpath/parallelfinishing/" },
   { title: "RobTarget", description: "타겟 평면을 로봇 타겟으로 변환", href: "/datatype/robtarget/" },
 ]} />

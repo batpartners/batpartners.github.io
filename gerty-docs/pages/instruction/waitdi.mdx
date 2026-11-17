@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/waitdi.mjs";
 
-지정된 디지털 입력(DI) 신호가 목표 값에 도달할 때까지 로봇 모션을 대기시키는 WaitDI 인스트럭션을 생성하는 컴포넌트이다.
+지정된 디지털 입력(DI) 신호가 목표 값에 도달할 때까지 로봇 모션을 대기시키는 WaitDI 인스트럭션을 생성하는 컴포넌트이다. 기다릴 신호는 **Signal** 입력으로 받고, 목표 값은 설정의 **Value** 로 정한다.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/9_WaitDI.png" alt="WaitDI" />
+<ComponentShot src="/assets/images/waitdi_main.png" alt="WaitDI" />
 
 ## 입력
 
@@ -45,7 +45,7 @@ import * as d from "../../../data/components/waitdi.mjs";
 
 1. **Signal** 에 기다릴 디지털 입력 신호 이름을 연결한다.
 2. **WaitDI** 탭의 **Value** 로 기다릴 값을 정한다.
-3. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+3. **Instruction** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
 
 </Steps>
 

@@ -1,6 +1,6 @@
 ---
 title: "Split Branch"
-description: "This is a component that splits a DataTree into two DataTrees based on the input branch index."
+description: "This component splits a DataTree into two DataTrees at a branch sequence index."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/splitbranch.mjs";
 
-This is a component that splits a DataTree into two DataTrees based on the input branch index.
+This component splits a DataTree into two DataTrees at a branch sequence index.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/4_SplitBranch.png" alt="Split Branch" />
+<ComponentShot src="/assets/images/splitbranch_main.png" alt="Split Branch" />
 
 ## Inputs
 
@@ -32,7 +32,7 @@ This is a component that splits a DataTree into two DataTrees based on the input
 <Steps>
 
 1. Connect the DataTree to split to **Tree**.
-2. Connect the branch number to split at to **Index**.
+2. Connect the branch sequence index to split at to **Index**. It counts branches in order, not by path value.
 3. Use **Tree A** (before Index) and **Tree B** (from Index on) separately downstream.
 
 </Steps>

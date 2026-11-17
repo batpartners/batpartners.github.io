@@ -1,6 +1,6 @@
 ---
 title: "RobTarget"
-description: "robtarget is a data type that defines the target position, tool orientation, and axis configuration for the robot and auxiliary axes to move to."
+description: "Defines a RobTarget (target position, tool orientation and axis configuration) for robot-only motion without external axes."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/robtarget.mjs";
 
-`robtarget` is a data type that defines the target position, tool orientation, and axis configuration for the robot and auxiliary axes to move to. It defines a `RobTarget` for robot-only motion without external axes. The external axis values are automatically set to `9E9` (unused). For targets that also drive a positioner, use [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/).
+RobTarget defines the target position, tool orientation, and axis configuration the robot moves to. It is used for robot-only motion without external axes (positioner); the external axis values are automatically set to `9E9` (unused). For targets that also drive a positioner, use [Positioner RobTarget](/en/datatype/positioner-robtarget-dynamic/).
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/0_RobTarget.png" alt="RobTarget" />
+<ComponentShot src="/assets/images/robtarget_main.png" alt="RobTarget" />
 
 ## Inputs
 
@@ -43,7 +43,7 @@ import * as d from "../../../../data/components/robtarget.mjs";
 
 <Steps>
 
-1. Connect the planes to turn into RobTargets to **Target Plane**. If needed, rotate the targets about their own Z axis with **Z Rotation** (degrees).
+1. Connect the planes to turn into RobTargets to **Target Planes**. If needed, rotate the targets about their own Z axis with **Z Rotation** (degrees).
 2. To work in a work-object frame, connect **WobjData**. With **Chaining** on, the targets move along when you move the work-object plane in the viewport.
 3. To align the +X axis toward the robot, turn on **Align X** in the **Orientation** tab and set **Robot Base** and **Align Weight**.
 4. Connect the **RobTargets** output to a move instruction ([Move](/en/instruction/move/), [ArcMove](/en/instruction/arcmove/)). To use the start and end targets of each path separately, turn on **Split Start / Split End** in the **Output** tab.
@@ -53,7 +53,7 @@ import * as d from "../../../../data/components/robtarget.mjs";
 ## Notes
 
 <Aside type="tip">
-  **Split Start / Split End** take the first and last index of each Target Plane branch out into **Start Targets / End Targets**.
+  **Split Start / Split End** take the first and last RobTarget of each Target Planes branch out into dedicated start and end outputs (**Start Target / End Target**).
 </Aside>
 
 <Aside type="note">

@@ -1,6 +1,6 @@
 ---
-title: "ParallelFinishing"
-description: "일방향으로 평행한 Contour 커브를 따라 정삭(Finishing) 툴패스를 생성하는 컴포넌트이다."
+title: "Finishing"
+description: "평행 Contour(Parallel) 또는 서피스 UV 아이소커브(UV)를 따라 정삭(Finishing) 툴패스를 생성하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,18 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/parallelfinishing.mjs";
 
-일방향으로 평행한 Contour 커브를 따라 정삭(Finishing) 툴패스를 생성하는 컴포넌트이다. 사용자는 작업물 형상에 맞게 타켓 평면 사이의 거리와, 레이어간 간격, 틸팅 등의 세부 설정을 할 수 있다.
+평행 Contour(Parallel) 또는 서피스 UV 아이소커브(UV)를 따라 정삭(Finishing) 툴패스를 생성하는 컴포넌트이다. 이전의 ParallelFinishing 과 UVFinishing 을 하나로 합친 것으로, **Cutting** 탭의 **Pattern** 에서 두 패턴 중 하나를 고른다.
+
+- **Parallel**: 일정 간격의 평행한 절단 평면으로 자른 단면을 따라 경로를 만든다. Brep 과 Mesh 를 모두 받으며, 경로 방향은 **Reference Plane** 을 기준으로 정해진다.
+- **UV**: 면마다 UV 아이소커브를 따라 경로를 만든다. Brep(Surface)만 쓰고 Mesh 는 건너뛴다.
+
+경로 간격(Stepover), 진행 방향, 경로 사이 연결 방식, TCP 틸팅, 근사 허용 오차를 설정할 수 있으며, 결과 경로는 타겟 평면과 Contour 폴리라인으로 출력된다.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/6_ParallelFinishing.png" alt="ParallelFinishing" />
+<ComponentShot src="/assets/images/parallelfinishing_main.png" alt="Finishing" />
 
 ## 입력
 
@@ -43,9 +48,10 @@ import * as d from "../../../data/components/parallelfinishing.mjs";
 
 <Steps>
 
-1. **Geometry** 에 정삭할 형상(Brep 또는 Mesh)을, **Reference Plane** 에 경로 기준 평면을 연결한다.
-2. **Settings** 탭에서 경로 방향(**Cutting Direction**), 경로 간격(**Stepover(mm)**), 표면 법선 쪽 기울기(**Tilting Weight**), **Tolerance** 를 정한다.
-3. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
+1. **Model** 에 정삭할 형상(Brep 또는 Mesh)을, **Reference Plane** 에 경로 기준 평면을 연결한다.
+2. **Cutting** 탭의 **Pattern** 에서 Parallel 또는 UV 를 고르고, 경로 간격(**Stepover**, mm)과 **Tolerance** 를 정한다. UV 패턴은 Brep 에만 경로를 만든다.
+3. **Path** 탭에서 진행 방향(**Dir Flip**), 경로 사이 연결 방식(**Link**), 표면 법선 쪽 기울기(**Tilt Weight**)를 정한다.
+4. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
 
 </Steps>
 
@@ -53,6 +59,5 @@ import * as d from "../../../data/components/parallelfinishing.mjs";
 
 <RelatedLinks links={[
   { title: "Roughing", description: "계단식 황삭", href: "/toolpath/roughing/" },
-  { title: "UVFinishing", description: "UV 방향 정삭", href: "/toolpath/uv-finishing/" },
   { title: "RobTarget", description: "타겟 평면을 로봇 타겟으로 변환", href: "/datatype/robtarget/" },
 ]} />

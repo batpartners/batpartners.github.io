@@ -5,16 +5,16 @@ export const groups = [
   [
     {
       "label": "Simulation",
-      "img": "1_DisplaySolver_1.png",
+      "img": "display-solver_tab1.png",
       "rows": [
         {
-          "name": "Simulation Pop-up",
+          "name": "Simulation Window",
           "type": "Toggle",
-          "ko": "시뮬레이션 컨트롤 창 열기/닫기",
-          "en": "Opens/closes the simulation control window.",
+          "ko": "시뮬레이션 컨트롤 창을 열거나 닫는다. 이 창에서 Rhino 뷰포트의 로봇 동작을 재생한다. 기본값은 FALSE.",
+          "en": "Opens or closes the simulation control window, from which the robot motion is played in the Rhino viewport. Default: FALSE.",
           "y": [
-            49,
-            30.6
+            52.7,
+            32.3
           ]
         }
       ]
@@ -26,18 +26,18 @@ export const inputs = [
   {
     "name": "GERTY Solver",
     "type": "GERTY Solver",
-    "ko": "GERTY Solver",
-    "en": "GERTY Solver"
+    "ko": "<a href=\"/core/gerty-core/\">GERTY Core</a> 의 GERTY Solver 출력을 연결한다.",
+    "en": "Connect the GERTY Solver output of <a href=\"/en/core/gerty-core/\">GERTY Core</a>."
   }
 ];
 
-export const main = "1_DisplaySolver.png";
+export const main = "display-solver_main.png";
 
 export const outputs = [
   {
-    "name": "Tool Center Plane",
+    "name": "Current TCP",
     "type": "Plane",
-    "ko": "현재 TCP 평면",
-    "en": "Current TCP plane."
+    "ko": "시뮬레이션의 현재 위치에서의 TCP 평면.",
+    "en": "TCP plane at the current position of the simulation."
   }
 ];

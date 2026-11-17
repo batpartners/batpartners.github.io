@@ -7,24 +7,24 @@ export const inputs = [
   {
     "name": "Tree",
     "type": "Tree",
-    "ko": "인덱스를 꺼낼 DataTree.",
-    "en": "The DataTree to read the index from."
+    "ko": "Branch Path(GH_Path)에서 인덱스를 추출할 DataTree 이다.",
+    "en": "The DataTree whose branch paths (GH_Path) the indices are extracted from."
   },
   {
     "name": "Position",
     "type": "Integer",
-    "ko": "Branch Path 에서 꺼낼 인덱스의 위치.",
-    "en": "Position of the index to read in the branch path."
+    "ko": "각 Branch Path 에서 추출할 인덱스의 위치이다.",
+    "en": "Position of the index to extract within each branch path."
   }
 ];
 
-export const main = "1_ExtractPathIdx.png";
+export const main = "extractpathidx_main.png";
 
 export const outputs = [
   {
     "name": "Index",
     "type": "Integer",
-    "ko": "각 Branch Path 에서 꺼낸 인덱스.",
-    "en": "The index read from each branch path."
+    "ko": "각 Branch Path 에서 추출한 인덱스이다.",
+    "en": "The index extracted from each branch path."
   }
 ];

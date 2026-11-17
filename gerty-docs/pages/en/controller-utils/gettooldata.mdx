@@ -1,6 +1,6 @@
 ---
 title: "Get ToolData"
-description: "A component that retrieves the active tool data from the currently connected offline controller."
+description: "This component retrieves the currently active tool data (ToolData) from the connected ABB controller."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/gettooldata.mjs";
 
-A component that retrieves the active tool data from the currently connected offline controller.
+This component retrieves the currently active tool data (ToolData) from the connected ABB controller.
 
 <DocTags tags={[{ text: "Controller Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/3_GetToolData.png" alt="Get ToolData" />
+<ComponentShot src="/assets/images/gettooldata_main.png" alt="Get ToolData" />
 
 ## Inputs
 
@@ -32,8 +32,8 @@ A component that retrieves the active tool data from the currently connected off
 <Steps>
 
 1. Connect the output of [Scan ABB Controller](/en/controller-utils/scanabbcontroller/) to **ABB Controller**.
-2. Connect the tool mounting base plane to **Tool Base**.
-3. Connect the **TCP** and **Tool Load** outputs to the **TCP** and **ToolLoad** inputs of [ToolData](/en/datatype/tooldata/).
+2. Connect the tool mounting base plane to **Base Plane**.
+3. Connect the **TCP** and **Tool Load** outputs to the **TCP** and **Tool Load** inputs of [ToolData](/en/datatype/tooldata/).
 
 </Steps>
 

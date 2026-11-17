@@ -1,0 +1,19 @@
+---
+// The right-click mode (or option) a page describes, shown at the top of a mode page instead of in its title.
+import type { Lang } from "../../data/components/types";
+interface Props { mode: string; lang: Lang; kind?: "mode" | "option" }
+const { mode, lang, kind = "mode" } = Astro.props;
+const label = { mode: { ko: "우클릭 모드", en: "Right-click mode" }, option: { ko: "우클릭 옵션", en: "Right-click option" } }[kind][lang];
+---
+<p class="mode-badge">
+  <svg class="mouse" viewBox="0 0 16 22" aria-hidden="true"><rect x="1" y="1" width="14" height="20" rx="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1v7M1 8h14" stroke="currentColor" stroke-width="1.5"/><path d="M8.75 1.8a6.2 6.2 0 0 1 5.45 5.45H8.75z" fill="var(--sl-color-accent)"/></svg>
+  <span class="label">{label}</span>
+  <span class="mode">{mode}</span>
+</p>
+<style>
+  .mode-badge { display: inline-flex; align-items: center; gap: 0.5rem; margin: 0 0 0.25rem; padding: 0.3rem 0.8rem 0.3rem 0.6rem;
+    border-radius: 999px; background: var(--sl-color-accent-low); color: var(--sl-color-accent-high); font-size: var(--sl-text-sm); line-height: 1.4; }
+  .mouse { width: 0.8rem; height: 1.1rem; flex: none; }
+  .label { color: var(--sl-color-gray-2); }
+  .mode { font-weight: 600; }
+</style>

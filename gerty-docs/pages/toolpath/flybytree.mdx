@@ -1,6 +1,6 @@
 ---
-title: "FlyByTree"
-description: "두개 이상의 Target Plane 경로를 설정할 수 있는 컴포넌트이다."
+title: "Flyby"
+description: "입력별로 나눈 경로 세그먼트 사이를 연결하는 전이 경로(Flyby) 타겟 평면을 생성한다. Flyby 컴포넌트의 우클릭 메뉴 Between Inputs 모드를 설명한다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -10,14 +10,19 @@ import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/flybytree.mjs";
+import ModeBadge from "../../../components/doc/ModeBadge.astro";
 
-두개 이상의 Target Plane 경로를 설정할 수 있는 컴포넌트이다. 각 Branch 사이를 연결하는 전이경로(Flyby) 타겟 평면 생성하며, 경로 Segment 간 이동 시 작업물에서 이탈하는 구간의 경로를 재구성하여 사용자가 설정한 값에 따라 타겟평면을 결정한다.
+<ModeBadge mode="Between Inputs" lang="ko" kind="mode" />
+
+Flyby 는 경로 세그먼트 사이를 연결하는 전이 경로(Flyby) 타겟 평면을 생성하는 컴포넌트로, 이전의 FlybyBranch, FlybyCustom, FlybyTree 를 하나로 합친 것이다. 경로 세그먼트 사이를 이동할 때 작업물에서 벗어나는 경로를 만들며, 진입(Approach)·진출(Departure) 방향과 거리, 블렌드 형태, 자세 보간은 설정 값에 따라 정해진다. 결과는 전이 경로 타겟 평면(**Flyby Targets**)과 블렌드 커브(**Flyby Curves**)로 출력된다.
+
+컴포넌트를 우클릭해 **Between Branches** 와 **Between Inputs** 를 전환할 수 있으며, 이 페이지는 우클릭 메뉴에서 **Between Inputs** 를 고른 경우를 설명한다. 이 모드에서는 입력(**Target Planes0**, **Target Planes1**) 하나가 세그먼트 하나이며, 각 입력의 DataTree 는 평탄화(Flatten)되어 쓰인다. 하나의 DataTree 에서 Branch 사이에 전이 경로를 만들려면 기본 모드인 [Between Branches](/toolpath/flybybranch/) 를 쓴다.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/3_FlybyTree.png" alt="FlyByTree" />
+<ComponentShot src="/assets/images/flybytree_main.png" alt="Flyby (Between Inputs)" />
 
 ## 입력
 
@@ -43,18 +48,18 @@ import * as d from "../../../data/components/flybytree.mjs";
 
 <Steps>
 
-1. **Target Planes0**, **Target Planes1** 에 타겟 평면 DataTree 를 하나씩 연결한다. 경로 묶음이 더 있으면 **+ ADD** 로 입력을 늘린다.
-2. **Basic** 탭의 **Approaching Dir. / Leaving Dir.** 에서 진입·진출 방향(모션 방향 또는 타겟 평면의 축)을 고른다.
-3. **Basic** 탭에서 진입·진출 거리(**Approaching / Leaving Dist.(mm)**)와 전이 경로의 타겟 개수(**Target Count**)를 정한다.
-4. **Advanced** 탭에서 블렌드 연속성(**Continuity Type**)과 시작·끝의 불룩함(**Bulge Start / Bulge End**)을 조정한다.
-5. **Fly-by Targets** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
+1. 컴포넌트를 우클릭해 **Between Inputs** 를 고른다. 컴포넌트 아래에 **Between Inputs** 가 표시된다.
+2. **Target Planes0**, **Target Planes1** 에 세그먼트별 타겟 평면을 하나씩 연결한다.
+3. **Flyby Targets** 탭에서 전이 경로 하나의 타겟 개수(**Target Count**)와 첫 세그먼트 앞·마지막 세그먼트 뒤의 단독 타겟 생성 여부(**Lead In/Out**)를 정한다.
+4. **Offset** 탭의 **Approach Dir** / **Departure Dir** 에서 진입·진출 방향(모션 방향, 타겟 평면의 축 또는 **Custom**)을 고르고, 진입·진출 거리(**Approach (mm)** / **Departure (mm)**)를 정한다. 두 거리를 같은 값으로 맞추려면 **Link** 를 켠다. **Custom** 을 고르면 같은 이름의 벡터 입력이 추가되어 세그먼트별 방향을 지정할 수 있다.
+5. **Blend** 탭에서 블렌드 연속성(**Continuity Type**)과 시작·끝의 불룩함(**Bulge Start** / **Bulge End**)을, **Rotation** 탭에서 자세 보간 방식(**Interpolation**)과 회전 방향 반전(**Flip Rotation** / **Flip Over (°)**)을 정한다.
+6. 메인 경로의 타겟 평면을 홀수 경로 `{1}`, `{3}`, … 에 두고 **Flyby Targets** 출력(짝수 경로)과 하나의 DataTree 로 합친 뒤, [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
 
 </Steps>
 
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "FlyByBranch", description: "경로 사이 전이 경로", href: "/toolpath/flybybranch/" },
-  { title: "FlyByCustom", description: "벡터로 정한 전이 경로", href: "/toolpath/flybycustom/" },
+  { title: "Flyby (Between Branches)", description: "DataTree 의 Branch 사이 전이 경로 (기본 모드)", href: "/toolpath/flybybranch/" },
   { title: "RobTarget", description: "타겟 평면을 로봇 타겟으로 변환", href: "/datatype/robtarget/" },
 ]} />

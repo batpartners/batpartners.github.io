@@ -15,7 +15,16 @@ const SECTION = {
 const ABOUT = { "About-GERTY": "overview", ComponentOverview: "overview", installation: "installation", Tutorial: "tutorial" };
 // The WobjData and Positioner RobTarget group pages were copies of their first mode page (Fixed / Dynamic): those
 // posts map to the mode page, and the sidebar group title opens it.
-const INTO = { "DataType-WobjData": "datatype/wobjdata-fixed", "DataType-Positioner_RobTarget": "datatype/positioner-robtarget-dynamic" };
+const INTO = {
+  "DataType-WobjData": "datatype/wobjdata-fixed",
+  "DataType-Positioner_RobTarget": "datatype/positioner-robtarget-dynamic",
+  // 2026-11-17 plugin: FlybyCustom's custom directions became Flyby's Offset tab; UVFinishing became a Pattern option
+  // of Finishing. Their posts fold into the page that covers them now.
+  "ToolPath-FlyByCustom": "toolpath/flybybranch",
+  "ToolPath-UV-Finishing": "toolpath/parallelfinishing",
+  // Solid Offset Fill is no longer in the plugin; Solid Fill covers infill now.
+  "ToolPath-SolidOffsetFill": "toolpath/solidfill",
+};
 /** Pages that several posts were merged into (a hand-written page in pages/ must exist for each). */
 export const MERGED = new Set(["about/overview", ...Object.values(INTO)]);
 /** Addresses these docs used before the merge -> the page that holds them now. */
@@ -24,6 +33,9 @@ export const MOVED = {
   "about/component-overview": "about/overview",
   "datatype/wobjdata": "datatype/wobjdata-fixed",
   "datatype/positioner-robtarget": "datatype/positioner-robtarget-dynamic",
+  "toolpath/flybycustom": "toolpath/flybybranch",
+  "toolpath/uv-finishing": "toolpath/parallelfinishing",
+  "toolpath/solidoffsetfill": "toolpath/solidfill",
 };
 
 /** "2026-07-11-Instruction-Move.md" -> "instruction/move" */

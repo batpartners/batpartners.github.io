@@ -1,6 +1,6 @@
 ---
-title: "WireCuttingFromCrvs"
-description: "This is a component that generates a hot-wire cutting toolpath from two curves."
+title: "WireCutting"
+description: "The From Curves mode of the WireCutting component, which generates a hot-wire cutting toolpath from two rail curves."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -10,14 +10,17 @@ import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/wirecuttingfromcrvs.mjs";
+import ModeBadge from "../../../../components/doc/ModeBadge.astro";
 
-This is a component that generates a hot-wire cutting toolpath from two curves. Users can set the number of points to generate target planes, the parameter value between the two curves (default: 0.5), and optionally, an attractor value to smoothly adjust the hot-wire tool. In addition, detailed configurations for the hot-wire path direction, tool orientation, and entry intervals are available.
+<ModeBadge mode="From Curves" lang="en" kind="mode" />
+
+This page covers **From Curves**, the default right-click mode of the **WireCutting** component. It generates a hot-wire cutting toolpath from two rail curves (**Rail A**, **Rail B**), placing target planes at the **Spacing** interval along the spans of the ruled surface the two rails define. Connecting a Point or Curve to the optional **Wrist** input steers the target Z direction toward it. The settings are split into the **Cutting** (target spacing and origin parameter), **Path** (cutting direction, tool orientation, extension), **Wrist** (Wrist assignment) and **Preview** tabs. The **From Surface** mode, which takes a ruled surface as input, has its own page: [WireCutting (From Surface)](/en/toolpath/wirecuttingfromsrf/).
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/4_WireCuttingFromCurvs.png" alt="WireCuttingFromCrvs" />
+<ComponentShot src="/assets/images/wirecuttingfromcrvs_main.png" alt="WireCutting (From Curves)" />
 
 ## Inputs
 
@@ -43,16 +46,24 @@ This is a component that generates a hot-wire cutting toolpath from two curves. 
 
 <Steps>
 
-1. Connect the two rail curves that define the ruled surface to **Curve A** and **Curve B**.
-2. Set the number of targets with **Target Count**. Optionally, set where the target origins lie with **Parameter** (default 0.5) and add an attractor with **Wrist Object** to steer the tool direction smoothly.
-3. Set the cutting direction (**Cutting Dir. Flip**), tool direction (**Tool Flip**) and the start/end extension (**Extension(mm)**) in the **Settings** tab.
-4. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+1. Check that **From Curves** is selected in the component's right-click menu (the default).
+2. Connect the two rail curves that define the ruled surface to **Rail A** and **Rail B**. Curve lists are paired by index, and each pair produces one branch in the outputs.
+3. Set the target spacing (**Spacing**, mm) and the origin position on each span (**Parameter**, default 0.5) in the **Cutting** tab.
+4. Set the cutting direction (**Dir Flip**), tool orientation (**Tool Flip**) and the start/end extension (**Extension**, mm) in the **Path** tab.
+5. To steer the tool direction (target Z), connect a Point or Curve to **Wrist**, then set how it is assigned (**Wrist Mode**) and the Sweep guide shape (**Wrist Blend**) in the **Wrist** tab.
+6. Connect the **Target Planes** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
 
 </Steps>
+
+## Notes
+
+<Aside type="note">
+  Turning on **Use Variable Parameters** in the right-click menu adds a **Parameter** input and hides the **Parameter** slider in the **Cutting** tab. Connect either a list of numbers from 0.0 to 1.0 (samples spread evenly along the cutting direction, linearly interpolated in between) or a guide curve (on each span, the point closest to the curve becomes the origin). This option has no page of its own.
+</Aside>
 
 ## Related
 
 <RelatedLinks links={[
-  { title: "WireCuttingFromSrf", description: "Hot-wire cutting from a ruled surface", href: "/en/toolpath/wirecuttingfromsrf/" },
+  { title: "WireCutting (From Surface)", description: "From Surface mode of the same component: hot-wire cutting from a ruled surface", href: "/en/toolpath/wirecuttingfromsrf/" },
   { title: "RobTarget", description: "Turns target planes into robot targets", href: "/en/datatype/robtarget/" },
 ]} />

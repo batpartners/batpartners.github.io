@@ -7,24 +7,24 @@ export const inputs = [
   {
     "name": "Tree",
     "type": "Tree",
-    "ko": "Branch 를 꺼낼 DataTree.",
-    "en": "The DataTree to take the branch from."
+    "ko": "Branch 를 추출할 DataTree 이다.",
+    "en": "The DataTree to extract a branch from."
   },
   {
     "name": "Index",
     "type": "Integer",
-    "ko": "꺼낼 Branch 의 순번.",
-    "en": "Number of the branch to extract."
+    "ko": "추출할 Branch 의 순번이다. Path 값이 아닌 Branch 순서를 기준으로 한다. 예: Branch {0}, {2}, {4} 가 있는 DataTree 에서 Index 1 은 {2} Branch 를 추출한다.",
+    "en": "Sequential index of the branch to extract, based on branch order rather than path value. Example: in a DataTree with branches {0}, {2}, {4}, Index 1 extracts branch {2}."
   }
 ];
 
-export const main = "5_TreeBranch.png";
+export const main = "treebranch_main.png";
 
 export const outputs = [
   {
     "name": "Branch",
     "type": "Tree",
-    "ko": "꺼낸 Branch 의 데이터.",
+    "ko": "추출한 Branch 의 데이터이다.",
     "en": "The data of the extracted branch."
   }
 ];

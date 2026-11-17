@@ -1,6 +1,6 @@
 ---
 title: "GERTY Core"
-description: "GERTY Core is a component that computes robot motions based on defined robot setups and instructions."
+description: "A component that computes robot motion from the defined robot setup and instructions and produces the data needed by Display Solver and Code Solver."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/gerty-core.mjs";
 
-GERTY Core is a component that computes robot motions based on defined robot setups and instructions. It generates the basic data required to run the Display Solver and CodeSolver.
+GERTY Core computes robot motion from the defined robot setup (Robot Setup) and instructions. It outputs **GERTY Solver** for simulation and analysis and **GERTY Code** for RAPID code generation: the base data required to run Display Solver and Code Solver.
 
 <DocTags tags={[{ text: "Core", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/2_GERTYCore.png" alt="GERTY Core" />
+<ComponentShot src="/assets/images/gerty-core_main.png" alt="GERTY Core" />
 
 ## Inputs
 
@@ -43,9 +43,10 @@ GERTY Core is a component that computes robot motions based on defined robot set
 
 <Steps>
 
-1. Connect the **GERTY Robot** output of [ABB Robots](/en/robot-tool/abbrobot/) to **GERTY Robot**.
-2. Connect the instruction list to **Instructions**; the list order is the robot execution order. Connect **SubProc.** if you use sub-procedures.
-3. Connect the **GERTY Solver** output to [Display Solver](/en/core/display-solver/) and [Analysis Deconstructor](/en/core/analysis/), and the **GERTY Code** output to [Code Solver](/en/core/code-solver/).
+1. Connect the **Robot Setup** output of [ABB Robots](/en/robot-tool/abbrobot/) to **Robot Setup**.
+2. Connect the instruction list to **Instructions**; the list order is the robot execution order. Connect **SubProc** if you use sub-procedures.
+3. If needed, set **Config Option (Cfx = 1)** and **Ignore Errors** in the **GERTY Core** tab.
+4. Connect the **GERTY Solver** output to [Display Solver](/en/core/display-solver/) and [Analysis Deconstructor](/en/core/analysis/), and the **GERTY Code** output to [Code Solver](/en/core/code-solver/).
 
 </Steps>
 
@@ -55,10 +56,14 @@ GERTY Core is a component that computes robot motions based on defined robot set
   The order of the **Instructions** list maps directly to the execution order, so sort it in the intended motion order.
 </Aside>
 
+<Aside type="caution">
+  With **Ignore Errors** on, code is output even when motion errors are detected. Review the RAPID code and operating procedure before running it on the robot. With the default (off), code generation stops when errors are detected.
+</Aside>
+
 ## Related
 
 <RelatedLinks links={[
-  { title: "Display Solver", description: "Viewport simulation", href: "/en/core/display-solver/" },
-  { title: "Code Solver", description: "RAPID code export", href: "/en/core/code-solver/" },
-  { title: "Analysis Deconstructor", description: "Axis angles and error log", href: "/en/core/analysis/" },
+  { title: "Display Solver", description: "Takes GERTY Solver for viewport simulation", href: "/en/core/display-solver/" },
+  { title: "Code Solver", description: "Takes GERTY Code to generate RAPID code", href: "/en/core/code-solver/" },
+  { title: "Analysis Deconstructor", description: "Axis angles and error log from GERTY Solver", href: "/en/core/analysis/" },
 ]} />

@@ -1,6 +1,6 @@
 ---
 title: "WeldData"
-description: "아크가 안정적으로 유지되는 실제 용접 구간의 파라미터를 정의하는 컴포넌트이다."
+description: "아크가 안정적으로 유지되는 실제 용접 구간의 파라미터(용접 속도, 전압, 와이어 송급 등)를 정의하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/welddata.mjs";
 
-아크가 안정적으로 유지되는 실제 용접 구간의 파라미터를 정의하는 컴포넌트이다. 심을 따라 적용되는 용접 속도, 전압, 와이어 송급 조건 등을 지정할 수 있다.
+아크가 안정적으로 유지되는 실제 용접 구간의 파라미터를 정의하는 컴포넌트이다. 심(Seam)을 따라 적용되는 용접 속도, 전압, 와이어 송급 조건 등을 지정한다. 컴포넌트를 우클릭해 와이어 송급 속도의 단위를 **WireFeed(m/min)** 과 **WireFeed(mm/s)** 중에서 고를 수 있으며, 이 페이지는 기본값인 **WireFeed(m/min)** 화면을 기준으로 설명한다.
 
 <DocTags tags={[{ text: "DataType", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/8_WeldData.png" alt="WeldData" />
+<ComponentShot src="/assets/images/welddata_main.png" alt="WeldData" />
 
 ## 입력
 
@@ -43,9 +43,9 @@ import * as d from "../../../data/components/welddata.mjs";
 
 <Steps>
 
-1. **Weld Sched** 에 용접 프로그램 번호(스케줄)와 용접 모드를, **Weighting** 에 wirefeed1 가중치를 연결한다. 위빙이 필요하면 [WeaveData](/datatype/weavedata/) 도 연결한다.
+1. **Weld Sched** 에 용접 프로그램 번호(스케줄)와 용접 모드를 연결한다. 필요하면 **Weight** 에 wirefeed1 가중치를, 위빙이 필요하면 **WeaveData** 에 [WeaveData](/datatype/weavedata/) 를 연결한다.
 2. **WeldData** 탭의 **Name** 에 변수명을 쓴다.
-3. **Weld ArcData** 탭에서 전압·와이어 송급·제어·전류를, **Weld Param** 탭에서 **Weld Speed(mm/s)** 를 정한다.
+3. **Weld ArcData** 탭에서 **Voltage**·**WireFeed(m/min)**·**Control**·**Current** 를, **Weld Param** 탭에서 **Weld Speed(mm/s)** 를 정한다. 와이어 송급 속도를 mm/s 로 넣으려면 우클릭 메뉴에서 **WireFeed(mm/s)** 를 고른다.
 4. **WeldData** 출력을 [ArcMove](/instruction/arcmove/) 의 **WeldData** 입력에 연결한다.
 
 </Steps>

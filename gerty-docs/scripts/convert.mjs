@@ -563,10 +563,17 @@ const GROUP_LABELS = {
 };
 
 /** Sidebar labels that differ from the old sidebar's titles (e.g. a merged page). */
-const PAGE_LABELS = { "about/overview": "GERTY Overview" };
+const PAGE_LABELS = { "about/overview": "GERTY Overview", "toolpath/parallelfinishing": "Finishing", "datatype/toolimporter": "Import" };
+/** Pages whose own sidebar entry goes away because another page's post was folded into them (slug.mjs INTO). */
+const FOLDED_INTO = new Set(["toolpath/flybybranch", "toolpath/parallelfinishing", "toolpath/solidfill"]);
+/** Sidebar groups made from separate pages that are now modes of one component (2026-11-17 plugin). */
+const MODE_GROUPS = [
+  { label: "Flyby", items: [["toolpath/flybybranch", "Between Branches"], ["toolpath/flybytree", "Between Inputs"]] },
+  { label: "WireCutting", items: [["toolpath/wirecuttingfromcrvs", "From Curves"], ["toolpath/wirecuttingfromsrf", "From Surface"]] },
+];
 /** Label of a group's own page when it is listed as the group's first entry (the group title shows the group name). */
 const OWN_LABELS = {
-  "datatype/tooldata": "Tool Define",
+  "datatype/tooldata": "Define",
   "robot-tool/abbrobot": "Basic",
   "robot-tool/positioner": "Basic",
   "robot-tool/createworkbench": "Basic",
@@ -596,13 +603,15 @@ function buildSidebar() {
       deadNavKeys.set(key, slug);
       warn(`Sidebar: dead old link ${n.url} for "${n.title}" — matched by title to ${slug} (redirect added)`);
     }
+    // a post folded into another page: its old sidebar entry would repeat that page
+    if (used.has(slug) && FOLDED_INTO.has(slug)) return null;
     used.add(slug);
     const label = PAGE_LABELS[slug] ?? n.title;
     // A group whose children were all merged into its own page is a plain item now.
     // (Only for merged pages: elsewhere a child may link the group's page on purpose, e.g. IndReset.)
     const children = (n.children ?? []).filter((c) => !FLAT.has(slug) || findSlug(parseOld(c.url).key) !== slug);
     if (children.length) {
-      // The group's own page comes first (as "Basic", "Tool Define", ... from OWN_LABELS), unless a child already
+      // The group's own page comes first (as "Basic", "Define", ... from OWN_LABELS), unless a child already
       // links it (e.g. IndReset → "Numeric Reference", WobjData → "Fixed"); listing it twice would make the "next
       // page" link point back to the same page. src/components/SidebarSublist.astro makes the group title open the
       // group's first entry.
@@ -621,6 +630,15 @@ function buildSidebar() {
     const named = GROUP_LABELS[g.title] ?? { label: g.title.replace(/^\d+\.\s*/, "") };
     return { ...named, items: (g.children ?? []).map(toItem).filter(Boolean) };
   });
+  // Mode pages of one component become one collapsible group, placed where the first of them was.
+  for (const mg of MODE_GROUPS) {
+    for (const g of groups) {
+      const at = g.items.findIndex((i) => i.slug === mg.items[0][0]);
+      if (at < 0) continue;
+      g.items = g.items.filter((i) => !mg.items.some(([s]) => s === i.slug));
+      g.items.splice(at, 0, { label: mg.label, collapsed: true, items: mg.items.map(([slug, label]) => ({ slug, label })) });
+    }
+  }
   // Pages that exist but are not in the old sidebar go to the end of their section.
   const sectionGroup = new Map(groups.map((g) => [g.items.find((i) => i.slug)?.slug?.split("/")[0], g]));
   for (const p of posts.filter((x) => x.locale === "ko")) {

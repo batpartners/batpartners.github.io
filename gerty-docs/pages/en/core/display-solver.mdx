@@ -1,6 +1,6 @@
 ---
 title: "Display Solver"
-description: "This is a component that simulates and visualizes the user-defined robot motion in the Rhino viewport, allowing you to review the entire process."
+description: "A component that simulates and visualizes the defined robot motion in the Rhino viewport."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/display-solver.mjs";
 
-This is a component that simulates and visualizes the user-defined robot motion in the Rhino viewport, allowing you to review the entire process.
+Display Solver simulates and visualizes the defined robot motion in the Rhino viewport so you can review the whole process. It takes the result computed by GERTY Core, plays it from the simulation control window, and outputs the current TCP plane.
 
 <DocTags tags={[{ text: "Core", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/1_DisplaySolver.png" alt="Display Solver" />
+<ComponentShot src="/assets/images/display-solver_main.png" alt="Display Solver" />
 
 ## Inputs
 
@@ -44,15 +44,15 @@ This is a component that simulates and visualizes the user-defined robot motion 
 <Steps>
 
 1. Connect the **GERTY Solver** output of [GERTY Core](/en/core/gerty-core/) to **GERTY Solver**.
-2. Turn on **Simulation Pop-up** to open the simulation control window, and play the robot motion in the Rhino viewport from there.
-3. Use the **Tool Center Plane** output for the current TCP plane.
+2. Turn on **Simulation Window** in the **Simulation** tab to open the simulation control window, and play the robot motion in the Rhino viewport from there.
+3. If needed, use the **Current TCP** output for the current TCP plane.
 
 </Steps>
 
 ## Related
 
 <RelatedLinks links={[
-  { title: "GERTY Core", description: "Computes the robot motion", href: "/en/core/gerty-core/" },
+  { title: "GERTY Core", description: "Computes the robot motion and outputs GERTY Solver", href: "/en/core/gerty-core/" },
   { title: "Code Solver", description: "RAPID code export", href: "/en/core/code-solver/" },
   { title: "Analysis Deconstructor", description: "Axis angles and error log", href: "/en/core/analysis/" },
 ]} />

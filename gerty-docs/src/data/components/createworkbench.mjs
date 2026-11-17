@@ -5,52 +5,60 @@ export const groups = [
   [
     {
       "label": "WorkBench",
-      "img": "2_Workbench_20.png",
+      "img": "createworkbench_tab1.png",
       "rows": [
         {
           "name": "Name",
           "type": "String",
-          "ko": "워크벤치의 식별 이름을 입력한다.",
-          "en": "Workbench name",
+          "ko": "워크벤치의 식별 이름을 입력한다. 특수문자로 시작하거나 한글로 입력할 수 없다. 기본값은 myWorkbench0.",
+          "en": "Sets the workbench name. It cannot start with a special character or contain Korean. Default: myWorkbench0.",
           "y": [
-            27.6,
-            17.2
+            52.7,
+            32.3
           ]
-        },
+        }
+      ]
+    }
+  ],
+  [
+    {
+      "label": "Preview",
+      "img": "createworkbench_tab2.png",
+      "rows": [
         {
-          "name": "WorkBench Colour",
+          "name": "Workbench Color",
           "type": "Color",
           "ko": "뷰포트에서 워크벤치 메시의 시각화 색상을 지정한다.",
-          "en": "Visualization color",
+          "en": "Sets the display color of the workbench mesh in the viewport.",
           "y": [
-            48.9,
-            17.8
+            39.3,
+            22.2
           ]
         },
         {
-          "name": "WorkPiece Colour",
+          "name": "Workpiece Color",
           "type": "Color",
           "ko": "뷰포트에서 작업물(Workpiece) 메시의 시각화 색상을 지정한다.",
-          "en": "Visualization color of the workpiece mesh",
+          "en": "Sets the display color of the workpiece mesh in the viewport.",
           "y": [
-            71.3,
-            17.2
+            67.4,
+            22.2
           ]
         }
       ]
     },
     {
       "label": "Export",
-      "img": "2_Workbench_22.png",
+      "img": "createworkbench_tab3.png",
       "rows": [
         {
           "name": "Export",
           "type": "Button",
-          "ko": "워크벤치 데이터를 사용자 로컬의 지정된 경로에 파일로 저장한다.",
-          "en": "Saves the workbench data as a file to a user-specified local directory.",
+          "ko": "현재 워크벤치 설정을 파일로 내보낸다. 저장한 워크벤치는 Import Workbench 모드의 Presets 목록에서 불러올 수 있다.",
+          "en": "Exports the current workbench configuration to a file. Saved workbenches can be loaded from the Presets list in Import Workbench mode.",
           "y": [
-            53.1,
-            26.5
+            54.6,
+            30.9
           ]
         }
       ]
@@ -60,39 +68,39 @@ export const groups = [
 
 export const inputs = [
   {
-    "name": "BenchGeo",
+    "name": "Workbench Geo",
     "type": "Mesh",
-    "ko": "워크벤치의 3D 형상 메시 데이터를 연결한다.",
-    "en": "Mesh geometry of the workbench"
+    "ko": "워크벤치의 형상 메시.",
+    "en": "Mesh geometry of the workbench."
   },
   {
-    "name": "BenchBase",
+    "name": "Base Plane",
     "type": "Plane",
-    "ko": "포지셔너 플랜지 면에 장착되는 워크벤치의 하단 기준 좌표계 평면을 지정한다.",
-    "en": "Workbench mounting reference plane relative to the positioner flange"
+    "ko": "포지셔너 플랜지 면에 장착되는 워크벤치의 하단 기준 평면.",
+    "en": "Bottom reference plane of the workbench, mounted on the positioner flange."
   },
   {
-    "name": "BenchTop",
+    "name": "Top Plane",
     "type": "Plane",
-    "ko": "워크벤치 상단의 작업물 부착 기준 좌표계 평면을 지정한다.",
-    "en": "Top plane of the workbench"
+    "ko": "워크벤치 상단의 작업물 부착 기준 평면.",
+    "en": "Top plane of the workbench, where the workpieces are attached."
   },
   {
-    "name": "WorkPieces",
+    "name": "Workpieces",
     "type": "Mesh",
-    "ko": "워크벤치 위에 고정할 작업물(Workpiece)의 3D 형상 메시 데이터를 연결한다.",
-    "en": "Workpiece geometry mesh",
-    "optional": true
+    "optional": true,
+    "ko": "워크벤치 위에 고정할 작업물(Workpiece)의 형상 메시. 연결하지 않으면 작업물 없이 워크벤치만 정의한다.",
+    "en": "Mesh geometry of the workpieces fixed on the workbench. When not connected, only the workbench is defined."
   }
 ];
 
-export const main = "2_Workbench_2.png";
+export const main = "createworkbench_main.png";
 
 export const outputs = [
   {
-    "name": "WorkBench",
+    "name": "Workbench",
     "type": "Workbench",
-    "ko": "구성된 워크벤치 및 작업물 데이터 정의를 출력한다. Positioner 컴포넌트에 연결하여 사용한다.",
-    "en": "Created workbench definition."
+    "ko": "워크벤치와 작업물을 묶은 워크벤치 정의. <a href=\"/robot-tool/positioner/\">ABB Positioner</a> 의 Workbench 입력에 연결한다.",
+    "en": "Workbench definition that bundles the workbench and its workpieces. Connect it to the Workbench input of <a href=\"/en/robot-tool/positioner/\">ABB Positioner</a>."
   }
 ];

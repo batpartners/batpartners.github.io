@@ -1,6 +1,6 @@
 ---
 title: "ArcMove"
-description: "용접용 ABB 아크 인스트럭션(<code>ArcLStart</code>, <code>ArcL</code>, <code>ArcLEnd</code>)을 설정하는 컴포넌트이다."
+description: "용접용 ABB 아크 인스트럭션(ArcLStart, ArcL, ArcLEnd)을 만드는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/arcmove.mjs";
 
-용접용 ABB 아크 인스트럭션(<code>ArcLStart</code>, <code>ArcL</code>, <code>ArcLEnd</code>)을 설정하는 컴포넌트이다.
+용접용 ABB 아크 인스트럭션(<code>ArcLStart</code>, <code>ArcL</code>, <code>ArcLEnd</code>)을 만드는 컴포넌트이다. 입력한 RobTarget 마다 아크 이동 명령을 만들고, [SeamData](/datatype/seamdata/) 와 [WeldData](/datatype/welddata/) 로 용접 시작·종료 조건과 용접 조건을 지정한다. 첫 번째와 마지막 타겟에 각각 `ArcLStart`, `ArcLEnd` 를 쓸지는 설정에서 고른다.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/3_ArcMove.png" alt="ArcMove" />
+<ComponentShot src="/assets/images/arcmove_main.png" alt="ArcMove" />
 
 ## 입력
 
@@ -45,8 +45,8 @@ import * as d from "../../../data/components/arcmove.mjs";
 
 1. **RobTargets** 에 용접 경로의 [RobTarget](/datatype/robtarget/) 또는 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 출력을 연결한다.
 2. **SeamData** 에 [SeamData](/datatype/seamdata/) 를, **WeldData** 에 [WeldData](/datatype/welddata/) 를 연결한다.
-3. **Arc Move** 탭에서 모션 유형·속도·Zone 을 고르고, 첫 타겟을 `ArcLStart` 로 시작할지(**ArcLStart**), 마지막 타겟을 `ArcLEnd` 로 끝낼지(**ArcLEnd**) 정한다.
-4. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+3. **Arc Move** 탭의 **Arc** 에서 모션 유형·속도·Zone 을 고르고, 첫 타겟을 `ArcLStart` 로 시작할지(**Arc Start**), 마지막 타겟을 `ArcLEnd` 로 끝낼지(**Arc End**) 정한다.
+4. **Instruction** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
 
 </Steps>
 

@@ -1,6 +1,6 @@
 ---
 title: "Dispatch Branch"
-description: "This is a component that splits the branches of a DataTree into two target DataTrees according to an input pattern."
+description: "This component dispatches the branches of a DataTree into two DataTrees according to a True / False pattern."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/dispatch-branch.mjs";
 
-This is a component that splits the branches of a DataTree into two target DataTrees according to an input pattern.
+This component dispatches the branches of a DataTree into two DataTrees according to a True / False pattern.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/0_DispatchBranch.png" alt="Dispatch Branch" />
+<ComponentShot src="/assets/images/dispatch-branch_main.png" alt="Dispatch Branch" />
 
 ## Inputs
 
@@ -39,7 +39,7 @@ This is a component that splits the branches of a DataTree into two target DataT
 
 <Steps>
 
-1. Connect the DataTree to split to **Tree**.
+1. Connect the DataTree whose branches are dispatched to **Tree**.
 2. Connect a True / False pattern to **Pattern**; it is applied to the branches in order.
 3. Use **Tree A** (True) and **Tree B** (False) separately downstream.
 

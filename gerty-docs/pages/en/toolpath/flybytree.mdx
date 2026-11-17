@@ -1,6 +1,6 @@
 ---
-title: "FlyByTree"
-description: "This is a component that allows you to set two or more Target Plane paths."
+title: "Flyby"
+description: "Generates flyby transition target planes that connect toolpath segments given as separate inputs. Covers the Between Inputs right-click mode of the Flyby component."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -10,14 +10,19 @@ import ComponentShot from "../../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/flybytree.mjs";
+import ModeBadge from "../../../../components/doc/ModeBadge.astro";
 
-This is a component that allows you to set two or more Target Plane paths. It generates flyby target planes connecting between each branch, and reconstructs the path in sections where it leaves the workpiece when moving between path segments to determine the target planes according to user-defined values.
+<ModeBadge mode="Between Inputs" lang="en" kind="mode" />
+
+Flyby generates flyby transition target planes that connect toolpath segments. It merges the former FlybyBranch, FlybyCustom and FlybyTree components into one. It routes the tool away from the workpiece when moving between toolpath segments; the approach and departure directions and distances, the blend shape and the orientation interpolation follow the settings. The results are output as transition target planes (**Flyby Targets**) and blend curves (**Flyby Curves**).
+
+Right-click the component to switch between **Between Branches** and **Between Inputs**. This page covers **Between Inputs**, chosen from the right-click menu. In this mode each input (**Target Planes0**, **Target Planes1**) is one segment, and the DataTree of each input is flattened. To build flyby paths between the branches of one DataTree, use the default [Between Branches](/en/toolpath/flybybranch/) mode.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/3_FlybyTree.png" alt="FlyByTree" />
+<ComponentShot src="/assets/images/flybytree_main.png" alt="Flyby (Between Inputs)" />
 
 ## Inputs
 
@@ -43,18 +48,18 @@ This is a component that allows you to set two or more Target Plane paths. It ge
 
 <Steps>
 
-1. Connect one target plane DataTree each to **Target Planes0** and **Target Planes1**; add inputs with **+ ADD** for more path trees.
-2. Pick the approach and departure directions (motion direction or an axis of the target plane) in **Approaching Dir. / Leaving Dir.** (Basic tab).
-3. Set the approach and departure distances (**Approaching / Leaving Dist.(mm)**) and the number of targets on each fly-by path (**Target Count**) in the **Basic** tab.
-4. Adjust the blend continuity (**Continuity Type**) and the bulge at the start and end (**Bulge Start / Bulge End**) in the **Advanced** tab.
-5. Connect the **Fly-by Targets** output to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
+1. Right-click the component and choose **Between Inputs**. The component shows **Between Inputs** below it.
+2. Connect the target planes of one segment each to **Target Planes0** and **Target Planes1**.
+3. In the **Flyby Targets** tab, set the number of targets on each transition path (**Target Count**) and whether to create the stand-alone targets before the first and after the last segment (**Lead In/Out**).
+4. In the **Offset** tab, pick the approach and departure directions (motion direction, an axis of the target plane, or **Custom**) in **Approach Dir** / **Departure Dir**, and set the approach and departure distances (**Approach (mm)** / **Departure (mm)**). Turn on **Link** to keep both distances equal. Choosing **Custom** adds a vector input of the same name for setting the direction per segment.
+5. Set the blend continuity (**Continuity Type**) and the bulge at the start and end (**Bulge Start** / **Bulge End**) in the **Blend** tab, and the orientation interpolation (**Interpolation**) and rotation flip (**Flip Rotation** / **Flip Over (°)**) in the **Rotation** tab.
+6. Place the main toolpath target planes on odd paths `{1}`, `{3}`, …, merge them with the **Flyby Targets** output (even paths) into one DataTree, and connect it to the **Target Plane** input of [RobTarget](/en/datatype/robtarget/) to make robot targets.
 
 </Steps>
 
 ## Related
 
 <RelatedLinks links={[
-  { title: "FlyByBranch", description: "Fly-by paths between segments", href: "/en/toolpath/flybybranch/" },
-  { title: "FlyByCustom", description: "Fly-by paths from your own vectors", href: "/en/toolpath/flybycustom/" },
+  { title: "Flyby (Between Branches)", description: "Flyby paths between the branches of one DataTree (default mode)", href: "/en/toolpath/flybybranch/" },
   { title: "RobTarget", description: "Turns target planes into robot targets", href: "/en/datatype/robtarget/" },
 ]} />

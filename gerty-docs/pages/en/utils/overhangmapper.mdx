@@ -1,6 +1,6 @@
 ---
 title: "Overhang Mapper"
-description: "This is a component that visualizes overhangs of an input mesh geometry by applying a color map."
+description: "This component visualizes the overhang angles of an input mesh as a colour map."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/overhangmapper.mjs";
 
-This is a component that visualizes overhangs of an input mesh geometry by applying a color map.
+This component visualizes the overhang angles of an input mesh as a colour map.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/7_OverhangMapper.png" alt="Overhang Mapper" />
+<ComponentShot src="/assets/images/overhangmapper_main.png" alt="Overhang Mapper" />
 
 ## Inputs
 
@@ -44,7 +44,7 @@ This is a component that visualizes overhangs of an input mesh geometry by apply
 <Steps>
 
 1. Connect the mesh to check to **Mesh**.
-2. Connect a reference plane in the build plate direction to **BasePlane**; for a tilted plate, use a plane from [Surface Frame](/en/utils/surface-frame/).
+2. Optionally connect a reference plane in the build plate direction to **BasePlane**; for a tilted plate, use a plane from [Surface Frame](/en/utils/surface-frame/).
 3. See the overhang areas from the colours of the **Mesh** output, and the angle values in **AngleData**.
 
 </Steps>

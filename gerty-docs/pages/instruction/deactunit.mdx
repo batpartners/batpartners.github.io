@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/deactunit.mjs";
 
-메카니컬 유닛(Mechanical Unit)을 활성화 또는 비활성화하는 ActUnit/DeactUnit 인스트럭션을 생성하는 컴포넌트이다. RAPID 프로그램 실행 중 외부축 장비(포지셔너, 트랙 등)의 활성/비활성 전환에 사용된다.
+메카니컬 유닛(Mechanical Unit)을 활성화 또는 비활성화하는 ActUnit/DeactUnit 인스트럭션을 생성하는 컴포넌트이다. RAPID 프로그램 실행 중 외부축 장비(포지셔너, 트랙 등)를 켜거나 끌 때 쓴다. 대상 유닛은 **MechUnit** 에 이름으로 지정하고, **Activate** 로 어느 인스트럭션을 만들지 고른다.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/4_DeActUnit.png" alt="(De)ActUnit" />
+<ComponentShot src="/assets/images/deactunit_main.png" alt="(De)ActUnit" />
 
 ## 입력
 
@@ -44,8 +44,8 @@ import * as d from "../../../data/components/deactunit.mjs";
 <Steps>
 
 1. **(De)ActUnit** 탭의 **MechUnit** 에 메카니컬 유닛 이름(예: STN1)을 쓴다.
-2. **Activate** 를 켜면 `ActUnit`(활성화), 끄면 `DeactUnit`(비활성화) 인스트럭션이 만들어진다.
-3. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+2. **Activate** 를 켜면(`TRUE`) `ActUnit`(활성화), 끄면(`FALSE`) `DeactUnit`(비활성화) 인스트럭션이 만들어진다.
+3. **Instruction** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
 
 </Steps>
 

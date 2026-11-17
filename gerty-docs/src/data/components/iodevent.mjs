@@ -4,27 +4,27 @@
 export const groups = [
   [
     {
-      "label": "IOData Signal",
-      "img": "4_IOEvent_1.png",
+      "label": "IO Event",
+      "img": "iodevent_tab1.png",
       "rows": [
         {
           "name": "Signal Type",
           "type": "Dropdown",
-          "ko": "출력 신호 유형을 지정한다 (디지털 / 그룹 / 아날로그).",
-          "en": "Specifies the output signal type (Digital / Group / Analog).",
+          "ko": "출력 신호 유형을 선택한다 (Digital Output / Group Output / Analog Output). 선택한 유형에 따라 아래 값 입력 칸이 DO Value / GO Value / AO Value 로 바뀐다. 기본값은 Digital Output.",
+          "en": "Selects the output signal type (Digital Output / Group Output / Analog Output). The value control below switches to DO Value / GO Value / AO Value to match. Default: Digital Output.",
           "y": [
-            36.1,
-            27.1
+            37.6,
+            22.6
           ]
         },
         {
-          "name": "DO Value",
+          "name": "Value",
           "type": "Toggle",
-          "ko": "이벤트 활성화 여부를 설정한다 (True: 활성화 / False: 비활성화).",
-          "en": "Sets whether the event is enabled (True: enabled / False: disabled).",
+          "ko": "트리거 위치에서 출력 신호에 쓸 값을 설정한다. Digital Output 일 때는 DO Value 토글(TRUE / FALSE)이며, 기본값은 FALSE. <strong>Signal Type</strong> 이 Group Output 이면 GO Value, Analog Output 이면 AO Value 입력으로 바뀐다.",
+          "en": "Sets the value written to the output signal at the trigger position. For Digital Output it is the DO Value toggle (TRUE / FALSE); default: FALSE. When <strong>Signal Type</strong> is Group Output it becomes GO Value, and for Analog Output it becomes AO Value.",
           "y": [
-            64.7,
-            24.1
+            66.2,
+            22.6
           ]
         }
       ]
@@ -33,46 +33,46 @@ export const groups = [
   [
     {
       "label": "Settings",
-      "img": "4_IOEvent_2.png",
+      "img": "iodevent_tab2.png",
       "rows": [
         {
           "name": "Used",
           "type": "Toggle",
-          "ko": "해당 이벤트의 사용 여부를 설정한다 (True: 활성화 / False: 비활성화).",
-          "en": "Sets whether this event is used (True: enabled / False: disabled).",
+          "ko": "이 이벤트의 사용 여부를 설정한다 (TRUE: 활성화 / FALSE: 비활성화). 기본값은 TRUE.",
+          "en": "Sets whether this event is used (TRUE: enabled / FALSE: disabled). Default: TRUE.",
           "y": [
-            23.6,
-            14.8
+            25,
+            14.2
           ]
         },
         {
           "name": "Start",
           "type": "Toggle",
-          "ko": "거리 기준점을 설정한다.<br>• TRUE: (TriggLIOs에 의한) 이동 시작점을 기준으로 한다.<br>• FALSE: (TriggLIOs에 의한) 이동 종료점을 기준으로 한다.",
-          "en": "Sets the distance reference point.<br>• TRUE: Measured from the start point of the movement (by TriggLIOs).<br>• FALSE: Measured from the end point of the movement (by TriggLIOs).",
+          "ko": "거리의 기준점을 설정한다.<br>• TRUE: (TriggLIOs에 의한) 이동 시작점을 기준으로 한다.<br>• FALSE: (TriggLIOs에 의한) 이동 종료점을 기준으로 한다.<br>기본값은 FALSE.",
+          "en": "Sets the reference point for the distance.<br>• TRUE: measured from the start point of the movement (by TriggLIOs).<br>• FALSE: measured from the end point of the movement (by TriggLIOs).<br>Default: FALSE.",
           "y": [
-            41.7,
-            14.4
+            42.9,
+            14.2
           ]
         },
         {
-          "name": "Distance(mm)",
-          "type": "Double",
-          "ko": "TriggLIOs 이동 경로상에서 I/O 트리거가 발생할 위치(mm)를 입력한다. Start 파라미터에서 설정한 기준점으로부터의 거리이다.",
-          "en": "Inputs the position (mm) on the TriggLIOs movement path where the I/O trigger occurs. It is the distance from the reference point set by the Start parameter.",
+          "name": "Distance",
+          "type": "Number",
+          "ko": "TriggLIOs 이동 경로상에서 I/O 트리거가 발생할 위치 (mm). <strong>Start</strong> 에서 정한 기준점으로부터의 거리이다. 기본값은 0.",
+          "en": "Position (mm) along the TriggLIOs movement path at which the I/O trigger fires, measured from the reference point set by <strong>Start</strong>. Default: 0.",
           "y": [
-            58.8,
-            15.7
+            60.8,
+            14.2
           ]
         },
         {
-          "name": "EquipLag(sec.)",
-          "type": "Double",
-          "ko": "외부 장비의 응답 지연 보상값(s)을 설정한다.<br>• 양수(+): 지정 위치 도달 전에 미리 신호를 발생시킨다.<br>• 음수(-): 지정 위치 통과 후 신호를 발생시킨다.",
-          "en": "Sets the response delay compensation (s) of the external equipment.<br>• Positive (+): Triggers the signal before reaching the specified position.<br>• Negative (-): Triggers the signal after passing the specified position.",
+          "name": "EquipLag(s)",
+          "type": "Number",
+          "ko": "외부 장비의 응답 지연 보상값 (s) 을 설정한다.<br>• 양수(+): 지정 위치에 도달하기 전에 신호를 미리 발생시킨다.<br>• 음수(-): 지정 위치를 지난 뒤에 신호를 발생시킨다.<br>기본값은 0 (범위 -5 ~ 5).",
+          "en": "Sets the response-delay compensation (s) of the external equipment.<br>• Positive (+): fires the signal before the TCP reaches the trigger position.<br>• Negative (-): fires the signal after the trigger position is passed.<br>Default: 0 (range -5 to 5).",
           "y": [
-            76.4,
-            16.7
+            78.8,
+            14.2
           ]
         }
       ]
@@ -84,19 +84,19 @@ export const inputs = [
   {
     "name": "Signal",
     "type": "String",
-    "ko": "신호 데이터를 입력한다.",
-    "en": "Inputs the signal data."
+    "ko": "값을 바꿀 출력 신호의 이름을 입력한다. 신호 유형은 <strong>Signal Type</strong> 설정과 맞아야 한다.",
+    "en": "Name of the output signal to change. Its type must match the <strong>Signal Type</strong> setting."
   }
 ];
 
-export const main = "4_IOEvent.png";
+export const main = "iodevent_main.png";
 
 export const outputs = [
   {
-    "name": "IO Data",
+    "name": "IOEvent",
     "type": "IOEvent",
-    "ko": "정의된 ABB TriggIOs용 IO 이벤트를 출력한다.",
-    "en": "Outputs the defined IO event for ABB TriggIOs."
+    "ko": "정의된 ABB TriggIOs용 IO 이벤트를 출력한다. <a href=\"/datatype/triggios/\">TriggIOs</a> 의 <strong>IOEvent</strong> 입력에 연결한다.",
+    "en": "Outputs the defined IO event for ABB TriggIOs. Connect it to the <strong>IOEvent</strong> input of <a href=\"/en/datatype/triggios/\">TriggIOs</a>."
   },
   {
     "name": "code",

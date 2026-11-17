@@ -17,7 +17,7 @@ This component streams the robot pose and I/O signal states from the connected c
 
 ## Component
 
-<ComponentShot src="/assets/images/5_RealTimeDisplay.png" alt="RealTime Display" />
+<ComponentShot src="/assets/images/realtimedisplay_main.png" alt="RealTime Display" />
 
 ## Inputs
 
@@ -50,15 +50,15 @@ This component streams the robot pose and I/O signal states from the connected c
 
 <Steps>
 
-1. Connect the **GERTY Robot** output of [ABB Robots](/en/robot-tool/abbrobot/) to **GERTY Robot** and the output of [Scan ABB Controller](/en/controller-utils/scanabbcontroller/) to **ABB Controller**. To watch signals, connect their names to **Signal**.
-2. Set **Interval(ms)** and turn on **Realtime Stream** in the **RealTime Stream** tab.
-3. Read the current state from **Robot Angle**, **External Angle**, **CurrentPos** and **Signal Values**.
+1. Connect the **Robot Setup** output of [ABB Robots](/en/robot-tool/abbrobot/) to **GERTY Robot** and the output of [Scan ABB Controller](/en/controller-utils/scanabbcontroller/) to **ABB Controller**. To watch signal values as well, connect their names to **Signal** (optional), e.g. the **Signals** output of [Scan IOSystems](/en/controller-utils/scaniosystems/).
+2. Set the update interval **Interval(ms)** (milliseconds, default 50) and turn on **Realtime Stream** in the **RealTime Stream** tab.
+3. Read the current state from **RobAx Angle**, **ExtAx Angle**, **TCP** and **Signal Values**.
 
 </Steps>
 
 ## Related
 
 <RelatedLinks links={[
-  { title: "ABB Robots", description: "GERTY Robot output", href: "/en/robot-tool/abbrobot/" },
+  { title: "ABB Robots", description: "Robot Setup output", href: "/en/robot-tool/abbrobot/" },
   { title: "ScanABBController", description: "Find and connect a controller", href: "/en/controller-utils/scanabbcontroller/" },
 ]} />

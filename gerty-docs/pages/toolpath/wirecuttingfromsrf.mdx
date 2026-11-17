@@ -1,6 +1,6 @@
 ---
-title: "WireCuttingFromSrf"
-description: "룰드 서피스로부터 열선 절단용 경로를 생성하는 컴포넌트이다."
+title: "WireCutting"
+description: "WireCutting 컴포넌트의 From Surface 모드로, 룰드 서피스로부터 열선 절단용 툴패스를 생성한다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -10,14 +10,17 @@ import ComponentShot from "../../../components/doc/ComponentShot.astro";
 import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/wirecuttingfromsrf.mjs";
+import ModeBadge from "../../../components/doc/ModeBadge.astro";
 
-룰드 서피스로부터 열선 절단용 경로를 생성하는 컴포넌트이다. 사용자는 타겟 평면을 생성할 포인트 개수와, 룰드 서피스 내부 파라미터 값(기본 : 0.5), 선택 옵션으로 열선 툴을 부드럽게 조정할 수 있는 어트랙터 값을 설정한다. 이외의 열선 경로 방향, 툴 방향, 진입 간격의 세부 설정이 가능하다.
+<ModeBadge mode="From Surface" lang="ko" kind="mode" />
+
+**WireCutting** 컴포넌트의 우클릭 메뉴에서 **From Surface** 를 고른 모드를 설명한다. 룰드 서피스(**Surface**)로부터 열선 절단용 툴패스를 생성하며, 서피스의 Span 을 따라 **Spacing** 간격으로 타겟 평면을 만든다. 선택 입력 **Wrist** 에 Point 또는 Curve 를 연결하면 타겟 Z 방향을 그쪽으로 지향시킨다. 설정은 **Cutting**(타겟 간격·원점 파라미터), **Path**(절단 방향·툴 방향·UV 방향·연장), **Wrist**(Wrist 배분), **Preview** 탭으로 나뉜다. 두 레일 커브를 입력으로 쓰는 기본 모드 **From Curves** 는 [WireCutting (From Curves)](/toolpath/wirecuttingfromcrvs/) 페이지에서 따로 다룬다.
 
 <DocTags tags={[{ text: "ToolPath", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/5_WireCuttingFromSrf.png" alt="WireCuttingFromSrf" />
+<ComponentShot src="/assets/images/wirecuttingfromsrf_main.png" alt="WireCutting (From Surface)" />
 
 ## 입력
 
@@ -43,22 +46,28 @@ import * as d from "../../../data/components/wirecuttingfromsrf.mjs";
 
 <Steps>
 
-1. **Surface** 에 룰드 서피스를 연결한다.
-2. **Target Count** 로 타겟 개수를 정한다. 필요하면 **Parameter**(기본값 0.5)로 타겟 원점 위치를, **Wrist Object** 로 툴 방향을 부드럽게 끌어 줄 어트랙터를 넣는다.
-3. **Settings** 탭에서 절단 방향(**Cutting Dir. Flip**), 툴 방향(**Tool Flip**), UV 방향(**UV Flip**), 시작·끝 연장(**Extension(mm)**)을 정한다.
-4. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
+1. 컴포넌트를 우클릭해 **From Surface** 를 고른다.
+2. **Surface** 에 룰드 서피스를 연결한다. 여러 개를 연결하면 서피스마다 출력의 가지(branch)가 하나씩 만들어진다.
+3. **Cutting** 탭에서 타겟 간격(**Spacing**, mm)과 Span 위의 원점 위치(**Parameter**, 기본값 0.5)를 정한다.
+4. **Path** 탭에서 절단 방향(**Dir Flip**), 툴 방향(**Tool Flip**), UV 방향(**UV Flip**), 시작·끝 연장(**Extension**, mm)을 정한다.
+5. 툴 방향(타겟 Z)을 지향시키려면 **Wrist** 에 Point 또는 Curve 를 연결하고, **Wrist** 탭에서 배분 방식(**Wrist Mode**)과 Sweep 가이드 형태(**Wrist Blend**)를 정한다.
+6. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
 
 </Steps>
 
 ## 주의 사항
 
 <Aside type="note">
-  **UV Flip** 은 U·V 양방향이 모두 1차(degree 1)인 룰드 서피스에서만 작동합니다.
+  **UV Flip** 은 U·V 양방향이 모두 1차(degree 1)인 룰드 서피스에서만 작동합니다. 이 스위치는 From Surface 모드에서만 **Path** 탭에 표시됩니다.
+</Aside>
+
+<Aside type="note">
+  우클릭 메뉴의 **Use Variable Parameters** 를 켜면 **Parameter** 입력이 추가되고 **Cutting** 탭의 **Parameter** 슬라이더는 숨겨집니다. 이 입력에는 0.0–1.0 숫자 리스트(절단 진행 방향으로 고르게 놓이는 샘플이며, 사이는 선형 보간합니다) 또는 가이드 커브(Span 마다 커브에 가장 가까운 점이 원점이 됩니다)를 연결합니다. 이 옵션은 별도 페이지가 없습니다.
 </Aside>
 
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "WireCuttingFromCrvs", description: "두 커브로 열선 절단", href: "/toolpath/wirecuttingfromcrvs/" },
+  { title: "WireCutting (From Curves)", description: "같은 컴포넌트의 기본 모드, 두 레일 커브로 열선 절단", href: "/toolpath/wirecuttingfromcrvs/" },
   { title: "RobTarget", description: "타겟 평면을 로봇 타겟으로 변환", href: "/datatype/robtarget/" },
 ]} />

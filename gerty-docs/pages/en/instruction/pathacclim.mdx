@@ -1,6 +1,6 @@
 ---
 title: "PathAccLim"
-description: "PathAccLim is a PathAccLim instruction component that sets or disables the TCP acceleration and deceleration limits along the motion path."
+description: "Creates a PathAccLim instruction that sets or releases the TCP acceleration and deceleration limits along the motion path."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/pathacclim.mjs";
 
-PathAccLim is a PathAccLim instruction component that sets or disables the TCP acceleration and deceleration limits along the motion path.
+PathAccLim creates an ABB `PathAccLim` instruction that sets or releases the TCP acceleration and deceleration limits along the motion path. Acceleration and deceleration can be switched on separately, and each limit that is on keeps the TCP below its maximum (m/s²). Turning both off releases the limits.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/6_PathAccLim.png" alt="PathAccLim" />
+<ComponentShot src="/assets/images/pathacclim_main.png" alt="PathAccLim" />
 
 ## Inputs
 
@@ -45,7 +45,7 @@ This component has no inputs; everything is set in the settings below.
 
 1. Turn on the TCP acceleration / deceleration limits with **AccLim** / **DecelLim** (Acceleration Params tab).
 2. Set the maximum for each limit that is on in **AccMax(m/s²)** / **DecelMax(m/s²)**.
-3. Put the **Instructions** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
+3. Put the **Instruction** output at its place in the instruction list connected to the **Instructions** input of [GERTY Core](/en/core/gerty-core/).
 
 </Steps>
 

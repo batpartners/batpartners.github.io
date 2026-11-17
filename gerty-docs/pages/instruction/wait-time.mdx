@@ -1,6 +1,6 @@
 ---
 title: "Wait Time"
-description: "WaitTime은 지정된 시간 (초) 동안 로봇 모션을 일시 정지시키는 컴포넌트이다."
+description: "지정한 시간(초) 동안 로봇 모션을 일시 정지시키는 WaitTime 인스트럭션을 만드는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/wait-time.mjs";
 
-WaitTime은 지정된 시간 (초) 동안 로봇 모션을 일시 정지시키는 컴포넌트이다.
+WaitTime 은 지정한 시간(초) 동안 로봇 모션을 일시 정지시키는 ABB `WaitTime` 인스트럭션을 만드는 컴포넌트이다. 대기 시간은 **Time(s)** 입력으로 받고, 로봇이 완전히 멈춘 뒤부터 시간을 셀지는 **In Position** 으로 정한다.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/10_WaitTIme.png" alt="Wait Time" />
+<ComponentShot src="/assets/images/wait-time_main.png" alt="Wait Time" />
 
 ## 입력
 
@@ -43,9 +43,9 @@ WaitTime은 지정된 시간 (초) 동안 로봇 모션을 일시 정지시키�
 
 <Steps>
 
-1. **Time(sec.)** 에 대기 시간(초)을 연결한다.
-2. 로봇이 완전히 멈춘 뒤부터 시간을 세려면 **In Position** 을 켠다.
-3. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+1. **Time(s)** 에 대기 시간(초)을 연결한다.
+2. 로봇이 완전히 멈춘 뒤부터 시간을 세려면 **In Position** 을 켜 둔다(기본값). 끄면 프로그램 포인터가 인스트럭션에 닿는 즉시 시간을 센다.
+3. **Instruction** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
 
 </Steps>
 

@@ -1,6 +1,6 @@
 ---
 title: "Insert"
-description: "데이터 콜렉션을 특정 DataTree 인덱스에 삽입할 수 있는 컴포넌트이다."
+description: "데이터 콜렉션을 DataTree 의 지정한 인덱스에 삽입하는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/insert.mjs";
 
-데이터 콜렉션을 특정 DataTree 인덱스에 삽입할 수 있는 컴포넌트이다.
+데이터 콜렉션을 DataTree 의 지정한 인덱스에 삽입하는 컴포넌트이다.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/2_Insert.png" alt="Insert" />
+<ComponentShot src="/assets/images/insert_main.png" alt="Insert" />
 
 ## 입력
 
@@ -39,9 +39,9 @@ import * as d from "../../../data/components/insert.mjs";
 
 <Steps>
 
-1. **Tree** 에 데이터를 넣을 DataTree 를, **Items** 에 넣을 항목을 연결한다.
-2. **indices** 에 항목을 넣을 인덱스를 연결한다.
-3. **Tree** 출력으로 항목이 들어간 DataTree 를 받는다.
+1. **Tree** 에 항목을 삽입할 DataTree 를, **Items** 에 삽입할 항목을 연결한다.
+2. **indices** 에 항목을 삽입할 인덱스를 연결한다. 항목은 각 Branch 의 이 위치에 들어간다.
+3. **Tree** 출력으로 항목이 삽입된 DataTree 를 받는다.
 
 </Steps>
 

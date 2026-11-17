@@ -17,7 +17,7 @@ import * as d from "../../../data/components/block-designer.mjs";
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/15_BlockDesign.png" alt="Block Designer" />
+<ComponentShot src="/assets/images/block-designer_main.png" alt="Block Designer" />
 
 ## 입력
 
@@ -43,10 +43,10 @@ import * as d from "../../../data/components/block-designer.mjs";
 
 <Steps>
 
-1. **Unit Block** 에 단위 블록(Box)을, **Wall** 에 블록을 쌓을 벽체(Brep)를 연결한다. 슬라이싱 기준이 WorldXY 가 아니면 **Base Plane** 도 연결한다.
+1. **Unit Block** 에 단위 블록(Box)을, **Wall** 에 블록을 쌓을 벽체(Brep)를 연결한다. 슬라이싱 기준이 WorldXY 가 아니면 **Wall Base** 도 연결한다.
 2. **Settings** 탭에서 간격 방식(**Divide by Distance**)과 수평·수직 간격을 정한다.
 3. **Block Count** 출력을 [Block Supply](/toolpath/block-supply/) 의 **Block Count** 입력에 연결한다.
-4. **Target Planes** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
+4. **Place Targets** 출력을 [RobTarget](/datatype/robtarget/) 의 **Target Plane** 입력에 연결해 로봇 타겟으로 만든다.
 
 </Steps>
 

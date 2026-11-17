@@ -1,6 +1,6 @@
 ---
 title: "PathAccLim"
-description: "PathAccLim은 이동 경로상의 TCP 가속도 및 감속도 제한을 설정하거나 해제하는 PathAccLim 인스트럭션 컴포넌트이다."
+description: "이동 경로상의 TCP 가속도·감속도 제한을 설정하거나 해제하는 PathAccLim 인스트럭션을 만드는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/pathacclim.mjs";
 
-PathAccLim은 이동 경로상의 TCP 가속도 및 감속도 제한을 설정하거나 해제하는 PathAccLim 인스트럭션 컴포넌트이다.
+PathAccLim 은 이동 경로상의 TCP 가속도·감속도 제한을 설정하거나 해제하는 ABB `PathAccLim` 인스트럭션을 만드는 컴포넌트이다. 가속과 감속을 따로 켜고 끌 수 있으며, 켠 항목은 최대값(m/s²)을 넘지 않도록 제한된다. 두 항목을 모두 끄면 제한이 해제된다.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/6_PathAccLim.png" alt="PathAccLim" />
+<ComponentShot src="/assets/images/pathacclim_main.png" alt="PathAccLim" />
 
 ## 입력
 
@@ -45,7 +45,7 @@ PathAccLim은 이동 경로상의 TCP 가속도 및 감속도 제한을 설정�
 
 1. **Acceleration Params** 탭의 **AccLim** / **DecelLim** 로 TCP 가속·감속 제한을 켠다.
 2. 켠 항목의 최대값을 **AccMax(m/s²)** / **DecelMax(m/s²)** 에 정한다.
-3. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+3. **Instruction** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
 
 </Steps>
 

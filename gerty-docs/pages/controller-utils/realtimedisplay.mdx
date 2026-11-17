@@ -17,7 +17,7 @@ import * as d from "../../../data/components/realtimedisplay.mjs";
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/5_RealTimeDisplay.png" alt="RealTime Display" />
+<ComponentShot src="/assets/images/realtimedisplay_main.png" alt="RealTime Display" />
 
 ## 입력
 
@@ -50,15 +50,15 @@ import * as d from "../../../data/components/realtimedisplay.mjs";
 
 <Steps>
 
-1. **GERTY Robot** 에 [ABB Robots](/robot-tool/abbrobot/) 의 **GERTY Robot** 출력을, **ABB Controller** 에 [Scan ABB Controller](/controller-utils/scanabbcontroller/) 의 출력을 연결한다. 신호를 볼 거면 **Signal** 에 신호 이름을 연결한다.
-2. **RealTime Stream** 탭에서 **Interval(ms)** 을 정하고 **Realtime Stream** 을 켠다.
-3. **Robot Angle**, **External Angle**, **CurrentPos**, **Signal Values** 로 현재 상태를 확인한다.
+1. **GERTY Robot** 에 [ABB Robots](/robot-tool/abbrobot/) 의 **Robot Setup** 출력을, **ABB Controller** 에 [Scan ABB Controller](/controller-utils/scanabbcontroller/) 의 출력을 연결한다. 신호 값도 볼 때는 **Signal**(옵션)에 신호 이름(예: [Scan IOSystems](/controller-utils/scaniosystems/) 의 **Signals**)을 연결한다.
+2. **RealTime Stream** 탭에서 갱신 간격 **Interval(ms)**(밀리초, 기본 50)을 정하고 **Realtime Stream** 을 켠다.
+3. **RobAx Angle**, **ExtAx Angle**, **TCP**, **Signal Values** 로 현재 상태를 확인한다.
 
 </Steps>
 
 ## 관련 항목
 
 <RelatedLinks links={[
-  { title: "ABB Robots", description: "GERTY Robot 출력", href: "/robot-tool/abbrobot/" },
+  { title: "ABB Robots", description: "Robot Setup 출력", href: "/robot-tool/abbrobot/" },
   { title: "ScanABBController", description: "컨트롤러 검색·연결", href: "/controller-utils/scanabbcontroller/" },
 ]} />

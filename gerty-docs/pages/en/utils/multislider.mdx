@@ -1,6 +1,6 @@
 ---
 title: "Multi-Slider"
-description: "This is a component that can output one or more numeric values simultaneously."
+description: "This component sets numeric values with multiple sliders and outputs them as one list."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/multislider.mjs";
 
-This is a component that can output one or more numeric values simultaneously.
+This component sets numeric values with multiple sliders and outputs them as one list. Sliders are added or removed from the component's right-click menu.
 
 <DocTags tags={[{ text: "Utils", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/6_MultiSlider.png" alt="Multi-Slider" />
+<ComponentShot src="/assets/images/multislider_main.png" alt="Multi-Slider" />
 
 ## Inputs
 
@@ -44,7 +44,7 @@ This component has no inputs; everything is set in the settings below.
 <Steps>
 
 1. Set **Value01** in the **Multi Sliders** tab.
-2. Add sliders with **ADD** if you need more values.
+2. If you need more values, right-click the component and choose **Add a new slider**. Added sliders follow as Value02, Value03, …; **Remove the last slider** deletes the last one.
 3. Take all values, in order, from the **Values** output.
 
 </Steps>

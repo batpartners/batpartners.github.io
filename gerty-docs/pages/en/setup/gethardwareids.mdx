@@ -1,6 +1,6 @@
 ---
 title: "Get HardwareIDs"
-description: "Hardware-based identifiers (such as MAC address, disk serial number, BIOS/UUID, and USB ID) are collected from the local machine for device identification."
+description: "A component that retrieves hardware-based identifiers (MAC address, disk serial, BIOS/UUID, and USB IDs) from the local machine for machine identification."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../../data/components/gethardwareids.mjs";
 
-Hardware-based identifiers (such as MAC address, disk serial number, BIOS/UUID, and USB ID) are collected from the local machine for device identification. The device identifiers are processed locally, and the hardware IDs are neither transmitted externally nor stored.
+A component that retrieves hardware-based identifiers (MAC address, disk serial, BIOS/UUID, and USB IDs) from the local machine for machine identification. Use it to check the machine information needed for a licence request. The identifiers are processed locally; the raw hardware IDs are not transmitted or stored externally.
 
 <DocTags tags={[{ text: "Setup", tone: "accent" }]} />
 
 ## Component
 
-<ComponentShot src="/assets/images/0_GetHardwareIDs.png" alt="Get HardwareIDs" />
+<ComponentShot src="/assets/images/gethardwareids_main.png" alt="Get HardwareIDs" />
 
 ## Inputs
 

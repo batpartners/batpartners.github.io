@@ -1,6 +1,6 @@
 ---
 title: "Move"
-description: "ABB Move 인스트럭션(MoveL, MoveJ)을 설정하는 컴포넌트이다."
+description: "ABB 이동 인스트럭션(MoveL, MoveJ)을 만드는 컴포넌트이다."
 ---
 
 import { Tabs, TabItem, Aside, Steps } from "@astrojs/starlight/components";
@@ -11,13 +11,13 @@ import DocTags from "../../../components/doc/DocTags.astro";
 import RelatedLinks from "../../../components/doc/RelatedLinks.astro";
 import * as d from "../../../data/components/move.mjs";
 
-ABB Move 인스트럭션(MoveL, MoveJ)을 설정하는 컴포넌트이다.
+ABB 이동 인스트럭션(`MoveL`, `MoveJ`)을 만드는 컴포넌트이다. 입력한 RobTarget 마다 이동 명령을 만들며, 모션 유형·속도·Zone 은 설정에서 한 번에 정한다. 첫 번째와 마지막 타겟만 `MoveJ` 나 `fine` Zone 으로 바꾸는 옵션도 있다.
 
 <DocTags tags={[{ text: "Instruction", tone: "accent" }]} />
 
 ## 컴포넌트
 
-<ComponentShot src="/assets/images/0_Move.png" alt="Move" />
+<ComponentShot src="/assets/images/move_main.png" alt="Move" />
 
 ## 입력
 
@@ -44,9 +44,9 @@ ABB Move 인스트럭션(MoveL, MoveJ)을 설정하는 컴포넌트이다.
 <Steps>
 
 1. **RobTargets** 에 [RobTarget](/datatype/robtarget/) 또는 [Positioner RobTarget](/datatype/positioner-robtarget-dynamic/) 출력을 연결한다.
-2. **Move** 탭에서 모션 유형·속도·Zone 을 고른다.
-3. 첫·마지막 타겟만 MoveJ 로 하려면 **MoveJ Start & End** 를, 첫·마지막 타겟에서 정확히 멈추려면 **Fine Start & End** 를 켠다.
-4. **Instructions** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
+2. **Move** 탭의 **Move** 에서 모션 유형·속도·Zone 을 고른다.
+3. 첫·마지막 타겟만 `MoveJ` 로 하려면 **MoveJ Start End** 를, 첫·마지막 타겟에서 정확히 멈추려면 **Fine Start End** 를 켠다.
+4. **Instruction** 출력을 인스트럭션 리스트의 실행할 위치에 넣어 [GERTY Core](/core/gerty-core/) 의 **Instructions** 입력에 연결한다.
 
 </Steps>
 

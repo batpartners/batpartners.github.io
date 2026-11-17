@@ -7,30 +7,30 @@ export const inputs = [
   {
     "name": "Tree",
     "type": "Tree",
-    "ko": "나눌 DataTree.",
-    "en": "The DataTree to split."
+    "ko": "Branch 를 분배할 DataTree 이다.",
+    "en": "The DataTree whose branches are dispatched."
   },
   {
     "name": "Pattern",
     "type": "Boolean",
-    "ko": "Branch 순서대로 적용할 True / False 패턴. True 인 Branch 는 Tree A 로, False 인 Branch 는 Tree B 로 간다.",
-    "en": "True / False pattern applied to the branches in order. Branches with True go to Tree A, branches with False to Tree B."
+    "ko": "Branch 순서대로 적용할 True / False 분배 패턴이다. True 인 Branch 는 <strong>Tree A</strong> 로, False 인 Branch 는 <strong>Tree B</strong> 로 보낸다.",
+    "en": "True / False dispatch pattern applied to the branches in order. Branches with True go to <strong>Tree A</strong>, branches with False to <strong>Tree B</strong>."
   }
 ];
 
-export const main = "0_DispatchBranch.png";
+export const main = "dispatch-branch_main.png";
 
 export const outputs = [
   {
     "name": "Tree A",
     "type": "Tree",
-    "ko": "패턴이 True 인 Branch 들.",
-    "en": "The branches where the pattern is True."
+    "ko": "패턴 값이 True 인 Branch 들로 된 DataTree 이다.",
+    "en": "DataTree of the branches whose pattern value is True."
   },
   {
     "name": "Tree B",
     "type": "Tree",
-    "ko": "패턴이 False 인 Branch 들.",
-    "en": "The branches where the pattern is False."
+    "ko": "패턴 값이 False 인 Branch 들로 된 DataTree 이다.",
+    "en": "DataTree of the branches whose pattern value is False."
   }
 ];
