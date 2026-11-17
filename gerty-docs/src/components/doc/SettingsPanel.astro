@@ -4,7 +4,8 @@
 import type { Lang, Row } from "../../data/components/types";
 interface Props { img: string; alt: string; rows: Row[]; lang: Lang }
 const { img, alt, rows, lang } = Astro.props;
-const T = { ko: { name: "이름", type: "타입", desc: "설명", opt: "옵션" }, en: { name: "Name", type: "Type", desc: "Description", opt: "Optional" } }[lang];
+// The settings table has no type column (user, 2026-11-17); rows keep `type` in the data for reference.
+const T = { ko: { name: "이름", desc: "설명", opt: "옵션" }, en: { name: "Name", desc: "Description", opt: "Optional" } }[lang];
 const marked = rows.some((r) => r.y);
 const css = rows.map((_, i) => {
   const k = i + 1;
@@ -27,12 +28,11 @@ const css = rows.map((_, i) => {
   </div>
   <div class="sp-table">
     <table>
-      <thead><tr><th>{T.name}</th><th>{T.type}</th><th>{T.desc}</th></tr></thead>
+      <thead><tr><th>{T.name}</th><th>{T.desc}</th></tr></thead>
       <tbody>
         {rows.map((r, i) => (
           <tr data-k={i + 1}>
             <td>{marked && <span class="num">{i + 1}</span>}<strong>{r.name}</strong></td>
-            <td><code>{r.type}</code></td>
             <td>{r.optional && <span class="opt-pill">{T.opt}</span>}<Fragment set:html={r[lang]} /></td>
           </tr>
         ))}
