@@ -16,7 +16,7 @@ import ModeBadge from "../../../components/doc/ModeBadge.astro";
 
 사용할 ABB 로봇을 정의하는 컴포넌트이다. ABB IRB 시리즈 카탈로그의 사전 정의된 제원에서 로봇 모델과 사양을 고르고, 베이스 평면·툴·포지셔너·주변 메시를 묶어 하나의 로봇 셋업(Robot Setup)으로 출력한다. **Preview** 탭에서 로봇 메시(**Robot Color**)와 Pedestal 메시(**Pedestal Color**)의 표시 색상을 각각 정할 수 있다.
 
-이 페이지는 컴포넌트를 우클릭하여 <strong>[Show Joint Jog Params]</strong> 를 켰을 때를 설명한다. 이때 <strong>Robot Joint Jog</strong> 탭(로봇 축 1~6)과 <strong>External Joint Jog</strong> 탭(외부축 1~6)이 추가되어 각 축을 직접 움직이며 자세를 확인할 수 있다.
+이 페이지는 컴포넌트를 우클릭하여 <strong>[Show Joint Jog Params]</strong> 를 켰을 때를 설명한다. 이때 <strong>Robot Joint Jog</strong> 탭(로봇 축 1\~6)과 <strong>External Joint Jog</strong> 탭(외부축 1\~6)이 추가되어 각 축을 직접 움직이며 자세를 확인할 수 있다.
 
 <DocTags tags={[{ text: "Robot/Tool", tone: "accent" }, { text: "Extra Option" }, { text: "기본 → ABB Robots", href: "/robot-tool/abbrobot/" }]} />
 
@@ -51,7 +51,7 @@ import ModeBadge from "../../../components/doc/ModeBadge.astro";
 1. 컴포넌트를 우클릭하여 **Show Joint Jog Params** 를 켠다.
 2. **ABB Robots** 탭의 **Robot Model** 에서 ABB 로봇 모델을, **Spec** 에서 가반하중·작업 반경 사양을 고른다.
 3. **ToolData** 에 [ToolData](/datatype/tooldata/) 를 연결한다. 로봇 베이스가 WorldXY 가 아니면 **Base Plane** 도, 포지셔너를 쓰면 **Positioner** 에 [ABB Positioner](/robot-tool/positioner/) 를, 받침대 등 주변 형상이 있으면 **Pedestal** 도 연결한다.
-4. **Robot Joint Jog** 탭에서 로봇 축(**RobAx 1~6**)을, **External Joint Jog** 탭에서 외부축(**ExtAx 1~6**)을 직접 움직여 자세를 확인한다. **Current TCP** 출력으로 현재 TCP 평면을 확인할 수 있다.
+4. **Robot Joint Jog** 탭에서 로봇 축(**RobAx 1\~6**)을, **External Joint Jog** 탭에서 외부축(**ExtAx 1\~6**)을 직접 움직여 자세를 확인한다. **Current TCP** 출력으로 현재 TCP 평면을 확인할 수 있다.
 5. **Robot Setup** 출력을 [GERTY Core](/core/gerty-core/) 의 **Robot Setup** 입력에 연결한다.
 
 </Steps>
